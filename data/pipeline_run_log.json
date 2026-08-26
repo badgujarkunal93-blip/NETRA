@@ -1,0 +1,98 @@
+{
+  "timestamp": "2026-08-26T08:21:25.761Z",
+  "executionTimeSeconds": 0.22,
+  "totalFilesScanned": 6,
+  "successfulIngestions": 6,
+  "extractionMethods": {
+    "directDigitalText": 6,
+    "ocrTesseractFallback": 0
+  },
+  "validationMetrics": {
+    "passed": 6,
+    "failed": 0,
+    "passRate": "100.0%"
+  },
+  "entityResolution": {
+    "newPersonsCreated": 0,
+    "matchedExistingPersons": 6,
+    "totalEntityIdentitiesResolved": 6
+  },
+  "assetsIngested": {
+    "phones": 9,
+    "vehicles": 7
+  },
+  "perFileLogs": [
+    {
+      "file": "FIR_2026_0491_KRL_SUV_Auto_Theft.pdf",
+      "crimeNo": "CR/2026/0491-KRL",
+      "caseId": "CASE-2026-8469",
+      "extractionMethod": "DIRECT_PARSE",
+      "structuringMode": "HEURISTIC_PARSER",
+      "newPersons": 0,
+      "resolvedPersons": 1,
+      "phones": 1,
+      "vehicles": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "file": "FIR_2026_0582_WRL_Extortion_VoIP.pdf",
+      "crimeNo": "CR/2026/0582-WRL",
+      "caseId": "CASE-2026-7934",
+      "extractionMethod": "DIRECT_PARSE",
+      "structuringMode": "HEURISTIC_PARSER",
+      "newPersons": 0,
+      "resolvedPersons": 1,
+      "phones": 1,
+      "vehicles": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "file": "FIR_2026_0615_AND_Cyber_SIM_Swap.pdf",
+      "crimeNo": "CR/2026/0615-AND",
+      "caseId": "CASE-2026-7391",
+      "extractionMethod": "DIRECT_PARSE",
+      "structuringMode": "HEURISTIC_PARSER",
+      "newPersons": 0,
+      "resolvedPersons": 1,
+      "phones": 2,
+      "vehicles": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "file": "FIR_2026_0740_DHR_NDPS_Mephedrone.pdf",
+      "crimeNo": "CR/2026/0740-DHR",
+      "caseId": "CASE-2026-7112",
+      "extractionMethod": "DIRECT_PARSE",
+      "structuringMode": "HEURISTIC_PARSER",
+      "newPersons": 0,
+      "resolvedPersons": 1,
+      "phones": 1,
+      "vehicles": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "file": "FIR_2026_0811_BND_Hawala_Shell.pdf",
+      "crimeNo": "CR/2026/0811-BND",
+      "caseId": "CASE-2026-6980",
+      "extractionMethod": "DIRECT_PARSE",
+      "structuringMode": "HEURISTIC_PARSER",
+      "newPersons": 0,
+      "resolvedPersons": 1,
+      "phones": 2,
+      "vehicles": 1,
+      "status": "SUCCESS"
+    },
+    {
+      "file": "FIR_2026_0924_CLB_Diamond_Vault_Heist.pdf",
+      "crimeNo": "CR/2026/0924-CLB",
+      "caseId": "CASE-2026-3512",
+      "extractionMethod": "DIRECT_PARSE",
+      "structuringMode": "HEURISTIC_PARSER",
+      "newPersons": 0,
+      "resolvedPersons": 1,
+      "phones": 2,
+      "vehicles": 2,
+      "status": "SUCCESS"
+    }
+  ]
+}

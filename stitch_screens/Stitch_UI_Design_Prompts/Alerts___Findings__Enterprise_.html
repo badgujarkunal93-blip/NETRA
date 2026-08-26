@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise Alerts &amp; Findings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#f8bb6f",
+                        "on-tertiary-fixed": "#410006",
+                        "on-surface-variant": "#d5c4b3",
+                        "inverse-primary": "#825510",
+                        "on-tertiary-container": "#9e2e32",
+                        "outline-variant": "#504538",
+                        "on-secondary": "#003731",
+                        "secondary-container": "#03c6b2",
+                        "tertiary-container": "#ffbcb9",
+                        "on-secondary-fixed": "#00201c",
+                        "on-background": "#ede0dc",
+                        "on-primary-fixed-variant": "#653e00",
+                        "on-tertiary-fixed-variant": "#881d24",
+                        "on-tertiary": "#670211",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "surface-container-high": "#302826",
+                        "inverse-surface": "#ede0dc",
+                        "surface-bright": "#403735",
+                        "on-primary": "#472a00",
+                        "tertiary": "#ffe2e1",
+                        "error-container": "#93000a",
+                        "surface-tint": "#f8bb6f",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#211a18",
+                        "surface-container-highest": "#3b3331",
+                        "tertiary-fixed": "#ffdad8",
+                        "background": "#181210",
+                        "surface-container": "#251e1c",
+                        "outline": "#9d8e7f",
+                        "on-primary-container": "#794d07",
+                        "rust-alert": "#b91c1c",
+                        "on-secondary-container": "#004d44",
+                        "amber-action": "#f59e0b",
+                        "surface-dim": "#181210",
+                        "primary": "#ffe4c9",
+                        "primary-fixed": "#ffddb7",
+                        "on-error": "#690005",
+                        "surface": "#181210",
+                        "teal-status": "#14b8a6",
+                        "surface-container-lowest": "#130d0b",
+                        "secondary-fixed": "#62fae3",
+                        "primary-container": "#ffc174",
+                        "on-secondary-fixed-variant": "#005047",
+                        "on-primary-fixed": "#2a1700",
+                        "error": "#ffb4ab",
+                        "secondary": "#44e2cd",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "inverse-on-surface": "#362f2c",
+                        "on-surface": "#ede0dc",
+                        "surface-variant": "#3b3331"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "container-padding": "20px",
+                        "margin-edge": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "technical-mono": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "technical-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; background-color: #181210; color: #ede0dc; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-screen overflow-hidden flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface flex justify-between items-center h-16 px-margin-edge w-full border-b border-outline-variant flat no shadows">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary text-2xl" data-weight="fill">security</span>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight uppercase">OBSIDIAN CASEFILE</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-high border border-outline-variant rounded text-on-surface pl-10 pr-4 py-1.5 focus:outline-none focus:border-amber-action focus:ring-1 focus:ring-amber-action w-64 transition-colors font-body-md text-body-md placeholder:text-on-surface-variant" placeholder="Search entity, ID, or term..." type="text"/>
+</div>
+<button aria-label="notifications" class="p-2 text-on-surface-variant hover:bg-surface-container-highest transition-colors cursor-pointer active:opacity-80 rounded">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden cursor-pointer">
+<img alt="Chief Intelligence Officer Profile" class="w-full h-full object-cover" data-alt="Close-up professional portrait of a Chief Intelligence Officer in a high-tech control room setting. Cinematic, high contrast lighting emphasizing authority and focus. Clinical, authoritative, modern tactical aesthetic. Dark background with subtle teal and amber UI reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASpZ4waWyy-V85ciwoJ7zkofs5f-Tf7JZ42j9_I2nEV2VUS7SfCvAXzjAdTCB7PpuvqO6z7LJNnwEXVxZT-taFBpepKjfoJJ93vmCk9nkk6C9kA8hEv-tiVPnURyHPDdQ2QFK7uMUsfvyOg7phcF2vQA5Qg5VbWUPswIGoeZtcqIiGf85EqwKub2pQylKbItgqlZ1RZ-6sea-S9zYZf81PoCAKYQtUvA2t_MOKXXMKv_BM3aIv7kGwwg"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1 pt-16 w-full h-full">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-surface-container dark:bg-surface-container border-r border-outline-variant flat no shadows flex flex-col py-gutter hidden md:flex z-40">
+<div class="px-gutter mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-high border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-action">shield</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Unit 734</div>
+<div class="font-body-md text-body-md text-teal-status flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-teal-status"></span> Active Session
+                        </div>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1 px-2">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">security</span> Intelligence
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">hub</span> Knowledge Graph
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">search_insights</span> FIR Search
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-body-md text-body-md text-amber-action border-r-2 border-amber-action bg-surface-container-highest cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-weight="fill">emergency_home</span> Alerts
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">analytics</span> MO Analysis
+                        </a>
+</li>
+</ul>
+</div>
+<div class="mt-auto px-2 pt-4 border-t border-outline-variant">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">contact_support</span> Support
+                        </a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 p-margin-edge overflow-y-auto bg-surface-dim h-full flex flex-col lg:flex-row gap-gutter">
+<!-- Alerts Table Section (8 Columns) -->
+<div class="flex-1 flex flex-col gap-4">
+<div class="flex justify-between items-end mb-2 border-b border-outline-variant pb-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Active Alerts</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time enterprise threat monitoring stream.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 border border-outline-variant rounded font-technical-mono text-technical-mono text-on-surface-variant hover:bg-surface-container-high transition-colors">FILTER</button>
+<button class="px-3 py-1.5 bg-amber-action text-on-primary rounded font-technical-mono text-technical-mono hover:bg-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">refresh</span> SYNC
+                        </button>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded flex-1 overflow-hidden flex flex-col">
+<div class="grid grid-cols-12 gap-4 px-4 py-3 border-b border-outline-variant bg-surface-container-highest font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">
+<div class="col-span-2">ID / Time</div>
+<div class="col-span-2">Type</div>
+<div class="col-span-6">Description</div>
+<div class="col-span-2 text-right">Status</div>
+</div>
+<div class="flex-1 overflow-y-auto">
+<!-- Critical Alert Row -->
+<div class="grid grid-cols-12 gap-4 px-4 py-4 border-b border-outline-variant bg-surface hover:bg-surface-container-high transition-colors cursor-pointer border-l-2 border-l-rust-alert">
+<div class="col-span-2 flex flex-col justify-center">
+<span class="font-technical-mono text-technical-mono text-rust-alert">ALR-992-CR</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-xs">14:02:11 UTC</span>
+</div>
+<div class="col-span-2 flex items-center">
+<span class="font-body-md text-body-md text-on-surface">Data Exfil</span>
+</div>
+<div class="col-span-6 flex flex-col justify-center">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Anomalous outbound traffic volume detected on Node Delta.</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm truncate">Source: 192.168.1.105 | Target: Unknown IP (External)</span>
+</div>
+<div class="col-span-2 flex items-center justify-end">
+<span class="px-2 py-1 rounded bg-rust-alert/20 text-rust-alert border border-rust-alert/30 font-label-caps text-label-caps">CRITICAL</span>
+</div>
+</div>
+<!-- Warning Alert Row -->
+<div class="grid grid-cols-12 gap-4 px-4 py-4 border-b border-outline-variant bg-surface hover:bg-surface-container-high transition-colors cursor-pointer border-l-2 border-l-amber-action">
+<div class="col-span-2 flex flex-col justify-center">
+<span class="font-technical-mono text-technical-mono text-amber-action">ALR-841-WR</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-xs">13:45:00 UTC</span>
+</div>
+<div class="col-span-2 flex items-center">
+<span class="font-body-md text-body-md text-on-surface">Auth Failure</span>
+</div>
+<div class="col-span-6 flex flex-col justify-center">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Multiple failed login attempts across admin accounts.</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm truncate">Target: Admin Gateway | Geo: Disparate</span>
+</div>
+<div class="col-span-2 flex items-center justify-end">
+<span class="px-2 py-1 rounded bg-amber-action/20 text-amber-action border border-amber-action/30 font-label-caps text-label-caps">INVESTIGATE</span>
+</div>
+</div>
+<!-- Info Alert Row -->
+<div class="grid grid-cols-12 gap-4 px-4 py-4 border-b border-outline-variant bg-surface hover:bg-surface-container-high transition-colors cursor-pointer border-l-2 border-l-teal-status">
+<div class="col-span-2 flex flex-col justify-center">
+<span class="font-technical-mono text-technical-mono text-teal-status">ALR-710-IN</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-xs">13:10:45 UTC</span>
+</div>
+<div class="col-span-2 flex items-center">
+<span class="font-body-md text-body-md text-on-surface">System Update</span>
+</div>
+<div class="col-span-6 flex flex-col justify-center">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Routine security definitions updated successfully.</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm truncate">Target: All regional nodes | Status: Verified</span>
+</div>
+<div class="col-span-2 flex items-center justify-end">
+<span class="px-2 py-1 rounded bg-teal-status/20 text-teal-status border border-teal-status/30 font-label-caps text-label-caps">RESOLVED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Findings Sidebar (4 Columns) -->
+<div class="w-full lg:w-96 flex flex-col gap-4">
+<div class="border-b border-outline-variant pb-2 mb-2 flex items-end justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-action text-[20px]">psychology</span> AI Findings Stream
+                    </h3>
+</div>
+<div class="flex-1 overflow-y-auto space-y-3">
+<!-- Finding Card 1 -->
+<div class="bg-surface-container border border-outline-variant rounded p-4 relative">
+<div class="absolute top-2 right-2 font-technical-mono text-technical-mono text-on-surface-variant text-[10px]">FND-01A</div>
+<div class="flex items-start gap-3 mb-2">
+<div class="mt-1 w-2 h-2 rounded-full bg-rust-alert animate-pulse"></div>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface">Correlated Threat Pattern</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Alert ALR-992-CR aligns with historical MO for APT-29. High probability of lateral movement attempt.</p>
+</div>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="text-xs px-2 py-1 border border-outline-variant rounded text-on-surface hover:bg-surface-container-high transition-colors">View Graph</button>
+<button class="text-xs px-2 py-1 border border-amber-action text-amber-action rounded hover:bg-amber-action/10 transition-colors">Isolate Node</button>
+</div>
+</div>
+<!-- Finding Card 2 -->
+<div class="bg-surface-container border border-outline-variant rounded p-4 relative">
+<div class="absolute top-2 right-2 font-technical-mono text-technical-mono text-on-surface-variant text-[10px]">FND-02B</div>
+<div class="flex items-start gap-3 mb-2">
+<div class="mt-1 w-2 h-2 rounded-full bg-amber-action"></div>
+<div>
+<h4 class="font-body-md text-body-md font-semibold text-on-surface">Anomaly Detected</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Unusual spike in encrypted traffic on non-standard ports from Marketing subnet.</p>
+</div>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="text-xs px-2 py-1 border border-outline-variant rounded text-on-surface hover:bg-surface-container-high transition-colors">Analyze PCAP</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

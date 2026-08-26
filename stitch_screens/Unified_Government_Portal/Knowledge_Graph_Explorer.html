@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Knowledge Graph Explorer - CIU COMMAND</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#edeef0",
+                      "on-surface": "#191c1e",
+                      "surface-container-highest": "#e1e2e4",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#e2e2e2",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#071b3a",
+                      "surface-container-low": "#f3f4f6",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "secondary": "#5d5f5f",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#364768",
+                      "on-background": "#191c1e",
+                      "inverse-primary": "#b6c6ee",
+                      "on-tertiary-fixed": "#261a00",
+                      "on-tertiary-container": "#ab7f00",
+                      "tertiary-fixed-dim": "#f6be39",
+                      "inverse-surface": "#2e3132",
+                      "on-secondary-fixed-variant": "#454747",
+                      "on-tertiary": "#ffffff",
+                      "primary": "#000516",
+                      "on-tertiary-fixed-variant": "#5c4300",
+                      "primary-fixed-dim": "#b6c6ee",
+                      "ink-navy": "#1A1A1A",
+                      "tertiary": "#090500",
+                      "tertiary-container": "#291c00",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "on-primary-container": "#7686ab",
+                      "on-secondary-container": "#616363",
+                      "alert-red": "#C0392B",
+                      "surface-tint": "#4e5e81",
+                      "background": "#f8f9fb",
+                      "primary-fixed": "#d8e2ff",
+                      "on-secondary": "#ffffff",
+                      "on-surface-variant": "#44474e",
+                      "surface-muted": "#E2E8F0",
+                      "surface-container-high": "#e7e8ea",
+                      "outline-variant": "#c5c6cf",
+                      "surface-bright": "#f8f9fb",
+                      "tertiary-fixed": "#ffdfa0",
+                      "primary-container": "#0b1e3d",
+                      "surface": "#f8f9fb",
+                      "outline": "#75777f",
+                      "surface-dim": "#d9dadc",
+                      "surface-variant": "#e1e2e4",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "inverse-on-surface": "#f0f1f3",
+                      "secondary-container": "#dfe0e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "48px",
+                      "unit": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-lg": ["Inter"],
+                      "headline-md": ["Archivo Narrow"],
+                      "body-lg": ["Inter"],
+                      "code-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Archivo Narrow"],
+                      "body-sm": ["Inter"],
+                      "headline-lg": ["Archivo Narrow"],
+                      "label-md": ["Inter"],
+                      "headline-sm": ["Archivo Narrow"]
+              },
+              "fontSize": {
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "code-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Graph Styles */
+        .node { transition: all 0.2s ease-in-out; cursor: pointer; }
+        .node:hover { transform: scale(1.1); }
+        .node.selected { stroke: #f6be39; stroke-width: 3px; }
+        .edge { stroke-linecap: round; }
+        .edge.observed { stroke: #f6be39; stroke-width: 1.5px; opacity: 0.8; }
+        .edge.inferred { stroke: rgba(255,255,255,0.4); stroke-width: 1px; stroke-dasharray: 4,4; }
+        
+        /* Custom Scrollbar for panels */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c5c6cf; }
+    </style>
+</head>
+<body class="bg-primary overflow-hidden h-screen w-screen font-body-md text-body-md text-on-surface">
+<!-- Top Navigation (Shell suppressed visually as this is a full-screen tool, but header remains for context) -->
+<header class="fixed top-0 w-full z-50 bg-primary/95 backdrop-blur-sm border-b border-surface-tint flex justify-between items-center px-margin-desktop h-16 w-full shadow-md">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-2xl">hub</span>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-primary tracking-wider uppercase">CIU Intelligence Graph</h1>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="relative w-96 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-surface-tint">search</span>
+<input class="w-full bg-primary-container border border-surface-tint text-on-primary rounded pl-10 pr-4 py-1.5 font-body-sm text-body-sm focus:outline-none focus:border-tertiary-fixed-dim transition-colors placeholder:text-on-primary-container" placeholder="Search entity, alias, or case #..." type="text"/>
+</div>
+<button class="flex items-center gap-2 bg-tertiary-fixed-dim text-tertiary hover:bg-tertiary-fixed px-4 py-1.5 rounded font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                Run Link Prediction
+            </button>
+<button class="text-on-primary opacity-70 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<!-- Main Graph Canvas (Background) -->
+<main class="relative w-full h-full pt-16 z-0">
+<!-- SVG Graph Visualization -->
+<svg class="absolute inset-0 w-full h-full" id="graph-canvas">
+<defs>
+<filter height="140%" id="glow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="4"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Edges -->
+<g id="edges">
+<!-- Center to Nodes -->
+<line class="edge observed" x1="50%" x2="30%" y1="50%" y2="40%"></line>
+<line class="edge observed" x1="50%" x2="70%" y1="50%" y2="35%"></line>
+<line class="edge observed" x1="50%" x2="60%" y1="50%" y2="70%"></line>
+<line class="edge inferred" x1="50%" x2="35%" y1="50%" y2="65%"></line>
+<!-- Secondary Connections -->
+<line class="edge observed" x1="30%" x2="20%" y1="40%" y2="30%"></line>
+<line class="edge inferred" x1="30%" x2="25%" y1="40%" y2="55%"></line>
+<line class="edge observed" x1="70%" x2="80%" y1="35%" y2="25%"></line>
+<line class="edge inferred" x1="70%" x2="85%" y1="35%" y2="45%"></line>
+<line class="edge observed" x1="60%" x2="75%" y1="70%" y2="80%"></line>
+<!-- Cross Links -->
+<line class="edge inferred" x1="35%" x2="60%" y1="65%" y2="70%"></line>
+<line class="edge inferred" x1="30%" x2="70%" y1="40%" y2="35%"></line>
+</g>
+<!-- Nodes -->
+<g id="nodes">
+<!-- Central Target -->
+<g class="node selected" onclick="selectNode(this, 'Target Alpha')" transform="translate(50%, 50%)">
+<circle fill="#1A1A1A" r="32" stroke="#4e5e81" stroke-width="2"></circle>
+<circle fill="#0b1e3d" r="26"></circle>
+<text fill="#ffffff" font-family="'Material Symbols Outlined'" font-size="24" text-anchor="middle" x="0" y="8">person</text>
+<text class="bg-primary px-1" fill="#ffffff" font-family="'Inter'" font-size="12" font-weight="600" text-anchor="middle" x="0" y="48">TGT-889</text>
+</g>
+<!-- Node 1 (Person) -->
+<g class="node" transform="translate(30%, 40%)">
+<circle fill="#1A1A1A" r="24" stroke="#4e5e81" stroke-width="1.5"></circle>
+<circle fill="#0b1e3d" r="20"></circle>
+<text fill="#ffffff" font-family="'Material Symbols Outlined'" font-size="18" text-anchor="middle" x="0" y="6">person</text>
+</g>
+<!-- Node 2 (Phone) -->
+<g class="node" transform="translate(70%, 35%)">
+<circle fill="#1A1A1A" r="24" stroke="#4e5e81" stroke-width="1.5"></circle>
+<circle fill="#2e3132" r="20"></circle>
+<text fill="#c6c6c7" font-family="'Material Symbols Outlined'" font-size="18" text-anchor="middle" x="0" y="6">smartphone</text>
+</g>
+<!-- Node 3 (Vehicle) -->
+<g class="node" transform="translate(60%, 70%)">
+<circle fill="#1A1A1A" r="24" stroke="#4e5e81" stroke-width="1.5"></circle>
+<circle fill="#2e3132" r="20"></circle>
+<text fill="#c6c6c7" font-family="'Material Symbols Outlined'" font-size="18" text-anchor="middle" x="0" y="6">directions_car</text>
+</g>
+<!-- Node 4 (Location) -->
+<g class="node" transform="translate(35%, 65%)">
+<circle fill="#1A1A1A" r="24" stroke="#4e5e81" stroke-width="1.5"></circle>
+<circle fill="#2e3132" r="20"></circle>
+<text fill="#c6c6c7" font-family="'Material Symbols Outlined'" font-size="18" text-anchor="middle" x="0" y="6">location_on</text>
+</g>
+<!-- Outer Nodes -->
+<g class="node" transform="translate(20%, 30%)">
+<circle fill="#1A1A1A" r="16" stroke="#4e5e81" stroke-width="1"></circle>
+<text fill="#7686ab" font-family="'Material Symbols Outlined'" font-size="14" text-anchor="middle" x="0" y="5">account_balance</text>
+</g>
+<g class="node" transform="translate(25%, 55%)">
+<circle fill="#1A1A1A" r="16" stroke="#4e5e81" stroke-width="1"></circle>
+<text fill="#7686ab" font-family="'Material Symbols Outlined'" font-size="14" text-anchor="middle" x="0" y="5">person</text>
+</g>
+<g class="node" transform="translate(80%, 25%)">
+<circle fill="#1A1A1A" r="16" stroke="#4e5e81" stroke-width="1"></circle>
+<text fill="#7686ab" font-family="'Material Symbols Outlined'" font-size="14" text-anchor="middle" x="0" y="5">smartphone</text>
+</g>
+<g class="node" transform="translate(85%, 45%)">
+<circle fill="#1A1A1A" r="16" stroke="#4e5e81" stroke-width="1"></circle>
+<text fill="#7686ab" font-family="'Material Symbols Outlined'" font-size="14" text-anchor="middle" x="0" y="5">location_on</text>
+</g>
+<g class="node" transform="translate(75%, 80%)">
+<circle fill="#1A1A1A" r="16" stroke="#4e5e81" stroke-width="1"></circle>
+<text fill="#7686ab" font-family="'Material Symbols Outlined'" font-size="14" text-anchor="middle" x="0" y="5">description</text>
+</g>
+</g>
+</svg>
+<!-- Floating UI Panels -->
+<!-- Left Panel: Filters & Legend -->
+<aside class="absolute left-6 top-24 w-72 bg-surface-container-lowest border border-surface-muted rounded shadow-md flex flex-col z-10 max-h-[calc(100vh-8rem)]">
+<div class="p-4 border-b border-surface-muted bg-surface-bright rounded-t">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Graph Controls</h2>
+</div>
+<div class="p-4 overflow-y-auto flex-1 space-y-6">
+<!-- Entity Types -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Entity Types</h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-outline text-primary focus:ring-tertiary-fixed-dim bg-surface" type="checkbox"/>
+<span class="material-symbols-outlined text-primary text-sm">person</span>
+<span class="font-body-sm text-body-sm text-on-surface">Persons</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-outline text-primary focus:ring-tertiary-fixed-dim bg-surface" type="checkbox"/>
+<span class="material-symbols-outlined text-secondary text-sm">smartphone</span>
+<span class="font-body-sm text-body-sm text-on-surface">Communications</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-outline text-primary focus:ring-tertiary-fixed-dim bg-surface" type="checkbox"/>
+<span class="material-symbols-outlined text-secondary text-sm">directions_car</span>
+<span class="font-body-sm text-body-sm text-on-surface">Vehicles</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-outline text-primary focus:ring-tertiary-fixed-dim bg-surface" type="checkbox"/>
+<span class="material-symbols-outlined text-secondary text-sm">location_on</span>
+<span class="font-body-sm text-body-sm text-on-surface">Locations</span>
+</label>
+</div>
+</div>
+<!-- Link Confidence -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">AI Confidence Threshold</h3>
+<div class="flex items-center gap-4">
+<span class="font-code-sm text-code-sm text-secondary">0%</span>
+<input class="w-full h-1 bg-surface-variant rounded appearance-none cursor-pointer accent-tertiary-fixed-dim" max="100" min="0" type="range" value="75"/>
+<span class="font-code-sm text-code-sm text-on-surface font-bold">75%</span>
+</div>
+</div>
+<!-- Legend -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-3">Legend</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-6 h-0 border-t-2 border-tertiary-fixed-dim"></div>
+<span class="font-body-sm text-body-sm text-on-surface">Observed Link</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-6 h-0 border-t border-outline border-dashed"></div>
+<span class="font-body-sm text-body-sm text-on-surface">Inferred Link (AI)</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Panel: Node Details (Contextual) -->
+<aside class="absolute right-6 top-24 w-80 bg-surface-container-lowest border border-surface-muted rounded shadow-[0_4px_12px_rgba(11,30,61,0.05)] flex flex-col z-10 max-h-[calc(100vh-8rem)]">
+<!-- Header -->
+<div class="p-4 border-b border-surface-muted bg-surface-bright rounded-t flex justify-between items-start">
+<div class="flex gap-3 items-center">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">person</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase">Target Alpha</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Vikram M.</h2>
+</div>
+</div>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<!-- Content Scrollable -->
+<div class="p-4 overflow-y-auto flex-1 space-y-5">
+<!-- Status/Severity -->
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-error-container text-on-error-container rounded font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span> High Priority
+                    </span>
+<span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology</span> 88% Match
+                    </span>
+</div>
+<!-- Attributes Data List -->
+<div class="space-y-3">
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant">Known Aliases</div>
+<div class="flex flex-wrap gap-2 mt-1">
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface rounded font-code-sm text-code-sm">"Vicky"</span>
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface rounded font-code-sm text-code-sm">"VM-77"</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant">Last Known Loc</div>
+<div class="font-body-sm text-body-sm text-on-surface mt-0.5">Andheri West</div>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant">Assoc. Case</div>
+<div class="font-body-sm text-body-sm text-on-surface mt-0.5 font-code-sm">#CR-2024-89</div>
+</div>
+</div>
+</div>
+<hr class="border-surface-muted"/>
+<!-- Connected Edges List -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-2">Direct Connections (3)</h3>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded cursor-pointer transition-colors border border-transparent hover:border-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">directions_car</span>
+<div class="flex-1">
+<div class="font-body-sm text-body-sm text-on-surface font-medium">MH-02-CD-4451</div>
+<div class="font-code-sm text-code-sm text-secondary">Observed • Registered Owner</div>
+</div>
+</li>
+<li class="flex items-center gap-3 p-2 hover:bg-surface-container-low rounded cursor-pointer transition-colors border border-transparent hover:border-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">smartphone</span>
+<div class="flex-1">
+<div class="font-body-sm text-body-sm text-on-surface font-medium">+91 98XXX XXXXX</div>
+<div class="font-code-sm text-code-sm text-secondary">Observed • Primary Comm</div>
+</div>
+</li>
+<li class="flex items-center gap-3 p-2 bg-surface-container-low border border-surface-variant rounded cursor-pointer">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-sm">psychology</span>
+<div class="flex-1">
+<div class="font-body-sm text-body-sm text-on-surface font-medium">Safehouse Alpha</div>
+<div class="font-code-sm text-code-sm text-secondary">Inferred (88%) • Location</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Actions -->
+<div class="p-4 border-t border-surface-muted bg-surface-bright rounded-b flex gap-2">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-2 rounded hover:bg-primary-container transition-colors">
+                    Expand Node
+                </button>
+<button class="px-3 border border-primary text-primary rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-sm">more_horiz</span>
+</button>
+</div>
+</aside>
+<!-- Bottom right minimal controls -->
+<div class="absolute bottom-6 right-6 flex flex-col gap-2 z-10">
+<button class="w-10 h-10 bg-surface-container-lowest border border-surface-muted rounded shadow-sm flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest border border-surface-muted rounded shadow-sm flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest border border-surface-muted rounded shadow-sm flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-colors mt-2">
+<span class="material-symbols-outlined">center_focus_strong</span>
+</button>
+</div>
+</main>
+<script>
+        // Simple interaction for demonstration
+        function selectNode(el, name) {
+            document.querySelectorAll('.node').forEach(n => n.classList.remove('selected'));
+            el.classList.add('selected');
+            // In a real app, this would update the right panel data
+        }
+    </script>
+</body></html>

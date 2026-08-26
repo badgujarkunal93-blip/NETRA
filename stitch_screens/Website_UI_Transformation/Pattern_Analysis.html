@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AETHER INTEL - Patterns Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#271900",
+                      "surface-dim": "#131313",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-tertiary-fixed": "#1b1c1c",
+                      "surface-bright": "#3a3939",
+                      "surface": "#131313",
+                      "on-secondary": "#313030",
+                      "on-secondary-container": "#b7b5b4",
+                      "surface-container-low": "#1c1b1b",
+                      "inverse-primary": "#7c5800",
+                      "surface-container": "#201f1f",
+                      "tertiary-container": "#c6c4c4",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "surface-tint": "#ffba20",
+                      "tertiary-fixed": "#e4e2e1",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "secondary-fixed": "#e5e2e1",
+                      "primary": "#ffdca1",
+                      "primary-fixed-dim": "#ffba20",
+                      "surface-container-highest": "#353534",
+                      "inverse-on-surface": "#313030",
+                      "on-secondary-fixed-variant": "#474746",
+                      "primary-container": "#ffb800",
+                      "inverse-surface": "#e5e2e1",
+                      "background": "#131313",
+                      "surface-variant": "#353534",
+                      "outline": "#9e8f78",
+                      "on-primary": "#412d00",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#d5c4ab",
+                      "on-tertiary-container": "#515151",
+                      "secondary-container": "#474746",
+                      "on-background": "#e5e2e1",
+                      "on-primary-container": "#6b4c00",
+                      "on-tertiary": "#303030",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#514532",
+                      "secondary": "#c8c6c5",
+                      "on-primary-fixed-variant": "#5e4200",
+                      "tertiary": "#e2e0df",
+                      "surface-container-lowest": "#0e0e0e",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "primary-fixed": "#ffdea8",
+                      "on-surface": "#e5e2e1",
+                      "surface-container-high": "#2a2a2a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "48px",
+                      "margin-mobile": "16px",
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "stack-unit": "8px",
+                      "sidebar-width": "280px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            },
+          }
+        }
+      </script>
+<style>
+        body {
+            background-color: #0F0F0F; /* Enforcing deep black canvas as per design system layer 0 */
+            color: #e5e2e1;
+        }
+        .glow-focal {
+            box-shadow: 0 0 15px 2px rgba(255, 184, 0, 0.25);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+      </style>
+</head>
+<body class="font-body-md text-body-md flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface-container-low border-r border-outline-variant fixed left-0 top-0 h-full w-sidebar-width flex-col py-stack-unit z-50">
+<div class="px-4 py-6 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant flex-shrink-0">
+<img alt="User Intelligence Profile" class="w-full h-full object-cover" data-alt="A striking close up portrait of an intelligence analyst looking intensely off camera. Dramatic low key studio lighting. A sense of high stakes focus. Set against a pure black background. Dark cinematic aesthetic with subtle golden amber highlights outlining their profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7bLr-_3wI74nbrsULvBFalu2uCydkOCVKYa-dvPwQlo8CoqGGJyASvSviRTJ9_vME1dlvnQu-GiXVcSX6QMk5TzJ90ZI1GoSe_HF-krm4dMgFRIgfoXlIaI_BFpHJeVzzg1zYGqZu-0hcYz-LBgtrRpg3nLaD1Wq8QRox6JiG5I-KvqGomr1yjEDX_GnuMPkdFWt8cjnqsqQ8LU74OFnv-zzXG7m6IsJHVVcWu-P5ut56ITy8T61TEg"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight leading-tight">AETHER INTEL</h1>
+<p class="font-label-caps text-label-caps text-secondary mt-1">Strategic Oversight</p>
+</div>
+</div>
+</div>
+<div class="flex-1 px-2 space-y-1 overflow-y-auto scrollbar-hide">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-highest transition-colors rounded-DEFAULT font-body-sm text-body-sm font-medium" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">hub</span>
+                Main
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface font-semibold border-l-2 border-primary-container bg-[#1A1A1A] transition-colors rounded-r-DEFAULT font-body-sm text-body-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+                Dashboard Intel
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-highest transition-colors rounded-DEFAULT font-body-sm text-body-sm font-medium" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">security</span>
+                AI Risk Engine
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-highest transition-colors rounded-DEFAULT font-body-sm text-body-sm font-medium" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_balance_wallet</span>
+                Financials &amp; Playbook
+            </a>
+</div>
+<div class="px-4 py-4 mt-auto space-y-4">
+<button class="w-full bg-primary-container text-black font-body-sm text-body-sm font-semibold py-2 px-4 rounded-DEFAULT hover:bg-primary-fixed transition-colors flex justify-center items-center gap-2 glow-focal">
+                 CTA Action
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-secondary hover:bg-surface-container-highest transition-colors rounded-DEFAULT font-body-sm text-body-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 text-secondary hover:bg-surface-container-highest transition-colors rounded-DEFAULT font-body-sm text-body-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">help</span>
+                    Support
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col md:ml-sidebar-width h-full w-full relative">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant docked full-width top-0 flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop z-40">
+<div class="flex items-center gap-4 flex-1">
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-secondary p-2 -ml-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-display-lg text-headline-md text-primary tracking-tight truncate hidden md:block">AETHER</div>
+<div class="relative w-full max-w-md ml-4 md:ml-8">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-[20px]">search</span>
+<input class="w-full bg-[#0A0A0A] border border-[#2C2C2C] rounded-DEFAULT py-2 pl-10 pr-4 text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all font-body-sm placeholder-secondary-fixed-dim" placeholder="Search Intel..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary-fixed transition-colors p-2">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-fixed transition-colors p-2">
+<span class="material-symbols-outlined">history</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2 md:hidden">
+<img alt="Analyst Profile" class="w-full h-full object-cover" data-alt="A striking close up portrait of an intelligence analyst looking intensely off camera. Dramatic low key studio lighting. A sense of high stakes focus. Set against a pure black background. Dark cinematic aesthetic with subtle golden amber highlights outlining their profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEktIKvx_EeJaKPZg1O87SM1gs_NoFcr4LOiLCfKyk54W6rQZ4qLaZ7L-Ob4wbxZDeY0APA2FJmIy4Ukwia1H2w-E9TNNx7CXcg6QVjy0qvWQIi5upd__wNBPumEFUxca4afD2svQbQCjBpD_Kh-V5iNN9Y5maOfS37WbYjVCyzL0tQ6uapXuCQoKXxTW43K1HjlIm5AiFvCm1Yx2lp5OQUATKwHFjFNUAfinNhjqIUUxOuItCUxdBOw"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-gutter pb-20 md:pb-12 bg-[#0F0F0F]">
+<div class="max-w-container-max mx-auto space-y-gutter">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#2C2C2C] pb-4">
+<div>
+<p class="font-label-caps text-label-caps text-primary-container mb-1">DASHBOARD INTEL</p>
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Patterns Analysis</h2>
+</div>
+<div class="flex gap-2">
+<button class="bg-[#1A1A1A] border border-[#2C2C2C] text-on-surface hover:text-primary font-body-sm py-1.5 px-3 rounded-DEFAULT transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                            Filter
+                        </button>
+<button class="bg-[#1A1A1A] border border-[#2C2C2C] text-on-surface hover:text-primary font-body-sm py-1.5 px-3 rounded-DEFAULT transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Visualization Card -->
+<div class="col-span-1 md:col-span-8 bg-[#1A1A1A] border border-[#2C2C2C] rounded-lg p-stack-unit relative overflow-hidden group hover:border-outline-variant transition-colors">
+<div class="flex justify-between items-center mb-4 px-2 pt-2">
+<h3 class="font-label-caps text-label-caps text-secondary-fixed-dim">CROSS-REFERENCE MATRIX</h3>
+<span class="material-symbols-outlined text-secondary">open_in_full</span>
+</div>
+<div class="aspect-video w-full rounded bg-[#0A0A0A] border border-[#2C2C2C] relative overflow-hidden">
+<!-- Reference Image Embedded Here -->
+<img alt="Pattern Analysis Chart" class="w-full h-full object-cover opacity-80 mix-blend-screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWXF3m0ZPVTzdw67Ca6vC2QpMQZt9pkWxctDOCaWsCFuEKKtQl5SGmpry4JdMWBokIFiACb_OJWYE2gJrzpwscCVRqbjZl68FsSdTDPO85nbPQk04aYrP-3kYckrHfewT3sDMSqZcR6qtY-O1TsWehb5Y-q4J0cYUOfPvTn9vFER3k26St9QDmUXDyheI6LrdqnWJQ0o52j5n573GqyrUpfEdX6dloNUDfpBvx2UUQ1fhQ7-v9DeI8U3IjuwBrratMwDE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent pointer-events-none"></div>
+</div>
+</div>
+<!-- Side Stats Column -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-gutter">
+<!-- Stat Card 1 -->
+<div class="flex-1 bg-[#1A1A1A] border border-[#2C2C2C] rounded-lg p-6 flex flex-col justify-center">
+<p class="font-label-caps text-label-caps text-secondary-fixed-dim mb-2">SIGNAL CORRELATION</p>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">87.4</span>
+<span class="text-primary-container font-body-sm text-body-sm font-semibold">+2.1%</span>
+</div>
+<div class="mt-4 h-1 w-full bg-[#2C2C2C] rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[87%] glow-focal"></div>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="flex-1 bg-[#1A1A1A] border border-[#2C2C2C] rounded-lg p-6 flex flex-col justify-center">
+<p class="font-label-caps text-label-caps text-secondary-fixed-dim mb-2">ANOMALY DETECTION</p>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface">12</span>
+<span class="text-error font-body-sm text-body-sm font-semibold">-3</span>
+</div>
+<div class="mt-4 flex gap-1">
+<div class="h-8 flex-1 bg-[#0A0A0A] border border-[#2C2C2C] rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 left-0 right-0 bg-secondary-fixed-dim opacity-20 h-[40%]"></div>
+</div>
+<div class="h-8 flex-1 bg-[#0A0A0A] border border-[#2C2C2C] rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 left-0 right-0 bg-secondary-fixed-dim opacity-20 h-[60%]"></div>
+</div>
+<div class="h-8 flex-1 bg-[#0A0A0A] border border-[#2C2C2C] rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 left-0 right-0 bg-error opacity-40 h-[80%]"></div>
+</div>
+<div class="h-8 flex-1 bg-[#0A0A0A] border border-[#2C2C2C] rounded-sm relative overflow-hidden">
+<div class="absolute bottom-0 left-0 right-0 bg-secondary-fixed-dim opacity-20 h-[30%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant fixed bottom-0 right-0 w-full md:w-[calc(100%-280px)] h-8 flex items-center justify-between px-margin-desktop overflow-hidden z-50">
+<div class="text-primary font-bold font-label-caps text-label-caps tracking-widest text-[10px]">LIVE INTEL PULSE</div>
+<!-- Ticker Concept -->
+<div class="flex-1 mx-8 overflow-hidden relative">
+<div class="flex animate-[ticker_20s_linear_infinite] whitespace-nowrap gap-8 text-[10px] font-label-caps text-secondary-fixed-dim">
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> NODE-ALPHA-7 STABLE</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-error"></span> SECTOR 4 ANOMALY DETECTED</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> ENCRYPTION AES-256</span>
+<span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> TERMINAL ACTIVE</span>
+</div>
+<style>
+                     @keyframes ticker {
+                         0% { transform: translateX(100%); }
+                         100% { transform: translateX(-100%); }
+                     }
+                 </style>
+</div>
+<div class="flex gap-4 font-label-caps text-label-caps text-[10px]">
+<a class="text-secondary-fixed-dim hover:text-primary transition-colors" href="#">TERMINAL ACTIVE</a>
+<a class="text-secondary-fixed-dim hover:text-primary transition-colors hidden sm:block" href="#">ENCRYPTION AES-256</a>
+<a class="text-secondary-fixed-dim hover:text-primary transition-colors hidden sm:block" href="#">NODE-ALPHA-7</a>
+</div>
+</footer>
+</div>
+</body></html>

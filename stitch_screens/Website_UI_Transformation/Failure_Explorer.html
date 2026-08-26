@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AETHER INTEL - Newly Indexed Failures</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#271900",
+                      "surface-dim": "#131313",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-tertiary-fixed": "#1b1c1c",
+                      "surface-bright": "#3a3939",
+                      "surface": "#131313",
+                      "on-secondary": "#313030",
+                      "on-secondary-container": "#b7b5b4",
+                      "surface-container-low": "#1c1b1b",
+                      "inverse-primary": "#7c5800",
+                      "surface-container": "#201f1f",
+                      "tertiary-container": "#c6c4c4",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "surface-tint": "#ffba20",
+                      "tertiary-fixed": "#e4e2e1",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "secondary-fixed": "#e5e2e1",
+                      "primary": "#ffdca1",
+                      "primary-fixed-dim": "#ffba20",
+                      "surface-container-highest": "#353534",
+                      "inverse-on-surface": "#313030",
+                      "on-secondary-fixed-variant": "#474746",
+                      "primary-container": "#ffb800",
+                      "inverse-surface": "#e5e2e1",
+                      "background": "#131313",
+                      "surface-variant": "#353534",
+                      "outline": "#9e8f78",
+                      "on-primary": "#412d00",
+                      "on-error": "#690005",
+                      "on-surface-variant": "#d5c4ab",
+                      "on-tertiary-container": "#515151",
+                      "secondary-container": "#474746",
+                      "on-background": "#e5e2e1",
+                      "on-primary-container": "#6b4c00",
+                      "on-tertiary": "#303030",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#514532",
+                      "secondary": "#c8c6c5",
+                      "on-primary-fixed-variant": "#5e4200",
+                      "tertiary": "#e2e0df",
+                      "surface-container-lowest": "#0e0e0e",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "primary-fixed": "#ffdea8",
+                      "on-surface": "#e5e2e1",
+                      "surface-container-high": "#2a2a2a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "48px",
+                      "margin-mobile": "16px",
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "stack-unit": "8px",
+                      "sidebar-width": "280px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .bloom-effect:hover {
+            box-shadow: 0 0 15px 5px rgba(255, 184, 0, 0.2);
+        }
+        
+        .card-bg {
+            background-color: #1A1A1A;
+        }
+        
+        .void-bg {
+            background-color: #0F0F0F;
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="void-bg text-on-surface font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex bg-surface-container-low dark:bg-surface-container-low fixed left-0 top-0 h-full w-sidebar-width border-r border-outline-variant dark:border-outline-variant flex-col py-stack-unit z-50">
+<div class="px-6 py-6 mb-4">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">AETHER INTEL</h1>
+<p class="font-label-caps text-label-caps text-secondary-fixed-dim mt-2">Strategic Oversight</p>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<!-- Active Tab: Dashboard Intel -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface dark:text-on-surface font-semibold border-l-2 border-primary-container bg-surface-container-highest dark:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span>Dashboard Intel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span>Main</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">security</span>
+<span>AI Risk Engine</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span>Financials &amp; Playbook</span>
+</a>
+</div>
+<div class="px-6 mb-6">
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md text-body-md py-3 rounded-DEFAULT bloom-effect transition-shadow flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">description</span>
+                Generate Report
+            </button>
+</div>
+<div class="flex flex-col gap-2 mt-auto pb-4 border-t border-outline-variant pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-sidebar-width flex flex-col h-screen overflow-y-auto">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface dark:bg-surface flex justify-between items-center h-16 px-margin-desktop border-b border-outline-variant dark:border-outline-variant sticky top-0 z-40">
+<div class="flex items-center">
+<!-- Search bar on left -->
+<div class="relative hidden sm:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant">search</span>
+<input class="bg-[#0A0A0A] border border-[#2C2C2C] text-on-surface text-body-sm rounded-DEFAULT pl-10 pr-4 py-2 w-64 focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors" placeholder="Search intel database..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary-fixed dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">history</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant cursor-pointer bloom-effect">
+<img class="w-full h-full object-cover" data-alt="A futuristic avatar of a strategic intelligence analyst in a dark control room setting, illuminated by amber screen glow. Highly detailed, cyberpunk corporate aesthetic, deep shadows, cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsB1LFnqfR1PlyVqmaImVIudslSFNZqMUIXqeYKLJF5X9pBn7DFZh0pvSjL2gh6bOgoz3jgYVdOcLzkt91bNywn9MO0x1L33emQ6cR4SzfOzOvWaJRV-WYarmm85Uq8rufdDJV6bie1v5EZ9RNlHUoqAm9rqUfU39mejXq60nKlkDPEIcb9X42DJuMFmgSwdyJIBN5zTjwvSdoNZ9J3NJgoWq32__0PKbW1Mab85HDYrRDNi_1MJzQRA"/>
+</div>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="p-margin-mobile md:p-margin-desktop flex-1">
+<!-- Header Section -->
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Newly Indexed Failures</h2>
+<p class="font-body-md text-secondary mt-2">Post-mortem analysis of high-profile startup collapses. Analyzing root causes and capital destruction.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-surface-container border border-outline-variant rounded-DEFAULT text-body-sm font-semibold hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+<button class="px-4 py-2 bg-primary-container text-on-primary-container rounded-DEFAULT text-body-sm font-semibold hover:opacity-90 bloom-effect transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export Data
+                    </button>
+</div>
+</div>
+<!-- Context Image from reference -->
+<div class="mb-8 w-full h-48 md:h-64 rounded-lg overflow-hidden border border-outline-variant relative">
+<img alt="Platform Overview Screenshot" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBioBknZtI-pnelwH9rvCkffXOq1jYVPSGyilWjsUzULEFG19i3AFsqprrbHeeORSuvINHShNit3XoXcK_fImbCsYaCgTLTEuKRLG5-aM_QnAeW0_PYZamntCbOy9G4RX_8-Drts9iyrGcq8icD0w4AuvIUM8fG13GtgnNRaB5B63kIStjsXsc8iSfxkcGbeyXIc0fvgLqSg1FwZcwy9qNxyX1ugUtvtz6weMoXEwnwgjwNJpORfNBL_ddD33MdcyC8ryE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-void-bg to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">info</span>
+<span class="font-label-caps text-label-caps text-primary-container">SYSTEM REFERENCE DATA CAPTURE</span>
+</div>
+</div>
+<!-- Bento Grid layout for cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: Juicero -->
+<div class="card-bg rounded-lg border border-[#2C2C2C] p-6 hover:bg-[#252525] transition-colors relative group">
+<div class="absolute top-4 right-4 px-2 py-1 bg-error-container/20 border border-error/30 rounded text-error font-label-caps text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cancel</span> FAILED
+                    </div>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-surface-container-highest rounded border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-2xl">local_drink</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface">Juicero</h3>
+<p class="font-label-caps text-label-caps text-secondary mt-1">HARDWARE / CONSUMER</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center pb-2 border-b border-[#2C2C2C]">
+<span class="font-body-sm text-secondary">Capital Raised</span>
+<span class="font-body-sm font-semibold text-on-surface">$120M</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-[#2C2C2C]">
+<span class="font-body-sm text-secondary">Lifespan</span>
+<span class="font-body-sm font-semibold text-on-surface">3 Years (2014-2017)</span>
+</div>
+<div class="flex justify-between items-center pb-2 border-b border-[#2C2C2C]">
+<span class="font-body-sm text-secondary">Aether Risk Score</span>
+<span class="font-body-sm font-semibold text-error">92/100</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-[#2C2C2C]">
+<p class="font-body-sm text-secondary-fixed-dim line-clamp-2">Over-engineered hardware solution for a problem that did not exist; exposed by rudimentary manual intervention (hand-squeezing).</p>
+</div>
+</div>
+<!-- Card 2: Theranos -->
+<div class="card-bg rounded-lg border border-[#2C2C2C] p-6 hover:bg-[#252525] transition-colors relative group lg:col-span-2">
+<div class="absolute top-4 right-4 px-2 py-1 bg-error-container/20 border border-error/30 rounded text-error font-label-caps text-[10px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cancel</span> FRAUD / FAILED
+                    </div>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-surface-container-highest rounded border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-2xl">science</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface">Theranos</h3>
+<p class="font-label-caps text-label-caps text-secondary mt-1">HEALTHCARE / BIOTECH</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+<div>
+<span class="block font-label-caps text-[10px] text-secondary mb-1">CAPITAL RAISED</span>
+<span class="font-headline-md text-2xl text-on-surface">$1.4B</span>
+</div>
+<div>
+<span class="block font-label-caps text-[10px] text-secondary mb-1">PEAK VALUATION</span>
+<span class="font-headline-md text-2xl text-on-surface">$10B</span>
+</div>
+<div>
+<span class="block font-label-caps text-[10px] text-secondary mb-1">LIFESPAN</span>
+<span class="font-headline-md text-2xl text-on-surface">15 Yrs</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-[#2C2C2C] flex justify-between items-end">
+<div class="w-3/4">
+<p class="font-body-sm text-secondary-fixed-dim">Massive technological fabrication coupled with aggressive corporate secrecy. Core technology never functioned as claimed despite high-profile board validation.</p>
+</div>
+<button class="text-primary-container hover:text-primary-fixed flex items-center gap-1 font-label-caps text-[10px] transition-colors">
+                            VIEW DOSSIER <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline-variant h-8 flex items-center justify-between px-margin-desktop overflow-hidden mt-auto z-40 relative">
+<div class="text-primary font-bold font-label-caps text-label-caps">LIVE INTEL PULSE</div>
+<div class="flex gap-6">
+<a class="font-label-caps text-label-caps text-secondary-fixed-dim hover:text-primary transition-colors" href="#">TERMINAL ACTIVE</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed-dim hover:text-primary transition-colors" href="#">ENCRYPTION AES-256</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed-dim hover:text-primary transition-colors" href="#">NODE-ALPHA-7</a>
+</div>
+</footer>
+</main>
+</body></html>

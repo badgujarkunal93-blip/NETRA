@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Obsidian Casefile - MO Analysis</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#f8bb6f",
+                        "on-tertiary-fixed": "#410006",
+                        "on-surface-variant": "#d5c4b3",
+                        "inverse-primary": "#825510",
+                        "on-tertiary-container": "#9e2e32",
+                        "outline-variant": "#504538",
+                        "on-secondary": "#003731",
+                        "secondary-container": "#03c6b2",
+                        "tertiary-container": "#ffbcb9",
+                        "on-secondary-fixed": "#00201c",
+                        "on-background": "#ede0dc",
+                        "on-primary-fixed-variant": "#653e00",
+                        "on-tertiary-fixed-variant": "#881d24",
+                        "on-tertiary": "#670211",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "surface-container-high": "#302826",
+                        "inverse-surface": "#ede0dc",
+                        "surface-bright": "#403735",
+                        "on-primary": "#472a00",
+                        "tertiary": "#ffe2e1",
+                        "error-container": "#93000a",
+                        "surface-tint": "#f8bb6f",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#211a18",
+                        "surface-container-highest": "#3b3331",
+                        "tertiary-fixed": "#ffdad8",
+                        "background": "#181210",
+                        "surface-container": "#251e1c",
+                        "outline": "#9d8e7f",
+                        "on-primary-container": "#794d07",
+                        "rust-alert": "#b91c1c",
+                        "on-secondary-container": "#004d44",
+                        "amber-action": "#f59e0b",
+                        "surface-dim": "#181210",
+                        "primary": "#ffe4c9",
+                        "primary-fixed": "#ffddb7",
+                        "on-error": "#690005",
+                        "surface": "#181210",
+                        "teal-status": "#14b8a6",
+                        "surface-container-lowest": "#130d0b",
+                        "secondary-fixed": "#62fae3",
+                        "primary-container": "#ffc174",
+                        "on-secondary-fixed-variant": "#005047",
+                        "on-primary-fixed": "#2a1700",
+                        "error": "#ffb4ab",
+                        "secondary": "#44e2cd",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "inverse-on-surface": "#362f2c",
+                        "on-surface": "#ede0dc",
+                        "surface-variant": "#3b3331"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "container-padding": "20px",
+                        "margin-edge": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "technical-mono": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "technical-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, #302826 1px, transparent 1px),
+                linear-gradient(to bottom, #302826 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex selection:bg-amber-action selection:text-background">
+<nav class="fixed top-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-margin-edge">
+<div class="flex items-center gap-8">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight uppercase">OBSIDIAN CASEFILE</span>
+<div class="hidden md:flex items-center bg-surface-container-low border border-surface-bright rounded px-3 py-1.5 focus-within:border-amber-action focus-within:shadow-[inset_0_0_4px_rgba(245,158,11,0.2)] transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px] mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none text-technical-mono font-technical-mono text-on-surface focus:outline-none w-64 placeholder:text-on-surface-variant p-0 m-0 focus:ring-0" placeholder="Query parameters..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-container-highest transition-colors p-2 rounded cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<img class="w-8 h-8 rounded-full border border-outline-variant object-cover cursor-pointer" data-alt="A clinical, high-contrast black and white portrait of a commanding intelligence officer wearing a sharp dark suit. The lighting is cinematic, casting stark shadows across the face. The background is a seamless, deep matte black, emphasizing a modern, professional, and slightly intimidating corporate espionage aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjkQUzP3NsCdlB42F6YLnYO-CKaVmLmuSSOCCUlaIDKPian3eJZ_yBq5srGe4irpW1NEnGsHqr11DwwHmM9YljVlg5VLFt0fzHjtuHsAgbXuTnE6ClxMT4vjdrJD7XeH6UYnnYPb3_ok4q0cRLv7jkIE6OTRmHxbt4eBBETyPPrslH2wVKUmZq158pnvAKd0q-Pltw_XvU5-o50YhNEFHG54i4FxKRB9pACacsk4x116sbqu3dIk8RQQ"/>
+</div>
+</nav>
+<aside class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-64px)] w-64 bg-surface-container border-r border-outline-variant flex-col py-gutter justify-between z-40">
+<div>
+<div class="px-margin-edge mb-8 mt-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center border border-surface-bright">
+<span class="material-symbols-outlined text-on-surface text-[20px]" data-icon="terminal">terminal</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-on-surface">Unit 734</span>
+<span class="font-technical-mono text-technical-mono text-teal-status text-[10px] uppercase">Active Session</span>
+</div>
+</div>
+</div>
+<ul class="flex flex-col">
+<li class="flex items-center gap-3 px-margin-edge py-3 cursor-pointer duration-200 ease-in-out text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</li>
+<li class="flex items-center gap-3 px-margin-edge py-3 cursor-pointer duration-200 ease-in-out text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="security">security</span>
+<span class="font-body-md text-body-md">Intelligence</span>
+</li>
+<li class="flex items-center gap-3 px-margin-edge py-3 cursor-pointer duration-200 ease-in-out text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="hub">hub</span>
+<span class="font-body-md text-body-md">Knowledge Graph</span>
+</li>
+<li class="flex items-center gap-3 px-margin-edge py-3 cursor-pointer duration-200 ease-in-out text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="search_insights">search_insights</span>
+<span class="font-body-md text-body-md">FIR Search</span>
+</li>
+<li class="flex items-center gap-3 px-margin-edge py-3 cursor-pointer duration-200 ease-in-out text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="emergency_home">emergency_home</span>
+<span class="font-body-md text-body-md">Alerts</span>
+</li>
+<li class="flex items-center gap-3 px-margin-edge py-3 cursor-pointer duration-200 ease-in-out text-amber-action border-r-2 border-amber-action bg-surface-container-highest">
+<span class="material-symbols-outlined text-[20px]" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-body-md text-body-md">MO Analysis</span>
+</li>
+</ul>
+</div>
+<ul class="flex flex-col mt-auto mb-4">
+<li class="flex items-center gap-3 px-margin-edge py-3 cursor-pointer duration-200 ease-in-out text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</li>
+<li class="flex items-center gap-3 px-margin-edge py-3 cursor-pointer duration-200 ease-in-out text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="contact_support">contact_support</span>
+<span class="font-body-md text-body-md">Support</span>
+</li>
+</ul>
+</aside>
+<main class="mt-16 md:ml-64 w-full p-margin-edge flex flex-col gap-6 max-w-[1600px] mx-auto">
+<header class="flex flex-col md:flex-row md:justify-between md:items-end gap-4 border-b border-surface-bright pb-6">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-1">Enterprise MO Similarity Analysis</h1>
+<p class="font-technical-mono text-technical-mono text-on-surface-variant">Cross-referencing vector databases for tactical overlap against target entity.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container hover:bg-surface-container-highest text-on-surface font-technical-mono text-technical-mono px-4 py-2 rounded border border-outline-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="tune">tune</span>
+                    Parameters
+                </button>
+<button class="bg-amber-action hover:opacity-90 text-on-primary-fixed font-technical-mono text-technical-mono px-4 py-2 rounded transition-opacity flex items-center gap-2 shadow-[0_4px_12px_rgba(245,158,11,0.15)]">
+<span class="material-symbols-outlined text-[16px]" data-icon="play_arrow">play_arrow</span>
+                    Execute Query
+                </button>
+</div>
+</header>
+<div class="grid grid-cols-12 gap-gutter">
+<section class="col-span-12 xl:col-span-4 flex flex-col gap-4">
+<div class="bg-surface-container border border-outline-variant rounded p-container-padding flex-1">
+<div class="flex justify-between items-start mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-action text-[20px]" data-icon="my_location">my_location</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Target Baseline</h2>
+</div>
+<span class="font-technical-mono text-technical-mono text-on-surface-variant bg-surface-container-lowest border border-surface-bright px-2 py-1 rounded">ID: OP-992-X</span>
+</div>
+<div class="space-y-6">
+<div class="flex flex-col">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2 border-b border-surface-bright pb-1">TARGET VECTOR</h3>
+<p class="font-body-md text-body-md text-on-surface mb-1">Financial Infrastructure / High-Volume Payment Gateways</p>
+<span class="font-technical-mono text-[11px] text-amber-action">SECTOR: FIN-TECH | NODE: ALPHA-7</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2 border-b border-surface-bright pb-1">TIMING &amp; FREQUENCY</h3>
+<p class="font-body-md text-body-md text-on-surface mb-1">High-frequency micro-transactions during off-peak hours (02:00-04:00 UTC).</p>
+<span class="font-technical-mono text-[11px] text-teal-status">PATTERN: EXTRICATION PULSE</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-2 border-b border-surface-bright pb-1">TOOLSET SIGNATURE</h3>
+<ul class="font-technical-mono text-technical-mono text-on-surface space-y-2 mt-1">
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-rust-alert"></span>
+                                    Custom Python Payload (v2.4)
+                                </li>
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-rust-alert"></span>
+                                    Encrypted C2 via Telegram API
+                                </li>
+<li class="flex items-center gap-3">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-action"></span>
+                                    Obfuscated Powershell Dropper
+                                </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="col-span-12 xl:col-span-8 bg-surface-container border border-outline-variant rounded p-container-padding flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-sm text-headline-sm text-primary">Correlated Incidents Matrix</h2>
+<span class="font-technical-mono text-technical-mono text-on-surface-variant">4 MATCHES FOUND</span>
+</div>
+<div class="w-full border-t border-surface-bright">
+<div class="grid grid-cols-12 gap-4 py-3 border-b border-surface-bright font-label-caps text-label-caps text-on-surface-variant bg-surface-container-low px-2">
+<div class="col-span-2">CASE ID</div>
+<div class="col-span-4">PRIMARY OVERLAP</div>
+<div class="col-span-2">TIMESTAMP</div>
+<div class="col-span-4">SIMILARITY INDEX</div>
+</div>
+<div class="flex flex-col">
+<div class="grid grid-cols-12 gap-4 items-center py-4 border-b border-surface-bright hover:bg-surface-container-highest transition-colors cursor-pointer group px-2">
+<div class="col-span-2 font-technical-mono text-technical-mono text-on-surface group-hover:text-amber-action transition-colors">OP-881-A</div>
+<div class="col-span-4 font-body-md text-body-md text-on-surface truncate">Toolset Signature / Payload</div>
+<div class="col-span-2 font-technical-mono text-technical-mono text-on-surface-variant">2023-10-12</div>
+<div class="col-span-4 flex items-center gap-3">
+<div class="flex-1 bg-surface-container-lowest h-1.5 rounded-full overflow-hidden border border-outline-variant">
+<div class="bg-rust-alert h-full w-[94%]"></div>
+</div>
+<span class="font-technical-mono text-technical-mono text-rust-alert w-10 text-right">94%</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center py-4 border-b border-surface-bright hover:bg-surface-container-highest transition-colors cursor-pointer group px-2">
+<div class="col-span-2 font-technical-mono text-technical-mono text-on-surface group-hover:text-amber-action transition-colors">OP-750-C</div>
+<div class="col-span-4 font-body-md text-body-md text-on-surface truncate">Target Vector / Timing</div>
+<div class="col-span-2 font-technical-mono text-technical-mono text-on-surface-variant">2023-08-04</div>
+<div class="col-span-4 flex items-center gap-3">
+<div class="flex-1 bg-surface-container-lowest h-1.5 rounded-full overflow-hidden border border-outline-variant">
+<div class="bg-amber-action h-full w-[82%]"></div>
+</div>
+<span class="font-technical-mono text-technical-mono text-amber-action w-10 text-right">82%</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center py-4 border-b border-surface-bright hover:bg-surface-container-highest transition-colors cursor-pointer group px-2">
+<div class="col-span-2 font-technical-mono text-technical-mono text-on-surface group-hover:text-amber-action transition-colors">OP-902-B</div>
+<div class="col-span-4 font-body-md text-body-md text-on-surface truncate">Timing / Off-peak Analysis</div>
+<div class="col-span-2 font-technical-mono text-technical-mono text-on-surface-variant">2023-11-20</div>
+<div class="col-span-4 flex items-center gap-3">
+<div class="flex-1 bg-surface-container-lowest h-1.5 rounded-full overflow-hidden border border-outline-variant">
+<div class="bg-amber-action h-full w-[68%] opacity-70"></div>
+</div>
+<span class="font-technical-mono text-technical-mono text-on-surface-variant w-10 text-right">68%</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 items-center py-4 hover:bg-surface-container-highest transition-colors cursor-pointer group px-2">
+<div class="col-span-2 font-technical-mono text-technical-mono text-on-surface group-hover:text-amber-action transition-colors">OP-411-X</div>
+<div class="col-span-4 font-body-md text-body-md text-on-surface truncate">Target Sector Overlap</div>
+<div class="col-span-2 font-technical-mono text-technical-mono text-on-surface-variant">2023-02-15</div>
+<div class="col-span-4 flex items-center gap-3">
+<div class="flex-1 bg-surface-container-lowest h-1.5 rounded-full overflow-hidden border border-outline-variant">
+<div class="bg-teal-status h-full w-[45%] opacity-50"></div>
+</div>
+<span class="font-technical-mono text-technical-mono text-on-surface-variant w-10 text-right">45%</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="col-span-12 bg-surface-container border border-outline-variant rounded p-container-padding h-96 flex flex-col relative overflow-hidden">
+<div class="flex justify-between items-center z-10 relative mb-6">
+<h2 class="font-headline-sm text-headline-sm text-primary">Vector Spatial Distribution</h2>
+<div class="flex gap-6 font-technical-mono text-[11px] text-on-surface-variant">
+<span class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded border border-amber-action bg-surface-container"></div> Target Baseline</span>
+<span class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded bg-rust-alert"></div> High Confidence Match</span>
+<span class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded bg-teal-status opacity-50"></div> Low Confidence Signal</span>
+</div>
+</div>
+<div class="flex-1 relative border-l border-b border-surface-bright grid-bg ml-8 mb-8">
+<div class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 font-technical-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Temporal Proximity</div>
+<div class="absolute top-1/2 -left-12 transform -translate-y-1/2 -rotate-90 font-technical-mono text-[10px] text-on-surface-variant uppercase tracking-widest">Technique Overlap</div>
+<div class="absolute left-[70%] top-[30%] w-5 h-5 border-[1.5px] border-amber-action bg-surface-container rounded-sm flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 cursor-crosshair group shadow-[0_0_12px_rgba(245,158,11,0.4)] z-20">
+<div class="w-1 h-1 bg-amber-action rounded-full"></div>
+<div class="hidden group-hover:block absolute -top-10 bg-surface-container-high border border-outline-variant text-on-surface font-technical-mono text-[11px] px-3 py-1.5 rounded whitespace-nowrap z-30 shadow-lg">OP-992-X (Baseline)</div>
+</div>
+<div class="absolute left-[65%] top-[35%] w-3 h-3 bg-rust-alert rounded transform -translate-x-1/2 -translate-y-1/2 cursor-crosshair group shadow-[0_0_8px_rgba(185,28,28,0.6)] z-10">
+<div class="hidden group-hover:block absolute -top-10 bg-surface-container-high border border-outline-variant text-on-surface font-technical-mono text-[11px] px-3 py-1.5 rounded whitespace-nowrap z-30 shadow-lg">OP-881-A (94%)</div>
+</div>
+<div class="absolute left-[50%] top-[45%] w-2.5 h-2.5 bg-amber-action rounded transform -translate-x-1/2 -translate-y-1/2 cursor-crosshair group opacity-90 z-10">
+<div class="hidden group-hover:block absolute -top-10 bg-surface-container-high border border-outline-variant text-on-surface font-technical-mono text-[11px] px-3 py-1.5 rounded whitespace-nowrap z-30 shadow-lg">OP-750-C (82%)</div>
+</div>
+<div class="absolute left-[35%] top-[60%] w-2 h-2 bg-amber-action rounded transform -translate-x-1/2 -translate-y-1/2 cursor-crosshair group opacity-70">
+<div class="hidden group-hover:block absolute -top-10 bg-surface-container-high border border-outline-variant text-on-surface font-technical-mono text-[11px] px-3 py-1.5 rounded whitespace-nowrap z-30 shadow-lg">OP-902-B (68%)</div>
+</div>
+<div class="absolute left-[20%] top-[80%] w-1.5 h-1.5 bg-teal-status rounded opacity-40"></div>
+<div class="absolute left-[80%] top-[10%] w-1.5 h-1.5 bg-teal-status rounded opacity-40"></div>
+<div class="absolute left-[85%] top-[70%] w-1.5 h-1.5 bg-teal-status rounded opacity-40"></div>
+<div class="absolute left-[15%] top-[40%] w-1.5 h-1.5 bg-teal-status rounded opacity-40"></div>
+<div class="absolute left-[45%] top-[85%] w-1.5 h-1.5 bg-teal-status rounded opacity-40"></div>
+<div class="absolute left-[10%] top-[15%] w-1.5 h-1.5 bg-teal-status rounded opacity-40"></div>
+<!-- Crosshairs for baseline -->
+<div class="absolute left-[70%] top-0 bottom-0 border-l border-dashed border-outline-variant opacity-30 pointer-events-none"></div>
+<div class="absolute top-[30%] left-0 right-0 border-t border-dashed border-outline-variant opacity-30 pointer-events-none"></div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

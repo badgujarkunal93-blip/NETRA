@@ -1,0 +1,144 @@
+# SIH 26189 — Stitch UI Prompts (Official Government Portal Theme)
+
+Matches the reference design: navy-blue + white + gold/amber, official/authoritative, government-portal credibility — not noir, not generic tech-SaaS.
+
+**Shared style guide — repeat this block's key points if any screen drifts:**
+- Primary background: deep navy blue (#0B1E3D–#0F2547 range) for header, nav, and hero/dashboard sections
+- Secondary background: clean white / very light grey (#F5F6F8) for content and data-table sections
+- Accent color: warm gold/amber (#D4A017–#E0A93A range) — used for primary CTAs, active states, highlight numbers, key stat figures
+- Alert/danger color: muted red (#C0392B–#D64541) used sparingly — only for emergency/high-severity indicators, never decorative
+- Text: white/off-white on navy backgrounds, dark navy/charcoal (#1A1A1A–#1F2937) on white backgrounds
+- Typography: bold, slightly condensed sans-serif for headings (uppercase tracking on nav labels and section titles), clean readable sans-serif (Inter/Roboto-style) for body text — no script/decorative fonts, no monospace/typewriter styling
+- Iconography: simple, clean line icons (shield, fingerprint, database, network, document) — official and minimal, not illustrative
+- Overall tone: an authoritative, credible government/law-enforcement portal — think official department website crossed with a professional intelligence command console. Structured grids, generous whitespace, clear hierarchy, subtle official emblem/crest motif where appropriate. No grunge, no noir textures, no glassmorphism.
+
+---
+
+## 0. Public Landing Page (reference — regenerate if needed)
+
+```
+Design a professional government portal landing page for "Mumbai Police — Criminal Intelligence Unit."
+
+Layout:
+- Top utility bar: white background, police emblem/crest + "MUMBAI POLICE / CRIMINAL INTELLIGENCE UNIT / TRUST • SERVICE • SECURITY" left-aligned, "Emergency: 100" in red with phone icon, "Helpline: 022-2262 2262", and a "Login" link with user icon, right-aligned.
+- Main navigation bar: deep navy background, uppercase nav links (Home, About Us, Solutions with dropdown chevron, Features, Technology, Publications, Careers, Contact Us), and a gold "AUTHORIZED LOGIN" button with lock icon on the far right.
+- Hero section: deep navy background. Large bold headline stacked in three lines "INTELLIGENCE." / "INSIGHT." / "IMPACT." — first two lines white, third line in gold — with a short gold underline accent beneath. Below it, a two-sentence description of an AI-powered investigator platform. A gold "ACCESS COMMAND CENTER" button with arrow icon, and a small "Secure. Confidential. Authorized Access Only." line with shield icon underneath.
+- Right side of hero: a stylized dark map of Mumbai with glowing network nodes (person, phone, vehicle, document, location icons) connected by thin lines radiating from a central "key individual" node, gold and white glowing connections.
+- Far right of hero: a floating "ACTIVE OVERVIEW" stat card (dark navy, gold header text) listing Active Networks, Key Individuals, Linked Cases (numbers in large gold/white), and High Priority Alerts (number in red), with a "View all alerts" gold link.
+- Below hero: white background, five-column feature row with clean line icons and short labels (Secure & Encrypted, Role-Based Access, Integrated Sources, AI-Driven Insights, Evidence-First Approach), each with a one-line description.
+- "Our Mission" section: light grey background, centered gold-underlined heading, mission statement text, with a faded monochrome image of a Mumbai landmark on the right.
+- Footer: navy background, copyright line left, Privacy Policy / Terms of Use / Disclaimer links right.
+
+Style: strictly navy blue, white, and gold/amber palette as described; official, authoritative, credible government-portal feel.
+```
+
+---
+
+## 1. Investigator Command Center (Dashboard, post-login)
+
+```
+Design the internal "Investigator Command Center" dashboard in the same official government-portal theme as the public site (deep navy, white, gold/amber accents) — this is what an authorized investigator sees after logging in.
+
+Layout:
+- Top bar: white background, small crest/logo + "Criminal Intelligence Unit — Command Center" left, global search bar center ("Search person, phone, vehicle, case..."), investigator name/badge icon + notification bell right.
+- Left sidebar: deep navy background, white nav labels with clean line icons (Dashboard, Case Search, Entities, Knowledge Graph, Alerts, MO Analysis, Reports), active item highlighted with a gold left-border accent and gold icon.
+- Stat card row: white cards with subtle shadow on a light-grey page background — "Active Cases", "Open Alerts" (number in red), "Entities Tracked" — large bold navy numbers, small gold icon per card.
+- "Recent Alerts" panel: white card, navy header bar with "Recent Alerts" and a gold "View All" link. Each alert row: small colored severity dot (gold/red/navy), bold short description, case/entity reference in grey, confidence shown as a small gold percentage badge, timestamp right-aligned.
+- "Active Hotspots" panel: a clean dark-navy stylized Mumbai map (same visual language as the landing page hero map) with gold/red glowing cluster markers.
+- "AI-Inferred Findings" row: three white cards with a small gold icon, one-line finding text, confidence percentage badge, "View Evidence" gold text link.
+
+Style: navy/white/gold only, clean grid alignment, official and serious — this should look like a credible deployed government intelligence tool.
+```
+
+---
+
+## 2. Entity Profile Page (Person)
+
+```
+Design an "Entity Profile" screen in the official government-portal theme (navy/white/gold), consistent with the Command Center dashboard.
+
+Layout:
+- Header bar: white background, person's name in bold navy heading, alias tags as small grey pill chips, a status badge ("Person of Interest" / "Accused" / "Witness") in navy-with-gold-border style, identity-confidence shown as a gold percentage badge.
+- Left panel: white card listing key attributes (DOB/age, gender, linked case count, first/last seen) with small navy line icons; counts for linked phones/vehicles/accounts shown as small icon+number chips.
+- Center panel: tabbed navigation (Timeline, Relationships, Cases, Evidence) styled as clean underlined tabs, gold underline on active tab. Timeline tab shows a vertical list of event entries, each with a small navy icon by type, bold timestamp, and description text.
+- Right panel: "Connected Entities" shown as a simplified node-link preview (navy nodes, gold connecting lines on white/light-grey background) with a gold "Open in Knowledge Graph" button.
+- Distinguish observed vs AI-inferred facts: observed facts in standard navy/charcoal text, AI-inferred facts with a small gold "AI Inferred" tag and slightly muted grey text plus a confidence percentage.
+
+Style: strictly navy/white/gold, clean official card layout, generous whitespace, subtle shadows instead of borders.
+```
+
+---
+
+## 3. Knowledge Graph Explorer
+
+```
+Design a full-screen knowledge graph explorer in the official government-portal theme (navy/white/gold), matching the network-map visual style used in the landing page hero.
+
+Layout:
+- Full-canvas graph on a deep navy background (same as the landing-page hero map). Nodes are clean circular icons: Person (white silhouette), Phone, Vehicle, Account, Organization, Location — each in white/light-grey with a thin gold ring when selected. Edges are thin white/gold lines, brighter and more saturated gold for higher-confidence/observed relationships, thinner dimmer white-grey dashed lines for AI-inferred relationships.
+- Left floating panel: white/light card with filter controls (entity type checkboxes, relationship type checkboxes, confidence threshold slider styled with a gold slider handle, date range picker).
+- Right floating panel: white card showing "Selected Node" details (name, type, key attributes) with a gold "View Full Profile" button, appears when a node is clicked.
+- Top toolbar: white search bar to jump to an entity, "Run Community Detection" and "Run Link Prediction" as navy buttons with gold text/icon.
+- Bottom-left legend: small white card explaining line colors (gold = observed, dashed grey = inferred) and node icon meanings.
+
+Style: navy canvas as the dominant graph background, gold as the "important/confirmed" signal color, white for structure/UI chrome, clean and professional — no glow/neon or grunge effects.
+```
+
+---
+
+## 4. Case / FIR Search & Detail
+
+```
+Design a "Case Search & Detail" screen in the official government-portal theme (navy/white/gold).
+
+Layout:
+- Top: white search bar with filter dropdown chips below it (Case Category, Crime Head, Police Station, Date Range, Case Status) styled as small grey pill selectors with navy text.
+- Left column: scrollable white case-result cards, each showing Crime No. in bold navy, a status badge (Open = gold border, Closed = grey, Under Investigation = navy-filled with white text), crime major/minor head, registration date, and a small location line with a line-icon map pin.
+- Right column: detail panel, white background —
+  - Header: Crime No., Case No., status badge, date, station in a clean row.
+  - "Brief Facts" narrative in a light-grey text block with a navy left border accent.
+  - "Extracted Intelligence": MO attributes as small navy-outlined tag chips (Target, Timing, Entry Method, Tools, Transport) each with a gold confidence percentage.
+  - "Linked Entities": small circular icon chips for accused/victims/complainants/phones/vehicles, clickable, navy icon on light-grey circle.
+  - "Similar Cases (MO Match)": horizontal scroll of case cards with a gold percentage similarity score prominently displayed.
+
+Style: navy/white/gold throughout, official document/record-management feel, clean typography and alignment, minimal shadows.
+```
+
+---
+
+## 5. Alerts & Findings Panel
+
+```
+Design an "Alerts & Findings" screen in the official government-portal theme (navy/white/gold).
+
+Layout:
+- Top filter bar: white background, severity tabs (High/Medium/Low) as underlined tabs with gold active-tab underline, alert type and status filters as clean dropdowns.
+- Main content: a list of white alert rows/cards on a light-grey page background, each with a left color-coded accent bar (red = high, gold = medium, navy = low), bold short AI-generated description, target entity/case shown as a small chip, confidence as a gold percentage badge, evidence count with a small document icon, timestamp right-aligned, and action buttons (Review = navy filled, Assign = white/navy-outline, Dismiss = grey text link).
+- Expanded row: full explanation text, evidence list as small linked document chips, model name/version in small grey footer text, reviewer decision log as a compact table (Reviewer, Decision, Timestamp).
+- Right sidebar: white "Investigation Findings" feed, chronological list of findings each with a small status icon (pending = grey clock, confirmed = gold check, rejected = red x) and confidence percentage.
+
+Style: navy/white/gold, red used sparingly and only for genuine high-severity signals, clean official alert-queue layout — should feel like a serious operations console, not a busy dashboard.
+```
+
+---
+
+## 6. MO (Modus Operandi) Similarity View
+
+```
+Design an "MO Similarity Analysis" screen in the official government-portal theme (navy/white/gold).
+
+Layout:
+- Top: selected case summary bar, white background, Crime No./crime type/MO tag summary in bold navy text with a gold accent line underneath.
+- Center-left: the selected case's MO fingerprint as a clean vertical list of labeled attribute rows (Target, Timing, Entry/Approach, Tools, Transport, Concealment, Action Sequence, Victim Interaction, Exit/Escape, Group Behavior) in a white card with navy labels and grey values.
+- Center-right: ranked "Similar Cases" list, each as a white card with a large gold percentage similarity score, and small check/dash icons per MO component (gold check = match, light-grey dash = no match).
+- Bottom: an embedding-space scatter plot on a light-grey/white panel with navy dots for other cases and a highlighted gold dot with a subtle ring for the selected case, giving a clean "cluster of similar cases" visualization — no dark/glow effects, just clean data-visualization styling consistent with a professional analytics tool.
+
+Style: navy/white/gold strictly, clean analytical/data-visualization feel appropriate for a credible government intelligence platform.
+```
+
+---
+
+**Consistency tips:**
+- Generate in order: Landing (if regenerating) → Dashboard → Entity Profile → Knowledge Graph → Case Search → Alerts → MO Similarity, so Stitch carries the navy/white/gold system forward.
+- If any screen drifts toward extra colors or decorative styling, re-prompt with: "strip any color outside navy blue, white, and gold/amber (except red for genuine alerts) — keep this strictly on-brand with the official portal theme."
+- The gold accent should always mean "important/confirmed/primary action" — keep that meaning consistent so the whole product feels like one coherent system.

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Entity Profile - Mumbai Police CIU</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Archivo+Narrow:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#edeef0",
+                        "on-surface": "#191c1e",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e2e2e2",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#071b3a",
+                        "surface-container-low": "#f3f4f6",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary": "#5d5f5f",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#364768",
+                        "on-background": "#191c1e",
+                        "inverse-primary": "#b6c6ee",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-tertiary-container": "#ab7f00",
+                        "tertiary-fixed-dim": "#f6be39",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#000516",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "primary-fixed-dim": "#b6c6ee",
+                        "ink-navy": "#1A1A1A",
+                        "tertiary": "#090500",
+                        "tertiary-container": "#291c00",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary-container": "#7686ab",
+                        "on-secondary-container": "#616363",
+                        "alert-red": "#C0392B",
+                        "surface-tint": "#4e5e81",
+                        "background": "#f8f9fb",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#44474e",
+                        "surface-muted": "#E2E8F0",
+                        "surface-container-high": "#e7e8ea",
+                        "outline-variant": "#c5c6cf",
+                        "surface-bright": "#f8f9fb",
+                        "tertiary-fixed": "#ffdfa0",
+                        "primary-container": "#0b1e3d",
+                        "surface": "#f8f9fb",
+                        "outline": "#75777f",
+                        "surface-dim": "#d9dadc",
+                        "surface-variant": "#e1e2e4",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "inverse-on-surface": "#f0f1f3",
+                        "secondary-container": "#dfe0e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Archivo Narrow"],
+                        "body-lg": ["Inter"],
+                        "code-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Archivo Narrow"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Archivo Narrow"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Archivo Narrow"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "code-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-low fixed top-0 w-full z-50 border-b border-surface-muted flex justify-between items-center px-margin-desktop h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">Mumbai Police Criminal Intelligence Unit</span>
+</div>
+<nav class="hidden md:flex gap-6 items-center h-full">
+<a class="h-full flex items-center text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80 px-2 font-label-lg text-label-lg" href="#">Directory</a>
+<a class="h-full flex items-center text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80 px-2 font-label-lg text-label-lg" href="#">Resources</a>
+<a class="h-full flex items-center text-on-surface-variant hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-80 px-2 font-label-lg text-label-lg" href="#">Help Desk</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary border-2 border-primary px-4 py-1 rounded font-label-md text-label-md hover:bg-surface-container-high transition-colors">AUTHORIZED LOGIN</button>
+<div class="flex gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">settings</span>
+</div>
+<img class="w-8 h-8 rounded-full border border-surface-muted object-cover ml-2" data-alt="A small, professional portrait photograph of an investigator in a formal setting, used as a profile avatar. The style is clear, well-lit, and suitable for an official government database interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoI_DPvnUP42M2osLK4b0QLwNCilu22QIWBBhBvBzLDWNASESXxYXzLmDaAhKfW01ucq2j5yzI9nu6NU_Y2HrAmeFdkBT8QS3swPrB4NQqzHFkYlHJ3NxxobANRG6otepAh9cLwfR_Vk7A2cTlsmys_aetearumDcunAoqXeotOsYchjALC2shjFeX78iUI3aoLyLwf9G3iw-q_oMPqre6w38UL5R92EeH-mM1tynh00uUgIHzd8-k"/>
+</div>
+</header>
+<div class="flex flex-1 pt-16">
+<!-- SideNavBar -->
+<aside class="bg-primary dark:bg-primary-container fixed left-0 top-0 h-full w-[240px] z-40 shadow-md flex flex-col py-8 px-4 gap-4 hidden lg:flex">
+<div class="flex flex-col items-center mb-6">
+<img class="w-16 h-16 mb-4 object-contain" data-alt="A polished, high-resolution rendering of the Mumbai Police emblem, rendered in metallic gold and navy blue tones. The emblem should look official, authoritative, and suitable for a high-tech intelligence command dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmk87GNxGf_w39-15n6mQcB1GLOsTvkjMPVZpho1174SyhtSItkU7QWvPq1TtwSztmWLZOpjDnbN3E7mlEA0hg-d-mdRInqW6anhD1PJ9RB3sVK3TabKsAfRI0zbcm6rqMBKpo9RslAOjwMUTQNJJ2Qajn8oDCtPvziTNy6M9GLbjHZieK7CX4Y6bY5ugyx1RMU5BIHwsWf0mTi2JqL2gMbs8siZC4KvhXseOwBsAIL-eAjeYOZh_s"/>
+<h1 class="font-headline-md text-headline-md text-on-primary uppercase tracking-wider text-center">CIU COMMAND</h1>
+<p class="font-label-md text-label-md text-on-primary opacity-70 mt-1">Authorized Personnel Only</p>
+</div>
+<button class="bg-tertiary-fixed-dim text-primary py-2 px-4 rounded font-label-lg text-label-lg mb-4 hover:bg-tertiary-fixed transition-colors">New Case File</button>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 p-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Command Center
+                </a>
+<a class="flex items-center gap-3 p-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">folder_shared</span>
+                    Case Files
+                </a>
+<a class="flex items-center gap-3 p-3 rounded bg-tertiary-container text-tertiary-fixed-dim border-l-4 border-tertiary-fixed-dim transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">person_search</span>
+                    Entity Search
+                </a>
+<a class="flex items-center gap-3 p-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">rss_feed</span>
+                    Intelligence Feed
+                </a>
+<a class="flex items-center gap-3 p-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">visibility</span>
+                    Surveillance
+                </a>
+<a class="flex items-center gap-3 p-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">description</span>
+                    Reports
+                </a>
+</nav>
+<div class="mt-auto flex flex-col gap-2 border-t border-on-primary-container pt-4">
+<a class="flex items-center gap-3 p-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 p-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">logout</span>
+                    Logout
+                </a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 lg:ml-[240px] p-margin-desktop bg-surface max-w-container-max mx-auto w-full">
+<!-- Profile Header -->
+<div class="bg-surface-container-lowest border border-surface-muted p-gutter rounded-lg mb-gutter flex flex-col md:flex-row gap-6 items-start md:items-center">
+<div class="relative">
+<img class="w-32 h-32 rounded object-cover border border-surface-muted" data-alt="A clear, high-contrast, official mugshot-style photograph of a male subject in his late 40s. The lighting is clinical and direct, typical of police booking photos. The background is a plain neutral gray, fitting within a strict, professional intelligence dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgQUXnZICafh4EsAZIwg4NgxrBFSnqqRJwtFIY-ZdkgYTmj_t-dUQhbJEoQGE17HcjqViRoklnL5njipioVmSrvTceonLWv67DwhIPMXNf7KltGShKAfMx9HBVEZ8C2XKke42VWev3P0H2wxzc2aJyYzVDdiH7qOVWtf-fzt3brkpwqU5ulHuIOPskJ_sgYDBDDQQZq3izObUQgvRHEBrmV_vAan7TNtijwroVIrbHpmHNU79Q1yPt"/>
+<div class="absolute -bottom-2 -right-2 bg-tertiary-fixed-dim text-primary font-label-md text-label-md px-2 py-1 rounded border border-surface-container-lowest flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                         94% Match
+                     </div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-2">
+<h2 class="font-headline-lg text-headline-lg text-primary">Vikram 'Vicky' Desai</h2>
+<span class="bg-alert-red text-on-error px-2 py-1 rounded text-[12px] font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                            High Priority
+                        </span>
+<span class="border border-primary text-primary px-2 py-1 rounded text-[12px] font-bold uppercase tracking-wider">Person of Interest</span>
+</div>
+<div class="flex gap-2 mb-4">
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full font-label-md text-label-md border border-surface-muted">Alias: The Broker</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full font-label-md text-label-md border border-surface-muted">Alias: V.D.</span>
+</div>
+<p class="text-on-surface-variant font-body-sm max-w-3xl">
+                        Subject is believed to be a central figure in a network of illicit financial transfers operating between South Mumbai and international offshore accounts. Last confirmed sighting in Colaba district.
+                    </p>
+</div>
+<div class="flex flex-col gap-3 min-w-[200px]">
+<button class="bg-primary text-on-primary py-2 px-4 rounded font-label-lg text-label-lg w-full flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+                        Update Profile
+                    </button>
+<button class="border border-surface-muted text-on-surface-variant py-2 px-4 rounded font-label-lg text-label-lg w-full flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">download</span>
+                        Export Dossier
+                    </button>
+</div>
+</div>
+<!-- Three Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Panel: Attributes -->
+<div class="col-span-1 lg:col-span-3 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest border border-surface-muted rounded-lg p-6">
+<h3 class="font-headline-sm text-headline-sm text-primary border-b border-surface-muted pb-3 mb-4">Key Attributes</h3>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">calendar_today</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase">Date of Birth</div>
+<div class="font-body-md text-body-md text-on-surface">14 Nov 1978 (45 yrs)</div>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">fingerprint</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase">Biometric Status</div>
+<div class="font-body-md text-body-md text-on-surface">Partial prints on file</div>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">account_balance</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase">Linked Assets</div>
+<div class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+                                        3 Properties
+                                        <span class="bg-tertiary-fixed-dim/20 text-tertiary-container text-[10px] px-1.5 py-0.5 rounded font-bold border border-tertiary-fixed-dim">AI INFERRED 72%</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary mt-0.5">folder_special</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant uppercase">Active Case Involvements</div>
+<div class="font-body-md text-body-md text-on-surface">2 Open, 1 Closed</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Center Panel: Tabs & Timeline -->
+<div class="col-span-1 lg:col-span-6 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest border border-surface-muted rounded-lg overflow-hidden flex flex-col h-full">
+<!-- Tabs -->
+<div class="flex border-b border-surface-muted bg-surface-container-low">
+<button class="flex-1 py-3 px-4 text-primary border-b-2 border-tertiary-fixed-dim font-label-lg text-label-lg bg-surface-container-lowest">Timeline</button>
+<button class="flex-1 py-3 px-4 text-on-surface-variant hover:bg-surface-container-lowest hover:text-primary transition-colors font-label-lg text-label-lg">Relationships</button>
+<button class="flex-1 py-3 px-4 text-on-surface-variant hover:bg-surface-container-lowest hover:text-primary transition-colors font-label-lg text-label-lg">Cases</button>
+<button class="flex-1 py-3 px-4 text-on-surface-variant hover:bg-surface-container-lowest hover:text-primary transition-colors font-label-lg text-label-lg">Evidence</button>
+</div>
+<!-- Timeline Content -->
+<div class="p-6 flex-1 overflow-y-auto">
+<div class="relative border-l-2 border-surface-muted ml-3 flex flex-col gap-8">
+<!-- Timeline Item 1 -->
+<div class="relative pl-6">
+<div class="absolute -left-[11px] top-1 bg-surface-container-lowest border-2 border-primary w-5 h-5 rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant mb-1">Today, 09:42 AM</div>
+<div class="bg-surface-container-low border border-surface-muted rounded p-3">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="font-headline-sm text-headline-sm text-primary">Sighting Reported</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Vehicle matching subject's primary transport picked up by ANPR camera near Bandra-Worli Sea Link.</p>
+</div>
+</div>
+<!-- Timeline Item 2 (AI Inferred) -->
+<div class="relative pl-6">
+<div class="absolute -left-[11px] top-1 bg-surface-container-lowest border-2 border-tertiary-fixed-dim w-5 h-5 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-tertiary-fixed-dim">psychology</span>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant mb-1 flex items-center gap-2">
+                                        12 Oct 2023, 14:15 PM
+                                        <span class="bg-tertiary-fixed-dim/20 text-tertiary-container text-[10px] px-1.5 py-0.5 rounded font-bold border border-tertiary-fixed-dim ml-2 flex items-center gap-1">
+                                            AI INFERRED 88%
+                                        </span>
+</div>
+<div class="bg-surface-container-low border border-tertiary-fixed-dim/30 rounded p-3 border-l-4 border-l-tertiary-fixed-dim">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-[18px]">sync_alt</span>
+<span class="font-headline-sm text-headline-sm text-primary">Suspected Transaction</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Pattern analysis suggests a high probability of fund transfer to a shell corporation associated with Alias 'The Broker' during this window.</p>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative pl-6">
+<div class="absolute -left-[11px] top-1 bg-surface-container-lowest border-2 border-primary w-5 h-5 rounded-full flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant mb-1">05 Sep 2023</div>
+<div class="bg-surface-container-low border border-surface-muted rounded p-3">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-[18px]">gavel</span>
+<span class="font-headline-sm text-headline-sm text-primary">Subpoena Issued</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">Subpoena for financial records served to primary residence. Returned unacknowledged.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Graph -->
+<div class="col-span-1 lg:col-span-3 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest border border-surface-muted rounded-lg p-6 h-full flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary border-b border-surface-muted pb-3 mb-4 flex items-center justify-between">
+                            Connected Entities
+                            <span class="material-symbols-outlined text-on-surface-variant text-[18px]">hub</span>
+</h3>
+<div class="flex-1 min-h-[250px] bg-surface-container-low border border-surface-muted rounded flex items-center justify-center relative overflow-hidden mb-4 p-4">
+<!-- Abstract Representation of a Graph -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#000516 1px, transparent 1px); background-size: 16px 16px;"></div>
+<div class="relative w-full h-full flex items-center justify-center">
+<!-- Central Node -->
+<div class="absolute z-10 bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center border-2 border-tertiary-fixed-dim shadow-[0_0_15px_rgba(246,190,57,0.3)]">
+<span class="material-symbols-outlined">person</span>
+</div>
+<!-- Lines & Outer Nodes (Simulated) -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#071b3a" stroke-dasharray="4" stroke-width="2" x1="50%" x2="20%" y1="50%" y2="20%"></line>
+<line stroke="#f6be39" stroke-width="2" x1="50%" x2="80%" y1="50%" y2="30%"></line>
+<line stroke="#071b3a" stroke-width="2" x1="50%" x2="30%" y1="50%" y2="80%"></line>
+</svg>
+<div class="absolute top-[10%] left-[10%] bg-surface-container-lowest border border-surface-muted text-[10px] font-label-md px-2 py-1 rounded">Corp A</div>
+<div class="absolute top-[20%] right-[10%] bg-surface-container-lowest border border-tertiary-fixed-dim text-[10px] font-label-md px-2 py-1 rounded text-primary flex items-center gap-1">
+                                    Associate X
+                                    <span class="w-1.5 h-1.5 bg-tertiary-fixed-dim rounded-full"></span>
+</div>
+<div class="absolute bottom-[10%] left-[20%] bg-surface-container-lowest border border-surface-muted text-[10px] font-label-md px-2 py-1 rounded">Vehicle (MH01...)</div>
+</div>
+</div>
+<button class="bg-tertiary-fixed-dim text-primary py-2 px-4 rounded font-label-lg text-label-lg w-full flex items-center justify-center gap-2 hover:bg-tertiary-fixed transition-colors mt-auto shadow-sm">
+<span class="material-symbols-outlined">account_tree</span>
+                            Open in Knowledge Graph
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary-container z-50 border-t border-on-primary-container w-full">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-gutter w-full max-w-container-max mx-auto">
+<div class="flex flex-col gap-2">
+<span class="font-label-lg text-label-lg text-secondary-fixed">MUMBAI POLICE CIU</span>
+<span class="font-body-sm text-body-sm text-on-primary opacity-60">© 2024 Mumbai Police Criminal Intelligence Unit. All Rights Reserved. Govt. of Maharashtra.</span>
+</div>
+<nav class="flex gap-6 mt-4 md:mt-0">
+<a class="font-body-sm text-body-sm text-on-primary opacity-60 hover:text-tertiary-fixed transition-colors cursor-default" href="#">Legal Notice</a>
+<a class="font-body-sm text-body-sm text-on-primary opacity-60 hover:text-tertiary-fixed transition-colors cursor-default" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-primary opacity-60 hover:text-tertiary-fixed transition-colors cursor-default" href="#">Compliance</a>
+<a class="font-body-sm text-body-sm text-on-primary opacity-60 hover:text-tertiary-fixed transition-colors cursor-default" href="#">Cyber Cell</a>
+</nav>
+</div>
+</footer>
+</body></html>

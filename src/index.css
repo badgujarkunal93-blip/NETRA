@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  :root {
+    --navy-950: #061121;
+    --navy-900: #0A192F;
+    --navy-850: #0E223D;
+    --navy-800: #132B4C;
+    --navy-700: #1C3B64;
+    --navy-600: #254F85;
+    
+    --surface-bg: #F1F5F9;
+    --surface-card: #FFFFFF;
+    --surface-muted: #F8FAFC;
+    --surface-border: #E2E8F0;
+    --surface-border-strong: #CBD5E1;
+    
+    --text-main: #0F172A;
+    --text-muted: #475569;
+    --text-subtle: #64748B;
+    
+    --accent-amber: #B45309;
+    --accent-amber-light: #FEF3C7;
+    --accent-red: #B91C1C;
+    --accent-red-light: #FEE2E2;
+    --accent-emerald: #047857;
+    --accent-emerald-light: #D1FAE5;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F1F5F9;
+    color: #0F172A;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Leaflet Dark Map Customization */
+.leaflet-container {
+  background-color: #061121 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.custom-map-marker {
+  background: transparent;
+  border: none;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #0A192F !important;
+  color: #FFFFFF !important;
+  border: 1px solid #132B4C !important;
+  border-radius: 6px !important;
+}
+
+.leaflet-popup-tip {
+  background-color: #0A192F !important;
+  border: 1px solid #132B4C !important;
+}
+
+/* Institutional custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E2E8F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94A3B8;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748B;
+}
+
+/* Dark scrollbars for navy surfaces */
+.dark-scroll::-webkit-scrollbar-track {
+  background: #0A192F;
+}
+.dark-scroll::-webkit-scrollbar-thumb {
+  background: #1C3B64;
+  border-radius: 2px;
+}
+.dark-scroll::-webkit-scrollbar-thumb:hover {
+  background: #B45309;
+}

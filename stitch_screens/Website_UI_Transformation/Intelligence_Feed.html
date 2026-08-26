@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AETHER INTEL - Main Feed</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#271900",
+                        "surface-dim": "#131313",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-bright": "#3a3939",
+                        "surface": "#131313",
+                        "on-secondary": "#313030",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#7c5800",
+                        "surface-container": "#201f1f",
+                        "tertiary-container": "#c6c4c4",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-tint": "#ffba20",
+                        "tertiary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary": "#ffdca1",
+                        "primary-fixed-dim": "#ffba20",
+                        "surface-container-highest": "#353534",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary-container": "#ffb800",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "surface-variant": "#353534",
+                        "outline": "#9e8f78",
+                        "on-primary": "#412d00",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#d5c4ab",
+                        "on-tertiary-container": "#515151",
+                        "secondary-container": "#474746",
+                        "on-background": "#e5e2e1",
+                        "on-primary-container": "#6b4c00",
+                        "on-tertiary": "#303030",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#514532",
+                        "secondary": "#c8c6c5",
+                        "on-primary-fixed-variant": "#5e4200",
+                        "tertiary": "#e2e0df",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "primary-fixed": "#ffdea8",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "stack-unit": "8px",
+                        "sidebar-width": "280px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0F0F0F; color: #e5e2e1; }
+        .amber-glow { box-shadow: 0 0 15px rgba(255, 184, 0, 0.2); }
+        .amber-glow:hover { box-shadow: 0 0 25px rgba(255, 184, 0, 0.3); }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden min-h-screen flex bg-background text-on-background">
+<!-- SideNavBar Component -->
+<aside class="bg-surface-container-low fixed left-0 top-0 h-full w-sidebar-width border-r border-outline-variant flex flex-col h-full py-stack-unit z-20 hidden md:flex">
+<div class="px-6 py-8 flex flex-col gap-2 border-b border-outline-variant mb-6">
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">AETHER INTEL</h1>
+<p class="font-label-caps text-label-caps text-secondary">Strategic Oversight</p>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface font-semibold border-l-2 border-primary-container bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span class="font-label-caps text-label-caps">Main</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-caps text-label-caps">Dashboard Intel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-label-caps text-label-caps">AI Risk Engine</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps">Financials &amp; Playbook</span>
+</a>
+</nav>
+<div class="px-6 py-6 border-t border-outline-variant space-y-4">
+<button class="w-full bg-primary-container text-black font-label-caps text-label-caps py-3 rounded hover:bg-surface-tint transition-colors amber-glow flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span> Generate Report
+            </button>
+<div class="space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps text-[10px]">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
+<span class="font-label-caps text-label-caps text-[10px]">Support</span>
+</a>
+</div>
+<div class="flex items-center gap-3 mt-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden">
+<img alt="User Intelligence Profile" class="w-full h-full object-cover" data-alt="A futuristic, minimalist portrait of a strategic intelligence analyst in a dark control room setting. High contrast, cinematic lighting with subtle amber reflections on a sleek visor. Professional, serious mood. Dark void background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJos89t5zYhuVjfkAX93cbVhA1l4Cd5oz0DOqmcdTWCSIEscnASFuv6EOd5urEIlilPMcVkfmSPtIziF4c8bxk1SQ3B4CXKCwYthxac0c_C1Uyo8cWPxUBE-ssFkGgLlo6dsdwUE9sdkvN__jbBuVCYzJHbqMCaMWPL-wTIiNh9q8n045_ioZ5P2LbJgC1LpRrU8UkoU0fJHenh64llW48y9U1CBOdLes9MkHXfTbgdaO5hti_scUGhw"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface">Node-Alpha</span>
+<span class="font-label-sm text-label-sm text-secondary">Active</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-sidebar-width flex flex-col min-h-screen">
+<!-- TopNavBar Component -->
+<header class="bg-surface border-b border-outline-variant flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop sticky top-0 z-10 w-full">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-md text-headline-md text-primary font-bold">AETHER</div>
+</div>
+<div class="flex-1 max-w-md mx-8 hidden md:block">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">search</span>
+<input class="w-full bg-[#0A0A0A] border border-[#2C2C2C] rounded pl-10 pr-4 py-2 text-on-surface focus:border-primary-container focus:outline-none focus:ring-1 focus:ring-primary-container transition-colors font-body-sm text-body-sm placeholder-secondary-fixed-dim" placeholder="Query Intelligence Network..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden ml-2 cursor-pointer">
+<img alt="Analyst Profile" class="w-full h-full object-cover" data-alt="A sleek, high-tech abstract avatar representation suitable for a strategic analyst profile. Dark grey base with glowing amber geometric lines. Minimalist, premium, secure aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5niOh62d3UarhfgQME2JA3dFPLtgnCZjBI3doRHB3BR5-n6skljQ4dA9MseCMMlbSUVte6nn-dHFa6vP1PN3lvFrBCo7_T-3M_o_EJFueoEb1E_hThl0S-EYBmjVwBiypHAA3nqnmhPkVKgbwM8Miawn57GTWJohBQiWbzsfrdUnMpWDkaKS6oSVk57dIgJQifjUCWLHHGwC7Jz9N4WOaNoqa6S-nzUF5fnCG9P3prYB2guKXZ4ju3w"/>
+</div>
+</div>
+</header>
+<!-- Feed Content -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop pb-24 overflow-y-auto">
+<!-- Live Ticker -->
+<div class="mb-8 overflow-hidden border border-outline-variant rounded bg-[#1A1A1A] py-2 flex items-center">
+<div class="px-4 border-r border-outline-variant flex items-center gap-2 font-label-caps text-label-caps text-primary-container shrink-0">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                    LIVE PULSE
+                </div>
+<div class="flex-1 overflow-hidden whitespace-nowrap pl-4">
+<div class="inline-block animate-[marquee_20s_linear_infinite] font-label-caps text-label-caps text-secondary-fixed-dim">
+                        &gt; SEQ_01: ASIAN MARKETS STABILIZE AMIDST TECH SECTOR VOLATILITY | &gt; SEQ_02: QUANTUM COMPUTING STARTUP SECURES $500M SERIES C | &gt; SEQ_03: EUROPEAN REGULATORS PROPOSE NEW AI OVERSIGHT FRAMEWORK | &gt; SEQ_04: CRYPTO YIELDS SPIKE FOLLOWING DECENTRALIZED EXCHANGE UPGRADE
+                    </div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Intelligence Feed -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<div class="flex items-center justify-between mb-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Primary Intel Feed</h2>
+<div class="flex gap-2">
+<button class="font-label-caps text-label-caps text-primary border-b border-primary pb-1">LATEST</button>
+<button class="font-label-caps text-label-caps text-secondary hover:text-primary transition-colors pb-1">TOP</button>
+</div>
+</div>
+<!-- Lead Story Card -->
+<article class="bg-[#1A1A1A] border border-[#2C2C2C] rounded overflow-hidden group cursor-pointer hover:border-primary-container transition-colors duration-300">
+<div class="w-full h-64 md:h-80 relative overflow-hidden">
+<img alt="Reference Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfdAk97JBYFgrCZ5BTQNiNz5DfF4eocZyBJCwXotftNydzjaqhf7UCdvjmfXSmsKd50Z6hwQgYjzyQ2Xp8AvUq3KWYcCk8_dzgFhHEd9vgTWzqOLvjL_Sq92tDZlYu9b3vMsZpNLodzuwC33PBszG1QAq673ik_6ZfsVvMPMK81qDOacJDaW6dtKf2H1qR1zgoYCkiq1XzOhU4ME4pZwtud-MdTyZx0qC9Oc9zyNLSz_cSGbxACtcCqI4RAdHFEy0CHvo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<span class="bg-primary-container text-black font-label-caps text-label-caps px-2 py-1 rounded">DEEP TECH</span>
+<span class="font-label-caps text-label-caps text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span> 12.4K
+                                </span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">Quantum Supremacy Milestone: Global Implications for Cryptography</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Initial reports indicate a major breakthrough in qubit stability, potentially accelerating the timeline for breaking standard RSA encryption algorithms.</p>
+<div class="flex items-center gap-4 text-secondary text-sm">
+<span class="font-label-caps text-label-caps">By: Node-Delta</span>
+<span class="font-label-caps text-label-caps">• 2h ago</span>
+</div>
+</div>
+</article>
+<!-- Feed Item 2 -->
+<article class="bg-[#1A1A1A] border border-[#2C2C2C] rounded p-5 flex flex-col sm:flex-row gap-5 group cursor-pointer hover:border-primary-container transition-colors duration-300">
+<div class="w-full sm:w-48 h-32 shrink-0 rounded overflow-hidden relative">
+<img alt="Chip Manufacturing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stylized macro photography shot of an advanced semiconductor microchip illuminated by stark, high-contrast amber and white lighting. Dark, deep black background conveying a sense of premium, secretive technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClz3BYBe2tM0LWh2PJiMyGV6ggw8IsHDUjLqtGVJpN016a59Nzxgog8ydFH8zRGoEcxxrLuiSiPzn1g3ed-IDhbrunNgJQqNrlXvVXpujEkXT8GN0Aqw5QVbV13KEvbxZqdB7tcuKOOTF1XuV_qel1cNQMA7HVAGioZpxCsLxISGVnqtVIF8r3pQ0LfYSSjBIfCp3FiEmJINUghlVQa9ZElZgSHFN-fb1rPpfUc2KuiBvHyLspI97keg"/>
+<div class="absolute top-2 left-2 bg-surface-container-high border border-outline-variant px-2 py-0.5 rounded">
+<span class="font-label-caps text-label-caps text-[10px] text-secondary">FINANCE</span>
+</div>
+</div>
+<div class="flex flex-col justify-between flex-1">
+<div>
+<h3 class="font-headline-md text-[18px] font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors leading-tight">Supply Chain Pivot: Semiconductor Giants Diversify Foundry Locations</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Geopolitical tensions drive massive capital expenditure shifts towards alternative manufacturing hubs in Southeast Asia and Europe.</p>
+</div>
+<div class="flex items-center justify-between mt-3">
+<span class="font-label-caps text-label-caps text-secondary text-[10px]">4h ago • Market Intel</span>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Feed Item 3 -->
+<article class="bg-[#1A1A1A] border border-[#2C2C2C] rounded p-5 flex flex-col sm:flex-row gap-5 group cursor-pointer hover:border-primary-container transition-colors duration-300">
+<div class="flex flex-col justify-between flex-1 order-2 sm:order-1">
+<div>
+<h3 class="font-headline-md text-[18px] font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors leading-tight">Regulatory Crackdown on Decentralized Autonomous Organizations</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">New frameworks suggest strict liability for DAO governance token holders in upcoming financial jurisdictions.</p>
+</div>
+<div class="flex items-center justify-between mt-3">
+<div class="flex gap-2">
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 border border-outline-variant rounded text-[10px] text-secondary">POLICY</span>
+<span class="font-label-caps text-label-caps text-secondary text-[10px] self-center">6h ago</span>
+</div>
+<button class="text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+</div>
+<div class="w-full sm:w-48 h-32 shrink-0 rounded overflow-hidden relative order-1 sm:order-2">
+<img alt="Regulation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract rendering of interconnected digital nodes forming a gavel, symbolizing technology regulation. Rendered in monochromatic dark grey with striking amber glowing connections. Sleek, high-tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa_Ko9ultdUmkjADNfgNy_nHxQa00DObrOpgUhtyNnbGP6P9uCTCoW7eBii_3L89FXMlnB_PFbuBgqopEZty7xPkSxuk3PM0oDvkRbNguymu9tCGVRHmRk0rqwl8kmGBNBcLFmHofhRqz8tgMrN4A8_rf7BT3DNx8b4pMtV2Oqv_Hs02HUJVCGMJTTrfRFfbhpTQgzE4ds-lBrJ1xpZJylfQxTGrIT3WAIdY5kYhrNMpbMKSSeFK2VjQ"/>
+</div>
+</article>
+<button class="w-full py-4 border border-[#2C2C2C] rounded text-primary font-label-caps text-label-caps hover:bg-[#1A1A1A] transition-colors mt-4">
+                        LOAD PREVIOUS CYCLES
+                    </button>
+</div>
+<!-- Right Sidebar (Discover / Featured) -->
+<aside class="lg:col-span-4 flex flex-col gap-6">
+<!-- Analytics Mini-Widget -->
+<div class="bg-[#1A1A1A] border border-[#2C2C2C] rounded p-5">
+<h4 class="font-label-caps text-label-caps text-secondary mb-4 border-b border-[#2C2C2C] pb-2">NETWORK ACTIVITY</h4>
+<div class="flex items-end justify-between">
+<div>
+<div class="font-display-lg text-[32px] text-on-surface leading-none mb-1">94.2%</div>
+<div class="font-label-caps text-label-caps text-[10px] text-surface-tint">SIGNAL STRENGTH</div>
+</div>
+<div class="flex items-center gap-1 text-[#690005]">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+<span class="font-body-sm text-body-sm">-1.2%</span>
+</div>
+</div>
+<div class="mt-4 h-12 w-full bg-[#0A0A0A] rounded relative overflow-hidden border border-[#2C2C2C]">
+<!-- Mock tiny chart -->
+<svg class="absolute inset-0 w-full h-full text-surface-tint opacity-50" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0 100 L 10 80 L 20 90 L 30 60 L 40 70 L 50 40 L 60 50 L 70 20 L 80 30 L 90 10 L 100 20 L 100 100 Z" fill="currentColor"></path>
+</svg>
+</div>
+</div>
+<!-- Discover Topics -->
+<div class="bg-[#1A1A1A] border border-[#2C2C2C] rounded p-5">
+<h4 class="font-label-caps text-label-caps text-secondary mb-4 border-b border-[#2C2C2C] pb-2">DISCOVER NODES</h4>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-[#2C2C2C] text-on-surface font-label-caps text-[10px] rounded hover:bg-primary-container hover:text-black cursor-pointer transition-colors">#AEROSPACE</span>
+<span class="px-3 py-1 bg-[#2C2C2C] text-on-surface font-label-caps text-[10px] rounded hover:bg-primary-container hover:text-black cursor-pointer transition-colors">#BIOTECH</span>
+<span class="px-3 py-1 bg-[#2C2C2C] text-on-surface font-label-caps text-[10px] rounded hover:bg-primary-container hover:text-black cursor-pointer transition-colors">#CYBER_SEC</span>
+<span class="px-3 py-1 bg-[#2C2C2C] text-on-surface font-label-caps text-[10px] rounded hover:bg-primary-container hover:text-black cursor-pointer transition-colors">#MACRO_ECON</span>
+<span class="px-3 py-1 bg-surface-tint text-black font-label-caps text-[10px] rounded cursor-pointer">#AGI_ALIGNMENT</span>
+<span class="px-3 py-1 bg-[#2C2C2C] text-on-surface font-label-caps text-[10px] rounded hover:bg-primary-container hover:text-black cursor-pointer transition-colors">#ROBOTICS</span>
+</div>
+</div>
+<!-- Featured Intel -->
+<div class="bg-[#1A1A1A] border border-[#2C2C2C] rounded p-5">
+<h4 class="font-label-caps text-label-caps text-secondary mb-4 border-b border-[#2C2C2C] pb-2">HIGH PRIORITY</h4>
+<ul class="space-y-4">
+<li class="group cursor-pointer">
+<div class="font-label-caps text-[10px] text-surface-tint mb-1">INTEL_BRIEF</div>
+<h5 class="font-body-md text-on-surface group-hover:text-primary transition-colors leading-snug">Autonomous Weaponry Treaties Stall in Geneva</h5>
+</li>
+<li class="group cursor-pointer border-t border-[#2C2C2C] pt-4">
+<div class="font-label-caps text-[10px] text-surface-tint mb-1">MARKET_ANALYSIS</div>
+<h5 class="font-body-md text-on-surface group-hover:text-primary transition-colors leading-snug">Rare Earth Mineral Futures Spike Amidst Export Bans</h5>
+</li>
+<li class="group cursor-pointer border-t border-[#2C2C2C] pt-4">
+<div class="font-label-caps text-[10px] text-surface-tint mb-1">OPINION</div>
+<h5 class="font-body-md text-on-surface group-hover:text-primary transition-colors leading-snug">The Death of Privacy in the Age of Ambient Surveillance</h5>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-lowest fixed bottom-0 right-0 w-full md:w-[calc(100%-280px)] h-8 border-t border-outline-variant flex items-center justify-between px-margin-mobile md:px-margin-desktop overflow-hidden z-10">
+<div class="text-primary font-bold font-label-caps text-label-caps">LIVE INTEL PULSE</div>
+<div class="flex items-center gap-4 md:gap-6">
+<span class="text-secondary-fixed-dim font-label-caps text-label-caps text-[10px] hover:text-primary transition-colors cursor-pointer hidden md:inline">TERMINAL ACTIVE</span>
+<span class="text-secondary-fixed-dim font-label-caps text-label-caps text-[10px] hover:text-primary transition-colors cursor-pointer hidden md:inline">ENCRYPTION AES-256</span>
+<span class="text-secondary-fixed-dim font-label-caps text-label-caps text-[10px] hover:text-primary transition-colors cursor-pointer">NODE-ALPHA-7</span>
+</div>
+</footer>
+</div>
+<style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+</body></html>

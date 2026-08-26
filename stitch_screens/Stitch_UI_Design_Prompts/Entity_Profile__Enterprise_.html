@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Obsidian Casefile - Entity Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#f8bb6f",
+                        "on-tertiary-fixed": "#410006",
+                        "on-surface-variant": "#d5c4b3",
+                        "inverse-primary": "#825510",
+                        "on-tertiary-container": "#9e2e32",
+                        "outline-variant": "#504538",
+                        "on-secondary": "#003731",
+                        "secondary-container": "#03c6b2",
+                        "tertiary-container": "#ffbcb9",
+                        "on-secondary-fixed": "#00201c",
+                        "on-background": "#ede0dc",
+                        "on-primary-fixed-variant": "#653e00",
+                        "on-tertiary-fixed-variant": "#881d24",
+                        "on-tertiary": "#670211",
+                        "secondary-fixed-dim": "#3cddc7",
+                        "surface-container-high": "#302826",
+                        "inverse-surface": "#ede0dc",
+                        "surface-bright": "#403735",
+                        "on-primary": "#472a00",
+                        "tertiary": "#ffe2e1",
+                        "error-container": "#93000a",
+                        "surface-tint": "#f8bb6f",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#211a18",
+                        "surface-container-highest": "#3b3331",
+                        "tertiary-fixed": "#ffdad8",
+                        "background": "#181210",
+                        "surface-container": "#251e1c",
+                        "outline": "#9d8e7f",
+                        "on-primary-container": "#794d07",
+                        "rust-alert": "#b91c1c",
+                        "on-secondary-container": "#004d44",
+                        "amber-action": "#f59e0b",
+                        "surface-dim": "#181210",
+                        "primary": "#ffe4c9",
+                        "primary-fixed": "#ffddb7",
+                        "on-error": "#690005",
+                        "surface": "#181210",
+                        "teal-status": "#14b8a6",
+                        "surface-container-lowest": "#130d0b",
+                        "secondary-fixed": "#62fae3",
+                        "primary-container": "#ffc174",
+                        "on-secondary-fixed-variant": "#005047",
+                        "on-primary-fixed": "#2a1700",
+                        "error": "#ffb4ab",
+                        "secondary": "#44e2cd",
+                        "tertiary-fixed-dim": "#ffb3b0",
+                        "inverse-on-surface": "#362f2c",
+                        "on-surface": "#ede0dc",
+                        "surface-variant": "#3b3331"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "container-padding": "20px",
+                        "margin-edge": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "technical-mono": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "technical-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-amber-action selection:text-background overflow-x-hidden">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-surface dark:bg-surface font-headline-sm text-headline-sm fixed top-0 w-full z-50 border-b border-outline-variant flat no shadows flex justify-between items-center h-16 px-margin-edge w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-80 transition-opacity">menu</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight uppercase">OBSIDIAN CASEFILE</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="bg-surface-container border border-outline-variant rounded pl-9 pr-3 py-1.5 text-body-md font-body-md text-on-surface focus:border-amber-action focus:ring-1 focus:ring-amber-action focus:outline-none transition-all placeholder:text-on-surface-variant w-64" placeholder="Search entity..." type="text"/>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-highest transition-colors cursor-pointer active:opacity-80 p-2 rounded">notifications</span>
+<img alt="Chief Intelligence Officer Profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="A clinical, highly detailed headshot of a Chief Intelligence Officer. The subject is in a dark, high-tech control room with ambient amber and teal lighting reflecting off subtle metallic surfaces. The aesthetic is strictly modern corporate and technical minimalist, avoiding analog grit. 8k resolution, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjDatyMWhmA5vVSx4Qj0bXUiMGlnmvNRdBjlSkJhLluTL53IBOZCwcQdPj4zAdaZKci8bMfWImIGx0_-MojIBXSFWiigsMZqevDO_ArKKKDVmY3BHgqYHrefqWUD2VIrJBLTCP7gKIdPT7w-cwWf4lhVch56Tjc33XjQq3fZmsFcGegloY5XpXeA3UaHvYONESZvKgigzlT5Jl2sSjhYX9CG5wPj188gkZrlfxRyT9nUkEdIgryqWVKw"/>
+</div>
+</nav>
+<!-- SideNavBar (Shared Component) -->
+<aside class="bg-surface-container dark:bg-surface-container text-amber-action font-body-md text-body-md fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-outline-variant flat no shadows flex flex-col py-gutter z-40 hidden md:flex">
+<div class="px-container-padding mb-8">
+<div class="flex items-center gap-3">
+<img alt="Command Center Logo" class="w-10 h-10 rounded border border-outline-variant object-cover" data-alt="A sleek, minimalist logo representing Unit 734 Command Center. The design is highly technical, utilizing clean geometric lines and a dark, stealth-oriented aesthetic. The colors are predominantly jet black and gunmetal grey, accented by precise, glowing amber indicators. Corporate tactical intelligence style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtCsoIhAR8gTsJuaFUxGDIOvCo9foqKTOpqqsX7c0uI5v1kDVe36PVkUqeHyJXusgemuUTUG7cXMgPxQxbTOwR34zoUQIjnMzEZj-YqfVZCKIJhOqYNs2bSvMVlE11eYNJdjjisC01f3k9m0rzUifCJppfe1uqsIfmdxT1cx3cJfCPJtcrlKMFjmrPWhyYenxBPbDJgJAS7jblrbQNB878eQzlI5D28jRm9_0bBfqwM6ZBcKvgpWUuvg"/>
+<div>
+<h2 class="font-technical-mono text-technical-mono text-on-surface-variant uppercase">Unit 734</h2>
+<p class="text-xs text-secondary opacity-80">Active Session</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-container-padding py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-lg">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-container-padding py-2 text-amber-action border-r-2 border-amber-action bg-surface-container-highest hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">security</span>
+                Intelligence
+            </a>
+<a class="flex items-center gap-3 px-container-padding py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-lg">hub</span>
+                Knowledge Graph
+            </a>
+<a class="flex items-center gap-3 px-container-padding py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-lg">search_insights</span>
+                FIR Search
+            </a>
+<a class="flex items-center gap-3 px-container-padding py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-lg">emergency_home</span>
+                Alerts
+            </a>
+<a class="flex items-center gap-3 px-container-padding py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-lg">analytics</span>
+                MO Analysis
+            </a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-4 space-y-1">
+<a class="flex items-center gap-3 px-container-padding py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-container-padding py-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined text-lg">contact_support</span>
+                Support
+            </a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-64 pt-16 p-margin-edge">
+<!-- Entity Header -->
+<header class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-outline-variant pb-6">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-amber-action text-on-primary-fixed font-label-caps text-label-caps px-2 py-1 rounded-sm tracking-wider uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                        Person of Interest
+                    </span>
+<span class="font-technical-mono text-technical-mono text-on-surface-variant">ID: ENT-9824-X</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Alexander Vance</h1>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container border border-outline-variant text-on-surface-variant font-technical-mono text-[10px] px-2 py-0.5 rounded uppercase">AKA "SILVER"</span>
+<span class="bg-surface-container border border-outline-variant text-on-surface-variant font-technical-mono text-[10px] px-2 py-0.5 rounded uppercase">AKA "A.V. CORTEZ"</span>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="border border-outline-variant bg-surface hover:bg-surface-container-high text-on-surface px-4 py-2 rounded text-body-md font-body-md transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">print</span> Export Dossier
+                </button>
+<button class="bg-amber-action hover:bg-primary text-background px-4 py-2 rounded text-body-md font-bold transition-colors flex items-center gap-2 shadow-[0_0_12px_rgba(245,158,11,0.2)]">
+<span class="material-symbols-outlined text-sm">add_alert</span> Monitor Entity
+                </button>
+</div>
+</header>
+<!-- Tactical Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Profile Attributes -->
+<div class="md:col-span-3 space-y-gutter">
+<div class="bg-surface-container border border-outline-variant rounded p-container-padding">
+<div class="flex justify-between items-start mb-4 border-b border-outline-variant pb-2">
+<h3 class="font-headline-sm text-[16px] text-on-surface">Biometrics</h3>
+<span class="font-technical-mono text-[10px] text-on-surface-variant">SEC-LEVEL-3</span>
+</div>
+<div class="flex justify-center mb-6">
+<div class="relative">
+<img alt="Subject Photograph" class="w-32 h-40 object-cover rounded border border-outline-variant filter grayscale contrast-125" data-alt="A highly detailed, stark surveillance-style mugshot of a caucasian male in his mid-40s with sharp features and short hair. The lighting is clinical and harsh, highlighting facial geometry. The background is a flat, dark grey surface grid. Rendered in a crisp, technical intelligence dashboard style without analog film artifacts." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfs-mDn6PpyGBWUEjDBtmRfFyW_IwfLLEz7O9gwsCTW1lA0LPk-z-9OuE2kH-Do6uJyRx_GcPfJK4zJeDQ7dNkl43ffZ56x_8glNFb-IRwnJsaYZFXwzp8dQ-ijspcrnfBd9KtGseoRCxQBJfnCYanytmt1NoE53HxQl_t82Wat-gzaJkd38Vf3n66DJXu0iFaIhZz7ScwQINLzNEAPks7GpzLDqzxaKUou2SyV-Hmb700GBC93w0QLg"/>
+<div class="absolute inset-0 border border-teal-status opacity-30 mix-blend-screen pointer-events-none"></div>
+<div class="absolute bottom-1 right-1 bg-background border border-outline-variant px-1 rounded-sm font-technical-mono text-[8px] text-teal-status">CONF-98%</div>
+</div>
+</div>
+<ul class="space-y-3 font-body-md text-sm">
+<li class="flex items-center gap-3 border-b border-surface-bright pb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">calendar_month</span>
+<span class="text-on-surface-variant w-16">DOB:</span>
+<span class="text-on-surface font-technical-mono">1982-11-04</span>
+</li>
+<li class="flex items-center gap-3 border-b border-surface-bright pb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">person</span>
+<span class="text-on-surface-variant w-16">Age:</span>
+<span class="text-on-surface font-technical-mono">41</span>
+</li>
+<li class="flex items-center gap-3 border-b border-surface-bright pb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">public</span>
+<span class="text-on-surface-variant w-16">Nat:</span>
+<span class="text-on-surface font-technical-mono">Unknown</span>
+</li>
+<li class="flex items-center gap-3 pt-1">
+<span class="material-symbols-outlined text-secondary text-[18px]">psychology</span>
+<span class="text-secondary w-16 italic">Inferred:</span>
+<span class="text-secondary font-technical-mono border border-secondary px-1 rounded-sm text-[10px]">EASTERN_EUROPEAN</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded p-container-padding">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-4 border-b border-outline-variant pb-2">Active Cases</h3>
+<ul class="space-y-2">
+<li class="flex justify-between items-center group cursor-pointer hover:bg-surface-container-highest p-1 rounded transition-colors -mx-1">
+<span class="font-technical-mono text-xs text-on-surface">OP-SHADOW-FALL</span>
+<span class="material-symbols-outlined text-[16px] text-amber-action opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</li>
+<li class="flex justify-between items-center group cursor-pointer hover:bg-surface-container-highest p-1 rounded transition-colors -mx-1">
+<span class="font-technical-mono text-xs text-on-surface">FIR-2023-881</span>
+<span class="material-symbols-outlined text-[16px] text-amber-action opacity-0 group-hover:opacity-100 transition-opacity">open_in_new</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Center Column: Timeline / Switcher -->
+<div class="md:col-span-6 space-y-gutter flex flex-col">
+<!-- Folder Tabs -->
+<div class="flex border-b border-outline-variant">
+<button class="px-6 py-2 border-b-2 border-amber-action text-amber-action font-headline-sm text-[14px] bg-surface-container-highest hover:bg-surface-container transition-colors focus:outline-none">Timeline</button>
+<button class="px-6 py-2 border-b-2 border-transparent text-on-surface-variant font-headline-sm text-[14px] hover:text-on-surface hover:bg-surface-container-highest transition-colors focus:outline-none">Relationships</button>
+<button class="px-6 py-2 border-b-2 border-transparent text-on-surface-variant font-headline-sm text-[14px] hover:text-on-surface hover:bg-surface-container-highest transition-colors focus:outline-none">Evidence</button>
+</div>
+<!-- Tab Content: Timeline -->
+<div class="bg-surface-container border border-outline-variant rounded p-container-padding flex-1 relative overflow-hidden">
+<div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(to right, #251e1c 1px, transparent 1px), linear-gradient(to bottom, #251e1c 1px, transparent 1px); background-size: 20px 20px; opacity: 0.1;"></div>
+<div class="relative z-10 space-y-8 pl-4">
+<!-- Vertical Line -->
+<div class="absolute left-6 top-2 bottom-0 w-px bg-outline-variant"></div>
+<!-- Node 1: Observed -->
+<div class="relative flex gap-4">
+<div class="absolute left-2 -translate-x-1/2 w-3 h-3 rounded-full bg-background border-2 border-amber-action mt-1.5 z-10 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
+<div class="ml-8 bg-surface border border-outline-variant p-4 rounded w-full">
+<div class="flex justify-between items-start mb-2">
+<span class="font-technical-mono text-xs text-amber-action">2023-10-15 14:32Z</span>
+<span class="bg-surface-container-high border border-outline-variant text-on-surface-variant font-technical-mono text-[9px] px-1.5 py-0.5 rounded uppercase">Border Crossing</span>
+</div>
+<p class="text-body-md text-on-surface leading-relaxed">Identified via facial recognition crossing Checkpoint Alpha. Vehicle plates scanned and logged to OP-SHADOW-FALL.</p>
+</div>
+</div>
+<!-- Node 2: Inferred -->
+<div class="relative flex gap-4">
+<div class="absolute left-2 -translate-x-1/2 w-3 h-3 rounded-full bg-background border-2 border-secondary mt-1.5 z-10 border-dashed"></div>
+<div class="ml-8 bg-surface border border-secondary/30 p-4 rounded w-full">
+<div class="flex justify-between items-start mb-2">
+<span class="font-technical-mono text-xs text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">psychology</span>
+                                        2023-10-16 ~ 2023-10-18
+                                    </span>
+<span class="bg-surface-container-high border border-secondary/50 text-secondary font-technical-mono text-[9px] px-1.5 py-0.5 rounded uppercase">Financial Anomaly</span>
+</div>
+<p class="text-body-md text-secondary leading-relaxed italic">Inferred presence in Sector 4 based on encrypted ledger transactions matching established MO. Unconfirmed visually.</p>
+</div>
+</div>
+<!-- Node 3: Observed -->
+<div class="relative flex gap-4">
+<div class="absolute left-2 -translate-x-1/2 w-3 h-3 rounded-full bg-background border-2 border-outline-variant mt-1.5 z-10"></div>
+<div class="ml-8 bg-surface border border-outline-variant p-4 rounded w-full opacity-80">
+<div class="flex justify-between items-start mb-2">
+<span class="font-technical-mono text-xs text-on-surface-variant">2023-09-01 08:00Z</span>
+<span class="bg-surface-container-high border border-outline-variant text-on-surface-variant font-technical-mono text-[9px] px-1.5 py-0.5 rounded uppercase">Comms Intercept</span>
+</div>
+<p class="text-body-md text-on-surface-variant leading-relaxed">Brief cellular handshake recorded near safehouse location. Content encrypted.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Network Links -->
+<div class="md:col-span-3 space-y-gutter flex flex-col">
+<div class="bg-surface-container border border-outline-variant rounded p-container-padding flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-4 border-b border-outline-variant pb-2">
+<h3 class="font-headline-sm text-[16px] text-on-surface">Network Topology</h3>
+<button class="text-amber-action hover:text-primary transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[18px]">fullscreen</span>
+</button>
+</div>
+<div class="flex-1 border border-outline-variant bg-surface relative min-h-[300px] flex items-center justify-center overflow-hidden">
+<!-- Simplified CSS Node Graph representation -->
+<div class="absolute inset-0 flex items-center justify-center">
+<!-- Central Node -->
+<div class="w-8 h-8 rounded-full bg-amber-action absolute z-20 flex items-center justify-center shadow-[0_0_12px_rgba(245,158,11,0.4)]">
+<span class="font-technical-mono text-[10px] text-background font-bold">VANCE</span>
+</div>
+<!-- Linked Node 1 (Observed) -->
+<div class="w-6 h-6 rounded-full bg-surface-bright border border-outline-variant absolute z-20 translate-x-16 -translate-y-12 flex items-center justify-center">
+<span class="font-technical-mono text-[8px] text-on-surface">NODE-A</span>
+</div>
+<!-- Link Line 1 -->
+<div class="w-20 h-px bg-outline-variant absolute z-10 origin-left rotate-[-37deg] translate-x-4"></div>
+<!-- Linked Node 2 (Inferred) -->
+<div class="w-6 h-6 rounded-full bg-surface border border-secondary border-dashed absolute z-20 -translate-x-14 translate-y-16 flex items-center justify-center shadow-[0_0_8px_rgba(68,226,205,0.2)]">
+<span class="font-technical-mono text-[8px] text-secondary">NODE-B</span>
+</div>
+<!-- Link Line 2 -->
+<div class="w-20 h-px bg-secondary opacity-50 border-t border-dashed border-secondary absolute z-10 origin-left rotate-[130deg] translate-x-[-12px]"></div>
+<!-- Linked Node 3 (Observed) -->
+<div class="w-4 h-4 rounded-full bg-surface-bright border border-outline-variant absolute z-20 -translate-x-20 -translate-y-4 flex items-center justify-center"></div>
+<!-- Link Line 3 -->
+<div class="w-24 h-px bg-outline-variant absolute z-10 origin-left rotate-[190deg] translate-x-[-8px]"></div>
+</div>
+<div class="absolute bottom-2 left-2 flex flex-col gap-1">
+<div class="flex items-center gap-1 font-technical-mono text-[8px] text-on-surface-variant">
+<div class="w-2 h-px bg-outline-variant"></div> Confirmed Link
+                            </div>
+<div class="flex items-center gap-1 font-technical-mono text-[8px] text-secondary">
+<div class="w-2 h-px bg-secondary border-t border-dashed border-secondary"></div> Inferred Vector
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

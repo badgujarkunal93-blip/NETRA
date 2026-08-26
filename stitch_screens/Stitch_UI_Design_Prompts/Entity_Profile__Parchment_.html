@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Entity Profile - C.I.D. Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#221a14",
+                        "surface-tint": "#9b4500",
+                        "inverse-primary": "#ffb68e",
+                        "inverse-on-surface": "#ffede4",
+                        "tertiary-fixed": "#ffdad6",
+                        "primary-container": "#b45309",
+                        "secondary-container": "#b5ede7",
+                        "secondary": "#316763",
+                        "secondary-fixed": "#b5ede7",
+                        "inverse-surface": "#382e28",
+                        "on-surface-variant": "#564338",
+                        "on-primary-container": "#fff1eb",
+                        "on-secondary-fixed-variant": "#144f4b",
+                        "on-surface": "#221a14",
+                        "primary-fixed": "#ffdbca",
+                        "tertiary": "#a62523",
+                        "surface": "#fff8f5",
+                        "on-error": "#ffffff",
+                        "background": "#fff8f5",
+                        "on-primary-fixed": "#331200",
+                        "surface-container-low": "#fff1e9",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "outline": "#897267",
+                        "surface-bright": "#fff8f5",
+                        "tertiary-container": "#c83e38",
+                        "surface-dim": "#e7d7cd",
+                        "on-tertiary-fixed": "#410002",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#376d69",
+                        "surface-container": "#fcebe1",
+                        "parchment-container": "#e6dac3",
+                        "ink-primary": "#2d241e",
+                        "primary": "#903f00",
+                        "primary-fixed-dim": "#ffb68e",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#9ad1cb",
+                        "outline-variant": "#ddc1b3",
+                        "on-primary-fixed-variant": "#763300",
+                        "on-tertiary-fixed-variant": "#8e1214",
+                        "surface-container-high": "#f6e5db",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#00201e",
+                        "parchment-base": "#f2e8d5",
+                        "surface-variant": "#f0dfd6",
+                        "tertiary-fixed-dim": "#ffb4ac",
+                        "on-tertiary-container": "#fff1ef",
+                        "surface-container-highest": "#f0dfd6",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "base": "4px",
+                        "padding-card": "20px",
+                        "margin": "24px"
+                    },
+                    "fontFamily": {
+                        "technical-mono": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-caps": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "technical-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.parchment-base');
+            color: theme('colors.ink-primary');
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Vignette Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle at center, transparent 40%, rgba(45, 36, 30, 0.05) 100%);
+            z-index: 50;
+        }
+
+        /* Paper Texture */
+        .paper-texture {
+            position: relative;
+        }
+        .paper-texture::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.15;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+        }
+
+        .dossier-card {
+            background-color: theme('colors.parchment-container');
+            box-shadow: 0 4px 12px -2px rgba(45, 36, 30, 0.08);
+            border: 1px solid theme('colors.outline-variant');
+        }
+
+        /* Thread/Timeline styling */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: repeating-linear-gradient(to bottom, theme('colors.outline'), theme('colors.outline') 4px, transparent 4px, transparent 8px);
+            z-index: 0;
+        }
+
+        .timeline-node {
+            position: relative;
+            z-index: 1;
+            background-color: theme('colors.parchment-container');
+            border: 2px solid theme('colors.ink-primary');
+            border-radius: 50%;
+        }
+
+        .text-inferred {
+            color: theme('colors.secondary'); /* Deep teal */
+        }
+    </style>
+</head>
+<body class="flex flex-col font-body-md antialiased paper-texture">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 border-b border-outline-variant/30 bg-parchment-base flex justify-between items-center w-full px-margin py-base z-50 shadow-sm">
+<div class="flex items-center gap-margin">
+<button class="text-ink-primary hover:bg-surface-variant/50 transition-colors p-2 rounded-DEFAULT cursor-pointer active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<span class="font-headline-md text-headline-md font-bold text-ink-primary">Criminal Intelligence Division</span>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="relative hidden md:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="pl-10 pr-4 py-2 bg-parchment-container border border-outline-variant rounded-DEFAULT font-technical-mono text-technical-mono text-ink-primary focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container w-64 shadow-inner" placeholder="Search archive..." style="box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.03);" type="text"/>
+</div>
+<button class="text-ink-primary hover:bg-surface-variant/50 transition-colors p-2 rounded-DEFAULT cursor-pointer active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+</button>
+<button class="text-ink-primary hover:bg-surface-variant/50 transition-colors p-2 rounded-DEFAULT cursor-pointer active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help</span>
+</button>
+<div class="w-10 h-10 rounded-full border border-outline overflow-hidden ml-2">
+<img alt="Chief Investigator Profile" class="w-full h-full object-cover" data-alt="A vintage, sepia-toned passport style photograph of a stern-looking chief investigator in a 1950s suit. The image has slight grain and film scratches to match the archival aesthetic. Lighting is dramatic and slightly top-down." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwb3DdjzLmOlVoJKrU3SqIIJTJ0y6PcY2r4DqkMCueEW199ubhhWYlIGw_0L7cBmSlCGmDVLXNOsrB_SCyTl3wZZ9nPzILK1HsZ4MS9YMpKX3BugACpDpuNSlDyysopSRJ6AG2ltV_7H7yZxcSGVQlrC85xdIOuc1sNyJwes20lY9X2leOvj03D5SrMpYuh9SnrwIy2tSDs-TDvz9mG--gDFwdy67sW_K48MP1MMOsv9lhCj3WIvTxAg"/>
+</div>
+</div>
+</nav>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar -->
+<aside class="docked left-0 h-full w-64 border-r border-outline-variant/50 bg-parchment-container shadow-md flex flex-col py-margin gap-base hidden md:flex flex-shrink-0 z-40">
+<div class="px-gutter mb-6 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full border-2 border-outline mb-2 overflow-hidden flex items-center justify-center bg-parchment-base">
+<span class="material-symbols-outlined text-4xl text-outline" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface text-center">C.I.D. Archive</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Official Records</p>
+<button class="mt-6 w-full py-2 px-4 bg-primary-container text-on-primary-container font-label-caps text-label-caps rounded-DEFAULT shadow hover:bg-primary transition-colors cursor-pointer active:scale-95 duration-150">
+                    New Investigation
+                </button>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-r-full text-on-surface-variant font-medium font-label-caps text-label-caps hover:bg-surface-variant/30 hover:text-primary transition-all cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-r-full bg-primary-container/10 text-primary-container border-r-4 border-primary-container font-bold font-label-caps text-label-caps hover:bg-surface-variant/30 hover:text-primary transition-all cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">visibility</span>
+                    Intelligence
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-r-full text-on-surface-variant font-medium font-label-caps text-label-caps hover:bg-surface-variant/30 hover:text-primary transition-all cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">hub</span>
+                    Knowledge Graph
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-r-full text-on-surface-variant font-medium font-label-caps text-label-caps hover:bg-surface-variant/30 hover:text-primary transition-all cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
+                    FIR Search
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-r-full text-on-surface-variant font-medium font-label-caps text-label-caps hover:bg-surface-variant/30 hover:text-primary transition-all cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+                    Alerts
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-r-full text-on-surface-variant font-medium font-label-caps text-label-caps hover:bg-surface-variant/30 hover:text-primary transition-all cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+                    MO Analysis
+                </a>
+</nav>
+<div class="px-2 mt-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-r-full text-on-surface-variant font-medium font-label-caps text-label-caps hover:bg-surface-variant/30 hover:text-primary transition-all cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">logout</span>
+                    Logout
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-margin h-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-margin pb-4 border-b border-ink-primary/20">
+<div>
+<span class="font-technical-mono text-technical-mono text-on-surface-variant mb-1 block">Subject ID: 893-X-442</span>
+<h1 class="font-headline-lg text-headline-lg text-ink-primary">Arthur Pendelton</h1>
+</div>
+<div class="mt-4 md:mt-0 flex gap-4 items-center">
+<span class="px-3 py-1 border-2 border-tertiary text-tertiary font-label-caps text-label-caps rounded-sm uppercase tracking-wider" style="transform: rotate(-2deg);">
+                        High Risk
+                    </span>
+<span class="px-3 py-1 border border-outline text-on-surface-variant font-label-caps text-label-caps rounded-sm">
+                        Active Surveillance
+                    </span>
+</div>
+</div>
+<!-- 3-Panel Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-margin">
+<!-- Panel 1: Biometrics & Attributes (Left - 3 cols) -->
+<div class="lg:col-span-3 flex flex-col gap-margin">
+<div class="dossier-card p-padding-card rounded-DEFAULT">
+<h3 class="font-headline-sm text-headline-sm text-ink-primary border-b border-outline/30 pb-2 mb-4">Biometrics</h3>
+<div class="w-full aspect-square mb-4 border border-outline p-1 bg-parchment-base">
+<img alt="Subject Photo" class="w-full h-full object-cover filter sepia-[.3] contrast-125" data-alt="A grainy black and white surveillance photograph of a middle-aged man in profile, shot from a slight distance. The image resembles a physical print stapled to a document, with slight corner curling and uneven lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfG73J9QCK1HndPjHKQeEmxY6JSKfikjRLEfsatMEk8HXHJ4NcocGyunpZGZ9yqcCbtqaw9mkb9QSi-nSLsnENP-0qWHpHocY3JEQtjafUBuEJhN5MqbnLWbjCF77enloUGYyGs-cYzALBBtarE3olDhYlXmHewUZaPL3_qe_H0iygyL3PpFMd1_4anEaNrKBXL3XoIDz2gordBeJACW77mjVMM1XfR8woPtibdVCgRetazejDUKMrbg"/>
+</div>
+<ul class="flex flex-col gap-3 font-technical-mono text-technical-mono text-ink-primary">
+<li class="flex justify-between border-b border-outline/20 pb-1">
+<span class="text-on-surface-variant">DOB</span>
+<span>14-Oct-1962</span>
+</li>
+<li class="flex justify-between border-b border-outline/20 pb-1">
+<span class="text-on-surface-variant">Height</span>
+<span>182 cm</span>
+</li>
+<li class="flex justify-between border-b border-outline/20 pb-1">
+<span class="text-on-surface-variant">Eyes</span>
+<span>Blue</span>
+</li>
+<li class="flex justify-between border-b border-outline/20 pb-1">
+<span class="text-on-surface-variant">Marks</span>
+<span>Scar L-Cheek</span>
+</li>
+</ul>
+</div>
+<div class="dossier-card p-padding-card rounded-DEFAULT">
+<h3 class="font-headline-sm text-headline-sm text-ink-primary border-b border-outline/30 pb-2 mb-4">Known Aliases</h3>
+<ul class="flex flex-col gap-2 font-technical-mono text-technical-mono">
+<li class="text-ink-primary">"Artie Pen"</li>
+<li class="text-ink-primary">A.P. Black</li>
+<li class="text-inferred">Inferred: "The Watchmaker"</li>
+</ul>
+</div>
+</div>
+<!-- Panel 2: Timeline (Center - 5 cols) -->
+<div class="lg:col-span-5 dossier-card p-padding-card rounded-DEFAULT relative min-h-[600px]">
+<h3 class="font-headline-sm text-headline-sm text-ink-primary border-b border-outline/30 pb-2 mb-8 relative z-10 bg-parchment-container">Activity Log</h3>
+<div class="relative h-[calc(100%-60px)] py-4">
+<div class="timeline-line"></div>
+<div class="flex flex-col gap-8">
+<!-- Event 1 -->
+<div class="relative z-10 flex w-full">
+<div class="w-1/2 pr-6 text-right">
+<span class="font-technical-mono text-technical-mono text-on-surface-variant block mb-1">04-Nov-2023 14:22</span>
+<h4 class="font-body-lg text-body-lg font-bold text-ink-primary">Sighted: Docks</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Observed meeting with known associate near Pier 4.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 border-ink-primary bg-primary-container"></div>
+<div class="w-1/2 pl-6"></div>
+</div>
+<!-- Event 2 -->
+<div class="relative z-10 flex w-full">
+<div class="w-1/2 pr-6"></div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 border-secondary bg-secondary-container"></div>
+<div class="w-1/2 pl-6 text-left">
+<span class="font-technical-mono text-technical-mono text-secondary block mb-1">Inferred Activity</span>
+<h4 class="font-body-lg text-body-lg font-bold text-inferred">Financial Transfer</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Anomalous movement of funds linked to front company.</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative z-10 flex w-full">
+<div class="w-1/2 pr-6 text-right">
+<span class="font-technical-mono text-technical-mono text-on-surface-variant block mb-1">12-Oct-2023 09:00</span>
+<h4 class="font-body-lg text-body-lg font-bold text-ink-primary">Arrest Record</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Detained briefly on suspicion of smuggling. Released due to lack of evidence.</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-2 border-ink-primary bg-parchment-base"></div>
+<div class="w-1/2 pl-6"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel 3: Network Topology (Right - 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-margin">
+<div class="dossier-card p-padding-card rounded-DEFAULT flex-1">
+<div class="flex justify-between items-center border-b border-outline/30 pb-2 mb-4">
+<h3 class="font-headline-sm text-headline-sm text-ink-primary">Network</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">open_in_full</span>
+</button>
+</div>
+<div class="relative w-full aspect-square border border-outline bg-parchment-base p-4 flex items-center justify-center overflow-hidden">
+<!-- Simple pure HTML/CSS node graph representation -->
+<svg class="absolute inset-0 w-full h-full" viewbox="0 0 100 100">
+<line stroke="#897267" stroke-dasharray="2,2" stroke-width="0.5" x1="50" x2="20" y1="50" y2="30"></line>
+<line stroke="#897267" stroke-width="1" x1="50" x2="80" y1="50" y2="20"></line>
+<line stroke="#316763" stroke-width="1" x1="50" x2="70" y1="50" y2="80"></line>
+<line stroke="#897267" stroke-width="1" x1="50" x2="25" y1="50" y2="70"></line>
+</svg>
+<!-- Nodes -->
+<div class="absolute top-[20%] right-[20%] flex flex-col items-center group cursor-pointer">
+<div class="w-3 h-3 rounded-full bg-ink-primary border border-parchment-base shadow-sm group-hover:scale-125 transition-transform"></div>
+<span class="font-technical-mono text-[8px] mt-1 text-ink-primary">Front Co.</span>
+</div>
+<div class="absolute bottom-[20%] right-[30%] flex flex-col items-center group cursor-pointer">
+<div class="w-3 h-3 rounded-full bg-secondary border border-parchment-base shadow-sm group-hover:scale-125 transition-transform"></div>
+<span class="font-technical-mono text-[8px] mt-1 text-inferred">Safehouse</span>
+</div>
+<div class="absolute bottom-[30%] left-[25%] flex flex-col items-center group cursor-pointer">
+<div class="w-3 h-3 rounded-full bg-ink-primary border border-parchment-base shadow-sm group-hover:scale-125 transition-transform"></div>
+<span class="font-technical-mono text-[8px] mt-1 text-ink-primary">Associate A</span>
+</div>
+<div class="absolute top-[30%] left-[20%] flex flex-col items-center group cursor-pointer">
+<div class="w-3 h-3 rounded-full bg-surface-variant border border-outline shadow-sm group-hover:scale-125 transition-transform"></div>
+<span class="font-technical-mono text-[8px] mt-1 text-on-surface-variant">Vehicle</span>
+</div>
+<!-- Central Node -->
+<div class="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10">
+<div class="w-5 h-5 rounded-full bg-primary-container border-2 border-parchment-base shadow-sm animate-pulse"></div>
+<span class="font-technical-mono text-[10px] font-bold mt-1 text-ink-primary bg-parchment-base/80 px-1">Subject</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AETHER INTEL - Dashboard Intel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#271900",
+                        "surface-dim": "#131313",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-bright": "#3a3939",
+                        "surface": "#131313",
+                        "on-secondary": "#313030",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-primary": "#7c5800",
+                        "surface-container": "#201f1f",
+                        "tertiary-container": "#c6c4c4",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-tint": "#ffba20",
+                        "tertiary-fixed": "#e4e2e1",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary": "#ffdca1",
+                        "primary-fixed-dim": "#ffba20",
+                        "surface-container-highest": "#353534",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary-container": "#ffb800",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "surface-variant": "#353534",
+                        "outline": "#9e8f78",
+                        "on-primary": "#412d00",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#d5c4ab",
+                        "on-tertiary-container": "#515151",
+                        "secondary-container": "#474746",
+                        "on-background": "#e5e2e1",
+                        "on-primary-container": "#6b4c00",
+                        "on-tertiary": "#303030",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#514532",
+                        "secondary": "#c8c6c5",
+                        "on-primary-fixed-variant": "#5e4200",
+                        "tertiary": "#e2e0df",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "primary-fixed": "#ffdea8",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "stack-unit": "8px",
+                        "sidebar-width": "280px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        .glow-amber {
+            box-shadow: 0 0 20px 0 rgba(255, 184, 0, 0.2);
+        }
+        .node-line {
+            stroke: #2C2C2C;
+            stroke-width: 1px;
+        }
+        .node-line.active {
+            stroke: #ffba20;
+            stroke-width: 2px;
+            filter: drop-shadow(0 0 4px rgba(255,184,0,0.5));
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-stack-unit bg-surface-container-low dark:bg-surface-container-low fixed left-0 top-0 h-full w-sidebar-width border-r border-outline-variant dark:border-outline-variant z-50">
+<div class="px-4 py-6 mb-4">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">AETHER INTEL</div>
+<div class="font-label-caps text-label-caps text-secondary mt-1">Strategic Oversight</div>
+</div>
+<div class="flex-1 overflow-y-auto space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+<span>Main</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface dark:text-on-surface font-semibold border-l-2 border-primary-container font-label-caps text-label-caps opacity-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span>Dashboard Intel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span>AI Risk Engine</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Financials &amp; Playbook</span>
+</a>
+</div>
+<div class="px-4 py-4 mt-auto">
+<button class="w-full bg-primary-container text-black font-headline-md text-body-md font-semibold py-3 rounded hover:opacity-90 glow-amber transition-all">Generate Report</button>
+</div>
+<div class="mt-4 border-t border-outline-variant pt-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-secondary dark:text-secondary hover:bg-surface-container-highest dark:hover:bg-surface-container-highest transition-colors font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col md:ml-sidebar-width w-full md:w-[calc(100%-280px)] h-full overflow-hidden bg-background">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-margin-desktop bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant z-40 shrink-0 font-body-md text-body-md">
+<div class="flex items-center gap-4">
+<span class="font-display-lg text-headline-md text-primary dark:text-primary md:hidden">AETHER</span>
+<div class="hidden md:flex items-center bg-[#0A0A0A] border border-[#2C2C2C] rounded px-3 py-1.5 focus-within:border-primary-container focus-within:glow-amber transition-all w-96">
+<span class="material-symbols-outlined text-secondary mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full placeholder:text-secondary font-body-sm text-body-sm outline-none" placeholder="Query Research Vault..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-secondary hover:text-primary-fixed dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary hover:text-primary-fixed dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden ml-2 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A small, stylized profile avatar of a data analyst, depicted in a dark, high-contrast style with amber lighting accents. The style should be modern, minimalistic, and slightly abstract, fitting a high-tech intelligence platform. The avatar features sharp geometric lines against a deep black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOuMcafaEzvPqVvNOU9JS9jxnIP0GUQiS8LCBDtT5SAaj-DwnQE5rnEInpC5U75iUpy8UeOqxN1hN_4ERiKq1O6bUMlP65JHS1axLEctBvZH8gYKEAec6iBX2giQ8sXEwgCZtCWjmb6zvGQM6yNwRa3oEWeZOYpHUu-zq2-LOKqxZ85GWPBLtcmL7O642RvhzxkuLYAwbbyZnRPcnGLcpqPamS4kA_pMoANS8xaOeLfhjtAtYNufoOUA"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop space-y-gutter relative">
+<!-- Hero / Search Section -->
+<section class="flex flex-col items-center justify-center py-16 md:py-24 space-y-8 relative z-10">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-center max-w-4xl text-on-surface">
+                    Learn from <span class="text-primary-fixed-dim">startup failures</span>
+</h1>
+<p class="font-body-md text-body-md text-secondary text-center max-w-2xl">
+                    Access the deepest research vault of post-mortems, strategic missteps, and root-cause analyses across 50,000+ venture-backed entities.
+                </p>
+<div class="w-full max-w-2xl relative mt-8">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="manage_search">manage_search</span>
+</div>
+<input class="w-full bg-[#0A0A0A] border border-[#2C2C2C] text-on-surface font-body-md text-body-md rounded-lg pl-12 pr-4 py-4 focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:glow-amber outline-none transition-all shadow-lg placeholder-secondary-fixed-dim" placeholder="e.g., Series B SaaS burn rate collapse..." type="text"/>
+<button class="absolute inset-y-2 right-2 bg-primary-container text-black font-headline-md text-body-sm font-semibold px-6 rounded hover:opacity-90 transition-opacity">Analyze</button>
+</div>
+</section>
+<!-- Main Dashboard Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter pb-24">
+<!-- Left Column (Visual/Graph) -->
+<div class="col-span-1 md:col-span-8 bg-[#1A1A1A] border border-[#2C2C2C] rounded-xl p-6 relative overflow-hidden min-h-[400px] flex flex-col">
+<div class="flex justify-between items-center mb-6 z-10">
+<h2 class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Failure Topology Map</h2>
+<div class="flex gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_rgba(255,184,0,0.6)]"></span>
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+</div>
+</div>
+<!-- Background Image Integration -->
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD7HWGDiFZ00A42w5gpUY3dBZKHm3YjKpTdjC4H0ryQiHARJaDWag8TsAPj0d3OtRtzjqlUyMi-LVpt19SYKgthETFF6-KFPXk0i5wJj4tD-75u3O-DhOkn-QS_jdIxIuQu435_ZX7cq3QSfQsmV8edx6duKsl1N1Iu0_VAAO8GCB-QCp1XcjlczIlQsIWL-zd8WrjPhC1rKm4ra0qCfz_0QUL2-v0sl2DNbvpbBpQQ6gIfyPUB6b6b-aWdfPLC3gvjvSU'); background-size: cover; background-position: center;"></div>
+<div class="flex-1 relative z-10 w-full h-full" id="node-container">
+<!-- Interactive SVG overlay to represent nodes on top of the image -->
+<svg class="w-full h-full" preserveaspectratio="xMidYMid slice" viewbox="0 0 800 400">
+<!-- Connections -->
+<line class="node-line active" x1="200" x2="400" y1="150" y2="100"></line>
+<line class="node-line" x1="400" x2="600" y1="100" y2="200"></line>
+<line class="node-line" x1="400" x2="350" y1="100" y2="280"></line>
+<line class="node-line active" x1="350" x2="500" y1="280" y2="300"></line>
+<!-- Nodes -->
+<circle class="cursor-pointer hover:fill-surface-variant transition-colors" cx="200" cy="150" fill="#131313" r="8" stroke="#ffba20" stroke-width="2"></circle>
+<text class="font-body-sm text-body-sm opacity-70" fill="#e5e2e1" font-family="Inter" font-size="12" text-anchor="middle" x="200" y="175">Market Timing</text>
+<circle class="cursor-pointer glow-amber" cx="400" cy="100" fill="#ffba20" r="12"></circle>
+<text class="font-body-sm text-body-sm" fill="#ffdca1" font-family="Inter" font-size="14" font-weight="500" text-anchor="middle" x="400" y="130">Cash Flow Hemorrhage</text>
+<circle class="cursor-pointer hover:fill-surface-variant transition-colors" cx="600" cy="200" fill="#131313" r="6" stroke="#514532" stroke-width="2"></circle>
+<text class="font-body-sm text-body-sm opacity-50" fill="#e5e2e1" font-family="Inter" font-size="12" text-anchor="middle" x="600" y="225">Team Conflict</text>
+<circle class="cursor-pointer hover:fill-surface-variant transition-colors" cx="350" cy="280" fill="#131313" r="10" stroke="#ffba20" stroke-width="2"></circle>
+<text class="font-body-sm text-body-sm opacity-70" fill="#e5e2e1" font-family="Inter" font-size="12" text-anchor="middle" x="350" y="310">Product-Market Fit</text>
+<circle class="cursor-pointer" cx="500" cy="300" fill="#ffb4ab" r="8"></circle>
+<text class="font-body-sm text-body-sm opacity-70" fill="#e5e2e1" font-family="Inter" font-size="12" text-anchor="middle" x="500" y="325">Regulatory Pivot</text>
+</svg>
+</div>
+</div>
+<!-- Right Column (List/Stats) -->
+<div class="col-span-1 md:col-span-4 flex flex-col gap-gutter">
+<!-- Stat Card 1 -->
+<div class="bg-[#1A1A1A] border border-[#2C2C2C] rounded-xl p-6 hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-label-caps text-label-caps text-secondary uppercase">Primary Vector</h3>
+<span class="material-symbols-outlined text-primary-container group-hover:scale-110 transition-transform" data-icon="trending_down">trending_down</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface mb-1">Premature Scaling</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Implied in 42% of Series A closures.</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-[#1A1A1A] border border-[#2C2C2C] rounded-xl p-6 hover:bg-surface-container-high transition-colors cursor-pointer group">
+<div class="flex items-start justify-between mb-2">
+<h3 class="font-label-caps text-label-caps text-secondary uppercase">Emerging Risk</h3>
+<span class="material-symbols-outlined text-error group-hover:scale-110 transition-transform" data-icon="warning">warning</span>
+</div>
+<div class="font-headline-md text-headline-md text-on-surface mb-1">Founder Dilution</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">+18% YoY in late-stage down rounds.</div>
+</div>
+<!-- Action Card -->
+<div class="bg-surface-container-lowest border border-primary-container/30 rounded-xl p-6 flex-1 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent z-0"></div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md text-primary-fixed mb-2">Build a Custom Thesis</h3>
+<p class="font-body-sm text-body-sm text-secondary mb-4">Cross-reference failure vectors against your current portfolio risk profiles.</p>
+<button class="flex items-center gap-2 text-primary-container hover:text-primary-fixed-dim transition-colors font-label-caps text-label-caps">
+                                CONFIGURE ENGINE <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="fixed bottom-0 right-0 w-full md:w-[calc(100%-280px)] h-8 bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline-variant z-40 flex items-center justify-between px-margin-desktop overflow-hidden">
+<div class="text-primary font-bold font-label-caps text-label-caps">LIVE INTEL PULSE</div>
+<div class="flex gap-4">
+<a class="font-label-caps text-label-caps text-secondary-fixed-dim hover:text-primary transition-colors" href="#">TERMINAL ACTIVE</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed-dim hover:text-primary transition-colors" href="#">ENCRYPTION AES-256</a>
+<a class="font-label-caps text-label-caps text-secondary-fixed-dim hover:text-primary transition-colors" href="#">NODE-ALPHA-7</a>
+</div>
+</footer>
+</main>
+<script>
+        // Simple interaction for SVG nodes
+        document.querySelectorAll('circle').forEach(circle => {
+            circle.addEventListener('mouseenter', function() {
+                this.setAttribute('r', parseInt(this.getAttribute('r')) + 2);
+            });
+            circle.addEventListener('mouseleave', function() {
+                this.setAttribute('r', parseInt(this.getAttribute('r')) - 2);
+            });
+        });
+    </script>
+</body></html>

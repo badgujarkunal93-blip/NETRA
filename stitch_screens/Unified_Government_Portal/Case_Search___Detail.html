@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mumbai Police CIU - Case / FIR Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#edeef0",
+                        "on-surface": "#191c1e",
+                        "surface-container-highest": "#e1e2e4",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e2e2e2",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#071b3a",
+                        "surface-container-low": "#f3f4f6",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary": "#5d5f5f",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#364768",
+                        "on-background": "#191c1e",
+                        "inverse-primary": "#b6c6ee",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-tertiary-container": "#ab7f00",
+                        "tertiary-fixed-dim": "#f6be39",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#000516",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "primary-fixed-dim": "#b6c6ee",
+                        "ink-navy": "#1A1A1A",
+                        "tertiary": "#090500",
+                        "tertiary-container": "#291c00",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-primary-container": "#7686ab",
+                        "on-secondary-container": "#616363",
+                        "alert-red": "#C0392B",
+                        "surface-tint": "#4e5e81",
+                        "background": "#f8f9fb",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#44474e",
+                        "surface-muted": "#E2E8F0",
+                        "surface-container-high": "#e7e8ea",
+                        "outline-variant": "#c5c6cf",
+                        "surface-bright": "#f8f9fb",
+                        "tertiary-fixed": "#ffdfa0",
+                        "primary-container": "#0b1e3d",
+                        "surface": "#f8f9fb",
+                        "outline": "#75777f",
+                        "surface-dim": "#d9dadc",
+                        "surface-variant": "#e1e2e4",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "inverse-on-surface": "#f0f1f3",
+                        "secondary-container": "#dfe0e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter", "sans-serif"],
+                        "headline-md": ["Archivo Narrow", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "code-sm": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "display-lg": ["Archivo Narrow", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "headline-lg": ["Archivo Narrow", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "headline-sm": ["Archivo Narrow", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "code-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fb; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Archivo Narrow', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-screen overflow-hidden flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest border-b border-surface-muted fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Mumbai Police Criminal Intelligence Unit</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high transition-colors px-2 py-1 cursor-pointer active:opacity-80" href="#">Directory</a>
+<a class="font-label-lg text-label-lg text-primary border-b-2 border-tertiary-fixed-dim pb-1 hover:bg-surface-container-high transition-colors px-2 cursor-pointer active:opacity-80" href="#">Case Files</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high transition-colors px-2 py-1 cursor-pointer active:opacity-80" href="#">Resources</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:bg-surface-container-high transition-colors px-2 py-1 cursor-pointer active:opacity-80" href="#">Help Desk</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="font-label-lg text-label-lg bg-primary text-on-primary px-4 py-2 rounded">AUTHORIZED LOGIN</button>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-80" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-80" data-icon="settings">settings</span>
+</div>
+</header>
+<div class="flex flex-1 pt-16 h-full">
+<!-- SideNavBar -->
+<aside class="bg-primary text-on-primary fixed left-0 top-0 h-full w-[240px] z-40 shadow-md flex flex-col py-8 px-4 gap-4 hidden lg:flex">
+<div class="mb-8 px-4">
+<h2 class="font-headline-md text-headline-md text-on-primary uppercase tracking-wider mb-1">CIU COMMAND</h2>
+<p class="font-body-sm text-body-sm opacity-70">Authorized Personnel Only</p>
+</div>
+<button class="bg-tertiary-fixed-dim text-primary font-label-md text-label-md py-3 rounded mb-4 font-bold">New Case File</button>
+<nav class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Command Center
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded bg-tertiary-container text-tertiary-fixed-dim border-l-4 border-tertiary-fixed-dim font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span> Case Files
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span> Entity Search
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-on-primary opacity-70 hover:bg-primary-container hover:opacity-100 transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="rss_feed">rss_feed</span> Intelligence Feed
+                </a>
+</nav>
+<div class="mt-auto border-t border-surface-tint pt-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary opacity-70 hover:opacity-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 text-on-primary opacity-70 hover:opacity-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span> Logout
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 lg:ml-[240px] flex flex-col h-full bg-surface overflow-hidden">
+<!-- Search & Filter Bar -->
+<div class="bg-surface-container-lowest p-6 border-b border-surface-muted shadow-sm z-10 shrink-0">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 items-center">
+<div class="relative w-full md:w-1/2">
+<span class="material-symbols-outlined absolute left-4 top-1/2 transform -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border border-surface-muted rounded focus:outline-none focus:border-tertiary-fixed-dim focus:ring-1 focus:ring-tertiary-fixed-dim font-body-md text-body-md transition-colors" placeholder="Search person, vehicle, or case number" type="text"/>
+</div>
+<div class="flex gap-2 w-full md:w-auto overflow-x-auto pb-2 md:pb-0 hide-scrollbar">
+<button class="px-4 py-2 bg-surface-container-low border border-surface-muted rounded font-label-md text-label-md text-on-surface whitespace-nowrap hover:bg-surface-container transition-colors flex items-center gap-2">
+                            Category <span class="material-symbols-outlined text-[16px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+<button class="px-4 py-2 bg-surface-container-low border border-surface-muted rounded font-label-md text-label-md text-on-surface whitespace-nowrap hover:bg-surface-container transition-colors flex items-center gap-2">
+                            Crime Head <span class="material-symbols-outlined text-[16px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+<button class="px-4 py-2 bg-surface-container-low border border-surface-muted rounded font-label-md text-label-md text-on-surface whitespace-nowrap hover:bg-surface-container transition-colors flex items-center gap-2">
+                            Date Range <span class="material-symbols-outlined text-[16px]" data-icon="arrow_drop_down">arrow_drop_down</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Content Split -->
+<div class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Case List -->
+<div class="w-full md:w-1/3 lg:w-[400px] bg-surface border-r border-surface-muted flex flex-col h-full shrink-0">
+<div class="p-4 border-b border-surface-muted bg-surface-container-lowest shrink-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Cases</h3>
+</div>
+<div class="flex-1 overflow-y-auto p-4 space-y-4">
+<!-- Case Card 1 (Active) -->
+<div class="bg-surface-container-lowest p-4 rounded border border-tertiary-fixed-dim shadow-sm border-l-4 border-l-tertiary-fixed-dim cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<span class="font-code-sm text-code-sm text-on-surface-variant">FIR: 1042/2024</span>
+<span class="bg-tertiary-fixed-dim text-primary px-2 py-0.5 rounded font-label-md text-[10px] uppercase">Open</span>
+</div>
+<h4 class="font-headline-sm text-[16px] leading-tight mb-2 text-on-surface">Cyber Fraud Syndicate</h4>
+<div class="flex items-center gap-2 text-outline font-body-sm text-body-sm mb-3">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span> Bandra Kurla Complex
+                            </div>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-2 py-1 rounded font-code-sm text-[10px] text-on-surface-variant">Phishing</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-code-sm text-[10px] text-on-surface-variant">Crypto</span>
+</div>
+</div>
+<!-- Case Card 2 -->
+<div class="bg-surface-container-lowest p-4 rounded border border-surface-muted hover:border-outline-variant transition-colors cursor-pointer border-l-4 border-l-primary">
+<div class="flex justify-between items-start mb-2">
+<span class="font-code-sm text-code-sm text-on-surface-variant">FIR: 0988/2024</span>
+<span class="bg-primary text-on-primary px-2 py-0.5 rounded font-label-md text-[10px] uppercase">Investigating</span>
+</div>
+<h4 class="font-headline-sm text-[16px] leading-tight mb-2 text-on-surface">Jewelry Heist - Zaveri Bazaar</h4>
+<div class="flex items-center gap-2 text-outline font-body-sm text-body-sm mb-3">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span> Zaveri Bazaar
+                            </div>
+<div class="flex gap-2">
+<span class="bg-surface-container-high px-2 py-1 rounded font-code-sm text-[10px] text-on-surface-variant">B&amp;E</span>
+<span class="bg-surface-container-high px-2 py-1 rounded font-code-sm text-[10px] text-on-surface-variant">Organized</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Case Details -->
+<div class="hidden md:flex flex-1 flex-col bg-surface-bright overflow-y-auto">
+<div class="p-8 max-w-4xl mx-auto w-full">
+<!-- Header -->
+<div class="mb-8">
+<div class="flex items-center gap-4 mb-2">
+<span class="bg-tertiary-fixed-dim text-primary px-3 py-1 rounded font-label-md text-label-md uppercase font-bold tracking-widest">Active Case</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Filed: Oct 24, 2024</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-primary mb-2">Cyber Fraud Syndicate - BKC</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">FIR Reference: MH-MUM-2024-1042</p>
+</div>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Main Content Col -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Brief Facts -->
+<div class="bg-surface-container-lowest p-6 rounded border border-surface-muted border-t-4 border-t-primary shadow-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="description">description</span> Brief Facts
+                                    </h3>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                                        Multiple reports filed concerning an organized phishing campaign targeting high-net-worth individuals in the BKC area. Perpetrators are utilizing spoofed corporate domains to extract banking credentials, immediately laundering funds through obscure cryptocurrency exchanges. Preliminary technical analysis suggests infrastructure overlap with the 'Phantom-7' group active in late 2023.
+                                    </p>
+</div>
+<!-- Entities -->
+<div class="bg-surface-container-lowest p-6 rounded border border-surface-muted shadow-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span> Linked Entities
+                                    </h3>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 bg-surface-container px-3 py-2 rounded border border-surface-muted">
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Unknown Suspect A</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container px-3 py-2 rounded border border-surface-muted">
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="public">public</span>
+<span class="font-label-md text-label-md">IP: 192.168.x.x</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Col -->
+<div class="space-y-6">
+<!-- Intelligence Tags -->
+<div class="bg-surface-container-lowest p-6 rounded border border-surface-muted shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Extracted Intelligence</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 bg-primary-fixed text-on-primary-fixed rounded font-code-sm text-code-sm">Spear-Phishing</span>
+<span class="px-2 py-1 bg-primary-fixed text-on-primary-fixed rounded font-code-sm text-code-sm">Crypto-Laundering</span>
+<span class="px-2 py-1 bg-surface-container text-on-surface rounded font-code-sm text-code-sm">Spoofed Domains</span>
+</div>
+</div>
+<!-- Similar Cases -->
+<div class="bg-surface-container-lowest p-6 rounded border border-surface-muted shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">AI Inferred Similar Cases</h3>
+<div class="space-y-4">
+<div class="flex items-start justify-between border-b border-surface-muted pb-3">
+<div>
+<p class="font-label-md text-label-md text-on-surface">FIR: 0892/2023</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Phantom-7 Operations</p>
+</div>
+<span class="bg-tertiary-fixed-dim text-primary font-bold px-2 py-1 rounded text-[12px]">88% Match</span>
+</div>
+<div class="flex items-start justify-between">
+<div>
+<p class="font-label-md text-label-md text-on-surface">FIR: 1105/2023</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Corporate Escrow Fraud</p>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-1 rounded text-[12px] border border-surface-muted">64% Match</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

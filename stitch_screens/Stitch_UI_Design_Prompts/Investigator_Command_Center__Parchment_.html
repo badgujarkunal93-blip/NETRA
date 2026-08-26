@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Investigator Command Center</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#221a14",
+                    "surface-tint": "#9b4500",
+                    "inverse-primary": "#ffb68e",
+                    "inverse-on-surface": "#ffede4",
+                    "tertiary-fixed": "#ffdad6",
+                    "primary-container": "#b45309",
+                    "secondary-container": "#b5ede7",
+                    "secondary": "#316763",
+                    "secondary-fixed": "#b5ede7",
+                    "inverse-surface": "#382e28",
+                    "on-surface-variant": "#564338",
+                    "on-primary-container": "#fff1eb",
+                    "on-secondary-fixed-variant": "#144f4b",
+                    "on-surface": "#221a14",
+                    "primary-fixed": "#ffdbca",
+                    "tertiary": "#a62523",
+                    "surface": "#fff8f5",
+                    "on-error": "#ffffff",
+                    "background": "#fff8f5",
+                    "on-primary-fixed": "#331200",
+                    "surface-container-low": "#fff1e9",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "outline": "#897267",
+                    "surface-bright": "#fff8f5",
+                    "tertiary-container": "#c83e38",
+                    "surface-dim": "#e7d7cd",
+                    "on-tertiary-fixed": "#410002",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#376d69",
+                    "surface-container": "#fcebe1",
+                    "parchment-container": "#e6dac3",
+                    "ink-primary": "#2d241e",
+                    "primary": "#903f00",
+                    "primary-fixed-dim": "#ffb68e",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#9ad1cb",
+                    "outline-variant": "#ddc1b3",
+                    "on-primary-fixed-variant": "#763300",
+                    "on-tertiary-fixed-variant": "#8e1214",
+                    "surface-container-high": "#f6e5db",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#00201e",
+                    "parchment-base": "#f2e8d5",
+                    "surface-variant": "#f0dfd6",
+                    "tertiary-fixed-dim": "#ffb4ac",
+                    "on-tertiary-container": "#fff1ef",
+                    "surface-container-highest": "#f0dfd6",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "base": "4px",
+                    "padding-card": "20px",
+                    "margin": "24px"
+            },
+            "fontFamily": {
+                    "technical-mono": [
+                            "JetBrains Mono"
+                    ],
+                    "headline-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-caps": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-sm": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "technical-mono": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "11px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        /* Base typography setting to enforce pairs */
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        
+        /* Subtle paper grain texture */
+        .paper-grain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.25;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+        }
+    </style>
+</head>
+<body class="bg-parchment-base text-ink-primary font-body-md text-body-md h-screen w-full flex overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Global Vignette Effect -->
+<div class="pointer-events-none fixed inset-0 z-[9998] bg-[radial-gradient(circle_at_center,transparent_40%,rgba(45,36,30,0.08)_100%)]"></div>
+<!-- Global Paper Grain -->
+<div class="paper-grain"></div>
+<!-- SideNavBar (Shared Component) -->
+<nav class="docked left-0 h-full w-64 border-r border-outline-variant/50 bg-parchment-container shadow-md flex flex-col py-margin gap-base shrink-0 relative z-30">
+<!-- Header -->
+<div class="px-margin pb-gutter mb-gutter border-b border-outline-variant/30 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-outline-variant/50 shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A vintage, sepia-toned circular seal or emblem for a fictional Criminal Intelligence Division. The seal features subtle raised textures, intricate historical engraving details, and a slightly worn appearance as if stamped on old parchment. The lighting highlights the tactile nature of the emblem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtw11Akoapi2H5d6DvTS99y03QgdAjGjAsQefSi1U0yLWiEmg1EWnZxDv53biW-7DjT3-QErbfz7YxXSPetZYv19qisV5ARiZeVPFKxwp0DN0OTxX3VzZ0JLWAfuDhLAaGEi7DguDzEuOXkYw1xiVrKFZV4txXbAuzJdhIixqZ4sQbaqZ5u-zmiYSIlGfUdqwuDy45jUpbPbip_PyeOcwes2CiM2ZqlefFHYiwAZrHk7oQI-cAswzYSA"/>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">C.I.D. Archive</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Official Records</p>
+</div>
+</div>
+<!-- CTA -->
+<div class="px-margin mb-gutter">
+<button class="w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps uppercase py-2 px-4 rounded shadow-sm hover:bg-primary transition-colors flex items-center justify-center gap-2 border border-ink-primary/10">
+<span class="material-symbols-outlined" style="font-size: 16px;">add</span>
+                New Investigation
+            </button>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto px-gutter flex flex-col gap-1">
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT bg-primary-container/10 text-primary-container border-l-4 border-primary-container font-bold hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-body-md text-body-md mt-0.5">Dashboard</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 px-3 py-2 border-l-4 border-transparent text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined">visibility</span>
+<span class="font-body-md text-body-md mt-0.5">Intelligence</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 border-l-4 border-transparent text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-body-md text-body-md mt-0.5">Knowledge Graph</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 border-l-4 border-transparent text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-body-md text-body-md mt-0.5">FIR Search</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 border-l-4 border-transparent text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-body-md text-body-md mt-0.5">Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 border-l-4 border-transparent text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md mt-0.5">MO Analysis</span>
+</a>
+</div>
+<!-- Footer -->
+<div class="px-gutter pt-gutter border-t border-outline-variant/30 mt-auto">
+<a class="flex items-center gap-3 px-3 py-2 border-l-4 border-transparent text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150 cursor-pointer" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md text-body-md mt-0.5">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full relative z-20 overflow-hidden">
+<!-- TopNavBar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-margin py-base z-50 border-b border-outline-variant/30 bg-parchment-base shadow-sm shrink-0 h-16">
+<div class="flex items-center gap-6">
+<h1 class="font-headline-md text-headline-md font-bold text-ink-primary">Criminal Intelligence Division</h1>
+<!-- Search Bar (on_left) -->
+<div class="relative hidden md:block w-64 ml-4 group">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-on-surface-variant/60 group-focus-within:text-primary transition-colors pb-1" style="font-size: 20px;">search</span>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:border-primary focus:ring-0 pl-7 pr-2 py-1 font-body-md text-body-md text-ink-primary placeholder:text-on-surface-variant/50 transition-colors" placeholder="Search archive..." type="text"/>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full border border-outline bg-surface-variant overflow-hidden ml-2 cursor-pointer shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A small, square vintage portrait photograph of a Chief Investigator. The photo is sepia-toned with soft vignette edges, depicting a stern individual in period-appropriate attire. The lighting is dramatic, emphasizing the historical archivist and tactical intelligence aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmuZJ0fVGRQbzrlRXRFzvrbbgJqHbdkSQxG-kXi7BDIYQ33pgG-OCE6i3JnriARor9HRY8yq92wrKHTZ3NxMsMmxdPGk8nJejC0jPFltclnXKqdalKsO4PjBU4q1Bgc1HBDLKbsuYvFW60I0ZZbDQ_34IGnSK_1QW64GE4vu-PjUALMElT7Go7IJQGt7ObgeNaHHKEIP0aemYdzyowpbUB_jpiIxPpdXSaaHZcSlpjBIw48gkGylsKGQ"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Dashboard Canvas -->
+<div class="flex-1 overflow-y-auto p-margin scroll-smooth">
+<div class="max-w-7xl mx-auto flex flex-col gap-margin">
+<!-- 3-Column Stats Row -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Stat Card 1 -->
+<div class="bg-parchment-container border border-outline-variant shadow-sm rounded-lg p-padding-card flex flex-col gap-1 relative group cursor-default">
+<div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none rounded-lg"></div>
+<div class="flex justify-between items-start">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Active Cases</h3>
+<span class="material-symbols-outlined text-outline">folder_open</span>
+</div>
+<div class="font-technical-mono text-headline-lg text-ink-primary mt-2 group-hover:text-primary transition-colors">142</div>
+<div class="font-technical-mono text-technical-mono text-secondary mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">arrow_upward</span>
+                            +12 this month
+                        </div>
+</div>
+<!-- Stat Card 2 (Highlighted) -->
+<div class="bg-parchment-container border border-outline-variant shadow-sm rounded-lg p-padding-card flex flex-col gap-1 relative group cursor-default">
+<div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none rounded-lg"></div>
+<div class="flex justify-between items-start">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Open Alerts</h3>
+<span class="material-symbols-outlined text-outline">warning</span>
+</div>
+<div class="font-technical-mono text-headline-lg text-primary-container mt-2 group-hover:text-primary transition-colors">28</div>
+<div class="font-technical-mono text-technical-mono text-error mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">priority_high</span>
+                            5 critical pending
+                        </div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-parchment-container border border-outline-variant shadow-sm rounded-lg p-padding-card flex flex-col gap-1 relative group cursor-default">
+<div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none rounded-lg"></div>
+<div class="flex justify-between items-start">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Entities Tracked</h3>
+<span class="material-symbols-outlined text-outline">group</span>
+</div>
+<div class="font-technical-mono text-headline-lg text-ink-primary mt-2 group-hover:text-primary transition-colors">3,940</div>
+<div class="font-technical-mono text-technical-mono text-on-surface-variant/70 mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">sync</span>
+                            Last synced 0800 HRS
+                        </div>
+</div>
+</section>
+<!-- Middle Row: Recent Alerts & Map -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-margin">
+<!-- Recent Alerts (2/3 width) -->
+<div class="lg:col-span-2 bg-parchment-container border border-outline-variant shadow-sm rounded-lg flex flex-col overflow-hidden">
+<div class="p-4 border-b border-outline-variant/60 bg-surface-variant/30 flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-ink-primary">Recent Field Alerts</h3>
+<button class="font-label-caps text-label-caps text-primary hover:underline uppercase tracking-widest">View Ledger</button>
+</div>
+<div class="flex flex-col">
+<!-- Header Row -->
+<div class="grid grid-cols-12 gap-4 px-4 py-2 border-b border-outline-variant/40 bg-parchment-base/50">
+<div class="col-span-3 font-label-caps text-label-caps text-on-surface-variant uppercase">Time (IST)</div>
+<div class="col-span-5 font-label-caps text-label-caps text-on-surface-variant uppercase">Classification</div>
+<div class="col-span-2 font-label-caps text-label-caps text-on-surface-variant uppercase">Subject</div>
+<div class="col-span-2 font-label-caps text-label-caps text-on-surface-variant uppercase text-right">Status</div>
+</div>
+<!-- List Items -->
+<div class="grid grid-cols-12 gap-4 px-4 py-3 border-b border-outline-variant/40 items-center hover:bg-surface-variant/20 transition-colors cursor-pointer">
+<div class="col-span-3 font-technical-mono text-technical-mono text-on-surface-variant">09:42:11</div>
+<div class="col-span-5 font-body-md text-body-md text-ink-primary font-medium">Unauthorized Port Access</div>
+<div class="col-span-2 font-technical-mono text-technical-mono text-ink-primary">Vessel-8X</div>
+<div class="col-span-2 text-right">
+<span class="inline-flex px-2 py-0.5 bg-error-container text-on-error-container font-label-caps text-label-caps rounded-sm uppercase tracking-wider border border-error/20">Critical</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 px-4 py-3 border-b border-outline-variant/40 items-center hover:bg-surface-variant/20 transition-colors cursor-pointer">
+<div class="col-span-3 font-technical-mono text-technical-mono text-on-surface-variant">08:15:00</div>
+<div class="col-span-5 font-body-md text-body-md text-ink-primary font-medium">Known Associate Sighted</div>
+<div class="col-span-2 font-technical-mono text-technical-mono text-ink-primary">Tgt-Alpha</div>
+<div class="col-span-2 text-right">
+<span class="inline-flex px-2 py-0.5 bg-surface-variant text-on-surface-variant font-label-caps text-label-caps rounded-sm uppercase tracking-wider border border-outline-variant">Watch</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-4 px-4 py-3 items-center hover:bg-surface-variant/20 transition-colors cursor-pointer">
+<div class="col-span-3 font-technical-mono text-technical-mono text-on-surface-variant">06:30:45</div>
+<div class="col-span-5 font-body-md text-body-md text-ink-primary font-medium">Communication Intercept</div>
+<div class="col-span-2 font-technical-mono text-technical-mono text-ink-primary">Freq-88.2</div>
+<div class="col-span-2 text-right">
+<span class="inline-flex px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-caps text-label-caps rounded-sm uppercase tracking-wider border border-secondary/20">Info</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Map (1/3 width) -->
+<div class="lg:col-span-1 bg-parchment-container border border-outline-variant shadow-sm rounded-lg flex flex-col overflow-hidden relative p-1">
+<div class="absolute top-4 left-4 right-4 z-10 flex justify-between items-start pointer-events-none">
+<div class="bg-parchment-base/90 backdrop-blur-sm px-3 py-1.5 rounded border border-outline-variant shadow-sm pointer-events-auto">
+<h3 class="font-label-caps text-label-caps text-ink-primary uppercase tracking-widest flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container" style="font-size: 14px; font-variation-settings: 'FILL' 1;">location_on</span>
+                                    Mumbai Sector
+                                </h3>
+</div>
+</div>
+<!-- Map Image Placeholder with Sepia styling overlay built in -->
+<div class="w-full h-full min-h-[300px] bg-cover bg-center rounded-sm border border-outline-variant/50 relative" data-alt="A high-altitude, tactical satellite map of Mumbai, India, rendered in a vintage, archival aesthetic. The map is deeply sepia-toned, resembling an aged intelligence document printed on thick parchment paper. Subtle, glowing burnt-amber and rust-colored heat signatures dot the coastal and port areas, indicating concentrated activity. The lighting is soft and vignette-heavy, emphasizing the center of the map while fading into dark, warm shadows at the edges." data-location="Mumbai, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4ubdWPN4bJJcAFCLr6MHiNJFaWVLEqD9sVMas-5t2eI4cNgnv3Y1be9T0WjEfTwZl_G6efzolh2rzRA5ueenfHDB0T8KnETCFDDflu1wWS0DxmVfLfP1IGSZgciL5pxBblwMTIpvXvQZaUS9cWYpoj9Vr4_aMKNTyQaRIQSPgpgTybfDa9duHz7SVKZ9IqdnBTW6huHZpPoVxUzAN_hj9vKWsC-qPBaRCKFamvu9bd1nCSi_Gl1ihhw')">
+<!-- Overlay to ensure the color grading remains even if the image varies slightly -->
+<div class="absolute inset-0 bg-[#b45309] mix-blend-color opacity-10 pointer-events-none"></div>
+<div class="absolute inset-0 bg-[#2d241e] mix-blend-multiply opacity-20 pointer-events-none"></div>
+</div>
+</div>
+</section>
+<!-- Bottom Row: AI Inferred Findings (Bento Layout) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-margin">
+<!-- Narrative Finding -->
+<div class="bg-parchment-container border border-outline-variant shadow-sm rounded-lg p-padding-card flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 120px;">auto_awesome</span>
+</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary-container">psychology</span>
+<h3 class="font-headline-sm text-headline-sm text-ink-primary">Inferred Modus Operandi</h3>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-6 relative z-10">
+                            Algorithmic analysis of recent port manifests and encrypted communication spikes suggests a high probability of <strong class="text-ink-primary font-bold">Container Port Smuggling</strong> via dual-use cargo fronts. The pattern strongly correlates with historical data from Sector 7 incidents in 1998.
+                        </p>
+<div class="mt-auto border-t border-outline-variant/40 pt-4 flex justify-between items-center relative z-10">
+<span class="font-technical-mono text-technical-mono text-on-surface-variant/70">Confidence: 87%</span>
+<button class="font-label-caps text-label-caps text-primary border border-outline-variant px-3 py-1 rounded hover:bg-surface-variant/50 transition-colors uppercase">Review Data</button>
+</div>
+</div>
+<!-- Entity Correlation Graph (CSS Representation) -->
+<div class="bg-surface-dim border border-outline-variant shadow-sm rounded-lg p-padding-card flex flex-col relative">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary">device_hub</span>
+<h3 class="font-headline-sm text-headline-sm text-ink-primary">Entity Correlation</h3>
+</div>
+<!-- Abstract Graph Layout using CSS -->
+<div class="flex-1 min-h-[150px] relative mt-2 mb-4 border border-outline-variant/30 bg-parchment-base/50 rounded flex items-center justify-center p-4">
+<!-- Central Node -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-primary-container rounded-full shadow-md flex items-center justify-center border-2 border-parchment-base">
+<span class="material-symbols-outlined text-on-primary-container" style="font-size: 20px;">person</span>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-8 font-technical-mono text-technical-mono text-ink-primary bg-parchment-base/80 px-1">TGT-01</div>
+<!-- Connecting Lines -->
+<div class="absolute top-1/2 left-1/4 w-1/4 h-[1px] bg-outline-variant origin-right rotate-12"></div>
+<div class="absolute top-1/2 left-1/2 w-1/4 h-[1px] bg-outline-variant origin-left -rotate-12"></div>
+<div class="absolute top-[30%] left-1/2 w-[1px] h-1/5 bg-outline-variant"></div>
+<!-- Surrounding Nodes -->
+<div class="absolute top-[30%] left-1/4 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-surface-variant rounded-full border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 14px;">directions_boat</span>
+</div>
+<div class="absolute top-[70%] left-[75%] -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-surface-variant rounded-full border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 14px;">account_balance</span>
+</div>
+<div class="absolute top-[20%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-error-container rounded-full border border-error/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-error-container" style="font-size: 12px;">warning</span>
+</div>
+</div>
+<div class="mt-auto flex justify-between items-center">
+<span class="font-technical-mono text-technical-mono text-on-surface-variant/70">3 New links identified</span>
+<button class="font-label-caps text-label-caps text-primary hover:underline uppercase tracking-widest">Expand Graph</button>
+</div>
+</div>
+</section>
+<!-- Spacer for bottom scroll -->
+<div class="h-8"></div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>C.I.D. Case Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#221a14",
+                    "surface-tint": "#9b4500",
+                    "inverse-primary": "#ffb68e",
+                    "inverse-on-surface": "#ffede4",
+                    "tertiary-fixed": "#ffdad6",
+                    "primary-container": "#b45309",
+                    "secondary-container": "#b5ede7",
+                    "secondary": "#316763",
+                    "secondary-fixed": "#b5ede7",
+                    "inverse-surface": "#382e28",
+                    "on-surface-variant": "#564338",
+                    "on-primary-container": "#fff1eb",
+                    "on-secondary-fixed-variant": "#144f4b",
+                    "on-surface": "#221a14",
+                    "primary-fixed": "#ffdbca",
+                    "tertiary": "#a62523",
+                    "surface": "#fff8f5",
+                    "on-error": "#ffffff",
+                    "background": "#fff8f5",
+                    "on-primary-fixed": "#331200",
+                    "surface-container-low": "#fff1e9",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "outline": "#897267",
+                    "surface-bright": "#fff8f5",
+                    "tertiary-container": "#c83e38",
+                    "surface-dim": "#e7d7cd",
+                    "on-tertiary-fixed": "#410002",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#376d69",
+                    "surface-container": "#fcebe1",
+                    "parchment-container": "#e6dac3",
+                    "ink-primary": "#2d241e",
+                    "primary": "#903f00",
+                    "primary-fixed-dim": "#ffb68e",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#9ad1cb",
+                    "outline-variant": "#ddc1b3",
+                    "on-primary-fixed-variant": "#763300",
+                    "on-tertiary-fixed-variant": "#8e1214",
+                    "surface-container-high": "#f6e5db",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#00201e",
+                    "parchment-base": "#f2e8d5",
+                    "surface-variant": "#f0dfd6",
+                    "tertiary-fixed-dim": "#ffb4ac",
+                    "on-tertiary-container": "#fff1ef",
+                    "surface-container-highest": "#f0dfd6",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "base": "4px",
+                    "padding-card": "20px",
+                    "margin": "24px"
+            },
+            "fontFamily": {
+                    "technical-mono": [
+                            "JetBrains Mono"
+                    ],
+                    "headline-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-caps": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-sm": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "technical-mono": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "11px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Vignette Effect */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle at center, transparent 40%, rgba(45, 36, 30, 0.05) 100%);
+            z-index: 100;
+        }
+
+        /* Noise Texture */
+        .texture-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.2;
+            z-index: 99;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Scrollbar styling for archival feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f2e8d5; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ddc1b3; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #897267; 
+        }
+    </style>
+</head>
+<body class="bg-parchment-base text-on-surface h-full flex overflow-hidden font-body-md antialiased">
+<div class="texture-overlay"></div>
+<!-- SideNavBar -->
+<nav class="docked left-0 h-full w-64 border-r border-outline-variant/50 bg-parchment-container dark:bg-surface-container-low shadow-md flex flex-col h-full py-margin gap-base flex-shrink-0 z-40 hidden md:flex">
+<div class="px-margin mb-8 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center border border-outline/30 overflow-hidden">
+<img alt="Department Seal" class="object-cover w-full h-full" data-alt="A macro shot of a weathered metallic department seal or badge, embedded into aged paper. Tactical and historical archival aesthetic, warm sepia lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-YjPbpFrZOWdv2WdCsFYzjJvt_MlWX5NCqjOPXLm8T8SHwYXRbllxqoau52ImdCtQHDCnr_o99AaPX2Ht-EetNLd-O9bdCEjpdr8Nxl42GwEqQlgPaBvY8Si603Y0K6WlD_LJrxl617o7wazigziM6K8QP2Ovh1TJXcDfId1vDifZbuDRTlB77DXPW-58ciBq_eGgz2pGrTPqTxoybc6EOqKjOOQgt3gAGBGDTG0Iz9JgmALQ7sGQnQ"/>
+</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">C.I.D. Archive</h1>
+<p class="font-technical-mono text-technical-mono text-on-surface-variant">Official Records</p>
+</div>
+</div>
+<button class="mt-4 w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-2 px-4 rounded hover:bg-primary transition-colors flex items-center justify-center gap-2 shadow-sm border border-primary-container/20 active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">add</span>
+                New Investigation
+            </button>
+</div>
+<ul class="flex-1 flex flex-col gap-1 px-4">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-label-caps text-label-caps text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-label-caps text-label-caps bg-primary-container/10 text-primary-container border-r-4 border-primary-container font-bold hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                    Intelligence
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-label-caps text-label-caps text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="hub">hub</span>
+                    Knowledge Graph
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-label-caps text-label-caps text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                    FIR Search
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-label-caps text-label-caps text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                    Alerts
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded font-label-caps text-label-caps text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    MO Analysis
+                </a>
+</li>
+</ul>
+<div class="px-4 mt-auto">
+<a class="flex items-center gap-3 px-3 py-2 rounded font-label-caps text-label-caps text-on-surface-variant font-medium hover:bg-surface-variant/30 hover:text-primary transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col min-w-0 h-full relative z-10">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 border-b border-outline-variant/30 bg-parchment-base dark:bg-inverse-surface shadow-sm flex justify-between items-center w-full px-margin py-base z-50 h-16 flex-shrink-0">
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface-variant p-2 mr-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Brand (Mobile only, desktop handled by side nav) -->
+<div class="md:hidden font-headline-md text-headline-md font-bold text-ink-primary dark:text-inverse-on-surface tracking-tight mr-auto">
+                C.I.D.
+            </div>
+<!-- Search Bar -->
+<div class="flex-1 max-w-2xl mx-4 flex items-center hidden md:flex">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/70 group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-parchment-container/50 border border-outline-variant/50 text-on-surface font-body-md py-2 pl-10 pr-4 focus:outline-none focus:border-primary focus:bg-parchment-container transition-colors shadow-inner rounded-sm" placeholder="Search archives, entities, or file numbers..." style="box-shadow: inset 0 2px 4px rgba(45, 36, 30, 0.05);" type="text"/>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4 ml-auto">
+<button class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors p-2 rounded-full cursor-pointer active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors p-2 rounded-full cursor-pointer active:opacity-80 transition-opacity hidden sm:block">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/50 ml-2 cursor-pointer hover:border-primary transition-colors shadow-sm">
+<img alt="Chief Investigator Profile" class="w-full h-full object-cover" data-alt="A black and white or heavily sepia-toned formal portrait of an older investigator in a suit. Archival aesthetic, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTERZRH9lVabFa69HW25aLxxIqM5miJcKqU5N4GQZ-ESjnwj_KFZRqr8__5g0FQrq2EYjh741ydVWPGNhydGGRK6VGT2gWZk-Cq7HgGbZ-XoVD7IHEzFul7kR16utITs20o16CU3koGydgbC9CE8SwD_V5XcM870PB8iLIDbViL_PK3hgq9mx58YU5yqPDlRKFBcBQ3rHb3_DPDQlA8fVUSs6_PoHkvUpMSCBw4dZ-dQibKXWuCmsQtw"/>
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 flex overflow-hidden p-margin gap-margin">
+<!-- Left Column: Case List (List View) -->
+<section class="w-full md:w-1/3 lg:w-1/4 flex flex-col bg-parchment-container rounded-sm border border-outline-variant/40 shadow-sm overflow-hidden" style="box-shadow: 0 4px 12px rgba(45, 36, 30, 0.08);">
+<!-- List Header -->
+<div class="p-4 border-b border-outline/30 bg-surface-variant/40 flex justify-between items-center">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-ink-primary">Active Files</h2>
+<button class="text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+<!-- Scrollable List -->
+<div class="flex-1 overflow-y-auto">
+<!-- Selected Case Item -->
+<div class="p-4 border-b border-outline/30 bg-primary-container/5 cursor-pointer hover:bg-primary-container/10 transition-colors relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex justify-between items-start mb-1">
+<span class="font-technical-mono text-technical-mono text-primary font-bold">CASE-2023-8942</span>
+<span class="font-label-caps text-label-caps text-tertiary bg-tertiary-container/20 px-2 py-0.5 rounded-sm">CRITICAL</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-bold text-ink-primary mb-2 line-clamp-1">Operation Silken Thread</h3>
+<div class="flex items-center gap-4 font-technical-mono text-technical-mono text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Oct 12</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> Dist 4</span>
+</div>
+</div>
+<!-- Unselected Case Item -->
+<div class="p-4 border-b border-outline/30 cursor-pointer hover:bg-surface-variant/40 transition-colors">
+<div class="flex justify-between items-start mb-1">
+<span class="font-technical-mono text-technical-mono text-on-surface-variant">CASE-2023-8901</span>
+<span class="font-label-caps text-label-caps text-secondary bg-secondary-container/30 px-2 py-0.5 rounded-sm">OPEN</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-medium text-ink-primary mb-2 line-clamp-1">Docklands Smuggling Ring</h3>
+<div class="flex items-center gap-4 font-technical-mono text-technical-mono text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Oct 08</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> Dist 2</span>
+</div>
+</div>
+<!-- Unselected Case Item -->
+<div class="p-4 border-b border-outline/30 cursor-pointer hover:bg-surface-variant/40 transition-colors opacity-70">
+<div class="flex justify-between items-start mb-1">
+<span class="font-technical-mono text-technical-mono text-on-surface-variant">CASE-2023-8855</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-variant px-2 py-0.5 rounded-sm border border-outline/20">CLOSED</span>
+</div>
+<h3 class="font-body-lg text-body-lg font-medium text-ink-primary mb-2 line-clamp-1">Warehouse 7 Arson</h3>
+<div class="flex items-center gap-4 font-technical-mono text-technical-mono text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Sep 22</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> Dist 4</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Case Details (Bento Grid layout) -->
+<section class="hidden md:flex flex-1 flex-col overflow-y-auto pr-2 gap-margin">
+<!-- Header Card -->
+<div class="bg-parchment-container p-6 rounded-sm border border-outline-variant/40 relative shadow-sm" style="box-shadow: 0 4px 12px rgba(45, 36, 30, 0.08);">
+<!-- Decorative corner stamp -->
+<div class="absolute top-4 right-4 border-2 border-tertiary/40 rounded-full w-16 h-16 flex items-center justify-center opacity-30 transform rotate-12 pointer-events-none">
+<span class="font-label-caps text-label-caps text-tertiary font-bold">URGENT</span>
+</div>
+<div class="flex items-center gap-3 mb-2">
+<span class="font-technical-mono text-technical-mono text-primary font-bold bg-primary-container/10 px-2 py-1 rounded-sm border border-primary/20">FILE NO. 2023-8942</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant border border-outline/30 px-2 py-1 rounded-sm">CLASSIFIED LEVEL 3</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-ink-primary mt-2 mb-4">Operation Silken Thread</h2>
+<div class="grid grid-cols-3 gap-4 border-t border-outline/20 pt-4 mt-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">LEAD INVESTIGATOR</p>
+<p class="font-body-md text-body-md font-semibold text-ink-primary flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-surface-variant inline-block overflow-hidden border border-outline/30">
+<img class="w-full h-full object-cover" data-alt="A tiny, high-contrast black and white headshot portrait of an investigator, resembling a vintage ID photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjylNvc_a1LgB6LeIkKvpcSzbAkMMgKUeO7mMLqwQD3NctdmJXbDJ89-9DXvXDnuDboItyFELSbRHLPynMSpNooqm4IjC117MkR23ceF6q2gOnih-3PYhyF-VWGlsOnWxF_mpUS0hD8Z4fQwVL6oZCjR9Cc-D34OwlhKDAvyKRXWZvAk9dVQQOBik551J7G-N7WhLuTICGHSols9EEW_eNEH1N7hC-Kw8sfrz7HWzU-QZvP1bBgn0T-Q"/>
+</span>
+                                Det. Sarah Jenkins
+                            </p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">DATE INITIATED</p>
+<p class="font-technical-mono text-technical-mono text-ink-primary">12-OCT-2023</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">PRIMARY OFFENSE</p>
+<p class="font-body-md text-body-md font-semibold text-ink-primary">Money Laundering, Fraud</p>
+</div>
+</div>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-margin">
+<!-- Brief Facts (Narrative) -->
+<div class="xl:col-span-2 bg-parchment-container p-6 rounded-sm border border-outline-variant/40 shadow-sm flex flex-col relative" style="box-shadow: 0 4px 12px rgba(45, 36, 30, 0.08);">
+<!-- "Typewriter" subtle background lines -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: repeating-linear-gradient(transparent, transparent 23px, #2d241e 24px);"></div>
+<div class="flex justify-between items-center mb-4 relative z-10">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-ink-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">subject</span>
+                                Investigator's Notes
+                            </h3>
+<button class="text-primary font-label-caps text-label-caps hover:underline">EDIT</button>
+</div>
+<div class="prose prose-sm font-body-lg text-body-lg text-ink-primary/90 leading-relaxed relative z-10 flex-1">
+<p class="mb-4">
+                                Initial surveillance indicates a complex web of shell companies operating out of the commercial district. The primary suspect, identified via C.I., has been observed transferring large volumes of untraceable ledger entries through the 'Silk Road Imports' front.
+                            </p>
+<p>
+                                Financial audits of the linked accounts show irregular spikes corresponding with recent waterfront shipments. Requesting authorization for wiretap on secondary lines associated with the primary residence.
+                            </p>
+<div class="mt-6 p-4 bg-surface-variant/30 border-l-2 border-primary/50 font-technical-mono text-technical-mono text-on-surface-variant">
+                                &gt; SYSTEM LOG: Draft updated 14:32 HRS by S. Jenkins.<br/>
+                                &gt; TAGS GENERATED: #smuggling #financial_crimes
+                            </div>
+</div>
+</div>
+<!-- Extracted Intelligence & Tags -->
+<div class="bg-parchment-container p-6 rounded-sm border border-outline-variant/40 shadow-sm flex flex-col" style="box-shadow: 0 4px 12px rgba(45, 36, 30, 0.08);">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-ink-primary flex items-center gap-2 mb-4 border-b border-outline/20 pb-2">
+<span class="material-symbols-outlined text-on-surface-variant">label</span>
+                            Extracted Intelligence
+                        </h3>
+<div class="flex-1 flex flex-col gap-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">LOCATIONS IDENTIFIED</p>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 bg-surface-variant border border-outline/30 px-2 py-1 rounded-sm font-technical-mono text-technical-mono text-ink-primary text-[11px]">
+<span class="material-symbols-outlined text-[12px] text-primary">location_on</span>
+                                        Silk Road Imports, Dist 4
+                                    </span>
+<span class="inline-flex items-center gap-1 bg-surface-variant border border-outline/30 px-2 py-1 rounded-sm font-technical-mono text-technical-mono text-ink-primary text-[11px]">
+<span class="material-symbols-outlined text-[12px] text-primary">location_on</span>
+                                        Pier 12, Storage Unit 4A
+                                    </span>
+</div>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-2">KEY VEHICLES</p>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 bg-surface-variant border border-outline/30 px-2 py-1 rounded-sm font-technical-mono text-technical-mono text-ink-primary text-[11px]">
+<span class="material-symbols-outlined text-[12px] text-secondary">directions_car</span>
+                                        LIC: TRK-992 (Van)
+                                    </span>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-outline/20">
+<button class="w-full py-2 border border-dashed border-outline-variant/80 text-on-surface-variant font-label-caps text-label-caps hover:bg-surface-variant/30 hover:border-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+                                    Add Manual Extraction
+                                </button>
+</div>
+</div>
+</div>
+<!-- Linked Entities / Network Summary -->
+<div class="xl:col-span-3 bg-parchment-container p-0 rounded-sm border border-outline-variant/40 shadow-sm overflow-hidden flex flex-col" style="box-shadow: 0 4px 12px rgba(45, 36, 30, 0.08);">
+<div class="p-4 border-b border-outline/20 bg-surface-variant/20 flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-ink-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">group_work</span>
+                                Linked Entities
+                            </h3>
+<button class="text-primary font-label-caps text-label-caps hover:underline flex items-center gap-1">
+                                VIEW GRAPH <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline/20">
+<!-- Person Entity -->
+<div class="p-4 flex gap-4 items-start hover:bg-surface-variant/10 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-sm bg-surface-variant flex items-center justify-center border border-outline/30 overflow-hidden shrink-0 group-hover:border-primary transition-colors">
+<img class="w-full h-full object-cover" data-alt="A vintage mugshot or formal ID photo of a middle-aged male suspect. Sepia tone, slightly grainy archival quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1WRut8ij0BWajKFGsXXMeCVvNRoSFtQzKJGMHNV5SJwBPIb3hDCyZy7YjPa-1x0YWRBBgtMTfjWky02TN1OgF-8TqfbH3A_o37krHcIgpzHwY_FipDkcH35PHJ997gtqi2aw26qvFwvqgWA7ySSZeM0e2oypM1Tn2zwwGfhNjgSBfoRjfuOi-6qkqbHAQLZ5WUQa_3i_e73PVrKX0l6KUBeNaYxcqghOyXxMQb9iCfB2UfSx5c6UbeQ"/>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-primary mb-1">PRIMARY TARGET</p>
+<p class="font-body-md text-body-md font-bold text-ink-primary mb-0.5">Marcus Vance</p>
+<p class="font-technical-mono text-technical-mono text-on-surface-variant text-[11px]">ID: P-993-841</p>
+</div>
+</div>
+<!-- Organization Entity -->
+<div class="p-4 flex gap-4 items-start hover:bg-surface-variant/10 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-sm bg-surface-variant flex items-center justify-center border border-outline/30 shrink-0 group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">store</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-secondary mb-1">FRONT BUSINESS</p>
+<p class="font-body-md text-body-md font-bold text-ink-primary mb-0.5">Silk Road Imports</p>
+<p class="font-technical-mono text-technical-mono text-on-surface-variant text-[11px]">REG: C-441-A</p>
+</div>
+</div>
+<!-- Document Entity -->
+<div class="p-4 flex gap-4 items-start hover:bg-surface-variant/10 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-sm bg-surface-variant flex items-center justify-center border border-outline/30 shrink-0 group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">description</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">EVIDENCE LOG</p>
+<p class="font-body-md text-body-md font-bold text-ink-primary mb-0.5">Audit Ledger Q3</p>
+<p class="font-technical-mono text-technical-mono text-on-surface-variant text-[11px]">REF: EV-882-9</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

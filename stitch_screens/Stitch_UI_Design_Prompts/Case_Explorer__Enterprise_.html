@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise Case Explorer - Obsidian Casefile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#f8bb6f",
+                      "on-tertiary-fixed": "#410006",
+                      "on-surface-variant": "#d5c4b3",
+                      "inverse-primary": "#825510",
+                      "on-tertiary-container": "#9e2e32",
+                      "outline-variant": "#504538",
+                      "on-secondary": "#003731",
+                      "secondary-container": "#03c6b2",
+                      "tertiary-container": "#ffbcb9",
+                      "on-secondary-fixed": "#00201c",
+                      "on-background": "#ede0dc",
+                      "on-primary-fixed-variant": "#653e00",
+                      "on-tertiary-fixed-variant": "#881d24",
+                      "on-tertiary": "#670211",
+                      "secondary-fixed-dim": "#3cddc7",
+                      "surface-container-high": "#302826",
+                      "inverse-surface": "#ede0dc",
+                      "surface-bright": "#403735",
+                      "on-primary": "#472a00",
+                      "tertiary": "#ffe2e1",
+                      "error-container": "#93000a",
+                      "surface-tint": "#f8bb6f",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-low": "#211a18",
+                      "surface-container-highest": "#3b3331",
+                      "tertiary-fixed": "#ffdad8",
+                      "background": "#181210",
+                      "surface-container": "#251e1c",
+                      "outline": "#9d8e7f",
+                      "on-primary-container": "#794d07",
+                      "rust-alert": "#b91c1c",
+                      "on-secondary-container": "#004d44",
+                      "amber-action": "#f59e0b",
+                      "surface-dim": "#181210",
+                      "primary": "#ffe4c9",
+                      "primary-fixed": "#ffddb7",
+                      "on-error": "#690005",
+                      "surface": "#181210",
+                      "teal-status": "#14b8a6",
+                      "surface-container-lowest": "#130d0b",
+                      "secondary-fixed": "#62fae3",
+                      "primary-container": "#ffc174",
+                      "on-secondary-fixed-variant": "#005047",
+                      "on-primary-fixed": "#2a1700",
+                      "error": "#ffb4ab",
+                      "secondary": "#44e2cd",
+                      "tertiary-fixed-dim": "#ffb3b0",
+                      "inverse-on-surface": "#362f2c",
+                      "on-surface": "#ede0dc",
+                      "surface-variant": "#3b3331"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "unit": "4px",
+                      "container-padding": "20px",
+                      "margin-edge": "24px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-caps": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "technical-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-sm": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-caps": [
+                              "11px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "technical-mono": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #181210; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b3331; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #504538; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface h-screen overflow-hidden flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface font-headline-sm text-headline-sm fixed top-0 w-full z-50 border-b border-outline-variant flat no shadows flex justify-between items-center h-16 px-margin-edge w-full">
+<div class="flex items-center gap-gutter">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight uppercase">OBSIDIAN CASEFILE</span>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="relative hidden md:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-sm">search</span>
+<input class="bg-surface-container border border-outline-variant rounded-DEFAULT py-1.5 pl-9 pr-4 text-on-surface focus:outline-none focus:border-amber-action focus:ring-1 focus:ring-amber-action font-body-md text-body-md w-64 placeholder:text-on-surface-variant transition-colors" placeholder="Search FIR Database..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:opacity-80 p-2 rounded-DEFAULT hover:bg-surface-container-highest">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer">
+<img alt="Chief Intelligence Officer Profile" class="w-full h-full object-cover" data-alt="A professional, high-contrast, moody portrait of a Chief Intelligence Officer in a dimly lit, modern command center. Technical minimalist style, dramatic shadows, glowing amber displays in the blurred background. Corporate intelligence aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9N93aJYpz4KjHUDXicmQEMQJAn3Kjzs22Am3TrFd_iWkQarYB2jPtcxzfn43R70QaZ2yKNvl5ap7_BHFH2VhjnfGZInzXZYAlQx3638DWJw42UowA0G8JtgVl74YZa-RdY6oV358tpIS5jlwgNgXgXrowr6-P2sIlGsqI7d1xtUnOHnHdh-CYZT1VAKFQXufwh1BWhhEBLBu334U5oq0hSD8cQlmJEzJL8cD7iNkmFCHpRn3uHDsWxQ"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1 pt-16 h-full overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container dark:bg-surface-container border-r border-outline-variant flat no shadows fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col py-gutter hidden md:flex z-40">
+<div class="px-gutter mb-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-highest border border-outline-variant flex items-center justify-center text-amber-action">
+<span class="material-symbols-outlined" data-weight="fill">shield</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Unit 734</div>
+<div class="font-technical-mono text-technical-mono text-on-surface-variant text-[10px]">Active Session</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-1 px-3 overflow-y-auto">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-amber-action border-r-2 border-amber-action bg-surface-container-highest transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-body-md text-body-md">Intelligence</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-body-md text-body-md">Knowledge Graph</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">search_insights</span>
+<span class="font-body-md text-body-md">FIR Search</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">emergency_home</span>
+<span class="font-body-md text-body-md">Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">MO Analysis</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-1 px-3 pt-4 border-t border-outline-variant">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all duration-200 ease-in-out cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area (Tactical Grid) -->
+<main class="flex-1 md:ml-64 flex overflow-hidden bg-background">
+<!-- Left Column: Case List -->
+<section class="w-full md:w-1/3 lg:w-[400px] border-r border-outline-variant flex flex-col bg-surface-container-low h-full flex-shrink-0">
+<!-- List Header -->
+<div class="p-gutter border-b border-outline-variant flex justify-between items-center bg-surface-container sticky top-0 z-10">
+<div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface">Active Dockets</h1>
+<p class="font-technical-mono text-technical-mono text-on-surface-variant mt-1">124 RECORDS FOUND</p>
+</div>
+<button class="p-1.5 rounded-DEFAULT border border-outline-variant text-on-surface hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+</button>
+</div>
+<!-- Case List Items -->
+<div class="flex-1 overflow-y-auto">
+<!-- Item 1 (Active) -->
+<div class="p-4 border-b border-outline-variant cursor-pointer bg-surface-container-highest border-l-2 border-l-amber-action hover:bg-surface-container-high transition-colors group">
+<div class="flex justify-between items-start mb-2">
+<span class="font-technical-mono text-technical-mono text-amber-action">#CX-8992-A</span>
+<span class="px-2 py-0.5 bg-[#93000a] text-[#ffdad6] font-label-caps text-label-caps rounded-full tracking-wider">OPEN</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors line-clamp-1">Operation SILENT DAWN</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-3">Unauthorized data exfiltration detected originating from Subnet-B. Multiple encrypted payloads intercepted.</p>
+<div class="flex items-center gap-4 font-technical-mono text-technical-mono text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                2023-10-27T08:14Z
+                            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                                AGENT_K
+                            </div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-4 border-b border-outline-variant cursor-pointer hover:bg-surface-container transition-colors group">
+<div class="flex justify-between items-start mb-2">
+<span class="font-technical-mono text-technical-mono text-on-surface-variant group-hover:text-amber-action transition-colors">#CX-8984-B</span>
+<span class="px-2 py-0.5 bg-[#14b8a6]/20 text-[#14b8a6] border border-[#14b8a6]/30 font-label-caps text-label-caps rounded-full tracking-wider">RESOLVED</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors line-clamp-1">Project VANGUARD Breach</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-3">Compromised credentials identified in dark web forum dump. Immediate password reset enforced globally.</p>
+<div class="flex items-center gap-4 font-technical-mono text-technical-mono text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                2023-10-26T22:45Z
+                            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                                SYS_ADMIN
+                            </div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-4 border-b border-outline-variant cursor-pointer hover:bg-surface-container transition-colors group">
+<div class="flex justify-between items-start mb-2">
+<span class="font-technical-mono text-technical-mono text-on-surface-variant group-hover:text-amber-action transition-colors">#CX-8971-X</span>
+<span class="px-2 py-0.5 bg-[#f59e0b]/20 text-[#f59e0b] border border-[#f59e0b]/30 font-label-caps text-label-caps rounded-full tracking-wider">PENDING</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors line-clamp-1">Anomalous Network Traffic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-3">Spike in outbound UDP traffic to unverified offshore IP addresses. Awaiting deep packet inspection.</p>
+<div class="flex items-center gap-4 font-technical-mono text-technical-mono text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                2023-10-25T14:30Z
+                            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                                AUTO_SYS
+                            </div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="p-4 border-b border-outline-variant cursor-pointer hover:bg-surface-container transition-colors group">
+<div class="flex justify-between items-start mb-2">
+<span class="font-technical-mono text-technical-mono text-on-surface-variant group-hover:text-amber-action transition-colors">#CX-8960-C</span>
+<span class="px-2 py-0.5 bg-[#93000a] text-[#ffdad6] font-label-caps text-label-caps rounded-full tracking-wider">OPEN</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1 group-hover:text-primary transition-colors line-clamp-1">Physical Intrusion Alert</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-3">Sector 4 access logs show unauthorized entry via maintenance tunnel. Security response deployed.</p>
+<div class="flex items-center gap-4 font-technical-mono text-technical-mono text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                2023-10-24T03:15Z
+                            </div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                                SEC_OP_1
+                            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Case Detail View -->
+<section class="flex-1 flex flex-col h-full overflow-hidden bg-background">
+<!-- Detail Header -->
+<div class="p-margin-edge border-b border-outline-variant bg-surface flex-shrink-0">
+<div class="flex justify-between items-start mb-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="font-technical-mono text-technical-mono text-amber-action text-lg tracking-wider">#CX-8992-A</span>
+<span class="px-2 py-1 bg-[#93000a] text-[#ffdad6] font-label-caps text-label-caps rounded-full tracking-wider flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">warning</span> CRITICAL</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Operation SILENT DAWN</h2>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-outline-variant text-on-surface rounded-DEFAULT hover:bg-surface-container-highest transition-colors font-body-md text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                                Export
+                            </button>
+<button class="px-4 py-2 bg-amber-action text-[#472a00] rounded-DEFAULT hover:bg-[#f8bb6f] transition-colors font-body-md text-body-md font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">assignment_ind</span>
+                                Assign
+                            </button>
+</div>
+</div>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-4 gap-4 p-4 bg-surface-container border border-outline-variant rounded-DEFAULT">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">DETECTION TIME</div>
+<div class="font-technical-mono text-technical-mono text-on-surface">2023-10-27T08:14:32Z</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">SOURCE IP</div>
+<div class="font-technical-mono text-technical-mono text-on-surface">192.168.1.105</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">TARGET ASSET</div>
+<div class="font-technical-mono text-technical-mono text-on-surface">Subnet-B / DB-04</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">THREAT ACTOR</div>
+<div class="font-technical-mono text-technical-mono text-rust-alert">UNKNOWN_APT_44</div>
+</div>
+</div>
+</div>
+<!-- Detail Body (Scrollable) -->
+<div class="flex-1 overflow-y-auto p-margin-edge flex flex-col gap-margin-edge">
+<!-- Layout Grid for Content -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Main Content (8 cols) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-gutter">
+<!-- Brief Facts Card -->
+<div class="bg-surface-container border border-outline-variant rounded-DEFAULT p-container-padding">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4 flex items-center gap-2 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-[16px]">subject</span>
+                                    BRIEF FACTS
+                                </h3>
+<div class="font-body-lg text-body-lg text-on-surface space-y-4">
+<p>At approximately 0814Z, automated monitoring systems detected a sustained, high-volume data transfer originating from internal Subnet-B, specifically targeting the legacy database server DB-04.</p>
+<p>The transfer utilized non-standard ports and employed an unknown encryption protocol, bypassing initial perimeter firewalls. Estimated data loss is currently ~4.2GB of encrypted telemetry data.</p>
+<p>Physical security logs indicate no anomalies in the server room during the incident window. The breach is currently assessed as an internal pivot or compromised credential scenario.</p>
+</div>
+</div>
+<!-- Extracted Intelligence -->
+<div class="bg-surface-container border border-outline-variant rounded-DEFAULT p-container-padding">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4 flex items-center gap-2 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-[16px]">memory</span>
+                                    EXTRACTED INTELLIGENCE ENTITIES
+                                </h3>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="px-3 py-1 bg-[#472a00] text-amber-action border border-[#794d07] rounded-DEFAULT font-technical-mono text-technical-mono flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">vpn_key</span> RSA_KEY_0x99F</span>
+<span class="px-3 py-1 bg-[#472a00] text-amber-action border border-[#794d07] rounded-DEFAULT font-technical-mono text-technical-mono flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">account_tree</span> Subnet-B</span>
+<span class="px-3 py-1 bg-[#472a00] text-amber-action border border-[#794d07] rounded-DEFAULT font-technical-mono text-technical-mono flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">storage</span> DB-04</span>
+<span class="px-3 py-1 bg-[#003731] text-[#62fae3] border border-[#005047] rounded-DEFAULT font-technical-mono text-technical-mono flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">location_on</span> IP: 145.92.X.X</span>
+<span class="px-3 py-1 bg-[#410006] text-[#ffb3b0] border border-[#881d24] rounded-DEFAULT font-technical-mono text-technical-mono flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">bug_report</span> MALWARE_SIG_A</span>
+</div>
+</div>
+</div>
+<!-- Sidebar (4 cols) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<!-- Visual Assets -->
+<div class="bg-surface-container border border-outline-variant rounded-DEFAULT overflow-hidden">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant m-4 flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-[16px]">image</span>
+                                    VISUAL EVIDENCE
+                                </h3>
+<div class="p-4 pt-0">
+<div class="w-full h-48 bg-surface-bright border border-outline-variant rounded-DEFAULT relative overflow-hidden group">
+<div class="bg-cover bg-center w-full h-full absolute inset-0 opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A highly complex, abstract network topology map in a dark modern UI style. Glowing nodes connected by intricate thin lines. Teal and amber data flows highlighted against a deep black background. Technical, high-density information visualization." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWZXdnZLF30HUfcKZ73riU6tGh8M8t7G0vo3iEfIi_N3arjOh0RObYf-9gizan_GiDVEYmSlQnYnHdTTXMqb43pYaUzQLfxj1jcueKpIxRmqxT6zwhoTQHverngpj-j4vSF0nHeFO71vkmqSxstCXX56n3qiH1IPzO9cuigQvygb_8cYY9-UR5CKby4p_Q3YCfgT8gply9IzbgocS7FQAFi6-EuK5wMFomtfEHIDYCLDb4g6hBxz2HrA')"></div>
+<div class="absolute bottom-2 right-2 bg-surface/80 px-2 py-1 rounded-DEFAULT font-technical-mono text-technical-mono text-xs border border-outline-variant backdrop-blur-sm">TOPOLOGY_MAP.png</div>
+</div>
+</div>
+</div>
+<!-- Action Log -->
+<div class="bg-surface-container border border-outline-variant rounded-DEFAULT p-container-padding flex-1">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4 flex items-center gap-2 border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                                    INCIDENT LOG
+                                </h3>
+<div class="relative border-l border-outline-variant ml-2 pl-4 space-y-6 mt-4">
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-amber-action ring-4 ring-surface-container"></div>
+<div class="font-technical-mono text-technical-mono text-on-surface-variant text-[10px] mb-1">08:14:32Z</div>
+<div class="font-body-md text-body-md text-on-surface">Initial anomaly detected by IDS.</div>
+</div>
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-surface-bright border border-outline-variant ring-4 ring-surface-container"></div>
+<div class="font-technical-mono text-technical-mono text-on-surface-variant text-[10px] mb-1">08:15:10Z</div>
+<div class="font-body-md text-body-md text-on-surface">Automated port block initiated.</div>
+</div>
+<div class="relative">
+<div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-surface-bright border border-outline-variant ring-4 ring-surface-container"></div>
+<div class="font-technical-mono text-technical-mono text-on-surface-variant text-[10px] mb-1">08:22:05Z</div>
+<div class="font-body-md text-body-md text-on-surface">Analyst AGENT_K assigned to review.</div>
+</div>
+</div>
+</div>
+</div>
+</div> <!-- End Layout Grid -->
+<!-- Similar Cases Row -->
+<div class="mt-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">dynamic_feed</span>
+                            CORRELATED CASES
+                        </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container border border-outline-variant rounded-DEFAULT p-4 hover:border-amber-action/50 transition-colors cursor-pointer group">
+<div class="font-technical-mono text-technical-mono text-on-surface-variant mb-2 group-hover:text-amber-action transition-colors">#CX-7811-D</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[16px] mb-2 line-clamp-1">Subnet-B Recon Scan</h4>
+<div class="flex items-center justify-between text-on-surface-variant font-technical-mono text-technical-mono text-[10px]">
+<span>Match: 84%</span>
+<span>2 Mo Ago</span>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded-DEFAULT p-4 hover:border-amber-action/50 transition-colors cursor-pointer group">
+<div class="font-technical-mono text-technical-mono text-on-surface-variant mb-2 group-hover:text-amber-action transition-colors">#CX-8002-A</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[16px] mb-2 line-clamp-1">DB-04 Failed Auth Spike</h4>
+<div class="flex items-center justify-between text-on-surface-variant font-technical-mono text-technical-mono text-[10px]">
+<span>Match: 76%</span>
+<span>1 Mo Ago</span>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant rounded-DEFAULT p-4 hover:border-amber-action/50 transition-colors cursor-pointer group">
+<div class="font-technical-mono text-technical-mono text-on-surface-variant mb-2 group-hover:text-amber-action transition-colors">#CX-6599-X</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[16px] mb-2 line-clamp-1">Unknown Protocol Traffic</h4>
+<div class="flex items-center justify-between text-on-surface-variant font-technical-mono text-technical-mono text-[10px]">
+<span>Match: 62%</span>
+<span>5 Mo Ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

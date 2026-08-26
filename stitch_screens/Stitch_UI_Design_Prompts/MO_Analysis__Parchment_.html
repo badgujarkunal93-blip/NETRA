@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MO Similarity Analysis - C.I.D. Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#221a14",
+                        "surface-tint": "#9b4500",
+                        "inverse-primary": "#ffb68e",
+                        "inverse-on-surface": "#ffede4",
+                        "tertiary-fixed": "#ffdad6",
+                        "primary-container": "#b45309",
+                        "secondary-container": "#b5ede7",
+                        "secondary": "#316763",
+                        "secondary-fixed": "#b5ede7",
+                        "inverse-surface": "#382e28",
+                        "on-surface-variant": "#564338",
+                        "on-primary-container": "#fff1eb",
+                        "on-secondary-fixed-variant": "#144f4b",
+                        "on-surface": "#221a14",
+                        "primary-fixed": "#ffdbca",
+                        "tertiary": "#a62523",
+                        "surface": "#fff8f5",
+                        "on-error": "#ffffff",
+                        "background": "#fff8f5",
+                        "on-primary-fixed": "#331200",
+                        "surface-container-low": "#fff1e9",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "outline": "#897267",
+                        "surface-bright": "#fff8f5",
+                        "tertiary-container": "#c83e38",
+                        "surface-dim": "#e7d7cd",
+                        "on-tertiary-fixed": "#410002",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#376d69",
+                        "surface-container": "#fcebe1",
+                        "parchment-container": "#e6dac3",
+                        "ink-primary": "#2d241e",
+                        "primary": "#903f00",
+                        "primary-fixed-dim": "#ffb68e",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#9ad1cb",
+                        "outline-variant": "#ddc1b3",
+                        "on-primary-fixed-variant": "#763300",
+                        "on-tertiary-fixed-variant": "#8e1214",
+                        "surface-container-high": "#f6e5db",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#00201e",
+                        "parchment-base": "#f2e8d5",
+                        "surface-variant": "#f0dfd6",
+                        "tertiary-fixed-dim": "#ffb4ac",
+                        "on-tertiary-container": "#fff1ef",
+                        "surface-container-highest": "#f0dfd6",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "base": "4px",
+                        "padding-card": "20px",
+                        "margin": "24px"
+                    },
+                    "fontFamily": {
+                        "technical-mono": ["JetBrains Mono", "monospace"],
+                        "headline-md": ["Hanken Grotesk", "sans-serif"],
+                        "label-caps": ["Hanken Grotesk", "sans-serif"],
+                        "body-lg": ["Hanken Grotesk", "sans-serif"],
+                        "headline-sm": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                        "body-md": ["Hanken Grotesk", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "technical-mono": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    },
+                    "boxShadow": {
+                        "dossier": "0 4px 12px rgba(45, 36, 30, 0.08)",
+                        "inner-edge": "inset 0 0 0 1px rgba(137, 114, 103, 0.2)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f2e8d5; /* parchment-base */
+            position: relative;
+        }
+        /* Vignette effect */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at center, transparent 40%, rgba(45, 36, 30, 0.05) 100%);
+            z-index: 100;
+        }
+        /* Subtle paper texture */
+        .paper-texture {
+            position: relative;
+        }
+        .paper-texture::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.4;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
+        }
+    </style>
+</head>
+<body class="h-full text-on-surface font-body-md antialiased overflow-hidden flex flex-col">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center w-full px-margin py-base z-50 bg-parchment-base dark:bg-inverse-surface border-b border-outline-variant/30 shadow-sm shrink-0">
+<div class="flex items-center gap-margin">
+<span class="font-headline-md text-headline-md font-bold text-ink-primary dark:text-inverse-on-surface">Criminal Intelligence Division</span>
+<!-- Nav Links (Desktop) -->
+<div class="hidden md:flex gap-gutter h-full items-center">
+<a class="text-on-surface-variant font-medium hover:bg-surface-variant/50 transition-colors cursor-pointer active:opacity-80 transition-opacity px-3 py-2 rounded" href="#">Dashboard</a>
+<a class="text-on-surface-variant font-medium hover:bg-surface-variant/50 transition-colors cursor-pointer active:opacity-80 transition-opacity px-3 py-2 rounded" href="#">Intelligence</a>
+<a class="text-on-surface-variant font-medium hover:bg-surface-variant/50 transition-colors cursor-pointer active:opacity-80 transition-opacity px-3 py-2 rounded" href="#">Knowledge Graph</a>
+<a class="text-on-surface-variant font-medium hover:bg-surface-variant/50 transition-colors cursor-pointer active:opacity-80 transition-opacity px-3 py-2 rounded" href="#">FIR Search</a>
+<a class="text-on-surface-variant font-medium hover:bg-surface-variant/50 transition-colors cursor-pointer active:opacity-80 transition-opacity px-3 py-2 rounded" href="#">Alerts</a>
+<a class="text-primary font-bold border-b-2 border-primary hover:bg-surface-variant/50 transition-colors cursor-pointer active:opacity-80 transition-opacity px-3 py-2" href="#">MO Analysis</a>
+</div>
+</div>
+<div class="flex items-center gap-gutter">
+<!-- Search Bar Placeholder -->
+<div class="hidden sm:flex relative">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="pl-8 pr-4 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT text-sm focus:ring-1 focus:ring-primary focus:border-primary outline-none text-on-surface-variant placeholder:text-outline shadow-inner-edge" placeholder="Search archive..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img alt="Chief Investigator Profile" class="w-full h-full object-cover" data-alt="A small, circular profile portrait of a serious, sharply dressed Chief Investigator. The portrait is captured in a formal, archival style with sepia-toned lighting and a soft vignette. The expression is intense and focused, suggesting years of experience in a high-stakes intelligence division. The background is slightly out of focus, resembling a textured parchment wall." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyHKV5az8IpUScKgmKCK00A9ukm90n5eWQBtNrhlMduLjFE-uW_30myP9u3RYlUCXKz5os_ReLqEjqQHZwMICEoVvJEex_uKRNTtSAAEyPUDIR6Vt9BqONwvvOykVIzI8MetNMiPriwXiW6uHjgfNkVbv-sxurAEa04ic42l8K6U8yOrrFt0ZNpAE3pk6unxaoRumS6jnO2ic478v4MtahJ_uGjiJYm5X03lctf22RMJx-b1tYN_v08g"/>
+</div>
+</div>
+</nav>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNav (Desktop only - implied by TopNav containing links, but keeping structural space if needed, or hiding entirely to focus on canvas as requested by 'Destination Rule' - since MO Analysis is a top level tab, we'll keep it focused without a left nav to maximize the 12-col dossier grid) -->
+<!-- Main Canvas -->
+<main class="flex-1 overflow-y-auto p-margin paper-texture">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-margin">
+<!-- Header / Title Area -->
+<div class="col-span-1 md:col-span-12 border-b-2 border-ink-primary pb-4 mb-2 flex justify-between items-end">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-ink-primary">Modus Operandi Similarity Analysis</h1>
+<p class="font-technical-mono text-technical-mono text-on-surface-variant mt-1">REF: CASE-192-ALPHA // CORRELATION THRESHOLD: &gt;85%</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-surface-container border border-outline text-on-surface font-label-caps text-label-caps rounded-DEFAULT hover:bg-surface-variant transition-colors flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">print</span>
+                            PRINT DOSSIER
+                        </button>
+<button class="px-4 py-2 bg-primary-container text-on-primary-container font-label-caps text-label-caps rounded-DEFAULT hover:bg-primary transition-colors flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">save</span>
+                            SAVE CORRELATION
+                        </button>
+</div>
+</div>
+<!-- Case Summary (Top) -->
+<div class="col-span-1 md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Target Case -->
+<div class="bg-parchment-container p-padding-card rounded-lg shadow-dossier shadow-inner-edge border border-outline-variant/50">
+<div class="flex items-center gap-2 mb-3 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-tertiary">target</span>
+<h2 class="font-headline-sm text-headline-sm text-ink-primary">Target Instance</h2>
+</div>
+<div class="space-y-3 font-technical-mono text-technical-mono text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/30 pb-1">
+<span>CASE ID</span>
+<span class="text-ink-primary font-bold">CR-2023-8991</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-1">
+<span>DATE</span>
+<span class="text-ink-primary">23-OCT-2023</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-1">
+<span>LOCATION</span>
+<span class="text-ink-primary">SECTOR 4, DOWNTOWN</span>
+</div>
+<div class="mt-4 pt-2 border-t border-ink-primary border-dashed">
+<span class="block text-xs uppercase mb-1 text-on-surface">Primary Markers:</span>
+<div class="flex flex-wrap gap-1">
+<span class="bg-surface-dim px-2 py-0.5 rounded text-[10px] text-ink-primary border border-outline-variant">FORCED_ENTRY:REAR</span>
+<span class="bg-surface-dim px-2 py-0.5 rounded text-[10px] text-ink-primary border border-outline-variant">TOOL:CROWBAR</span>
+<span class="bg-surface-dim px-2 py-0.5 rounded text-[10px] text-ink-primary border border-outline-variant">TIME:0200-0400</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Match -->
+<div class="bg-parchment-container p-padding-card rounded-lg shadow-dossier shadow-inner-edge border border-outline-variant/50 md:col-span-2 flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary-container px-3 py-1 font-technical-mono text-[10px] font-bold rounded-bl-lg">
+                            94% MATCH
+                        </div>
+<div class="flex items-center gap-2 mb-3 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-primary">link</span>
+<h2 class="font-headline-sm text-headline-sm text-ink-primary">Primary Correlated Case</h2>
+</div>
+<div class="flex gap-margin h-full">
+<div class="flex-1 space-y-3 font-technical-mono text-technical-mono text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/30 pb-1">
+<span>CASE ID</span>
+<span class="text-ink-primary font-bold">CR-2021-1442</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-1">
+<span>DATE</span>
+<span class="text-ink-primary">12-NOV-2021</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/30 pb-1">
+<span>STATUS</span>
+<span class="text-tertiary font-bold">COLD CASE</span>
+</div>
+<p class="text-sm font-body-md text-on-surface mt-2 italic border-l-2 border-outline-variant pl-2">
+                                    "Entry method and temporal window align almost perfectly. Tool marks on rear egress point show identical stress patterns."
+                                </p>
+</div>
+<div class="w-32 h-full flex flex-col items-center justify-center border-l border-outline-variant/50 pl-margin">
+<div class="w-16 h-16 rounded-full border-4 border-primary-container flex items-center justify-center mb-2">
+<span class="font-headline-md text-headline-md text-primary-container">.94</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant text-center">SIMILARITY<br/>INDEX</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Central MO Fingerprint Comparison Table -->
+<div class="col-span-1 md:col-span-12 bg-parchment-container rounded-lg shadow-dossier shadow-inner-edge border border-outline-variant/50 overflow-hidden">
+<div class="bg-surface-container-low px-padding-card py-3 border-b border-outline-variant/50 flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-ink-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">fingerprint</span>
+                            Vector Fingerprint Comparison
+                        </h3>
+</div>
+<div class="p-padding-card overflow-x-auto">
+<table class="w-full text-left font-technical-mono text-technical-mono border-collapse">
+<thead>
+<tr class="text-on-surface-variant border-b-2 border-ink-primary">
+<th class="py-2 px-3 w-1/4">VECTOR PARAMETER</th>
+<th class="py-2 px-3 w-1/4">TARGET (CR-2023-8991)</th>
+<th class="py-2 px-3 w-1/4">MATCH (CR-2021-1442)</th>
+<th class="py-2 px-3 w-1/4">CORRELATION VARIANCE</th>
+</tr>
+</thead>
+<tbody class="text-on-surface">
+<tr class="border-b border-outline-variant/30 hover:bg-surface-variant/30 transition-colors">
+<td class="py-3 px-3 font-medium">Temporal Window</td>
+<td class="py-3 px-3">02:15 - 03:45</td>
+<td class="py-3 px-3">01:30 - 04:00</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1.5 bg-surface-dim rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[90%]"></div>
+</div>
+<span class="text-[10px] w-6">0.90</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-variant/30 transition-colors">
+<td class="py-3 px-3 font-medium">Entry Mechanism</td>
+<td class="py-3 px-3">Pry bar, Rear Door</td>
+<td class="py-3 px-3">Pry bar, Rear Window</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1.5 bg-surface-dim rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[85%]"></div>
+</div>
+<span class="text-[10px] w-6">0.85</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-variant/30 transition-colors">
+<td class="py-3 px-3 font-medium">Target Asset</td>
+<td class="py-3 px-3">Untraceable bearer bonds</td>
+<td class="py-3 px-3">High-yield jewelry</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1.5 bg-surface-dim rounded-full overflow-hidden">
+<div class="h-full bg-outline w-[40%]"></div>
+</div>
+<span class="text-[10px] w-6">0.40</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-variant/30 transition-colors">
+<td class="py-3 px-3 font-medium">Egress Route</td>
+<td class="py-3 px-3">Subterranean access tunnel</td>
+<td class="py-3 px-3">Sewer main vent</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1.5 bg-surface-dim rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[95%]"></div>
+</div>
+<span class="text-[10px] w-6">0.95</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Vector Spatial Distribution (Scatter Plot) -->
+<div class="col-span-1 md:col-span-12 bg-parchment-container p-padding-card rounded-lg shadow-dossier shadow-inner-edge border border-outline-variant/50 flex flex-col">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-sm text-headline-sm text-ink-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">scatter_plot</span>
+                            Vector Spatial Distribution
+                        </h3>
+<div class="flex gap-3 text-technical-mono font-technical-mono text-on-surface-variant text-[10px]">
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Target Instance</div>
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full border border-primary-container bg-surface"></span> Correlated Cases</div>
+<div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> Outliers</div>
+</div>
+</div>
+<!-- Plot Area mimicking a parchment grid -->
+<div class="relative w-full h-64 border-l-2 border-b-2 border-ink-primary bg-parchment-base rounded-tr-sm overflow-hidden" style="background-image: radial-gradient(#897267 1px, transparent 1px); background-size: 20px 20px; background-position: 0 0;">
+<!-- Axis Labels -->
+<span class="absolute bottom-1 left-2 text-[10px] font-technical-mono text-outline font-bold">TEMPORAL VARIANCE (T) →</span>
+<span class="absolute top-2 left-1 text-[10px] font-technical-mono text-outline font-bold origin-top-left -rotate-90 block w-32">← GEOSPATIAL PROXIMITY (D)</span>
+<!-- Scatter Points (Simulated) -->
+<div class="absolute left-[80%] bottom-[85%] w-3 h-3 rounded-full bg-primary-container shadow-sm transform -translate-x-1/2 translate-y-1/2 z-10 animate-pulse"></div>
+<div class="absolute left-[78%] bottom-[82%] w-2 h-2 rounded-full border border-primary-container bg-surface transform -translate-x-1/2 translate-y-1/2"></div>
+<div class="absolute left-[83%] bottom-[87%] w-2.5 h-2.5 rounded-full border border-primary-container bg-surface transform -translate-x-1/2 translate-y-1/2"></div>
+<div class="absolute left-[75%] bottom-[89%] w-1.5 h-1.5 rounded-full border border-primary-container bg-surface transform -translate-x-1/2 translate-y-1/2"></div>
+<!-- Cluster ring -->
+<div class="absolute left-[80%] bottom-[85%] w-16 h-16 rounded-full border border-primary-container/30 border-dashed transform -translate-x-1/2 translate-y-1/2"></div>
+<!-- Outliers -->
+<div class="absolute left-[20%] bottom-[30%] w-1.5 h-1.5 rounded-full bg-outline-variant transform -translate-x-1/2 translate-y-1/2"></div>
+<div class="absolute left-[45%] bottom-[15%] w-2 h-2 rounded-full bg-outline-variant transform -translate-x-1/2 translate-y-1/2"></div>
+<div class="absolute left-[30%] bottom-[60%] w-1 h-1 rounded-full bg-outline-variant transform -translate-x-1/2 translate-y-1/2"></div>
+<div class="absolute left-[60%] bottom-[40%] w-1.5 h-1.5 rounded-full bg-outline-variant transform -translate-x-1/2 translate-y-1/2"></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
