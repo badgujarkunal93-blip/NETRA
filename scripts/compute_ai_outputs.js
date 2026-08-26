@@ -143,7 +143,7 @@ async function computeAIOutputs() {
       const rawTotal = baseMOScore + scoreSpatial + scoreTemporal + scoreSharedEntity;
       const totalSimilarity = Math.round(rawTotal);
 
-      if (totalSimilarity >= 45) {
+      if (totalSimilarity >= 70) {
         const matchingComponents = [];
         if (isSameMajorHead) matchingComponents.push(`Crime Head (${caseA.crime_major_head})`);
         if (distKm <= 5.0) matchingComponents.push(`Spatial Proximity: Corridor Cluster (${distKm.toFixed(1)} km)`);
@@ -156,7 +156,6 @@ async function computeAIOutputs() {
         if (scoreTiming >= 8) matchingComponents.push(`Timing Window (${moA.timing.slice(0, 15)})`);
 
         moMatches.push({
-          id: `MOSIM-${moMatches.length + 1}`,
           case_id_a: moA.case_id,
           case_id_b: moB.case_id,
           similarity_score: Math.min(96, totalSimilarity),
@@ -170,10 +169,13 @@ async function computeAIOutputs() {
     }
   }
 
-  // Sort and keep top 500 pairs
+  // Sort descending and index high-quality pairs (Threshold >= 70%)
   moMatches.sort((a, b) => b.similarity_score - a.similarity_score);
-  aiOutputs.mosimilarityoutput = moMatches.slice(0, 500);
-  console.log(`  -> Generated ${aiOutputs.mosimilarityoutput.length} realistic MO similarity correlations with spatial/temporal tie-breaking.\n`);
+  aiOutputs.mosimilarityoutput = moMatches.map((m, idx) => ({
+    id: `MOSIM-${idx + 1}`,
+    ...m
+  }));
+  console.log(`  -> Generated ${aiOutputs.mosimilarityoutput.length} high-confidence MO similarity correlations (Quality Threshold >= 70%).\n`);
 
   // ---------------------------------------------------------------------------
   // 2. COMPUTING ENTITY RESOLUTION WITH HUMBLE CONFIDENCE SCORING
