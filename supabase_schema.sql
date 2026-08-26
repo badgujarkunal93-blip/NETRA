@@ -260,3 +260,95 @@ CREATE INDEX idx_canvases_case ON case_canvases(case_id);
 CREATE INDEX idx_canvas_nodes_canvas ON canvas_nodes(canvas_id);
 CREATE INDEX idx_canvas_edges_canvas ON canvas_edges(canvas_id);
 
+-- ============================================================================
+-- 14. COMPUTED AI OUTPUT TABLES
+-- ============================================================================
+
+CREATE TABLE IF NOT EXISTS entityresolutionoutput (
+    id TEXT PRIMARY KEY,
+    candidate_person_id_a TEXT NOT NULL REFERENCES persons(id) ON DELETE CASCADE,
+    candidate_person_id_b TEXT NOT NULL REFERENCES persons(id) ON DELETE CASCADE,
+    person_name_a TEXT NOT NULL,
+    person_name_b TEXT NOT NULL,
+    match_confidence INTEGER NOT NULL,
+    matching_signals TEXT[] DEFAULT '{}',
+    status TEXT NOT NULL DEFAULT 'MANUAL_REVIEW_REQUIRED',
+    recommendation TEXT,
+    model_name TEXT DEFAULT 'CIU-EntityLinker-v1',
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS networkcommunity (
+    community_id TEXT PRIMARY KEY,
+    label TEXT NOT NULL,
+    hub_entity_id TEXT NOT NULL,
+    member_count INTEGER NOT NULL,
+    density_score REAL NOT NULL,
+    members TEXT[] DEFAULT '{}',
+    detected_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS linkpredictionoutput (
+    id TEXT PRIMARY KEY,
+    source_entity_id TEXT NOT NULL,
+    target_entity_id TEXT NOT NULL,
+    predicted_relationship TEXT NOT NULL,
+    predicted_confidence INTEGER NOT NULL,
+    common_neighbors_count INTEGER NOT NULL,
+    common_neighbors TEXT[] DEFAULT '{}',
+    topology_score REAL NOT NULL,
+    rationale TEXT,
+    model_name TEXT DEFAULT 'CIU-Graph-AdamicAdar-v1'
+);
+
+CREATE TABLE IF NOT EXISTS anomalydetectionoutput (
+    id TEXT PRIMARY KEY,
+    entity_id TEXT NOT NULL,
+    anomaly_type TEXT NOT NULL,
+    z_score REAL NOT NULL,
+    anomaly_score INTEGER NOT NULL,
+    explanation TEXT NOT NULL,
+    detected_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS rolepredictionoutput (
+    id TEXT PRIMARY KEY,
+    person_id TEXT NOT NULL REFERENCES persons(id) ON DELETE CASCADE,
+    predicted_role TEXT NOT NULL,
+    confidence INTEGER NOT NULL,
+    basis TEXT NOT NULL,
+    model_name TEXT DEFAULT 'CIU-RolePredictor-v1'
+);
+
+-- ============================================================================
+-- 15. PROTOTYPE ACCESS (DISABLE RLS FOR DEMO / ANON ACCESS)
+-- ============================================================================
+
+ALTER TABLE IF EXISTS cases DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS persons DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS phones DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS vehicles DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS accounts DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS organizations DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS locations DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS events DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS person_case_roles DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS relationships DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS mo_fingerprints DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS evidence DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS evidence_links DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS fir_documents DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS mo_similarities DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS alerts DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS entityresolutionoutput DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS networkcommunity DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS linkpredictionoutput DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS anomalydetectionoutput DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS rolepredictionoutput DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS case_canvases DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS canvas_nodes DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS canvas_edges DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS canvas_snapshots DISABLE ROW LEVEL SECURITY;
+
+
+

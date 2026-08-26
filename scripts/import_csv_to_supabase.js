@@ -619,13 +619,40 @@ async function runImport() {
 
   // If Supabase is connected, write tables
   if (isSupabaseConfigured) {
-    console.log('\n[SUPABASE INGESTION] Writing tables to active Supabase project...');
+    console.log('\n[SUPABASE INGESTION] Writing all base tables to active Supabase project in chunks...');
+
+    async function upsertInChunks(tableName, rows, chunkSize = 250) {
+      if (!rows || rows.length === 0) return;
+      let inserted = 0;
+      for (let i = 0; i < rows.length; i += chunkSize) {
+        const chunk = rows.slice(i, i + chunkSize);
+        const { error } = await supabase.from(tableName).upsert(chunk);
+        if (error) {
+          console.warn(`    ⚠️ Table "${tableName}" chunk [${i}-${i + chunk.length}] notice:`, error.message);
+        } else {
+          inserted += chunk.length;
+        }
+      }
+      console.log(`  -> Synced ${inserted} / ${rows.length} rows to "${tableName}" in Supabase.`);
+    }
+
     try {
-      // Cases
-      await supabase.from('cases').upsert(dbDataset.cases.slice(0, 500));
-      console.log('  -> Synced cases to Supabase');
+      await upsertInChunks('locations', dbDataset.locations);
+      await upsertInChunks('cases', dbDataset.cases);
+      await upsertInChunks('persons', dbDataset.persons);
+      await upsertInChunks('phones', dbDataset.phones);
+      await upsertInChunks('vehicles', dbDataset.vehicles);
+      await upsertInChunks('accounts', dbDataset.accounts);
+      await upsertInChunks('organizations', dbDataset.organizations);
+      await upsertInChunks('events', dbDataset.events);
+      await upsertInChunks('person_case_roles', dbDataset.person_case_roles);
+      await upsertInChunks('relationships', dbDataset.relationships);
+      await upsertInChunks('mo_fingerprints', dbDataset.mo_fingerprints);
+      await upsertInChunks('evidence', dbDataset.evidence);
+      await upsertInChunks('evidence_links', dbDataset.evidence_links);
+      await upsertInChunks('fir_documents', dbDataset.fir_documents);
     } catch (err) {
-      console.warn('  -> Supabase sync notice:', err.message);
+      console.error('  -> Supabase sync error:', err.message);
     }
   } else {
     console.log('\n[OFFLINE DATA STORE] Supabase credentials not set in env — data stored in local JSON database for immediate UI access.');

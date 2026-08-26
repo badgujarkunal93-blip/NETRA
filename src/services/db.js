@@ -1697,6 +1697,66 @@ export const dbService = {
   // --- CASE CANVAS INVESTIGATIVE WHITEBOARD ---
   async getCaseCanvas(caseId) {
     const storageKey = `ciu_canvas_${caseId}`;
+
+    // 1. If Supabase is configured, fetch directly from Supabase first
+    if (isSupabaseConfigured) {
+      try {
+        const { data: canvas, error: canvasErr } = await supabase
+          .from('case_canvases')
+          .select('*')
+          .eq('case_id', caseId)
+          .maybeSingle();
+
+        if (canvas && !canvasErr) {
+          const { data: dbNodes } = await supabase
+            .from('canvas_nodes')
+            .select('*')
+            .eq('canvas_id', canvas.id);
+
+          const { data: dbEdges } = await supabase
+            .from('canvas_edges')
+            .select('*')
+            .eq('canvas_id', canvas.id);
+
+          if (dbNodes && dbNodes.length > 0) {
+            const formattedNodes = dbNodes.map(n => ({
+              id: n.id,
+              type: n.node_type,
+              position: { x: n.position_x, y: n.position_y },
+              data: {
+                label: n.label,
+                description: n.description || '',
+                status: n.status || 'hypothesis',
+                linkedId: n.linked_entity_id || null,
+                nodeType: n.linked_entity_type || 'Custom'
+              }
+            }));
+
+            const formattedEdges = (dbEdges || []).map(e => ({
+              id: e.id,
+              source: e.source_node_id,
+              target: e.target_node_id,
+              label: e.relationship_label,
+              data: {
+                justification: e.justification || ''
+              }
+            }));
+
+            return {
+              caseId,
+              nodes: formattedNodes,
+              edges: formattedEdges,
+              caseNotes: canvas.case_notes || '',
+              updatedAt: canvas.updated_at
+            };
+          }
+        }
+      } catch (err) {
+        console.warn('Supabase getCaseCanvas query notice:', err.message);
+      }
+    }
+
+    // 2. Fallback to localStorage
     let stored = null;
     try {
       const raw = localStorage.getItem(storageKey);
@@ -1790,19 +1850,55 @@ export const dbService = {
       updatedAt: new Date().toISOString()
     };
 
+    // Save to localStorage as quick local cache
     try {
       localStorage.setItem(storageKey, JSON.stringify(canvasData));
     } catch {}
 
+    // Save directly to Supabase tables
     if (isSupabaseConfigured) {
       try {
+        const canvasId = `CANV-${caseId.replace(/[^a-zA-Z0-9_-]/g, '_')}`;
         await supabase.from('case_canvases').upsert({
+          id: canvasId,
           case_id: caseId,
-          case_notes: caseNotes,
+          case_notes: caseNotes || '',
           updated_at: new Date().toISOString()
         });
+
+        // Sync nodes
+        if (nodes && nodes.length > 0) {
+          const dbNodes = nodes.map(n => ({
+            id: n.id,
+            canvas_id: canvasId,
+            node_type: n.type || 'noteCard',
+            position_x: n.position?.x || 0,
+            position_y: n.position?.y || 0,
+            label: n.data?.label || 'Card',
+            description: n.data?.description || '',
+            linked_entity_type: n.data?.nodeType || null,
+            linked_entity_id: n.data?.linkedId || null,
+            status: n.data?.status || 'hypothesis'
+          }));
+          await supabase.from('canvas_nodes').delete().eq('canvas_id', canvasId);
+          await supabase.from('canvas_nodes').upsert(dbNodes);
+        }
+
+        // Sync edges
+        if (edges && edges.length > 0) {
+          const dbEdges = edges.map(e => ({
+            id: e.id,
+            canvas_id: canvasId,
+            source_node_id: e.source,
+            target_node_id: e.target,
+            relationship_label: e.label || 'linked to',
+            justification: e.data?.justification || ''
+          }));
+          await supabase.from('canvas_edges').delete().eq('canvas_id', canvasId);
+          await supabase.from('canvas_edges').upsert(dbEdges);
+        }
       } catch (err) {
-        console.warn('Supabase canvas sync notice:', err);
+        console.warn('Supabase canvas sync notice:', err.message);
       }
     }
 

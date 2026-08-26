@@ -569,12 +569,39 @@ async function computeAIOutputs() {
 
   // Write to Supabase if connected
   if (isSupabaseConfigured) {
-    console.log('\n[SUPABASE SYNC] Syncing computed alerts & MO similarities to Supabase...');
+    console.log('\n[SUPABASE SYNC] Syncing all computed AI output tables to Supabase in chunks...');
+
+    async function upsertInChunks(tableName, rows, chunkSize = 250) {
+      if (!rows || rows.length === 0) return;
+      let inserted = 0;
+      for (let i = 0; i < rows.length; i += chunkSize) {
+        const chunk = rows.slice(i, i + chunkSize);
+        const { error } = await supabase.from(tableName).upsert(chunk);
+        if (error) {
+          console.warn(`    ⚠️ Table "${tableName}" sync notice:`, error.message);
+        } else {
+          inserted += chunk.length;
+        }
+      }
+      console.log(`  -> Synced ${inserted} / ${rows.length} rows to "${tableName}" in Supabase.`);
+    }
+
     try {
-      await supabase.from('alerts').upsert(aiOutputs.alert);
-      console.log('  -> Synced alerts to Supabase');
+      await upsertInChunks('alerts', aiOutputs.alert);
+      await upsertInChunks('mo_similarities', aiOutputs.mosimilarityoutput.map(m => ({
+        id: m.id,
+        case_id_a: m.case_id_a,
+        case_id_b: m.case_id_b,
+        similarity_score: m.similarity_score,
+        matching_components: m.matching_components
+      })));
+      await upsertInChunks('entityresolutionoutput', aiOutputs.entityresolutionoutput);
+      await upsertInChunks('networkcommunity', aiOutputs.networkcommunity);
+      await upsertInChunks('linkpredictionoutput', aiOutputs.linkpredictionoutput);
+      await upsertInChunks('anomalydetectionoutput', aiOutputs.anomalydetectionoutput);
+      await upsertInChunks('rolepredictionoutput', aiOutputs.rolepredictionoutput);
     } catch (err) {
-      console.warn('  -> Supabase alert sync notice:', err.message);
+      console.error('  -> Supabase AI sync error:', err.message);
     }
   }
 

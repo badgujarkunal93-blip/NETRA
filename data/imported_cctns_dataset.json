@@ -305816,7 +305816,7 @@
       "spatial_distance_km": 0.28,
       "temporal_delta_days": 5,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.648Z"
+      "computed_at": "2026-08-26T17:05:46.470Z"
     },
     {
       "id": "MOSIM-2",
@@ -305832,7 +305832,7 @@
       "spatial_distance_km": 0.88,
       "temporal_delta_days": 5,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.578Z"
+      "computed_at": "2026-08-26T17:05:46.405Z"
     },
     {
       "id": "MOSIM-3",
@@ -305848,7 +305848,7 @@
       "spatial_distance_km": 1.71,
       "temporal_delta_days": 3,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.599Z"
+      "computed_at": "2026-08-26T17:05:46.424Z"
     },
     {
       "id": "MOSIM-4",
@@ -305864,7 +305864,7 @@
       "spatial_distance_km": 2.95,
       "temporal_delta_days": 2,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.559Z"
+      "computed_at": "2026-08-26T17:05:46.386Z"
     },
     {
       "id": "MOSIM-5",
@@ -305880,7 +305880,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 16,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.565Z"
+      "computed_at": "2026-08-26T17:05:46.392Z"
     },
     {
       "id": "MOSIM-6",
@@ -305896,7 +305896,7 @@
       "spatial_distance_km": 1.37,
       "temporal_delta_days": 5,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.609Z"
+      "computed_at": "2026-08-26T17:05:46.434Z"
     },
     {
       "id": "MOSIM-7",
@@ -305912,7 +305912,7 @@
       "spatial_distance_km": 1.37,
       "temporal_delta_days": 5,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.650Z"
+      "computed_at": "2026-08-26T17:05:46.472Z"
     },
     {
       "id": "MOSIM-8",
@@ -305928,7 +305928,7 @@
       "spatial_distance_km": 1.64,
       "temporal_delta_days": 5,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.724Z"
+      "computed_at": "2026-08-26T17:05:46.544Z"
     },
     {
       "id": "MOSIM-9",
@@ -305944,7 +305944,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 20,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.729Z"
+      "computed_at": "2026-08-26T17:05:46.550Z"
     },
     {
       "id": "MOSIM-10",
@@ -305960,7 +305960,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 21,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.647Z"
+      "computed_at": "2026-08-26T17:05:46.469Z"
     },
     {
       "id": "MOSIM-11",
@@ -305975,7 +305975,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 307,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.518Z"
+      "computed_at": "2026-08-26T17:05:46.343Z"
     },
     {
       "id": "MOSIM-12",
@@ -305990,7 +305990,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 174,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.544Z"
+      "computed_at": "2026-08-26T17:05:46.372Z"
     },
     {
       "id": "MOSIM-13",
@@ -306005,7 +306005,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 237,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.560Z"
+      "computed_at": "2026-08-26T17:05:46.387Z"
     },
     {
       "id": "MOSIM-14",
@@ -306020,7 +306020,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 58,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.561Z"
+      "computed_at": "2026-08-26T17:05:46.388Z"
     },
     {
       "id": "MOSIM-15",
@@ -306035,7 +306035,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 221,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.590Z"
+      "computed_at": "2026-08-26T17:05:46.416Z"
     },
     {
       "id": "MOSIM-16",
@@ -306050,7 +306050,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 111,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.597Z"
+      "computed_at": "2026-08-26T17:05:46.422Z"
     },
     {
       "id": "MOSIM-17",
@@ -306066,7 +306066,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 45,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.605Z"
+      "computed_at": "2026-08-26T17:05:46.430Z"
     },
     {
       "id": "MOSIM-18",
@@ -306081,7 +306081,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 164,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.605Z"
+      "computed_at": "2026-08-26T17:05:46.430Z"
     },
     {
       "id": "MOSIM-19",
@@ -306097,7 +306097,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 40,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.606Z"
+      "computed_at": "2026-08-26T17:05:46.431Z"
     },
     {
       "id": "MOSIM-20",
@@ -306112,7 +306112,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 105,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.608Z"
+      "computed_at": "2026-08-26T17:05:46.432Z"
     },
     {
       "id": "MOSIM-21",
@@ -306127,7 +306127,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 224,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.608Z"
+      "computed_at": "2026-08-26T17:05:46.433Z"
     },
     {
       "id": "MOSIM-22",
@@ -306142,7 +306142,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 168,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.619Z"
+      "computed_at": "2026-08-26T17:05:46.440Z"
     },
     {
       "id": "MOSIM-23",
@@ -306158,7 +306158,7 @@
       "spatial_distance_km": 4.08,
       "temporal_delta_days": 2,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.639Z"
+      "computed_at": "2026-08-26T17:05:46.462Z"
     },
     {
       "id": "MOSIM-24",
@@ -306173,7 +306173,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 173,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.663Z"
+      "computed_at": "2026-08-26T17:05:46.485Z"
     },
     {
       "id": "MOSIM-25",
@@ -306188,7 +306188,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 203,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.665Z"
+      "computed_at": "2026-08-26T17:05:46.487Z"
     },
     {
       "id": "MOSIM-26",
@@ -306203,7 +306203,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 189,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.671Z"
+      "computed_at": "2026-08-26T17:05:46.493Z"
     },
     {
       "id": "MOSIM-27",
@@ -306218,7 +306218,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 110,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.672Z"
+      "computed_at": "2026-08-26T17:05:46.493Z"
     },
     {
       "id": "MOSIM-28",
@@ -306233,7 +306233,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 169,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.702Z"
+      "computed_at": "2026-08-26T17:05:46.523Z"
     },
     {
       "id": "MOSIM-29",
@@ -306248,7 +306248,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 119,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.704Z"
+      "computed_at": "2026-08-26T17:05:46.525Z"
     },
     {
       "id": "MOSIM-30",
@@ -306264,7 +306264,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 43,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.706Z"
+      "computed_at": "2026-08-26T17:05:46.527Z"
     },
     {
       "id": "MOSIM-31",
@@ -306279,7 +306279,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 63,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.706Z"
+      "computed_at": "2026-08-26T17:05:46.527Z"
     },
     {
       "id": "MOSIM-32",
@@ -306294,7 +306294,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 180,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.708Z"
+      "computed_at": "2026-08-26T17:05:46.529Z"
     },
     {
       "id": "MOSIM-33",
@@ -306309,7 +306309,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 119,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.735Z"
+      "computed_at": "2026-08-26T17:05:46.555Z"
     },
     {
       "id": "MOSIM-34",
@@ -306324,7 +306324,7 @@
       "spatial_distance_km": 0,
       "temporal_delta_days": 68,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.739Z"
+      "computed_at": "2026-08-26T17:05:46.559Z"
     },
     {
       "id": "MOSIM-35",
@@ -306340,7 +306340,7 @@
       "spatial_distance_km": 0.5,
       "temporal_delta_days": 17,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.601Z"
+      "computed_at": "2026-08-26T17:05:46.425Z"
     },
     {
       "id": "MOSIM-36",
@@ -306356,7 +306356,7 @@
       "spatial_distance_km": 4.55,
       "temporal_delta_days": 2,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.622Z"
+      "computed_at": "2026-08-26T17:05:46.443Z"
     },
     {
       "id": "MOSIM-37",
@@ -306372,7 +306372,7 @@
       "spatial_distance_km": 0.41,
       "temporal_delta_days": 20,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.656Z"
+      "computed_at": "2026-08-26T17:05:46.479Z"
     },
     {
       "id": "MOSIM-38",
@@ -306388,7 +306388,7 @@
       "spatial_distance_km": 1.73,
       "temporal_delta_days": 8,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.708Z"
+      "computed_at": "2026-08-26T17:05:46.529Z"
     },
     {
       "id": "MOSIM-39",
@@ -306404,7 +306404,7 @@
       "spatial_distance_km": 6.54,
       "temporal_delta_days": 1,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.560Z"
+      "computed_at": "2026-08-26T17:05:46.388Z"
     },
     {
       "id": "MOSIM-40",
@@ -306419,7 +306419,7 @@
       "spatial_distance_km": 0.41,
       "temporal_delta_days": 189,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.657Z"
+      "computed_at": "2026-08-26T17:05:46.480Z"
     },
     {
       "id": "MOSIM-41",
@@ -306435,7 +306435,7 @@
       "spatial_distance_km": 5.02,
       "temporal_delta_days": 2,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.658Z"
+      "computed_at": "2026-08-26T17:05:46.481Z"
     },
     {
       "id": "MOSIM-42",
@@ -306451,7 +306451,7 @@
       "spatial_distance_km": 2.56,
       "temporal_delta_days": 7,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.637Z"
+      "computed_at": "2026-08-26T17:05:46.458Z"
     },
     {
       "id": "MOSIM-43",
@@ -306467,7 +306467,7 @@
       "spatial_distance_km": 1.91,
       "temporal_delta_days": 9,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.639Z"
+      "computed_at": "2026-08-26T17:05:46.461Z"
     },
     {
       "id": "MOSIM-44",
@@ -306483,7 +306483,7 @@
       "spatial_distance_km": 1.66,
       "temporal_delta_days": 11,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.647Z"
+      "computed_at": "2026-08-26T17:05:46.469Z"
     },
     {
       "id": "MOSIM-45",
@@ -306499,7 +306499,7 @@
       "spatial_distance_km": 6.85,
       "temporal_delta_days": 1,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.669Z"
+      "computed_at": "2026-08-26T17:05:46.491Z"
     },
     {
       "id": "MOSIM-46",
@@ -306515,7 +306515,7 @@
       "spatial_distance_km": 1.66,
       "temporal_delta_days": 10,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.680Z"
+      "computed_at": "2026-08-26T17:05:46.501Z"
     },
     {
       "id": "MOSIM-47",
@@ -306530,7 +306530,7 @@
       "spatial_distance_km": 0.51,
       "temporal_delta_days": 115,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.715Z"
+      "computed_at": "2026-08-26T17:05:46.535Z"
     },
     {
       "id": "MOSIM-48",
@@ -306545,7 +306545,7 @@
       "spatial_distance_km": 0.79,
       "temporal_delta_days": 88,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.535Z"
+      "computed_at": "2026-08-26T17:05:46.361Z"
     },
     {
       "id": "MOSIM-49",
@@ -306560,7 +306560,7 @@
       "spatial_distance_km": 0.7,
       "temporal_delta_days": 88,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.537Z"
+      "computed_at": "2026-08-26T17:05:46.363Z"
     },
     {
       "id": "MOSIM-50",
@@ -306576,7 +306576,7 @@
       "spatial_distance_km": 5.87,
       "temporal_delta_days": 2,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.558Z"
+      "computed_at": "2026-08-26T17:05:46.384Z"
     },
     {
       "id": "MOSIM-51",
@@ -306591,7 +306591,7 @@
       "spatial_distance_km": 0.62,
       "temporal_delta_days": 206,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.577Z"
+      "computed_at": "2026-08-26T17:05:46.405Z"
     },
     {
       "id": "MOSIM-52",
@@ -306607,7 +306607,7 @@
       "spatial_distance_km": 8.33,
       "temporal_delta_days": 1,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.623Z"
+      "computed_at": "2026-08-26T17:05:46.444Z"
     },
     {
       "id": "MOSIM-53",
@@ -306623,7 +306623,7 @@
       "spatial_distance_km": 3,
       "temporal_delta_days": 6,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.643Z"
+      "computed_at": "2026-08-26T17:05:46.465Z"
     },
     {
       "id": "MOSIM-54",
@@ -306639,7 +306639,7 @@
       "spatial_distance_km": 3.64,
       "temporal_delta_days": 5,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.699Z"
+      "computed_at": "2026-08-26T17:05:46.520Z"
     },
     {
       "id": "MOSIM-55",
@@ -306655,7 +306655,7 @@
       "spatial_distance_km": 3.38,
       "temporal_delta_days": 5,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.705Z"
+      "computed_at": "2026-08-26T17:05:46.525Z"
     },
     {
       "id": "MOSIM-56",
@@ -306671,7 +306671,7 @@
       "spatial_distance_km": 4.35,
       "temporal_delta_days": 4,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.734Z"
+      "computed_at": "2026-08-26T17:05:46.553Z"
     },
     {
       "id": "MOSIM-57",
@@ -306686,7 +306686,7 @@
       "spatial_distance_km": 0.86,
       "temporal_delta_days": 87,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.502Z"
+      "computed_at": "2026-08-26T17:05:46.327Z"
     },
     {
       "id": "MOSIM-58",
@@ -306702,7 +306702,7 @@
       "spatial_distance_km": 3.6,
       "temporal_delta_days": 6,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.604Z"
+      "computed_at": "2026-08-26T17:05:46.429Z"
     },
     {
       "id": "MOSIM-59",
@@ -306718,7 +306718,7 @@
       "spatial_distance_km": 1.57,
       "temporal_delta_days": 14,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.604Z"
+      "computed_at": "2026-08-26T17:05:46.429Z"
     },
     {
       "id": "MOSIM-60",
@@ -306734,7 +306734,7 @@
       "spatial_distance_km": 0.97,
       "temporal_delta_days": 45,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.618Z"
+      "computed_at": "2026-08-26T17:05:46.440Z"
     },
     {
       "id": "MOSIM-61",
@@ -306750,7 +306750,7 @@
       "spatial_distance_km": 6.76,
       "temporal_delta_days": 2,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.635Z"
+      "computed_at": "2026-08-26T17:05:46.456Z"
     },
     {
       "id": "MOSIM-62",
@@ -306766,7 +306766,7 @@
       "spatial_distance_km": 7.26,
       "temporal_delta_days": 2,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.638Z"
+      "computed_at": "2026-08-26T17:05:46.459Z"
     },
     {
       "id": "MOSIM-63",
@@ -306781,7 +306781,7 @@
       "spatial_distance_km": 0.95,
       "temporal_delta_days": 82,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.639Z"
+      "computed_at": "2026-08-26T17:05:46.461Z"
     },
     {
       "id": "MOSIM-64",
@@ -306796,7 +306796,7 @@
       "spatial_distance_km": 0.99,
       "temporal_delta_days": 167,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.664Z"
+      "computed_at": "2026-08-26T17:05:46.486Z"
     },
     {
       "id": "MOSIM-65",
@@ -306812,7 +306812,7 @@
       "spatial_distance_km": 8.95,
       "temporal_delta_days": 1,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.671Z"
+      "computed_at": "2026-08-26T17:05:46.493Z"
     },
     {
       "id": "MOSIM-66",
@@ -306828,7 +306828,7 @@
       "spatial_distance_km": 2.16,
       "temporal_delta_days": 10,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.674Z"
+      "computed_at": "2026-08-26T17:05:46.495Z"
     },
     {
       "id": "MOSIM-67",
@@ -306844,7 +306844,7 @@
       "spatial_distance_km": 4.67,
       "temporal_delta_days": 4,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.681Z"
+      "computed_at": "2026-08-26T17:05:46.502Z"
     },
     {
       "id": "MOSIM-68",
@@ -306859,7 +306859,7 @@
       "spatial_distance_km": 0.97,
       "temporal_delta_days": 76,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.690Z"
+      "computed_at": "2026-08-26T17:05:46.511Z"
     },
     {
       "id": "MOSIM-69",
@@ -306874,7 +306874,7 @@
       "spatial_distance_km": 0.97,
       "temporal_delta_days": 123,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.709Z"
+      "computed_at": "2026-08-26T17:05:46.530Z"
     },
     {
       "id": "MOSIM-70",
@@ -306889,7 +306889,7 @@
       "spatial_distance_km": 0.86,
       "temporal_delta_days": 129,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.712Z"
+      "computed_at": "2026-08-26T17:05:46.533Z"
     },
     {
       "id": "MOSIM-71",
@@ -306905,7 +306905,7 @@
       "spatial_distance_km": 1.09,
       "temporal_delta_days": 27,
       "model_name": "CIU-MO-WeightedJaccard-v1",
-      "computed_at": "2026-08-26T16:45:03.731Z"
+      "computed_at": "2026-08-26T17:05:46.552Z"
     }
   ],
   "alerts": [
@@ -306924,7 +306924,7 @@
         "ANOM-1"
       ],
       "status": "New",
-      "created_at": "2026-08-26T16:45:04.791Z"
+      "created_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ALRT-2026-02",
@@ -306941,7 +306941,7 @@
         "DOC-FIR_0001"
       ],
       "status": "New",
-      "created_at": "2026-08-26T16:45:04.791Z"
+      "created_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ALRT-2026-03",
@@ -306957,7 +306957,7 @@
         "EVI-FIR_0002"
       ],
       "status": "Reviewed",
-      "created_at": "2026-08-26T16:45:04.791Z"
+      "created_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ALRT-2026-04",
@@ -306973,7 +306973,7 @@
         "DOC-FIR_0001"
       ],
       "status": "New",
-      "created_at": "2026-08-26T16:45:04.791Z"
+      "created_at": "2026-08-26T17:05:47.630Z"
     }
   ],
   "findings": [
@@ -306992,7 +306992,7 @@
       "description": "Heuristic alignment across Byculla and Bandra cases confirms common Master Key bypass signature and mutual phone node hops.",
       "model_name": "CIU-LLM-AlertSynthesis-v1",
       "status": "New",
-      "created_at": "2026-08-26T16:45:04.791Z"
+      "created_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "FND-2026-02",
@@ -307009,7 +307009,7 @@
       "description": "Adamic-Adar graph topology predicts unobserved conduit operative between Bandra Hawala front and Dharavi logistics depot with 88% confidence.",
       "model_name": "CIU-LLM-AlertSynthesis-v1",
       "status": "New",
-      "created_at": "2026-08-26T16:45:04.791Z"
+      "created_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "FND-2026-03",
@@ -307025,7 +307025,7 @@
       "description": "Phonetic name matching and shared telecom records indicate duplicate suspect registrations across distinct precinct chargesheets.",
       "model_name": "CIU-LLM-AlertSynthesis-v1",
       "status": "Reviewed",
-      "created_at": "2026-08-26T16:45:04.791Z"
+      "created_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "FND-2026-04",
@@ -307041,7 +307041,7 @@
       "description": "Single burner SIM terminal possesses anomalous graph centrality exceeding +2.5σ above mean with rapid multi-jurisdiction call bursts.",
       "model_name": "CIU-LLM-AlertSynthesis-v1",
       "status": "New",
-      "created_at": "2026-08-26T16:45:04.791Z"
+      "created_at": "2026-08-26T17:05:47.630Z"
     }
   ],
   "communities": [
@@ -307056,7 +307056,7 @@
         "PER-00004",
         "PER-02040"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-2",
@@ -307069,7 +307069,7 @@
         "PER-01407",
         "PER-00389"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-3",
@@ -307084,7 +307084,7 @@
         "PER-01985",
         "PER-04704"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-4",
@@ -307109,7 +307109,7 @@
         "PER-03169",
         "PER-02428"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-5",
@@ -307134,7 +307134,7 @@
         "ORG-0229",
         "ORG-0445"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-6",
@@ -307152,7 +307152,7 @@
         "PER-01884",
         "ORG-0287"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-7",
@@ -307166,7 +307166,7 @@
         "PER-00408",
         "PER-03317"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-8",
@@ -307191,7 +307191,7 @@
         "PER-04511",
         "PER-04654"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-9",
@@ -307205,7 +307205,7 @@
         "ORG-0211",
         "PER-01961"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-10",
@@ -307219,7 +307219,7 @@
         "PER-00352",
         "PER-02479"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-11",
@@ -307238,7 +307238,7 @@
         "PER-01258",
         "PER-02986"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-12",
@@ -307252,7 +307252,7 @@
         "ORG-0085",
         "PER-02608"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-13",
@@ -307277,7 +307277,7 @@
         "PER-00225",
         "ORG-0253"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-14",
@@ -307302,7 +307302,7 @@
         "PER-01894",
         "PER-01852"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-15",
@@ -307319,7 +307319,7 @@
         "PER-03781",
         "PER-04207"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-16",
@@ -307334,7 +307334,7 @@
         "PER-04713",
         "PER-01240"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-17",
@@ -307349,7 +307349,7 @@
         "PER-00767",
         "PER-00600"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-18",
@@ -307374,7 +307374,7 @@
         "PER-00907",
         "PER-00606"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-19",
@@ -307395,7 +307395,7 @@
         "PER-02894",
         "PER-04569"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-20",
@@ -307412,7 +307412,7 @@
         "PER-02385",
         "PER-02051"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-21",
@@ -307427,7 +307427,7 @@
         "ORG-0022",
         "PER-03741"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-22",
@@ -307444,7 +307444,7 @@
         "PER-03996",
         "PER-03958"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-23",
@@ -307457,7 +307457,7 @@
         "PER-00980",
         "PER-00635"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-24",
@@ -307472,7 +307472,7 @@
         "PER-02828",
         "PER-00213"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-25",
@@ -307488,7 +307488,7 @@
         "PER-03424",
         "PER-03682"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-26",
@@ -307501,7 +307501,7 @@
         "PER-00872",
         "PER-00402"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-27",
@@ -307516,7 +307516,7 @@
         "PER-04386",
         "PER-02638"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-28",
@@ -307532,7 +307532,7 @@
         "PER-04596",
         "PER-00405"
       ],
-      "detected_at": "2026-08-26T16:45:04.768Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-29",
@@ -307546,7 +307546,7 @@
         "ORG-0365",
         "PER-00561"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-30",
@@ -307561,7 +307561,7 @@
         "PER-00653",
         "PER-04731"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-31",
@@ -307574,7 +307574,7 @@
         "PER-00942",
         "PER-01486"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-32",
@@ -307595,7 +307595,7 @@
         "PER-04193",
         "PER-01459"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-33",
@@ -307612,7 +307612,7 @@
         "PER-00184",
         "PER-00091"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-34",
@@ -307628,7 +307628,7 @@
         "PER-01771",
         "PER-04478"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-35",
@@ -307643,7 +307643,7 @@
         "ORG-0033",
         "PER-03125"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-36",
@@ -307658,7 +307658,7 @@
         "ORG-0149",
         "PER-04693"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-37",
@@ -307677,7 +307677,7 @@
         "ORG-0325",
         "PER-00481"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-38",
@@ -307690,7 +307690,7 @@
         "PER-02898",
         "PER-01888"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-39",
@@ -307703,7 +307703,7 @@
         "PER-03057",
         "PER-00060"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-40",
@@ -307719,7 +307719,7 @@
         "ORG-0410",
         "PER-00195"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-41",
@@ -307734,7 +307734,7 @@
         "PER-01956",
         "PER-02613"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-42",
@@ -307748,7 +307748,7 @@
         "ORG-0212",
         "PER-03092"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-43",
@@ -307763,7 +307763,7 @@
         "PER-00741",
         "PER-00938"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-44",
@@ -307780,7 +307780,7 @@
         "PER-04686",
         "PER-02786"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-45",
@@ -307805,7 +307805,7 @@
         "PER-03532",
         "PER-04857"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-46",
@@ -307825,7 +307825,7 @@
         "PER-00032",
         "PER-00092"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-47",
@@ -307840,7 +307840,7 @@
         "PER-00789",
         "PER-02223"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-48",
@@ -307853,7 +307853,7 @@
         "PER-04684",
         "PER-03384"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-49",
@@ -307867,7 +307867,7 @@
         "ORG-0220",
         "PER-00467"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-50",
@@ -307892,7 +307892,7 @@
         "ORG-0415",
         "PER-04109"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-51",
@@ -307905,7 +307905,7 @@
         "PER-01406",
         "PER-03820"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-52",
@@ -307930,7 +307930,7 @@
         "ORG-0135",
         "PER-01948"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-53",
@@ -307943,7 +307943,7 @@
         "PER-01567",
         "PER-02396"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-54",
@@ -307957,7 +307957,7 @@
         "ORG-0096",
         "PER-00042"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-55",
@@ -307970,7 +307970,7 @@
         "PER-00667",
         "PER-04413"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-56",
@@ -307984,7 +307984,7 @@
         "PER-04605",
         "PER-01559"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-57",
@@ -308009,7 +308009,7 @@
         "ORG-0291",
         "PER-01000"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-58",
@@ -308022,7 +308022,7 @@
         "PER-00380",
         "PER-03036"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-59",
@@ -308037,7 +308037,7 @@
         "PER-00272",
         "PER-03986"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-60",
@@ -308051,7 +308051,7 @@
         "PER-04627",
         "PER-00950"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-61",
@@ -308068,7 +308068,7 @@
         "PER-01070",
         "PER-02794"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-62",
@@ -308081,7 +308081,7 @@
         "PER-01231",
         "PER-01197"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-63",
@@ -308096,7 +308096,7 @@
         "PER-03463",
         "PER-03756"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-64",
@@ -308109,7 +308109,7 @@
         "PER-03474",
         "PER-00291"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-65",
@@ -308124,7 +308124,7 @@
         "ORG-0443",
         "PER-02977"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-66",
@@ -308143,7 +308143,7 @@
         "PER-04784",
         "PER-04841"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-67",
@@ -308156,7 +308156,7 @@
         "PER-04465",
         "PER-04882"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-68",
@@ -308173,7 +308173,7 @@
         "ORG-0222",
         "PER-02124"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-69",
@@ -308198,7 +308198,7 @@
         "PER-03350",
         "PER-03885"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-70",
@@ -308211,7 +308211,7 @@
         "PER-02969",
         "PER-03999"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-71",
@@ -308232,7 +308232,7 @@
         "PER-02718",
         "PER-03113"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-72",
@@ -308246,7 +308246,7 @@
         "ORG-0385",
         "PER-04490"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-73",
@@ -308263,7 +308263,7 @@
         "PER-00894",
         "PER-03506"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-74",
@@ -308277,7 +308277,7 @@
         "PER-04830",
         "PER-02565"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-75",
@@ -308292,7 +308292,7 @@
         "ORG-0218",
         "PER-00668"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-76",
@@ -308305,7 +308305,7 @@
         "PER-02041",
         "ORG-0476"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-77",
@@ -308326,7 +308326,7 @@
         "PER-00096",
         "ORG-0302"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-78",
@@ -308340,7 +308340,7 @@
         "PER-04722",
         "PER-00944"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-79",
@@ -308364,7 +308364,7 @@
         "ORG-0278",
         "PER-00037"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-80",
@@ -308377,7 +308377,7 @@
         "PER-03129",
         "ORG-0405"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-81",
@@ -308395,7 +308395,7 @@
         "ORG-0136",
         "PER-04528"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-82",
@@ -308415,7 +308415,7 @@
         "PER-00920",
         "PER-02427"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.612Z"
     },
     {
       "community_id": "COMM-83",
@@ -308437,7 +308437,7 @@
         "PER-02635",
         "PER-04475"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-84",
@@ -308462,7 +308462,7 @@
         "PER-01375",
         "PER-01062"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-85",
@@ -308477,7 +308477,7 @@
         "PER-03415",
         "ORG-0109"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-86",
@@ -308496,7 +308496,7 @@
         "PER-02561",
         "PER-00802"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-87",
@@ -308520,7 +308520,7 @@
         "PER-02234",
         "PER-02288"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-88",
@@ -308535,7 +308535,7 @@
         "ORG-0156",
         "PER-01780"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-89",
@@ -308552,7 +308552,7 @@
         "ORG-0230",
         "PER-02211"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-90",
@@ -308565,7 +308565,7 @@
         "PER-03832",
         "PER-03953"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-91",
@@ -308590,7 +308590,7 @@
         "PER-04895",
         "PER-01491"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-92",
@@ -308603,7 +308603,7 @@
         "PER-03923",
         "PER-02976"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-93",
@@ -308619,7 +308619,7 @@
         "PER-03409",
         "PER-01520"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-94",
@@ -308635,7 +308635,7 @@
         "ORG-0173",
         "PER-02284"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-95",
@@ -308651,7 +308651,7 @@
         "PER-03591",
         "PER-00524"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-96",
@@ -308664,7 +308664,7 @@
         "PER-02913",
         "PER-02157"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-97",
@@ -308677,7 +308677,7 @@
         "PER-04503",
         "PER-02075"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-98",
@@ -308690,7 +308690,7 @@
         "PER-01741",
         "PER-01153"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-99",
@@ -308703,7 +308703,7 @@
         "PER-01275",
         "PER-00069"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-100",
@@ -308721,7 +308721,7 @@
         "PER-00860",
         "PER-00867"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-101",
@@ -308735,7 +308735,7 @@
         "PER-00674",
         "PER-02674"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-102",
@@ -308749,7 +308749,7 @@
         "ORG-0117",
         "PER-02306"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-103",
@@ -308762,7 +308762,7 @@
         "PER-02869",
         "PER-02345"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-104",
@@ -308777,7 +308777,7 @@
         "PER-00398",
         "PER-00271"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-105",
@@ -308793,7 +308793,7 @@
         "ORG-0423",
         "PER-00457"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-106",
@@ -308808,7 +308808,7 @@
         "PER-00699",
         "PER-01408"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-107",
@@ -308827,7 +308827,7 @@
         "PER-04099",
         "PER-04499"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-108",
@@ -308848,7 +308848,7 @@
         "PER-01056",
         "PER-02130"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-109",
@@ -308861,7 +308861,7 @@
         "PER-04035",
         "PER-00034"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-110",
@@ -308879,7 +308879,7 @@
         "PER-01941",
         "PER-00265"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-111",
@@ -308895,7 +308895,7 @@
         "PER-01268",
         "PER-02891"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-112",
@@ -308911,7 +308911,7 @@
         "ORG-0250",
         "PER-01953"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-113",
@@ -308929,7 +308929,7 @@
         "PER-03091",
         "PER-01936"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-114",
@@ -308944,7 +308944,7 @@
         "PER-04781",
         "PER-03152"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-115",
@@ -308957,7 +308957,7 @@
         "PER-04395",
         "PER-00326"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-116",
@@ -308974,7 +308974,7 @@
         "ORG-0324",
         "PER-02368"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-117",
@@ -308987,7 +308987,7 @@
         "PER-03190",
         "PER-00290"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-118",
@@ -309005,7 +309005,7 @@
         "PER-03505",
         "PER-01857"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-119",
@@ -309018,7 +309018,7 @@
         "PER-02934",
         "PER-02774"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-120",
@@ -309033,7 +309033,7 @@
         "PER-03240",
         "PER-03653"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-121",
@@ -309047,7 +309047,7 @@
         "PER-03150",
         "PER-00136"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-122",
@@ -309062,7 +309062,7 @@
         "PER-02085",
         "ORG-0356"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-123",
@@ -309076,7 +309076,7 @@
         "PER-02386",
         "PER-00098"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-124",
@@ -309090,7 +309090,7 @@
         "PER-03342",
         "PER-03992"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-125",
@@ -309105,7 +309105,7 @@
         "PER-01826",
         "PER-02961"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-126",
@@ -309119,7 +309119,7 @@
         "ORG-0208",
         "PER-00086"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-127",
@@ -309132,7 +309132,7 @@
         "PER-02777",
         "ORG-0217"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-128",
@@ -309150,7 +309150,7 @@
         "ORG-0491",
         "PER-01774"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-129",
@@ -309164,7 +309164,7 @@
         "PER-00956",
         "PER-01096"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-130",
@@ -309180,7 +309180,7 @@
         "PER-01135",
         "ORG-0409"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-131",
@@ -309194,7 +309194,7 @@
         "PER-02193",
         "PER-04921"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-132",
@@ -309208,7 +309208,7 @@
         "PER-04224",
         "PER-04759"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-133",
@@ -309223,7 +309223,7 @@
         "PER-03438",
         "PER-00521"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-134",
@@ -309236,7 +309236,7 @@
         "PER-02395",
         "PER-00293"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-135",
@@ -309253,7 +309253,7 @@
         "PER-03052",
         "PER-04139"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-136",
@@ -309268,7 +309268,7 @@
         "PER-03123",
         "PER-03479"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-137",
@@ -309287,7 +309287,7 @@
         "PER-02235",
         "PER-02796"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-138",
@@ -309300,7 +309300,7 @@
         "PER-00717",
         "PER-02925"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-139",
@@ -309317,7 +309317,7 @@
         "PER-01099",
         "PER-03870"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-140",
@@ -309336,7 +309336,7 @@
         "PER-03270",
         "PER-03279"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-141",
@@ -309353,7 +309353,7 @@
         "PER-02166",
         "PER-00387"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-142",
@@ -309372,7 +309372,7 @@
         "PER-01160",
         "PER-01734"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-143",
@@ -309386,7 +309386,7 @@
         "PER-01388",
         "PER-02034"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-144",
@@ -309404,7 +309404,7 @@
         "ORG-0276",
         "PER-00941"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-145",
@@ -309418,7 +309418,7 @@
         "ORG-0146",
         "PER-01005"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-146",
@@ -309431,7 +309431,7 @@
         "PER-03696",
         "PER-00516"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-147",
@@ -309446,7 +309446,7 @@
         "PER-00218",
         "PER-01704"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-148",
@@ -309459,7 +309459,7 @@
         "PER-00153",
         "ORG-0209"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-149",
@@ -309472,7 +309472,7 @@
         "PER-02606",
         "PER-04021"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-150",
@@ -309485,7 +309485,7 @@
         "PER-01097",
         "ORG-0343"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-151",
@@ -309499,7 +309499,7 @@
         "ORG-0143",
         "PER-02060"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-152",
@@ -309517,7 +309517,7 @@
         "ORG-0108",
         "PER-01137"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-153",
@@ -309532,7 +309532,7 @@
         "PER-00808",
         "PER-02066"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-154",
@@ -309546,7 +309546,7 @@
         "ORG-0052",
         "PER-04263"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-155",
@@ -309570,7 +309570,7 @@
         "PER-03410",
         "PER-04656"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-156",
@@ -309583,7 +309583,7 @@
         "PER-04288",
         "PER-02859"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-157",
@@ -309596,7 +309596,7 @@
         "PER-02981",
         "PER-02354"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-158",
@@ -309609,7 +309609,7 @@
         "PER-00971",
         "ORG-0500"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-159",
@@ -309630,7 +309630,7 @@
         "PER-02505",
         "PER-01619"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-160",
@@ -309644,7 +309644,7 @@
         "ORG-0161",
         "PER-03320"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-161",
@@ -309658,7 +309658,7 @@
         "ORG-0079",
         "PER-02702"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-162",
@@ -309671,7 +309671,7 @@
         "PER-02875",
         "PER-02371"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-163",
@@ -309684,7 +309684,7 @@
         "PER-00580",
         "PER-04604"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-164",
@@ -309697,7 +309697,7 @@
         "PER-01471",
         "PER-02203"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-165",
@@ -309711,7 +309711,7 @@
         "ORG-0429",
         "PER-00356"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-166",
@@ -309728,7 +309728,7 @@
         "PER-03634",
         "ORG-0461"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-167",
@@ -309744,7 +309744,7 @@
         "PER-00726",
         "PER-04219"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-168",
@@ -309757,7 +309757,7 @@
         "PER-02619",
         "PER-01636"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-169",
@@ -309771,7 +309771,7 @@
         "PER-03789",
         "PER-04232"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-170",
@@ -309788,7 +309788,7 @@
         "ORG-0233",
         "PER-00161"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-171",
@@ -309804,7 +309804,7 @@
         "PER-01945",
         "PER-02503"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-172",
@@ -309821,7 +309821,7 @@
         "PER-02155",
         "ORG-0048"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-173",
@@ -309834,7 +309834,7 @@
         "PER-00430",
         "PER-02455"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-174",
@@ -309847,7 +309847,7 @@
         "PER-02564",
         "ORG-0417"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-175",
@@ -309863,7 +309863,7 @@
         "PER-01430",
         "PER-04302"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-176",
@@ -309876,7 +309876,7 @@
         "PER-02209",
         "PER-00396"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-177",
@@ -309889,7 +309889,7 @@
         "PER-00055",
         "PER-01705"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-178",
@@ -309902,7 +309902,7 @@
         "PER-02750",
         "PER-00124"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-179",
@@ -309917,7 +309917,7 @@
         "PER-04015",
         "PER-04365"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-180",
@@ -309930,7 +309930,7 @@
         "PER-02722",
         "PER-00576"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-181",
@@ -309944,7 +309944,7 @@
         "ORG-0114",
         "PER-03034"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-182",
@@ -309962,7 +309962,7 @@
         "ORG-0328",
         "PER-03450"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-183",
@@ -309979,7 +309979,7 @@
         "PER-00300",
         "ORG-0351"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-184",
@@ -309997,7 +309997,7 @@
         "PER-00441",
         "PER-03989"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-185",
@@ -310010,7 +310010,7 @@
         "PER-02839",
         "PER-02153"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-186",
@@ -310026,7 +310026,7 @@
         "PER-01671",
         "PER-03907"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-187",
@@ -310040,7 +310040,7 @@
         "ORG-0447",
         "PER-03353"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-188",
@@ -310058,7 +310058,7 @@
         "PER-02579",
         "PER-02739"
       ],
-      "detected_at": "2026-08-26T16:45:04.769Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-189",
@@ -310073,7 +310073,7 @@
         "ORG-0467",
         "PER-01915"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-190",
@@ -310086,7 +310086,7 @@
         "PER-01748",
         "PER-02636"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-191",
@@ -310101,7 +310101,7 @@
         "ORG-0186",
         "PER-04092"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-192",
@@ -310115,7 +310115,7 @@
         "ORG-0225",
         "PER-03569"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-193",
@@ -310128,7 +310128,7 @@
         "PER-03617",
         "PER-01092"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-194",
@@ -310142,7 +310142,7 @@
         "PER-01327",
         "ORG-0411"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-195",
@@ -310158,7 +310158,7 @@
         "PER-02532",
         "PER-03079"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-196",
@@ -310172,7 +310172,7 @@
         "PER-02404",
         "PER-02315"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-197",
@@ -310186,7 +310186,7 @@
         "ORG-0434",
         "PER-02646"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-198",
@@ -310199,7 +310199,7 @@
         "PER-03605",
         "PER-03601"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-199",
@@ -310215,7 +310215,7 @@
         "PER-03481",
         "PER-01467"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-200",
@@ -310228,7 +310228,7 @@
         "PER-01458",
         "ORG-0488"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-201",
@@ -310241,7 +310241,7 @@
         "PER-01640",
         "PER-02189"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-202",
@@ -310255,7 +310255,7 @@
         "ORG-0344",
         "PER-02241"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-203",
@@ -310269,7 +310269,7 @@
         "PER-00447",
         "PER-00823"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-204",
@@ -310288,7 +310288,7 @@
         "ORG-0379",
         "PER-04303"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-205",
@@ -310303,7 +310303,7 @@
         "PER-04375",
         "PER-01625"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-206",
@@ -310327,7 +310327,7 @@
         "PER-00559",
         "PER-02253"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-207",
@@ -310342,7 +310342,7 @@
         "PER-00206",
         "PER-04509"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-208",
@@ -310355,7 +310355,7 @@
         "PER-03826",
         "PER-00299"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-209",
@@ -310376,7 +310376,7 @@
         "PER-00572",
         "PER-01230"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-210",
@@ -310391,7 +310391,7 @@
         "ORG-0320",
         "PER-01869"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-211",
@@ -310406,7 +310406,7 @@
         "PER-02403",
         "PER-01653"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-212",
@@ -310423,7 +310423,7 @@
         "ORG-0449",
         "PER-00644"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-213",
@@ -310438,7 +310438,7 @@
         "PER-03628",
         "PER-03611"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-214",
@@ -310453,7 +310453,7 @@
         "PER-00683",
         "PER-02362"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-215",
@@ -310468,7 +310468,7 @@
         "PER-04122",
         "PER-00828"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-216",
@@ -310482,7 +310482,7 @@
         "ORG-0046",
         "PER-03909"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-217",
@@ -310497,7 +310497,7 @@
         "PER-02877",
         "PER-02797"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-218",
@@ -310510,7 +310510,7 @@
         "PER-01284",
         "ORG-0315"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-219",
@@ -310524,7 +310524,7 @@
         "ORG-0459",
         "ORG-0069"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-220",
@@ -310538,7 +310538,7 @@
         "ORG-0122",
         "PER-03539"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-221",
@@ -310554,7 +310554,7 @@
         "ORG-0472",
         "PER-00504"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-222",
@@ -310572,7 +310572,7 @@
         "PER-01248",
         "PER-04589"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-223",
@@ -310585,7 +310585,7 @@
         "ORG-0011",
         "PER-01549"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-224",
@@ -310602,7 +310602,7 @@
         "PER-02015",
         "PER-01194"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-225",
@@ -310620,7 +310620,7 @@
         "PER-02238",
         "PER-04579"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-226",
@@ -310634,7 +310634,7 @@
         "PER-01421",
         "PER-00519"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-227",
@@ -310647,7 +310647,7 @@
         "ORG-0015",
         "PER-02467"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-228",
@@ -310661,7 +310661,7 @@
         "PER-02970",
         "PER-01604"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-229",
@@ -310677,7 +310677,7 @@
         "PER-01027",
         "PER-02449"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-230",
@@ -310690,7 +310690,7 @@
         "ORG-0026",
         "PER-00844"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-231",
@@ -310704,7 +310704,7 @@
         "PER-01312",
         "PER-02097"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-232",
@@ -310727,7 +310727,7 @@
         "PER-04444",
         "PER-02860"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-233",
@@ -310740,7 +310740,7 @@
         "ORG-0044",
         "PER-02408"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-234",
@@ -310753,7 +310753,7 @@
         "ORG-0047",
         "PER-02795"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-235",
@@ -310767,7 +310767,7 @@
         "PER-03535",
         "PER-01103"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-236",
@@ -310780,7 +310780,7 @@
         "ORG-0053",
         "PER-03487"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-237",
@@ -310797,7 +310797,7 @@
         "PER-00820",
         "PER-04974"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-238",
@@ -310810,7 +310810,7 @@
         "ORG-0063",
         "PER-02521"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-239",
@@ -310824,7 +310824,7 @@
         "ORG-0401",
         "PER-01717"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-240",
@@ -310838,7 +310838,7 @@
         "PER-04279",
         "PER-04332"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-241",
@@ -310855,7 +310855,7 @@
         "PER-00197",
         "PER-04235"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-242",
@@ -310868,7 +310868,7 @@
         "ORG-0077",
         "PER-00651"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-243",
@@ -310887,7 +310887,7 @@
         "PER-04220",
         "PER-03759"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-244",
@@ -310901,7 +310901,7 @@
         "ORG-0403",
         "PER-02714"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-245",
@@ -310915,7 +310915,7 @@
         "ORG-0204",
         "PER-01435"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.613Z"
     },
     {
       "community_id": "COMM-246",
@@ -310935,7 +310935,7 @@
         "PER-03913",
         "ORG-0381"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-247",
@@ -310949,7 +310949,7 @@
         "PER-03497",
         "PER-01947"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-248",
@@ -310962,7 +310962,7 @@
         "ORG-0089",
         "ORG-0327"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-249",
@@ -310976,7 +310976,7 @@
         "PER-04716",
         "PER-03895"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-250",
@@ -310989,7 +310989,7 @@
         "ORG-0091",
         "PER-01035"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-251",
@@ -311007,7 +311007,7 @@
         "ORG-0283",
         "PER-04437"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-252",
@@ -311021,7 +311021,7 @@
         "PER-03220",
         "PER-00336"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-253",
@@ -311034,7 +311034,7 @@
         "ORG-0101",
         "PER-01129"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-254",
@@ -311048,7 +311048,7 @@
         "PER-01690",
         "PER-03237"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-255",
@@ -311065,7 +311065,7 @@
         "PER-01825",
         "PER-02704"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-256",
@@ -311082,7 +311082,7 @@
         "PER-00830",
         "PER-01876"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-257",
@@ -311095,7 +311095,7 @@
         "ORG-0112",
         "ORG-0478"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-258",
@@ -311116,7 +311116,7 @@
         "PER-02133",
         "PER-00411"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-259",
@@ -311129,7 +311129,7 @@
         "ORG-0119",
         "PER-03559"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-260",
@@ -311142,7 +311142,7 @@
         "ORG-0120",
         "PER-00301"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-261",
@@ -311156,7 +311156,7 @@
         "PER-02755",
         "ORG-0200"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-262",
@@ -311173,7 +311173,7 @@
         "PER-00087",
         "PER-03456"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-263",
@@ -311187,7 +311187,7 @@
         "ORG-0304",
         "PER-01024"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-264",
@@ -311201,7 +311201,7 @@
         "PER-01874",
         "ORG-0268"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-265",
@@ -311214,7 +311214,7 @@
         "ORG-0130",
         "PER-00588"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-266",
@@ -311229,7 +311229,7 @@
         "PER-02134",
         "ORG-0197"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-267",
@@ -311242,7 +311242,7 @@
         "ORG-0150",
         "PER-03543"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-268",
@@ -311256,7 +311256,7 @@
         "PER-03476",
         "PER-03647"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-269",
@@ -311269,7 +311269,7 @@
         "ORG-0154",
         "PER-03510"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-270",
@@ -311283,7 +311283,7 @@
         "PER-04415",
         "PER-04869"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-271",
@@ -311296,7 +311296,7 @@
         "ORG-0158",
         "PER-01589"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-272",
@@ -311310,7 +311310,7 @@
         "PER-03392",
         "PER-03618"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-273",
@@ -311323,7 +311323,7 @@
         "ORG-0166",
         "PER-03401"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-274",
@@ -311336,7 +311336,7 @@
         "ORG-0168",
         "PER-00850"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-275",
@@ -311349,7 +311349,7 @@
         "ORG-0177",
         "PER-04284"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-276",
@@ -311363,7 +311363,7 @@
         "PER-04299",
         "PER-02014"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-277",
@@ -311377,7 +311377,7 @@
         "PER-03828",
         "PER-02494"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-278",
@@ -311391,7 +311391,7 @@
         "PER-04991",
         "PER-00168"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-279",
@@ -311405,7 +311405,7 @@
         "PER-00435",
         "PER-01011"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-280",
@@ -311419,7 +311419,7 @@
         "PER-04748",
         "PER-03206"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-281",
@@ -311436,7 +311436,7 @@
         "PER-01986",
         "PER-03419"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-282",
@@ -311449,7 +311449,7 @@
         "ORG-0214",
         "PER-00725"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-283",
@@ -311462,7 +311462,7 @@
         "ORG-0221",
         "PER-00040"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-284",
@@ -311476,7 +311476,7 @@
         "PER-00945",
         "PER-04566"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-285",
@@ -311494,7 +311494,7 @@
         "PER-02250",
         "PER-00448"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-286",
@@ -311507,7 +311507,7 @@
         "ORG-0228",
         "PER-00366"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-287",
@@ -311521,7 +311521,7 @@
         "PER-03213",
         "PER-02513"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-288",
@@ -311535,7 +311535,7 @@
         "PER-01665",
         "PER-04752"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-289",
@@ -311548,7 +311548,7 @@
         "ORG-0242",
         "PER-04425"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-290",
@@ -311561,7 +311561,7 @@
         "ORG-0247",
         "PER-01681"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-291",
@@ -311574,7 +311574,7 @@
         "ORG-0248",
         "PER-03083"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-292",
@@ -311588,7 +311588,7 @@
         "PER-01413",
         "PER-01536"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-293",
@@ -311602,7 +311602,7 @@
         "PER-02145",
         "PER-01366"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-294",
@@ -311616,7 +311616,7 @@
         "PER-04056",
         "PER-03252"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-295",
@@ -311630,7 +311630,7 @@
         "PER-01663",
         "PER-00625"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-296",
@@ -311643,7 +311643,7 @@
         "ORG-0274",
         "PER-02968"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-297",
@@ -311656,7 +311656,7 @@
         "ORG-0282",
         "PER-02486"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-298",
@@ -311671,7 +311671,7 @@
         "PER-00147",
         "PER-01737"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-299",
@@ -311685,7 +311685,7 @@
         "PER-03771",
         "PER-00058"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-300",
@@ -311698,7 +311698,7 @@
         "ORG-0296",
         "PER-00227"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-301",
@@ -311712,7 +311712,7 @@
         "PER-04630",
         "PER-03687"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-302",
@@ -311726,7 +311726,7 @@
         "PER-03905",
         "PER-04797"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-303",
@@ -311739,7 +311739,7 @@
         "ORG-0306",
         "PER-04775"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-304",
@@ -311752,7 +311752,7 @@
         "ORG-0309",
         "PER-01931"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-305",
@@ -311765,7 +311765,7 @@
         "ORG-0313",
         "PER-03904"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-306",
@@ -311778,7 +311778,7 @@
         "ORG-0318",
         "PER-00251"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-307",
@@ -311792,7 +311792,7 @@
         "PER-01032",
         "PER-02999"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-308",
@@ -311805,7 +311805,7 @@
         "ORG-0331",
         "PER-02509"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-309",
@@ -311818,7 +311818,7 @@
         "ORG-0333",
         "PER-02892"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-310",
@@ -311831,7 +311831,7 @@
         "ORG-0353",
         "PER-04670"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-311",
@@ -311845,7 +311845,7 @@
         "PER-01289",
         "PER-00451"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-312",
@@ -311858,7 +311858,7 @@
         "ORG-0358",
         "PER-04474"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-313",
@@ -311872,7 +311872,7 @@
         "PER-04804",
         "PER-00747"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-314",
@@ -311885,7 +311885,7 @@
         "ORG-0367",
         "PER-03214"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-315",
@@ -311898,7 +311898,7 @@
         "ORG-0369",
         "PER-03363"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-316",
@@ -311911,7 +311911,7 @@
         "ORG-0374",
         "PER-02937"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-317",
@@ -311925,7 +311925,7 @@
         "PER-00896",
         "PER-00362"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-318",
@@ -311939,7 +311939,7 @@
         "PER-01697",
         "PER-00314"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-319",
@@ -311953,7 +311953,7 @@
         "PER-04467",
         "PER-01819"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-320",
@@ -311966,7 +311966,7 @@
         "ORG-0420",
         "PER-04291"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-321",
@@ -311979,7 +311979,7 @@
         "ORG-0426",
         "PER-01512"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-322",
@@ -311992,7 +311992,7 @@
         "ORG-0427",
         "PER-04620"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-323",
@@ -312005,7 +312005,7 @@
         "ORG-0435",
         "PER-00122"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-324",
@@ -312018,7 +312018,7 @@
         "ORG-0436",
         "PER-01223"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-325",
@@ -312031,7 +312031,7 @@
         "ORG-0438",
         "PER-02008"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-326",
@@ -312044,7 +312044,7 @@
         "ORG-0446",
         "PER-04910"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-327",
@@ -312058,7 +312058,7 @@
         "PER-02557",
         "PER-00080"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-328",
@@ -312072,7 +312072,7 @@
         "PER-01283",
         "PER-02580"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-329",
@@ -312085,7 +312085,7 @@
         "ORG-0466",
         "PER-01837"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-330",
@@ -312099,7 +312099,7 @@
         "PER-03801",
         "PER-04911"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-331",
@@ -312113,7 +312113,7 @@
         "PER-03829",
         "PER-00100"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-332",
@@ -312126,7 +312126,7 @@
         "ORG-0477",
         "PER-00589"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-333",
@@ -312139,7 +312139,7 @@
         "ORG-0479",
         "PER-01617"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-334",
@@ -312152,7 +312152,7 @@
         "ORG-0484",
         "PER-01864"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-335",
@@ -312165,7 +312165,7 @@
         "ORG-0494",
         "PER-01257"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     },
     {
       "community_id": "COMM-336",
@@ -312178,7 +312178,7 @@
         "ORG-0495",
         "PER-03713"
       ],
-      "detected_at": "2026-08-26T16:45:04.770Z"
+      "detected_at": "2026-08-26T17:05:47.614Z"
     }
   ],
   "link_predictions": [
@@ -312863,7 +312863,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-2",
@@ -312872,7 +312872,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-3",
@@ -312881,7 +312881,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-4",
@@ -312890,7 +312890,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-5",
@@ -312899,7 +312899,7 @@
       "z_score": 3.52,
       "anomaly_score": 99,
       "explanation": "Node possesses 5 direct connections (Z-Score: +3.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-6",
@@ -312908,7 +312908,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-7",
@@ -312917,7 +312917,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-8",
@@ -312926,7 +312926,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-9",
@@ -312935,7 +312935,7 @@
       "z_score": 4.52,
       "anomaly_score": 99,
       "explanation": "Node possesses 6 direct connections (Z-Score: +4.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-10",
@@ -312944,7 +312944,7 @@
       "z_score": 4.52,
       "anomaly_score": 99,
       "explanation": "Node possesses 6 direct connections (Z-Score: +4.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-11",
@@ -312953,7 +312953,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-12",
@@ -312962,7 +312962,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.629Z"
     },
     {
       "id": "ANOM-13",
@@ -312971,7 +312971,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-14",
@@ -312980,7 +312980,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-15",
@@ -312989,7 +312989,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-16",
@@ -312998,7 +312998,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-17",
@@ -313007,7 +313007,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-18",
@@ -313016,7 +313016,7 @@
       "z_score": 3.52,
       "anomaly_score": 99,
       "explanation": "Node possesses 5 direct connections (Z-Score: +3.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-19",
@@ -313025,7 +313025,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-20",
@@ -313034,7 +313034,7 @@
       "z_score": 2.52,
       "anomaly_score": 95,
       "explanation": "Node possesses 4 direct connections (Z-Score: +2.52σ above population mean 1.48). Acts as key multi-case coordination broker.",
-      "detected_at": "2026-08-26T16:45:04.790Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-21",
@@ -313043,7 +313043,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Colaba Causeway Sector-62) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-22",
@@ -313052,7 +313052,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Thane Station West Sector-137) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-23",
@@ -313061,7 +313061,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Thane Station West Sector-197) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-24",
@@ -313070,7 +313070,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Kurla West Terminus Sector-26) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-25",
@@ -313079,7 +313079,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dharavi Commercial Complex Sector-101) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-26",
@@ -313088,7 +313088,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Juhu Tara Road Sector-27) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-27",
@@ -313097,7 +313097,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Borivali West Station Area Sector-134) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-28",
@@ -313106,7 +313106,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dadar TT Circle Sector-208) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-29",
@@ -313115,7 +313115,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-45) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-30",
@@ -313124,7 +313124,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Colaba Causeway Sector-62) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-31",
@@ -313133,7 +313133,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Malad Link Road Sector-53) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-32",
@@ -313142,7 +313142,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-30) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-33",
@@ -313151,7 +313151,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-90) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-34",
@@ -313160,7 +313160,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dharavi Commercial Complex Sector-81) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-35",
@@ -313169,7 +313169,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sion Circle Sector-99) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-36",
@@ -313178,7 +313178,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-36) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-37",
@@ -313187,7 +313187,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-130) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-38",
@@ -313196,7 +313196,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dadar TT Circle Sector-8) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-39",
@@ -313205,7 +313205,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-191) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-40",
@@ -313214,7 +313214,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sion Circle Sector-199) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-41",
@@ -313223,7 +313223,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Worli Sea Face Sector-189) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-42",
@@ -313232,7 +313232,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Colaba Causeway Sector-222) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-43",
@@ -313241,7 +313241,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Colaba Causeway Sector-162) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-44",
@@ -313250,7 +313250,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Navi Mumbai Vashi Sector 17 Sector-138) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-45",
@@ -313259,7 +313259,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-71) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-46",
@@ -313268,7 +313268,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Navi Mumbai Vashi Sector 17 Sector-58) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-47",
@@ -313277,7 +313277,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Bandra Kurla Complex Sector-204) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-48",
@@ -313286,7 +313286,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Bandra Kurla Complex Sector-84) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-49",
@@ -313295,7 +313295,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-56) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-50",
@@ -313304,7 +313304,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dadar TT Circle Sector-148) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-51",
@@ -313313,7 +313313,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dharavi Commercial Complex Sector-161) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-52",
@@ -313322,7 +313322,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Thane Station West Sector-177) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-53",
@@ -313331,7 +313331,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-65) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-54",
@@ -313340,7 +313340,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Byculla Market Sector-55) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-55",
@@ -313349,7 +313349,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sion Circle Sector-179) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-56",
@@ -313358,7 +313358,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dadar TT Circle Sector-188) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-57",
@@ -313367,7 +313367,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-136) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-58",
@@ -313376,7 +313376,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-236) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-59",
@@ -313385,7 +313385,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-90) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-60",
@@ -313394,7 +313394,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Colaba Causeway Sector-142) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-61",
@@ -313403,7 +313403,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Navi Mumbai Vashi Sector 17 Sector-38) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-62",
@@ -313412,7 +313412,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Malad Link Road Sector-153) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-63",
@@ -313421,7 +313421,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Byculla Market Sector-175) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-64",
@@ -313430,7 +313430,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dadar TT Circle Sector-68) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-65",
@@ -313439,7 +313439,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Tardeo Road Sector-180) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-66",
@@ -313448,7 +313448,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Worli Sea Face Sector-149) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-67",
@@ -313457,7 +313457,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sion Circle Sector-179) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-68",
@@ -313466,7 +313466,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-190) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-69",
@@ -313475,7 +313475,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dadar TT Circle Sector-128) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-70",
@@ -313484,7 +313484,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Chembur Colony Sector-192) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-71",
@@ -313493,7 +313493,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dharavi Commercial Complex Sector-161) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-72",
@@ -313502,7 +313502,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sion Circle Sector-199) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-73",
@@ -313511,7 +313511,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-236) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-74",
@@ -313520,7 +313520,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Colaba Causeway Sector-142) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-75",
@@ -313529,7 +313529,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Juhu Tara Road Sector-107) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-76",
@@ -313538,7 +313538,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Malad Link Road Sector-173) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-77",
@@ -313547,7 +313547,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Tardeo Road Sector-120) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-78",
@@ -313556,7 +313556,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Thane Station West Sector-117) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-79",
@@ -313565,7 +313565,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Borivali West Station Area Sector-94) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-80",
@@ -313574,7 +313574,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Juhu Tara Road Sector-7) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-81",
@@ -313583,7 +313583,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Juhu Tara Road Sector-27) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-82",
@@ -313592,7 +313592,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-230) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-83",
@@ -313601,7 +313601,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Bandra Kurla Complex Sector-184) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-84",
@@ -313610,7 +313610,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Juhu Tara Road Sector-67) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-85",
@@ -313619,7 +313619,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Tardeo Road Sector-20) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-86",
@@ -313628,7 +313628,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-116) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-87",
@@ -313637,7 +313637,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-31) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-88",
@@ -313646,7 +313646,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Borivali West Station Area Sector-214) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-89",
@@ -313655,7 +313655,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Juhu Tara Road Sector-67) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-90",
@@ -313664,7 +313664,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dharavi Commercial Complex Sector-81) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-91",
@@ -313673,7 +313673,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-230) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-92",
@@ -313682,7 +313682,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-51) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-93",
@@ -313691,7 +313691,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sion Circle Sector-119) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-94",
@@ -313700,7 +313700,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-91) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-95",
@@ -313709,7 +313709,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Kurla West Terminus Sector-106) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-96",
@@ -313718,7 +313718,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Bandra Kurla Complex Sector-64) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-97",
@@ -313727,7 +313727,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Borivali West Station Area Sector-234) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-98",
@@ -313736,7 +313736,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Byculla Market Sector-95) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-99",
@@ -313745,7 +313745,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Bandra Kurla Complex Sector-64) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-100",
@@ -313754,7 +313754,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Colaba Causeway Sector-82) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-101",
@@ -313763,7 +313763,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sion Circle Sector-139) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-102",
@@ -313772,7 +313772,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Crawford Market Sector-123) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-103",
@@ -313781,7 +313781,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-151) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-104",
@@ -313790,7 +313790,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-136) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-105",
@@ -313799,7 +313799,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Crawford Market Sector-203) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-106",
@@ -313808,7 +313808,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Thane Station West Sector-97) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-107",
@@ -313817,7 +313817,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Bandra Kurla Complex Sector-164) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-108",
@@ -313826,7 +313826,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-211) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-109",
@@ -313835,7 +313835,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Borivali West Station Area Sector-54) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-110",
@@ -313844,7 +313844,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Malad Link Road Sector-113) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-111",
@@ -313853,7 +313853,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Malad Link Road Sector-213) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-112",
@@ -313862,7 +313862,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-205) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-113",
@@ -313871,7 +313871,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Bandra Kurla Complex Sector-44) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-114",
@@ -313880,7 +313880,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dharavi Commercial Complex Sector-181) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-115",
@@ -313889,7 +313889,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-85) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-116",
@@ -313898,7 +313898,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-25) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-117",
@@ -313907,7 +313907,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dharavi Commercial Complex Sector-1) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-118",
@@ -313916,7 +313916,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Bandra Kurla Complex Sector-44) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-119",
@@ -313925,7 +313925,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Kurla West Terminus Sector-126) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-120",
@@ -313934,7 +313934,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Navi Mumbai Vashi Sector 17 Sector-98) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-121",
@@ -313943,7 +313943,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sion Circle Sector-39) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-122",
@@ -313952,7 +313952,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-16) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-123",
@@ -313961,7 +313961,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-25) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-124",
@@ -313970,7 +313970,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-45) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-125",
@@ -313979,7 +313979,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dharavi Commercial Complex Sector-21) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-126",
@@ -313988,7 +313988,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-110) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-127",
@@ -313997,7 +313997,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-51) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-128",
@@ -314006,7 +314006,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-145) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-129",
@@ -314015,7 +314015,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Juhu Tara Road Sector-147) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-130",
@@ -314024,7 +314024,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Thane Station West Sector-177) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-131",
@@ -314033,7 +314033,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-216) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-132",
@@ -314042,7 +314042,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Juhu Tara Road Sector-187) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-133",
@@ -314051,7 +314051,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Thane Station West Sector-17) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-134",
@@ -314060,7 +314060,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-50) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-135",
@@ -314069,7 +314069,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Byculla Market Sector-95) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-136",
@@ -314078,7 +314078,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-96) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-137",
@@ -314087,7 +314087,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Chembur Colony Sector-192) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-138",
@@ -314096,7 +314096,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Tardeo Road Sector-200) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-139",
@@ -314105,7 +314105,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-105) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-140",
@@ -314114,7 +314114,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Andheri East MIDC Sector-65) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-141",
@@ -314123,7 +314123,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-56) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-142",
@@ -314132,7 +314132,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-131) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-143",
@@ -314141,7 +314141,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Bandra Kurla Complex Sector-124) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-144",
@@ -314150,7 +314150,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-196) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-145",
@@ -314159,7 +314159,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dadar TT Circle Sector-168) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-146",
@@ -314168,7 +314168,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Colaba Causeway Sector-182) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-147",
@@ -314177,7 +314177,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-130) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-148",
@@ -314186,7 +314186,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-190) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-149",
@@ -314195,7 +314195,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-91) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-150",
@@ -314204,7 +314204,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Navi Mumbai Vashi Sector 17 Sector-218) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-151",
@@ -314213,7 +314213,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Dharavi Commercial Complex Sector-161) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-152",
@@ -314222,7 +314222,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-36) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-153",
@@ -314231,7 +314231,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Kurla West Terminus Sector-86) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-154",
@@ -314240,7 +314240,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Malad Link Road Sector-133) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-155",
@@ -314249,7 +314249,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Byculla Market Sector-215) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-156",
@@ -314258,7 +314258,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Chembur Colony Sector-52) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-157",
@@ -314267,7 +314267,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Worli Sea Face Sector-129) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-158",
@@ -314276,7 +314276,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Chembur Colony Sector-112) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-159",
@@ -314285,7 +314285,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Crawford Market Sector-243) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-160",
@@ -314294,7 +314294,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Byculla Market Sector-55) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-161",
@@ -314303,7 +314303,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Navi Mumbai Vashi Sector 17 Sector-198) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-162",
@@ -314312,7 +314312,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Thane Station West Sector-177) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-163",
@@ -314321,7 +314321,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Navi Mumbai Vashi Sector 17 Sector-78) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-164",
@@ -314330,7 +314330,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Ghatkopar Central Mall Sector-131) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-165",
@@ -314339,7 +314339,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Tardeo Road Sector-200) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-166",
@@ -314348,7 +314348,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Borivali West Station Area Sector-234) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-167",
@@ -314357,7 +314357,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sion Circle Sector-39) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-168",
@@ -314366,7 +314366,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Sewri Timber Market Sector-76) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-169",
@@ -314375,7 +314375,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Lower Parel Business Park Sector-110) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     },
     {
       "id": "ANOM-170",
@@ -314384,7 +314384,7 @@
       "z_score": 3.12,
       "anomaly_score": 92,
       "explanation": "Person of interest tracked across distinct police station sectors (Worli Sea Face Sector-229) with unfeasible travel speed.",
-      "detected_at": "2026-08-26T16:45:04.791Z"
+      "detected_at": "2026-08-26T17:05:47.630Z"
     }
   ]
 }
