@@ -706,6 +706,29 @@ function saveStoredAlerts(alerts) {
 export const dbService = {
   // --- CASES ---
   async getCases(filters = {}) {
+    if (isSupabaseConfigured) {
+      try {
+        let query = supabase.from('cases').select('*').order('registered_date', { ascending: false }).limit(200);
+        if (filters.category && filters.category !== 'All') {
+          query = query.eq('crime_category', filters.category);
+        }
+        if (filters.status && filters.status !== 'All') {
+          query = query.eq('status', filters.status);
+        }
+        if (filters.police_station && filters.police_station !== 'All') {
+          query = query.eq('police_station', filters.police_station);
+        }
+        if (filters.search) {
+          const q = filters.search.trim();
+          query = query.or(`crime_no.ilike.%${q}%,case_no.ilike.%${q}%,crime_major_head.ilike.%${q}%,police_station.ilike.%${q}%,brief_facts.ilike.%${q}%`);
+        }
+        const { data, error } = await query;
+        if (!error && data && data.length > 0) return data;
+      } catch (err) {
+        console.warn('Supabase getCases query notice:', err.message);
+      }
+    }
+
     let list = [...SEED_DATA.cases];
     if (filters.search) {
       const q = filters.search.toLowerCase();
@@ -731,6 +754,96 @@ export const dbService = {
   },
 
   async getCaseById(caseId) {
+    if (isSupabaseConfigured) {
+      try {
+        const { data: caseItem, error: caseErr } = await supabase
+          .from('cases')
+          .select('*')
+          .or(`id.eq.${caseId},crime_no.eq.${caseId}`)
+          .maybeSingle();
+
+        if (caseItem && !caseErr) {
+          // 1. Fetch Person Case Roles & Persons
+          const { data: roles } = await supabase
+            .from('person_case_roles')
+            .select('*, persons(*)')
+            .eq('case_id', caseItem.id);
+
+          const linkedPersons = (roles || []).map(r => ({
+            ...(r.persons || { id: r.person_id, canonical_name: 'Unknown Subject', status_tag: 'Person of Interest' }),
+            role_type: r.role_type
+          }));
+
+          // 2. Fetch MO Fingerprint
+          const { data: moFingerprint } = await supabase
+            .from('mo_fingerprints')
+            .select('*')
+            .eq('case_id', caseItem.id)
+            .maybeSingle();
+
+          // 3. Fetch Similar Cases
+          const { data: simA } = await supabase
+            .from('mo_similarities')
+            .select('*, cases!mo_similarities_case_id_b_fkey(*)')
+            .eq('case_id_a', caseItem.id);
+
+          const { data: simB } = await supabase
+            .from('mo_similarities')
+            .select('*, cases!mo_similarities_case_id_a_fkey(*)')
+            .eq('case_id_b', caseItem.id);
+
+          let similarCases = [];
+          if (simA) {
+            simA.forEach(s => {
+              if (s.cases) {
+                similarCases.push({
+                  ...s.cases,
+                  similarity_score: s.similarity_score,
+                  matching_components: s.matching_components
+                });
+              }
+            });
+          }
+          if (simB) {
+            simB.forEach(s => {
+              if (s.cases) {
+                similarCases.push({
+                  ...s.cases,
+                  similarity_score: s.similarity_score,
+                  matching_components: s.matching_components
+                });
+              }
+            });
+          }
+          similarCases.sort((a, b) => b.similarity_score - a.similarity_score);
+
+          // 4. Fetch Evidence items
+          const { data: evidenceItems } = await supabase
+            .from('evidence')
+            .select('*')
+            .eq('source_id', caseItem.id);
+
+          // 5. Fetch Events
+          const { data: timelineEvents } = await supabase
+            .from('events')
+            .select('*')
+            .eq('case_id', caseItem.id)
+            .order('event_time', { ascending: false });
+
+          return {
+            ...caseItem,
+            linkedPersons,
+            moFingerprint: moFingerprint || null,
+            similarCases,
+            evidenceItems: evidenceItems || [],
+            timelineEvents: timelineEvents || []
+          };
+        }
+      } catch (err) {
+        console.warn('Supabase getCaseById query notice:', err.message);
+      }
+    }
+
     const caseItem = SEED_DATA.cases.find(c => c.id === caseId || c.crime_no === caseId);
     if (!caseItem) return null;
 
