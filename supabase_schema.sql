@@ -174,3 +174,49 @@ CREATE INDEX idx_relationships_source ON relationships(source_id);
 CREATE INDEX idx_relationships_target ON relationships(target_id);
 CREATE INDEX idx_alerts_severity ON alerts(severity);
 CREATE INDEX idx_alerts_status ON alerts(status);
+
+-- ============================================================================
+-- 13. CASE CANVAS INVESTIGATIVE WHITEBOARD TABLES
+-- ============================================================================
+
+CREATE TABLE case_canvases (
+    id TEXT PRIMARY KEY,
+    case_id TEXT NOT NULL REFERENCES cases(id) ON DELETE CASCADE,
+    case_notes TEXT DEFAULT '',
+    created_by TEXT DEFAULT 'Officer VK',
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE canvas_nodes (
+    id TEXT PRIMARY KEY,
+    canvas_id TEXT NOT NULL REFERENCES case_canvases(id) ON DELETE CASCADE,
+    node_type TEXT NOT NULL CHECK (node_type IN ('personCard', 'noteCard', 'entityCard')),
+    position_x REAL NOT NULL,
+    position_y REAL NOT NULL,
+    label TEXT NOT NULL,
+    description TEXT DEFAULT '',
+    linked_entity_type TEXT,
+    linked_entity_id TEXT,
+    status TEXT NOT NULL DEFAULT 'hypothesis' CHECK (status IN ('confirmed', 'hypothesis'))
+);
+
+CREATE TABLE canvas_edges (
+    id TEXT PRIMARY KEY,
+    canvas_id TEXT NOT NULL REFERENCES case_canvases(id) ON DELETE CASCADE,
+    source_node_id TEXT NOT NULL,
+    target_node_id TEXT NOT NULL,
+    relationship_label TEXT NOT NULL,
+    justification TEXT DEFAULT ''
+);
+
+CREATE TABLE canvas_snapshots (
+    id TEXT PRIMARY KEY,
+    canvas_id TEXT NOT NULL REFERENCES case_canvases(id) ON DELETE CASCADE,
+    snapshot_json JSONB NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_canvases_case ON case_canvases(case_id);
+CREATE INDEX idx_canvas_nodes_canvas ON canvas_nodes(canvas_id);
+CREATE INDEX idx_canvas_edges_canvas ON canvas_edges(canvas_id);
+

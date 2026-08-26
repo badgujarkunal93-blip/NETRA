@@ -1692,5 +1692,216 @@ export const dbService = {
       aiFindings,
       hotspots
     };
+  },
+
+  // --- CASE CANVAS INVESTIGATIVE WHITEBOARD ---
+  async getCaseCanvas(caseId) {
+    const storageKey = `ciu_canvas_${caseId}`;
+    let stored = null;
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) stored = JSON.parse(raw);
+    } catch {}
+
+    if (stored) return stored;
+
+    // If no existing canvas, generate initial default hypothesis cards
+    const initialNetwork = await this.getCaseIntelligenceNetwork(caseId);
+    const nodes = [];
+    const edges = [];
+
+    // Add case focal node
+    nodes.push({
+      id: `node-${caseId}`,
+      type: 'entityCard',
+      position: { x: 380, y: 180 },
+      data: {
+        label: initialNetwork.caseData ? initialNetwork.caseData.crime_no : caseId,
+        subLabel: initialNetwork.caseData ? initialNetwork.caseData.police_station : 'Registered Case',
+        description: initialNetwork.caseData ? initialNetwork.caseData.brief_facts : 'Primary registered FIR under investigation.',
+        nodeType: 'Case',
+        status: 'confirmed',
+        linkedId: caseId
+      }
+    });
+
+    // Add primary accused
+    const persons = initialNetwork.nodes.filter(n => n.type === 'Person').slice(0, 2);
+    persons.forEach((p, idx) => {
+      const pNodeId = `node-${p.id}`;
+      nodes.push({
+        id: pNodeId,
+        type: 'personCard',
+        position: { x: 120 + idx * 520, y: 340 },
+        data: {
+          label: p.label,
+          role: p.subtext || 'Accused',
+          description: `Key operative linked to ${initialNetwork.caseData?.crime_no || 'case'}. Known aliases: ${(p.aliases || []).join(', ') || 'None'}.`,
+          status: 'confirmed',
+          linkedId: p.id
+        }
+      });
+
+      edges.push({
+        id: `edge-${p.id}-${caseId}`,
+        source: pNodeId,
+        target: `node-${caseId}`,
+        label: 'named in FIR',
+        data: {
+          justification: 'Formally listed as primary suspect in initial chargesheet.'
+        }
+      });
+    });
+
+    // Add initial working hypothesis sticky note
+    nodes.push({
+      id: `node-note-1`,
+      type: 'noteCard',
+      position: { x: 420, y: 460 },
+      data: {
+        label: 'Investigator Working Lead',
+        description: 'Burner SIM activations in suburban tower coincide with getaway timeline. Check mutual CDR hops with Dharavi transit node.',
+        status: 'hypothesis'
+      }
+    });
+
+    const defaultCanvas = {
+      caseId,
+      nodes,
+      edges,
+      caseNotes: 'Investigative Hypothesis: Syndicate operated via layered burner SIMs with financial remittances routed through shell logistics entities. Awaiting bank KYC extract.',
+      updatedAt: new Date().toISOString()
+    };
+
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(defaultCanvas));
+    } catch {}
+
+    return defaultCanvas;
+  },
+
+  async saveCaseCanvas(caseId, { nodes, edges, caseNotes }) {
+    const storageKey = `ciu_canvas_${caseId}`;
+    const canvasData = {
+      caseId,
+      nodes,
+      edges,
+      caseNotes: caseNotes || '',
+      updatedAt: new Date().toISOString()
+    };
+
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(canvasData));
+    } catch {}
+
+    if (isSupabaseConfigured) {
+      try {
+        await supabase.from('case_canvases').upsert({
+          case_id: caseId,
+          case_notes: caseNotes,
+          updated_at: new Date().toISOString()
+        });
+      } catch (err) {
+        console.warn('Supabase canvas sync notice:', err);
+      }
+    }
+
+    return canvasData;
+  },
+
+  async saveCanvasSnapshot(caseId, { label, nodes, edges, caseNotes }) {
+    const snapKey = `ciu_canvas_snaps_${caseId}`;
+    let list = [];
+    try {
+      const raw = localStorage.getItem(snapKey);
+      if (raw) list = JSON.parse(raw);
+    } catch {}
+
+    const snapshot = {
+      id: `snap-${Date.now()}`,
+      label: label || `Snapshot ${list.length + 1}`,
+      createdAt: new Date().toISOString(),
+      nodesCount: nodes.length,
+      edgesCount: edges.length,
+      data: { nodes, edges, caseNotes }
+    };
+
+    list.unshift(snapshot);
+    try {
+      localStorage.setItem(snapKey, JSON.stringify(list.slice(0, 10)));
+    } catch {}
+
+    return snapshot;
+  },
+
+  async getCanvasSnapshots(caseId) {
+    const snapKey = `ciu_canvas_snaps_${caseId}`;
+    try {
+      const raw = localStorage.getItem(snapKey);
+      if (raw) return JSON.parse(raw);
+    } catch {}
+    return [];
+  },
+
+  async pullKnowledgeGraphToCanvas(caseId) {
+    const network = await this.getCaseIntelligenceNetwork(caseId);
+    const nodes = [];
+    const edges = [];
+
+    // Case anchor
+    nodes.push({
+      id: `node-${caseId}`,
+      type: 'entityCard',
+      position: { x: 450, y: 150 },
+      data: {
+        label: network.caseData ? network.caseData.crime_no : caseId,
+        subLabel: network.caseData ? network.caseData.police_station : 'Case FIR',
+        description: network.caseData ? network.caseData.brief_facts : 'Primary Case Anchor',
+        nodeType: 'Case',
+        status: 'confirmed',
+        linkedId: caseId
+      }
+    });
+
+    // Linked entities in concentric/grid layout
+    network.nodes.filter(n => n.type !== 'Case').forEach((n, idx) => {
+      const angle = (idx / Math.max(1, network.nodes.length - 1)) * 2 * Math.PI;
+      const x = 450 + 380 * Math.cos(angle);
+      const y = 350 + 260 * Math.sin(angle);
+
+      const isPerson = n.type === 'Person';
+      const nodeType = isPerson ? 'personCard' : n.type === 'Location' ? 'noteCard' : 'entityCard';
+
+      nodes.push({
+        id: `node-${n.id}`,
+        type: nodeType,
+        position: { x: Math.max(50, x), y: Math.max(50, y) },
+        data: {
+          label: n.label,
+          role: n.subtext || n.type,
+          subLabel: n.subtext,
+          description: n.description || `${n.type} entity linked to investigation. Status: ${n.subtext || 'Active'}.`,
+          nodeType: n.type,
+          status: 'confirmed',
+          linkedId: n.id
+        }
+      });
+    });
+
+    // Edges
+    network.edges.forEach(e => {
+      edges.push({
+        id: `edge-${e.id}`,
+        source: `node-${e.source}`,
+        target: `node-${e.target}`,
+        label: e.verb || e.label,
+        data: {
+          justification: e.evidence || `Observed relationship in case telemetry records.`
+        }
+      });
+    });
+
+    return { nodes, edges };
   }
 };
+

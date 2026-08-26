@@ -9,6 +9,7 @@ import EntityProfile from './pages/EntityProfile';
 import KnowledgeGraph from './pages/KnowledgeGraph';
 import AlertsFindings from './pages/AlertsFindings';
 import MOSimilarity from './pages/MOSimilarity';
+import CaseCanvas from './pages/CaseCanvas';
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="cases" element={<CaseSearch />} />
             <Route path="entities" element={<EntityProfile />} />
             <Route path="graph" element={<KnowledgeGraph />} />
+            <Route path="canvas" element={<CaseCanvas />} />
             <Route path="alerts" element={<AlertsFindings />} />
             <Route path="mo-similarity" element={<MOSimilarity />} />
           </Route>

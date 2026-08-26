@@ -16,7 +16,8 @@ import {
   Lock,
   Radio,
   FileText,
-  FileUp
+  FileUp,
+  Layers
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { dbService } from '../../services/db';
@@ -83,6 +84,7 @@ export default function AppShell() {
       group: 'INTELLIGENCE & ANALYSIS',
       items: [
         { label: 'Knowledge Graph', path: '/graph', icon: Share2 },
+        { label: 'Case Canvas', path: '/canvas', icon: Layers },
         { label: 'Alerts & Findings', path: '/alerts', icon: Bell, badge: activeAlertCount > 0 ? activeAlertCount : null },
         { label: 'MO Similarity Matrix', path: '/mo-similarity', icon: Fingerprint },
       ]
