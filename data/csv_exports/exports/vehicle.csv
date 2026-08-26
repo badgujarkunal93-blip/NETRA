@@ -1,0 +1,2501 @@
+vehicle_id,registration_hash,type,make_model,owner_person_id,synthetic_demo_record
+VEH_0001,8c5e93e5efd8345f,Four-Wheeler,Royal Enfield Classic 350,P_01937,True
+VEH_0002,21a5841804e50130,Commercial Auto,Maruti Suzuki Swift,P_03783,True
+VEH_0003,c5a8479ed89a469e,Commercial Auto,Bajaj Pulsar,P_00321,True
+VEH_0004,42e32ba6664474d2,Commercial Auto,Honda City,P_02299,True
+VEH_0005,83a3daeb1d34ca7b,Cargo Truck,TVS Jupiter,P_00386,True
+VEH_0006,de2de536d28ad550,Four-Wheeler,Toyota Innova,P_00842,True
+VEH_0007,17311410927fd7c1,Two-Wheeler,Toyota Innova,P_03570,True
+VEH_0008,02da1609b8375df8,Four-Wheeler,Bajaj Pulsar,P_00041,True
+VEH_0009,24bf776b7ff8cb36,Commercial Auto,Honda City,P_00615,True
+VEH_0010,930ce7b7e85c0ac7,Two-Wheeler,Honda City,P_01396,True
+VEH_0011,fb597a593ffc4862,Four-Wheeler,Royal Enfield Classic 350,P_03661,True
+VEH_0012,70bd9fbfa9f87cfd,Cargo Truck,Honda City,P_02638,True
+VEH_0013,4ad0a01d3c231433,Two-Wheeler,Toyota Innova,P_04576,True
+VEH_0014,9e5e6381758a9d7c,Four-Wheeler,Maruti Suzuki Swift,P_01741,True
+VEH_0015,343d8717eb75703a,Two-Wheeler,Hyundai Creta,P_02789,True
+VEH_0016,67666384a120528d,Two-Wheeler,Honda City,P_03720,True
+VEH_0017,f4d2d78ad80709e5,Two-Wheeler,Royal Enfield Classic 350,P_03707,True
+VEH_0018,9b10c4faaf64064f,Four-Wheeler,Honda City,P_04729,True
+VEH_0019,3262ed999b48d454,Cargo Truck,Mahindra Scorpio,P_00136,True
+VEH_0020,60513eee64f2af53,Commercial Auto,TVS Jupiter,P_02884,True
+VEH_0021,849f7b13d076b173,Cargo Truck,Mahindra Scorpio,P_01234,True
+VEH_0022,f9f80d23b55c6fde,Four-Wheeler,Honda City,P_03030,True
+VEH_0023,3863292c1fa7b425,Two-Wheeler,Mahindra Scorpio,P_02457,True
+VEH_0024,50cd261d6d94a7a8,Cargo Truck,TVS Jupiter,P_04345,True
+VEH_0025,e6488505b2727635,Four-Wheeler,Mahindra Scorpio,P_00944,True
+VEH_0026,48f7709869d87051,Two-Wheeler,Hyundai Creta,P_02305,True
+VEH_0027,8c17264a65ae1be9,Commercial Auto,Hyundai Creta,P_01802,True
+VEH_0028,b948605acdd04f89,Commercial Auto,Honda City,P_04885,True
+VEH_0029,82a2a7559529d3ea,Two-Wheeler,Honda City,P_01955,True
+VEH_0030,fa38a9df6a8dfbc8,Four-Wheeler,TVS Jupiter,P_01162,True
+VEH_0031,ed78985d119609f2,Four-Wheeler,Hyundai Creta,P_01399,True
+VEH_0032,ec3746db42ecc32e,Cargo Truck,TVS Jupiter,P_02076,True
+VEH_0033,04d6cea39ac3d356,Two-Wheeler,Mahindra Scorpio,P_04400,True
+VEH_0034,573da4c2db3fc138,Commercial Auto,TVS Jupiter,P_04116,True
+VEH_0035,53b6d00f6e4f200f,Commercial Auto,TVS Jupiter,P_00112,True
+VEH_0036,e5d789b88c78f702,Commercial Auto,TVS Jupiter,P_00924,True
+VEH_0037,768672d6c40c5625,Commercial Auto,Mahindra Scorpio,P_01161,True
+VEH_0038,c584107d345b991c,Four-Wheeler,Toyota Innova,P_01691,True
+VEH_0039,168d9ba2e1226b21,Cargo Truck,Honda City,P_04060,True
+VEH_0040,b0e29647febbcbc2,Cargo Truck,Toyota Innova,P_03204,True
+VEH_0041,f777349655c73d6a,Cargo Truck,Toyota Innova,P_01008,True
+VEH_0042,a568338895b2e3fb,Four-Wheeler,Honda City,P_00903,True
+VEH_0043,d56937cf4efd66ee,Two-Wheeler,Bajaj Pulsar,P_02422,True
+VEH_0044,f378d0d626521ee1,Four-Wheeler,Maruti Suzuki Swift,P_03719,True
+VEH_0045,9447bc9b4aa5b472,Four-Wheeler,TVS Jupiter,P_02506,True
+VEH_0046,ed50c0d4f82b2310,Commercial Auto,Honda City,P_01129,True
+VEH_0047,8f75d7e2f9b42403,Commercial Auto,Tata Nexon,P_00705,True
+VEH_0048,6b16ae4ba17c73a5,Two-Wheeler,Hyundai Creta,P_02431,True
+VEH_0049,d2616d5f2bbbbdd0,Four-Wheeler,Royal Enfield Classic 350,P_03270,True
+VEH_0050,6ec76ad12276d1ef,Two-Wheeler,Royal Enfield Classic 350,P_02642,True
+VEH_0051,7214c804928a2dbd,Four-Wheeler,Honda City,P_02047,True
+VEH_0052,bf40a36293802571,Cargo Truck,Tata Nexon,P_03080,True
+VEH_0053,5f0da56ecd573acc,Cargo Truck,Bajaj Pulsar,P_02930,True
+VEH_0054,ba523f5caf30a979,Four-Wheeler,TVS Jupiter,P_00227,True
+VEH_0055,6f9c7c70164bda5b,Commercial Auto,Mahindra Scorpio,P_04755,True
+VEH_0056,d47abec74bd9273b,Two-Wheeler,Maruti Suzuki Swift,P_03217,True
+VEH_0057,1542a0df7889ad0b,Four-Wheeler,TVS Jupiter,P_00446,True
+VEH_0058,db75dd7e4ef4aaca,Four-Wheeler,Toyota Innova,P_04869,True
+VEH_0059,01c0de52e8a3e28a,Four-Wheeler,Hyundai Creta,P_04790,True
+VEH_0060,6b8991724bbc66f3,Two-Wheeler,Tata Nexon,P_01832,True
+VEH_0061,6fd9404a650a79d4,Four-Wheeler,TVS Jupiter,P_01645,True
+VEH_0062,f0e4349f448f2d39,Two-Wheeler,Bajaj Pulsar,P_00794,True
+VEH_0063,660e44242de8a264,Four-Wheeler,TVS Jupiter,P_03201,True
+VEH_0064,f02b01a3f583c789,Commercial Auto,Mahindra Scorpio,P_04075,True
+VEH_0065,817107442886a5e0,Four-Wheeler,Royal Enfield Classic 350,P_01199,True
+VEH_0066,9896e87360e7aeb6,Two-Wheeler,Tata Nexon,P_04287,True
+VEH_0067,0bacb1ee9ae1c3b9,Commercial Auto,TVS Jupiter,P_03010,True
+VEH_0068,1ce474126c8a856b,Two-Wheeler,Royal Enfield Classic 350,P_03481,True
+VEH_0069,b83ca656663a6c7c,Commercial Auto,Maruti Suzuki Swift,P_04756,True
+VEH_0070,31754cf63fb91cbc,Two-Wheeler,Maruti Suzuki Swift,P_02906,True
+VEH_0071,34725970999f2cab,Two-Wheeler,Tata Nexon,P_02931,True
+VEH_0072,3f4ac564d6a937f5,Two-Wheeler,Hyundai Creta,P_01430,True
+VEH_0073,e071cae723d970d9,Commercial Auto,Tata Nexon,P_02329,True
+VEH_0074,94b2053005cfa132,Two-Wheeler,Royal Enfield Classic 350,P_03865,True
+VEH_0075,3f5dce6b097021b0,Commercial Auto,Honda City,P_01061,True
+VEH_0076,609b9b854aa7c87b,Four-Wheeler,Hyundai Creta,P_00369,True
+VEH_0077,fc433e07bcba68ef,Two-Wheeler,TVS Jupiter,P_02652,True
+VEH_0078,0fab966550436eef,Four-Wheeler,Royal Enfield Classic 350,P_00528,True
+VEH_0079,4360d27a7f30eef5,Four-Wheeler,TVS Jupiter,P_03067,True
+VEH_0080,d6b4dc38ea82b412,Two-Wheeler,Tata Nexon,P_04701,True
+VEH_0081,dafaf85ab76476c6,Two-Wheeler,Mahindra Scorpio,P_01649,True
+VEH_0082,df2778f48c242093,Four-Wheeler,Hyundai Creta,P_04769,True
+VEH_0083,5bd250c18f52f5ef,Four-Wheeler,Toyota Innova,P_03343,True
+VEH_0084,fa5a63e945bdc805,Two-Wheeler,TVS Jupiter,P_01558,True
+VEH_0085,38750742b6c00b48,Four-Wheeler,Bajaj Pulsar,P_01130,True
+VEH_0086,7417c7211dcce73e,Commercial Auto,Hyundai Creta,P_01042,True
+VEH_0087,2dd65120a67f31de,Four-Wheeler,Bajaj Pulsar,P_02711,True
+VEH_0088,ee9e94d6d6178fe4,Four-Wheeler,Royal Enfield Classic 350,P_02932,True
+VEH_0089,7e7f57bcf3559a69,Commercial Auto,Mahindra Scorpio,P_04338,True
+VEH_0090,2b9d61e63baf8eec,Four-Wheeler,TVS Jupiter,P_02203,True
+VEH_0091,83186ff1eb30791b,Two-Wheeler,Maruti Suzuki Swift,P_01142,True
+VEH_0092,2ade3f01bd4bfb85,Four-Wheeler,Mahindra Scorpio,P_04140,True
+VEH_0093,5a9e882d18b7cd3c,Cargo Truck,Toyota Innova,P_00580,True
+VEH_0094,e868c8eac86d8d8f,Commercial Auto,TVS Jupiter,P_01061,True
+VEH_0095,a0e562961507af36,Cargo Truck,Toyota Innova,P_03535,True
+VEH_0096,2ffc72bc6da5f9ba,Four-Wheeler,Maruti Suzuki Swift,P_00454,True
+VEH_0097,3956d3b55ee0bc47,Four-Wheeler,Bajaj Pulsar,P_03950,True
+VEH_0098,2993ae24c004ca89,Two-Wheeler,Royal Enfield Classic 350,P_04502,True
+VEH_0099,efa7ccb75f9d8372,Commercial Auto,Toyota Innova,P_01587,True
+VEH_0100,ec7ecadc99363b47,Cargo Truck,Maruti Suzuki Swift,P_01861,True
+VEH_0101,91b215f4db8345b4,Four-Wheeler,Mahindra Scorpio,P_00466,True
+VEH_0102,38fabfbd7c8e98cf,Two-Wheeler,Toyota Innova,P_02865,True
+VEH_0103,556cc200faa9de5e,Commercial Auto,Hyundai Creta,P_00626,True
+VEH_0104,d743fdbbaab7261a,Commercial Auto,Mahindra Scorpio,P_03634,True
+VEH_0105,5c6a621ac4e82bab,Commercial Auto,Bajaj Pulsar,P_02240,True
+VEH_0106,cdbad3efff7e2420,Four-Wheeler,TVS Jupiter,P_02340,True
+VEH_0107,aa1b2c4b7fd7a3a9,Two-Wheeler,Mahindra Scorpio,P_02047,True
+VEH_0108,39070913b7bfe50d,Cargo Truck,Maruti Suzuki Swift,P_01926,True
+VEH_0109,3e3a82bc1431290e,Cargo Truck,Honda City,P_02326,True
+VEH_0110,01662eabd583e497,Four-Wheeler,Royal Enfield Classic 350,P_04154,True
+VEH_0111,fb1b0be15c937fba,Cargo Truck,Royal Enfield Classic 350,P_01511,True
+VEH_0112,6e3eeaab60b86c40,Commercial Auto,Toyota Innova,P_00213,True
+VEH_0113,176cbe9fd61481c5,Cargo Truck,Toyota Innova,P_03556,True
+VEH_0114,a0135d4445233686,Cargo Truck,Bajaj Pulsar,P_03798,True
+VEH_0115,32c95342a1dfd5b8,Cargo Truck,Tata Nexon,P_03124,True
+VEH_0116,dbc9b8fa2b32b36a,Commercial Auto,Hyundai Creta,P_02096,True
+VEH_0117,4047b088fda2c82a,Commercial Auto,Toyota Innova,P_02250,True
+VEH_0118,53214a4914d13276,Cargo Truck,Honda City,P_01465,True
+VEH_0119,d86c8f4ea1116b42,Two-Wheeler,Toyota Innova,P_03934,True
+VEH_0120,8154ade769393c8f,Four-Wheeler,Bajaj Pulsar,P_02573,True
+VEH_0121,9afbe8a6c942ff2e,Two-Wheeler,Honda City,P_04151,True
+VEH_0122,7632ee7fd7e16feb,Four-Wheeler,Mahindra Scorpio,P_00938,True
+VEH_0123,2b7e0106efe25120,Two-Wheeler,Toyota Innova,P_00344,True
+VEH_0124,cb75519efa86595d,Four-Wheeler,Maruti Suzuki Swift,P_02895,True
+VEH_0125,cde9a48e7e3649e0,Four-Wheeler,TVS Jupiter,P_00928,True
+VEH_0126,685e889aea001076,Commercial Auto,Hyundai Creta,P_03494,True
+VEH_0127,3687f868b357f935,Commercial Auto,Toyota Innova,P_03344,True
+VEH_0128,4d623c0f5975c4d6,Four-Wheeler,Tata Nexon,P_03018,True
+VEH_0129,8f72f2e28aea7383,Two-Wheeler,Hyundai Creta,P_04990,True
+VEH_0130,e32040ca4d3dfba1,Cargo Truck,Toyota Innova,P_01761,True
+VEH_0131,f363f3ae8db988b2,Two-Wheeler,Hyundai Creta,P_00634,True
+VEH_0132,2082057f3cc40217,Four-Wheeler,Royal Enfield Classic 350,P_04012,True
+VEH_0133,a9c7e513e92c3845,Commercial Auto,Bajaj Pulsar,P_03613,True
+VEH_0134,ea0ca46bf35bc9df,Commercial Auto,Toyota Innova,P_01992,True
+VEH_0135,0b030a12fa6a8b32,Cargo Truck,Mahindra Scorpio,P_03646,True
+VEH_0136,11f2fce174e0ba1e,Two-Wheeler,Toyota Innova,P_03967,True
+VEH_0137,d8cfc2bb3d0bf786,Cargo Truck,Bajaj Pulsar,P_02055,True
+VEH_0138,96699df4c279c2c9,Four-Wheeler,Toyota Innova,P_02572,True
+VEH_0139,be8bc0acf37f8531,Two-Wheeler,TVS Jupiter,P_01623,True
+VEH_0140,50c2f9e9fc8820fa,Four-Wheeler,Bajaj Pulsar,P_03850,True
+VEH_0141,835943d07d87cbe4,Two-Wheeler,Tata Nexon,P_00599,True
+VEH_0142,79944000b73a789f,Cargo Truck,Toyota Innova,P_01045,True
+VEH_0143,cfb11eb309cb6411,Four-Wheeler,Toyota Innova,P_04846,True
+VEH_0144,ba57449fa30ed655,Cargo Truck,Royal Enfield Classic 350,P_03685,True
+VEH_0145,fdbce2610cbd1a08,Two-Wheeler,Bajaj Pulsar,P_00687,True
+VEH_0146,b6b6f88d36e679a1,Cargo Truck,Royal Enfield Classic 350,P_02626,True
+VEH_0147,68ac1ad872329c74,Cargo Truck,Mahindra Scorpio,P_02484,True
+VEH_0148,c5611a5b634cef1a,Commercial Auto,Bajaj Pulsar,P_03496,True
+VEH_0149,5797ad81fdaa9a2b,Cargo Truck,Maruti Suzuki Swift,P_01726,True
+VEH_0150,331cac6ebc669b70,Commercial Auto,Hyundai Creta,P_02846,True
+VEH_0151,81772d0a1273348f,Commercial Auto,Mahindra Scorpio,P_01388,True
+VEH_0152,a1e06f7aa2324348,Four-Wheeler,Honda City,P_01156,True
+VEH_0153,c6ee6aaf983b5dca,Four-Wheeler,Maruti Suzuki Swift,P_04903,True
+VEH_0154,d22b11b1a584154e,Two-Wheeler,Maruti Suzuki Swift,P_03028,True
+VEH_0155,abadc1dc665f1949,Cargo Truck,Bajaj Pulsar,P_01034,True
+VEH_0156,d574a761157f69e9,Cargo Truck,TVS Jupiter,P_03542,True
+VEH_0157,29f338995eeb93ca,Four-Wheeler,Hyundai Creta,P_02898,True
+VEH_0158,55c1e6b7e8a7d1ca,Cargo Truck,Toyota Innova,P_02310,True
+VEH_0159,168b182a49e15ed8,Four-Wheeler,Maruti Suzuki Swift,P_03551,True
+VEH_0160,5ed04a918f5f18ea,Two-Wheeler,Maruti Suzuki Swift,P_02063,True
+VEH_0161,1769800897abfdc5,Two-Wheeler,Honda City,P_03852,True
+VEH_0162,4f56af6184f71f33,Four-Wheeler,Tata Nexon,P_01627,True
+VEH_0163,ccc6387ac9dec558,Cargo Truck,Royal Enfield Classic 350,P_00552,True
+VEH_0164,276017ecded12e40,Cargo Truck,Royal Enfield Classic 350,P_02204,True
+VEH_0165,14af1dfa68c6f0e9,Two-Wheeler,Tata Nexon,P_02007,True
+VEH_0166,e5a5ef27fbf0f5ee,Cargo Truck,Toyota Innova,P_04048,True
+VEH_0167,625f16ad4688cd05,Commercial Auto,Royal Enfield Classic 350,P_03664,True
+VEH_0168,5f448f157e72a21c,Commercial Auto,Toyota Innova,P_00931,True
+VEH_0169,cf9d4d2d03fdf114,Cargo Truck,TVS Jupiter,P_04924,True
+VEH_0170,b6d2866513f7858a,Commercial Auto,Royal Enfield Classic 350,P_00499,True
+VEH_0171,97227df22c023443,Commercial Auto,Royal Enfield Classic 350,P_03266,True
+VEH_0172,2dc1267be62e844e,Cargo Truck,Maruti Suzuki Swift,P_02528,True
+VEH_0173,52923e68467f7f60,Commercial Auto,Mahindra Scorpio,P_00904,True
+VEH_0174,b22bdb9315f1b18a,Commercial Auto,Royal Enfield Classic 350,P_00740,True
+VEH_0175,b9e7de036adb01de,Commercial Auto,Bajaj Pulsar,P_01725,True
+VEH_0176,f5255e47c108af42,Commercial Auto,Royal Enfield Classic 350,P_01879,True
+VEH_0177,02c05c6985523d48,Four-Wheeler,Bajaj Pulsar,P_02086,True
+VEH_0178,5c0721d98c83e649,Cargo Truck,Hyundai Creta,P_04205,True
+VEH_0179,2f51876a96b8289a,Four-Wheeler,Mahindra Scorpio,P_02074,True
+VEH_0180,a6dfe532d78431c7,Commercial Auto,Royal Enfield Classic 350,P_01075,True
+VEH_0181,2e7a34e2ca752659,Two-Wheeler,Maruti Suzuki Swift,P_00121,True
+VEH_0182,af83d90d40211f9c,Cargo Truck,Honda City,P_02652,True
+VEH_0183,cd4acc17ac241f65,Commercial Auto,Mahindra Scorpio,P_00817,True
+VEH_0184,b5750b05814b9c71,Commercial Auto,Mahindra Scorpio,P_03329,True
+VEH_0185,f7e8505f35bbfd8d,Four-Wheeler,Mahindra Scorpio,P_03133,True
+VEH_0186,b4703768a9e73e07,Two-Wheeler,Hyundai Creta,P_03705,True
+VEH_0187,8c07cdb6f0eb96d6,Cargo Truck,TVS Jupiter,P_03030,True
+VEH_0188,adee8d179db4134d,Two-Wheeler,Hyundai Creta,P_00782,True
+VEH_0189,8a5356b6c8e73929,Cargo Truck,Hyundai Creta,P_01158,True
+VEH_0190,e9368589609b4769,Cargo Truck,Mahindra Scorpio,P_00483,True
+VEH_0191,b388b27baec011d9,Cargo Truck,Maruti Suzuki Swift,P_02634,True
+VEH_0192,f5ff27f32cd74326,Cargo Truck,TVS Jupiter,P_04066,True
+VEH_0193,d62ee270dde95490,Four-Wheeler,TVS Jupiter,P_04311,True
+VEH_0194,ad3ebf6b2254d2b5,Four-Wheeler,Maruti Suzuki Swift,P_01328,True
+VEH_0195,eb017259b7bc46f2,Cargo Truck,Maruti Suzuki Swift,P_03475,True
+VEH_0196,a303ee6dd7b8ad51,Cargo Truck,Bajaj Pulsar,P_03426,True
+VEH_0197,5ad683f767f6e207,Commercial Auto,Honda City,P_04377,True
+VEH_0198,2548e2f3ebb1cf59,Two-Wheeler,Tata Nexon,P_02426,True
+VEH_0199,40c9058d27a05b8c,Cargo Truck,Honda City,P_03868,True
+VEH_0200,080075ae9742fe44,Cargo Truck,Tata Nexon,P_04392,True
+VEH_0201,31bfc78c197f1ef1,Commercial Auto,Hyundai Creta,P_00046,True
+VEH_0202,c8e28f4d6e496e99,Four-Wheeler,Toyota Innova,P_00776,True
+VEH_0203,dc1e042a01aff595,Commercial Auto,Bajaj Pulsar,P_01852,True
+VEH_0204,a3762365628bf008,Cargo Truck,Honda City,P_03009,True
+VEH_0205,579c1911dbb697d6,Two-Wheeler,Hyundai Creta,P_04855,True
+VEH_0206,c76c15f5e63e30f0,Cargo Truck,Hyundai Creta,P_01038,True
+VEH_0207,825c75d9fc31c682,Two-Wheeler,Honda City,P_03879,True
+VEH_0208,db7e979b31fdd787,Two-Wheeler,Hyundai Creta,P_01201,True
+VEH_0209,ca59be2e2d89cf89,Cargo Truck,Maruti Suzuki Swift,P_01123,True
+VEH_0210,0cc1ebff0a5e20b0,Cargo Truck,Hyundai Creta,P_01973,True
+VEH_0211,f8499b7a8ef84cbd,Commercial Auto,Honda City,P_04373,True
+VEH_0212,e6471e80de1e9506,Two-Wheeler,Tata Nexon,P_02324,True
+VEH_0213,b5a8aa9a086faa8e,Cargo Truck,Hyundai Creta,P_04571,True
+VEH_0214,44af4b3561a49dab,Two-Wheeler,Toyota Innova,P_03475,True
+VEH_0215,fe70f3df352c4dc6,Two-Wheeler,Royal Enfield Classic 350,P_03066,True
+VEH_0216,4367e85e2a56266a,Commercial Auto,Maruti Suzuki Swift,P_04803,True
+VEH_0217,f0a8a5a7f6567ffe,Commercial Auto,Bajaj Pulsar,P_00107,True
+VEH_0218,280e66ceaef2bd37,Commercial Auto,Maruti Suzuki Swift,P_02121,True
+VEH_0219,6ae3cb7744edb371,Two-Wheeler,TVS Jupiter,P_04113,True
+VEH_0220,90deee2a62f7e5bd,Commercial Auto,Hyundai Creta,P_00313,True
+VEH_0221,1864c019809c8269,Cargo Truck,Tata Nexon,P_00679,True
+VEH_0222,cf9a00c0be3d8ed5,Commercial Auto,Toyota Innova,P_00799,True
+VEH_0223,b0f2e3337ebdc99d,Commercial Auto,Toyota Innova,P_01387,True
+VEH_0224,7867f5c5d8314ded,Two-Wheeler,Maruti Suzuki Swift,P_00533,True
+VEH_0225,0d6f2691a713ea78,Commercial Auto,TVS Jupiter,P_00365,True
+VEH_0226,14a081636875d79c,Commercial Auto,Maruti Suzuki Swift,P_02550,True
+VEH_0227,8d2e4739eb340faa,Cargo Truck,Hyundai Creta,P_04639,True
+VEH_0228,723f4f0f9013c215,Four-Wheeler,Tata Nexon,P_02601,True
+VEH_0229,88d00cbd82fba4d7,Two-Wheeler,TVS Jupiter,P_00666,True
+VEH_0230,5de934680ae461a7,Four-Wheeler,Tata Nexon,P_02544,True
+VEH_0231,e6c7dc209d45d5fe,Two-Wheeler,Toyota Innova,P_03392,True
+VEH_0232,a6fc0de5d26b69f9,Commercial Auto,Honda City,P_03602,True
+VEH_0233,282324952fea3e54,Two-Wheeler,Bajaj Pulsar,P_03684,True
+VEH_0234,effa4803c029bc5c,Two-Wheeler,Bajaj Pulsar,P_04659,True
+VEH_0235,e1ceb486cfd4b3f8,Commercial Auto,Mahindra Scorpio,P_02804,True
+VEH_0236,e8a1ca479448ef60,Four-Wheeler,TVS Jupiter,P_02185,True
+VEH_0237,5a3b40352d98a80c,Commercial Auto,Tata Nexon,P_03828,True
+VEH_0238,daf48df9efda8af7,Commercial Auto,Toyota Innova,P_00857,True
+VEH_0239,ce5b6aba7ad8e1fe,Commercial Auto,Hyundai Creta,P_01533,True
+VEH_0240,676b0ce9933d40f1,Cargo Truck,TVS Jupiter,P_03740,True
+VEH_0241,99374ccd123b04f6,Cargo Truck,Toyota Innova,P_03954,True
+VEH_0242,ae0048d9d467d170,Cargo Truck,Bajaj Pulsar,P_00884,True
+VEH_0243,bc0c3444adcf64d1,Two-Wheeler,Maruti Suzuki Swift,P_01344,True
+VEH_0244,c8a4c36b6907a4e8,Two-Wheeler,Mahindra Scorpio,P_04653,True
+VEH_0245,fc79a272a5a2cb4a,Two-Wheeler,Hyundai Creta,P_02534,True
+VEH_0246,a3ce72ca86699f29,Two-Wheeler,Tata Nexon,P_01642,True
+VEH_0247,6b38d6e206be69b3,Two-Wheeler,Royal Enfield Classic 350,P_00739,True
+VEH_0248,d5ad3756d399384b,Two-Wheeler,Maruti Suzuki Swift,P_03911,True
+VEH_0249,b73fbf997ae1d0d9,Cargo Truck,Mahindra Scorpio,P_03870,True
+VEH_0250,65efe778b9a00c51,Commercial Auto,Royal Enfield Classic 350,P_01053,True
+VEH_0251,ad8588279e1a1cf6,Cargo Truck,Royal Enfield Classic 350,P_04891,True
+VEH_0252,dae33bbe3f0aa4b8,Two-Wheeler,Maruti Suzuki Swift,P_01817,True
+VEH_0253,eac1a14c571f6255,Two-Wheeler,Royal Enfield Classic 350,P_00633,True
+VEH_0254,b772c1ba234d77c6,Commercial Auto,Royal Enfield Classic 350,P_00761,True
+VEH_0255,8d7b2844b98ed60b,Cargo Truck,Honda City,P_03169,True
+VEH_0256,4f803b0c71239286,Four-Wheeler,Tata Nexon,P_03263,True
+VEH_0257,a3a4b082b8d3b7d2,Two-Wheeler,Royal Enfield Classic 350,P_00101,True
+VEH_0258,9ec4603c4fdd27d3,Cargo Truck,Maruti Suzuki Swift,P_03983,True
+VEH_0259,4eec605d3810e604,Cargo Truck,Hyundai Creta,P_04945,True
+VEH_0260,44eea3a414e7788b,Four-Wheeler,Bajaj Pulsar,P_02989,True
+VEH_0261,d10b8f97f17d467b,Four-Wheeler,Hyundai Creta,P_01232,True
+VEH_0262,f73e57c6bc6282bb,Cargo Truck,Mahindra Scorpio,P_04315,True
+VEH_0263,44d35bf5a4c80e52,Commercial Auto,TVS Jupiter,P_03771,True
+VEH_0264,db5b05ba3149b65a,Commercial Auto,Royal Enfield Classic 350,P_02765,True
+VEH_0265,f99823ee664cb718,Cargo Truck,Royal Enfield Classic 350,P_00144,True
+VEH_0266,a9a1533633ffbced,Cargo Truck,Toyota Innova,P_00300,True
+VEH_0267,4c75450304d9997a,Cargo Truck,Tata Nexon,P_04139,True
+VEH_0268,178bc178291918ed,Cargo Truck,Bajaj Pulsar,P_04662,True
+VEH_0269,647ab1e1737246e3,Four-Wheeler,Hyundai Creta,P_03129,True
+VEH_0270,37c51bc0060f03d1,Two-Wheeler,Royal Enfield Classic 350,P_00184,True
+VEH_0271,aed1f201059dabb0,Two-Wheeler,Royal Enfield Classic 350,P_00954,True
+VEH_0272,d2f90bfc78be502e,Four-Wheeler,Bajaj Pulsar,P_01997,True
+VEH_0273,a6e0ea953bcb6f82,Commercial Auto,Honda City,P_01522,True
+VEH_0274,0fd515a344d2f861,Four-Wheeler,Honda City,P_02282,True
+VEH_0275,4435601e5f1a50ae,Cargo Truck,Honda City,P_02236,True
+VEH_0276,df289cb6e05da485,Four-Wheeler,Mahindra Scorpio,P_01842,True
+VEH_0277,589a364c2bfa6695,Cargo Truck,TVS Jupiter,P_04817,True
+VEH_0278,b9b0c4398824a902,Commercial Auto,Maruti Suzuki Swift,P_02810,True
+VEH_0279,02cedecb41175383,Two-Wheeler,TVS Jupiter,P_01726,True
+VEH_0280,c0b21eb7c1e1bc82,Commercial Auto,Hyundai Creta,P_03986,True
+VEH_0281,71b45d1e1d2af3aa,Commercial Auto,Honda City,P_02439,True
+VEH_0282,e50885390750c6b8,Cargo Truck,Tata Nexon,P_02881,True
+VEH_0283,d93408a25c4e1539,Two-Wheeler,Bajaj Pulsar,P_04117,True
+VEH_0284,19c1f08ac2c2b3d3,Cargo Truck,Hyundai Creta,P_00795,True
+VEH_0285,6c56ee3e0b078d36,Cargo Truck,Tata Nexon,P_01304,True
+VEH_0286,68eb11582518d5b1,Commercial Auto,Honda City,P_02617,True
+VEH_0287,4d823d1c92eb4975,Cargo Truck,Bajaj Pulsar,P_04484,True
+VEH_0288,97a5a62accefb20d,Two-Wheeler,Honda City,P_03682,True
+VEH_0289,66a57d204ce79534,Four-Wheeler,TVS Jupiter,P_01412,True
+VEH_0290,e8e443fc5fcf7450,Four-Wheeler,Royal Enfield Classic 350,P_01548,True
+VEH_0291,9038b54f1f9f0b5f,Cargo Truck,Hyundai Creta,P_04912,True
+VEH_0292,9dc1af9521f98385,Commercial Auto,TVS Jupiter,P_00746,True
+VEH_0293,eacf1548ce444ddf,Two-Wheeler,Bajaj Pulsar,P_04285,True
+VEH_0294,eab6ccc4e36790ac,Two-Wheeler,Tata Nexon,P_03869,True
+VEH_0295,00c0cc01365d6401,Cargo Truck,Mahindra Scorpio,P_04732,True
+VEH_0296,a625f480f2a64fc3,Four-Wheeler,Tata Nexon,P_03780,True
+VEH_0297,94f6e211c6e1bad2,Four-Wheeler,Mahindra Scorpio,P_03787,True
+VEH_0298,cd1c06afd8f8743d,Cargo Truck,Bajaj Pulsar,P_03852,True
+VEH_0299,50cf9572d5f1a5eb,Four-Wheeler,Hyundai Creta,P_04973,True
+VEH_0300,5d91746547bf2f53,Commercial Auto,Royal Enfield Classic 350,P_00327,True
+VEH_0301,b513ab1f913b617d,Four-Wheeler,Royal Enfield Classic 350,P_01017,True
+VEH_0302,427bd733d027c950,Commercial Auto,Hyundai Creta,P_01385,True
+VEH_0303,b110b20a90bfb8bc,Commercial Auto,TVS Jupiter,P_01722,True
+VEH_0304,378db641b4aeac58,Commercial Auto,TVS Jupiter,P_02053,True
+VEH_0305,4858d922316c07e0,Commercial Auto,Honda City,P_04655,True
+VEH_0306,1ddfb7d14d25d678,Two-Wheeler,Honda City,P_00213,True
+VEH_0307,2e06cfcaf369979b,Commercial Auto,Tata Nexon,P_04651,True
+VEH_0308,c5f6038b5199916d,Commercial Auto,Tata Nexon,P_01201,True
+VEH_0309,cbb05e45f640f90b,Four-Wheeler,Honda City,P_01216,True
+VEH_0310,fe0b5602dd68be16,Two-Wheeler,Royal Enfield Classic 350,P_03908,True
+VEH_0311,61a78ac836f41292,Commercial Auto,Toyota Innova,P_04384,True
+VEH_0312,4fbe74107b9b2a3d,Two-Wheeler,Bajaj Pulsar,P_03949,True
+VEH_0313,ba2981aff00902b2,Commercial Auto,Toyota Innova,P_01842,True
+VEH_0314,19961b0ae8096349,Cargo Truck,Mahindra Scorpio,P_02921,True
+VEH_0315,240cbd0eb8ac29f0,Two-Wheeler,Bajaj Pulsar,P_01871,True
+VEH_0316,6c55643ccd69f8f1,Four-Wheeler,Toyota Innova,P_04253,True
+VEH_0317,2eea18c10d77b7c9,Cargo Truck,Hyundai Creta,P_00459,True
+VEH_0318,83a4d6fbbbb41688,Cargo Truck,Mahindra Scorpio,P_01871,True
+VEH_0319,2c7a14fd8b4d1a10,Two-Wheeler,Honda City,P_00749,True
+VEH_0320,3c07508a70ec6c1d,Two-Wheeler,Maruti Suzuki Swift,P_01702,True
+VEH_0321,9421eb68c9ce87e8,Four-Wheeler,Hyundai Creta,P_04495,True
+VEH_0322,3053d4235352e31a,Four-Wheeler,Hyundai Creta,P_03621,True
+VEH_0323,fc325d11182269bc,Four-Wheeler,TVS Jupiter,P_02006,True
+VEH_0324,cf3cefdbbd7697c4,Cargo Truck,Mahindra Scorpio,P_04825,True
+VEH_0325,da493880afaacdeb,Commercial Auto,TVS Jupiter,P_01447,True
+VEH_0326,6e222c9397044684,Two-Wheeler,Honda City,P_04456,True
+VEH_0327,b6d932149a939170,Two-Wheeler,TVS Jupiter,P_00914,True
+VEH_0328,bffd963370b3cdc0,Two-Wheeler,TVS Jupiter,P_04158,True
+VEH_0329,2631ab3a1e96f113,Commercial Auto,Hyundai Creta,P_03631,True
+VEH_0330,3fa367dd1883a39b,Commercial Auto,Mahindra Scorpio,P_01747,True
+VEH_0331,a72f2ce6a93dc932,Two-Wheeler,Hyundai Creta,P_02007,True
+VEH_0332,3923e55c9f1ccc6b,Two-Wheeler,Royal Enfield Classic 350,P_01408,True
+VEH_0333,fcecae9fa1e05c73,Cargo Truck,TVS Jupiter,P_04877,True
+VEH_0334,ef484c7d9497b869,Commercial Auto,Toyota Innova,P_01188,True
+VEH_0335,709011e5d40af885,Cargo Truck,TVS Jupiter,P_02524,True
+VEH_0336,c756cea3737d5b3d,Commercial Auto,Maruti Suzuki Swift,P_03349,True
+VEH_0337,8cca55e1e4f7f805,Commercial Auto,Mahindra Scorpio,P_01709,True
+VEH_0338,d6b4223300088ba8,Two-Wheeler,Royal Enfield Classic 350,P_02669,True
+VEH_0339,617dbcc165439332,Two-Wheeler,Hyundai Creta,P_00610,True
+VEH_0340,cec2c3b51aaaafa3,Cargo Truck,TVS Jupiter,P_00377,True
+VEH_0341,cdd46f50d475db88,Four-Wheeler,Royal Enfield Classic 350,P_00486,True
+VEH_0342,a741310de9cf7a38,Four-Wheeler,TVS Jupiter,P_02377,True
+VEH_0343,2f884d677d38a87b,Two-Wheeler,Royal Enfield Classic 350,P_01244,True
+VEH_0344,a2c368aa936c6a12,Commercial Auto,TVS Jupiter,P_02057,True
+VEH_0345,44f1ee903872efaf,Four-Wheeler,Bajaj Pulsar,P_02436,True
+VEH_0346,834fa5f81d5e1eb8,Two-Wheeler,Toyota Innova,P_03653,True
+VEH_0347,5319d58e0fc09b2a,Commercial Auto,Toyota Innova,P_01631,True
+VEH_0348,1bbd1fe251a348a0,Cargo Truck,Hyundai Creta,P_03366,True
+VEH_0349,d4e9b6bb47a3e064,Commercial Auto,Maruti Suzuki Swift,P_04293,True
+VEH_0350,8237e95fa20cdff6,Cargo Truck,Toyota Innova,P_04010,True
+VEH_0351,71a68b8d9a67a3f8,Four-Wheeler,Hyundai Creta,P_04574,True
+VEH_0352,1306651014234de3,Two-Wheeler,TVS Jupiter,P_04998,True
+VEH_0353,b7e781898dedf608,Two-Wheeler,TVS Jupiter,P_03697,True
+VEH_0354,cbf885c1da77d2f7,Cargo Truck,TVS Jupiter,P_04420,True
+VEH_0355,3bad11d8d901ff0a,Two-Wheeler,Maruti Suzuki Swift,P_00070,True
+VEH_0356,6f38494844f6e30f,Cargo Truck,Toyota Innova,P_04458,True
+VEH_0357,7653983ce8cee2ca,Two-Wheeler,Tata Nexon,P_01548,True
+VEH_0358,f010e2b7b526dd3b,Commercial Auto,Maruti Suzuki Swift,P_01044,True
+VEH_0359,a175628eaef26895,Commercial Auto,Mahindra Scorpio,P_01653,True
+VEH_0360,c58b768262e745dc,Two-Wheeler,Toyota Innova,P_00224,True
+VEH_0361,2b568ffc50fe4176,Cargo Truck,TVS Jupiter,P_01709,True
+VEH_0362,d2df01634c50ef42,Four-Wheeler,Royal Enfield Classic 350,P_04836,True
+VEH_0363,fb2ef075c1da415c,Two-Wheeler,Bajaj Pulsar,P_00997,True
+VEH_0364,30369d88a8ba4ada,Cargo Truck,Toyota Innova,P_02596,True
+VEH_0365,913e59d827b1b79b,Commercial Auto,Toyota Innova,P_03916,True
+VEH_0366,86c9496e56956eb1,Cargo Truck,Royal Enfield Classic 350,P_03441,True
+VEH_0367,26d8626fd9520078,Two-Wheeler,Royal Enfield Classic 350,P_02012,True
+VEH_0368,3269688e54745f11,Commercial Auto,Maruti Suzuki Swift,P_02299,True
+VEH_0369,bc11787df4a7ff18,Two-Wheeler,Maruti Suzuki Swift,P_01049,True
+VEH_0370,da56a9f9113f06c6,Commercial Auto,Mahindra Scorpio,P_02449,True
+VEH_0371,cd71d3739b887da2,Two-Wheeler,Tata Nexon,P_04345,True
+VEH_0372,07411f4af7212307,Two-Wheeler,Maruti Suzuki Swift,P_04172,True
+VEH_0373,28cd0ff46ff6c817,Four-Wheeler,Toyota Innova,P_00234,True
+VEH_0374,dc42575022949841,Cargo Truck,Royal Enfield Classic 350,P_00381,True
+VEH_0375,062222b224fff2f7,Two-Wheeler,Maruti Suzuki Swift,P_02857,True
+VEH_0376,33a62b78d2b67a02,Cargo Truck,TVS Jupiter,P_03401,True
+VEH_0377,2a0421c55606daeb,Cargo Truck,Honda City,P_03902,True
+VEH_0378,da0810e1301b3240,Cargo Truck,Hyundai Creta,P_03915,True
+VEH_0379,7c73610775112412,Four-Wheeler,Tata Nexon,P_01848,True
+VEH_0380,986350b36506cced,Commercial Auto,Mahindra Scorpio,P_01854,True
+VEH_0381,23cb92c13702b469,Commercial Auto,Bajaj Pulsar,P_04331,True
+VEH_0382,c22f97e565caafa2,Four-Wheeler,Maruti Suzuki Swift,P_03155,True
+VEH_0383,16ee9aeaa132fc99,Cargo Truck,Mahindra Scorpio,P_01327,True
+VEH_0384,76bda279d1044cd1,Cargo Truck,Mahindra Scorpio,P_04729,True
+VEH_0385,9c01fbd957c0c5f5,Four-Wheeler,Bajaj Pulsar,P_03604,True
+VEH_0386,09f9cf0f6baefa09,Commercial Auto,Toyota Innova,P_01527,True
+VEH_0387,5a1c51d3ae51f7ba,Commercial Auto,TVS Jupiter,P_00791,True
+VEH_0388,81f11dd996166aa4,Two-Wheeler,Maruti Suzuki Swift,P_04047,True
+VEH_0389,adc0bbd8ea3a362c,Commercial Auto,Hyundai Creta,P_04510,True
+VEH_0390,d363907b47ab2885,Two-Wheeler,Bajaj Pulsar,P_00680,True
+VEH_0391,afa67391a3a7e6f4,Two-Wheeler,Mahindra Scorpio,P_01161,True
+VEH_0392,971d7c40158886c2,Four-Wheeler,Tata Nexon,P_04612,True
+VEH_0393,0e7092d2b199be3a,Two-Wheeler,Tata Nexon,P_03068,True
+VEH_0394,acfedb1379e7d0e5,Cargo Truck,Tata Nexon,P_04027,True
+VEH_0395,335e987db2fbad03,Cargo Truck,Honda City,P_03194,True
+VEH_0396,d2610ea8a1cfe5ad,Commercial Auto,Maruti Suzuki Swift,P_00614,True
+VEH_0397,8638ddd8226c16b3,Cargo Truck,Hyundai Creta,P_00486,True
+VEH_0398,54389179a15da275,Cargo Truck,Royal Enfield Classic 350,P_01307,True
+VEH_0399,edee2efa714642db,Commercial Auto,Hyundai Creta,P_01854,True
+VEH_0400,9b27dc2dd643999f,Cargo Truck,Tata Nexon,P_01687,True
+VEH_0401,d4822ef0bfcce570,Commercial Auto,Hyundai Creta,P_04361,True
+VEH_0402,0191d054737d5002,Commercial Auto,Mahindra Scorpio,P_03591,True
+VEH_0403,a8147a2340dd958c,Commercial Auto,Hyundai Creta,P_02797,True
+VEH_0404,5a9883fda36c1ec1,Two-Wheeler,TVS Jupiter,P_03490,True
+VEH_0405,4f6c6f48d0d6b009,Commercial Auto,Hyundai Creta,P_04943,True
+VEH_0406,ff55cd7d18f9ca68,Four-Wheeler,Royal Enfield Classic 350,P_00465,True
+VEH_0407,0dafc02682df2949,Cargo Truck,Bajaj Pulsar,P_02694,True
+VEH_0408,32c8c16507ba2274,Cargo Truck,TVS Jupiter,P_01989,True
+VEH_0409,7c6f5e8291cc3d01,Cargo Truck,TVS Jupiter,P_04594,True
+VEH_0410,650526640196d9a2,Four-Wheeler,Maruti Suzuki Swift,P_04929,True
+VEH_0411,3a98ec0271f5fef2,Two-Wheeler,Hyundai Creta,P_00963,True
+VEH_0412,a416583938b11b6a,Four-Wheeler,Royal Enfield Classic 350,P_03226,True
+VEH_0413,6289394573b82586,Cargo Truck,Bajaj Pulsar,P_00306,True
+VEH_0414,249ad24b1211d423,Commercial Auto,Tata Nexon,P_00198,True
+VEH_0415,411a79cc7751eb45,Commercial Auto,TVS Jupiter,P_02125,True
+VEH_0416,7ebc41d728eb47d4,Commercial Auto,TVS Jupiter,P_00392,True
+VEH_0417,804b2d12209df31f,Commercial Auto,Mahindra Scorpio,P_04576,True
+VEH_0418,b6a4d53a6f742b5d,Commercial Auto,TVS Jupiter,P_00729,True
+VEH_0419,912e4a0eb747990d,Four-Wheeler,Toyota Innova,P_02506,True
+VEH_0420,662de8083902c576,Two-Wheeler,Tata Nexon,P_03136,True
+VEH_0421,127dbf45d9c98335,Two-Wheeler,TVS Jupiter,P_02962,True
+VEH_0422,fd29552f4735c67d,Commercial Auto,Honda City,P_04243,True
+VEH_0423,ce6a4d17acdef0fe,Four-Wheeler,Mahindra Scorpio,P_00765,True
+VEH_0424,c17bb46212ea8a09,Commercial Auto,Tata Nexon,P_02787,True
+VEH_0425,f2e57c9634fa4d3c,Two-Wheeler,Hyundai Creta,P_02653,True
+VEH_0426,f7b60aeb026a41a6,Cargo Truck,Honda City,P_00216,True
+VEH_0427,1f515a76ffc7ae34,Two-Wheeler,Mahindra Scorpio,P_03608,True
+VEH_0428,4f6c39c21182b0f2,Cargo Truck,TVS Jupiter,P_03596,True
+VEH_0429,36151ef6048ce134,Cargo Truck,Tata Nexon,P_04345,True
+VEH_0430,14bbe222f2e0556d,Cargo Truck,Toyota Innova,P_02208,True
+VEH_0431,09b3d3e489068b67,Commercial Auto,Toyota Innova,P_04023,True
+VEH_0432,32294a3ec621efd4,Two-Wheeler,Bajaj Pulsar,P_04743,True
+VEH_0433,95c711fc795e5d30,Commercial Auto,TVS Jupiter,P_04482,True
+VEH_0434,7d2ba2eb5b04933c,Cargo Truck,Bajaj Pulsar,P_01835,True
+VEH_0435,db03a6459fe3792b,Cargo Truck,TVS Jupiter,P_04842,True
+VEH_0436,caa77a2ffaa9296c,Four-Wheeler,TVS Jupiter,P_04580,True
+VEH_0437,763bb40d31a83deb,Commercial Auto,Toyota Innova,P_00536,True
+VEH_0438,e1d185535b7c4c76,Two-Wheeler,TVS Jupiter,P_03530,True
+VEH_0439,18510c8a32938ae9,Two-Wheeler,Honda City,P_02708,True
+VEH_0440,635bb2d6320e3fca,Commercial Auto,Tata Nexon,P_04017,True
+VEH_0441,53ae9f691134c369,Four-Wheeler,Hyundai Creta,P_00582,True
+VEH_0442,920c9fd198950286,Two-Wheeler,Mahindra Scorpio,P_04928,True
+VEH_0443,6f51e6b9f2356fb4,Four-Wheeler,Toyota Innova,P_00730,True
+VEH_0444,13d8715cfbfab401,Cargo Truck,Royal Enfield Classic 350,P_03124,True
+VEH_0445,1d757017a923bb64,Cargo Truck,Toyota Innova,P_01454,True
+VEH_0446,8779fe5b801fb63e,Commercial Auto,Mahindra Scorpio,P_01857,True
+VEH_0447,06dc7c78a1a16a1d,Four-Wheeler,Honda City,P_00168,True
+VEH_0448,80b54305e300e017,Four-Wheeler,Maruti Suzuki Swift,P_04431,True
+VEH_0449,f2fcec399ed44ea5,Two-Wheeler,Toyota Innova,P_00569,True
+VEH_0450,fd107ce8bf8531d5,Four-Wheeler,Mahindra Scorpio,P_02829,True
+VEH_0451,981f6dc2e5a5326c,Two-Wheeler,Tata Nexon,P_04253,True
+VEH_0452,78fae24ee9642cd4,Commercial Auto,Hyundai Creta,P_02554,True
+VEH_0453,41834bb80ccbcc4b,Cargo Truck,Tata Nexon,P_00817,True
+VEH_0454,432ff5619a3269f3,Cargo Truck,TVS Jupiter,P_04086,True
+VEH_0455,20445f4c516b2a2f,Commercial Auto,Toyota Innova,P_02066,True
+VEH_0456,b366ae6b95d52420,Commercial Auto,Royal Enfield Classic 350,P_00341,True
+VEH_0457,063efb93c10b5a82,Four-Wheeler,Hyundai Creta,P_04355,True
+VEH_0458,cd7171d47367e701,Two-Wheeler,Bajaj Pulsar,P_03230,True
+VEH_0459,2c0c637da15b6c63,Cargo Truck,Honda City,P_03493,True
+VEH_0460,c36f20ac2faa2ffe,Cargo Truck,Hyundai Creta,P_02634,True
+VEH_0461,b59b70451b97d489,Four-Wheeler,Maruti Suzuki Swift,P_04418,True
+VEH_0462,8cfecf304b0bf5a2,Commercial Auto,Bajaj Pulsar,P_01421,True
+VEH_0463,57f137ed32d7a5f4,Commercial Auto,Royal Enfield Classic 350,P_01543,True
+VEH_0464,473ba1b63a6af62f,Two-Wheeler,Bajaj Pulsar,P_04389,True
+VEH_0465,08b85b0dff043ba2,Two-Wheeler,Hyundai Creta,P_03746,True
+VEH_0466,ef24c8b3b5e8c928,Four-Wheeler,TVS Jupiter,P_01694,True
+VEH_0467,26662c64bc49808f,Two-Wheeler,Honda City,P_00039,True
+VEH_0468,4fb1a2515ef9fcea,Four-Wheeler,Toyota Innova,P_03293,True
+VEH_0469,25841c94d77edc18,Commercial Auto,Royal Enfield Classic 350,P_04674,True
+VEH_0470,cb91c818767efccc,Cargo Truck,Royal Enfield Classic 350,P_00084,True
+VEH_0471,6e47f559002d8190,Four-Wheeler,TVS Jupiter,P_02125,True
+VEH_0472,1ae4c145ef697346,Four-Wheeler,Mahindra Scorpio,P_00578,True
+VEH_0473,16974650534a7bf8,Commercial Auto,Tata Nexon,P_04495,True
+VEH_0474,46751aa8468b0e11,Commercial Auto,Honda City,P_04490,True
+VEH_0475,4472e05391f60331,Four-Wheeler,Royal Enfield Classic 350,P_01656,True
+VEH_0476,3b187bf68f9637bd,Cargo Truck,Maruti Suzuki Swift,P_03842,True
+VEH_0477,485f7c9545dde194,Four-Wheeler,Tata Nexon,P_00685,True
+VEH_0478,c56f812e74cf6f55,Four-Wheeler,TVS Jupiter,P_04891,True
+VEH_0479,c2d48e27af573553,Four-Wheeler,Toyota Innova,P_00359,True
+VEH_0480,54db502d00d80480,Two-Wheeler,Toyota Innova,P_03785,True
+VEH_0481,c3f4cae697952228,Two-Wheeler,Bajaj Pulsar,P_00522,True
+VEH_0482,863dbf3a39d3e17b,Four-Wheeler,Maruti Suzuki Swift,P_03609,True
+VEH_0483,aa88f8e23e606171,Commercial Auto,Tata Nexon,P_04079,True
+VEH_0484,7048f56320ec67fc,Two-Wheeler,Bajaj Pulsar,P_00144,True
+VEH_0485,35906937bd5d1ada,Cargo Truck,Mahindra Scorpio,P_00049,True
+VEH_0486,3fa675f46d718e20,Four-Wheeler,Hyundai Creta,P_01840,True
+VEH_0487,86314c0ba8a3e9df,Cargo Truck,Royal Enfield Classic 350,P_02362,True
+VEH_0488,e95d5628b9456212,Cargo Truck,Honda City,P_02828,True
+VEH_0489,1b6d33a1226f9b59,Two-Wheeler,Toyota Innova,P_01834,True
+VEH_0490,4b72236888132134,Commercial Auto,Honda City,P_01314,True
+VEH_0491,ed5d3f8d500b3ad1,Two-Wheeler,TVS Jupiter,P_03362,True
+VEH_0492,d547806b6d004010,Cargo Truck,Royal Enfield Classic 350,P_03450,True
+VEH_0493,9c08bb5e37adc536,Commercial Auto,TVS Jupiter,P_02979,True
+VEH_0494,be6bb443e62725a6,Two-Wheeler,Mahindra Scorpio,P_02064,True
+VEH_0495,86ae898b896ff07e,Cargo Truck,TVS Jupiter,P_04087,True
+VEH_0496,cd5971fc947df243,Cargo Truck,TVS Jupiter,P_00891,True
+VEH_0497,1fd2b39ed9ba6803,Two-Wheeler,Maruti Suzuki Swift,P_01634,True
+VEH_0498,c8ce93e217968f37,Two-Wheeler,Bajaj Pulsar,P_03538,True
+VEH_0499,412c007f5c31b9e1,Two-Wheeler,Tata Nexon,P_02288,True
+VEH_0500,3b8c614e62ce687f,Cargo Truck,Royal Enfield Classic 350,P_02593,True
+VEH_0501,d3d06f3b98a504f2,Four-Wheeler,Toyota Innova,P_04443,True
+VEH_0502,4f4dff5d0038f358,Four-Wheeler,Maruti Suzuki Swift,P_02716,True
+VEH_0503,ec03d9a917c464b2,Four-Wheeler,Mahindra Scorpio,P_02520,True
+VEH_0504,5ddafcd71fd71237,Two-Wheeler,TVS Jupiter,P_02774,True
+VEH_0505,35ee045e9b07a2ac,Cargo Truck,Tata Nexon,P_01338,True
+VEH_0506,7868c66039a7c3b8,Cargo Truck,Bajaj Pulsar,P_04525,True
+VEH_0507,46305b9216c3be37,Four-Wheeler,Tata Nexon,P_03645,True
+VEH_0508,ac3e5c1b5328b309,Four-Wheeler,TVS Jupiter,P_01397,True
+VEH_0509,99dfc04e00ffaf83,Four-Wheeler,Tata Nexon,P_03665,True
+VEH_0510,34126277dc84b8d4,Four-Wheeler,Hyundai Creta,P_03031,True
+VEH_0511,b4a38ab0c8098da5,Two-Wheeler,Tata Nexon,P_00910,True
+VEH_0512,c8600f9f9ba2cf64,Cargo Truck,Toyota Innova,P_04939,True
+VEH_0513,d0ba8ab0018f3968,Two-Wheeler,Toyota Innova,P_02119,True
+VEH_0514,cc9912c8e9886043,Two-Wheeler,TVS Jupiter,P_02610,True
+VEH_0515,7e4a256f15cb60bb,Commercial Auto,TVS Jupiter,P_03547,True
+VEH_0516,7b3b41d5b977d899,Four-Wheeler,Hyundai Creta,P_02728,True
+VEH_0517,f558c441a05a739a,Cargo Truck,Maruti Suzuki Swift,P_02028,True
+VEH_0518,1f74d47a1697183d,Commercial Auto,Honda City,P_03074,True
+VEH_0519,6003f5cb01eb9a61,Two-Wheeler,Royal Enfield Classic 350,P_02803,True
+VEH_0520,a62aeeddb8493da1,Four-Wheeler,Honda City,P_02233,True
+VEH_0521,313f20714395ab97,Four-Wheeler,Bajaj Pulsar,P_00930,True
+VEH_0522,8fee5270cc6814b0,Four-Wheeler,Tata Nexon,P_03059,True
+VEH_0523,0a7d640f3b115a69,Four-Wheeler,Hyundai Creta,P_00080,True
+VEH_0524,84cb1cf7636af65e,Four-Wheeler,TVS Jupiter,P_02711,True
+VEH_0525,8d117761e39cfc9a,Four-Wheeler,Hyundai Creta,P_01521,True
+VEH_0526,b7c558d8493359dc,Four-Wheeler,Mahindra Scorpio,P_00410,True
+VEH_0527,196375c0c0115fb9,Two-Wheeler,Mahindra Scorpio,P_04154,True
+VEH_0528,a80cf744ae36238e,Four-Wheeler,TVS Jupiter,P_01515,True
+VEH_0529,2dd455d41cf15fbe,Two-Wheeler,Bajaj Pulsar,P_04714,True
+VEH_0530,63ae519be4bd5928,Two-Wheeler,Toyota Innova,P_01866,True
+VEH_0531,6b72572b9a653265,Commercial Auto,Royal Enfield Classic 350,P_04247,True
+VEH_0532,2570876aaa1246e0,Commercial Auto,Bajaj Pulsar,P_00058,True
+VEH_0533,0736945857b6c84f,Four-Wheeler,TVS Jupiter,P_02820,True
+VEH_0534,4c4b2dd2b638adda,Commercial Auto,Maruti Suzuki Swift,P_00723,True
+VEH_0535,578057707a3d9346,Commercial Auto,Hyundai Creta,P_04663,True
+VEH_0536,5c9a6a51451b2b60,Commercial Auto,Toyota Innova,P_04190,True
+VEH_0537,7159e8b9791cc65a,Two-Wheeler,Mahindra Scorpio,P_04811,True
+VEH_0538,8a151cb5cd07aa38,Cargo Truck,Toyota Innova,P_03304,True
+VEH_0539,3f354ffb11c02b12,Two-Wheeler,Royal Enfield Classic 350,P_00201,True
+VEH_0540,78545c6dbe79bf37,Four-Wheeler,Royal Enfield Classic 350,P_02996,True
+VEH_0541,aabfb3cbfe20d6e9,Two-Wheeler,Tata Nexon,P_04858,True
+VEH_0542,96f3da90405a408d,Two-Wheeler,Honda City,P_02764,True
+VEH_0543,4be65ea804e0a7d3,Two-Wheeler,Honda City,P_01866,True
+VEH_0544,a4001b4a9ab3ffc6,Four-Wheeler,Tata Nexon,P_03993,True
+VEH_0545,8c0198dbecd16cb9,Commercial Auto,TVS Jupiter,P_04980,True
+VEH_0546,579301805919f84c,Four-Wheeler,Royal Enfield Classic 350,P_04115,True
+VEH_0547,295ad09d4eed6ea6,Two-Wheeler,Royal Enfield Classic 350,P_00999,True
+VEH_0548,7fbd265cdf08581f,Cargo Truck,Toyota Innova,P_04632,True
+VEH_0549,bd9df6390615e2bd,Two-Wheeler,Mahindra Scorpio,P_02673,True
+VEH_0550,d61754abe87b7284,Commercial Auto,Honda City,P_04547,True
+VEH_0551,ddf7d5ace7904bbe,Two-Wheeler,Toyota Innova,P_04689,True
+VEH_0552,e6509e001bb80cb8,Cargo Truck,TVS Jupiter,P_04615,True
+VEH_0553,5c89d33e253f9b26,Four-Wheeler,Tata Nexon,P_02635,True
+VEH_0554,d62ea6e3eec8ff66,Cargo Truck,Hyundai Creta,P_03683,True
+VEH_0555,5b0649b2fea7fa53,Cargo Truck,Toyota Innova,P_00484,True
+VEH_0556,5a15b9b90d311f64,Two-Wheeler,TVS Jupiter,P_04603,True
+VEH_0557,3741fb48d7622af0,Two-Wheeler,Bajaj Pulsar,P_01639,True
+VEH_0558,04bfaff5eff8ee12,Commercial Auto,Mahindra Scorpio,P_04385,True
+VEH_0559,d46ddd2323d186bb,Two-Wheeler,Honda City,P_02187,True
+VEH_0560,7f8f9458b2e7fcb6,Cargo Truck,Hyundai Creta,P_03020,True
+VEH_0561,2caa795ea66ea0b4,Four-Wheeler,TVS Jupiter,P_02574,True
+VEH_0562,29afdc4af0887492,Two-Wheeler,TVS Jupiter,P_02381,True
+VEH_0563,d69770a7233c73fb,Cargo Truck,Maruti Suzuki Swift,P_02675,True
+VEH_0564,7aaccce9e2ac6aab,Cargo Truck,Bajaj Pulsar,P_00209,True
+VEH_0565,0677fe722299c4c4,Four-Wheeler,Honda City,P_02655,True
+VEH_0566,f39360f0db312379,Four-Wheeler,TVS Jupiter,P_00524,True
+VEH_0567,695d9314389d3c74,Commercial Auto,Hyundai Creta,P_02952,True
+VEH_0568,2eed1094bf53635c,Four-Wheeler,TVS Jupiter,P_03282,True
+VEH_0569,192d2d61c518ee5b,Two-Wheeler,Bajaj Pulsar,P_00733,True
+VEH_0570,c933e98afde62259,Four-Wheeler,Mahindra Scorpio,P_01961,True
+VEH_0571,e0d956e842e094f3,Four-Wheeler,TVS Jupiter,P_00348,True
+VEH_0572,9d4379a3cb616af4,Commercial Auto,Bajaj Pulsar,P_02618,True
+VEH_0573,c25ed712cab2383b,Cargo Truck,Bajaj Pulsar,P_02421,True
+VEH_0574,b8cd1ae36ff1d5f7,Two-Wheeler,Hyundai Creta,P_00329,True
+VEH_0575,50537a3a4d215f39,Four-Wheeler,Maruti Suzuki Swift,P_02863,True
+VEH_0576,45d3208cff6dda74,Two-Wheeler,Royal Enfield Classic 350,P_01744,True
+VEH_0577,5796a96a0674a6a2,Commercial Auto,Honda City,P_04557,True
+VEH_0578,5baa025ab10a67b6,Two-Wheeler,Honda City,P_02741,True
+VEH_0579,2b106ca5cd8abdd5,Cargo Truck,TVS Jupiter,P_00237,True
+VEH_0580,17e4afad6306caf0,Four-Wheeler,Mahindra Scorpio,P_01515,True
+VEH_0581,c8f4f4d4e678f050,Commercial Auto,Mahindra Scorpio,P_04672,True
+VEH_0582,8d24c78d9f23a47d,Two-Wheeler,TVS Jupiter,P_00446,True
+VEH_0583,2a0f92e83d4b0b11,Commercial Auto,Bajaj Pulsar,P_00196,True
+VEH_0584,1f74d96156f8016d,Cargo Truck,Mahindra Scorpio,P_04189,True
+VEH_0585,8bc3bd8e990840aa,Commercial Auto,TVS Jupiter,P_03934,True
+VEH_0586,65203047ebbf9056,Four-Wheeler,Maruti Suzuki Swift,P_00410,True
+VEH_0587,08976195cbc576b6,Four-Wheeler,Tata Nexon,P_00797,True
+VEH_0588,834f03ef61df4d7d,Commercial Auto,Toyota Innova,P_00624,True
+VEH_0589,c946cb6c60c4e374,Two-Wheeler,Hyundai Creta,P_02023,True
+VEH_0590,33160acc89602838,Cargo Truck,Hyundai Creta,P_00249,True
+VEH_0591,c5955276e6ad7880,Commercial Auto,TVS Jupiter,P_04750,True
+VEH_0592,847c8a427d4a7b42,Four-Wheeler,Tata Nexon,P_01766,True
+VEH_0593,4a84239436ea308a,Cargo Truck,Royal Enfield Classic 350,P_03816,True
+VEH_0594,c5898bdf290483b5,Commercial Auto,Hyundai Creta,P_02349,True
+VEH_0595,3921a170150f7727,Cargo Truck,Mahindra Scorpio,P_01924,True
+VEH_0596,16b0adcd21c09137,Cargo Truck,Royal Enfield Classic 350,P_04579,True
+VEH_0597,72281ce9c6f93280,Commercial Auto,Toyota Innova,P_00725,True
+VEH_0598,2deb7fd7eeebb542,Two-Wheeler,Toyota Innova,P_04514,True
+VEH_0599,2eaf42e144926f17,Cargo Truck,Royal Enfield Classic 350,P_03049,True
+VEH_0600,5a6a02c7a8e67f10,Commercial Auto,Bajaj Pulsar,P_03341,True
+VEH_0601,ebfda75ec2cc752c,Cargo Truck,Toyota Innova,P_02939,True
+VEH_0602,c882ea1704b459ab,Two-Wheeler,Maruti Suzuki Swift,P_02814,True
+VEH_0603,4123d8fe88929497,Cargo Truck,Tata Nexon,P_01687,True
+VEH_0604,598625d552f34ece,Four-Wheeler,Bajaj Pulsar,P_00344,True
+VEH_0605,d86e775f57bfce4e,Cargo Truck,Mahindra Scorpio,P_02744,True
+VEH_0606,fdd75eb62f4af167,Cargo Truck,Bajaj Pulsar,P_03236,True
+VEH_0607,2cc74a7cf50e43c9,Two-Wheeler,Mahindra Scorpio,P_03717,True
+VEH_0608,c10d760330783871,Two-Wheeler,Hyundai Creta,P_04153,True
+VEH_0609,fadc5b8cd9f1589f,Four-Wheeler,Honda City,P_01715,True
+VEH_0610,df5152229583221f,Four-Wheeler,Mahindra Scorpio,P_01522,True
+VEH_0611,935d7028b534f602,Four-Wheeler,Toyota Innova,P_03302,True
+VEH_0612,23796279c6ff85c5,Cargo Truck,Honda City,P_03511,True
+VEH_0613,3883f814145d3be0,Commercial Auto,TVS Jupiter,P_02619,True
+VEH_0614,27c05eb4ddd93000,Cargo Truck,Bajaj Pulsar,P_00803,True
+VEH_0615,3dc763a354154e15,Four-Wheeler,Maruti Suzuki Swift,P_03113,True
+VEH_0616,94eb4d281f60a175,Four-Wheeler,Bajaj Pulsar,P_00755,True
+VEH_0617,95b0d6eb557ef3ae,Commercial Auto,TVS Jupiter,P_03112,True
+VEH_0618,b7c2bc2eb9213932,Cargo Truck,Honda City,P_04528,True
+VEH_0619,6a3b5fba1d9a0fe9,Cargo Truck,Maruti Suzuki Swift,P_04244,True
+VEH_0620,4ab2c676a31bcfb1,Four-Wheeler,Royal Enfield Classic 350,P_04485,True
+VEH_0621,619acd832b3211f1,Commercial Auto,Tata Nexon,P_03701,True
+VEH_0622,8a016faa27b5354d,Four-Wheeler,Hyundai Creta,P_01269,True
+VEH_0623,2cdac7217a59aaba,Four-Wheeler,Tata Nexon,P_03087,True
+VEH_0624,a07a253bff5341e7,Cargo Truck,TVS Jupiter,P_01874,True
+VEH_0625,6bcf74604c265aaa,Cargo Truck,Maruti Suzuki Swift,P_03589,True
+VEH_0626,a8850919fd2d9e95,Four-Wheeler,Toyota Innova,P_04049,True
+VEH_0627,6aa28be8e19b4792,Four-Wheeler,Royal Enfield Classic 350,P_00549,True
+VEH_0628,695c141a451c1b8b,Two-Wheeler,TVS Jupiter,P_03288,True
+VEH_0629,51f2d08197b86271,Cargo Truck,Tata Nexon,P_01610,True
+VEH_0630,d99ff2a6e967b0c1,Cargo Truck,Tata Nexon,P_04769,True
+VEH_0631,b3e597b375f52174,Cargo Truck,Honda City,P_01092,True
+VEH_0632,398a1f4b08c1d21b,Commercial Auto,Hyundai Creta,P_04394,True
+VEH_0633,eed181bdd3b21c11,Cargo Truck,Toyota Innova,P_01997,True
+VEH_0634,bffc1c46f410fb96,Two-Wheeler,Mahindra Scorpio,P_00812,True
+VEH_0635,dece2542885d8fab,Two-Wheeler,Tata Nexon,P_01041,True
+VEH_0636,3adb0dcd64bc1aa5,Cargo Truck,Tata Nexon,P_02072,True
+VEH_0637,2e205e41c8e6595a,Four-Wheeler,Maruti Suzuki Swift,P_03538,True
+VEH_0638,73bd4df0aeecbfce,Two-Wheeler,Royal Enfield Classic 350,P_03685,True
+VEH_0639,0f18c234b5919910,Two-Wheeler,Royal Enfield Classic 350,P_01289,True
+VEH_0640,720930e75b670b6a,Four-Wheeler,Royal Enfield Classic 350,P_04914,True
+VEH_0641,550b913ce5bf284d,Commercial Auto,Maruti Suzuki Swift,P_03028,True
+VEH_0642,47441370e1b0227d,Commercial Auto,Honda City,P_04482,True
+VEH_0643,e2539f37af526e61,Two-Wheeler,Royal Enfield Classic 350,P_04830,True
+VEH_0644,cc7097afce3f415f,Four-Wheeler,Bajaj Pulsar,P_04332,True
+VEH_0645,3e384bb7b97844a5,Commercial Auto,Bajaj Pulsar,P_01867,True
+VEH_0646,3859601f3c36040e,Commercial Auto,Honda City,P_01572,True
+VEH_0647,d8da08045603dd73,Two-Wheeler,Royal Enfield Classic 350,P_01543,True
+VEH_0648,aabc81363f1c7258,Two-Wheeler,Bajaj Pulsar,P_02631,True
+VEH_0649,2d59a7de6b4df048,Commercial Auto,Mahindra Scorpio,P_01686,True
+VEH_0650,93a90d8f5ca38394,Cargo Truck,Mahindra Scorpio,P_03209,True
+VEH_0651,8e879b09f2613a72,Four-Wheeler,Tata Nexon,P_02135,True
+VEH_0652,2140f4de3d752f2c,Four-Wheeler,Royal Enfield Classic 350,P_00027,True
+VEH_0653,d3dd8d27d5c0afea,Commercial Auto,TVS Jupiter,P_04511,True
+VEH_0654,5e9a5bf03b592137,Four-Wheeler,Royal Enfield Classic 350,P_04107,True
+VEH_0655,4816cc395cb4a388,Commercial Auto,Tata Nexon,P_01007,True
+VEH_0656,7501d8aebe3bdf93,Commercial Auto,Bajaj Pulsar,P_04481,True
+VEH_0657,3dfb0ef5d4e0f40d,Four-Wheeler,Mahindra Scorpio,P_00328,True
+VEH_0658,0ec1437dcb8cdb0f,Two-Wheeler,Honda City,P_03521,True
+VEH_0659,cc9afa10085b344a,Two-Wheeler,Bajaj Pulsar,P_02897,True
+VEH_0660,261e0b833ffc096c,Two-Wheeler,Tata Nexon,P_03140,True
+VEH_0661,2c86fd6f055a447a,Four-Wheeler,Honda City,P_03984,True
+VEH_0662,97d1d60e0d6f03fd,Two-Wheeler,TVS Jupiter,P_04994,True
+VEH_0663,d3f4e451577ac9e2,Cargo Truck,Mahindra Scorpio,P_02528,True
+VEH_0664,bd985f3b4864f592,Four-Wheeler,Mahindra Scorpio,P_01903,True
+VEH_0665,70369858d777137d,Four-Wheeler,Royal Enfield Classic 350,P_03115,True
+VEH_0666,4beec64ce1e1c023,Commercial Auto,Royal Enfield Classic 350,P_04389,True
+VEH_0667,d0a4947bafe11a2b,Two-Wheeler,TVS Jupiter,P_04969,True
+VEH_0668,eb2361eec37e49d5,Two-Wheeler,Tata Nexon,P_03310,True
+VEH_0669,c0cf4e7d9c8cced9,Cargo Truck,Honda City,P_01892,True
+VEH_0670,d66ba895926af426,Cargo Truck,Mahindra Scorpio,P_00530,True
+VEH_0671,6caf9f743f39820d,Cargo Truck,Maruti Suzuki Swift,P_04118,True
+VEH_0672,5b4e0e7ef95cd58a,Commercial Auto,Toyota Innova,P_01873,True
+VEH_0673,31c0cfb2ac846292,Two-Wheeler,Tata Nexon,P_01796,True
+VEH_0674,7a8063d73ccfe23e,Four-Wheeler,Hyundai Creta,P_01301,True
+VEH_0675,5378870ca730bf07,Cargo Truck,Bajaj Pulsar,P_02139,True
+VEH_0676,3c35364013156d9c,Cargo Truck,Tata Nexon,P_01877,True
+VEH_0677,a124eeb219ba680b,Two-Wheeler,Maruti Suzuki Swift,P_04691,True
+VEH_0678,b61895af97f36621,Two-Wheeler,Mahindra Scorpio,P_00141,True
+VEH_0679,17380ec72f10eabc,Four-Wheeler,Honda City,P_01465,True
+VEH_0680,b7211d6edc31fa38,Two-Wheeler,Tata Nexon,P_04468,True
+VEH_0681,e9b46dc0c36fb1c0,Four-Wheeler,Honda City,P_04301,True
+VEH_0682,a56a0c49cb5196e7,Cargo Truck,Tata Nexon,P_00397,True
+VEH_0683,839511b730f3a3c1,Commercial Auto,Toyota Innova,P_04702,True
+VEH_0684,c37dd254f13761aa,Four-Wheeler,Mahindra Scorpio,P_01328,True
+VEH_0685,70d45fe0c3a08807,Cargo Truck,TVS Jupiter,P_04429,True
+VEH_0686,f12b690720e64313,Commercial Auto,TVS Jupiter,P_04354,True
+VEH_0687,64111a7b3438f7ae,Cargo Truck,Honda City,P_04385,True
+VEH_0688,e1a0cc82749258e2,Commercial Auto,Mahindra Scorpio,P_00602,True
+VEH_0689,db01616e9fc451dc,Commercial Auto,Royal Enfield Classic 350,P_02002,True
+VEH_0690,56431f265d88a498,Two-Wheeler,Mahindra Scorpio,P_03568,True
+VEH_0691,1d4e5cf722912482,Two-Wheeler,Honda City,P_03247,True
+VEH_0692,1a702a6c1407fcb7,Cargo Truck,Honda City,P_03988,True
+VEH_0693,7ee337150fca5031,Cargo Truck,TVS Jupiter,P_01069,True
+VEH_0694,b4504b93f90f4f2c,Four-Wheeler,Honda City,P_03065,True
+VEH_0695,19d6a2c180bf98aa,Commercial Auto,Hyundai Creta,P_04901,True
+VEH_0696,ac559a2e4f903720,Commercial Auto,TVS Jupiter,P_00556,True
+VEH_0697,8e85836bfebd5b90,Two-Wheeler,Maruti Suzuki Swift,P_00830,True
+VEH_0698,f8d439903044d3e8,Four-Wheeler,Bajaj Pulsar,P_03042,True
+VEH_0699,134b3ab6cd90233b,Commercial Auto,Toyota Innova,P_02676,True
+VEH_0700,9acc5b0fb65b7f81,Cargo Truck,TVS Jupiter,P_03994,True
+VEH_0701,d2f56c4d74c4c3df,Two-Wheeler,Bajaj Pulsar,P_00552,True
+VEH_0702,a33901834aa978bf,Two-Wheeler,Tata Nexon,P_01165,True
+VEH_0703,f22cde88044d67ce,Commercial Auto,Maruti Suzuki Swift,P_00361,True
+VEH_0704,f0efcdc9cadb1809,Two-Wheeler,Mahindra Scorpio,P_03421,True
+VEH_0705,f9a999599f814735,Two-Wheeler,Maruti Suzuki Swift,P_00543,True
+VEH_0706,1074809f07dceeac,Two-Wheeler,Mahindra Scorpio,P_03837,True
+VEH_0707,86d480de18c0aa19,Commercial Auto,Toyota Innova,P_03842,True
+VEH_0708,c701f25abaa7b7ac,Two-Wheeler,Toyota Innova,P_04411,True
+VEH_0709,8f02e4d9b49f39e7,Four-Wheeler,Mahindra Scorpio,P_01854,True
+VEH_0710,3d773bc8b2e718cb,Cargo Truck,Honda City,P_04183,True
+VEH_0711,dff508e020f0ace0,Two-Wheeler,Hyundai Creta,P_01213,True
+VEH_0712,a7149c89c191bcc8,Commercial Auto,Hyundai Creta,P_04038,True
+VEH_0713,8e0a4ccf65b29668,Two-Wheeler,Honda City,P_00665,True
+VEH_0714,43b6ee0de4ddb62d,Cargo Truck,Toyota Innova,P_00467,True
+VEH_0715,4ed7dc65f43f7928,Commercial Auto,Maruti Suzuki Swift,P_02735,True
+VEH_0716,e741d4ff15f1eb9b,Two-Wheeler,Royal Enfield Classic 350,P_04821,True
+VEH_0717,200935c3d40cf919,Two-Wheeler,Tata Nexon,P_02754,True
+VEH_0718,d6a184b5eac30a29,Four-Wheeler,Hyundai Creta,P_00673,True
+VEH_0719,dcf0f0413e97c93d,Four-Wheeler,Tata Nexon,P_00421,True
+VEH_0720,d3b2988fc6615ec7,Four-Wheeler,Toyota Innova,P_04686,True
+VEH_0721,1eae78080d2b58ab,Four-Wheeler,Maruti Suzuki Swift,P_04775,True
+VEH_0722,100de3186efa148f,Cargo Truck,Tata Nexon,P_03202,True
+VEH_0723,c163e7569f5c3927,Two-Wheeler,Hyundai Creta,P_02379,True
+VEH_0724,428f826f11f64416,Cargo Truck,Bajaj Pulsar,P_00788,True
+VEH_0725,61d04582b9768c91,Cargo Truck,Toyota Innova,P_01334,True
+VEH_0726,9a9243d73d0e4123,Two-Wheeler,Royal Enfield Classic 350,P_03425,True
+VEH_0727,5391b2c6896bf92b,Four-Wheeler,Tata Nexon,P_01272,True
+VEH_0728,9bfe17d5686932fa,Two-Wheeler,Hyundai Creta,P_03678,True
+VEH_0729,22fcba3a143e149f,Two-Wheeler,Toyota Innova,P_04746,True
+VEH_0730,4935166021f5ba92,Cargo Truck,Honda City,P_01719,True
+VEH_0731,1b37aa58809ec125,Four-Wheeler,Hyundai Creta,P_00401,True
+VEH_0732,e8ecb51e4ad09c05,Cargo Truck,Royal Enfield Classic 350,P_02651,True
+VEH_0733,58678b66e28e827d,Two-Wheeler,Toyota Innova,P_04642,True
+VEH_0734,a6f50623179a6bc4,Cargo Truck,Royal Enfield Classic 350,P_00764,True
+VEH_0735,ccaba799a795dcf4,Cargo Truck,Bajaj Pulsar,P_04948,True
+VEH_0736,6e86aa6e7f9f4073,Commercial Auto,Maruti Suzuki Swift,P_00076,True
+VEH_0737,a221a4d707711081,Two-Wheeler,Hyundai Creta,P_03956,True
+VEH_0738,af4a42f8140c6b4d,Cargo Truck,Honda City,P_04445,True
+VEH_0739,c7f501fbe5c56622,Cargo Truck,Royal Enfield Classic 350,P_00323,True
+VEH_0740,90ea15878cc22fe1,Commercial Auto,Maruti Suzuki Swift,P_02379,True
+VEH_0741,2552c844f6e93a4a,Cargo Truck,TVS Jupiter,P_03419,True
+VEH_0742,ca9f823b0cd24300,Commercial Auto,Mahindra Scorpio,P_03681,True
+VEH_0743,8e7c56d9a3dd49d6,Commercial Auto,Honda City,P_03235,True
+VEH_0744,1b17decd42ce4d12,Four-Wheeler,Mahindra Scorpio,P_03253,True
+VEH_0745,998ffcf116d07bb6,Cargo Truck,Bajaj Pulsar,P_04074,True
+VEH_0746,441c2f7dd93b38a7,Two-Wheeler,Maruti Suzuki Swift,P_04165,True
+VEH_0747,c7080bd96311f1ed,Commercial Auto,Mahindra Scorpio,P_03187,True
+VEH_0748,5cb88bd05726bb1d,Two-Wheeler,Hyundai Creta,P_02694,True
+VEH_0749,ca0248ec5b2278db,Commercial Auto,Tata Nexon,P_02443,True
+VEH_0750,8284d878379026af,Commercial Auto,Toyota Innova,P_00800,True
+VEH_0751,0931f911d8148146,Four-Wheeler,Hyundai Creta,P_01275,True
+VEH_0752,0ac374fc784223cb,Cargo Truck,Tata Nexon,P_00929,True
+VEH_0753,aeac1176d09e44a6,Four-Wheeler,TVS Jupiter,P_04281,True
+VEH_0754,ca958565563beb65,Commercial Auto,Toyota Innova,P_00754,True
+VEH_0755,e301ebfed1c3c966,Four-Wheeler,Maruti Suzuki Swift,P_00708,True
+VEH_0756,15b59f9bcfdca23c,Commercial Auto,Mahindra Scorpio,P_03922,True
+VEH_0757,3141761365a7fe52,Cargo Truck,Hyundai Creta,P_04294,True
+VEH_0758,9c3376bbf9e45da3,Cargo Truck,Hyundai Creta,P_01858,True
+VEH_0759,f7922cd2920112b7,Four-Wheeler,Mahindra Scorpio,P_00344,True
+VEH_0760,65211cd238ed948e,Cargo Truck,Toyota Innova,P_02775,True
+VEH_0761,b6faaaa03aec2386,Four-Wheeler,Tata Nexon,P_00787,True
+VEH_0762,eb9004a708c8efe3,Four-Wheeler,Toyota Innova,P_00982,True
+VEH_0763,8f270d551c029044,Four-Wheeler,Honda City,P_00319,True
+VEH_0764,29c9d4028db2fc3c,Two-Wheeler,Honda City,P_03110,True
+VEH_0765,f834726471678323,Four-Wheeler,Bajaj Pulsar,P_02981,True
+VEH_0766,6ae73572524952bb,Commercial Auto,Maruti Suzuki Swift,P_02384,True
+VEH_0767,6c969287be0f0139,Four-Wheeler,Hyundai Creta,P_02970,True
+VEH_0768,4f02a22b1a872d78,Two-Wheeler,Hyundai Creta,P_01497,True
+VEH_0769,3c2c18d99077c00c,Four-Wheeler,Honda City,P_04508,True
+VEH_0770,71b0c2b0a5f65a9f,Commercial Auto,Honda City,P_04525,True
+VEH_0771,167dc72d6040dbb9,Four-Wheeler,Honda City,P_03443,True
+VEH_0772,e6d4178e103af49d,Four-Wheeler,Hyundai Creta,P_04820,True
+VEH_0773,40d664b615339fef,Four-Wheeler,Royal Enfield Classic 350,P_04036,True
+VEH_0774,989960db45e4fc70,Two-Wheeler,Hyundai Creta,P_02737,True
+VEH_0775,f80adf63779c7c1a,Two-Wheeler,Maruti Suzuki Swift,P_03853,True
+VEH_0776,9b1de07f6e0b938a,Four-Wheeler,Mahindra Scorpio,P_03342,True
+VEH_0777,996cb060142fce33,Two-Wheeler,TVS Jupiter,P_04082,True
+VEH_0778,e7ab40f5c4e8d3b9,Commercial Auto,Mahindra Scorpio,P_04420,True
+VEH_0779,bf586cb437a403e9,Two-Wheeler,Honda City,P_02255,True
+VEH_0780,b77b960890ab8b2e,Cargo Truck,Honda City,P_04959,True
+VEH_0781,aaab179987c35929,Two-Wheeler,Honda City,P_01051,True
+VEH_0782,02d7dcd3bbcf3493,Two-Wheeler,Maruti Suzuki Swift,P_01892,True
+VEH_0783,4c95d375fa590c4f,Four-Wheeler,Mahindra Scorpio,P_02314,True
+VEH_0784,9ebb7ad11b7ea89c,Four-Wheeler,Maruti Suzuki Swift,P_03387,True
+VEH_0785,2ec76f472aa3bc20,Cargo Truck,Toyota Innova,P_02664,True
+VEH_0786,ce11626f932b80bd,Two-Wheeler,Mahindra Scorpio,P_01196,True
+VEH_0787,4c89d10fd26de4ca,Commercial Auto,TVS Jupiter,P_04102,True
+VEH_0788,6d03777881b0ca51,Four-Wheeler,Tata Nexon,P_00504,True
+VEH_0789,a72321f326fe0ff0,Commercial Auto,Honda City,P_01153,True
+VEH_0790,c954b120e0d45c9e,Cargo Truck,Bajaj Pulsar,P_00535,True
+VEH_0791,ca607df29eba012c,Cargo Truck,Honda City,P_03907,True
+VEH_0792,31627e4c0bd1ab59,Cargo Truck,Maruti Suzuki Swift,P_01921,True
+VEH_0793,3860e5f7e9fb6bbf,Commercial Auto,Tata Nexon,P_00900,True
+VEH_0794,426571a4a84dd814,Cargo Truck,Bajaj Pulsar,P_02542,True
+VEH_0795,bd8d5170c08a1c7b,Commercial Auto,Mahindra Scorpio,P_02365,True
+VEH_0796,c465c5c944d10985,Cargo Truck,Bajaj Pulsar,P_01499,True
+VEH_0797,d3a7b430027b5e6c,Commercial Auto,Bajaj Pulsar,P_03439,True
+VEH_0798,412f3956ff972923,Commercial Auto,Royal Enfield Classic 350,P_02106,True
+VEH_0799,3fca45480be44f67,Cargo Truck,Toyota Innova,P_00788,True
+VEH_0800,9c98694c2810ecfd,Commercial Auto,Maruti Suzuki Swift,P_02754,True
+VEH_0801,dfccd9a140950c40,Four-Wheeler,Mahindra Scorpio,P_03530,True
+VEH_0802,0a2e1a295b6863da,Two-Wheeler,Royal Enfield Classic 350,P_00360,True
+VEH_0803,614f021a35231ff7,Cargo Truck,Hyundai Creta,P_04090,True
+VEH_0804,58aaffd66a07012b,Commercial Auto,Hyundai Creta,P_00300,True
+VEH_0805,b7bdb6c9f07f3d4a,Four-Wheeler,TVS Jupiter,P_01713,True
+VEH_0806,e92e8d4a8d43c328,Two-Wheeler,Honda City,P_04902,True
+VEH_0807,2b338020c6eca92c,Two-Wheeler,Maruti Suzuki Swift,P_04107,True
+VEH_0808,6f460a4dcda150c3,Commercial Auto,Mahindra Scorpio,P_04716,True
+VEH_0809,836f13f7635c20fa,Two-Wheeler,TVS Jupiter,P_04558,True
+VEH_0810,0b0c80d2141a28f5,Two-Wheeler,Maruti Suzuki Swift,P_02303,True
+VEH_0811,9fd5d375412e3d6c,Two-Wheeler,Tata Nexon,P_01605,True
+VEH_0812,3fb1b562b86192a8,Four-Wheeler,Mahindra Scorpio,P_01102,True
+VEH_0813,4e7bfdb8f615c72b,Two-Wheeler,Honda City,P_03538,True
+VEH_0814,2c1d13f12c7f1293,Commercial Auto,Maruti Suzuki Swift,P_01404,True
+VEH_0815,2281356b6f270d49,Two-Wheeler,Hyundai Creta,P_00695,True
+VEH_0816,4c95a6ad275585cc,Commercial Auto,Mahindra Scorpio,P_01362,True
+VEH_0817,272cb5fd0645d47f,Two-Wheeler,Toyota Innova,P_03712,True
+VEH_0818,85745e1c666550ad,Cargo Truck,Royal Enfield Classic 350,P_01411,True
+VEH_0819,b6ba8b273cd013c4,Commercial Auto,Mahindra Scorpio,P_03325,True
+VEH_0820,8ff209582c1e917c,Four-Wheeler,Hyundai Creta,P_01039,True
+VEH_0821,37ecb9aea563e7b3,Cargo Truck,Bajaj Pulsar,P_03927,True
+VEH_0822,b6ebb3d2c03b52f4,Two-Wheeler,Bajaj Pulsar,P_01473,True
+VEH_0823,136005d26353c8e3,Two-Wheeler,Bajaj Pulsar,P_00608,True
+VEH_0824,273a2650411da423,Commercial Auto,Hyundai Creta,P_02176,True
+VEH_0825,69c6bafafc54a39f,Two-Wheeler,Royal Enfield Classic 350,P_04115,True
+VEH_0826,1a43b7b434ca1291,Cargo Truck,Bajaj Pulsar,P_01211,True
+VEH_0827,2b7245b711f4561a,Two-Wheeler,Toyota Innova,P_03776,True
+VEH_0828,d7661125c4f2ca6c,Four-Wheeler,Maruti Suzuki Swift,P_00224,True
+VEH_0829,52cdec008c3ed813,Two-Wheeler,Hyundai Creta,P_00677,True
+VEH_0830,6d57edbfa74856c7,Four-Wheeler,Toyota Innova,P_00469,True
+VEH_0831,a9d795950a0ad2a6,Commercial Auto,Bajaj Pulsar,P_02423,True
+VEH_0832,946860dae5c89637,Commercial Auto,Bajaj Pulsar,P_03906,True
+VEH_0833,728a124d5590e1e9,Four-Wheeler,Tata Nexon,P_02416,True
+VEH_0834,83e0fa49e8d13a9d,Four-Wheeler,TVS Jupiter,P_00216,True
+VEH_0835,cb65a4a748f4ebea,Commercial Auto,Royal Enfield Classic 350,P_02830,True
+VEH_0836,70cf03214b979e95,Cargo Truck,Tata Nexon,P_03320,True
+VEH_0837,0ad0289f121ee370,Commercial Auto,Bajaj Pulsar,P_01867,True
+VEH_0838,d6d25fb5a7e42426,Four-Wheeler,Royal Enfield Classic 350,P_00344,True
+VEH_0839,027f26d02b0a2f2c,Commercial Auto,Bajaj Pulsar,P_03769,True
+VEH_0840,9be8f4413283c76a,Four-Wheeler,Tata Nexon,P_01031,True
+VEH_0841,9dc4373417d11321,Four-Wheeler,Royal Enfield Classic 350,P_02120,True
+VEH_0842,57b33ba929630f4a,Cargo Truck,Honda City,P_01454,True
+VEH_0843,0a798df8f1ff838d,Four-Wheeler,Royal Enfield Classic 350,P_01538,True
+VEH_0844,eba79cf9ee64dff2,Commercial Auto,Tata Nexon,P_03278,True
+VEH_0845,3bf81c99081b23b5,Two-Wheeler,Royal Enfield Classic 350,P_02486,True
+VEH_0846,6802e414b51b34d7,Cargo Truck,Toyota Innova,P_04425,True
+VEH_0847,b50a0681d38dab6e,Four-Wheeler,Hyundai Creta,P_03785,True
+VEH_0848,0d133c7d66a334f9,Commercial Auto,Tata Nexon,P_02906,True
+VEH_0849,946d030c5d913b61,Commercial Auto,Mahindra Scorpio,P_03024,True
+VEH_0850,4bd24eb58859e0df,Cargo Truck,Hyundai Creta,P_03849,True
+VEH_0851,b1634adf15bd7560,Four-Wheeler,Bajaj Pulsar,P_04717,True
+VEH_0852,49cb8b391092ecdb,Two-Wheeler,Bajaj Pulsar,P_04346,True
+VEH_0853,fea257a7df0a86fc,Four-Wheeler,Maruti Suzuki Swift,P_02785,True
+VEH_0854,73447dc0afd384b3,Two-Wheeler,Mahindra Scorpio,P_01677,True
+VEH_0855,fc8a497f47cc4e05,Commercial Auto,Bajaj Pulsar,P_02160,True
+VEH_0856,39524f5649768713,Four-Wheeler,Hyundai Creta,P_00738,True
+VEH_0857,f57c344b3bd16d46,Two-Wheeler,Bajaj Pulsar,P_00396,True
+VEH_0858,f35967c22558a5dd,Two-Wheeler,TVS Jupiter,P_01776,True
+VEH_0859,a4bcaa96e9eb14b5,Four-Wheeler,Royal Enfield Classic 350,P_00285,True
+VEH_0860,5c0ea6cd40294322,Cargo Truck,TVS Jupiter,P_02683,True
+VEH_0861,0d75a20bfe2c4198,Four-Wheeler,Bajaj Pulsar,P_04393,True
+VEH_0862,5713547c5c27fe00,Four-Wheeler,Maruti Suzuki Swift,P_04802,True
+VEH_0863,32092c2ae03986f7,Two-Wheeler,Bajaj Pulsar,P_00108,True
+VEH_0864,f66725ff43b913bb,Four-Wheeler,Honda City,P_02372,True
+VEH_0865,7dbdf0f55982ec4d,Commercial Auto,Royal Enfield Classic 350,P_03014,True
+VEH_0866,be2f0599ad9d0353,Commercial Auto,Hyundai Creta,P_01010,True
+VEH_0867,ba111dab0d520cbc,Commercial Auto,Bajaj Pulsar,P_03911,True
+VEH_0868,f3613764a07910d4,Two-Wheeler,Mahindra Scorpio,P_01398,True
+VEH_0869,f1eba5a12df1476d,Commercial Auto,Mahindra Scorpio,P_03697,True
+VEH_0870,cd78e7145805f83d,Two-Wheeler,Maruti Suzuki Swift,P_02457,True
+VEH_0871,d45378ac513b018b,Commercial Auto,Toyota Innova,P_00175,True
+VEH_0872,c1d178e61a067ddb,Four-Wheeler,Maruti Suzuki Swift,P_04351,True
+VEH_0873,a7545e26267ad621,Four-Wheeler,Maruti Suzuki Swift,P_01581,True
+VEH_0874,a65666f23280402e,Cargo Truck,Hyundai Creta,P_00224,True
+VEH_0875,f94fe56a2bc1503d,Two-Wheeler,Hyundai Creta,P_01438,True
+VEH_0876,a991bc29eb0be694,Two-Wheeler,Bajaj Pulsar,P_04508,True
+VEH_0877,3aa975a35a159342,Two-Wheeler,Royal Enfield Classic 350,P_04599,True
+VEH_0878,478cfb72dc10de3c,Four-Wheeler,Honda City,P_00331,True
+VEH_0879,db12283d3e4edc45,Commercial Auto,TVS Jupiter,P_01590,True
+VEH_0880,9c9a0e91595c5d5f,Cargo Truck,Bajaj Pulsar,P_01119,True
+VEH_0881,e7f42cb4b4ace90f,Commercial Auto,Maruti Suzuki Swift,P_00840,True
+VEH_0882,c828e37e99eb6c37,Four-Wheeler,Bajaj Pulsar,P_03017,True
+VEH_0883,cf5081a694b5e873,Two-Wheeler,TVS Jupiter,P_02139,True
+VEH_0884,1dc0769772f5df9c,Cargo Truck,Royal Enfield Classic 350,P_02477,True
+VEH_0885,6a4b69c90842f62e,Cargo Truck,Toyota Innova,P_04746,True
+VEH_0886,263825114995c94d,Commercial Auto,Honda City,P_00175,True
+VEH_0887,77e843d421efb707,Four-Wheeler,Tata Nexon,P_01560,True
+VEH_0888,74196b97314a79a8,Cargo Truck,Honda City,P_01158,True
+VEH_0889,21a929f7f46c08c6,Cargo Truck,Royal Enfield Classic 350,P_00189,True
+VEH_0890,26b0cf52b662c2ef,Two-Wheeler,Maruti Suzuki Swift,P_03621,True
+VEH_0891,55f64e38a90e6c1a,Two-Wheeler,Bajaj Pulsar,P_04971,True
+VEH_0892,0fa9851db7a354d0,Two-Wheeler,Mahindra Scorpio,P_04358,True
+VEH_0893,46e63163a15aab42,Cargo Truck,Maruti Suzuki Swift,P_02824,True
+VEH_0894,cb15909f8b584b6e,Four-Wheeler,Royal Enfield Classic 350,P_02797,True
+VEH_0895,fbebf4e6974735c0,Two-Wheeler,Toyota Innova,P_04057,True
+VEH_0896,7884244c4d317111,Cargo Truck,Royal Enfield Classic 350,P_04694,True
+VEH_0897,c444a8d5c906ec4a,Cargo Truck,Maruti Suzuki Swift,P_04603,True
+VEH_0898,06883ba2febb5683,Commercial Auto,Mahindra Scorpio,P_04426,True
+VEH_0899,4c8c1b134b6534dd,Commercial Auto,Honda City,P_01574,True
+VEH_0900,aec5a51dbd7905ef,Four-Wheeler,Bajaj Pulsar,P_02276,True
+VEH_0901,30aefad9d45725f5,Cargo Truck,Maruti Suzuki Swift,P_00054,True
+VEH_0902,a32a59279f4fba86,Cargo Truck,Maruti Suzuki Swift,P_00957,True
+VEH_0903,7d0f491252f4ad7d,Four-Wheeler,Toyota Innova,P_00209,True
+VEH_0904,7554bf23c2e16ae3,Four-Wheeler,Hyundai Creta,P_02449,True
+VEH_0905,ad1e273ea2eda169,Cargo Truck,Bajaj Pulsar,P_01605,True
+VEH_0906,c992efd345972116,Commercial Auto,Mahindra Scorpio,P_02341,True
+VEH_0907,0a3678802dff9cb6,Two-Wheeler,Honda City,P_03201,True
+VEH_0908,30f8012022e12170,Two-Wheeler,Royal Enfield Classic 350,P_03373,True
+VEH_0909,bb1e6de42d3ae439,Cargo Truck,TVS Jupiter,P_03885,True
+VEH_0910,282d4641f2c543f4,Four-Wheeler,Hyundai Creta,P_02207,True
+VEH_0911,b6ce7b84f1c7eb40,Two-Wheeler,Hyundai Creta,P_01600,True
+VEH_0912,af8c3febc9408a1a,Two-Wheeler,Toyota Innova,P_02932,True
+VEH_0913,1d6046f89ee4e3b0,Four-Wheeler,TVS Jupiter,P_04059,True
+VEH_0914,f19dd4f3bf763376,Two-Wheeler,Hyundai Creta,P_00644,True
+VEH_0915,547055ed5be5963c,Commercial Auto,Mahindra Scorpio,P_04301,True
+VEH_0916,492ec50815d7ff44,Two-Wheeler,Royal Enfield Classic 350,P_00994,True
+VEH_0917,d8d55aa13456fbb0,Commercial Auto,Honda City,P_02516,True
+VEH_0918,d1b16ead2e0341d6,Two-Wheeler,Toyota Innova,P_00392,True
+VEH_0919,080a364c402a5906,Commercial Auto,Royal Enfield Classic 350,P_02305,True
+VEH_0920,2909bc1d4d8cd03d,Cargo Truck,Hyundai Creta,P_03264,True
+VEH_0921,beaf743988a19a20,Two-Wheeler,TVS Jupiter,P_04302,True
+VEH_0922,5e82113f7cc1381e,Two-Wheeler,TVS Jupiter,P_04826,True
+VEH_0923,d1c444883f7a51ea,Commercial Auto,Tata Nexon,P_04691,True
+VEH_0924,3d3723ff51bb0b71,Two-Wheeler,Mahindra Scorpio,P_03490,True
+VEH_0925,26c10c722e46613d,Commercial Auto,Tata Nexon,P_04049,True
+VEH_0926,80a89d6e6a525838,Cargo Truck,Maruti Suzuki Swift,P_04134,True
+VEH_0927,57f90abe98ac9a6a,Cargo Truck,TVS Jupiter,P_00501,True
+VEH_0928,96e5ef1ef5d0e874,Four-Wheeler,Maruti Suzuki Swift,P_02991,True
+VEH_0929,5f28a120ed2c5df8,Commercial Auto,Tata Nexon,P_01835,True
+VEH_0930,8fffa23955a17d57,Commercial Auto,Toyota Innova,P_00122,True
+VEH_0931,1cc4a022f37e5a92,Two-Wheeler,Royal Enfield Classic 350,P_04665,True
+VEH_0932,f4679e8162dd754c,Two-Wheeler,Hyundai Creta,P_04675,True
+VEH_0933,3b7727e885e69dd5,Commercial Auto,Maruti Suzuki Swift,P_04568,True
+VEH_0934,711ecf53e07c02e4,Two-Wheeler,Bajaj Pulsar,P_00133,True
+VEH_0935,0f1cddff312eeed7,Two-Wheeler,Maruti Suzuki Swift,P_04958,True
+VEH_0936,0c9d8515af9e2007,Two-Wheeler,Bajaj Pulsar,P_02439,True
+VEH_0937,463f921de32d94dd,Four-Wheeler,Bajaj Pulsar,P_04535,True
+VEH_0938,d2031b91550f0893,Four-Wheeler,Bajaj Pulsar,P_03751,True
+VEH_0939,69e075c43e216170,Cargo Truck,Bajaj Pulsar,P_03291,True
+VEH_0940,7787304422322493,Commercial Auto,Maruti Suzuki Swift,P_03703,True
+VEH_0941,640b4bd7d3d7a79b,Cargo Truck,TVS Jupiter,P_04151,True
+VEH_0942,c11b33336594cd2d,Cargo Truck,Royal Enfield Classic 350,P_04240,True
+VEH_0943,1bd989e5c325446e,Four-Wheeler,Mahindra Scorpio,P_04143,True
+VEH_0944,9b7093c541756fe3,Commercial Auto,Tata Nexon,P_01946,True
+VEH_0945,adaf00d532c27966,Commercial Auto,Royal Enfield Classic 350,P_03121,True
+VEH_0946,468540f289989b31,Two-Wheeler,Tata Nexon,P_02339,True
+VEH_0947,6f83f2f95944670a,Cargo Truck,Bajaj Pulsar,P_03221,True
+VEH_0948,1dfc9671a3bc0cb8,Two-Wheeler,Tata Nexon,P_02069,True
+VEH_0949,fedbd2b7d9eb970e,Four-Wheeler,Mahindra Scorpio,P_01594,True
+VEH_0950,92ee96156a8a0849,Commercial Auto,Tata Nexon,P_04463,True
+VEH_0951,ae59d99aa5ce2799,Two-Wheeler,Tata Nexon,P_04715,True
+VEH_0952,8645143a9bb60041,Commercial Auto,Toyota Innova,P_04436,True
+VEH_0953,35bcd4dde2de0975,Cargo Truck,Hyundai Creta,P_04587,True
+VEH_0954,9d279a27ad364f6e,Cargo Truck,Bajaj Pulsar,P_02202,True
+VEH_0955,d7a0fb11d5d0b5ed,Two-Wheeler,Honda City,P_02192,True
+VEH_0956,69a490e4c0b6852b,Four-Wheeler,Bajaj Pulsar,P_04727,True
+VEH_0957,528500da464a53d5,Commercial Auto,Maruti Suzuki Swift,P_01632,True
+VEH_0958,72bd97e7ecf09096,Cargo Truck,Toyota Innova,P_01722,True
+VEH_0959,e2dc4f52a4b80fde,Two-Wheeler,Toyota Innova,P_02686,True
+VEH_0960,63cf37c463c83a22,Four-Wheeler,Royal Enfield Classic 350,P_03899,True
+VEH_0961,5ac9a0c09fdd202f,Commercial Auto,Maruti Suzuki Swift,P_00132,True
+VEH_0962,aa174564fdd0a6c8,Four-Wheeler,Honda City,P_00714,True
+VEH_0963,dbbb97f834c100a2,Cargo Truck,Hyundai Creta,P_04848,True
+VEH_0964,f53adb1e2ca52dad,Commercial Auto,TVS Jupiter,P_00056,True
+VEH_0965,446f54d4d99bb7d0,Cargo Truck,Bajaj Pulsar,P_02854,True
+VEH_0966,f2c24b34078acae9,Four-Wheeler,Royal Enfield Classic 350,P_03409,True
+VEH_0967,bc923eb720a3af3e,Cargo Truck,TVS Jupiter,P_04011,True
+VEH_0968,116315f8eab2d079,Commercial Auto,Toyota Innova,P_04276,True
+VEH_0969,e96190ef8d53f7a9,Commercial Auto,Royal Enfield Classic 350,P_02980,True
+VEH_0970,342d4cb34d6a53cb,Cargo Truck,Hyundai Creta,P_00680,True
+VEH_0971,1b905cc05e241bcb,Two-Wheeler,Maruti Suzuki Swift,P_00352,True
+VEH_0972,ea5a129be924e618,Two-Wheeler,Hyundai Creta,P_01937,True
+VEH_0973,f8d92c2ab20237e4,Commercial Auto,Mahindra Scorpio,P_00046,True
+VEH_0974,d7ed7b82a71de87e,Four-Wheeler,Bajaj Pulsar,P_01493,True
+VEH_0975,990e3dec2ad17fbc,Cargo Truck,Royal Enfield Classic 350,P_03161,True
+VEH_0976,fe67c3274b5bbb73,Cargo Truck,Royal Enfield Classic 350,P_03679,True
+VEH_0977,28dfdb76bcfac9a7,Two-Wheeler,Tata Nexon,P_03001,True
+VEH_0978,fd0e655f96ed78b5,Two-Wheeler,Bajaj Pulsar,P_01790,True
+VEH_0979,7f65ae2a240a9359,Two-Wheeler,Mahindra Scorpio,P_00516,True
+VEH_0980,23745a9c4981178c,Four-Wheeler,Honda City,P_00759,True
+VEH_0981,ba6c83de045e7a2f,Commercial Auto,Mahindra Scorpio,P_03403,True
+VEH_0982,c974b699b5d1922b,Two-Wheeler,Toyota Innova,P_00199,True
+VEH_0983,77a94bfeacc071fb,Commercial Auto,Tata Nexon,P_01481,True
+VEH_0984,d8db72f6e48a176b,Cargo Truck,Bajaj Pulsar,P_02225,True
+VEH_0985,4c0e68806e783609,Four-Wheeler,Toyota Innova,P_01167,True
+VEH_0986,9ed852659cfc8cbb,Two-Wheeler,Royal Enfield Classic 350,P_04537,True
+VEH_0987,b2b7379dbe1b4597,Cargo Truck,TVS Jupiter,P_00991,True
+VEH_0988,1c5a151a4b1c89d9,Two-Wheeler,TVS Jupiter,P_01780,True
+VEH_0989,e9bf910723bd1df2,Two-Wheeler,Mahindra Scorpio,P_03375,True
+VEH_0990,a282bfc527a560bf,Two-Wheeler,Hyundai Creta,P_02032,True
+VEH_0991,ac7ee4255b83cc61,Two-Wheeler,Toyota Innova,P_02980,True
+VEH_0992,20f52834ab0c5f27,Commercial Auto,Bajaj Pulsar,P_02524,True
+VEH_0993,17d190df7988ffdc,Two-Wheeler,TVS Jupiter,P_01793,True
+VEH_0994,41469fda95954311,Commercial Auto,Toyota Innova,P_02187,True
+VEH_0995,292d28d1166d85ca,Cargo Truck,Tata Nexon,P_03661,True
+VEH_0996,18dd40f08e4b1a69,Commercial Auto,Tata Nexon,P_00455,True
+VEH_0997,e6efee5960539cbe,Two-Wheeler,TVS Jupiter,P_00922,True
+VEH_0998,2a9cd04ccfaa8a70,Two-Wheeler,Bajaj Pulsar,P_04348,True
+VEH_0999,50789e7429bc29d8,Cargo Truck,Tata Nexon,P_02985,True
+VEH_1000,013cd8a248355ab7,Cargo Truck,Honda City,P_04541,True
+VEH_1001,4051656791a7017d,Cargo Truck,Bajaj Pulsar,P_04221,True
+VEH_1002,0623ca0cacaae167,Two-Wheeler,Bajaj Pulsar,P_02928,True
+VEH_1003,ba2ed679b99df02b,Four-Wheeler,Maruti Suzuki Swift,P_01655,True
+VEH_1004,0559e09c75513c55,Commercial Auto,Hyundai Creta,P_04692,True
+VEH_1005,5ae07ecffdcea092,Four-Wheeler,Mahindra Scorpio,P_04674,True
+VEH_1006,16f98dd276bb2322,Four-Wheeler,Toyota Innova,P_00197,True
+VEH_1007,dde5408d667ef426,Two-Wheeler,Mahindra Scorpio,P_00465,True
+VEH_1008,9b0d7e0c43a55522,Cargo Truck,Mahindra Scorpio,P_04862,True
+VEH_1009,d97a89333902b8b5,Two-Wheeler,Maruti Suzuki Swift,P_01237,True
+VEH_1010,cde6bd27f0f3e74e,Two-Wheeler,Royal Enfield Classic 350,P_03823,True
+VEH_1011,3337f72c8fc0d73c,Cargo Truck,Hyundai Creta,P_00924,True
+VEH_1012,e9ca1d9639a80168,Cargo Truck,Hyundai Creta,P_00262,True
+VEH_1013,908198e8661971c9,Two-Wheeler,TVS Jupiter,P_02086,True
+VEH_1014,4b8772337f029a55,Cargo Truck,Mahindra Scorpio,P_03535,True
+VEH_1015,65c0b432901d7ed0,Four-Wheeler,TVS Jupiter,P_02018,True
+VEH_1016,1ad5d48827b8e5b5,Four-Wheeler,Hyundai Creta,P_02379,True
+VEH_1017,98155364e6e362ac,Commercial Auto,Toyota Innova,P_00072,True
+VEH_1018,f504ad9ab990c5f5,Two-Wheeler,Maruti Suzuki Swift,P_04845,True
+VEH_1019,942ba9e88e9c0888,Two-Wheeler,Hyundai Creta,P_00011,True
+VEH_1020,d06948d73c3e6928,Four-Wheeler,TVS Jupiter,P_00140,True
+VEH_1021,ce1212c5b08d05e2,Commercial Auto,Mahindra Scorpio,P_03473,True
+VEH_1022,175825711aa131fa,Four-Wheeler,Tata Nexon,P_01737,True
+VEH_1023,51acb09c41290136,Cargo Truck,Maruti Suzuki Swift,P_01154,True
+VEH_1024,dff2711ad368a3ea,Cargo Truck,TVS Jupiter,P_01891,True
+VEH_1025,bec5afdc5882573b,Cargo Truck,TVS Jupiter,P_00700,True
+VEH_1026,0a8764523094579b,Commercial Auto,Tata Nexon,P_01037,True
+VEH_1027,9761a7417bfa3adf,Two-Wheeler,Toyota Innova,P_02187,True
+VEH_1028,88b388db9377e565,Four-Wheeler,Maruti Suzuki Swift,P_02094,True
+VEH_1029,efd02f57f8802eb5,Cargo Truck,TVS Jupiter,P_04624,True
+VEH_1030,bdd61b1cdc4a1c19,Commercial Auto,Toyota Innova,P_03628,True
+VEH_1031,b762682c6e6ceeee,Four-Wheeler,Honda City,P_03929,True
+VEH_1032,ab01cdd7fe05859c,Four-Wheeler,Maruti Suzuki Swift,P_00906,True
+VEH_1033,3f8456f45be6673e,Two-Wheeler,Hyundai Creta,P_00318,True
+VEH_1034,d25202291f961091,Four-Wheeler,Bajaj Pulsar,P_01883,True
+VEH_1035,09d1bdbf6805a526,Cargo Truck,TVS Jupiter,P_01327,True
+VEH_1036,d6fd2a529cea6e7c,Four-Wheeler,Toyota Innova,P_03669,True
+VEH_1037,0e8ce8af3b050f38,Cargo Truck,Toyota Innova,P_00499,True
+VEH_1038,64742ece5e3d08e1,Four-Wheeler,Hyundai Creta,P_02068,True
+VEH_1039,24b11ba087b11f6d,Commercial Auto,Honda City,P_02959,True
+VEH_1040,eca8d5d7286cf09b,Four-Wheeler,Hyundai Creta,P_01611,True
+VEH_1041,9cfbba1db36e89d1,Cargo Truck,Bajaj Pulsar,P_02911,True
+VEH_1042,551401d04b019a30,Four-Wheeler,Maruti Suzuki Swift,P_01676,True
+VEH_1043,72786def1c7561aa,Cargo Truck,Royal Enfield Classic 350,P_01283,True
+VEH_1044,978150cc3aa22fe3,Commercial Auto,Tata Nexon,P_00647,True
+VEH_1045,8a53fd1415c6ed1a,Four-Wheeler,TVS Jupiter,P_00156,True
+VEH_1046,cdee7b9bd6976018,Commercial Auto,Hyundai Creta,P_02545,True
+VEH_1047,5134fbac0b9ba1c6,Cargo Truck,Maruti Suzuki Swift,P_03662,True
+VEH_1048,7c52ce4679a34b7f,Two-Wheeler,Honda City,P_04797,True
+VEH_1049,abb6266d236c7804,Four-Wheeler,Honda City,P_04704,True
+VEH_1050,f1972b3bab890440,Four-Wheeler,Toyota Innova,P_01411,True
+VEH_1051,e5b10413b614235b,Cargo Truck,Honda City,P_04899,True
+VEH_1052,45f81bf5c53635c2,Two-Wheeler,Mahindra Scorpio,P_00534,True
+VEH_1053,0321d8ea09c94be0,Commercial Auto,Royal Enfield Classic 350,P_04940,True
+VEH_1054,388c7e25d5618cc5,Cargo Truck,Tata Nexon,P_01772,True
+VEH_1055,83555ebdb69f6472,Two-Wheeler,Honda City,P_02082,True
+VEH_1056,131801ea80973642,Commercial Auto,Bajaj Pulsar,P_04842,True
+VEH_1057,f398a127d44cd991,Commercial Auto,Maruti Suzuki Swift,P_00549,True
+VEH_1058,621df8e412c950a2,Cargo Truck,Maruti Suzuki Swift,P_01756,True
+VEH_1059,1d2d3a1bc30770b2,Four-Wheeler,Tata Nexon,P_00866,True
+VEH_1060,9355b32e6c0ea115,Four-Wheeler,Honda City,P_00779,True
+VEH_1061,824e82d1b4fc0e3c,Cargo Truck,Bajaj Pulsar,P_04879,True
+VEH_1062,f1d9d00813f15f9e,Commercial Auto,Maruti Suzuki Swift,P_04500,True
+VEH_1063,c658a3899ab7e3b3,Commercial Auto,Bajaj Pulsar,P_03269,True
+VEH_1064,6ed896e107a05a75,Two-Wheeler,TVS Jupiter,P_02917,True
+VEH_1065,de99b6d0f0e065a5,Two-Wheeler,TVS Jupiter,P_00095,True
+VEH_1066,15a12ffb538572ca,Commercial Auto,Royal Enfield Classic 350,P_03886,True
+VEH_1067,612b767183d05cd5,Four-Wheeler,Mahindra Scorpio,P_03116,True
+VEH_1068,e5b749a616e73c79,Cargo Truck,Tata Nexon,P_04282,True
+VEH_1069,216201130dcf547d,Two-Wheeler,Bajaj Pulsar,P_04231,True
+VEH_1070,3762062bad605d9c,Four-Wheeler,Maruti Suzuki Swift,P_02237,True
+VEH_1071,f29a113c489bf055,Cargo Truck,Hyundai Creta,P_04760,True
+VEH_1072,16feaed4b32eed14,Cargo Truck,Mahindra Scorpio,P_01451,True
+VEH_1073,8774d3b369cc12e2,Commercial Auto,Bajaj Pulsar,P_01837,True
+VEH_1074,7f26c2b66d0cfbb3,Commercial Auto,Royal Enfield Classic 350,P_01489,True
+VEH_1075,84d8b421dfa25284,Two-Wheeler,Royal Enfield Classic 350,P_03144,True
+VEH_1076,be44317dde0f956e,Commercial Auto,TVS Jupiter,P_04288,True
+VEH_1077,416b10e67468466d,Cargo Truck,Toyota Innova,P_00838,True
+VEH_1078,33fbe3dbb346ec69,Commercial Auto,Mahindra Scorpio,P_03332,True
+VEH_1079,aa2aec4d88e1dda8,Cargo Truck,Mahindra Scorpio,P_02227,True
+VEH_1080,3d9d0cdd4ab02f43,Commercial Auto,Royal Enfield Classic 350,P_01127,True
+VEH_1081,838be80259fb0f73,Four-Wheeler,TVS Jupiter,P_04932,True
+VEH_1082,3da1c87d6b64eb22,Two-Wheeler,Honda City,P_00606,True
+VEH_1083,844ef1d9428a1c52,Two-Wheeler,Toyota Innova,P_04913,True
+VEH_1084,7f8fe94dd3a1239f,Four-Wheeler,TVS Jupiter,P_03340,True
+VEH_1085,9755df57b004625f,Four-Wheeler,Toyota Innova,P_04558,True
+VEH_1086,b6c5fc13fc5dedc3,Commercial Auto,Tata Nexon,P_02952,True
+VEH_1087,14fa18119f880c2a,Four-Wheeler,Royal Enfield Classic 350,P_02605,True
+VEH_1088,d604df04c007f2d3,Four-Wheeler,Royal Enfield Classic 350,P_03294,True
+VEH_1089,b3b7f4a1e81351a8,Commercial Auto,Bajaj Pulsar,P_01039,True
+VEH_1090,2c05ad9b51365ca2,Four-Wheeler,Bajaj Pulsar,P_04029,True
+VEH_1091,7bf2cef95002a818,Cargo Truck,Honda City,P_00653,True
+VEH_1092,16da0e0f7166d538,Two-Wheeler,Mahindra Scorpio,P_02675,True
+VEH_1093,4bcc3a2459e59953,Two-Wheeler,Royal Enfield Classic 350,P_04007,True
+VEH_1094,2b0bc772992c2995,Cargo Truck,Honda City,P_04248,True
+VEH_1095,2d38822532f5e6e1,Commercial Auto,Toyota Innova,P_02788,True
+VEH_1096,d3bf8ea12376515c,Two-Wheeler,Tata Nexon,P_04908,True
+VEH_1097,d75962dc57024d81,Four-Wheeler,Mahindra Scorpio,P_03126,True
+VEH_1098,70b3ac8d54dcc4c7,Cargo Truck,Maruti Suzuki Swift,P_01861,True
+VEH_1099,78de209bffdaeab6,Commercial Auto,Hyundai Creta,P_04313,True
+VEH_1100,5300ff34f0e9111c,Four-Wheeler,Maruti Suzuki Swift,P_00403,True
+VEH_1101,b780f805d5c9d860,Commercial Auto,Honda City,P_04441,True
+VEH_1102,fafdca1d0ae4049a,Cargo Truck,Honda City,P_04561,True
+VEH_1103,51ec1b5529fa9e2c,Four-Wheeler,Honda City,P_01326,True
+VEH_1104,a60e476954bf6cd4,Four-Wheeler,TVS Jupiter,P_02785,True
+VEH_1105,6d76a13424ba113b,Four-Wheeler,Mahindra Scorpio,P_01576,True
+VEH_1106,3decd65341baf7bb,Cargo Truck,Honda City,P_03314,True
+VEH_1107,9460606e225af306,Four-Wheeler,Toyota Innova,P_02418,True
+VEH_1108,241c53c8f7545127,Four-Wheeler,Toyota Innova,P_01876,True
+VEH_1109,64bab552bb0932a7,Two-Wheeler,Tata Nexon,P_00971,True
+VEH_1110,11ef707a8355ed8a,Cargo Truck,Royal Enfield Classic 350,P_03919,True
+VEH_1111,b910269829283417,Four-Wheeler,Royal Enfield Classic 350,P_00228,True
+VEH_1112,0e175eee5d47ac7b,Commercial Auto,Hyundai Creta,P_03052,True
+VEH_1113,3fe158777aa17259,Four-Wheeler,Maruti Suzuki Swift,P_04494,True
+VEH_1114,e4a336a3d52d4149,Two-Wheeler,TVS Jupiter,P_04148,True
+VEH_1115,1bed298e5f831792,Four-Wheeler,Toyota Innova,P_03638,True
+VEH_1116,f9eca76bf448253f,Cargo Truck,Honda City,P_01345,True
+VEH_1117,740e6bb574724208,Commercial Auto,Maruti Suzuki Swift,P_01671,True
+VEH_1118,875876fbe7708201,Commercial Auto,Mahindra Scorpio,P_03524,True
+VEH_1119,0e8128665001558f,Commercial Auto,Maruti Suzuki Swift,P_03779,True
+VEH_1120,25dd8e553c31f1c1,Two-Wheeler,Tata Nexon,P_02538,True
+VEH_1121,20705bd3f5bdd630,Commercial Auto,Bajaj Pulsar,P_02657,True
+VEH_1122,7ae599d08258824e,Cargo Truck,Maruti Suzuki Swift,P_00258,True
+VEH_1123,d347009d6bdbfa89,Two-Wheeler,Toyota Innova,P_01194,True
+VEH_1124,68dc9ebe93d72a3a,Cargo Truck,TVS Jupiter,P_02387,True
+VEH_1125,bf9e64a1537aeceb,Two-Wheeler,TVS Jupiter,P_03262,True
+VEH_1126,4f49bda8cec23e45,Four-Wheeler,TVS Jupiter,P_01391,True
+VEH_1127,51ec9fd114c14407,Cargo Truck,Tata Nexon,P_00597,True
+VEH_1128,d647d3c86611f795,Cargo Truck,Hyundai Creta,P_04971,True
+VEH_1129,8f33417663a0def8,Two-Wheeler,Maruti Suzuki Swift,P_03168,True
+VEH_1130,7b3b6584012c02cc,Commercial Auto,Honda City,P_01880,True
+VEH_1131,8b7e60dc26c48e0c,Cargo Truck,Bajaj Pulsar,P_00567,True
+VEH_1132,ddc273efca0a956c,Two-Wheeler,Royal Enfield Classic 350,P_02830,True
+VEH_1133,17e6ac660a5285ac,Cargo Truck,Honda City,P_02194,True
+VEH_1134,2db3a7a132a073fe,Cargo Truck,Toyota Innova,P_00541,True
+VEH_1135,5035c8876e3c62f0,Commercial Auto,Hyundai Creta,P_00128,True
+VEH_1136,378797703b41f0b9,Commercial Auto,TVS Jupiter,P_04212,True
+VEH_1137,7fec766b6a2368cf,Two-Wheeler,Royal Enfield Classic 350,P_04804,True
+VEH_1138,02d86cc83cd020d0,Two-Wheeler,TVS Jupiter,P_04742,True
+VEH_1139,8219eafebbad28bf,Two-Wheeler,Honda City,P_03088,True
+VEH_1140,1f1e77d8671d07c1,Commercial Auto,Bajaj Pulsar,P_03124,True
+VEH_1141,39f586b3a59ad6bd,Cargo Truck,Mahindra Scorpio,P_04853,True
+VEH_1142,566e4238f7274907,Cargo Truck,Tata Nexon,P_00924,True
+VEH_1143,9ed53808d6b68612,Four-Wheeler,Mahindra Scorpio,P_01413,True
+VEH_1144,16728d78e2a60511,Four-Wheeler,Hyundai Creta,P_00367,True
+VEH_1145,f460604c40df8544,Cargo Truck,Maruti Suzuki Swift,P_00517,True
+VEH_1146,6c3c4099d320fd64,Cargo Truck,Bajaj Pulsar,P_04890,True
+VEH_1147,fc6f83c7d3ba6019,Cargo Truck,Mahindra Scorpio,P_03053,True
+VEH_1148,353ec53f0b3913e5,Commercial Auto,Bajaj Pulsar,P_02419,True
+VEH_1149,71c59aca0a91e90d,Commercial Auto,Maruti Suzuki Swift,P_03954,True
+VEH_1150,189d4fd16e5e2234,Commercial Auto,Tata Nexon,P_01598,True
+VEH_1151,75eaf869c8adacb1,Four-Wheeler,Hyundai Creta,P_00286,True
+VEH_1152,6c55dced7bad989f,Four-Wheeler,Royal Enfield Classic 350,P_01495,True
+VEH_1153,836ea3cdd452900c,Four-Wheeler,Royal Enfield Classic 350,P_03585,True
+VEH_1154,d87bc75b32296926,Cargo Truck,Royal Enfield Classic 350,P_03195,True
+VEH_1155,9f72939be4defe16,Four-Wheeler,Toyota Innova,P_02499,True
+VEH_1156,8e481a0b96072e24,Cargo Truck,Honda City,P_00013,True
+VEH_1157,3c547880dfe9a151,Four-Wheeler,Honda City,P_03846,True
+VEH_1158,fe0b9e0003f714fd,Cargo Truck,Mahindra Scorpio,P_03522,True
+VEH_1159,a722dd22283bef15,Cargo Truck,Bajaj Pulsar,P_04649,True
+VEH_1160,63555dbbcbc8176b,Cargo Truck,Bajaj Pulsar,P_01918,True
+VEH_1161,1f4d773683147f41,Cargo Truck,Hyundai Creta,P_03871,True
+VEH_1162,d019148537f1f324,Commercial Auto,Royal Enfield Classic 350,P_01480,True
+VEH_1163,84c46167310d6ac0,Two-Wheeler,Maruti Suzuki Swift,P_04872,True
+VEH_1164,4573ac43fc0b090b,Two-Wheeler,Toyota Innova,P_03724,True
+VEH_1165,88c3fb8f3ce6bc7c,Commercial Auto,Maruti Suzuki Swift,P_04683,True
+VEH_1166,39cf9419bc2c7601,Commercial Auto,Toyota Innova,P_04278,True
+VEH_1167,d9263dee8b6e0d7a,Commercial Auto,Tata Nexon,P_04000,True
+VEH_1168,1b119666da9a2653,Two-Wheeler,Bajaj Pulsar,P_04518,True
+VEH_1169,d731d71a3e0c26cd,Commercial Auto,Tata Nexon,P_03570,True
+VEH_1170,952cea490645ba30,Four-Wheeler,Toyota Innova,P_04293,True
+VEH_1171,580c02f84d94cb47,Two-Wheeler,Toyota Innova,P_02231,True
+VEH_1172,35b32682e8af9041,Four-Wheeler,Toyota Innova,P_03983,True
+VEH_1173,6d2aedde5b3844c1,Commercial Auto,Tata Nexon,P_01035,True
+VEH_1174,659cc77e5fcbfb81,Cargo Truck,Maruti Suzuki Swift,P_00520,True
+VEH_1175,421be9f8baf8b930,Cargo Truck,Honda City,P_00433,True
+VEH_1176,01a00d1271511d13,Two-Wheeler,Tata Nexon,P_04218,True
+VEH_1177,2dcd1009ec13137f,Four-Wheeler,Maruti Suzuki Swift,P_00479,True
+VEH_1178,871984fcc9a1bf2b,Commercial Auto,Tata Nexon,P_01319,True
+VEH_1179,93adddb695ab62c0,Commercial Auto,Hyundai Creta,P_03191,True
+VEH_1180,43be8764df84d277,Four-Wheeler,Bajaj Pulsar,P_00484,True
+VEH_1181,86de2c9c4c7c7a45,Four-Wheeler,TVS Jupiter,P_00895,True
+VEH_1182,463ed0c0f267a772,Cargo Truck,Toyota Innova,P_01863,True
+VEH_1183,742cffc125da6866,Four-Wheeler,Maruti Suzuki Swift,P_03788,True
+VEH_1184,dba0dcba99781e17,Four-Wheeler,TVS Jupiter,P_02149,True
+VEH_1185,cb624e8935cd7338,Two-Wheeler,Honda City,P_01860,True
+VEH_1186,119470bab3e4496b,Commercial Auto,Mahindra Scorpio,P_03377,True
+VEH_1187,cc896c843ac92306,Four-Wheeler,Hyundai Creta,P_03387,True
+VEH_1188,d9ec9d3c6b6be0df,Commercial Auto,TVS Jupiter,P_01657,True
+VEH_1189,8d5a72290b5fc2e5,Commercial Auto,Maruti Suzuki Swift,P_02161,True
+VEH_1190,adb42d53e04a515b,Four-Wheeler,Mahindra Scorpio,P_01501,True
+VEH_1191,a17367251ab7fb86,Two-Wheeler,TVS Jupiter,P_02146,True
+VEH_1192,20571cf66dfa8e25,Commercial Auto,Maruti Suzuki Swift,P_03323,True
+VEH_1193,9877957ad2d6ce70,Two-Wheeler,Mahindra Scorpio,P_04820,True
+VEH_1194,d31eb646597531e8,Commercial Auto,Mahindra Scorpio,P_04079,True
+VEH_1195,bcbb2067c65c2b31,Four-Wheeler,Royal Enfield Classic 350,P_01130,True
+VEH_1196,f5ad9cccc6fb9ae3,Cargo Truck,Honda City,P_00411,True
+VEH_1197,077d8fae5155068a,Two-Wheeler,Toyota Innova,P_03253,True
+VEH_1198,bdb278d276217536,Commercial Auto,Maruti Suzuki Swift,P_04027,True
+VEH_1199,65a0d02cc0d16b71,Four-Wheeler,Maruti Suzuki Swift,P_04916,True
+VEH_1200,56094da0b177dc2a,Cargo Truck,TVS Jupiter,P_04254,True
+VEH_1201,24847a730fdab129,Cargo Truck,Toyota Innova,P_02465,True
+VEH_1202,1767bca4d2355b3a,Commercial Auto,Maruti Suzuki Swift,P_03327,True
+VEH_1203,c9cc1ee9971b5bc3,Four-Wheeler,Hyundai Creta,P_01452,True
+VEH_1204,fc129139e7dcddd9,Four-Wheeler,Toyota Innova,P_00488,True
+VEH_1205,73c0b360477082e7,Four-Wheeler,Hyundai Creta,P_02618,True
+VEH_1206,4894d2ec4a7fe08c,Commercial Auto,Toyota Innova,P_04819,True
+VEH_1207,338f0a5d5bc6b2af,Four-Wheeler,TVS Jupiter,P_02363,True
+VEH_1208,aea2f3ed23123ce7,Four-Wheeler,Tata Nexon,P_03799,True
+VEH_1209,e7165cef7d8e1774,Four-Wheeler,Maruti Suzuki Swift,P_01890,True
+VEH_1210,f2c674a20bb7c198,Two-Wheeler,Honda City,P_00100,True
+VEH_1211,77d846aa16f82cb7,Cargo Truck,Maruti Suzuki Swift,P_01758,True
+VEH_1212,de87bf0bf27da885,Commercial Auto,Hyundai Creta,P_00590,True
+VEH_1213,6d00a414a0f99da0,Commercial Auto,Tata Nexon,P_04065,True
+VEH_1214,4851f3594d1b415c,Four-Wheeler,Toyota Innova,P_01201,True
+VEH_1215,78c4ab70216d1da6,Four-Wheeler,TVS Jupiter,P_04665,True
+VEH_1216,41c84cf149213da4,Cargo Truck,Maruti Suzuki Swift,P_00604,True
+VEH_1217,9690bd43e1a6e0a1,Commercial Auto,TVS Jupiter,P_04200,True
+VEH_1218,7112842cf55f9d5f,Commercial Auto,Honda City,P_02513,True
+VEH_1219,0dd85237c57b5a3d,Commercial Auto,Royal Enfield Classic 350,P_01288,True
+VEH_1220,7f2b9b8c2ba53beb,Cargo Truck,Maruti Suzuki Swift,P_00598,True
+VEH_1221,5097535d7f3b062f,Commercial Auto,Royal Enfield Classic 350,P_01505,True
+VEH_1222,622aa71d1d452454,Two-Wheeler,Maruti Suzuki Swift,P_01531,True
+VEH_1223,47a44d191ed13212,Four-Wheeler,Hyundai Creta,P_00125,True
+VEH_1224,7bee41fdafbda4b0,Two-Wheeler,Maruti Suzuki Swift,P_02918,True
+VEH_1225,73b50fe1fbdb50c4,Commercial Auto,Royal Enfield Classic 350,P_04278,True
+VEH_1226,66ac5bb34125d81a,Cargo Truck,Hyundai Creta,P_03146,True
+VEH_1227,6af3248edff542d7,Cargo Truck,Honda City,P_02741,True
+VEH_1228,0913fa9f3e9f4ee5,Commercial Auto,Bajaj Pulsar,P_03696,True
+VEH_1229,597d77376904ed37,Two-Wheeler,Royal Enfield Classic 350,P_02554,True
+VEH_1230,08d98f34f69c2cbd,Four-Wheeler,Royal Enfield Classic 350,P_01468,True
+VEH_1231,5c640c22e40a816e,Cargo Truck,Hyundai Creta,P_02144,True
+VEH_1232,442a83df171c2436,Four-Wheeler,Maruti Suzuki Swift,P_03645,True
+VEH_1233,143cea61e54c34d7,Two-Wheeler,Bajaj Pulsar,P_00051,True
+VEH_1234,0863d4676afcfef5,Commercial Auto,Tata Nexon,P_00554,True
+VEH_1235,73e6a083c4463e27,Four-Wheeler,Maruti Suzuki Swift,P_02999,True
+VEH_1236,81fe2835061ec7d8,Commercial Auto,Mahindra Scorpio,P_04484,True
+VEH_1237,da0e5302f9d79b7c,Cargo Truck,Toyota Innova,P_04662,True
+VEH_1238,08020eddc50308bf,Four-Wheeler,Bajaj Pulsar,P_04330,True
+VEH_1239,03bff93b89369f8f,Two-Wheeler,TVS Jupiter,P_04479,True
+VEH_1240,df01bcfec661e68d,Cargo Truck,Bajaj Pulsar,P_04767,True
+VEH_1241,f20c055bac4d0eb8,Two-Wheeler,Maruti Suzuki Swift,P_00787,True
+VEH_1242,15efd93812bd6b9d,Two-Wheeler,Maruti Suzuki Swift,P_01456,True
+VEH_1243,fb57d4237766530c,Four-Wheeler,Tata Nexon,P_01274,True
+VEH_1244,91865cf2700fadd6,Four-Wheeler,Mahindra Scorpio,P_01079,True
+VEH_1245,22cc89d2283e8413,Two-Wheeler,Mahindra Scorpio,P_00084,True
+VEH_1246,81dfbb530b0e4d73,Two-Wheeler,Honda City,P_01223,True
+VEH_1247,416cb14d845598da,Two-Wheeler,Tata Nexon,P_00846,True
+VEH_1248,5487e5568898a9fd,Cargo Truck,Bajaj Pulsar,P_00767,True
+VEH_1249,2fb71cb128f7c28a,Four-Wheeler,Mahindra Scorpio,P_00024,True
+VEH_1250,046844a7844efd64,Commercial Auto,TVS Jupiter,P_03766,True
+VEH_1251,039ed80cf7e8ed9b,Four-Wheeler,Mahindra Scorpio,P_01082,True
+VEH_1252,2ae4ba0f623cb1c1,Cargo Truck,Royal Enfield Classic 350,P_00607,True
+VEH_1253,feacf7af65007640,Four-Wheeler,Bajaj Pulsar,P_01788,True
+VEH_1254,1c85ebc52d157988,Cargo Truck,Honda City,P_00548,True
+VEH_1255,7f291aca41e3be49,Cargo Truck,Hyundai Creta,P_03439,True
+VEH_1256,c4ee17cf800d1ac2,Cargo Truck,Toyota Innova,P_03422,True
+VEH_1257,9d09588e3a0f8057,Cargo Truck,Royal Enfield Classic 350,P_01916,True
+VEH_1258,f989c52b2cfb9dc2,Four-Wheeler,Toyota Innova,P_02963,True
+VEH_1259,765a4e7aa6866926,Cargo Truck,Honda City,P_00297,True
+VEH_1260,c02eda2609458cae,Cargo Truck,Mahindra Scorpio,P_01841,True
+VEH_1261,41107b0f02d3671a,Two-Wheeler,Tata Nexon,P_03717,True
+VEH_1262,1f52c0a065eb3650,Commercial Auto,Hyundai Creta,P_00725,True
+VEH_1263,be947c8052b92748,Commercial Auto,Toyota Innova,P_04545,True
+VEH_1264,8dcc0a8265d50928,Cargo Truck,Bajaj Pulsar,P_00322,True
+VEH_1265,5e4856858062d894,Commercial Auto,Tata Nexon,P_01967,True
+VEH_1266,5db84eb3ef8d75ae,Two-Wheeler,Honda City,P_01808,True
+VEH_1267,4780be14d201f05a,Two-Wheeler,Honda City,P_03776,True
+VEH_1268,0ba102964eb07264,Commercial Auto,Mahindra Scorpio,P_02060,True
+VEH_1269,260942faf5ddbbc1,Commercial Auto,Hyundai Creta,P_00645,True
+VEH_1270,2b5ad91f9bea2af9,Cargo Truck,Toyota Innova,P_03825,True
+VEH_1271,ee6d5a6d5e251b6f,Commercial Auto,Royal Enfield Classic 350,P_04808,True
+VEH_1272,1119185939a5ba1d,Cargo Truck,Royal Enfield Classic 350,P_03037,True
+VEH_1273,d5a4ea3ea90f332c,Four-Wheeler,Bajaj Pulsar,P_03132,True
+VEH_1274,e898bb81dc50e472,Commercial Auto,Tata Nexon,P_02812,True
+VEH_1275,cac59ae026a13c58,Four-Wheeler,Toyota Innova,P_02510,True
+VEH_1276,417e2fbe36a150b7,Cargo Truck,Toyota Innova,P_03041,True
+VEH_1277,a7b339da77f0fd52,Cargo Truck,Mahindra Scorpio,P_00111,True
+VEH_1278,1716376d07cbc994,Two-Wheeler,Hyundai Creta,P_02225,True
+VEH_1279,e3d1417d2be982a7,Two-Wheeler,Honda City,P_04057,True
+VEH_1280,ee28e6b7a655dcb4,Commercial Auto,Hyundai Creta,P_02014,True
+VEH_1281,bb4f371aff6c8b64,Cargo Truck,Royal Enfield Classic 350,P_01803,True
+VEH_1282,f0d2ca3d0c048b4f,Four-Wheeler,Maruti Suzuki Swift,P_04472,True
+VEH_1283,bddc433ea86ef50a,Four-Wheeler,Tata Nexon,P_00986,True
+VEH_1284,e954cda6d0f3f39a,Two-Wheeler,Honda City,P_02608,True
+VEH_1285,a1f0920193f15ad6,Cargo Truck,Tata Nexon,P_03547,True
+VEH_1286,9a21d26a5665870a,Cargo Truck,Maruti Suzuki Swift,P_00922,True
+VEH_1287,d65310092a9c3a57,Commercial Auto,Bajaj Pulsar,P_03367,True
+VEH_1288,6def53a435c7580d,Cargo Truck,Tata Nexon,P_04730,True
+VEH_1289,d83891edabd34a9c,Four-Wheeler,TVS Jupiter,P_00028,True
+VEH_1290,58e9ab6454bc36d8,Cargo Truck,Toyota Innova,P_01250,True
+VEH_1291,6e39a1077cb9be12,Four-Wheeler,Toyota Innova,P_04349,True
+VEH_1292,36da440ab0b42ff1,Commercial Auto,Tata Nexon,P_00539,True
+VEH_1293,d1946f319dfeffee,Four-Wheeler,Hyundai Creta,P_03486,True
+VEH_1294,7f9634793785719f,Four-Wheeler,Mahindra Scorpio,P_03261,True
+VEH_1295,30051472e6e57775,Cargo Truck,Hyundai Creta,P_01623,True
+VEH_1296,c6751e050d088a67,Four-Wheeler,Royal Enfield Classic 350,P_01442,True
+VEH_1297,ff02eaf7b5e81a93,Two-Wheeler,Mahindra Scorpio,P_02818,True
+VEH_1298,1bc60053f7e71df3,Two-Wheeler,Mahindra Scorpio,P_01216,True
+VEH_1299,736ca3ad3f8467f2,Two-Wheeler,Mahindra Scorpio,P_01558,True
+VEH_1300,d6d162c53c7cab76,Two-Wheeler,Toyota Innova,P_01848,True
+VEH_1301,577e640c81e65970,Cargo Truck,Maruti Suzuki Swift,P_03847,True
+VEH_1302,5aa5fbb9e7842a8f,Two-Wheeler,Maruti Suzuki Swift,P_04286,True
+VEH_1303,99c0965c35561968,Two-Wheeler,Bajaj Pulsar,P_01298,True
+VEH_1304,ea715ab889b828e6,Four-Wheeler,Tata Nexon,P_03248,True
+VEH_1305,661587c654e2bfbe,Two-Wheeler,Mahindra Scorpio,P_04574,True
+VEH_1306,1bb442c510581d13,Commercial Auto,Honda City,P_04472,True
+VEH_1307,74cb4a4a575b5f91,Two-Wheeler,Tata Nexon,P_01190,True
+VEH_1308,0c2cff605e151cd4,Four-Wheeler,Tata Nexon,P_04261,True
+VEH_1309,ff7d80f061506fe4,Two-Wheeler,Toyota Innova,P_04590,True
+VEH_1310,c6abe90e35a01c21,Two-Wheeler,Maruti Suzuki Swift,P_03089,True
+VEH_1311,cb61bd34e2927cac,Two-Wheeler,Maruti Suzuki Swift,P_03192,True
+VEH_1312,5feb54a9afe3514c,Commercial Auto,Bajaj Pulsar,P_00455,True
+VEH_1313,633334571357376a,Cargo Truck,Mahindra Scorpio,P_00052,True
+VEH_1314,5912fd6546fcd8a6,Commercial Auto,Hyundai Creta,P_04602,True
+VEH_1315,955f8a7415bb0366,Cargo Truck,Royal Enfield Classic 350,P_01430,True
+VEH_1316,a19077ab013980f0,Cargo Truck,Mahindra Scorpio,P_04677,True
+VEH_1317,938f945237221949,Commercial Auto,TVS Jupiter,P_00369,True
+VEH_1318,98f63cf92d628323,Four-Wheeler,Hyundai Creta,P_03018,True
+VEH_1319,71618d2810107281,Cargo Truck,Toyota Innova,P_02703,True
+VEH_1320,940da498b336db02,Two-Wheeler,Royal Enfield Classic 350,P_04854,True
+VEH_1321,402d1ba7716b6bee,Cargo Truck,Tata Nexon,P_00494,True
+VEH_1322,4cfd497d1ae0ad05,Four-Wheeler,Royal Enfield Classic 350,P_01297,True
+VEH_1323,15013879ec3a96e9,Two-Wheeler,Tata Nexon,P_00736,True
+VEH_1324,b81c1ebcfc54822a,Cargo Truck,Royal Enfield Classic 350,P_03306,True
+VEH_1325,407571943cac5f9f,Two-Wheeler,Bajaj Pulsar,P_03888,True
+VEH_1326,b80350c486cac3ee,Two-Wheeler,Mahindra Scorpio,P_00655,True
+VEH_1327,b922e9d468835ccc,Cargo Truck,TVS Jupiter,P_02779,True
+VEH_1328,463324eec8d39af4,Four-Wheeler,Honda City,P_01664,True
+VEH_1329,385638bfd1612440,Four-Wheeler,Honda City,P_01544,True
+VEH_1330,0aceef472f48fd0f,Four-Wheeler,Tata Nexon,P_01911,True
+VEH_1331,fcbd4c6a0b0f7ac9,Commercial Auto,Toyota Innova,P_00193,True
+VEH_1332,ad5d1807c3bde947,Cargo Truck,TVS Jupiter,P_02376,True
+VEH_1333,52859efaab1be6d4,Cargo Truck,Bajaj Pulsar,P_03804,True
+VEH_1334,5071c9489ff7d60f,Commercial Auto,TVS Jupiter,P_03285,True
+VEH_1335,1d12aa531a064469,Two-Wheeler,Hyundai Creta,P_03439,True
+VEH_1336,6b1429dfd8d5f4ed,Four-Wheeler,Honda City,P_02709,True
+VEH_1337,f85620af44f194f5,Four-Wheeler,TVS Jupiter,P_01632,True
+VEH_1338,ac04adeeb01e7f95,Cargo Truck,Royal Enfield Classic 350,P_01528,True
+VEH_1339,1d250fa105e6a729,Cargo Truck,Toyota Innova,P_01126,True
+VEH_1340,4f66fac17d9c27b5,Two-Wheeler,TVS Jupiter,P_00066,True
+VEH_1341,563a5cf75fd95061,Two-Wheeler,TVS Jupiter,P_03388,True
+VEH_1342,6fdaca9497bd7e68,Commercial Auto,Honda City,P_04393,True
+VEH_1343,994fd10fe68d3692,Commercial Auto,Royal Enfield Classic 350,P_02080,True
+VEH_1344,2a444af452f5478d,Commercial Auto,Mahindra Scorpio,P_02519,True
+VEH_1345,8f2a3139d17a29f4,Two-Wheeler,Royal Enfield Classic 350,P_04665,True
+VEH_1346,4147bad5ec2c61d9,Cargo Truck,Honda City,P_04738,True
+VEH_1347,aa2b5ec1dd274dae,Two-Wheeler,Honda City,P_00141,True
+VEH_1348,21b3ebeab438484c,Cargo Truck,Royal Enfield Classic 350,P_01052,True
+VEH_1349,1d87f1c3b910ab0c,Commercial Auto,Bajaj Pulsar,P_04773,True
+VEH_1350,028687154c48227d,Four-Wheeler,TVS Jupiter,P_01058,True
+VEH_1351,8196809216cab44b,Commercial Auto,TVS Jupiter,P_02678,True
+VEH_1352,69f2a63428a5798c,Cargo Truck,Toyota Innova,P_02759,True
+VEH_1353,1572e2a242d6a9df,Four-Wheeler,Mahindra Scorpio,P_00084,True
+VEH_1354,5e59378873ea1890,Two-Wheeler,Royal Enfield Classic 350,P_00526,True
+VEH_1355,f94c626ad217d737,Four-Wheeler,Tata Nexon,P_02915,True
+VEH_1356,6a65b53401f786f9,Commercial Auto,Toyota Innova,P_03224,True
+VEH_1357,376baad0c6b1071f,Four-Wheeler,Toyota Innova,P_03862,True
+VEH_1358,30bda714df2868b6,Commercial Auto,Mahindra Scorpio,P_00564,True
+VEH_1359,d46ec3d7be0c5ae9,Two-Wheeler,Royal Enfield Classic 350,P_03178,True
+VEH_1360,d0126c2e3dc60b21,Two-Wheeler,Toyota Innova,P_00394,True
+VEH_1361,f555b02c180909b1,Four-Wheeler,Tata Nexon,P_01112,True
+VEH_1362,92d161ee12f3eb38,Two-Wheeler,Honda City,P_03331,True
+VEH_1363,53b2c1298c52a704,Cargo Truck,Royal Enfield Classic 350,P_04229,True
+VEH_1364,cacf3e02c3cf35f6,Commercial Auto,Tata Nexon,P_04662,True
+VEH_1365,9c4d9e02b1c0f739,Cargo Truck,Hyundai Creta,P_03992,True
+VEH_1366,cd9e1b5a0a135771,Commercial Auto,Honda City,P_01703,True
+VEH_1367,a17b55087c0acbd8,Two-Wheeler,Maruti Suzuki Swift,P_01339,True
+VEH_1368,219a9efd9289cf6b,Cargo Truck,Toyota Innova,P_01485,True
+VEH_1369,e6575cc4bff0f5ef,Two-Wheeler,Mahindra Scorpio,P_01647,True
+VEH_1370,10879a1fe6cbfb57,Four-Wheeler,Maruti Suzuki Swift,P_01117,True
+VEH_1371,a00bf36d18f8afc0,Four-Wheeler,Mahindra Scorpio,P_01675,True
+VEH_1372,8c6d5216cfe85dd5,Four-Wheeler,TVS Jupiter,P_03613,True
+VEH_1373,a5c8ed9e21daac1f,Cargo Truck,Toyota Innova,P_00088,True
+VEH_1374,13dcecc2bd109a6b,Two-Wheeler,Toyota Innova,P_02583,True
+VEH_1375,894ad16bb177670a,Two-Wheeler,Maruti Suzuki Swift,P_00641,True
+VEH_1376,e2e71b12b5645e2b,Two-Wheeler,TVS Jupiter,P_01398,True
+VEH_1377,fa84c969043cc3d3,Commercial Auto,Maruti Suzuki Swift,P_01041,True
+VEH_1378,80c69870d6c3196e,Cargo Truck,Maruti Suzuki Swift,P_00745,True
+VEH_1379,6afe0a81d6e0057d,Commercial Auto,Honda City,P_00427,True
+VEH_1380,a696ea13fec535d9,Cargo Truck,Honda City,P_04073,True
+VEH_1381,b10ee6d0f2b8258e,Cargo Truck,Toyota Innova,P_02182,True
+VEH_1382,db02fbf1d3c19748,Cargo Truck,Honda City,P_00410,True
+VEH_1383,92855b9bf0bd0ffe,Two-Wheeler,Tata Nexon,P_03844,True
+VEH_1384,210429cf09c5a169,Four-Wheeler,Tata Nexon,P_02595,True
+VEH_1385,478c97c0d58c5552,Commercial Auto,Bajaj Pulsar,P_02357,True
+VEH_1386,32befd5b90e3945f,Two-Wheeler,TVS Jupiter,P_02089,True
+VEH_1387,9e22790e847fba53,Four-Wheeler,Hyundai Creta,P_01065,True
+VEH_1388,fa17c8bdb9153200,Two-Wheeler,Bajaj Pulsar,P_00344,True
+VEH_1389,d3573fee9ab1177b,Four-Wheeler,Hyundai Creta,P_03723,True
+VEH_1390,243a74c1a98cb62c,Four-Wheeler,Tata Nexon,P_02888,True
+VEH_1391,f59982c90972a035,Commercial Auto,Tata Nexon,P_04901,True
+VEH_1392,667655073039c089,Commercial Auto,TVS Jupiter,P_03177,True
+VEH_1393,334b04de0c36387d,Commercial Auto,Maruti Suzuki Swift,P_02955,True
+VEH_1394,7a0fcb580538b5c2,Cargo Truck,Toyota Innova,P_02184,True
+VEH_1395,42ee8cdf7c74a9e0,Two-Wheeler,Bajaj Pulsar,P_01602,True
+VEH_1396,806e9e4e526bd5f1,Cargo Truck,Honda City,P_04211,True
+VEH_1397,9ae59bad04cc18fb,Four-Wheeler,Honda City,P_03807,True
+VEH_1398,c9ddb2b139443b38,Four-Wheeler,Bajaj Pulsar,P_02862,True
+VEH_1399,85b8b89bbfc9423c,Two-Wheeler,TVS Jupiter,P_02157,True
+VEH_1400,a1fd435a1b6f4943,Two-Wheeler,Toyota Innova,P_03393,True
+VEH_1401,854516da8e43f48d,Two-Wheeler,Toyota Innova,P_01397,True
+VEH_1402,84b5da8520a43999,Four-Wheeler,Royal Enfield Classic 350,P_02862,True
+VEH_1403,28ce8076776647ea,Commercial Auto,Tata Nexon,P_01237,True
+VEH_1404,c4bcc8503927ee05,Two-Wheeler,Mahindra Scorpio,P_00345,True
+VEH_1405,1de0fe556a298239,Cargo Truck,Royal Enfield Classic 350,P_01906,True
+VEH_1406,5f4a2453c132de84,Commercial Auto,Royal Enfield Classic 350,P_01412,True
+VEH_1407,40c0f22d76be7a01,Four-Wheeler,Honda City,P_04310,True
+VEH_1408,9a77da39e573953a,Four-Wheeler,Mahindra Scorpio,P_04006,True
+VEH_1409,4d795753471e0d3d,Four-Wheeler,Tata Nexon,P_00527,True
+VEH_1410,4c063b84649b745f,Commercial Auto,Hyundai Creta,P_03049,True
+VEH_1411,4e2347d49bc54208,Cargo Truck,Bajaj Pulsar,P_01259,True
+VEH_1412,313d1b833cf82f60,Four-Wheeler,Honda City,P_00070,True
+VEH_1413,2a3deaadb89f6522,Cargo Truck,Bajaj Pulsar,P_00480,True
+VEH_1414,658be9e5b12b618e,Two-Wheeler,Maruti Suzuki Swift,P_03181,True
+VEH_1415,a7148744a9b9cb30,Cargo Truck,TVS Jupiter,P_04393,True
+VEH_1416,8b999e66ff37cadf,Cargo Truck,Royal Enfield Classic 350,P_02357,True
+VEH_1417,8dbcaf778ce8f0e6,Commercial Auto,Tata Nexon,P_01784,True
+VEH_1418,d997dc3cad6d3ddb,Four-Wheeler,Tata Nexon,P_01467,True
+VEH_1419,7bd1b8b30092fe4f,Two-Wheeler,Maruti Suzuki Swift,P_02378,True
+VEH_1420,4602e794ef3dedfa,Four-Wheeler,Honda City,P_03979,True
+VEH_1421,56d7d08175129836,Commercial Auto,Royal Enfield Classic 350,P_04818,True
+VEH_1422,54662f93c358c66c,Four-Wheeler,Bajaj Pulsar,P_01632,True
+VEH_1423,e3bcdb152f867340,Four-Wheeler,Royal Enfield Classic 350,P_03358,True
+VEH_1424,bd5441cd4b0bf4d3,Commercial Auto,Mahindra Scorpio,P_01322,True
+VEH_1425,ec91cc3224675e61,Four-Wheeler,Maruti Suzuki Swift,P_02636,True
+VEH_1426,4197df5c9edec8a8,Four-Wheeler,Mahindra Scorpio,P_04505,True
+VEH_1427,44531eb85b2d7bc0,Four-Wheeler,Tata Nexon,P_04625,True
+VEH_1428,c25395cebc68d5c7,Cargo Truck,Tata Nexon,P_03747,True
+VEH_1429,923fc9f330624bdf,Cargo Truck,Mahindra Scorpio,P_04206,True
+VEH_1430,62f9689aa87b21ee,Four-Wheeler,Bajaj Pulsar,P_02755,True
+VEH_1431,b2b9396e6bbaab2c,Cargo Truck,Tata Nexon,P_03258,True
+VEH_1432,9f36d4f336745779,Two-Wheeler,Maruti Suzuki Swift,P_00610,True
+VEH_1433,27b18a84583a0a52,Two-Wheeler,Mahindra Scorpio,P_04988,True
+VEH_1434,f1c10439f0acf24d,Cargo Truck,Toyota Innova,P_01531,True
+VEH_1435,a0d8520b3622d729,Cargo Truck,Toyota Innova,P_00163,True
+VEH_1436,6a44a7237517a416,Two-Wheeler,Royal Enfield Classic 350,P_03033,True
+VEH_1437,d22c1307b0afdc6f,Two-Wheeler,Hyundai Creta,P_02231,True
+VEH_1438,51b084118e4f3ff8,Cargo Truck,Royal Enfield Classic 350,P_00957,True
+VEH_1439,b1d57b1278005fe3,Two-Wheeler,Royal Enfield Classic 350,P_04748,True
+VEH_1440,6727d48a8302bea2,Two-Wheeler,Tata Nexon,P_00137,True
+VEH_1441,00a7722c817d3c82,Two-Wheeler,Bajaj Pulsar,P_03150,True
+VEH_1442,197efac467d374c4,Cargo Truck,Tata Nexon,P_02652,True
+VEH_1443,adccf3aaf8d61e7d,Commercial Auto,Tata Nexon,P_02814,True
+VEH_1444,d62564d44dedb828,Two-Wheeler,TVS Jupiter,P_02489,True
+VEH_1445,2fbf2540579015e6,Cargo Truck,TVS Jupiter,P_01170,True
+VEH_1446,7a1de92d88f32e83,Cargo Truck,TVS Jupiter,P_04703,True
+VEH_1447,b516302d8a814fb1,Cargo Truck,TVS Jupiter,P_02515,True
+VEH_1448,6480b303d89fc1ec,Commercial Auto,Honda City,P_03323,True
+VEH_1449,63e832118db766ff,Four-Wheeler,Bajaj Pulsar,P_02025,True
+VEH_1450,876d175a2f67c7c3,Two-Wheeler,Bajaj Pulsar,P_02813,True
+VEH_1451,693d023e2add7029,Commercial Auto,Hyundai Creta,P_03120,True
+VEH_1452,019be4edec7bd77c,Two-Wheeler,Maruti Suzuki Swift,P_04956,True
+VEH_1453,f94e85ee19be1867,Four-Wheeler,Tata Nexon,P_00969,True
+VEH_1454,6275eb9095cf5d12,Commercial Auto,Royal Enfield Classic 350,P_03279,True
+VEH_1455,7eee07a284e7bfa1,Commercial Auto,Tata Nexon,P_02265,True
+VEH_1456,43e8f173173ab1a1,Two-Wheeler,Bajaj Pulsar,P_04017,True
+VEH_1457,205b0e34cd1f4701,Cargo Truck,Bajaj Pulsar,P_01942,True
+VEH_1458,df58baaa312d9fca,Cargo Truck,Bajaj Pulsar,P_02848,True
+VEH_1459,2a4f278ff517e239,Four-Wheeler,Toyota Innova,P_00105,True
+VEH_1460,6eafd4b384b9fb22,Commercial Auto,Royal Enfield Classic 350,P_00835,True
+VEH_1461,1c4914d8c0a5a615,Four-Wheeler,Royal Enfield Classic 350,P_02447,True
+VEH_1462,469360659c872b31,Cargo Truck,Bajaj Pulsar,P_02459,True
+VEH_1463,e36f36a72946577a,Cargo Truck,Maruti Suzuki Swift,P_00970,True
+VEH_1464,74f91c33203022d7,Two-Wheeler,Maruti Suzuki Swift,P_00926,True
+VEH_1465,1609586dc6a0e8c7,Commercial Auto,Mahindra Scorpio,P_02272,True
+VEH_1466,2c6cc21eb63074fd,Cargo Truck,Maruti Suzuki Swift,P_03223,True
+VEH_1467,81b24635f2767b3f,Two-Wheeler,Royal Enfield Classic 350,P_03066,True
+VEH_1468,e604379f66de3730,Commercial Auto,Hyundai Creta,P_02651,True
+VEH_1469,1ca08faf2c5fc2a4,Two-Wheeler,Toyota Innova,P_03486,True
+VEH_1470,f0ca4d964fde8169,Two-Wheeler,Maruti Suzuki Swift,P_02718,True
+VEH_1471,435d86645e347b9d,Commercial Auto,TVS Jupiter,P_00241,True
+VEH_1472,9a92e631fa3440bc,Commercial Auto,Bajaj Pulsar,P_02412,True
+VEH_1473,aabcd3c25080e348,Two-Wheeler,Tata Nexon,P_00790,True
+VEH_1474,bdb407d311ea4895,Commercial Auto,Tata Nexon,P_02403,True
+VEH_1475,adff5304aaf54a23,Two-Wheeler,Maruti Suzuki Swift,P_00028,True
+VEH_1476,101ed0de62b6ab8f,Two-Wheeler,Hyundai Creta,P_03870,True
+VEH_1477,ba7f0832104fbe50,Two-Wheeler,Royal Enfield Classic 350,P_02266,True
+VEH_1478,1a60c43b797ed341,Two-Wheeler,Bajaj Pulsar,P_02661,True
+VEH_1479,61e2b897f923ef45,Four-Wheeler,Tata Nexon,P_02562,True
+VEH_1480,5dba4806269d3694,Cargo Truck,Toyota Innova,P_00689,True
+VEH_1481,ca97f3222813d443,Commercial Auto,Maruti Suzuki Swift,P_02976,True
+VEH_1482,6d465e55395059a5,Two-Wheeler,Honda City,P_03864,True
+VEH_1483,bf9cfd411a6ea88d,Commercial Auto,Honda City,P_03592,True
+VEH_1484,f9196b69cf720840,Commercial Auto,Toyota Innova,P_04757,True
+VEH_1485,0e0aaa5df7bda3f6,Commercial Auto,Mahindra Scorpio,P_00301,True
+VEH_1486,237215f7be180457,Two-Wheeler,Mahindra Scorpio,P_01023,True
+VEH_1487,eec13e5d91ac379e,Two-Wheeler,Mahindra Scorpio,P_04366,True
+VEH_1488,dda8497d4b8bf8ba,Four-Wheeler,Bajaj Pulsar,P_01435,True
+VEH_1489,ee54121065b59c47,Commercial Auto,Mahindra Scorpio,P_00079,True
+VEH_1490,7f7582ac3263cea2,Four-Wheeler,Toyota Innova,P_01488,True
+VEH_1491,9e89e814696d6f63,Cargo Truck,Toyota Innova,P_01855,True
+VEH_1492,d9cbb6950a5ae5f2,Cargo Truck,Toyota Innova,P_03481,True
+VEH_1493,65a939c3dd36444b,Cargo Truck,Hyundai Creta,P_03926,True
+VEH_1494,82208b3d273400f2,Two-Wheeler,Hyundai Creta,P_02543,True
+VEH_1495,f2f70fb9d91b6308,Cargo Truck,Honda City,P_03081,True
+VEH_1496,7dae96943ba08f13,Four-Wheeler,Maruti Suzuki Swift,P_00303,True
+VEH_1497,f94c523b91d5cc16,Four-Wheeler,Mahindra Scorpio,P_04731,True
+VEH_1498,445524f488494822,Four-Wheeler,Tata Nexon,P_00780,True
+VEH_1499,7ce5b73ea993acf2,Commercial Auto,Honda City,P_01395,True
+VEH_1500,abc3f1e24a86c4ad,Commercial Auto,Honda City,P_03751,True
+VEH_1501,c6b40867cc12e943,Commercial Auto,TVS Jupiter,P_02692,True
+VEH_1502,345ce673431473c4,Two-Wheeler,Maruti Suzuki Swift,P_01468,True
+VEH_1503,0ee1c4d0888f9e58,Commercial Auto,Hyundai Creta,P_01128,True
+VEH_1504,5d117297ce23ee9c,Four-Wheeler,Hyundai Creta,P_03786,True
+VEH_1505,3503eaa41b925942,Commercial Auto,Toyota Innova,P_00811,True
+VEH_1506,1de246ac3531981c,Four-Wheeler,Bajaj Pulsar,P_03205,True
+VEH_1507,e4f5a3d3a0ba0289,Commercial Auto,Mahindra Scorpio,P_04423,True
+VEH_1508,1902faf89194a76b,Cargo Truck,Mahindra Scorpio,P_04996,True
+VEH_1509,556f47edba819a23,Two-Wheeler,Maruti Suzuki Swift,P_00186,True
+VEH_1510,c2ca0731f60a6241,Cargo Truck,Toyota Innova,P_01211,True
+VEH_1511,bf2fcaa75f070205,Four-Wheeler,Hyundai Creta,P_02565,True
+VEH_1512,ad0a9baefd50dc97,Cargo Truck,Mahindra Scorpio,P_01037,True
+VEH_1513,649e9ce72617c4b3,Four-Wheeler,Mahindra Scorpio,P_04789,True
+VEH_1514,8df8500a12b55f11,Two-Wheeler,TVS Jupiter,P_02519,True
+VEH_1515,391890b6250a94da,Four-Wheeler,Maruti Suzuki Swift,P_04702,True
+VEH_1516,ac5cdbd7faf7564f,Four-Wheeler,Bajaj Pulsar,P_01008,True
+VEH_1517,86883ed124b9ea75,Two-Wheeler,Mahindra Scorpio,P_03777,True
+VEH_1518,a1ec18aea7de9b5c,Cargo Truck,TVS Jupiter,P_01685,True
+VEH_1519,c77a5291f1d889f1,Cargo Truck,Toyota Innova,P_04272,True
+VEH_1520,1208a390f3b671a8,Commercial Auto,Maruti Suzuki Swift,P_02736,True
+VEH_1521,4994e77935a477d1,Four-Wheeler,TVS Jupiter,P_02066,True
+VEH_1522,e2a1d9764b847ea7,Two-Wheeler,TVS Jupiter,P_04654,True
+VEH_1523,c47477f2cb470794,Two-Wheeler,Royal Enfield Classic 350,P_02426,True
+VEH_1524,85e07b7e1be5d4e5,Cargo Truck,Bajaj Pulsar,P_01966,True
+VEH_1525,3d851343b67970fa,Cargo Truck,Bajaj Pulsar,P_04871,True
+VEH_1526,0c0fd11e08285e92,Four-Wheeler,Honda City,P_01451,True
+VEH_1527,784897c77209d6a7,Four-Wheeler,Hyundai Creta,P_00287,True
+VEH_1528,9b52a4a5c9b2f7d3,Commercial Auto,Mahindra Scorpio,P_02743,True
+VEH_1529,182370044427cf62,Two-Wheeler,Hyundai Creta,P_00307,True
+VEH_1530,b541d3341ec5178f,Two-Wheeler,Maruti Suzuki Swift,P_02212,True
+VEH_1531,bf40ca0da3b4b811,Commercial Auto,Hyundai Creta,P_02205,True
+VEH_1532,e2274be03906bdae,Commercial Auto,Mahindra Scorpio,P_04850,True
+VEH_1533,8c0532654cdd5a2a,Cargo Truck,Maruti Suzuki Swift,P_03428,True
+VEH_1534,a6fd4af75f96d4f8,Two-Wheeler,Maruti Suzuki Swift,P_04667,True
+VEH_1535,fb297ea8b17c2315,Commercial Auto,Bajaj Pulsar,P_03722,True
+VEH_1536,b53e5fe2097dc19a,Cargo Truck,Toyota Innova,P_04001,True
+VEH_1537,33e6002464ac594e,Cargo Truck,Mahindra Scorpio,P_00175,True
+VEH_1538,54ba144dbd19fb42,Four-Wheeler,Royal Enfield Classic 350,P_02268,True
+VEH_1539,a259c7a316ba9187,Cargo Truck,Bajaj Pulsar,P_00533,True
+VEH_1540,391d45de5abf6823,Two-Wheeler,Bajaj Pulsar,P_01823,True
+VEH_1541,32071f91cfb45b09,Four-Wheeler,Maruti Suzuki Swift,P_02105,True
+VEH_1542,3bab7a7cdbba0906,Cargo Truck,Toyota Innova,P_01582,True
+VEH_1543,49f08f225ffa13f7,Two-Wheeler,Toyota Innova,P_02215,True
+VEH_1544,a68868aba6173b35,Four-Wheeler,Mahindra Scorpio,P_00697,True
+VEH_1545,6c0b0fa059d87dbe,Four-Wheeler,Honda City,P_00544,True
+VEH_1546,ea05ed65d3b9f496,Two-Wheeler,Honda City,P_00817,True
+VEH_1547,a77af016c409426f,Four-Wheeler,Bajaj Pulsar,P_00617,True
+VEH_1548,dc03b60365515a22,Commercial Auto,Tata Nexon,P_01182,True
+VEH_1549,d06f3ffa51cf5b06,Cargo Truck,TVS Jupiter,P_01238,True
+VEH_1550,1b6f39103795e9b2,Commercial Auto,Tata Nexon,P_01454,True
+VEH_1551,ef0b3f8ded40476e,Four-Wheeler,Tata Nexon,P_02421,True
+VEH_1552,12d0c8533c69ef3b,Four-Wheeler,Tata Nexon,P_03435,True
+VEH_1553,014956303dccfce6,Cargo Truck,Mahindra Scorpio,P_02503,True
+VEH_1554,307686f21f6d8ba0,Four-Wheeler,Maruti Suzuki Swift,P_03891,True
+VEH_1555,7542b8d34d1f6640,Four-Wheeler,Maruti Suzuki Swift,P_01241,True
+VEH_1556,05e35c95ef2d5d3d,Two-Wheeler,Royal Enfield Classic 350,P_03393,True
+VEH_1557,648e42060ceb724c,Commercial Auto,Maruti Suzuki Swift,P_00082,True
+VEH_1558,60c7ffdb846d93d6,Two-Wheeler,Hyundai Creta,P_04151,True
+VEH_1559,227ab376bdebb8e3,Two-Wheeler,Maruti Suzuki Swift,P_03780,True
+VEH_1560,8331cf429c7e74fd,Two-Wheeler,TVS Jupiter,P_01407,True
+VEH_1561,5ba8eef965c891f9,Cargo Truck,Maruti Suzuki Swift,P_04269,True
+VEH_1562,445d5cd5a0515d45,Commercial Auto,Hyundai Creta,P_00205,True
+VEH_1563,609230d8c4cc0b4c,Cargo Truck,Royal Enfield Classic 350,P_00917,True
+VEH_1564,c3456e522ddb18dc,Cargo Truck,TVS Jupiter,P_00052,True
+VEH_1565,9e80dfab7a7403c3,Commercial Auto,Mahindra Scorpio,P_02019,True
+VEH_1566,240e7be2f6faf565,Commercial Auto,Maruti Suzuki Swift,P_01181,True
+VEH_1567,0a05a94538427eea,Commercial Auto,Tata Nexon,P_00140,True
+VEH_1568,622a805bbf59a3a8,Four-Wheeler,Tata Nexon,P_03079,True
+VEH_1569,6e6a09ad4c189c76,Two-Wheeler,Toyota Innova,P_00774,True
+VEH_1570,d5163630932eaaca,Four-Wheeler,Honda City,P_04565,True
+VEH_1571,3c369ff404c08d2e,Four-Wheeler,Bajaj Pulsar,P_02874,True
+VEH_1572,bb9ee400068b42a5,Four-Wheeler,Hyundai Creta,P_02619,True
+VEH_1573,ef259da652db8007,Cargo Truck,Honda City,P_04970,True
+VEH_1574,0fe937be57267eab,Two-Wheeler,Royal Enfield Classic 350,P_01040,True
+VEH_1575,08633c9a6b00a136,Commercial Auto,Bajaj Pulsar,P_04402,True
+VEH_1576,066873ddc2ff8947,Four-Wheeler,TVS Jupiter,P_04567,True
+VEH_1577,ea25aa1a90189fb4,Cargo Truck,Tata Nexon,P_00703,True
+VEH_1578,cd7b1713b59aa550,Two-Wheeler,Mahindra Scorpio,P_03220,True
+VEH_1579,f144c5bb708fdc5e,Cargo Truck,Bajaj Pulsar,P_02252,True
+VEH_1580,65d3110e8ef67535,Two-Wheeler,Tata Nexon,P_00961,True
+VEH_1581,30e12e685ce76cf3,Two-Wheeler,Royal Enfield Classic 350,P_01536,True
+VEH_1582,e06db683ff549903,Four-Wheeler,TVS Jupiter,P_01216,True
+VEH_1583,b58d2439ebb24089,Four-Wheeler,Mahindra Scorpio,P_00017,True
+VEH_1584,9ff09398f3b83a52,Cargo Truck,Honda City,P_03304,True
+VEH_1585,0298b0eadefdf8c0,Four-Wheeler,Bajaj Pulsar,P_04365,True
+VEH_1586,d603875ae4cc25eb,Four-Wheeler,Maruti Suzuki Swift,P_04749,True
+VEH_1587,db5156074861cb63,Cargo Truck,Mahindra Scorpio,P_01138,True
+VEH_1588,75370efde2199339,Cargo Truck,Bajaj Pulsar,P_04729,True
+VEH_1589,a784a7cddfc6bde1,Four-Wheeler,Honda City,P_04047,True
+VEH_1590,832973fc7a4bdc41,Four-Wheeler,Mahindra Scorpio,P_00333,True
+VEH_1591,5cb80081f08e9697,Two-Wheeler,Bajaj Pulsar,P_02320,True
+VEH_1592,a6402511953a9e38,Four-Wheeler,TVS Jupiter,P_00676,True
+VEH_1593,be6f8af75316a4b5,Commercial Auto,Bajaj Pulsar,P_03026,True
+VEH_1594,34b5117859cd5bc7,Two-Wheeler,Tata Nexon,P_00149,True
+VEH_1595,1ce1c1bb4143e81a,Commercial Auto,Toyota Innova,P_01667,True
+VEH_1596,eb330dfb75063c0a,Commercial Auto,Toyota Innova,P_03073,True
+VEH_1597,75e79172cfdf531f,Two-Wheeler,Royal Enfield Classic 350,P_03618,True
+VEH_1598,8eb59c760148770f,Four-Wheeler,Maruti Suzuki Swift,P_01141,True
+VEH_1599,cbef828d0166fdce,Commercial Auto,Bajaj Pulsar,P_03660,True
+VEH_1600,48c398ba79ffbc91,Commercial Auto,Maruti Suzuki Swift,P_04445,True
+VEH_1601,ef0c0ab974f1063e,Two-Wheeler,Tata Nexon,P_03831,True
+VEH_1602,f97da21976b90327,Commercial Auto,Tata Nexon,P_01821,True
+VEH_1603,0fb9cff223b51fff,Two-Wheeler,Hyundai Creta,P_04588,True
+VEH_1604,b35c750943578f8d,Two-Wheeler,Royal Enfield Classic 350,P_00569,True
+VEH_1605,46f1603293b5d38c,Four-Wheeler,Hyundai Creta,P_00260,True
+VEH_1606,9269b1744efc8912,Four-Wheeler,Royal Enfield Classic 350,P_03346,True
+VEH_1607,caaebc51ead77be5,Four-Wheeler,Tata Nexon,P_03755,True
+VEH_1608,90a3651cf31d6491,Cargo Truck,Mahindra Scorpio,P_01042,True
+VEH_1609,68c6a197368a4b63,Four-Wheeler,Bajaj Pulsar,P_03066,True
+VEH_1610,9052433437293f7d,Commercial Auto,Mahindra Scorpio,P_02167,True
+VEH_1611,3fb16f1d4636a691,Cargo Truck,Tata Nexon,P_01183,True
+VEH_1612,1653d683aacfc714,Four-Wheeler,Royal Enfield Classic 350,P_00207,True
+VEH_1613,e730c33ba36af748,Commercial Auto,TVS Jupiter,P_01680,True
+VEH_1614,9414195f76aa10c3,Four-Wheeler,Bajaj Pulsar,P_03456,True
+VEH_1615,cdbe3386faeb048d,Two-Wheeler,Toyota Innova,P_00832,True
+VEH_1616,ea0aedec669052bd,Cargo Truck,Maruti Suzuki Swift,P_04269,True
+VEH_1617,d35bbe64f3b08d72,Two-Wheeler,Royal Enfield Classic 350,P_01251,True
+VEH_1618,b88875ce4c773313,Cargo Truck,Royal Enfield Classic 350,P_04068,True
+VEH_1619,411a091b47e4d637,Four-Wheeler,TVS Jupiter,P_03827,True
+VEH_1620,347751faf1714abb,Cargo Truck,Maruti Suzuki Swift,P_00300,True
+VEH_1621,d1172d3a0fa7f7dc,Two-Wheeler,TVS Jupiter,P_02017,True
+VEH_1622,963dc4fec0ff1b95,Commercial Auto,Honda City,P_00440,True
+VEH_1623,14c5825e940610dd,Two-Wheeler,Tata Nexon,P_00905,True
+VEH_1624,85b9d4bdb6c744f9,Commercial Auto,Toyota Innova,P_01341,True
+VEH_1625,d172d223cee99b49,Four-Wheeler,Honda City,P_02367,True
+VEH_1626,d6136540dbb6756e,Four-Wheeler,Mahindra Scorpio,P_04075,True
+VEH_1627,15344f2254d2b751,Two-Wheeler,Mahindra Scorpio,P_02513,True
+VEH_1628,4f886ac138d32608,Four-Wheeler,Bajaj Pulsar,P_01465,True
+VEH_1629,1bb3a6cbaf4aceca,Cargo Truck,Bajaj Pulsar,P_00191,True
+VEH_1630,9aa19e74f2c412f1,Four-Wheeler,Hyundai Creta,P_00826,True
+VEH_1631,6e12e01972ca0217,Commercial Auto,Honda City,P_01607,True
+VEH_1632,5ac2455802c19e3e,Four-Wheeler,Hyundai Creta,P_03289,True
+VEH_1633,b8c2010c3755cbc2,Cargo Truck,Maruti Suzuki Swift,P_01964,True
+VEH_1634,120ef9974464e22c,Four-Wheeler,Royal Enfield Classic 350,P_00434,True
+VEH_1635,dbc2eab9e1595a24,Cargo Truck,Hyundai Creta,P_04872,True
+VEH_1636,65e3c857292f5741,Commercial Auto,Hyundai Creta,P_00733,True
+VEH_1637,780701eb32bb8b08,Four-Wheeler,Hyundai Creta,P_01972,True
+VEH_1638,8f53f33f2b982f8c,Four-Wheeler,Bajaj Pulsar,P_03400,True
+VEH_1639,54af09c3b48e608d,Commercial Auto,Toyota Innova,P_00418,True
+VEH_1640,b09e7cb59ca82795,Commercial Auto,Bajaj Pulsar,P_02693,True
+VEH_1641,caa8cbd9d2d446de,Commercial Auto,Toyota Innova,P_01831,True
+VEH_1642,46e55ee251834b32,Cargo Truck,Tata Nexon,P_04573,True
+VEH_1643,3716a9614253a96e,Cargo Truck,Maruti Suzuki Swift,P_01858,True
+VEH_1644,621b41c9538df271,Four-Wheeler,Bajaj Pulsar,P_04291,True
+VEH_1645,b89b2bd3c7a34983,Cargo Truck,Mahindra Scorpio,P_04881,True
+VEH_1646,af8a5d3a0a107ebb,Commercial Auto,Mahindra Scorpio,P_03975,True
+VEH_1647,0920983e2fd46831,Two-Wheeler,Hyundai Creta,P_00058,True
+VEH_1648,4dd8d80231c37430,Cargo Truck,Toyota Innova,P_02883,True
+VEH_1649,67280ebcd3572638,Two-Wheeler,Honda City,P_01591,True
+VEH_1650,92615a3f7d0fbdce,Four-Wheeler,Hyundai Creta,P_03201,True
+VEH_1651,9bced0d3672a9abc,Commercial Auto,Toyota Innova,P_03735,True
+VEH_1652,5ef54c70e628fc51,Cargo Truck,Toyota Innova,P_00544,True
+VEH_1653,0cf8e415acffb4c0,Commercial Auto,Tata Nexon,P_00733,True
+VEH_1654,97b40eaa964b0b01,Four-Wheeler,Tata Nexon,P_03182,True
+VEH_1655,c75dff2266643d45,Commercial Auto,Toyota Innova,P_00381,True
+VEH_1656,7256eacf051cae16,Two-Wheeler,Bajaj Pulsar,P_01820,True
+VEH_1657,c9d296ae48758bbb,Four-Wheeler,Mahindra Scorpio,P_00194,True
+VEH_1658,95e7625d56f78003,Commercial Auto,Hyundai Creta,P_00127,True
+VEH_1659,fc53a384090a9d65,Commercial Auto,Royal Enfield Classic 350,P_03902,True
+VEH_1660,4b0176d18f2f1109,Commercial Auto,Mahindra Scorpio,P_01894,True
+VEH_1661,bf244cf6efffddbb,Four-Wheeler,Toyota Innova,P_00140,True
+VEH_1662,4ee10a584dda53f9,Cargo Truck,TVS Jupiter,P_04238,True
+VEH_1663,aad2d83cf685d3c6,Two-Wheeler,Toyota Innova,P_00911,True
+VEH_1664,92c0bb4ac1eb4eb2,Two-Wheeler,Toyota Innova,P_00807,True
+VEH_1665,566e4c623409998c,Commercial Auto,Bajaj Pulsar,P_00807,True
+VEH_1666,5ef89a6e2d13bfcf,Two-Wheeler,TVS Jupiter,P_01318,True
+VEH_1667,b48554a7acc25296,Commercial Auto,Royal Enfield Classic 350,P_03030,True
+VEH_1668,015b36297945c420,Cargo Truck,Toyota Innova,P_00530,True
+VEH_1669,3d991f669b19d89b,Commercial Auto,TVS Jupiter,P_01004,True
+VEH_1670,d8b627bfd851e84d,Cargo Truck,Bajaj Pulsar,P_01884,True
+VEH_1671,3c8c45ffdec1a3ec,Four-Wheeler,Mahindra Scorpio,P_04439,True
+VEH_1672,9963a04393fb606d,Commercial Auto,Honda City,P_04219,True
+VEH_1673,fa95c0f9038e2997,Commercial Auto,Tata Nexon,P_02723,True
+VEH_1674,164044695af8d543,Commercial Auto,TVS Jupiter,P_01524,True
+VEH_1675,42a5ff023f922d6a,Cargo Truck,Maruti Suzuki Swift,P_03649,True
+VEH_1676,e0df13ba7191924a,Cargo Truck,Toyota Innova,P_01706,True
+VEH_1677,d5950269aeb36827,Cargo Truck,Tata Nexon,P_01785,True
+VEH_1678,3c4105b913f04d76,Cargo Truck,Maruti Suzuki Swift,P_02205,True
+VEH_1679,7f5b542ea8b4e7af,Commercial Auto,Toyota Innova,P_01928,True
+VEH_1680,6bf8a856e328a940,Two-Wheeler,Tata Nexon,P_03886,True
+VEH_1681,04cd3ea5dc0b360d,Commercial Auto,TVS Jupiter,P_03515,True
+VEH_1682,9e420f20f64c4cee,Four-Wheeler,Royal Enfield Classic 350,P_03689,True
+VEH_1683,39a0db27632d7e52,Commercial Auto,Toyota Innova,P_02821,True
+VEH_1684,2b2dcab9d8c0dd75,Commercial Auto,Mahindra Scorpio,P_04413,True
+VEH_1685,3def19407606e157,Two-Wheeler,Tata Nexon,P_03731,True
+VEH_1686,69aedc87204d3e09,Four-Wheeler,TVS Jupiter,P_00847,True
+VEH_1687,5ba34035c81fc300,Four-Wheeler,Royal Enfield Classic 350,P_04971,True
+VEH_1688,f04fc1af444497c6,Commercial Auto,Tata Nexon,P_04046,True
+VEH_1689,f8cf4f1e5816f7a3,Four-Wheeler,Bajaj Pulsar,P_01907,True
+VEH_1690,b9143b6e7fb310b8,Two-Wheeler,Maruti Suzuki Swift,P_01699,True
+VEH_1691,93ecfd410959520a,Four-Wheeler,Bajaj Pulsar,P_00114,True
+VEH_1692,952e4f0d1360ffc6,Cargo Truck,Hyundai Creta,P_00497,True
+VEH_1693,f01dca2e7accea26,Four-Wheeler,Maruti Suzuki Swift,P_01770,True
+VEH_1694,9a1773e937649002,Four-Wheeler,Toyota Innova,P_00089,True
+VEH_1695,5c19537cd56bbd8b,Commercial Auto,TVS Jupiter,P_01504,True
+VEH_1696,52d05ef2c4a3dc4f,Commercial Auto,TVS Jupiter,P_01310,True
+VEH_1697,c087fc0b1f254316,Two-Wheeler,Maruti Suzuki Swift,P_04020,True
+VEH_1698,340876d56f33d07b,Two-Wheeler,Honda City,P_00499,True
+VEH_1699,c6931a36f927eb89,Two-Wheeler,Toyota Innova,P_00891,True
+VEH_1700,c3c358afebde879f,Four-Wheeler,TVS Jupiter,P_01477,True
+VEH_1701,76a5471ec3487653,Four-Wheeler,Mahindra Scorpio,P_02852,True
+VEH_1702,abd1c59792fce740,Cargo Truck,Maruti Suzuki Swift,P_01028,True
+VEH_1703,2e6abac9ade9adad,Commercial Auto,TVS Jupiter,P_01362,True
+VEH_1704,503b7439627dda16,Cargo Truck,Toyota Innova,P_00192,True
+VEH_1705,c4dc5088b9044b63,Cargo Truck,Maruti Suzuki Swift,P_03430,True
+VEH_1706,cdb808ad85b82a38,Four-Wheeler,Tata Nexon,P_00366,True
+VEH_1707,a4212dbb3f48bc25,Two-Wheeler,Maruti Suzuki Swift,P_01360,True
+VEH_1708,f4b9e34d3c6d7a0a,Commercial Auto,Mahindra Scorpio,P_00267,True
+VEH_1709,91ff042091c4b2d2,Two-Wheeler,Mahindra Scorpio,P_01421,True
+VEH_1710,c58c3f9bb2f9fc3c,Two-Wheeler,Maruti Suzuki Swift,P_01375,True
+VEH_1711,05dab40473169554,Four-Wheeler,Toyota Innova,P_02819,True
+VEH_1712,b548f3e3fd5844c1,Four-Wheeler,Honda City,P_02692,True
+VEH_1713,1c8c6d06b4892aa8,Two-Wheeler,Bajaj Pulsar,P_02382,True
+VEH_1714,a5cd84761bb136ad,Two-Wheeler,Tata Nexon,P_02461,True
+VEH_1715,876cf25894613abc,Four-Wheeler,Maruti Suzuki Swift,P_04499,True
+VEH_1716,b7d8f5ce323827b5,Commercial Auto,Hyundai Creta,P_01035,True
+VEH_1717,71424418aa5d5543,Cargo Truck,TVS Jupiter,P_02731,True
+VEH_1718,51bc75fb116f469e,Two-Wheeler,Maruti Suzuki Swift,P_00966,True
+VEH_1719,0c58a48a84da79c7,Commercial Auto,TVS Jupiter,P_03767,True
+VEH_1720,badae2a5fbc06c65,Commercial Auto,Royal Enfield Classic 350,P_01494,True
+VEH_1721,570f5b38f84dbab8,Two-Wheeler,Hyundai Creta,P_04801,True
+VEH_1722,6589d9f6f9af72b3,Commercial Auto,Hyundai Creta,P_03946,True
+VEH_1723,7426c9b93caa9183,Commercial Auto,Honda City,P_03879,True
+VEH_1724,0da527489eb16930,Four-Wheeler,Honda City,P_03139,True
+VEH_1725,154453c18d999e17,Two-Wheeler,Hyundai Creta,P_03675,True
+VEH_1726,435586540d0fa46e,Two-Wheeler,Honda City,P_02584,True
+VEH_1727,b3416f1605d3e3bd,Two-Wheeler,Hyundai Creta,P_02899,True
+VEH_1728,04cea7a3fcd019be,Four-Wheeler,Mahindra Scorpio,P_01144,True
+VEH_1729,d06db53a8ad85013,Cargo Truck,Bajaj Pulsar,P_03618,True
+VEH_1730,6222315caf9ffd82,Commercial Auto,Tata Nexon,P_03067,True
+VEH_1731,86521173a3bbe574,Commercial Auto,Mahindra Scorpio,P_02132,True
+VEH_1732,205aa055bab4842a,Cargo Truck,Honda City,P_04043,True
+VEH_1733,a483858ef4189294,Two-Wheeler,Mahindra Scorpio,P_01712,True
+VEH_1734,07b3123a486f2a0b,Commercial Auto,Toyota Innova,P_00781,True
+VEH_1735,3ffaf04dc84caf8b,Cargo Truck,Bajaj Pulsar,P_02423,True
+VEH_1736,0b23372565ae471c,Two-Wheeler,Toyota Innova,P_04416,True
+VEH_1737,60fb62c8a04bd2aa,Cargo Truck,TVS Jupiter,P_01106,True
+VEH_1738,57117af072f23ab0,Two-Wheeler,TVS Jupiter,P_01027,True
+VEH_1739,f4fc17633c6d85ae,Cargo Truck,Toyota Innova,P_00657,True
+VEH_1740,5aba92eefa2782d4,Two-Wheeler,Maruti Suzuki Swift,P_00871,True
+VEH_1741,5e58de77c9a4370c,Cargo Truck,Tata Nexon,P_02005,True
+VEH_1742,f1a07688a07ce2de,Four-Wheeler,Tata Nexon,P_00105,True
+VEH_1743,efbdf76d74d64e71,Two-Wheeler,Hyundai Creta,P_02403,True
+VEH_1744,2bea6d10411f0dc8,Cargo Truck,Royal Enfield Classic 350,P_01395,True
+VEH_1745,80d12c8fc6c2a05d,Commercial Auto,Toyota Innova,P_00432,True
+VEH_1746,6abdecb376f5de9c,Two-Wheeler,Maruti Suzuki Swift,P_00154,True
+VEH_1747,c395cb6d8cdfabd2,Commercial Auto,Mahindra Scorpio,P_02061,True
+VEH_1748,e504972f35162cd4,Four-Wheeler,Honda City,P_03799,True
+VEH_1749,04815f609c1d051a,Four-Wheeler,Maruti Suzuki Swift,P_03440,True
+VEH_1750,c76501ea80886e63,Commercial Auto,Toyota Innova,P_03277,True
+VEH_1751,140216534989f2ed,Cargo Truck,Maruti Suzuki Swift,P_03884,True
+VEH_1752,1eeca1059ad9b885,Four-Wheeler,Toyota Innova,P_00085,True
+VEH_1753,143bbe75f645ecee,Four-Wheeler,Honda City,P_03471,True
+VEH_1754,da5bce7feeabe51b,Two-Wheeler,Hyundai Creta,P_01685,True
+VEH_1755,783ea6fc487456a0,Cargo Truck,Honda City,P_00764,True
+VEH_1756,133773c94879674b,Commercial Auto,Royal Enfield Classic 350,P_02859,True
+VEH_1757,dbc88c109e265f98,Cargo Truck,Tata Nexon,P_03801,True
+VEH_1758,e55b4e87fed735bb,Two-Wheeler,Maruti Suzuki Swift,P_03457,True
+VEH_1759,114d33de9fe0d5e1,Four-Wheeler,Honda City,P_03511,True
+VEH_1760,4647e1067e4fc26a,Four-Wheeler,Bajaj Pulsar,P_03616,True
+VEH_1761,6064c2ebb8079be2,Commercial Auto,Mahindra Scorpio,P_01413,True
+VEH_1762,41d73cec1fb584ea,Commercial Auto,Mahindra Scorpio,P_03648,True
+VEH_1763,81fb1c41af58f5b4,Commercial Auto,Tata Nexon,P_01795,True
+VEH_1764,877d477898e8d11c,Commercial Auto,Bajaj Pulsar,P_03185,True
+VEH_1765,117bb4631b988054,Commercial Auto,Toyota Innova,P_02452,True
+VEH_1766,ff025cdd8f572682,Four-Wheeler,Bajaj Pulsar,P_04652,True
+VEH_1767,7d9d795c6f9f6914,Four-Wheeler,Royal Enfield Classic 350,P_02229,True
+VEH_1768,1b37c8f017a0ea23,Commercial Auto,Mahindra Scorpio,P_04200,True
+VEH_1769,9be481377512b4a1,Commercial Auto,Hyundai Creta,P_03202,True
+VEH_1770,8004ff0e2328a38e,Two-Wheeler,Maruti Suzuki Swift,P_04765,True
+VEH_1771,41cf615ef89fd010,Cargo Truck,Maruti Suzuki Swift,P_02045,True
+VEH_1772,8ebd247198d4b9db,Commercial Auto,Bajaj Pulsar,P_04377,True
+VEH_1773,e29b246daf6d0216,Cargo Truck,Hyundai Creta,P_04038,True
+VEH_1774,17c788b8683985b2,Cargo Truck,TVS Jupiter,P_01077,True
+VEH_1775,9665a09d83db62a0,Four-Wheeler,Toyota Innova,P_02481,True
+VEH_1776,c2caf09a26f9dad9,Two-Wheeler,Maruti Suzuki Swift,P_00490,True
+VEH_1777,6f2936ab651121ea,Commercial Auto,Hyundai Creta,P_00091,True
+VEH_1778,9e38611f46125257,Commercial Auto,Royal Enfield Classic 350,P_00168,True
+VEH_1779,39ae3d2dd46d6de8,Four-Wheeler,Maruti Suzuki Swift,P_02765,True
+VEH_1780,2b5cfce059641c25,Two-Wheeler,Bajaj Pulsar,P_02061,True
+VEH_1781,a592364ebb11521d,Cargo Truck,Maruti Suzuki Swift,P_03315,True
+VEH_1782,f0997d380fc810e2,Cargo Truck,Royal Enfield Classic 350,P_03362,True
+VEH_1783,6ab2fcffddb86d24,Cargo Truck,Bajaj Pulsar,P_03704,True
+VEH_1784,6d762d96e9c71373,Cargo Truck,Maruti Suzuki Swift,P_03173,True
+VEH_1785,5a27abf529769037,Cargo Truck,Bajaj Pulsar,P_04223,True
+VEH_1786,58482db23560a0a6,Two-Wheeler,Maruti Suzuki Swift,P_02028,True
+VEH_1787,3cad44aea772a0bf,Cargo Truck,Honda City,P_04596,True
+VEH_1788,494f1f75efebe05b,Cargo Truck,Maruti Suzuki Swift,P_03336,True
+VEH_1789,4d38f7c9cb6135e2,Four-Wheeler,Royal Enfield Classic 350,P_01335,True
+VEH_1790,c8bfce4d242bd462,Four-Wheeler,Tata Nexon,P_04266,True
+VEH_1791,4c740d1a731aa142,Two-Wheeler,Hyundai Creta,P_04603,True
+VEH_1792,66b7a93e88d8884b,Four-Wheeler,Mahindra Scorpio,P_03799,True
+VEH_1793,09d0eb34153bef6a,Commercial Auto,Royal Enfield Classic 350,P_02523,True
+VEH_1794,0c71179fd19976b4,Two-Wheeler,Mahindra Scorpio,P_04845,True
+VEH_1795,e486e278c7bde277,Four-Wheeler,Honda City,P_04928,True
+VEH_1796,5a9ec56d70a3a61f,Cargo Truck,TVS Jupiter,P_00220,True
+VEH_1797,3e29c7416b01ea47,Four-Wheeler,TVS Jupiter,P_01556,True
+VEH_1798,a5f8516d10403690,Commercial Auto,Honda City,P_01901,True
+VEH_1799,f432b4a4d293daf2,Four-Wheeler,TVS Jupiter,P_04010,True
+VEH_1800,3a8401051b64bee2,Commercial Auto,Royal Enfield Classic 350,P_03088,True
+VEH_1801,cf32a2281eb20cde,Cargo Truck,Maruti Suzuki Swift,P_00844,True
+VEH_1802,513b0aea0bdac56e,Commercial Auto,Bajaj Pulsar,P_00764,True
+VEH_1803,59e60905035eef1c,Four-Wheeler,Hyundai Creta,P_03900,True
+VEH_1804,1a63a1768451d4f2,Four-Wheeler,Maruti Suzuki Swift,P_03656,True
+VEH_1805,46aa129bbb104ce0,Cargo Truck,Bajaj Pulsar,P_00538,True
+VEH_1806,fe1f03512a56e4ce,Two-Wheeler,Royal Enfield Classic 350,P_04508,True
+VEH_1807,43f57bec25ecca39,Cargo Truck,Maruti Suzuki Swift,P_00158,True
+VEH_1808,2eedef732546d0d6,Commercial Auto,Tata Nexon,P_03826,True
+VEH_1809,b1d26af75ccaff55,Cargo Truck,Hyundai Creta,P_04914,True
+VEH_1810,871a1c8d70aec839,Four-Wheeler,Tata Nexon,P_00128,True
+VEH_1811,d0725175a36a5063,Two-Wheeler,TVS Jupiter,P_00466,True
+VEH_1812,0e52822475ce21e6,Two-Wheeler,Honda City,P_02255,True
+VEH_1813,ca9cae6c6a1f908e,Cargo Truck,Honda City,P_02737,True
+VEH_1814,754b3aa4565c1637,Two-Wheeler,Tata Nexon,P_02492,True
+VEH_1815,cdf8e3f8a9040610,Two-Wheeler,Hyundai Creta,P_01280,True
+VEH_1816,2b339791caa14aac,Cargo Truck,Honda City,P_04669,True
+VEH_1817,2214a5bd70757473,Cargo Truck,Mahindra Scorpio,P_04998,True
+VEH_1818,86c85bf8f11310a7,Commercial Auto,Mahindra Scorpio,P_03076,True
+VEH_1819,3c9945c639816839,Commercial Auto,Maruti Suzuki Swift,P_02884,True
+VEH_1820,211d21091ebe5f6e,Cargo Truck,Hyundai Creta,P_04461,True
+VEH_1821,23ca2a1117ff7cd3,Commercial Auto,Mahindra Scorpio,P_03278,True
+VEH_1822,42bcaf5d8d8b4fe9,Two-Wheeler,TVS Jupiter,P_04179,True
+VEH_1823,be090700d9e3aeb9,Two-Wheeler,Royal Enfield Classic 350,P_01248,True
+VEH_1824,709ee447f9430c79,Cargo Truck,TVS Jupiter,P_04951,True
+VEH_1825,71843e3f3f60b96e,Cargo Truck,Honda City,P_04645,True
+VEH_1826,b627862f696bce05,Cargo Truck,Tata Nexon,P_04955,True
+VEH_1827,e699310edd2137db,Cargo Truck,Maruti Suzuki Swift,P_03145,True
+VEH_1828,57bfbd8bb19e2508,Two-Wheeler,Royal Enfield Classic 350,P_01450,True
+VEH_1829,ab3f04d3c437765a,Two-Wheeler,Tata Nexon,P_04817,True
+VEH_1830,4b01ce0a9c27dfee,Cargo Truck,Royal Enfield Classic 350,P_04555,True
+VEH_1831,517ad993e5005500,Four-Wheeler,Maruti Suzuki Swift,P_02015,True
+VEH_1832,04b7b6928f548cea,Two-Wheeler,Honda City,P_04981,True
+VEH_1833,d20ab45b4827a80b,Two-Wheeler,Hyundai Creta,P_01268,True
+VEH_1834,c6ab4ba935522b4e,Four-Wheeler,Honda City,P_02486,True
+VEH_1835,8cbac691a27a3966,Four-Wheeler,Honda City,P_01859,True
+VEH_1836,1b76f127fe864256,Four-Wheeler,Honda City,P_00969,True
+VEH_1837,d2bd3738013f1800,Cargo Truck,Tata Nexon,P_04049,True
+VEH_1838,47a2f1ebc60d78f6,Commercial Auto,Toyota Innova,P_03144,True
+VEH_1839,885898a276ddd7da,Commercial Auto,Honda City,P_00094,True
+VEH_1840,9d089fd2af14227c,Two-Wheeler,Bajaj Pulsar,P_01497,True
+VEH_1841,865967a2e93d0749,Four-Wheeler,Royal Enfield Classic 350,P_03508,True
+VEH_1842,9e518e3e171c7438,Four-Wheeler,Tata Nexon,P_04657,True
+VEH_1843,a206539c063bdaa9,Commercial Auto,Hyundai Creta,P_03882,True
+VEH_1844,874ff30ff1cc240a,Cargo Truck,Royal Enfield Classic 350,P_00824,True
+VEH_1845,df81258039c21a63,Two-Wheeler,Maruti Suzuki Swift,P_02537,True
+VEH_1846,226412c46c8cdee4,Four-Wheeler,Toyota Innova,P_01848,True
+VEH_1847,b83ce5d10bfe28f5,Four-Wheeler,Hyundai Creta,P_00105,True
+VEH_1848,24d0e3333f8ab62e,Commercial Auto,Hyundai Creta,P_04162,True
+VEH_1849,1c559f9e65b648b2,Two-Wheeler,Tata Nexon,P_00369,True
+VEH_1850,82a0b41dce238327,Two-Wheeler,Hyundai Creta,P_04840,True
+VEH_1851,899231adac1f18f2,Two-Wheeler,Mahindra Scorpio,P_02492,True
+VEH_1852,87e300744ed3bec8,Four-Wheeler,Honda City,P_04506,True
+VEH_1853,8d46def15dfcdeeb,Two-Wheeler,Royal Enfield Classic 350,P_01055,True
+VEH_1854,cd623bd3664339b4,Commercial Auto,TVS Jupiter,P_03388,True
+VEH_1855,36de1b10fd67592a,Commercial Auto,Maruti Suzuki Swift,P_04566,True
+VEH_1856,05c029a526e88186,Commercial Auto,Bajaj Pulsar,P_04859,True
+VEH_1857,6b64d9b82c15e87a,Four-Wheeler,Maruti Suzuki Swift,P_04957,True
+VEH_1858,6c24c5aaeacb5e27,Four-Wheeler,Toyota Innova,P_04058,True
+VEH_1859,0c1f451d20235a25,Commercial Auto,Honda City,P_03215,True
+VEH_1860,eb58e4253637c6f1,Cargo Truck,Maruti Suzuki Swift,P_04126,True
+VEH_1861,144db8342bd1ffbf,Commercial Auto,Maruti Suzuki Swift,P_02552,True
+VEH_1862,54be4a32d50d642c,Two-Wheeler,Mahindra Scorpio,P_04950,True
+VEH_1863,c4927b22367b7147,Two-Wheeler,Royal Enfield Classic 350,P_03225,True
+VEH_1864,e0942f8cfb5debde,Commercial Auto,Bajaj Pulsar,P_03272,True
+VEH_1865,50767127c70421c7,Commercial Auto,Tata Nexon,P_03210,True
+VEH_1866,4400b8790f66e550,Two-Wheeler,Honda City,P_03583,True
+VEH_1867,bfacccc4ab8803e4,Four-Wheeler,Tata Nexon,P_01640,True
+VEH_1868,4568052dce91ea85,Four-Wheeler,Maruti Suzuki Swift,P_04218,True
+VEH_1869,f9553987dd9de531,Four-Wheeler,Bajaj Pulsar,P_03957,True
+VEH_1870,1905f012a1df8d18,Commercial Auto,Hyundai Creta,P_04027,True
+VEH_1871,71cebfb891e9086d,Four-Wheeler,Royal Enfield Classic 350,P_03102,True
+VEH_1872,abbf5f68f9fbb574,Commercial Auto,Bajaj Pulsar,P_00386,True
+VEH_1873,0fec7a0a3dac6f74,Cargo Truck,Hyundai Creta,P_04867,True
+VEH_1874,92b8d4eafed92e7b,Commercial Auto,Tata Nexon,P_00149,True
+VEH_1875,25d65363a9dfc108,Commercial Auto,TVS Jupiter,P_03911,True
+VEH_1876,713ae205db64b3c0,Two-Wheeler,Bajaj Pulsar,P_01128,True
+VEH_1877,58fa03e6b1ac555b,Commercial Auto,Hyundai Creta,P_04689,True
+VEH_1878,b7d429a01120af10,Two-Wheeler,Royal Enfield Classic 350,P_03344,True
+VEH_1879,9cd72bc182adc3c3,Commercial Auto,Royal Enfield Classic 350,P_00023,True
+VEH_1880,66c30e0448385c22,Commercial Auto,Hyundai Creta,P_04476,True
+VEH_1881,7a6c2e93e79df197,Two-Wheeler,TVS Jupiter,P_00049,True
+VEH_1882,3d3f2703d93b8ce7,Four-Wheeler,Royal Enfield Classic 350,P_01938,True
+VEH_1883,a92e14e64e01e727,Two-Wheeler,Toyota Innova,P_00361,True
+VEH_1884,a22951fb2e3b9700,Four-Wheeler,Honda City,P_00066,True
+VEH_1885,32fb5fbbc7c8ce02,Four-Wheeler,Hyundai Creta,P_01351,True
+VEH_1886,083c70e986df2b86,Commercial Auto,Maruti Suzuki Swift,P_04984,True
+VEH_1887,69eead6b67322f9e,Cargo Truck,Toyota Innova,P_04657,True
+VEH_1888,a2d0c3837ed7c17f,Four-Wheeler,Tata Nexon,P_03215,True
+VEH_1889,90ae2120f993ec6d,Commercial Auto,Tata Nexon,P_03797,True
+VEH_1890,b516cf6095512e1a,Two-Wheeler,Honda City,P_04838,True
+VEH_1891,c6dcf5238b5fd128,Commercial Auto,Honda City,P_02386,True
+VEH_1892,6ce589dd28cdb1f1,Cargo Truck,Bajaj Pulsar,P_00990,True
+VEH_1893,256223b746207b39,Cargo Truck,Honda City,P_02705,True
+VEH_1894,39ca06432ff057c1,Cargo Truck,Tata Nexon,P_01011,True
+VEH_1895,b289fd7f4cd76406,Two-Wheeler,Royal Enfield Classic 350,P_00099,True
+VEH_1896,7f296edd351f8a76,Cargo Truck,Honda City,P_04035,True
+VEH_1897,3a89ebf03fa3e542,Four-Wheeler,Royal Enfield Classic 350,P_03327,True
+VEH_1898,9e21d2ec3595756f,Commercial Auto,Toyota Innova,P_04225,True
+VEH_1899,4703c419d695d02a,Two-Wheeler,Hyundai Creta,P_03615,True
+VEH_1900,15d46172437ec7b8,Commercial Auto,Royal Enfield Classic 350,P_00443,True
+VEH_1901,56d5ba01cfcc2ae7,Commercial Auto,Tata Nexon,P_02143,True
+VEH_1902,12e3d1f795b9fbb6,Commercial Auto,TVS Jupiter,P_04647,True
+VEH_1903,bce57c20d697c946,Commercial Auto,Mahindra Scorpio,P_00796,True
+VEH_1904,814c741f9d328a23,Four-Wheeler,Hyundai Creta,P_04692,True
+VEH_1905,e8a9f6dee9d5bb94,Two-Wheeler,Honda City,P_03315,True
+VEH_1906,04f2fa4148838095,Commercial Auto,Mahindra Scorpio,P_01596,True
+VEH_1907,ee3df6bab5666d49,Four-Wheeler,TVS Jupiter,P_03244,True
+VEH_1908,82d5081494e4cc05,Cargo Truck,Mahindra Scorpio,P_03918,True
+VEH_1909,dc0a7ae388982b1c,Two-Wheeler,Hyundai Creta,P_04618,True
+VEH_1910,0cb6220e06282ee4,Two-Wheeler,Mahindra Scorpio,P_01778,True
+VEH_1911,cd1f17a9b9e3fc9e,Two-Wheeler,Mahindra Scorpio,P_01092,True
+VEH_1912,c58d2d05b5b78edd,Two-Wheeler,Maruti Suzuki Swift,P_01525,True
+VEH_1913,2bba9ec01245530e,Two-Wheeler,TVS Jupiter,P_03081,True
+VEH_1914,88f3d4ed866e7763,Commercial Auto,Tata Nexon,P_01834,True
+VEH_1915,d1993ebe4c687532,Four-Wheeler,Maruti Suzuki Swift,P_04713,True
+VEH_1916,f83c75ac6ca8a18c,Two-Wheeler,Mahindra Scorpio,P_01868,True
+VEH_1917,65586566752f6b07,Two-Wheeler,TVS Jupiter,P_00579,True
+VEH_1918,db101efadd3042a0,Commercial Auto,Toyota Innova,P_00689,True
+VEH_1919,711ba9880c022456,Commercial Auto,Maruti Suzuki Swift,P_03626,True
+VEH_1920,d13aed4bb9eb11c4,Two-Wheeler,Mahindra Scorpio,P_04515,True
+VEH_1921,6b8a8c806211fc7e,Two-Wheeler,Honda City,P_02063,True
+VEH_1922,a8a9e8ab8c946d32,Cargo Truck,Tata Nexon,P_04133,True
+VEH_1923,a972a42e6a286514,Four-Wheeler,Royal Enfield Classic 350,P_04244,True
+VEH_1924,f72da6ef266cf982,Four-Wheeler,Maruti Suzuki Swift,P_03629,True
+VEH_1925,1ab605bc510720ae,Commercial Auto,Maruti Suzuki Swift,P_02745,True
+VEH_1926,472a3e1d7d1cf404,Four-Wheeler,Honda City,P_00695,True
+VEH_1927,0bd31a440a475789,Commercial Auto,Tata Nexon,P_04160,True
+VEH_1928,6b6bd687f42df6fc,Two-Wheeler,Toyota Innova,P_04244,True
+VEH_1929,38b979f270d948dd,Two-Wheeler,Maruti Suzuki Swift,P_03521,True
+VEH_1930,19e6f28ed5138e8b,Commercial Auto,Mahindra Scorpio,P_04261,True
+VEH_1931,3c2197e23a833f30,Cargo Truck,Hyundai Creta,P_02365,True
+VEH_1932,d37fb8c240fade9d,Two-Wheeler,Mahindra Scorpio,P_00856,True
+VEH_1933,ae365dcc9aaa00b9,Four-Wheeler,Bajaj Pulsar,P_02324,True
+VEH_1934,94627c39cf10c763,Commercial Auto,Maruti Suzuki Swift,P_04828,True
+VEH_1935,148c436216a047d9,Cargo Truck,Tata Nexon,P_03416,True
+VEH_1936,3b2f49bc6502be09,Four-Wheeler,Honda City,P_03122,True
+VEH_1937,3e8a2199a1799105,Four-Wheeler,Bajaj Pulsar,P_00612,True
+VEH_1938,d2b302995cdeb85c,Four-Wheeler,Mahindra Scorpio,P_02109,True
+VEH_1939,52c550ae2f7fdbee,Two-Wheeler,Royal Enfield Classic 350,P_01339,True
+VEH_1940,3cd8fbfe1a01875a,Two-Wheeler,TVS Jupiter,P_02008,True
+VEH_1941,2eef0591da759eec,Two-Wheeler,TVS Jupiter,P_00527,True
+VEH_1942,35f070c4e673d123,Commercial Auto,TVS Jupiter,P_00474,True
+VEH_1943,aeb431a865a876b5,Cargo Truck,Bajaj Pulsar,P_00406,True
+VEH_1944,df206fdab829f66e,Commercial Auto,Toyota Innova,P_03284,True
+VEH_1945,b6ecd2c5c255d9c9,Four-Wheeler,Honda City,P_03207,True
+VEH_1946,46c689a2980d7722,Two-Wheeler,Royal Enfield Classic 350,P_01580,True
+VEH_1947,3b5d574b315848a1,Cargo Truck,Tata Nexon,P_01650,True
+VEH_1948,018700a497722854,Four-Wheeler,Tata Nexon,P_03418,True
+VEH_1949,d4169c0f49f9d12d,Commercial Auto,Toyota Innova,P_02920,True
+VEH_1950,bdd9a1004ebe82ed,Cargo Truck,Toyota Innova,P_04186,True
+VEH_1951,7d0299c74e8f96da,Two-Wheeler,Toyota Innova,P_00819,True
+VEH_1952,670b92da3464e02d,Cargo Truck,Maruti Suzuki Swift,P_03166,True
+VEH_1953,7340a252b95e23c7,Four-Wheeler,Tata Nexon,P_02434,True
+VEH_1954,89656144f494faea,Two-Wheeler,Toyota Innova,P_00873,True
+VEH_1955,8f9fea1b12c31704,Cargo Truck,Hyundai Creta,P_04293,True
+VEH_1956,e9e187383fef0526,Cargo Truck,Mahindra Scorpio,P_04432,True
+VEH_1957,a333f628384a6b6a,Four-Wheeler,Toyota Innova,P_03850,True
+VEH_1958,9fc5453dfa125da3,Commercial Auto,Mahindra Scorpio,P_00374,True
+VEH_1959,6ff4e73a9f8fbdf3,Four-Wheeler,Maruti Suzuki Swift,P_01421,True
+VEH_1960,6c660dc02112380d,Commercial Auto,Mahindra Scorpio,P_00250,True
+VEH_1961,9954725ad1517107,Cargo Truck,Royal Enfield Classic 350,P_00543,True
+VEH_1962,2246addd5a0a5112,Commercial Auto,TVS Jupiter,P_01106,True
+VEH_1963,dd648cb0c5d2e001,Cargo Truck,Mahindra Scorpio,P_02971,True
+VEH_1964,5600c87299a3f1a9,Two-Wheeler,Maruti Suzuki Swift,P_03802,True
+VEH_1965,e253fc833774fd3b,Four-Wheeler,Honda City,P_04270,True
+VEH_1966,4f027da0f8b160bf,Commercial Auto,Honda City,P_00155,True
+VEH_1967,f0a9fa5692b0d839,Four-Wheeler,Tata Nexon,P_03541,True
+VEH_1968,92e8670508401a5c,Four-Wheeler,Maruti Suzuki Swift,P_01911,True
+VEH_1969,048e821acd4c5ebc,Commercial Auto,Toyota Innova,P_04361,True
+VEH_1970,ae4437e84bff5f03,Four-Wheeler,Honda City,P_01259,True
+VEH_1971,48d92ab78ecca036,Cargo Truck,TVS Jupiter,P_02389,True
+VEH_1972,9d61a1289f5bb6c0,Cargo Truck,Honda City,P_00547,True
+VEH_1973,7a7e46bf200bb2fb,Two-Wheeler,Mahindra Scorpio,P_00031,True
+VEH_1974,add5e985aeeb735d,Four-Wheeler,Bajaj Pulsar,P_02313,True
+VEH_1975,e1023290d711e2c2,Four-Wheeler,Tata Nexon,P_03518,True
+VEH_1976,1665fc821ac0ea1b,Cargo Truck,Tata Nexon,P_03763,True
+VEH_1977,b9286230f5bdaeec,Four-Wheeler,TVS Jupiter,P_01577,True
+VEH_1978,351fe2f9e1e5ec87,Four-Wheeler,Hyundai Creta,P_03044,True
+VEH_1979,ce3fa4f1cb78116f,Two-Wheeler,TVS Jupiter,P_04027,True
+VEH_1980,265b423ee81a3c88,Commercial Auto,Toyota Innova,P_04614,True
+VEH_1981,0a4dceb3206d1fba,Two-Wheeler,Royal Enfield Classic 350,P_01252,True
+VEH_1982,56588a344dee591a,Four-Wheeler,Hyundai Creta,P_03689,True
+VEH_1983,2b7cdda3a2f6423e,Cargo Truck,Maruti Suzuki Swift,P_00295,True
+VEH_1984,6295e5fc2b8b20da,Commercial Auto,TVS Jupiter,P_00456,True
+VEH_1985,b70e1e4cfa38f1ff,Cargo Truck,Hyundai Creta,P_03647,True
+VEH_1986,d2fee79f61fb5b76,Four-Wheeler,Hyundai Creta,P_04058,True
+VEH_1987,e136ac0e3a74f775,Four-Wheeler,Toyota Innova,P_04778,True
+VEH_1988,d6a3bdf363e251b3,Cargo Truck,Honda City,P_03028,True
+VEH_1989,21186ceeb5a02625,Cargo Truck,Honda City,P_04510,True
+VEH_1990,5974a5e2f6ee4761,Cargo Truck,Maruti Suzuki Swift,P_03924,True
+VEH_1991,58f63ebf147ae238,Four-Wheeler,Tata Nexon,P_00939,True
+VEH_1992,99f2790c7ec585cd,Cargo Truck,Hyundai Creta,P_01268,True
+VEH_1993,c00f44b32f959c1b,Cargo Truck,TVS Jupiter,P_00058,True
+VEH_1994,73b3ee6d5780dff6,Four-Wheeler,Maruti Suzuki Swift,P_00971,True
+VEH_1995,0eafda3e2d59b43a,Cargo Truck,Bajaj Pulsar,P_01180,True
+VEH_1996,52c55bb59db2a755,Commercial Auto,Bajaj Pulsar,P_03578,True
+VEH_1997,78a287671fa03e8d,Cargo Truck,Toyota Innova,P_00363,True
+VEH_1998,483acf37d1abc35c,Two-Wheeler,Bajaj Pulsar,P_01846,True
+VEH_1999,baf4d8af7a045b66,Four-Wheeler,TVS Jupiter,P_01935,True
+VEH_2000,bc74248a302c1ff8,Commercial Auto,Hyundai Creta,P_02646,True
+VEH_2001,1b8376a757c3c88c,Commercial Auto,TVS Jupiter,P_00269,True
+VEH_2002,0713c880d0172f68,Commercial Auto,Mahindra Scorpio,P_04328,True
+VEH_2003,12f62ac05a8496d4,Four-Wheeler,Bajaj Pulsar,P_01715,True
+VEH_2004,ca2c76f1c173bf38,Two-Wheeler,Maruti Suzuki Swift,P_00839,True
+VEH_2005,f2880375e9ffb198,Cargo Truck,Mahindra Scorpio,P_03282,True
+VEH_2006,a0d5406bb248858f,Cargo Truck,Hyundai Creta,P_00307,True
+VEH_2007,f26e562255d50ed1,Commercial Auto,Mahindra Scorpio,P_02027,True
+VEH_2008,3a03e919d3ed3e35,Commercial Auto,TVS Jupiter,P_04707,True
+VEH_2009,59c2c51783a38c13,Four-Wheeler,Royal Enfield Classic 350,P_02491,True
+VEH_2010,dd36a7ae57f3213a,Cargo Truck,TVS Jupiter,P_01792,True
+VEH_2011,8d1b596d8572d354,Cargo Truck,TVS Jupiter,P_02999,True
+VEH_2012,15dfa68a03150c89,Four-Wheeler,TVS Jupiter,P_01914,True
+VEH_2013,c53e00e355717bd4,Four-Wheeler,Maruti Suzuki Swift,P_01120,True
+VEH_2014,be56ed89a88186a6,Two-Wheeler,Tata Nexon,P_01858,True
+VEH_2015,c63016f3714a79e3,Commercial Auto,Hyundai Creta,P_04506,True
+VEH_2016,0d4af9aeb8d578a6,Two-Wheeler,Maruti Suzuki Swift,P_03823,True
+VEH_2017,fed539f7484e08c5,Two-Wheeler,Honda City,P_03185,True
+VEH_2018,80b0fe35aecd9701,Four-Wheeler,Bajaj Pulsar,P_02370,True
+VEH_2019,56f3f18dadfeb809,Four-Wheeler,Hyundai Creta,P_03480,True
+VEH_2020,de8f7f83ef5a20c6,Four-Wheeler,Tata Nexon,P_00631,True
+VEH_2021,17b8ae6140cb9947,Commercial Auto,Hyundai Creta,P_01868,True
+VEH_2022,bf01017c9a0174f4,Two-Wheeler,Honda City,P_04608,True
+VEH_2023,feb3e8ae3ae6d022,Cargo Truck,Tata Nexon,P_04488,True
+VEH_2024,c4339a4897d70541,Cargo Truck,Maruti Suzuki Swift,P_01242,True
+VEH_2025,726c29661201f120,Four-Wheeler,Royal Enfield Classic 350,P_01534,True
+VEH_2026,90660e17a7baa83d,Cargo Truck,TVS Jupiter,P_01009,True
+VEH_2027,19bde91c79acc7d1,Cargo Truck,Tata Nexon,P_02568,True
+VEH_2028,beb1d03ba727d43c,Two-Wheeler,Tata Nexon,P_01049,True
+VEH_2029,ccef864cf6f86a05,Cargo Truck,Hyundai Creta,P_01711,True
+VEH_2030,2ff92efed707bc08,Four-Wheeler,Toyota Innova,P_00133,True
+VEH_2031,6aec67e3c5a8a517,Commercial Auto,Tata Nexon,P_02042,True
+VEH_2032,bd57f4afb632c553,Commercial Auto,Mahindra Scorpio,P_02058,True
+VEH_2033,da1d38113591fef3,Two-Wheeler,Royal Enfield Classic 350,P_02517,True
+VEH_2034,371c21ef79fcaf1d,Two-Wheeler,Mahindra Scorpio,P_04107,True
+VEH_2035,6e963f3e4c2a0fa1,Commercial Auto,Royal Enfield Classic 350,P_02744,True
+VEH_2036,2b9e3fe694a25a32,Commercial Auto,TVS Jupiter,P_03078,True
+VEH_2037,88538b9fd49f6e19,Four-Wheeler,Bajaj Pulsar,P_02650,True
+VEH_2038,309850d34b22b20a,Commercial Auto,Mahindra Scorpio,P_02269,True
+VEH_2039,9f6fc232f36760f9,Two-Wheeler,Tata Nexon,P_04466,True
+VEH_2040,6a86b0487876fb1e,Commercial Auto,Mahindra Scorpio,P_00542,True
+VEH_2041,f327c31e804fcf4e,Commercial Auto,Toyota Innova,P_03951,True
+VEH_2042,e3a0d74a6dbd5ce2,Cargo Truck,Hyundai Creta,P_02184,True
+VEH_2043,8b901046857da557,Two-Wheeler,Mahindra Scorpio,P_00521,True
+VEH_2044,62ae39308683a6ea,Cargo Truck,Mahindra Scorpio,P_03612,True
+VEH_2045,9f19e6f062b33a2e,Four-Wheeler,Bajaj Pulsar,P_03064,True
+VEH_2046,09c79ddac03f8c0e,Commercial Auto,Mahindra Scorpio,P_00703,True
+VEH_2047,36cefa72cfa562c5,Cargo Truck,Honda City,P_01875,True
+VEH_2048,6d75e1a5dbb27f59,Four-Wheeler,Maruti Suzuki Swift,P_03981,True
+VEH_2049,f143f052a1175baf,Cargo Truck,Bajaj Pulsar,P_02623,True
+VEH_2050,0582a01cbeccd58b,Four-Wheeler,Royal Enfield Classic 350,P_04085,True
+VEH_2051,0eaac73b3fff8aef,Commercial Auto,Mahindra Scorpio,P_00591,True
+VEH_2052,c50f1f981ef4f215,Four-Wheeler,Royal Enfield Classic 350,P_00273,True
+VEH_2053,01a5fc8134883dcf,Commercial Auto,Royal Enfield Classic 350,P_02747,True
+VEH_2054,e98d56df55383a7c,Four-Wheeler,Tata Nexon,P_02410,True
+VEH_2055,fa6ecb6138a75a3a,Four-Wheeler,Royal Enfield Classic 350,P_03936,True
+VEH_2056,02c5b2f495b42f8c,Four-Wheeler,Tata Nexon,P_00157,True
+VEH_2057,6ed5d9c943100ab4,Two-Wheeler,Tata Nexon,P_01055,True
+VEH_2058,b4341660481d4de4,Two-Wheeler,Mahindra Scorpio,P_04810,True
+VEH_2059,44d59498cee35511,Four-Wheeler,Tata Nexon,P_00226,True
+VEH_2060,f01961d65bed23b8,Commercial Auto,Mahindra Scorpio,P_02146,True
+VEH_2061,e0805bc833017334,Two-Wheeler,Tata Nexon,P_02979,True
+VEH_2062,a11f296d45fc9b7e,Commercial Auto,Tata Nexon,P_01993,True
+VEH_2063,a7e1a10b5db2f030,Two-Wheeler,Toyota Innova,P_01035,True
+VEH_2064,0dea5fa7744c740b,Four-Wheeler,TVS Jupiter,P_03508,True
+VEH_2065,ef993aaf67834083,Two-Wheeler,Mahindra Scorpio,P_02241,True
+VEH_2066,7fd35325a8513342,Cargo Truck,Mahindra Scorpio,P_03583,True
+VEH_2067,0a87f6a3a93ffbc6,Commercial Auto,Honda City,P_04693,True
+VEH_2068,998fa0d7345de682,Commercial Auto,Royal Enfield Classic 350,P_00755,True
+VEH_2069,89b912b03ff14bd8,Four-Wheeler,Toyota Innova,P_02724,True
+VEH_2070,5406b5a8e7d0fd40,Four-Wheeler,Toyota Innova,P_02066,True
+VEH_2071,e9e06d21c9131da8,Commercial Auto,Honda City,P_03873,True
+VEH_2072,9b8cec7142eae216,Cargo Truck,Tata Nexon,P_02412,True
+VEH_2073,27c4909c8c5c6390,Two-Wheeler,Mahindra Scorpio,P_02770,True
+VEH_2074,c6360f2de6d54153,Commercial Auto,Tata Nexon,P_04724,True
+VEH_2075,0743c399da096222,Two-Wheeler,TVS Jupiter,P_04853,True
+VEH_2076,f7c4e2e59a613742,Two-Wheeler,TVS Jupiter,P_03428,True
+VEH_2077,912890e59203050f,Commercial Auto,Honda City,P_03366,True
+VEH_2078,09918bf284e026f1,Four-Wheeler,Maruti Suzuki Swift,P_03383,True
+VEH_2079,378e0c4f6c45e365,Two-Wheeler,TVS Jupiter,P_04836,True
+VEH_2080,c53da14d41cb011f,Four-Wheeler,Hyundai Creta,P_03402,True
+VEH_2081,22e341fb9b39458e,Cargo Truck,Hyundai Creta,P_00832,True
+VEH_2082,8e33d4705bccdb26,Four-Wheeler,Maruti Suzuki Swift,P_02054,True
+VEH_2083,1a9404e4791d01e2,Two-Wheeler,Maruti Suzuki Swift,P_03863,True
+VEH_2084,d91ba91c0df37f04,Four-Wheeler,TVS Jupiter,P_04538,True
+VEH_2085,0fdba12480e7b254,Two-Wheeler,Mahindra Scorpio,P_00966,True
+VEH_2086,cbe43a1cab8f839a,Cargo Truck,Honda City,P_03622,True
+VEH_2087,8f73bcb3f5adee7b,Commercial Auto,Tata Nexon,P_03184,True
+VEH_2088,c8c33346bf32098b,Two-Wheeler,Hyundai Creta,P_03769,True
+VEH_2089,5c37a8c737133059,Cargo Truck,Maruti Suzuki Swift,P_01764,True
+VEH_2090,c14030ec8733d797,Cargo Truck,Hyundai Creta,P_01488,True
+VEH_2091,c9d08e03a61918e6,Four-Wheeler,Royal Enfield Classic 350,P_03699,True
+VEH_2092,c18579d22378ef5b,Four-Wheeler,Toyota Innova,P_01808,True
+VEH_2093,bbd8cfd126ba5872,Four-Wheeler,Toyota Innova,P_04680,True
+VEH_2094,a72377e3d3f2a8fb,Four-Wheeler,Honda City,P_04794,True
+VEH_2095,375caf74c1ec531b,Cargo Truck,Mahindra Scorpio,P_03902,True
+VEH_2096,c1354463cb6fbb19,Commercial Auto,Bajaj Pulsar,P_00823,True
+VEH_2097,55a3ec78d8b691bd,Four-Wheeler,Hyundai Creta,P_00509,True
+VEH_2098,dfe76dcf383d4628,Four-Wheeler,Honda City,P_04056,True
+VEH_2099,e84c15dc75ef4617,Four-Wheeler,Hyundai Creta,P_00205,True
+VEH_2100,adb95f91e7629abb,Cargo Truck,Tata Nexon,P_04435,True
+VEH_2101,d59449bb5cae2360,Four-Wheeler,Maruti Suzuki Swift,P_00593,True
+VEH_2102,be40f89bc5b4b0c7,Commercial Auto,Honda City,P_04208,True
+VEH_2103,d7d19d9393cc6b38,Two-Wheeler,Mahindra Scorpio,P_02616,True
+VEH_2104,4f883c11402ae9ae,Four-Wheeler,Hyundai Creta,P_03979,True
+VEH_2105,3b2bb6bafebd40fc,Four-Wheeler,Toyota Innova,P_03937,True
+VEH_2106,69dae2d900412742,Commercial Auto,Hyundai Creta,P_04776,True
+VEH_2107,844b4a53d055cd9a,Four-Wheeler,Maruti Suzuki Swift,P_01324,True
+VEH_2108,f8eb219ea5b3becc,Commercial Auto,TVS Jupiter,P_02499,True
+VEH_2109,5ff9b64d650ecc9e,Cargo Truck,Mahindra Scorpio,P_03573,True
+VEH_2110,6211209bc928bc6d,Four-Wheeler,Mahindra Scorpio,P_04958,True
+VEH_2111,cd136f01cbf1e7b0,Four-Wheeler,TVS Jupiter,P_02020,True
+VEH_2112,4021f4362e895364,Two-Wheeler,Tata Nexon,P_02092,True
+VEH_2113,fc830032474f49af,Commercial Auto,Mahindra Scorpio,P_00676,True
+VEH_2114,af07e42b0c8fdcaf,Four-Wheeler,Tata Nexon,P_03183,True
+VEH_2115,86a4f448beebcc2e,Two-Wheeler,Tata Nexon,P_02648,True
+VEH_2116,2139b213b63f78f9,Commercial Auto,Tata Nexon,P_02977,True
+VEH_2117,f90ab3281f272588,Commercial Auto,Bajaj Pulsar,P_04893,True
+VEH_2118,90302557e1217a3a,Commercial Auto,Royal Enfield Classic 350,P_04953,True
+VEH_2119,48a8ccd8ebde8434,Commercial Auto,Maruti Suzuki Swift,P_00251,True
+VEH_2120,e18362476d80eee5,Commercial Auto,Royal Enfield Classic 350,P_03699,True
+VEH_2121,f51ca508807b5fd3,Two-Wheeler,Honda City,P_01194,True
+VEH_2122,dd2cb84a14ca7a7b,Two-Wheeler,Royal Enfield Classic 350,P_03312,True
+VEH_2123,4c0ec3c57155eb87,Four-Wheeler,Maruti Suzuki Swift,P_03903,True
+VEH_2124,d2d26cd0e012d298,Four-Wheeler,Hyundai Creta,P_01823,True
+VEH_2125,815d769aac6af6ca,Four-Wheeler,Tata Nexon,P_02184,True
+VEH_2126,21bccaca05a4c600,Cargo Truck,Maruti Suzuki Swift,P_03374,True
+VEH_2127,f6b249c1bc806bc2,Two-Wheeler,TVS Jupiter,P_01111,True
+VEH_2128,f82842edf5230ac9,Commercial Auto,Hyundai Creta,P_00998,True
+VEH_2129,d0ab13490071203e,Two-Wheeler,Tata Nexon,P_01434,True
+VEH_2130,908822253f7d20fb,Two-Wheeler,Tata Nexon,P_04406,True
+VEH_2131,c2641feb92ba6a73,Commercial Auto,Maruti Suzuki Swift,P_00011,True
+VEH_2132,e93cb6ccd38a4625,Four-Wheeler,TVS Jupiter,P_04959,True
+VEH_2133,502bfb3d2d4374ac,Four-Wheeler,Mahindra Scorpio,P_02843,True
+VEH_2134,a93f4098e653bfa5,Two-Wheeler,Tata Nexon,P_01350,True
+VEH_2135,26451d29697ad1f1,Four-Wheeler,Toyota Innova,P_04105,True
+VEH_2136,c720a5fb63bceb7d,Four-Wheeler,Tata Nexon,P_04024,True
+VEH_2137,d3b2a5e7e37500d4,Commercial Auto,Toyota Innova,P_01988,True
+VEH_2138,d4f3bb4f234bd2da,Commercial Auto,Bajaj Pulsar,P_00784,True
+VEH_2139,0836674d546a08d8,Four-Wheeler,Honda City,P_01056,True
+VEH_2140,22495a12cf3a209c,Cargo Truck,Mahindra Scorpio,P_00185,True
+VEH_2141,c0bbe7407431329c,Cargo Truck,Maruti Suzuki Swift,P_01863,True
+VEH_2142,c2dc8e738f8a75e8,Cargo Truck,Hyundai Creta,P_01818,True
+VEH_2143,923a56c927060798,Commercial Auto,Maruti Suzuki Swift,P_02613,True
+VEH_2144,5ba13c6ccf4dd1b9,Commercial Auto,Toyota Innova,P_04853,True
+VEH_2145,53cbf12617eb0d14,Cargo Truck,Maruti Suzuki Swift,P_03434,True
+VEH_2146,8389d5464cdef432,Cargo Truck,Tata Nexon,P_04355,True
+VEH_2147,9784f52953972768,Cargo Truck,Toyota Innova,P_03444,True
+VEH_2148,602f54c1173ae831,Four-Wheeler,TVS Jupiter,P_00355,True
+VEH_2149,e6df29c43d37bf61,Four-Wheeler,Mahindra Scorpio,P_03427,True
+VEH_2150,ac110a4f95ad334b,Four-Wheeler,Toyota Innova,P_01802,True
+VEH_2151,fe2ff3427d09a8a3,Commercial Auto,Tata Nexon,P_03259,True
+VEH_2152,7fcabfc29e33c624,Four-Wheeler,Tata Nexon,P_02647,True
+VEH_2153,52ecc26ccaaf33d2,Two-Wheeler,Honda City,P_01427,True
+VEH_2154,b6761795ed1a8f48,Two-Wheeler,Hyundai Creta,P_03723,True
+VEH_2155,ce4dfc2f7eb9588b,Four-Wheeler,Royal Enfield Classic 350,P_04919,True
+VEH_2156,f6fa88d05a773ad7,Two-Wheeler,Maruti Suzuki Swift,P_03148,True
+VEH_2157,a63f3800282387da,Commercial Auto,Honda City,P_01348,True
+VEH_2158,fb8d6154daf71744,Commercial Auto,Mahindra Scorpio,P_01183,True
+VEH_2159,4675be72a012327c,Two-Wheeler,Hyundai Creta,P_02640,True
+VEH_2160,6d7c24955bdb42ca,Cargo Truck,Tata Nexon,P_04957,True
+VEH_2161,c4c6815efc55c7d8,Two-Wheeler,Hyundai Creta,P_03626,True
+VEH_2162,3f4abb9b46cb7dbe,Four-Wheeler,Tata Nexon,P_01074,True
+VEH_2163,af8740c14c17f537,Two-Wheeler,Hyundai Creta,P_02943,True
+VEH_2164,e9690add167f3dfc,Four-Wheeler,Mahindra Scorpio,P_03890,True
+VEH_2165,8d2aa5b143694adb,Four-Wheeler,Maruti Suzuki Swift,P_01765,True
+VEH_2166,870652936eead3a5,Four-Wheeler,Bajaj Pulsar,P_02936,True
+VEH_2167,1bf23ab3d61c4d55,Two-Wheeler,Maruti Suzuki Swift,P_00871,True
+VEH_2168,0f1129581c1ea547,Four-Wheeler,TVS Jupiter,P_00695,True
+VEH_2169,f7e9e98d04fab6cc,Four-Wheeler,Toyota Innova,P_03525,True
+VEH_2170,1fb60abae66d7eae,Four-Wheeler,Honda City,P_04129,True
+VEH_2171,27653cfb5d611d72,Cargo Truck,Honda City,P_00021,True
+VEH_2172,ee38fcaf47ac952d,Commercial Auto,Mahindra Scorpio,P_00004,True
+VEH_2173,223def330bccfcee,Cargo Truck,Mahindra Scorpio,P_00679,True
+VEH_2174,cc6a157607291358,Cargo Truck,Honda City,P_02716,True
+VEH_2175,4d2bcd8e17c527ae,Four-Wheeler,TVS Jupiter,P_00106,True
+VEH_2176,73f4e541877e2f4a,Cargo Truck,Hyundai Creta,P_00658,True
+VEH_2177,4768f9ada673fec6,Commercial Auto,Toyota Innova,P_00479,True
+VEH_2178,1248565a40069873,Four-Wheeler,Hyundai Creta,P_01025,True
+VEH_2179,84dc9f7e448e2ba9,Four-Wheeler,TVS Jupiter,P_04081,True
+VEH_2180,880d02059c03cf3d,Two-Wheeler,Tata Nexon,P_01082,True
+VEH_2181,824979c98de4a0de,Cargo Truck,TVS Jupiter,P_00197,True
+VEH_2182,a193d15b20527305,Two-Wheeler,Tata Nexon,P_01239,True
+VEH_2183,6523b60a74e8d532,Cargo Truck,Hyundai Creta,P_01131,True
+VEH_2184,5c12551b6556db8e,Cargo Truck,Royal Enfield Classic 350,P_01808,True
+VEH_2185,62a31b6457cea3ae,Four-Wheeler,Honda City,P_01578,True
+VEH_2186,cc98604659481e44,Two-Wheeler,Toyota Innova,P_02061,True
+VEH_2187,ad710efc9d94a7f2,Commercial Auto,Honda City,P_03583,True
+VEH_2188,ae2e41917037c37f,Two-Wheeler,Royal Enfield Classic 350,P_01710,True
+VEH_2189,c9c51453be82117e,Two-Wheeler,Hyundai Creta,P_04118,True
+VEH_2190,c5dc9f1ceb8a740a,Two-Wheeler,Mahindra Scorpio,P_04387,True
+VEH_2191,dc9f04d7ce35ada3,Two-Wheeler,Royal Enfield Classic 350,P_02893,True
+VEH_2192,7ef1d68e455e28f8,Four-Wheeler,Mahindra Scorpio,P_03022,True
+VEH_2193,fc8c8f4bdcb354bd,Two-Wheeler,Toyota Innova,P_01808,True
+VEH_2194,1404e95d299514e0,Cargo Truck,Toyota Innova,P_03162,True
+VEH_2195,4d5f7b980ee17b73,Two-Wheeler,Royal Enfield Classic 350,P_01309,True
+VEH_2196,58cfd8649df5f5f4,Commercial Auto,Hyundai Creta,P_00178,True
+VEH_2197,dc36c274a601e295,Cargo Truck,Tata Nexon,P_04649,True
+VEH_2198,857baadb27458a17,Cargo Truck,Tata Nexon,P_00445,True
+VEH_2199,6f1327ab282b9274,Two-Wheeler,Tata Nexon,P_04893,True
+VEH_2200,88a13d6533f2a163,Commercial Auto,Mahindra Scorpio,P_02157,True
+VEH_2201,d97883622eec572f,Four-Wheeler,Royal Enfield Classic 350,P_03042,True
+VEH_2202,8e917042f7fb9518,Four-Wheeler,TVS Jupiter,P_04507,True
+VEH_2203,d65d1adc9da2c20c,Commercial Auto,TVS Jupiter,P_01122,True
+VEH_2204,4a78f66f3e3932e0,Two-Wheeler,TVS Jupiter,P_00199,True
+VEH_2205,6db555b35cd5abfb,Two-Wheeler,Honda City,P_03710,True
+VEH_2206,5ff512ceec3be899,Commercial Auto,Maruti Suzuki Swift,P_04649,True
+VEH_2207,9a2fff9794eedd27,Four-Wheeler,Royal Enfield Classic 350,P_03648,True
+VEH_2208,9db902ef054eadfa,Two-Wheeler,Bajaj Pulsar,P_03493,True
+VEH_2209,681b8cc7a4dc4d48,Commercial Auto,Maruti Suzuki Swift,P_00402,True
+VEH_2210,d6af2ba6dee4e74f,Two-Wheeler,Bajaj Pulsar,P_01668,True
+VEH_2211,b6fedd02fdfa6660,Two-Wheeler,Royal Enfield Classic 350,P_00188,True
+VEH_2212,23d18c4eb76fbdf3,Four-Wheeler,Mahindra Scorpio,P_03123,True
+VEH_2213,d0bc0fbb03cff307,Two-Wheeler,Royal Enfield Classic 350,P_04911,True
+VEH_2214,eff6edc042de5dde,Four-Wheeler,Honda City,P_04656,True
+VEH_2215,0763f79cd614eb48,Two-Wheeler,Hyundai Creta,P_04620,True
+VEH_2216,95c9ee997af5f1dc,Commercial Auto,Hyundai Creta,P_00888,True
+VEH_2217,d32063905c5469e6,Four-Wheeler,Maruti Suzuki Swift,P_04027,True
+VEH_2218,9bbc2030a215cdbb,Commercial Auto,Maruti Suzuki Swift,P_02390,True
+VEH_2219,083d428ff63bccd2,Cargo Truck,Hyundai Creta,P_02856,True
+VEH_2220,da7ddee73d41c06c,Four-Wheeler,Toyota Innova,P_01565,True
+VEH_2221,0cd17aa27996bdc1,Commercial Auto,TVS Jupiter,P_02620,True
+VEH_2222,f730894d6cef476a,Commercial Auto,Hyundai Creta,P_03304,True
+VEH_2223,3426f92beeb58591,Four-Wheeler,Bajaj Pulsar,P_02197,True
+VEH_2224,3bb5eeade3e58875,Cargo Truck,TVS Jupiter,P_00842,True
+VEH_2225,38857cf7878d3afd,Cargo Truck,TVS Jupiter,P_00843,True
+VEH_2226,c19387a81c7a0e0a,Cargo Truck,Royal Enfield Classic 350,P_04335,True
+VEH_2227,2f41f936cbf9513b,Two-Wheeler,TVS Jupiter,P_02919,True
+VEH_2228,6e72b4f042147bb1,Commercial Auto,Toyota Innova,P_00231,True
+VEH_2229,a60783026ac24988,Commercial Auto,Bajaj Pulsar,P_00549,True
+VEH_2230,1b4a1577b933d3b4,Commercial Auto,Toyota Innova,P_02071,True
+VEH_2231,a5ac9c83600ed4b9,Commercial Auto,Bajaj Pulsar,P_01337,True
+VEH_2232,2efe7d821d21de0e,Commercial Auto,TVS Jupiter,P_03949,True
+VEH_2233,0ef27ca1bf10acdf,Cargo Truck,Honda City,P_03485,True
+VEH_2234,753c8d16fed61068,Two-Wheeler,Mahindra Scorpio,P_00053,True
+VEH_2235,3440e221199966da,Cargo Truck,Tata Nexon,P_03924,True
+VEH_2236,36f3e32559627766,Four-Wheeler,Honda City,P_02595,True
+VEH_2237,d92cbd9a0125074e,Commercial Auto,Toyota Innova,P_01031,True
+VEH_2238,2d048b045e5f4bd7,Two-Wheeler,Bajaj Pulsar,P_03827,True
+VEH_2239,32c34f23085047bd,Cargo Truck,Tata Nexon,P_00066,True
+VEH_2240,fc6ce52ab6c9df8d,Cargo Truck,TVS Jupiter,P_03893,True
+VEH_2241,652beab7be87517d,Commercial Auto,Hyundai Creta,P_04203,True
+VEH_2242,0b84dcd038964f94,Two-Wheeler,Bajaj Pulsar,P_03195,True
+VEH_2243,4abc013c4e23d50d,Four-Wheeler,Hyundai Creta,P_01200,True
+VEH_2244,9b4c30688387e667,Commercial Auto,Tata Nexon,P_01585,True
+VEH_2245,267c65b5c5950927,Cargo Truck,Toyota Innova,P_03961,True
+VEH_2246,bba854c805526d35,Cargo Truck,Hyundai Creta,P_04749,True
+VEH_2247,1b0c74a419590f33,Cargo Truck,Toyota Innova,P_03267,True
+VEH_2248,1d2b58b2eaa5b12d,Two-Wheeler,Royal Enfield Classic 350,P_04389,True
+VEH_2249,6f50611d71391c31,Two-Wheeler,Toyota Innova,P_01248,True
+VEH_2250,cbe1c1a94fd0eaac,Cargo Truck,Toyota Innova,P_01608,True
+VEH_2251,8b74cdc4a683b0a7,Four-Wheeler,Hyundai Creta,P_04747,True
+VEH_2252,b9851f0c79433441,Commercial Auto,TVS Jupiter,P_00175,True
+VEH_2253,2a4e1616a993f3bd,Cargo Truck,Hyundai Creta,P_02741,True
+VEH_2254,9408af5f52eb5f9d,Four-Wheeler,Maruti Suzuki Swift,P_00788,True
+VEH_2255,6d6acc0ae9bc0f10,Four-Wheeler,Royal Enfield Classic 350,P_00074,True
+VEH_2256,ac46b9bab5917b3a,Cargo Truck,Mahindra Scorpio,P_02192,True
+VEH_2257,2ff447061deeb2f0,Commercial Auto,Mahindra Scorpio,P_02611,True
+VEH_2258,d0f293bcf72fe529,Two-Wheeler,Hyundai Creta,P_04917,True
+VEH_2259,15a7326523142d26,Cargo Truck,Hyundai Creta,P_02114,True
+VEH_2260,74e5eb1e179915a1,Two-Wheeler,Royal Enfield Classic 350,P_02372,True
+VEH_2261,8b36388137041411,Cargo Truck,Tata Nexon,P_03340,True
+VEH_2262,ad0743689a780f4e,Commercial Auto,Royal Enfield Classic 350,P_04010,True
+VEH_2263,718f29cfb6e5197e,Commercial Auto,TVS Jupiter,P_01053,True
+VEH_2264,df8e25a0b6661ae9,Cargo Truck,Maruti Suzuki Swift,P_04070,True
+VEH_2265,7870d593913c201b,Four-Wheeler,Maruti Suzuki Swift,P_02619,True
+VEH_2266,15b89d0fd80a968c,Cargo Truck,Mahindra Scorpio,P_01174,True
+VEH_2267,37aa31a6e2720992,Commercial Auto,Mahindra Scorpio,P_01921,True
+VEH_2268,472e7ed0272c7f53,Four-Wheeler,Mahindra Scorpio,P_00106,True
+VEH_2269,1a300650687edb03,Two-Wheeler,Bajaj Pulsar,P_04876,True
+VEH_2270,07fa1e6379b7730a,Four-Wheeler,Honda City,P_04452,True
+VEH_2271,ebe8afa06ac3ee4e,Four-Wheeler,Toyota Innova,P_02331,True
+VEH_2272,ef2c2e14c75c5055,Four-Wheeler,Maruti Suzuki Swift,P_01886,True
+VEH_2273,6d88e1449f8d4d76,Two-Wheeler,Royal Enfield Classic 350,P_00726,True
+VEH_2274,54b66d2047083a94,Two-Wheeler,Bajaj Pulsar,P_00675,True
+VEH_2275,aa7235345eaf5599,Commercial Auto,Toyota Innova,P_04687,True
+VEH_2276,3633dadd3877ac76,Two-Wheeler,Maruti Suzuki Swift,P_02847,True
+VEH_2277,052265c94f1cdd06,Two-Wheeler,Maruti Suzuki Swift,P_02858,True
+VEH_2278,32000a1c17fac38c,Cargo Truck,Mahindra Scorpio,P_04954,True
+VEH_2279,013aeabdf111b8a0,Four-Wheeler,Bajaj Pulsar,P_04789,True
+VEH_2280,ac55fd0ad253faae,Commercial Auto,TVS Jupiter,P_03344,True
+VEH_2281,7484e9910d7207ab,Four-Wheeler,Royal Enfield Classic 350,P_03924,True
+VEH_2282,f7a36bbb48d4b41e,Two-Wheeler,Bajaj Pulsar,P_04042,True
+VEH_2283,0b7f8967553b5685,Four-Wheeler,Toyota Innova,P_00202,True
+VEH_2284,0dd3c984deaf3668,Two-Wheeler,TVS Jupiter,P_03290,True
+VEH_2285,759469309ca2073c,Four-Wheeler,TVS Jupiter,P_04313,True
+VEH_2286,984c396199123613,Commercial Auto,Hyundai Creta,P_03238,True
+VEH_2287,b7d0f45536531651,Four-Wheeler,Bajaj Pulsar,P_04991,True
+VEH_2288,257f929e10b546e8,Two-Wheeler,Bajaj Pulsar,P_00870,True
+VEH_2289,4af627dc588c634f,Commercial Auto,Tata Nexon,P_03554,True
+VEH_2290,cbd54570aa676c19,Commercial Auto,Bajaj Pulsar,P_01540,True
+VEH_2291,69bc69d6a2b7dcad,Cargo Truck,Honda City,P_01023,True
+VEH_2292,aa34d522611111d1,Two-Wheeler,TVS Jupiter,P_04518,True
+VEH_2293,04fdf8f01f012de8,Commercial Auto,Toyota Innova,P_03248,True
+VEH_2294,485dec61c91ca5f3,Cargo Truck,Honda City,P_04402,True
+VEH_2295,208811b028ffe3e2,Two-Wheeler,Maruti Suzuki Swift,P_04944,True
+VEH_2296,3f7310d922704c02,Cargo Truck,Bajaj Pulsar,P_03664,True
+VEH_2297,284411879965980b,Two-Wheeler,Maruti Suzuki Swift,P_01158,True
+VEH_2298,5c8b757cfb981394,Four-Wheeler,Toyota Innova,P_00109,True
+VEH_2299,990e058a1b8f42fd,Four-Wheeler,Honda City,P_01401,True
+VEH_2300,48ad53407fdeccd0,Two-Wheeler,Tata Nexon,P_01328,True
+VEH_2301,b3a64c8b14610e34,Cargo Truck,Bajaj Pulsar,P_00129,True
+VEH_2302,a98dd67648c7e04a,Two-Wheeler,Mahindra Scorpio,P_00163,True
+VEH_2303,db79a78790e1e1ec,Cargo Truck,Tata Nexon,P_02175,True
+VEH_2304,c23c607b7866286a,Cargo Truck,Maruti Suzuki Swift,P_02676,True
+VEH_2305,1f554004453f85a6,Commercial Auto,Royal Enfield Classic 350,P_04896,True
+VEH_2306,f2abb5c0be4da89e,Cargo Truck,Maruti Suzuki Swift,P_03117,True
+VEH_2307,f32266a30b1b0908,Commercial Auto,Mahindra Scorpio,P_02132,True
+VEH_2308,191f93409e61d5f7,Commercial Auto,Bajaj Pulsar,P_03432,True
+VEH_2309,5ee5831e36632416,Commercial Auto,Bajaj Pulsar,P_01625,True
+VEH_2310,6348cf71e8508d8e,Two-Wheeler,Bajaj Pulsar,P_03515,True
+VEH_2311,8326fe8d2aeec7ff,Commercial Auto,Honda City,P_04337,True
+VEH_2312,2eb59c7294e5fa37,Cargo Truck,TVS Jupiter,P_02990,True
+VEH_2313,7786acce54a9081e,Cargo Truck,Mahindra Scorpio,P_01304,True
+VEH_2314,770941d3143b9c50,Cargo Truck,Honda City,P_01998,True
+VEH_2315,4a6263560a6d60e2,Commercial Auto,Toyota Innova,P_00195,True
+VEH_2316,b3ff6bf5d159ceb7,Commercial Auto,Tata Nexon,P_04455,True
+VEH_2317,ee531a08d125064e,Two-Wheeler,Maruti Suzuki Swift,P_03751,True
+VEH_2318,fc940458769c6041,Four-Wheeler,Mahindra Scorpio,P_04647,True
+VEH_2319,65c0f2df99ecf48e,Commercial Auto,Tata Nexon,P_04836,True
+VEH_2320,900862f721b50518,Four-Wheeler,Mahindra Scorpio,P_04606,True
+VEH_2321,50f179be651d3b94,Four-Wheeler,Hyundai Creta,P_02903,True
+VEH_2322,b5ff5be19e4bd0cc,Two-Wheeler,Toyota Innova,P_00190,True
+VEH_2323,528b0ab4cb5dbf95,Cargo Truck,Hyundai Creta,P_01141,True
+VEH_2324,4da7bd4ab8f041a7,Commercial Auto,Mahindra Scorpio,P_04123,True
+VEH_2325,a41eeccb6767902d,Two-Wheeler,Hyundai Creta,P_01166,True
+VEH_2326,078edc476bbf41ec,Two-Wheeler,Royal Enfield Classic 350,P_02933,True
+VEH_2327,f19c882ec6f68b3e,Commercial Auto,Royal Enfield Classic 350,P_01501,True
+VEH_2328,2345c26cc0724d1f,Two-Wheeler,Mahindra Scorpio,P_04426,True
+VEH_2329,3939c5c1f3b306a6,Commercial Auto,Toyota Innova,P_00658,True
+VEH_2330,0817d6cce182da2b,Four-Wheeler,Mahindra Scorpio,P_02656,True
+VEH_2331,55fb06e521ee2a5e,Commercial Auto,Toyota Innova,P_02929,True
+VEH_2332,e5b51694cd3d36e2,Two-Wheeler,Tata Nexon,P_03883,True
+VEH_2333,39d90777dda36ccc,Commercial Auto,Mahindra Scorpio,P_03624,True
+VEH_2334,0c2c897f3fc8f93f,Commercial Auto,Toyota Innova,P_03897,True
+VEH_2335,78bbdcbe574a2051,Four-Wheeler,Royal Enfield Classic 350,P_02157,True
+VEH_2336,df19fb9d98777b63,Cargo Truck,Bajaj Pulsar,P_00971,True
+VEH_2337,d970845ec0b7419f,Two-Wheeler,Royal Enfield Classic 350,P_04678,True
+VEH_2338,d02ca93c03f9c512,Commercial Auto,Mahindra Scorpio,P_04897,True
+VEH_2339,1b8b9aaa7ff6a7a7,Four-Wheeler,Honda City,P_02750,True
+VEH_2340,e1510e23895a89e3,Cargo Truck,Tata Nexon,P_01025,True
+VEH_2341,bbedbf64f24db778,Two-Wheeler,Mahindra Scorpio,P_02346,True
+VEH_2342,57592650b7ab8fe2,Commercial Auto,Honda City,P_04210,True
+VEH_2343,ea8d50791c8c3a9f,Two-Wheeler,Tata Nexon,P_03026,True
+VEH_2344,3305fc86442afc6e,Two-Wheeler,Bajaj Pulsar,P_01440,True
+VEH_2345,2e7190cf85c5cf81,Cargo Truck,Toyota Innova,P_03618,True
+VEH_2346,3eca16885a6d67e5,Four-Wheeler,Toyota Innova,P_02447,True
+VEH_2347,aa958b0ea891ff07,Commercial Auto,Bajaj Pulsar,P_01664,True
+VEH_2348,37702b4b435a4fd0,Two-Wheeler,Hyundai Creta,P_00313,True
+VEH_2349,a744088e1b1ee099,Cargo Truck,Toyota Innova,P_00130,True
+VEH_2350,10d6ba7429c4168f,Commercial Auto,Tata Nexon,P_03194,True
+VEH_2351,83fa6e514420db53,Cargo Truck,Bajaj Pulsar,P_00914,True
+VEH_2352,bbd565cdd18e9b6b,Two-Wheeler,Bajaj Pulsar,P_04104,True
+VEH_2353,02900b8a76f32e49,Four-Wheeler,Mahindra Scorpio,P_03253,True
+VEH_2354,5db2c91ad1a3b679,Four-Wheeler,TVS Jupiter,P_00934,True
+VEH_2355,38562a77658cfec8,Cargo Truck,TVS Jupiter,P_00009,True
+VEH_2356,d84548f4b0b24e23,Four-Wheeler,Toyota Innova,P_01610,True
+VEH_2357,c895757d5300d9d4,Cargo Truck,Maruti Suzuki Swift,P_01073,True
+VEH_2358,372e670d54a27822,Commercial Auto,Mahindra Scorpio,P_02537,True
+VEH_2359,f30189e3c5ff00c8,Four-Wheeler,TVS Jupiter,P_03249,True
+VEH_2360,84836734234c4f59,Cargo Truck,Mahindra Scorpio,P_02286,True
+VEH_2361,2c7c2b8c33a1f666,Two-Wheeler,Bajaj Pulsar,P_01198,True
+VEH_2362,15076f321527653b,Two-Wheeler,Mahindra Scorpio,P_04502,True
+VEH_2363,53b57df785bca6d8,Two-Wheeler,Hyundai Creta,P_01997,True
+VEH_2364,e14adf73d51e9d11,Four-Wheeler,Tata Nexon,P_01220,True
+VEH_2365,c80931e16f04342e,Two-Wheeler,Toyota Innova,P_01934,True
+VEH_2366,7c5a56ff5a4a6728,Four-Wheeler,Royal Enfield Classic 350,P_04381,True
+VEH_2367,36ba0682c6ecb023,Four-Wheeler,Bajaj Pulsar,P_04632,True
+VEH_2368,83a97244d7d7844e,Commercial Auto,Maruti Suzuki Swift,P_03817,True
+VEH_2369,d456f98d2ce5afd7,Two-Wheeler,Maruti Suzuki Swift,P_02897,True
+VEH_2370,8834473d5424783b,Cargo Truck,TVS Jupiter,P_00073,True
+VEH_2371,ddd07606da6efa36,Commercial Auto,Maruti Suzuki Swift,P_04464,True
+VEH_2372,9649300aa7074fa0,Four-Wheeler,Toyota Innova,P_00663,True
+VEH_2373,4c39ecf8a47a01c4,Commercial Auto,Toyota Innova,P_02175,True
+VEH_2374,a5b4af4b5127f07b,Cargo Truck,Toyota Innova,P_02773,True
+VEH_2375,ca87c908048ef2b0,Cargo Truck,Hyundai Creta,P_01936,True
+VEH_2376,994bd75987bb913d,Two-Wheeler,Bajaj Pulsar,P_03402,True
+VEH_2377,348efaad1282b9fc,Cargo Truck,Tata Nexon,P_03291,True
+VEH_2378,6628c15753e9cad8,Two-Wheeler,Toyota Innova,P_04147,True
+VEH_2379,ae0d72c6a55a745e,Four-Wheeler,TVS Jupiter,P_02395,True
+VEH_2380,f817106ff36a6d4c,Commercial Auto,Royal Enfield Classic 350,P_00564,True
+VEH_2381,276fa6ba9ac9ecd3,Two-Wheeler,TVS Jupiter,P_03476,True
+VEH_2382,f7bdfa8a56f9dbed,Cargo Truck,Hyundai Creta,P_03745,True
+VEH_2383,aedcc809d5cc604d,Commercial Auto,Toyota Innova,P_01521,True
+VEH_2384,bc71b53367580ceb,Cargo Truck,Royal Enfield Classic 350,P_01698,True
+VEH_2385,d1ae1c5818fc1f8e,Cargo Truck,Toyota Innova,P_03090,True
+VEH_2386,910d48b7e7175270,Two-Wheeler,Mahindra Scorpio,P_03092,True
+VEH_2387,468dde7a33217d86,Two-Wheeler,Mahindra Scorpio,P_03290,True
+VEH_2388,c448f23839799eef,Four-Wheeler,Tata Nexon,P_04865,True
+VEH_2389,3e64469243762bab,Four-Wheeler,Mahindra Scorpio,P_02344,True
+VEH_2390,a462116237e6a6c2,Cargo Truck,Hyundai Creta,P_00672,True
+VEH_2391,38c20c879dbb0d4c,Two-Wheeler,Hyundai Creta,P_04345,True
+VEH_2392,2fc1022e65db7cb8,Cargo Truck,Royal Enfield Classic 350,P_00438,True
+VEH_2393,c57f78967285ec12,Cargo Truck,Honda City,P_04724,True
+VEH_2394,a5cd07da7297b816,Two-Wheeler,Maruti Suzuki Swift,P_02587,True
+VEH_2395,5bd9b5c93c50bc32,Commercial Auto,Bajaj Pulsar,P_03353,True
+VEH_2396,e150861e804d469f,Four-Wheeler,Bajaj Pulsar,P_00836,True
+VEH_2397,6e7947a10d987232,Four-Wheeler,Royal Enfield Classic 350,P_01993,True
+VEH_2398,825d6cc4021918d9,Commercial Auto,TVS Jupiter,P_03003,True
+VEH_2399,eb4d4fef7fbe26ed,Commercial Auto,Hyundai Creta,P_03429,True
+VEH_2400,08522dbeb50b8dbb,Four-Wheeler,Bajaj Pulsar,P_00582,True
+VEH_2401,d9de7150c2255267,Two-Wheeler,Maruti Suzuki Swift,P_03211,True
+VEH_2402,a3500cc7ad8d1377,Cargo Truck,TVS Jupiter,P_00630,True
+VEH_2403,8fe68be5b84196ec,Two-Wheeler,Hyundai Creta,P_03187,True
+VEH_2404,889332811a32d750,Commercial Auto,Hyundai Creta,P_03852,True
+VEH_2405,6f2ddc9d932b4940,Four-Wheeler,Honda City,P_04933,True
+VEH_2406,d90ae43ac262be0c,Commercial Auto,Honda City,P_03044,True
+VEH_2407,7133cf1388f43fa2,Two-Wheeler,Bajaj Pulsar,P_01014,True
+VEH_2408,d96b3a8547843842,Commercial Auto,Tata Nexon,P_01192,True
+VEH_2409,927a145aef5c1b16,Four-Wheeler,Tata Nexon,P_02644,True
+VEH_2410,e181937eac897f9b,Two-Wheeler,Hyundai Creta,P_01493,True
+VEH_2411,301b8660141d0e06,Commercial Auto,Royal Enfield Classic 350,P_01911,True
+VEH_2412,44ab8c9cba00b245,Two-Wheeler,Honda City,P_02608,True
+VEH_2413,2629fa7cff7a1bdb,Cargo Truck,Mahindra Scorpio,P_00072,True
+VEH_2414,9cf2383331b3f4eb,Cargo Truck,Maruti Suzuki Swift,P_04810,True
+VEH_2415,af7a0ba96eb9371b,Commercial Auto,TVS Jupiter,P_01111,True
+VEH_2416,5b996fce51577c6f,Cargo Truck,Tata Nexon,P_00882,True
+VEH_2417,f785551d3206c9ef,Cargo Truck,Hyundai Creta,P_03429,True
+VEH_2418,55eb94609cd5e6b5,Cargo Truck,TVS Jupiter,P_01574,True
+VEH_2419,f289ff9782d7dd71,Commercial Auto,TVS Jupiter,P_01855,True
+VEH_2420,021a38314dd48047,Commercial Auto,Tata Nexon,P_01399,True
+VEH_2421,ae3c3db8f525f33c,Two-Wheeler,Maruti Suzuki Swift,P_03374,True
+VEH_2422,9e9249541684c364,Four-Wheeler,Maruti Suzuki Swift,P_00772,True
+VEH_2423,a06c907876e411a6,Four-Wheeler,Honda City,P_01273,True
+VEH_2424,feccc3f7ff7dbf3d,Commercial Auto,Maruti Suzuki Swift,P_04923,True
+VEH_2425,9bc7d578f0d51596,Cargo Truck,Hyundai Creta,P_04313,True
+VEH_2426,025f743846d74746,Commercial Auto,Maruti Suzuki Swift,P_04719,True
+VEH_2427,292461491de5dbbf,Cargo Truck,Hyundai Creta,P_01578,True
+VEH_2428,a412aee3fc23afa4,Four-Wheeler,Honda City,P_02661,True
+VEH_2429,ca4b70e79cf446da,Four-Wheeler,Royal Enfield Classic 350,P_00624,True
+VEH_2430,762e31ccb41da77a,Two-Wheeler,Honda City,P_01485,True
+VEH_2431,d36b5a883837f242,Cargo Truck,Royal Enfield Classic 350,P_03127,True
+VEH_2432,8263610c8e60ede1,Commercial Auto,Tata Nexon,P_01376,True
+VEH_2433,b5371e4e54dc5302,Four-Wheeler,Honda City,P_00761,True
+VEH_2434,900bdedf9f0773ee,Two-Wheeler,Mahindra Scorpio,P_02504,True
+VEH_2435,890bba216f507c6e,Cargo Truck,Maruti Suzuki Swift,P_03102,True
+VEH_2436,7493f7286d8394d7,Commercial Auto,Mahindra Scorpio,P_01652,True
+VEH_2437,6ec46ba4a3ba0d7e,Cargo Truck,Honda City,P_01710,True
+VEH_2438,1a087f24c160f317,Commercial Auto,Royal Enfield Classic 350,P_03574,True
+VEH_2439,f0e9207fa0f90b96,Commercial Auto,Honda City,P_01440,True
+VEH_2440,3169cf47d330a70f,Commercial Auto,Bajaj Pulsar,P_02702,True
+VEH_2441,ad99925b808dcf37,Commercial Auto,Toyota Innova,P_01337,True
+VEH_2442,48a38efdfad433bd,Cargo Truck,Maruti Suzuki Swift,P_02086,True
+VEH_2443,ef69c46d3f25e782,Four-Wheeler,Mahindra Scorpio,P_02644,True
+VEH_2444,bc26e9d1d57fd3e2,Two-Wheeler,Hyundai Creta,P_04502,True
+VEH_2445,90f7a87d489ef069,Two-Wheeler,Toyota Innova,P_02293,True
+VEH_2446,433fc404f7dfbec9,Cargo Truck,Honda City,P_03293,True
+VEH_2447,47c4f98e8aac6c68,Commercial Auto,Bajaj Pulsar,P_04747,True
+VEH_2448,7dcbb232f3654cb2,Four-Wheeler,Maruti Suzuki Swift,P_03550,True
+VEH_2449,7294cb330d3b1e5a,Two-Wheeler,Hyundai Creta,P_00216,True
+VEH_2450,385109b899462712,Cargo Truck,Hyundai Creta,P_02759,True
+VEH_2451,e3b79ab3ec3c725f,Four-Wheeler,Maruti Suzuki Swift,P_02775,True
+VEH_2452,747d1f4ddd3cee4c,Cargo Truck,Hyundai Creta,P_03149,True
+VEH_2453,affb2b8197d121f1,Two-Wheeler,Mahindra Scorpio,P_02376,True
+VEH_2454,b2b44dd58d34af2b,Four-Wheeler,Bajaj Pulsar,P_02685,True
+VEH_2455,93c1bd0ede746a0a,Two-Wheeler,Royal Enfield Classic 350,P_03347,True
+VEH_2456,d2c67a559e0dd45c,Cargo Truck,Tata Nexon,P_04596,True
+VEH_2457,66bf0b0ae7c54279,Cargo Truck,Tata Nexon,P_02713,True
+VEH_2458,871ebb40ea0e4b68,Two-Wheeler,Toyota Innova,P_00457,True
+VEH_2459,b36ab7d939f4fd73,Cargo Truck,Royal Enfield Classic 350,P_01413,True
+VEH_2460,c9cc8d5b0d23d6bd,Commercial Auto,Mahindra Scorpio,P_04334,True
+VEH_2461,f8373b33b3b2a2aa,Two-Wheeler,Maruti Suzuki Swift,P_03157,True
+VEH_2462,f6e58609d0363417,Two-Wheeler,Maruti Suzuki Swift,P_00651,True
+VEH_2463,a59593a5c5406dd2,Four-Wheeler,Hyundai Creta,P_01708,True
+VEH_2464,c559002bd8d37c4d,Cargo Truck,Tata Nexon,P_04108,True
+VEH_2465,184134a5f15932a1,Commercial Auto,Mahindra Scorpio,P_03173,True
+VEH_2466,fd742b3b3f6c91d0,Commercial Auto,Mahindra Scorpio,P_02127,True
+VEH_2467,faa6d735dfd19977,Cargo Truck,Bajaj Pulsar,P_04897,True
+VEH_2468,68a8e63a3d041fc9,Commercial Auto,Mahindra Scorpio,P_01822,True
+VEH_2469,f850891cdbd25d4b,Four-Wheeler,TVS Jupiter,P_01801,True
+VEH_2470,d2e13cfdce7c6f9f,Two-Wheeler,TVS Jupiter,P_03507,True
+VEH_2471,b3b8e86f067fe7b6,Commercial Auto,TVS Jupiter,P_04005,True
+VEH_2472,4b955bf860bd51cb,Commercial Auto,TVS Jupiter,P_04159,True
+VEH_2473,850d428912681695,Commercial Auto,Honda City,P_01962,True
+VEH_2474,4cc02f20f750c559,Cargo Truck,Mahindra Scorpio,P_03655,True
+VEH_2475,04f2a4c50e1f71a8,Cargo Truck,TVS Jupiter,P_03190,True
+VEH_2476,1097889b5ddb2089,Cargo Truck,Tata Nexon,P_00185,True
+VEH_2477,0a2b9df8249e4137,Two-Wheeler,TVS Jupiter,P_02874,True
+VEH_2478,743e21279f749ed8,Four-Wheeler,Mahindra Scorpio,P_01704,True
+VEH_2479,5f16e6b47fe501b0,Cargo Truck,Honda City,P_00275,True
+VEH_2480,ea601777c74e98ca,Commercial Auto,Mahindra Scorpio,P_02428,True
+VEH_2481,e86dfff1c1892e34,Two-Wheeler,Royal Enfield Classic 350,P_02994,True
+VEH_2482,f9ff96517b1a9350,Four-Wheeler,Royal Enfield Classic 350,P_03522,True
+VEH_2483,b0e11d5e79fb88d6,Four-Wheeler,Maruti Suzuki Swift,P_04675,True
+VEH_2484,fe04cb5da4f0ddf8,Four-Wheeler,Toyota Innova,P_03453,True
+VEH_2485,8dd39fd304981083,Four-Wheeler,Royal Enfield Classic 350,P_02576,True
+VEH_2486,a90aa272e919e735,Cargo Truck,Bajaj Pulsar,P_01762,True
+VEH_2487,acbacd9daadf3c4f,Cargo Truck,TVS Jupiter,P_03676,True
+VEH_2488,ccb973115900d6ad,Four-Wheeler,Bajaj Pulsar,P_03989,True
+VEH_2489,06585f2b5bdef80c,Two-Wheeler,Royal Enfield Classic 350,P_03141,True
+VEH_2490,5f309d8ed87d1c6c,Commercial Auto,Toyota Innova,P_03311,True
+VEH_2491,ac982ccefd56fb14,Two-Wheeler,Honda City,P_01345,True
+VEH_2492,e8f2ccd2f7224948,Commercial Auto,TVS Jupiter,P_03464,True
+VEH_2493,8483b52df4a60bd9,Two-Wheeler,Bajaj Pulsar,P_03460,True
+VEH_2494,01ce479bd72b727f,Cargo Truck,Mahindra Scorpio,P_00723,True
+VEH_2495,3681500db72148a1,Four-Wheeler,Mahindra Scorpio,P_01747,True
+VEH_2496,14c2c25d98e6d56a,Cargo Truck,Tata Nexon,P_02188,True
+VEH_2497,4300256e85d29445,Commercial Auto,Mahindra Scorpio,P_02682,True
+VEH_2498,73a8a1d2a05644ba,Cargo Truck,Mahindra Scorpio,P_04230,True
+VEH_2499,88758d480c42f077,Commercial Auto,Royal Enfield Classic 350,P_03389,True
+VEH_2500,9e8e5caea514adec,Four-Wheeler,Mahindra Scorpio,P_03003,True

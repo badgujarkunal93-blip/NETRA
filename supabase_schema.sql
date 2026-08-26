@@ -139,7 +139,47 @@ CREATE TABLE mo_fingerprints (
     confidence INTEGER NOT NULL CHECK (confidence BETWEEN 0 AND 100)
 );
 
--- 11. MO Similarities
+-- 11. Locations
+CREATE TABLE locations (
+    id TEXT PRIMARY KEY,
+    normalized_address TEXT NOT NULL,
+    locality TEXT,
+    location_type TEXT,
+    latitude DOUBLE PRECISION NOT NULL,
+    longitude DOUBLE PRECISION NOT NULL
+);
+
+-- 12. FIR Documents
+CREATE TABLE fir_documents (
+    id TEXT PRIMARY KEY,
+    case_id TEXT REFERENCES cases(id) ON DELETE CASCADE,
+    document_type TEXT NOT NULL,
+    language TEXT DEFAULT 'English',
+    raw_text TEXT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 13. Evidence & Evidence Links
+CREATE TABLE evidence (
+    id TEXT PRIMARY KEY,
+    source_type TEXT NOT NULL,
+    source_id TEXT,
+    source_location TEXT,
+    evidence_class TEXT,
+    reliability DOUBLE PRECISION DEFAULT 0.9,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE evidence_links (
+    id TEXT PRIMARY KEY,
+    evidence_id TEXT REFERENCES evidence(id) ON DELETE CASCADE,
+    target_type TEXT NOT NULL,
+    target_id TEXT NOT NULL,
+    support_type TEXT,
+    contribution_weight DOUBLE PRECISION DEFAULT 1.0
+);
+
+-- 14. MO Similarities
 CREATE TABLE mo_similarities (
     id TEXT PRIMARY KEY,
     case_id_a TEXT NOT NULL REFERENCES cases(id) ON DELETE CASCADE,

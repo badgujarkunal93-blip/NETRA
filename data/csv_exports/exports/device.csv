@@ -1,0 +1,3501 @@
+device_id,device_hash,type,synthetic_demo_record
+DEV_00001,26d3cf76a0adfccc,Smartphone,True
+DEV_00002,a27e51ba62e58223,Smartphone,True
+DEV_00003,9decb69b90490a2e,Smartphone,True
+DEV_00004,6460dff3a532171c,Router,True
+DEV_00005,479f85b449f5151e,Smartphone,True
+DEV_00006,325fc319b9f26f62,Smartphone,True
+DEV_00007,b2cbcc2f7ebe66a0,Tablet,True
+DEV_00008,ee0382c1c307e9dd,Burner Phone,True
+DEV_00009,deb7fd03594cf00a,Router,True
+DEV_00010,85b5051b9c643bb3,Smartphone,True
+DEV_00011,fa4ba94898f337a9,Tablet,True
+DEV_00012,d1c748ea61e1d1d6,Laptop,True
+DEV_00013,e5bfc28cb468892a,Tablet,True
+DEV_00014,0730d8ba153e7fac,Burner Phone,True
+DEV_00015,5d98b214dc85210d,Router,True
+DEV_00016,195e963b470f9393,Laptop,True
+DEV_00017,c4cd91ed2abd53ca,Laptop,True
+DEV_00018,aca42777e1630428,Router,True
+DEV_00019,7d8412769b51f153,Router,True
+DEV_00020,a0abe21e361b127f,Laptop,True
+DEV_00021,0d9fa7b470ff7f3f,Tablet,True
+DEV_00022,717edd8138990c73,Tablet,True
+DEV_00023,687bb4509928f081,Burner Phone,True
+DEV_00024,0e54b3e0d53a23a2,Laptop,True
+DEV_00025,a87e84379eeaba6f,Burner Phone,True
+DEV_00026,96f39bbd037c9e88,Smartphone,True
+DEV_00027,002085617a74b4a6,Burner Phone,True
+DEV_00028,ecd3d1e91d00b493,Burner Phone,True
+DEV_00029,ef726037e39fde24,Laptop,True
+DEV_00030,e7cf21650cc56912,Router,True
+DEV_00031,9af4ddc43a5f2318,Burner Phone,True
+DEV_00032,7e77202345760770,Smartphone,True
+DEV_00033,d6ffc37273adfdd7,Tablet,True
+DEV_00034,1a979ae903c16d61,Tablet,True
+DEV_00035,3f14fe4cf4c12667,Burner Phone,True
+DEV_00036,d67402c22dd0790e,Smartphone,True
+DEV_00037,4147d77fa6f9617c,Router,True
+DEV_00038,8308b8731956b5ef,Burner Phone,True
+DEV_00039,8a8d48496c7a0ab2,Burner Phone,True
+DEV_00040,f02c305212a7cd96,Router,True
+DEV_00041,d46b81833e7c2143,Tablet,True
+DEV_00042,7e78919b97226649,Tablet,True
+DEV_00043,6beadd60da90bc06,Laptop,True
+DEV_00044,a511cf741d13f63c,Burner Phone,True
+DEV_00045,4951a2c734168456,Tablet,True
+DEV_00046,101356e2f840d7b8,Burner Phone,True
+DEV_00047,0e6de7fe24fc2f92,Burner Phone,True
+DEV_00048,25a7dc0fadc35b8f,Tablet,True
+DEV_00049,3d3beea9eb311f12,Tablet,True
+DEV_00050,1d80a797002ca441,Tablet,True
+DEV_00051,faaca8cd4bedbde5,Laptop,True
+DEV_00052,0ed63eb7869381f7,Router,True
+DEV_00053,26d1b1789f5ecf4c,Burner Phone,True
+DEV_00054,ceff8de53ee90ae3,Tablet,True
+DEV_00055,2e8db85743935e8b,Smartphone,True
+DEV_00056,0fb4a10bff6c3680,Smartphone,True
+DEV_00057,43bb14e2b7258342,Router,True
+DEV_00058,78c09be98566f655,Laptop,True
+DEV_00059,6a944397d0234210,Laptop,True
+DEV_00060,005d5fb65020d11b,Laptop,True
+DEV_00061,d25d989ce81e6f29,Tablet,True
+DEV_00062,87f739aa53dd671f,Laptop,True
+DEV_00063,03771dd309e5d456,Burner Phone,True
+DEV_00064,08146aaabc2a54a7,Tablet,True
+DEV_00065,4c4bc9970ca45b95,Burner Phone,True
+DEV_00066,b83419fe01f35a59,Burner Phone,True
+DEV_00067,12890c3ba5c3b453,Laptop,True
+DEV_00068,93788ca85221ac14,Laptop,True
+DEV_00069,0df5c5cceb9106e5,Router,True
+DEV_00070,9c43f572cde811cb,Router,True
+DEV_00071,5cc5617ddc01df77,Burner Phone,True
+DEV_00072,8cdd140430d98bf7,Burner Phone,True
+DEV_00073,0239617a6ff80e68,Smartphone,True
+DEV_00074,81293bbe3f047fbf,Tablet,True
+DEV_00075,042acf858dc5ac6e,Laptop,True
+DEV_00076,2659fb4837dd8311,Tablet,True
+DEV_00077,2f7ffdd4e322580d,Router,True
+DEV_00078,4a8033e0cc916b0d,Laptop,True
+DEV_00079,15277ff41469ede7,Tablet,True
+DEV_00080,fdd684b6a486307c,Smartphone,True
+DEV_00081,735cb21c9d80e115,Router,True
+DEV_00082,1988cab5015c65ed,Smartphone,True
+DEV_00083,70f82005ed97599b,Router,True
+DEV_00084,e3c45e05ac0ed821,Tablet,True
+DEV_00085,0c5620933cb403b6,Laptop,True
+DEV_00086,58b785be99415c87,Burner Phone,True
+DEV_00087,84722bdb9f4bc89e,Smartphone,True
+DEV_00088,7a3af56c27ebd401,Tablet,True
+DEV_00089,18a609d2f90b712a,Burner Phone,True
+DEV_00090,14d6882955b47af2,Laptop,True
+DEV_00091,fff8e7888d8405c8,Router,True
+DEV_00092,de8d54b83d772d59,Laptop,True
+DEV_00093,2d298c5f0eb181a4,Smartphone,True
+DEV_00094,6422fabc02127fba,Laptop,True
+DEV_00095,b435007dc5ba1f8d,Laptop,True
+DEV_00096,df8a534c632c5212,Burner Phone,True
+DEV_00097,17b66ef6e99d3bae,Smartphone,True
+DEV_00098,d45c54890e698a7b,Laptop,True
+DEV_00099,d9d2678638c0c6f5,Router,True
+DEV_00100,eff3875a158593af,Tablet,True
+DEV_00101,031343d8873aa401,Burner Phone,True
+DEV_00102,bbcb22190d73cee1,Burner Phone,True
+DEV_00103,7dee0259c2931cf2,Laptop,True
+DEV_00104,e4b327602d7fb826,Laptop,True
+DEV_00105,fbda511a23041899,Tablet,True
+DEV_00106,14715a85a9f6c8af,Laptop,True
+DEV_00107,ea376c2d0be439f5,Smartphone,True
+DEV_00108,43a77d20fd66d5c4,Router,True
+DEV_00109,a65ccd9dc2a06ea7,Burner Phone,True
+DEV_00110,7a3ffb14295c9882,Router,True
+DEV_00111,a540bf4676f25524,Router,True
+DEV_00112,265a1296d828ec5b,Laptop,True
+DEV_00113,8f1dd61500582ff9,Smartphone,True
+DEV_00114,500ad19191c51080,Laptop,True
+DEV_00115,48fc5c165fb754c2,Laptop,True
+DEV_00116,288a52dd2b90a536,Smartphone,True
+DEV_00117,60971d031b57a727,Tablet,True
+DEV_00118,c465688d2888fab7,Tablet,True
+DEV_00119,516cefeb97293752,Router,True
+DEV_00120,ee3f8e1d05d6662a,Smartphone,True
+DEV_00121,0fb28f41fad9fdce,Laptop,True
+DEV_00122,12b72fecd725cd74,Router,True
+DEV_00123,4d25111625c601b8,Smartphone,True
+DEV_00124,2df9abd1830d9a62,Router,True
+DEV_00125,765c26c5472d7b91,Laptop,True
+DEV_00126,51ff98d4047274ce,Laptop,True
+DEV_00127,d92b9026f0fb0f6b,Burner Phone,True
+DEV_00128,d098542693add03d,Burner Phone,True
+DEV_00129,1fe3d864da11dfff,Laptop,True
+DEV_00130,f52818eed66071f8,Laptop,True
+DEV_00131,5f08051b2c825017,Smartphone,True
+DEV_00132,2a7e943cca120768,Router,True
+DEV_00133,19944cf7ba701e32,Burner Phone,True
+DEV_00134,6478a6d4df3d4f26,Burner Phone,True
+DEV_00135,eda2ff56dff8a580,Router,True
+DEV_00136,accbf2cb8a4f0b0b,Smartphone,True
+DEV_00137,14427156fc2c70ff,Burner Phone,True
+DEV_00138,ad2cdfe13900f19b,Smartphone,True
+DEV_00139,97dfcb85e63f619d,Router,True
+DEV_00140,06702b8b4329334d,Router,True
+DEV_00141,652021a933f0e96b,Smartphone,True
+DEV_00142,ccdf043700d50a78,Laptop,True
+DEV_00143,ae14d20f4f60c1a4,Laptop,True
+DEV_00144,851763675b19da4c,Smartphone,True
+DEV_00145,f2a131e2b4c18796,Router,True
+DEV_00146,08bcdf4d04a80489,Burner Phone,True
+DEV_00147,4a5275aa14c832c8,Burner Phone,True
+DEV_00148,8b1c8dc7a6050e52,Tablet,True
+DEV_00149,14f97d7a4f379c6d,Smartphone,True
+DEV_00150,d4c4ec0e1a92129d,Smartphone,True
+DEV_00151,024229a719295dff,Router,True
+DEV_00152,6a212cb404e20910,Laptop,True
+DEV_00153,7f8083ad5df0a136,Laptop,True
+DEV_00154,2c28834f27009613,Burner Phone,True
+DEV_00155,97bd820952827d70,Burner Phone,True
+DEV_00156,0e554fd1350f6806,Router,True
+DEV_00157,89aeaedf0c593f7b,Router,True
+DEV_00158,2fc440a9d249b29c,Laptop,True
+DEV_00159,e45d9319686c6450,Laptop,True
+DEV_00160,0c0ad85f52d073c1,Router,True
+DEV_00161,bd6e6db726fc18bc,Laptop,True
+DEV_00162,31030697a110f757,Burner Phone,True
+DEV_00163,d1214f6614256292,Tablet,True
+DEV_00164,38cbcaa438a8e2b6,Smartphone,True
+DEV_00165,bee119f77c6c2247,Smartphone,True
+DEV_00166,9ca3bedab29bbea9,Tablet,True
+DEV_00167,20a4e662bcca7f84,Smartphone,True
+DEV_00168,db84d0c23edab084,Tablet,True
+DEV_00169,7cb421c380992da9,Laptop,True
+DEV_00170,43b56c937af60aa8,Laptop,True
+DEV_00171,061418d479652871,Router,True
+DEV_00172,c8b9e32f40b211e9,Router,True
+DEV_00173,0ebfca0c89353001,Burner Phone,True
+DEV_00174,e925ea50ed0fb370,Smartphone,True
+DEV_00175,5a3f1f05994ff058,Laptop,True
+DEV_00176,07fb56f5263ae1e2,Laptop,True
+DEV_00177,a031cad3420c91c3,Smartphone,True
+DEV_00178,b4001a934638443f,Burner Phone,True
+DEV_00179,d7f29d97ed007aac,Burner Phone,True
+DEV_00180,24b31a08cbc75688,Burner Phone,True
+DEV_00181,98c02543f67aee8c,Burner Phone,True
+DEV_00182,9fd9531d1fda9872,Tablet,True
+DEV_00183,b2c8d8d6662b37a8,Burner Phone,True
+DEV_00184,b6bd2a94f12e03f6,Burner Phone,True
+DEV_00185,7d1bae8c8bdcb79c,Tablet,True
+DEV_00186,09f876f19cdf6991,Smartphone,True
+DEV_00187,95bca3bc85b86571,Tablet,True
+DEV_00188,b284c1c9684415bc,Router,True
+DEV_00189,8fe990ccab6b6396,Smartphone,True
+DEV_00190,c3249941f871c1a8,Router,True
+DEV_00191,862313a278d98d46,Tablet,True
+DEV_00192,d0cee2359bb0c082,Burner Phone,True
+DEV_00193,01322663b12c3912,Laptop,True
+DEV_00194,49349e8493ce8d46,Tablet,True
+DEV_00195,4ced71c027dafbe9,Tablet,True
+DEV_00196,7f768256c1591c80,Smartphone,True
+DEV_00197,8ad4ed6a789d83ef,Burner Phone,True
+DEV_00198,4301a3df87a1b4d1,Laptop,True
+DEV_00199,3939ca9688b750e2,Burner Phone,True
+DEV_00200,a66c299c358b98a0,Burner Phone,True
+DEV_00201,6290fe41d489079d,Laptop,True
+DEV_00202,767391763371c905,Burner Phone,True
+DEV_00203,58c4b4d2cbea9843,Router,True
+DEV_00204,098aedb54c32a73c,Laptop,True
+DEV_00205,03cc7248b77b00b9,Router,True
+DEV_00206,9f8300d1fc9d1ced,Burner Phone,True
+DEV_00207,c007f6eb5b089cba,Smartphone,True
+DEV_00208,6220472407eeae87,Router,True
+DEV_00209,87a23376ef82cebb,Smartphone,True
+DEV_00210,15b12b38a01c9a3d,Burner Phone,True
+DEV_00211,d5d6a9b810f0a122,Tablet,True
+DEV_00212,02ab3fb0bf8140bb,Router,True
+DEV_00213,9c791827acda9187,Burner Phone,True
+DEV_00214,8ddb976ef2b248da,Burner Phone,True
+DEV_00215,49a8c32a05edbc64,Router,True
+DEV_00216,a6be570acbdeddf7,Tablet,True
+DEV_00217,d997482abeac1c12,Tablet,True
+DEV_00218,f744fb103c1e1b5c,Router,True
+DEV_00219,a7f2c85d4387ab6f,Tablet,True
+DEV_00220,d6fee2210c2dafa9,Router,True
+DEV_00221,85eddc8b05b20bcf,Burner Phone,True
+DEV_00222,27bf3e0b25c1cf13,Laptop,True
+DEV_00223,d50d0b52591df89e,Router,True
+DEV_00224,03b5bdb9e16e6295,Smartphone,True
+DEV_00225,d259a5bbaa7e5e14,Laptop,True
+DEV_00226,5bef12024aab87ef,Smartphone,True
+DEV_00227,768141e9a70f2af1,Burner Phone,True
+DEV_00228,19da34760a8c551f,Burner Phone,True
+DEV_00229,881e9a9e65d5e8fa,Smartphone,True
+DEV_00230,ed47d027e13caca3,Tablet,True
+DEV_00231,8c4b17ed0f234d63,Burner Phone,True
+DEV_00232,c69994090bda7dd0,Burner Phone,True
+DEV_00233,2c9527f8868a5323,Burner Phone,True
+DEV_00234,e3d32ad7edb5ea51,Smartphone,True
+DEV_00235,95635a9bce095ae4,Laptop,True
+DEV_00236,02bf5b7b1ad3322d,Laptop,True
+DEV_00237,be585223c3373e58,Laptop,True
+DEV_00238,17edb64cbf19f233,Tablet,True
+DEV_00239,31e887dc7aa54855,Smartphone,True
+DEV_00240,678b3db013ffe1ef,Laptop,True
+DEV_00241,fc8085cea9e5b493,Smartphone,True
+DEV_00242,0fe5428a041b124a,Burner Phone,True
+DEV_00243,88153909573bd1ab,Router,True
+DEV_00244,0194143f61b7d60f,Tablet,True
+DEV_00245,6d7cf64aa0fcbf8f,Laptop,True
+DEV_00246,b757dfe2c5f8f0d7,Laptop,True
+DEV_00247,ea9c4e5daf642870,Burner Phone,True
+DEV_00248,fa8475d18f3595b2,Smartphone,True
+DEV_00249,eaf235987752f644,Smartphone,True
+DEV_00250,7d96d316c15d86ed,Burner Phone,True
+DEV_00251,bf93c4dbd33ed188,Tablet,True
+DEV_00252,945597860e041dc8,Router,True
+DEV_00253,fac101b48cac21f3,Smartphone,True
+DEV_00254,5365f399418936be,Laptop,True
+DEV_00255,d507395f6b94aad3,Smartphone,True
+DEV_00256,b39a09e296d2d18a,Smartphone,True
+DEV_00257,3d966728d38bf824,Burner Phone,True
+DEV_00258,ebfdf3fa32ba0e01,Burner Phone,True
+DEV_00259,1edebf843570940e,Smartphone,True
+DEV_00260,64f981ff04045b8b,Burner Phone,True
+DEV_00261,42b07cf8435014cd,Smartphone,True
+DEV_00262,331a8647b6079ac0,Burner Phone,True
+DEV_00263,3da3acdc499097c4,Smartphone,True
+DEV_00264,edb09d9259c9ec66,Router,True
+DEV_00265,7d810962309400f2,Smartphone,True
+DEV_00266,9227369d58ea9ad2,Router,True
+DEV_00267,fb02fe92c3563cec,Tablet,True
+DEV_00268,d45c77e51954e99b,Burner Phone,True
+DEV_00269,9eeac9c6f9692952,Smartphone,True
+DEV_00270,5c922786857904e1,Burner Phone,True
+DEV_00271,c9014547819b2369,Router,True
+DEV_00272,67b04ac60693af3e,Router,True
+DEV_00273,6aae3f062af1f20c,Smartphone,True
+DEV_00274,bfc3a1ada18bdfd5,Burner Phone,True
+DEV_00275,1fdeb8be4e3e78f0,Tablet,True
+DEV_00276,5d3a3a2b7d9dd1d2,Laptop,True
+DEV_00277,1307b8a62d638c81,Burner Phone,True
+DEV_00278,033f4f0edd345d1b,Smartphone,True
+DEV_00279,de0f4bd7d83ac395,Router,True
+DEV_00280,d446c4e055ec5e3c,Burner Phone,True
+DEV_00281,67d1bea8ef123d30,Smartphone,True
+DEV_00282,2f9dba8095babb36,Laptop,True
+DEV_00283,dc94d4a219db9b53,Tablet,True
+DEV_00284,77d1412664dabb81,Burner Phone,True
+DEV_00285,8732b368b19c57af,Router,True
+DEV_00286,4a3982b538a3ba13,Smartphone,True
+DEV_00287,14297a446bfacffd,Burner Phone,True
+DEV_00288,4ded9ae94bffd093,Burner Phone,True
+DEV_00289,baa21187158c62b2,Router,True
+DEV_00290,0c6bf36bbd77e631,Tablet,True
+DEV_00291,44afb4846d9b868c,Router,True
+DEV_00292,730d7c5a286dc264,Tablet,True
+DEV_00293,4253b39cadfed955,Router,True
+DEV_00294,85553f6336a74133,Router,True
+DEV_00295,4f5bea9f025f666b,Burner Phone,True
+DEV_00296,94e51828974d3656,Router,True
+DEV_00297,bcb6673ff24a6bab,Tablet,True
+DEV_00298,1bbf7a8c0d7f9121,Laptop,True
+DEV_00299,403faf458967bd9e,Laptop,True
+DEV_00300,1af3640b63f29890,Router,True
+DEV_00301,66b24572e8bf8b78,Router,True
+DEV_00302,405d580565f4072d,Tablet,True
+DEV_00303,1570bc1868b00e73,Router,True
+DEV_00304,d641c86fde75fa4d,Burner Phone,True
+DEV_00305,18d3a174bfe8a91d,Laptop,True
+DEV_00306,419cdb03a5dbfb53,Burner Phone,True
+DEV_00307,a487b3df82f7f792,Burner Phone,True
+DEV_00308,1820f2fb27d79a51,Router,True
+DEV_00309,1fbfabb8cff7519a,Burner Phone,True
+DEV_00310,b378892bdcf966f7,Laptop,True
+DEV_00311,ed683a008050fd82,Tablet,True
+DEV_00312,ebc5a7782f472bb2,Burner Phone,True
+DEV_00313,80304876cc29af18,Smartphone,True
+DEV_00314,a2850f3769898cc9,Burner Phone,True
+DEV_00315,fe14e8d183bf43bf,Burner Phone,True
+DEV_00316,981c21eb88d3aa6d,Burner Phone,True
+DEV_00317,d9e44e0a896a87c2,Router,True
+DEV_00318,53b0bb73c0e98b15,Smartphone,True
+DEV_00319,363664eb63b7b3ce,Laptop,True
+DEV_00320,2ca5a5044dc91b35,Burner Phone,True
+DEV_00321,d7a8d089d3dd2b6a,Smartphone,True
+DEV_00322,19a2de103e134565,Tablet,True
+DEV_00323,40e5f03fe5f2ff13,Smartphone,True
+DEV_00324,03e31a502a5414b5,Smartphone,True
+DEV_00325,c9daf7dc52d4eac5,Smartphone,True
+DEV_00326,e4f79bdd07d1d449,Burner Phone,True
+DEV_00327,3b987e2fa6eabc4c,Laptop,True
+DEV_00328,5585c7ae3dabc8f6,Smartphone,True
+DEV_00329,ab2f80ceda81a9e4,Laptop,True
+DEV_00330,7d348aea8d7276f0,Smartphone,True
+DEV_00331,590d522b64b9bad9,Burner Phone,True
+DEV_00332,c0aeb613cbecac8b,Tablet,True
+DEV_00333,827c150434d0ac88,Tablet,True
+DEV_00334,43ede86545fdf7ef,Smartphone,True
+DEV_00335,edb91daebdc87c97,Laptop,True
+DEV_00336,e3dc27af7c7ed69c,Laptop,True
+DEV_00337,e74ddfd2ef585dd8,Laptop,True
+DEV_00338,95dc336cd7eb7293,Tablet,True
+DEV_00339,149129aa0fe1a9b2,Burner Phone,True
+DEV_00340,f190ad48f4d5861f,Tablet,True
+DEV_00341,0bfe91909f8022e6,Burner Phone,True
+DEV_00342,87d1b22d2448e6f4,Laptop,True
+DEV_00343,f3d683b68805a643,Tablet,True
+DEV_00344,da5f96f220fa4f50,Laptop,True
+DEV_00345,1dd1f39ef9a8cf0f,Burner Phone,True
+DEV_00346,3d53d08899bc7a26,Burner Phone,True
+DEV_00347,5bb1e75e2c9945d1,Router,True
+DEV_00348,566d4e9d4ec9cb24,Laptop,True
+DEV_00349,a74527492229f1a2,Smartphone,True
+DEV_00350,9d62e7a602fd8a67,Smartphone,True
+DEV_00351,93a2108dd57b7acb,Smartphone,True
+DEV_00352,866d857576deaba4,Burner Phone,True
+DEV_00353,8d120e7a4be03137,Router,True
+DEV_00354,7b634e9b96ae7db4,Laptop,True
+DEV_00355,f3e510c9ca464f47,Smartphone,True
+DEV_00356,4e1d570c2b2a38c7,Burner Phone,True
+DEV_00357,174c6fb04e8e7dbd,Router,True
+DEV_00358,7882e6ba4c5e8836,Burner Phone,True
+DEV_00359,9059c15564ccd1f6,Tablet,True
+DEV_00360,a7d88476d857a68b,Laptop,True
+DEV_00361,e6a9bd5fcc555b37,Laptop,True
+DEV_00362,89c3d0d05855876f,Router,True
+DEV_00363,a1975aa1764572ee,Burner Phone,True
+DEV_00364,aadd727b2b3b3df2,Smartphone,True
+DEV_00365,b8c8ce11d6048388,Smartphone,True
+DEV_00366,0953e6019e50cff4,Router,True
+DEV_00367,78aa884bd7765c39,Laptop,True
+DEV_00368,6e11f9ed75337d8c,Laptop,True
+DEV_00369,50638617e416d10d,Laptop,True
+DEV_00370,147290583c1db45a,Tablet,True
+DEV_00371,5766d823b8f44d6d,Laptop,True
+DEV_00372,574935dc89d8ae5e,Burner Phone,True
+DEV_00373,a8aadb699e682d60,Tablet,True
+DEV_00374,0819c1865fc8e71e,Tablet,True
+DEV_00375,4b7b829edc3da64e,Burner Phone,True
+DEV_00376,4da1ca05ab11f32d,Laptop,True
+DEV_00377,021979324bed88ab,Tablet,True
+DEV_00378,efb1ea15b484ad83,Smartphone,True
+DEV_00379,9115191803c605c6,Tablet,True
+DEV_00380,71ac5d48b7b49a6d,Burner Phone,True
+DEV_00381,5df442ac8aa99e71,Laptop,True
+DEV_00382,6d4ef4b9341abba6,Smartphone,True
+DEV_00383,8735aa8d71b8b5b2,Smartphone,True
+DEV_00384,80cf40826e13b752,Tablet,True
+DEV_00385,11e7400b4652a54a,Smartphone,True
+DEV_00386,f727a98ee292a82a,Tablet,True
+DEV_00387,3208b3524c32bfa6,Tablet,True
+DEV_00388,c88da9e1e20cf9bb,Burner Phone,True
+DEV_00389,217f6300ef5fedad,Laptop,True
+DEV_00390,87a2bc86f7401ff9,Laptop,True
+DEV_00391,19678b38479f0e84,Laptop,True
+DEV_00392,6d7e3a243fe24e6b,Tablet,True
+DEV_00393,936530230d0c3f3e,Laptop,True
+DEV_00394,6fe0dbb6c41c6e0d,Smartphone,True
+DEV_00395,01e2baca0f47b942,Burner Phone,True
+DEV_00396,5973170f96a59cb2,Laptop,True
+DEV_00397,8135d1352c2e9383,Burner Phone,True
+DEV_00398,235d1472ff85f9f1,Router,True
+DEV_00399,1ee0480d67ede126,Router,True
+DEV_00400,a2e3463c6fe530e2,Laptop,True
+DEV_00401,1b74546335314bf7,Laptop,True
+DEV_00402,67ae5e7a0e6260d5,Smartphone,True
+DEV_00403,adff3a32a0509cdd,Tablet,True
+DEV_00404,5160f5024f879f68,Router,True
+DEV_00405,0599a9d4ac5c54fa,Burner Phone,True
+DEV_00406,2a8520e9c629cabe,Router,True
+DEV_00407,f5d1163a0bfeba25,Router,True
+DEV_00408,2d0c9c41501a7fcd,Router,True
+DEV_00409,a4698d361ce413fa,Laptop,True
+DEV_00410,20d7b81af72d3838,Tablet,True
+DEV_00411,4e8023853f084a6a,Laptop,True
+DEV_00412,3007178efb2d4992,Tablet,True
+DEV_00413,42c298216c883561,Tablet,True
+DEV_00414,5d0b2a695ca0b1ae,Tablet,True
+DEV_00415,8239bc07797a87a5,Router,True
+DEV_00416,116fe0f388c4d174,Laptop,True
+DEV_00417,5843faf95f5dc6d3,Laptop,True
+DEV_00418,e1a7269d0326407a,Laptop,True
+DEV_00419,5b600c0b057326bf,Burner Phone,True
+DEV_00420,bf58cf9f86605c05,Burner Phone,True
+DEV_00421,4c545f0d2d3a9fc9,Tablet,True
+DEV_00422,695ab7291ee80950,Router,True
+DEV_00423,93d6047f8b95f744,Laptop,True
+DEV_00424,7723ca3cedeb1b74,Tablet,True
+DEV_00425,b930b07f7b450c4f,Tablet,True
+DEV_00426,685e4cde0a27b36f,Router,True
+DEV_00427,dbf318b11afe71fa,Tablet,True
+DEV_00428,5e8e553255e355ed,Burner Phone,True
+DEV_00429,3508ebf2108af00f,Tablet,True
+DEV_00430,78447caadaae643a,Smartphone,True
+DEV_00431,56376af5140cdf70,Tablet,True
+DEV_00432,2605a0dcf037eed7,Smartphone,True
+DEV_00433,732c7b4040b70273,Laptop,True
+DEV_00434,4aac9aebd6a2d0ba,Smartphone,True
+DEV_00435,f1316aa652b1d90e,Router,True
+DEV_00436,a747dae0a5ac0172,Router,True
+DEV_00437,a53861a4f731c10e,Smartphone,True
+DEV_00438,2cfdc7999904e129,Burner Phone,True
+DEV_00439,250c10ec39f49488,Burner Phone,True
+DEV_00440,cbd80a0696c6fbbe,Laptop,True
+DEV_00441,764bb359b892dce8,Smartphone,True
+DEV_00442,b792465225cce84c,Router,True
+DEV_00443,52f83814568d1c08,Router,True
+DEV_00444,668fe2a086476ed9,Router,True
+DEV_00445,cc220478c018c09f,Laptop,True
+DEV_00446,caf3f1205d6c29f5,Smartphone,True
+DEV_00447,bfef3e96dfd05478,Router,True
+DEV_00448,ea54f769124750d3,Laptop,True
+DEV_00449,78a7fff8413f0d08,Tablet,True
+DEV_00450,58be3322b451dee3,Tablet,True
+DEV_00451,358c9711988b9a63,Smartphone,True
+DEV_00452,73e2f370a9c35e35,Burner Phone,True
+DEV_00453,e430271bdfbc6e82,Router,True
+DEV_00454,5107dd6bdbc9ef57,Smartphone,True
+DEV_00455,07eed248e11a019e,Router,True
+DEV_00456,6f8f41e9ae3b5ca2,Laptop,True
+DEV_00457,94c43cb166659e88,Router,True
+DEV_00458,0d40e4d75217f84f,Tablet,True
+DEV_00459,945eb519013fe1e2,Tablet,True
+DEV_00460,cd42b40c77ea51eb,Laptop,True
+DEV_00461,3c5424ffca7dd632,Laptop,True
+DEV_00462,96592e665009305a,Laptop,True
+DEV_00463,993670a9dbee78fe,Laptop,True
+DEV_00464,f360a5c00b457418,Laptop,True
+DEV_00465,1ea0b6286dc099eb,Laptop,True
+DEV_00466,a9cadfb93120b4fa,Burner Phone,True
+DEV_00467,c59bcfd1a45d12af,Burner Phone,True
+DEV_00468,842ba7c49d471f72,Router,True
+DEV_00469,2532b52120ec795c,Laptop,True
+DEV_00470,ebe9a9c504c06376,Burner Phone,True
+DEV_00471,2b097f390bcd2a6e,Tablet,True
+DEV_00472,96441d35686c83c1,Laptop,True
+DEV_00473,685c637aad158f63,Burner Phone,True
+DEV_00474,669798792f9e6ba4,Laptop,True
+DEV_00475,3d303f3de7ed86fa,Tablet,True
+DEV_00476,1913fc585b5309e6,Router,True
+DEV_00477,abaa33f63f1848e4,Router,True
+DEV_00478,d2d8e259ba806b84,Tablet,True
+DEV_00479,286df102eee3f5d6,Laptop,True
+DEV_00480,d0c47038e176b852,Laptop,True
+DEV_00481,c91686a0960c5c0a,Smartphone,True
+DEV_00482,bdf099f793791953,Burner Phone,True
+DEV_00483,8a973ff6dcb58039,Router,True
+DEV_00484,706d6c48f78e4bc8,Burner Phone,True
+DEV_00485,98128143ac67f818,Router,True
+DEV_00486,6f17186e812ed874,Tablet,True
+DEV_00487,d7d356402ea29a36,Laptop,True
+DEV_00488,10014692f5bfc2e3,Tablet,True
+DEV_00489,2e479a6884f5c65c,Tablet,True
+DEV_00490,9141b42a1a88e832,Router,True
+DEV_00491,1b6c9fcb193bbe90,Tablet,True
+DEV_00492,c0434005911bea32,Laptop,True
+DEV_00493,b849d0304ccb21bc,Burner Phone,True
+DEV_00494,14e682fa6ca30bdb,Laptop,True
+DEV_00495,c3e7fc835d300e5e,Smartphone,True
+DEV_00496,2dedfb365ef8746e,Router,True
+DEV_00497,b4abef22240ecd9d,Laptop,True
+DEV_00498,34acf095da63b2d9,Router,True
+DEV_00499,f273f87c65497855,Burner Phone,True
+DEV_00500,bfc11724f2bc3d69,Burner Phone,True
+DEV_00501,908e94193f90a665,Burner Phone,True
+DEV_00502,f84f4fd175e7f8e3,Tablet,True
+DEV_00503,9e673288d4ca9ede,Router,True
+DEV_00504,843af581ea716927,Laptop,True
+DEV_00505,75a90767138ee378,Laptop,True
+DEV_00506,8c876e2c230ac9f4,Tablet,True
+DEV_00507,a0f9c6170257d55f,Router,True
+DEV_00508,f2ba8fc81c656b64,Smartphone,True
+DEV_00509,c39f14e3fb8b760c,Router,True
+DEV_00510,da807cb14ab64c14,Router,True
+DEV_00511,f89a96b4ab5f399a,Smartphone,True
+DEV_00512,791bf2dfd4320f7a,Laptop,True
+DEV_00513,48c79ab59eed9214,Smartphone,True
+DEV_00514,769bf78db113e0ae,Smartphone,True
+DEV_00515,4ac230581c02d52c,Burner Phone,True
+DEV_00516,b9d4f27e4d2128af,Burner Phone,True
+DEV_00517,5602bf7c9caa3480,Tablet,True
+DEV_00518,faedac9bd1697fc2,Laptop,True
+DEV_00519,7ada141b837097ff,Burner Phone,True
+DEV_00520,2baf4bbcfca2097f,Smartphone,True
+DEV_00521,b6e0934102c5cad1,Router,True
+DEV_00522,df68554a11258f47,Laptop,True
+DEV_00523,f1663f2f96e4f356,Tablet,True
+DEV_00524,0264ca6f08b549a9,Router,True
+DEV_00525,077aa7270c3c8a37,Tablet,True
+DEV_00526,54126dbe44a5de84,Smartphone,True
+DEV_00527,70239049444af3c0,Router,True
+DEV_00528,f8f0fe011da0659e,Smartphone,True
+DEV_00529,2c380597c0b10560,Smartphone,True
+DEV_00530,3dff74bd17b6fa79,Laptop,True
+DEV_00531,75b8de913bab10f8,Router,True
+DEV_00532,63eb2eab901d81cd,Smartphone,True
+DEV_00533,aa36ca0b3e693f1f,Smartphone,True
+DEV_00534,ebca6be0afbbcf6f,Smartphone,True
+DEV_00535,0f1ad29ab6a86712,Tablet,True
+DEV_00536,3a5d6c183bc57387,Laptop,True
+DEV_00537,84bf1588285c0b3b,Router,True
+DEV_00538,daf9bc66ea16bccf,Laptop,True
+DEV_00539,8f5424526eb8254e,Laptop,True
+DEV_00540,48a8aaa02b6e692c,Burner Phone,True
+DEV_00541,07e21f83e5596ef1,Router,True
+DEV_00542,934b392765f759a1,Smartphone,True
+DEV_00543,45692a8f2a8a0850,Smartphone,True
+DEV_00544,99be3a80d8ece9e4,Burner Phone,True
+DEV_00545,60a1f6382ac9db9c,Router,True
+DEV_00546,5b7e492a69567d36,Tablet,True
+DEV_00547,ac338060585d99ba,Router,True
+DEV_00548,6bd715a1c4440588,Laptop,True
+DEV_00549,352195bfa0683941,Laptop,True
+DEV_00550,07f26e45a59f68bd,Burner Phone,True
+DEV_00551,aa6c59dbfdce0e3d,Tablet,True
+DEV_00552,327d271ba8d6144c,Laptop,True
+DEV_00553,aec1e84d1505eaf2,Laptop,True
+DEV_00554,5f5360969535b4e9,Router,True
+DEV_00555,8b5fa832cbb74f8a,Smartphone,True
+DEV_00556,e0191abf6999e27f,Burner Phone,True
+DEV_00557,f2ed95b2b9359ba7,Smartphone,True
+DEV_00558,b89bd3411e504ea7,Laptop,True
+DEV_00559,4a00bf8c4056bd8e,Burner Phone,True
+DEV_00560,9bd5e13793eaf8cf,Tablet,True
+DEV_00561,4574da1365d81487,Burner Phone,True
+DEV_00562,c17020eb85ba7b1c,Smartphone,True
+DEV_00563,5ad7d77251a60b5d,Router,True
+DEV_00564,82c9718ac1d65594,Router,True
+DEV_00565,a3e2ba69eaf1e0f2,Tablet,True
+DEV_00566,1a9b362a626797db,Smartphone,True
+DEV_00567,a3ba3561aefbbfee,Burner Phone,True
+DEV_00568,38b4db0205d64ede,Smartphone,True
+DEV_00569,67483d232bc0d8dc,Smartphone,True
+DEV_00570,bae8620fdcf43df7,Router,True
+DEV_00571,bdcd437281641ee8,Laptop,True
+DEV_00572,baa14c7dfb562a41,Smartphone,True
+DEV_00573,2cc7d6a7b0e410af,Laptop,True
+DEV_00574,a16b028a687fe4d7,Tablet,True
+DEV_00575,bcac80d9c1c35605,Router,True
+DEV_00576,1d262b6fd953188a,Smartphone,True
+DEV_00577,f28e793b021161b8,Burner Phone,True
+DEV_00578,44b6e3f4f9ba63bb,Tablet,True
+DEV_00579,e8ce6b4b6f673aef,Laptop,True
+DEV_00580,5a48c86ceeef11be,Burner Phone,True
+DEV_00581,7cb8d0d3dfd049b8,Router,True
+DEV_00582,834db897ece5e1a2,Router,True
+DEV_00583,0919f92beb034871,Router,True
+DEV_00584,70286f9fbc7a61a0,Tablet,True
+DEV_00585,dcd12bc236b6ee28,Burner Phone,True
+DEV_00586,e3b6928c53b463ca,Tablet,True
+DEV_00587,56dda1df8e4a1f46,Smartphone,True
+DEV_00588,2bd89b791194c04b,Smartphone,True
+DEV_00589,6601f5aee430d5dc,Smartphone,True
+DEV_00590,d509157530fef458,Laptop,True
+DEV_00591,520d06d7f800f928,Tablet,True
+DEV_00592,692e3c174481793c,Burner Phone,True
+DEV_00593,ba0cf20b286d2390,Smartphone,True
+DEV_00594,2c5b9ee1bc220720,Smartphone,True
+DEV_00595,876921d8c750431a,Laptop,True
+DEV_00596,3afc931a3bce79e0,Router,True
+DEV_00597,0b8d63eaea8a7630,Laptop,True
+DEV_00598,753f6f5bc9488db5,Burner Phone,True
+DEV_00599,6e528b977b91a2f6,Router,True
+DEV_00600,dab1505b536ebda6,Smartphone,True
+DEV_00601,5cbda316dcdc910f,Burner Phone,True
+DEV_00602,b07f165102ea2ad5,Burner Phone,True
+DEV_00603,9e5fce033bfe6124,Burner Phone,True
+DEV_00604,2e19e38993653940,Smartphone,True
+DEV_00605,a0bd293e99270c59,Smartphone,True
+DEV_00606,3f24a0e41a745b15,Burner Phone,True
+DEV_00607,dd26335e1e36f4c6,Smartphone,True
+DEV_00608,bb1dca516f411c05,Tablet,True
+DEV_00609,e83de0986c9070d9,Burner Phone,True
+DEV_00610,c3b72af7300c0e98,Smartphone,True
+DEV_00611,89101291b618e73a,Router,True
+DEV_00612,962251f8e6f96ff4,Router,True
+DEV_00613,e2dee020b0e45d1e,Burner Phone,True
+DEV_00614,d1c6004803cd5a3d,Router,True
+DEV_00615,538e920a9d7678a5,Smartphone,True
+DEV_00616,96743f21c64808b8,Burner Phone,True
+DEV_00617,7c2c7c5149dffe76,Smartphone,True
+DEV_00618,f8be2d5071839604,Smartphone,True
+DEV_00619,f48bee9caae5b934,Burner Phone,True
+DEV_00620,0cdce679ae51133f,Burner Phone,True
+DEV_00621,a317348c96f9f2fb,Burner Phone,True
+DEV_00622,518338b965fd3d0a,Laptop,True
+DEV_00623,b0d9f3ffc8455bc1,Smartphone,True
+DEV_00624,e16e9f3b54ebdc28,Burner Phone,True
+DEV_00625,5217ab60ed6f5cf5,Laptop,True
+DEV_00626,dd8bd93721032424,Smartphone,True
+DEV_00627,cd12ab9d15d31638,Burner Phone,True
+DEV_00628,2f84eb2d2f147e6f,Laptop,True
+DEV_00629,1aa28b6369643f02,Router,True
+DEV_00630,1abb5db7fbb20676,Router,True
+DEV_00631,912223e8205c7333,Burner Phone,True
+DEV_00632,4d804f71ba1a8356,Router,True
+DEV_00633,3018a11c5d0cd94d,Router,True
+DEV_00634,dcd1885cbf296923,Smartphone,True
+DEV_00635,a76708742059d66b,Tablet,True
+DEV_00636,3bde61cd63de84db,Smartphone,True
+DEV_00637,ee84e85fb2510ca4,Tablet,True
+DEV_00638,0947ed1619541cf1,Burner Phone,True
+DEV_00639,5ab3d1495d8bd07b,Tablet,True
+DEV_00640,b56406da92fea284,Tablet,True
+DEV_00641,08277aeb4e62a022,Tablet,True
+DEV_00642,7b3e10a022f940a3,Smartphone,True
+DEV_00643,698306db402aa00b,Laptop,True
+DEV_00644,49b14205b77dea9a,Router,True
+DEV_00645,94a771f7396004cf,Smartphone,True
+DEV_00646,ab48d8a598e7b4d6,Tablet,True
+DEV_00647,33c7454e5be10e2b,Burner Phone,True
+DEV_00648,19b42ca4bda30bcd,Laptop,True
+DEV_00649,cdd12a2c042396c7,Laptop,True
+DEV_00650,9db5f3a9700ade94,Router,True
+DEV_00651,d41042a4d7062b79,Laptop,True
+DEV_00652,ec55b65ce79d65ca,Router,True
+DEV_00653,d3078623aabbb41c,Burner Phone,True
+DEV_00654,1413ca02ab1ce30c,Laptop,True
+DEV_00655,4ace91dd42783ae8,Smartphone,True
+DEV_00656,6d6a2cc9d7ce3b90,Laptop,True
+DEV_00657,41fbe8735981ac7c,Router,True
+DEV_00658,3c0cdacd82628373,Tablet,True
+DEV_00659,30d74d919e532d23,Laptop,True
+DEV_00660,0d6034dda9f3ba61,Smartphone,True
+DEV_00661,dde391e203bdeaa2,Router,True
+DEV_00662,8457bc4f1267d79e,Laptop,True
+DEV_00663,d68a68740ab55766,Smartphone,True
+DEV_00664,f70b0b4639b7ab2b,Router,True
+DEV_00665,0ddaaaeb1e8dd218,Burner Phone,True
+DEV_00666,2a2f7d6f039e91ee,Laptop,True
+DEV_00667,8e9ce08708d3bc39,Router,True
+DEV_00668,a5644e386883d8ff,Laptop,True
+DEV_00669,f7c1f57ff751c01b,Router,True
+DEV_00670,4c682ad8d5766193,Tablet,True
+DEV_00671,d29029c920a5ee53,Laptop,True
+DEV_00672,3abc23287cc9c6d2,Smartphone,True
+DEV_00673,4bc958422a32c9d9,Smartphone,True
+DEV_00674,31bbb21717a6abff,Burner Phone,True
+DEV_00675,48d6a5176d357524,Tablet,True
+DEV_00676,0c6ecf7c5acfa3c6,Router,True
+DEV_00677,e67ce5999a95cfb8,Burner Phone,True
+DEV_00678,383d3239594411e6,Burner Phone,True
+DEV_00679,6862e56b6da6488f,Burner Phone,True
+DEV_00680,d9b5551992acf767,Smartphone,True
+DEV_00681,91f13aaacc57c249,Router,True
+DEV_00682,baa6a3251191d3dc,Burner Phone,True
+DEV_00683,82432b7bfdd2951f,Tablet,True
+DEV_00684,7b8a71c45b550def,Tablet,True
+DEV_00685,a6c6919a7741af6a,Router,True
+DEV_00686,e7bab597673d4037,Laptop,True
+DEV_00687,38febaada79bd3fb,Burner Phone,True
+DEV_00688,1bef0103a7c7d481,Smartphone,True
+DEV_00689,5274eb5fdf4b903e,Laptop,True
+DEV_00690,7ee6331142bad0d2,Laptop,True
+DEV_00691,43436537a1dae2c3,Laptop,True
+DEV_00692,5a54daacb25fa444,Burner Phone,True
+DEV_00693,ae763dccb8288fcd,Burner Phone,True
+DEV_00694,fe59bdd7261d31b7,Laptop,True
+DEV_00695,7cac8f3796236201,Tablet,True
+DEV_00696,c88ef10c504d4669,Tablet,True
+DEV_00697,0de8e8c4ca1977be,Laptop,True
+DEV_00698,de98e905a4af70e1,Tablet,True
+DEV_00699,8cdfe7ff5859da34,Router,True
+DEV_00700,b03d3f628f2e981e,Router,True
+DEV_00701,07f21b5d1ae2b71e,Router,True
+DEV_00702,5d42980e6915bba8,Smartphone,True
+DEV_00703,d5ce591d7baed668,Smartphone,True
+DEV_00704,898c7fa3efa85b79,Router,True
+DEV_00705,2ba5d5c0457bbef7,Smartphone,True
+DEV_00706,28a68ffa71bfd9ac,Laptop,True
+DEV_00707,4ce116547779c8af,Burner Phone,True
+DEV_00708,8181064137b97484,Router,True
+DEV_00709,1740040b8514b7d1,Smartphone,True
+DEV_00710,ab9388ad1179e4aa,Smartphone,True
+DEV_00711,c783310c39a4470b,Burner Phone,True
+DEV_00712,e8a46f9aabd7eb6d,Tablet,True
+DEV_00713,de80ca5e2a2e7add,Smartphone,True
+DEV_00714,998ec0606a2348be,Tablet,True
+DEV_00715,5fe8822e96370a51,Smartphone,True
+DEV_00716,46a4d56518183842,Router,True
+DEV_00717,6f7d0a8e889a5226,Laptop,True
+DEV_00718,2da82b39d21d0203,Burner Phone,True
+DEV_00719,a74f8476894bf84f,Laptop,True
+DEV_00720,adede1cc0831285b,Burner Phone,True
+DEV_00721,808d9f5ced4992be,Smartphone,True
+DEV_00722,58c8df0e05e07140,Burner Phone,True
+DEV_00723,042de6966bea7823,Smartphone,True
+DEV_00724,dd224296f2a5bdfa,Smartphone,True
+DEV_00725,1ff6ce681bfb5ae6,Smartphone,True
+DEV_00726,433e11c544cf8600,Smartphone,True
+DEV_00727,0e09ecc74777c811,Smartphone,True
+DEV_00728,6e44d7621a2c6d31,Tablet,True
+DEV_00729,86be72600c512c74,Tablet,True
+DEV_00730,7d2cc610cb58884f,Smartphone,True
+DEV_00731,886e4964d1ad01f2,Laptop,True
+DEV_00732,2f1009bbc78e89ef,Burner Phone,True
+DEV_00733,b4d7e116e260e12d,Router,True
+DEV_00734,42d37e468b7b3af2,Router,True
+DEV_00735,a88278bfa22b03cb,Tablet,True
+DEV_00736,2ce2f7050389d460,Laptop,True
+DEV_00737,40b881e2db649a21,Tablet,True
+DEV_00738,20e40022bb4d17d8,Router,True
+DEV_00739,bedabb14df02f8c5,Laptop,True
+DEV_00740,635e70424dd51f86,Laptop,True
+DEV_00741,fc155df52c2b6e41,Burner Phone,True
+DEV_00742,55e3d6767e4b90b4,Smartphone,True
+DEV_00743,5a077c469630e9df,Laptop,True
+DEV_00744,78ad8e80cba88cc5,Laptop,True
+DEV_00745,223b9def0b0a096e,Tablet,True
+DEV_00746,d93388c0a1fbf0d9,Burner Phone,True
+DEV_00747,3fabdf628bf9e95e,Smartphone,True
+DEV_00748,ae54f8dba6247f9a,Router,True
+DEV_00749,8973d6af7c3c3e38,Router,True
+DEV_00750,3e74012163eb4e2a,Smartphone,True
+DEV_00751,05b5263fc2814f0b,Burner Phone,True
+DEV_00752,2928caf3c6669ce7,Burner Phone,True
+DEV_00753,d30139d005a015bb,Router,True
+DEV_00754,a2776a629222c552,Smartphone,True
+DEV_00755,1701e6002fd4bbaf,Tablet,True
+DEV_00756,4f676b09c62642f0,Smartphone,True
+DEV_00757,114ee9e4768bc7df,Tablet,True
+DEV_00758,0f7ddef53e34fa34,Burner Phone,True
+DEV_00759,5de80399573196be,Tablet,True
+DEV_00760,54610e45aad2ab0a,Burner Phone,True
+DEV_00761,e466cd18b7438053,Tablet,True
+DEV_00762,0f60b8367c6c2a95,Laptop,True
+DEV_00763,4bfd15e9f74ffdb8,Burner Phone,True
+DEV_00764,3b8f756b47123449,Laptop,True
+DEV_00765,f6db605ffa48f762,Smartphone,True
+DEV_00766,2d47c773fe8b34d6,Router,True
+DEV_00767,12c73034e5f7c8fe,Burner Phone,True
+DEV_00768,3bbcb0addb081e4d,Router,True
+DEV_00769,e5b281b3674a8010,Router,True
+DEV_00770,3861880473f0dffc,Smartphone,True
+DEV_00771,7c882986f5256920,Router,True
+DEV_00772,86446c6022df86d8,Smartphone,True
+DEV_00773,b00fbdcb7436386a,Laptop,True
+DEV_00774,f354ff1494fccc3b,Router,True
+DEV_00775,536c39c486b18e4d,Tablet,True
+DEV_00776,0bfbc681a2f76dcd,Tablet,True
+DEV_00777,e7bb863b36196f1e,Burner Phone,True
+DEV_00778,82845b6f497b87ea,Smartphone,True
+DEV_00779,a0bab977fcff7c94,Tablet,True
+DEV_00780,14aaf1149d6ee31e,Router,True
+DEV_00781,ee33d456fc59f68e,Smartphone,True
+DEV_00782,af7bb6f92d7fd9de,Laptop,True
+DEV_00783,af136fa20c1f7d1d,Router,True
+DEV_00784,050f5b57666c30ca,Smartphone,True
+DEV_00785,cf75cf61239bc37b,Smartphone,True
+DEV_00786,a7dd0e9e33330ef1,Burner Phone,True
+DEV_00787,0f21b64567fdb1c4,Tablet,True
+DEV_00788,4acb1f668615372c,Smartphone,True
+DEV_00789,26882f011c407ae0,Smartphone,True
+DEV_00790,fa35cf1f2e205ff8,Laptop,True
+DEV_00791,21d86c219d9d090e,Tablet,True
+DEV_00792,551129dd609b84a8,Laptop,True
+DEV_00793,75251b49ba5dd7d8,Smartphone,True
+DEV_00794,1820452912f531c6,Tablet,True
+DEV_00795,28141ddbcf504b3c,Burner Phone,True
+DEV_00796,e8d80912675dc8fb,Laptop,True
+DEV_00797,d4cca2b72af78f23,Router,True
+DEV_00798,3834e64998def455,Burner Phone,True
+DEV_00799,e0bae87849a1c9c9,Tablet,True
+DEV_00800,195ad21d12ed2343,Burner Phone,True
+DEV_00801,0ae023c9eaecb738,Tablet,True
+DEV_00802,3b1f68c3d14aa863,Tablet,True
+DEV_00803,363c824798dd3064,Tablet,True
+DEV_00804,a531b925d71c6bd9,Smartphone,True
+DEV_00805,8d3892e567b52d4f,Router,True
+DEV_00806,db3c55e3cc7351b5,Tablet,True
+DEV_00807,798a1b410b74ed8c,Router,True
+DEV_00808,ae198a8f0e52ef77,Router,True
+DEV_00809,90df78fcf76e9890,Smartphone,True
+DEV_00810,0ef1b6b24609436e,Tablet,True
+DEV_00811,f3fbf91aa4b14f16,Tablet,True
+DEV_00812,1ede5c23a8802018,Laptop,True
+DEV_00813,edfd7075c0006a1c,Smartphone,True
+DEV_00814,3abf23a4ab3a299d,Laptop,True
+DEV_00815,2f88c64ce940494c,Tablet,True
+DEV_00816,3e229c705a746813,Tablet,True
+DEV_00817,bd357832b8159cec,Burner Phone,True
+DEV_00818,18c7e9f565c960fd,Tablet,True
+DEV_00819,d917627fe5dd28b1,Router,True
+DEV_00820,c0a0c62e84e22f49,Router,True
+DEV_00821,c1ad9f9e0245a0d6,Laptop,True
+DEV_00822,b01d1a227dacefb2,Tablet,True
+DEV_00823,c27fcfe0c6a2414f,Smartphone,True
+DEV_00824,d25483f2fa0682ed,Tablet,True
+DEV_00825,848ebfac24718924,Burner Phone,True
+DEV_00826,579303fe730383df,Tablet,True
+DEV_00827,69c88f6061c391b4,Tablet,True
+DEV_00828,a6c62b537fc7d305,Burner Phone,True
+DEV_00829,787be57f0cc748c2,Laptop,True
+DEV_00830,7fe930f61c1a958e,Laptop,True
+DEV_00831,cd9d3aa902cab188,Tablet,True
+DEV_00832,1cacca7dea8f752a,Smartphone,True
+DEV_00833,dafef3ca6f210747,Tablet,True
+DEV_00834,772ba1f30a86849f,Router,True
+DEV_00835,013b615300a4d943,Tablet,True
+DEV_00836,974dfc9180504590,Laptop,True
+DEV_00837,607720c0b35d6c72,Tablet,True
+DEV_00838,8c8eb035cf263404,Router,True
+DEV_00839,8c6b028a941c7cc6,Laptop,True
+DEV_00840,8fb28fb653ebc7bb,Router,True
+DEV_00841,730b7c6cd64cd877,Laptop,True
+DEV_00842,b6cfc525c5b36b1e,Tablet,True
+DEV_00843,2df68bff91e95f3f,Laptop,True
+DEV_00844,c32651cb03ebbf54,Tablet,True
+DEV_00845,b7d63d55d8990e05,Laptop,True
+DEV_00846,87613e23ef0646c3,Burner Phone,True
+DEV_00847,8b4979ea93df1d56,Router,True
+DEV_00848,7e35e08b33f53740,Burner Phone,True
+DEV_00849,ad805faf56a3485e,Smartphone,True
+DEV_00850,c46d72eaaf1045d9,Smartphone,True
+DEV_00851,7d2cf0d24f124d02,Burner Phone,True
+DEV_00852,ce7e7c04b6489d5c,Laptop,True
+DEV_00853,18b7050cd029bec6,Smartphone,True
+DEV_00854,95961789fc93b21b,Laptop,True
+DEV_00855,b933bca7ff890e8a,Router,True
+DEV_00856,dc332791e8d75d77,Router,True
+DEV_00857,c55efef733ba0152,Laptop,True
+DEV_00858,a7c646a7d83df990,Router,True
+DEV_00859,2ac66d961f0b30e5,Tablet,True
+DEV_00860,e02ef8d5e1d55daf,Burner Phone,True
+DEV_00861,cce7416e7edb8f9e,Laptop,True
+DEV_00862,271e19852231ca6c,Router,True
+DEV_00863,78e87f07d62b6852,Burner Phone,True
+DEV_00864,bb1d23104eb15690,Burner Phone,True
+DEV_00865,0a895de25ac61781,Router,True
+DEV_00866,5cd96a0358cac4d2,Smartphone,True
+DEV_00867,276246d516fec567,Tablet,True
+DEV_00868,d213f8ccc9f856da,Router,True
+DEV_00869,8cc731b7845ed660,Laptop,True
+DEV_00870,f612363a5ed28108,Laptop,True
+DEV_00871,4e7fb1e3186f6978,Router,True
+DEV_00872,8b2389fc151103bc,Burner Phone,True
+DEV_00873,00fd5deffb76d055,Burner Phone,True
+DEV_00874,73320e75d4738e91,Burner Phone,True
+DEV_00875,08390579aa2fb0a9,Router,True
+DEV_00876,a56395d8df241553,Tablet,True
+DEV_00877,cb69aa014e4b69d8,Tablet,True
+DEV_00878,bb692d2bd6ee963c,Router,True
+DEV_00879,bfbe393d31df3062,Smartphone,True
+DEV_00880,a424f954f8e3af64,Burner Phone,True
+DEV_00881,e826c9f5f5317146,Smartphone,True
+DEV_00882,8995867e9f183f9f,Smartphone,True
+DEV_00883,e5cdf4817ce90136,Laptop,True
+DEV_00884,63cf5346cf69a637,Smartphone,True
+DEV_00885,2f02c2e27e1b2853,Laptop,True
+DEV_00886,8907b737206a3bf8,Tablet,True
+DEV_00887,4ce0cb279592b140,Tablet,True
+DEV_00888,1fbde5eddf6f5599,Smartphone,True
+DEV_00889,bb783957d8702b1f,Laptop,True
+DEV_00890,e5f7b0a48cdc4b83,Burner Phone,True
+DEV_00891,5c00eaabd020568b,Tablet,True
+DEV_00892,cd38b49c26c4275d,Laptop,True
+DEV_00893,f86773945652617d,Smartphone,True
+DEV_00894,0d3365f64d3bfd27,Smartphone,True
+DEV_00895,e980211dcdb4c270,Router,True
+DEV_00896,a7e139df58a36e49,Burner Phone,True
+DEV_00897,9143d8a8a5c12b14,Tablet,True
+DEV_00898,59e180f354665021,Router,True
+DEV_00899,a2e574f787d97ec2,Laptop,True
+DEV_00900,3ae2d68f6afc3238,Tablet,True
+DEV_00901,bd3d13fd84ac918a,Tablet,True
+DEV_00902,7b943e29d3595379,Smartphone,True
+DEV_00903,d4fa7aa9ce6da8ca,Router,True
+DEV_00904,b8b5c8f9c8c80806,Smartphone,True
+DEV_00905,4b7f604eb415377b,Burner Phone,True
+DEV_00906,9931043c1f3c21af,Laptop,True
+DEV_00907,52e8d37aa15870d1,Burner Phone,True
+DEV_00908,e9e2ea18746bcdad,Laptop,True
+DEV_00909,6bf87ca8314ed07a,Tablet,True
+DEV_00910,c7203bff3e2f90f9,Router,True
+DEV_00911,439c87cbd5e40018,Smartphone,True
+DEV_00912,168149dd2bbfcf22,Burner Phone,True
+DEV_00913,7bf47314437289f1,Smartphone,True
+DEV_00914,5e92c28afbf224ba,Laptop,True
+DEV_00915,e9f3817f2d4ad5d4,Laptop,True
+DEV_00916,b65c4ee5d3717759,Router,True
+DEV_00917,b200dd46433f8f14,Router,True
+DEV_00918,cf21478168280b81,Tablet,True
+DEV_00919,c94a92831c0d26ba,Burner Phone,True
+DEV_00920,ed76375907dd229b,Tablet,True
+DEV_00921,b46d5e008547fd1b,Burner Phone,True
+DEV_00922,23dba8e447af1031,Burner Phone,True
+DEV_00923,9f348d618d14c47e,Burner Phone,True
+DEV_00924,627a9f56347440da,Tablet,True
+DEV_00925,075cbca9869e72d1,Burner Phone,True
+DEV_00926,bd756d8d362c6b04,Smartphone,True
+DEV_00927,f5b560c6e32dd41c,Laptop,True
+DEV_00928,3582de3cec42ff0d,Router,True
+DEV_00929,c942b2bb46e869aa,Burner Phone,True
+DEV_00930,18b2de767481e34c,Router,True
+DEV_00931,d2e5462e85ad6a75,Tablet,True
+DEV_00932,8fc3c36722121b2c,Router,True
+DEV_00933,8c782cfacbd8271a,Burner Phone,True
+DEV_00934,2cb2a4d912f6fa28,Burner Phone,True
+DEV_00935,908858dcfe2a6961,Tablet,True
+DEV_00936,b754db25cd11f8c1,Router,True
+DEV_00937,0ce4bcd6956fc442,Burner Phone,True
+DEV_00938,7ef4786104a12f2e,Tablet,True
+DEV_00939,3c516cc25a38af94,Burner Phone,True
+DEV_00940,c0ef6e3114c7fcd0,Tablet,True
+DEV_00941,94febd7c778fcbc8,Laptop,True
+DEV_00942,acac01fc32e7bfad,Tablet,True
+DEV_00943,14511ae2c9474818,Tablet,True
+DEV_00944,2f48918d3d663e01,Burner Phone,True
+DEV_00945,39f6df54aa709e69,Smartphone,True
+DEV_00946,fe39e830185faf92,Burner Phone,True
+DEV_00947,0e948f36f5f42198,Smartphone,True
+DEV_00948,ded3ea64f8f58079,Router,True
+DEV_00949,7a2e886d5f997daf,Burner Phone,True
+DEV_00950,ea0fc1e4849c6dfb,Smartphone,True
+DEV_00951,1594702d663978ba,Burner Phone,True
+DEV_00952,b5bdc471e8a7d352,Smartphone,True
+DEV_00953,2c5f9771ae7e5449,Burner Phone,True
+DEV_00954,5c71b6bc2f0e3a19,Tablet,True
+DEV_00955,d651489061aed967,Tablet,True
+DEV_00956,50bce705f3d4996c,Burner Phone,True
+DEV_00957,6c12e56f24899209,Laptop,True
+DEV_00958,469dfe3f5481b40f,Smartphone,True
+DEV_00959,fc66e037633cc086,Burner Phone,True
+DEV_00960,d92fb9dbd7080a60,Smartphone,True
+DEV_00961,497c5337e8c2f779,Burner Phone,True
+DEV_00962,0b729d32e5f8fbea,Smartphone,True
+DEV_00963,af84c75126c9564d,Tablet,True
+DEV_00964,4cb447b125577913,Tablet,True
+DEV_00965,997c19f74447a60c,Laptop,True
+DEV_00966,cedc65268c178b1a,Smartphone,True
+DEV_00967,63ed53f9ec05f945,Tablet,True
+DEV_00968,5367fa194b57acbd,Laptop,True
+DEV_00969,c9edaed2f5195ab8,Router,True
+DEV_00970,27b554a324c09d97,Router,True
+DEV_00971,b3b7a981dd787120,Laptop,True
+DEV_00972,5f2de8df19209501,Tablet,True
+DEV_00973,976b86b6a958769b,Laptop,True
+DEV_00974,737251cdf2968c84,Tablet,True
+DEV_00975,8a5fcf6643b80fd4,Burner Phone,True
+DEV_00976,5a2a64baa37cdfff,Smartphone,True
+DEV_00977,e32288caa40f0cb0,Laptop,True
+DEV_00978,48c6dbffd1f856b4,Burner Phone,True
+DEV_00979,7b5f34c5a48bc3ea,Burner Phone,True
+DEV_00980,f330af6f909152dc,Router,True
+DEV_00981,3fbc793da753dd2e,Smartphone,True
+DEV_00982,a51d0370f229d41c,Tablet,True
+DEV_00983,e6df09e9769d3ad4,Tablet,True
+DEV_00984,a0ac5dfc418f5de6,Router,True
+DEV_00985,8b8a4b7a6517141a,Router,True
+DEV_00986,531d05363dcc6fc6,Laptop,True
+DEV_00987,7a81a4fa6232de99,Tablet,True
+DEV_00988,259ca4db9e387600,Burner Phone,True
+DEV_00989,590882099e1b5d4a,Router,True
+DEV_00990,725c62a714fb1402,Smartphone,True
+DEV_00991,b63c5880492a4ce3,Router,True
+DEV_00992,16a5c8e027c036aa,Tablet,True
+DEV_00993,b6cc3da2c9370a89,Laptop,True
+DEV_00994,e1182cba253cb497,Smartphone,True
+DEV_00995,12603fd3e867d3b6,Laptop,True
+DEV_00996,ceb21e809b094fc5,Laptop,True
+DEV_00997,848fb5c4b94ee544,Smartphone,True
+DEV_00998,27ececaefb75ff9f,Router,True
+DEV_00999,2a0fd2310ed87573,Burner Phone,True
+DEV_01000,10fcf826aeb6e289,Burner Phone,True
+DEV_01001,ddbac3758b998dd5,Router,True
+DEV_01002,1ebaca830723430f,Tablet,True
+DEV_01003,54da4c518837048a,Tablet,True
+DEV_01004,e0de586e0b6dc6b0,Laptop,True
+DEV_01005,85706220b546fffc,Smartphone,True
+DEV_01006,1a944da2bec8522f,Smartphone,True
+DEV_01007,e8bce53215768cc8,Router,True
+DEV_01008,906e17cecb22e4dd,Tablet,True
+DEV_01009,21e66da9ecc88037,Smartphone,True
+DEV_01010,462fb0c11a35ce51,Router,True
+DEV_01011,ef2bb2ef451663b6,Laptop,True
+DEV_01012,2c58cb9a698b574b,Laptop,True
+DEV_01013,d53d2e3382a15adb,Laptop,True
+DEV_01014,304a456b0a61e4f1,Tablet,True
+DEV_01015,253a870a3a2a38c9,Burner Phone,True
+DEV_01016,d76fb662a10e3b53,Burner Phone,True
+DEV_01017,5a4f9637d7b1116d,Router,True
+DEV_01018,c0741bced018a91c,Router,True
+DEV_01019,759432b85f6d2c01,Laptop,True
+DEV_01020,62f2ac8d4076458d,Laptop,True
+DEV_01021,f6b1ef8cf4181876,Smartphone,True
+DEV_01022,4df44876641771c5,Tablet,True
+DEV_01023,645c04bca0f2db24,Tablet,True
+DEV_01024,da0939b714074ad7,Burner Phone,True
+DEV_01025,72a060511495e819,Router,True
+DEV_01026,2872e5dc237570c7,Smartphone,True
+DEV_01027,7a182cee9f25f9e5,Smartphone,True
+DEV_01028,20618a903b943f96,Router,True
+DEV_01029,d0859ecc57653e7a,Burner Phone,True
+DEV_01030,c8c0eb3bb805368a,Burner Phone,True
+DEV_01031,ed84de8195443b56,Burner Phone,True
+DEV_01032,a22b3c30d75f4474,Burner Phone,True
+DEV_01033,c8b489f7920cb784,Burner Phone,True
+DEV_01034,2070ce4ea418600f,Laptop,True
+DEV_01035,e8b8db4c66209f36,Smartphone,True
+DEV_01036,641c2953197d3681,Laptop,True
+DEV_01037,6e6a9722e9061db1,Router,True
+DEV_01038,29556d81be730ac3,Smartphone,True
+DEV_01039,95cdebbe4175bef3,Tablet,True
+DEV_01040,3d165a7e64b48f96,Laptop,True
+DEV_01041,f5ae5f50edc8ad0d,Tablet,True
+DEV_01042,bfd29092cab70094,Router,True
+DEV_01043,cda212c31a03330f,Smartphone,True
+DEV_01044,d4092e9fbba3eabe,Router,True
+DEV_01045,8b3b7b5b86bedf9b,Router,True
+DEV_01046,667c72594edb6272,Tablet,True
+DEV_01047,12077f5abe4432b1,Laptop,True
+DEV_01048,ed55a981d3f0082f,Laptop,True
+DEV_01049,d9b1b9fa8b3b400a,Router,True
+DEV_01050,e931b361c8a16f36,Laptop,True
+DEV_01051,e4c04baef0b60d38,Router,True
+DEV_01052,22fa2b0d0c7c5993,Smartphone,True
+DEV_01053,2afa79a7d7cc590b,Burner Phone,True
+DEV_01054,82ed2a444caec15c,Router,True
+DEV_01055,3ea7734a7c4882c8,Smartphone,True
+DEV_01056,60f92b79569ff0a2,Smartphone,True
+DEV_01057,990ef4c2b0dca24b,Tablet,True
+DEV_01058,28d8e098012f0811,Tablet,True
+DEV_01059,b42fae52a9f1bfeb,Tablet,True
+DEV_01060,3b874d59a2c82ad9,Smartphone,True
+DEV_01061,d78e963421408c5d,Router,True
+DEV_01062,77c999210b0922f9,Burner Phone,True
+DEV_01063,e33a5cbfb110b36e,Burner Phone,True
+DEV_01064,b96b11c5b5033e5f,Laptop,True
+DEV_01065,85e96e2351f41c51,Router,True
+DEV_01066,39c38676854b5632,Tablet,True
+DEV_01067,556050ce76cb7d7d,Smartphone,True
+DEV_01068,6d16342d161186a6,Smartphone,True
+DEV_01069,1852038d41a923ff,Burner Phone,True
+DEV_01070,b33d20dfddee6ac6,Burner Phone,True
+DEV_01071,05af93a822306f17,Tablet,True
+DEV_01072,f1c94d902909a5e7,Smartphone,True
+DEV_01073,be7a6e863de22af2,Tablet,True
+DEV_01074,6990f7cea439a177,Router,True
+DEV_01075,0e6710d8598be12d,Router,True
+DEV_01076,e385156d5842af84,Router,True
+DEV_01077,2104f0e7009cfbe0,Tablet,True
+DEV_01078,d82962e2ccfcd17f,Laptop,True
+DEV_01079,e844bdd00cf0cc79,Tablet,True
+DEV_01080,db13e84f33afb713,Burner Phone,True
+DEV_01081,07e660d5dece36bf,Tablet,True
+DEV_01082,d5ed6c93ea2fb310,Tablet,True
+DEV_01083,2ce4146fd233ece2,Laptop,True
+DEV_01084,eaf55d97c5793453,Burner Phone,True
+DEV_01085,968aa36cedab8e89,Router,True
+DEV_01086,f397636203ddc150,Smartphone,True
+DEV_01087,c3c0c1a190348041,Smartphone,True
+DEV_01088,eaebf66122430272,Tablet,True
+DEV_01089,747a516c73233cf2,Smartphone,True
+DEV_01090,f05aba6eff87e331,Smartphone,True
+DEV_01091,182dd28471ff0d64,Burner Phone,True
+DEV_01092,0266e3f43db593e2,Smartphone,True
+DEV_01093,57e92f37947cc0cc,Smartphone,True
+DEV_01094,78752bee5135c1cf,Burner Phone,True
+DEV_01095,cd31b6b513a05daa,Smartphone,True
+DEV_01096,ad74ad208a89d27e,Router,True
+DEV_01097,dd8803049a8dec67,Laptop,True
+DEV_01098,2c7c840cb97e3a02,Smartphone,True
+DEV_01099,d0744668dc6c2dcf,Burner Phone,True
+DEV_01100,f46ec2d80ece9ee7,Burner Phone,True
+DEV_01101,b8998d1a8cc4217f,Burner Phone,True
+DEV_01102,e5daedb9d2903510,Smartphone,True
+DEV_01103,56e5abf574d3e20d,Tablet,True
+DEV_01104,5fc8c893af947dfe,Router,True
+DEV_01105,36b44ea8e5d5f528,Tablet,True
+DEV_01106,c45f843b6062578d,Router,True
+DEV_01107,9235e424e932845d,Tablet,True
+DEV_01108,50ced2b964a554bf,Burner Phone,True
+DEV_01109,8866a18d6c2a104e,Laptop,True
+DEV_01110,abd6623ceb9e4fc3,Router,True
+DEV_01111,a2e92feb19cb5331,Smartphone,True
+DEV_01112,17ea1c691c6fbdc4,Tablet,True
+DEV_01113,d8e9e16d4e4346e2,Smartphone,True
+DEV_01114,5262e2f1e50849da,Tablet,True
+DEV_01115,66b3393d863466ce,Tablet,True
+DEV_01116,fc4b79fdc0433f72,Router,True
+DEV_01117,eb7abaa9b6a5f021,Laptop,True
+DEV_01118,f3c4835dec8e74df,Burner Phone,True
+DEV_01119,4e390bb08110c2c0,Tablet,True
+DEV_01120,a5b3dca3ce7061e0,Tablet,True
+DEV_01121,94bdfcc66f72c3d1,Router,True
+DEV_01122,843c580e3bb822e7,Burner Phone,True
+DEV_01123,99a072354d17f690,Laptop,True
+DEV_01124,03f0aae8bf4f6cef,Router,True
+DEV_01125,aa7069145be15fff,Laptop,True
+DEV_01126,2af30c1759c18c55,Router,True
+DEV_01127,8f37bcbc260515c4,Router,True
+DEV_01128,2982ed8f9406dbfd,Laptop,True
+DEV_01129,f42255ceb998421f,Tablet,True
+DEV_01130,a8078677e8b63902,Laptop,True
+DEV_01131,cc74ac47bea6bcd0,Tablet,True
+DEV_01132,b6dc26c4450d1483,Burner Phone,True
+DEV_01133,d1fd20bdcc3031e3,Tablet,True
+DEV_01134,7b5630612551ff62,Smartphone,True
+DEV_01135,3a43f61b005c0bda,Smartphone,True
+DEV_01136,a78459c889559260,Tablet,True
+DEV_01137,25b368f441d4e68f,Router,True
+DEV_01138,3acffc57c2ee3e2e,Smartphone,True
+DEV_01139,2b357f7be83e3971,Tablet,True
+DEV_01140,a7a3dbe6330f98f8,Tablet,True
+DEV_01141,9106f7cd2f2a39eb,Router,True
+DEV_01142,1488a1b32c7524c7,Router,True
+DEV_01143,da901cda760879e5,Smartphone,True
+DEV_01144,e35abcd3baf4ed33,Burner Phone,True
+DEV_01145,a0e30f5afcceed61,Tablet,True
+DEV_01146,f1502c3462c84d99,Laptop,True
+DEV_01147,6cf6d2215a54d951,Laptop,True
+DEV_01148,1c7bfc0350494682,Laptop,True
+DEV_01149,a7ba1d31987d40d2,Laptop,True
+DEV_01150,9d8bd0676648767f,Tablet,True
+DEV_01151,bec6476b9fedc81f,Burner Phone,True
+DEV_01152,d27746a35ced83a9,Laptop,True
+DEV_01153,5f09f36b20e893b6,Smartphone,True
+DEV_01154,97ed9a5816e45c04,Tablet,True
+DEV_01155,34bc4a05f88221f0,Burner Phone,True
+DEV_01156,f416f7e1a61afd43,Tablet,True
+DEV_01157,2c7357bf99922ab6,Burner Phone,True
+DEV_01158,8eb06fe862236f36,Tablet,True
+DEV_01159,cdd00096b16b725e,Smartphone,True
+DEV_01160,b4100d09119b93b3,Smartphone,True
+DEV_01161,d4808c6f400bb1dd,Tablet,True
+DEV_01162,eb64bb849f854ceb,Router,True
+DEV_01163,5e16d249cd50cd77,Router,True
+DEV_01164,db9803dc2d1c68e7,Laptop,True
+DEV_01165,29c008cf246a4e5f,Tablet,True
+DEV_01166,428dc8be0debc2f4,Router,True
+DEV_01167,44cfb46f832afa21,Router,True
+DEV_01168,dc6716426d8617bd,Laptop,True
+DEV_01169,632943a18ccdd524,Burner Phone,True
+DEV_01170,621bcfb875d6fc6b,Router,True
+DEV_01171,67bfc670fbc25b67,Smartphone,True
+DEV_01172,336c224c60ffa735,Router,True
+DEV_01173,36c328f737a671cc,Smartphone,True
+DEV_01174,43b28a68cce139af,Laptop,True
+DEV_01175,7a25c70dd8eae391,Router,True
+DEV_01176,469b1eedd7f2d2d1,Burner Phone,True
+DEV_01177,b8aa53234a0c78a0,Tablet,True
+DEV_01178,e95efb50fcd55888,Burner Phone,True
+DEV_01179,e3bf479fb9d9d3f5,Tablet,True
+DEV_01180,d84d46b65b7bed89,Router,True
+DEV_01181,67778d1c49c3cf4e,Burner Phone,True
+DEV_01182,a7d413c12cb7f90a,Router,True
+DEV_01183,fda65b9cd1eacd34,Burner Phone,True
+DEV_01184,3923b6ddb3e3742e,Smartphone,True
+DEV_01185,2517e90fb6a6d0bf,Router,True
+DEV_01186,d15d2d133e51569c,Tablet,True
+DEV_01187,c171d2eb253070b5,Smartphone,True
+DEV_01188,61760fb152a741f1,Tablet,True
+DEV_01189,4f31aee04012633e,Laptop,True
+DEV_01190,3a8631754d7f471d,Smartphone,True
+DEV_01191,14b288acde31ce3e,Smartphone,True
+DEV_01192,5e3bdc15dea23ceb,Smartphone,True
+DEV_01193,41fea1d65e51123f,Router,True
+DEV_01194,6f2a2e055fe33522,Tablet,True
+DEV_01195,91f7588d25f2acee,Smartphone,True
+DEV_01196,b0ae38c184e15d9b,Tablet,True
+DEV_01197,43c58f953ca4d750,Laptop,True
+DEV_01198,074ed7b1925bb25f,Smartphone,True
+DEV_01199,cc18b1b5375e7402,Tablet,True
+DEV_01200,282ae99dafa34951,Router,True
+DEV_01201,39fce950df6a4848,Tablet,True
+DEV_01202,bac48cafdfe3bf54,Smartphone,True
+DEV_01203,81598fbad3fc74c0,Burner Phone,True
+DEV_01204,c00d6a7a086977be,Burner Phone,True
+DEV_01205,1e277c4e716fb6db,Burner Phone,True
+DEV_01206,61e6fa3ef934b296,Smartphone,True
+DEV_01207,db7b0c9013d88e1b,Tablet,True
+DEV_01208,0905f4a2897376b0,Smartphone,True
+DEV_01209,9721a871a2150dd8,Smartphone,True
+DEV_01210,39b73733b90e17fe,Burner Phone,True
+DEV_01211,e58d71e8755dea27,Tablet,True
+DEV_01212,2130eb6a95f63dc1,Laptop,True
+DEV_01213,8d1c288104b2609d,Burner Phone,True
+DEV_01214,22ed2c39f6b97e2d,Burner Phone,True
+DEV_01215,efe12f03354ff706,Burner Phone,True
+DEV_01216,5e6a81eca36cc922,Tablet,True
+DEV_01217,7eac40651d07716b,Smartphone,True
+DEV_01218,02954abacf7c79ac,Smartphone,True
+DEV_01219,6a512f766d083bdd,Smartphone,True
+DEV_01220,116cdf916320bdf1,Tablet,True
+DEV_01221,c5b944bae94ae184,Tablet,True
+DEV_01222,3a44f5a14d7af0eb,Smartphone,True
+DEV_01223,bb57c857e36e86d3,Tablet,True
+DEV_01224,2a9f72c6cb40f7fc,Burner Phone,True
+DEV_01225,6926eb79bcc9578e,Burner Phone,True
+DEV_01226,8ebe5faee78dc1cd,Laptop,True
+DEV_01227,da82a5975fbd5dcb,Laptop,True
+DEV_01228,2b8973c535de9f06,Router,True
+DEV_01229,c3ed7b4579aa10ea,Tablet,True
+DEV_01230,b56fa33a2a918bbe,Router,True
+DEV_01231,92d2381b374ece24,Tablet,True
+DEV_01232,ca776599cad7c2ab,Burner Phone,True
+DEV_01233,ab937c78574c7e4f,Router,True
+DEV_01234,645d487c09845e9c,Burner Phone,True
+DEV_01235,250ac8ab48f7f5e0,Router,True
+DEV_01236,24abc7ccb81e8d1a,Laptop,True
+DEV_01237,e56375ad2b784c79,Smartphone,True
+DEV_01238,0ddec209513d1997,Laptop,True
+DEV_01239,3a476a349ec30761,Router,True
+DEV_01240,f104dbc613e80839,Laptop,True
+DEV_01241,c4b325d971fa76b3,Laptop,True
+DEV_01242,6fabd2af1160a533,Burner Phone,True
+DEV_01243,78d8faac418a4842,Router,True
+DEV_01244,5f29b34defce3961,Burner Phone,True
+DEV_01245,c530ccb2167bf370,Burner Phone,True
+DEV_01246,1a255d7a4f9111f1,Tablet,True
+DEV_01247,c36c25740d04f66d,Smartphone,True
+DEV_01248,f65ecbdc6d25392c,Burner Phone,True
+DEV_01249,1c936c1bef40405f,Burner Phone,True
+DEV_01250,88d814b985725b21,Router,True
+DEV_01251,39b0dd04750f9b1a,Laptop,True
+DEV_01252,627e24225dea4a5c,Router,True
+DEV_01253,2c8784a1af877ad6,Router,True
+DEV_01254,2864bae366db040e,Smartphone,True
+DEV_01255,bbedd2f737508161,Laptop,True
+DEV_01256,820435a4d2f7cc07,Smartphone,True
+DEV_01257,5eae14df7ca185b5,Burner Phone,True
+DEV_01258,8de3fa2928d50d71,Tablet,True
+DEV_01259,6be83c15d86a1127,Smartphone,True
+DEV_01260,c3fb0ac10374c3ba,Router,True
+DEV_01261,f026101288106c20,Burner Phone,True
+DEV_01262,f7dfe7ca47361c58,Router,True
+DEV_01263,4d4953c10e4d3a0c,Tablet,True
+DEV_01264,9ac85084e49e03bc,Tablet,True
+DEV_01265,3a9cf2340b1112ef,Laptop,True
+DEV_01266,6f0cbb244390b169,Router,True
+DEV_01267,1743e97cb09f5a3d,Router,True
+DEV_01268,29187b118ed91ad0,Laptop,True
+DEV_01269,fb4e0db95fb6c434,Laptop,True
+DEV_01270,cb06a4dd8643f224,Burner Phone,True
+DEV_01271,0601172843c3ea0a,Router,True
+DEV_01272,7576c1746af78590,Router,True
+DEV_01273,61b58f7f37f84c66,Tablet,True
+DEV_01274,0fa28eb72cdeb52f,Tablet,True
+DEV_01275,77f1ff488ec295b4,Burner Phone,True
+DEV_01276,295c3b452402ca18,Router,True
+DEV_01277,0d11a39671974e6d,Laptop,True
+DEV_01278,d488efde300d5034,Router,True
+DEV_01279,d3c3d598e4611369,Router,True
+DEV_01280,f4f89d229f976ed3,Router,True
+DEV_01281,64d5b205871551c9,Tablet,True
+DEV_01282,61aca3cb7325b5ba,Router,True
+DEV_01283,9bdcd258154e53e4,Laptop,True
+DEV_01284,32428b1a65f2c99d,Router,True
+DEV_01285,269e8450c7558138,Router,True
+DEV_01286,30e5855cb7c859ee,Burner Phone,True
+DEV_01287,0ccc5a0db4296a56,Tablet,True
+DEV_01288,e71527a7358e0832,Laptop,True
+DEV_01289,36a77b7b96058919,Router,True
+DEV_01290,665a4e4fd37b8df8,Smartphone,True
+DEV_01291,e6c0e04353ba1be4,Laptop,True
+DEV_01292,b0a6f5f647321e74,Router,True
+DEV_01293,d379a93bfc408724,Smartphone,True
+DEV_01294,6810d9cdf5968add,Router,True
+DEV_01295,6fe794611fffece2,Laptop,True
+DEV_01296,a1b82b2c58f363b1,Router,True
+DEV_01297,fca54b816fea238e,Tablet,True
+DEV_01298,ee81dafb4a5cc1ba,Router,True
+DEV_01299,809f6d9a524ac815,Burner Phone,True
+DEV_01300,3d81ba427c1db68f,Burner Phone,True
+DEV_01301,cc2098ea9fc6c878,Tablet,True
+DEV_01302,f0e9b96a673517cc,Tablet,True
+DEV_01303,de510653b997bcfa,Laptop,True
+DEV_01304,9d223c2f7635d547,Laptop,True
+DEV_01305,072bfd1e0a0fdb42,Laptop,True
+DEV_01306,0b93b532a2cdb120,Burner Phone,True
+DEV_01307,c9620b20281935eb,Laptop,True
+DEV_01308,34d4c961b5a22668,Burner Phone,True
+DEV_01309,ffdbc64d499d4d31,Smartphone,True
+DEV_01310,7133a7ed732fe233,Router,True
+DEV_01311,0cee4c25ea8bd2f2,Smartphone,True
+DEV_01312,f7c1f7703a2e837b,Burner Phone,True
+DEV_01313,3c705d0cf8cf577e,Tablet,True
+DEV_01314,a83663a153e04b16,Smartphone,True
+DEV_01315,4b4775c69d555bc6,Router,True
+DEV_01316,77ee2b1edca23644,Burner Phone,True
+DEV_01317,f0d1d15f43e5d538,Router,True
+DEV_01318,e6fee55d4ac6e42f,Tablet,True
+DEV_01319,315a306fa9726f77,Smartphone,True
+DEV_01320,f8e7feabbc713723,Router,True
+DEV_01321,b0c21f1bcc66cdf2,Router,True
+DEV_01322,871479adb6e557c2,Tablet,True
+DEV_01323,16e8f00cbd8d5cc5,Burner Phone,True
+DEV_01324,8f79e8599c28ce34,Tablet,True
+DEV_01325,68f2f4d956002d7a,Burner Phone,True
+DEV_01326,e9de15b7bc3e9646,Burner Phone,True
+DEV_01327,a70c605ad40cce99,Router,True
+DEV_01328,bba1e1739392f9fa,Burner Phone,True
+DEV_01329,21c6cf093a003f7d,Smartphone,True
+DEV_01330,e5bee3529413a99a,Burner Phone,True
+DEV_01331,e2b3e0fc27cc3e0d,Smartphone,True
+DEV_01332,ddf60541572c8fda,Router,True
+DEV_01333,4336e8831efad5db,Tablet,True
+DEV_01334,3f5916c15b12aa9a,Burner Phone,True
+DEV_01335,c22510c5e533976d,Laptop,True
+DEV_01336,253abdb15d51af40,Burner Phone,True
+DEV_01337,795402846c934bad,Router,True
+DEV_01338,40373ed483e8c1d8,Burner Phone,True
+DEV_01339,198bfa6e23abc543,Laptop,True
+DEV_01340,9ac2fc37512751cc,Smartphone,True
+DEV_01341,11fe5720db96b20e,Laptop,True
+DEV_01342,6aa3e33fa3b2d0a4,Burner Phone,True
+DEV_01343,cb1deb141a0cc2f3,Smartphone,True
+DEV_01344,a3229b392b24429c,Tablet,True
+DEV_01345,2c6387605a8326f2,Tablet,True
+DEV_01346,7968ab717ac077e0,Burner Phone,True
+DEV_01347,a7a490c2ecf80d79,Router,True
+DEV_01348,d5df269a68fe0d91,Burner Phone,True
+DEV_01349,82b658ad6f30a546,Laptop,True
+DEV_01350,c31624d2d16c727b,Laptop,True
+DEV_01351,48c1b2f75d5dddb6,Tablet,True
+DEV_01352,f986a10dffb3424a,Smartphone,True
+DEV_01353,cde1b312d8f1262b,Tablet,True
+DEV_01354,5ed15cc2695250da,Tablet,True
+DEV_01355,e86c732ed0b0fc4e,Router,True
+DEV_01356,4ce17c14bd6e9f5d,Burner Phone,True
+DEV_01357,33fdd5582b9de88c,Laptop,True
+DEV_01358,fb28e8b46416e125,Router,True
+DEV_01359,d7750a58880cbee7,Tablet,True
+DEV_01360,43685a38451e6af2,Laptop,True
+DEV_01361,fbe95264c995eabc,Laptop,True
+DEV_01362,5543e1440ca95f00,Tablet,True
+DEV_01363,0bf41fd2d9b607d0,Smartphone,True
+DEV_01364,45d8f019b50de589,Tablet,True
+DEV_01365,5061f5a582ebf26c,Burner Phone,True
+DEV_01366,5fdacc64f54ba762,Smartphone,True
+DEV_01367,4a4cf4b2ebae8e36,Router,True
+DEV_01368,45ee7dea78375d56,Burner Phone,True
+DEV_01369,0e6b7a1137298dec,Router,True
+DEV_01370,336b100b38c3a371,Router,True
+DEV_01371,1c35ffa390e45565,Smartphone,True
+DEV_01372,44c4dd296206d4bd,Smartphone,True
+DEV_01373,109ed7fe23c2cc14,Burner Phone,True
+DEV_01374,530fdd585239c5ab,Smartphone,True
+DEV_01375,35754c1e6193f704,Laptop,True
+DEV_01376,b916eaee27c0aed1,Burner Phone,True
+DEV_01377,f383660ce2908ed0,Laptop,True
+DEV_01378,8e0c8f83658bf383,Laptop,True
+DEV_01379,3db5ff6c814be46b,Laptop,True
+DEV_01380,1be2e946c543286f,Laptop,True
+DEV_01381,21631f4c36335fe4,Tablet,True
+DEV_01382,b704a7c7e5f0c82d,Router,True
+DEV_01383,63d137130669883a,Router,True
+DEV_01384,0470e0505c22baa4,Smartphone,True
+DEV_01385,c850bf58917fda50,Tablet,True
+DEV_01386,6a5fb64fb5ee7d2a,Smartphone,True
+DEV_01387,96721dd949d06b0a,Burner Phone,True
+DEV_01388,e10eb782b2d6b02f,Tablet,True
+DEV_01389,58e4944494d3631f,Laptop,True
+DEV_01390,68c82402ce861dbc,Smartphone,True
+DEV_01391,4bc2f23844ef7221,Burner Phone,True
+DEV_01392,0e46c38a77a903db,Smartphone,True
+DEV_01393,889719cc9b3e7e52,Tablet,True
+DEV_01394,907643f784b692bb,Router,True
+DEV_01395,669c7b3f24c09eb0,Laptop,True
+DEV_01396,6bc7618d906bc74b,Laptop,True
+DEV_01397,4e361459385540c7,Tablet,True
+DEV_01398,55e3dc3126ac1047,Burner Phone,True
+DEV_01399,46e8cc4cd8fa4a7d,Router,True
+DEV_01400,e0370dac3af48502,Smartphone,True
+DEV_01401,d5a17a6266dc6087,Tablet,True
+DEV_01402,21c42071b6bd8922,Router,True
+DEV_01403,57c734aa550c8011,Smartphone,True
+DEV_01404,2fe847f604a034e2,Smartphone,True
+DEV_01405,750b6a6cb73e7a6b,Laptop,True
+DEV_01406,4e0f4eee9ea11e48,Tablet,True
+DEV_01407,666fbd08294af3d7,Burner Phone,True
+DEV_01408,dd0dc25721052916,Tablet,True
+DEV_01409,cff09e92d600e046,Router,True
+DEV_01410,568a3130f0fea4c0,Laptop,True
+DEV_01411,8d3f553764d2c55a,Tablet,True
+DEV_01412,5a00e82be1ca28df,Tablet,True
+DEV_01413,1e993e638248e9d7,Burner Phone,True
+DEV_01414,c73187afda85f3c4,Laptop,True
+DEV_01415,750c1eb91258520f,Burner Phone,True
+DEV_01416,3dbe6273fd46f656,Smartphone,True
+DEV_01417,690049af253e7ce8,Smartphone,True
+DEV_01418,2fe5d5c4a5a85f3d,Laptop,True
+DEV_01419,4193d34d6b87856a,Router,True
+DEV_01420,60182b4e9832e60a,Router,True
+DEV_01421,273caa2548c2ddda,Smartphone,True
+DEV_01422,1f3ce4d1f1c0ac2d,Laptop,True
+DEV_01423,01dfe9b561982614,Tablet,True
+DEV_01424,8c3f6eb9d84123d5,Tablet,True
+DEV_01425,b7767d5ec273b2bc,Burner Phone,True
+DEV_01426,ef8d62c6bd1015b5,Laptop,True
+DEV_01427,971c69e115331273,Smartphone,True
+DEV_01428,3c6e78f9fd8748c1,Smartphone,True
+DEV_01429,ec64e30b0b9f3ef9,Router,True
+DEV_01430,648d513f5327bbba,Burner Phone,True
+DEV_01431,c2ba1e50a6bbee59,Router,True
+DEV_01432,a0bb09ac9f39a05d,Laptop,True
+DEV_01433,b6fe411067ae6a1f,Smartphone,True
+DEV_01434,4967f67bde92b195,Smartphone,True
+DEV_01435,efaa36d8b34a3054,Smartphone,True
+DEV_01436,2503eb868bd501c2,Laptop,True
+DEV_01437,98e194e80c0160c8,Tablet,True
+DEV_01438,80c043106ef906b0,Laptop,True
+DEV_01439,9f1889d86d3af2d1,Burner Phone,True
+DEV_01440,2ccd4cc4e41d6c35,Tablet,True
+DEV_01441,4180be811bd8fbf4,Tablet,True
+DEV_01442,75702b593358bcd1,Tablet,True
+DEV_01443,b8263c438ccd189c,Smartphone,True
+DEV_01444,efe44f4a6032549e,Burner Phone,True
+DEV_01445,494ea8158f7d0115,Smartphone,True
+DEV_01446,841c17b91deb7891,Burner Phone,True
+DEV_01447,b0c3c5bbe0e8c5f4,Burner Phone,True
+DEV_01448,d17dd4c2c2e12192,Smartphone,True
+DEV_01449,83cc5ffa67685323,Tablet,True
+DEV_01450,2eba1767a25bfb6e,Router,True
+DEV_01451,862b381765667a47,Tablet,True
+DEV_01452,a589ffccc156f0aa,Tablet,True
+DEV_01453,5ec2620df8ee1efb,Tablet,True
+DEV_01454,f7584a9c7d895ff3,Smartphone,True
+DEV_01455,3d8dc3f55ae3a473,Laptop,True
+DEV_01456,e4d1c1100ef3c732,Laptop,True
+DEV_01457,b3fd28420f7c8328,Router,True
+DEV_01458,2172aebda730a01b,Router,True
+DEV_01459,bca48ecbb5c724a9,Burner Phone,True
+DEV_01460,2f1bba1506f1dd57,Laptop,True
+DEV_01461,1e36aa20936e645b,Tablet,True
+DEV_01462,62200c1fc689abad,Tablet,True
+DEV_01463,7649f5fe15418678,Smartphone,True
+DEV_01464,a94c385bf6c8192b,Tablet,True
+DEV_01465,f9debabccd1a2c9d,Router,True
+DEV_01466,4777ac031d44c6c4,Burner Phone,True
+DEV_01467,fe70e3bbc15773fa,Smartphone,True
+DEV_01468,1f762f0f7a5f8b51,Smartphone,True
+DEV_01469,e73dded32e10f1fe,Burner Phone,True
+DEV_01470,a6b6d8711638aa1f,Burner Phone,True
+DEV_01471,6f917d632cbcb97f,Laptop,True
+DEV_01472,928fe62071f9411e,Laptop,True
+DEV_01473,eec38348e5284265,Burner Phone,True
+DEV_01474,025b65eafe5570c7,Laptop,True
+DEV_01475,4dd957863ea8d0a7,Burner Phone,True
+DEV_01476,3ac018d03f601428,Router,True
+DEV_01477,b6af76f9375e7468,Burner Phone,True
+DEV_01478,f24c89fb887de990,Tablet,True
+DEV_01479,c5dd35b54777a11f,Router,True
+DEV_01480,5bd6921c2f45eb15,Router,True
+DEV_01481,ae4ff573e54fae96,Burner Phone,True
+DEV_01482,a4b1191545a59407,Tablet,True
+DEV_01483,e8950b2c9d63df1f,Smartphone,True
+DEV_01484,96aaf731422e7447,Router,True
+DEV_01485,0fefd137545779b9,Laptop,True
+DEV_01486,e387589887c156b9,Tablet,True
+DEV_01487,36ab2e7a4429e1ed,Tablet,True
+DEV_01488,f79adc0e4dd6a029,Tablet,True
+DEV_01489,f5ff9ff0ac825db0,Burner Phone,True
+DEV_01490,ca1ef8ad192fbb50,Laptop,True
+DEV_01491,739a8e172d45f253,Smartphone,True
+DEV_01492,b37dfc71b7152044,Burner Phone,True
+DEV_01493,e6847031681055ae,Router,True
+DEV_01494,79e3e7d2817e4eed,Laptop,True
+DEV_01495,6c1d82a13c18eb34,Burner Phone,True
+DEV_01496,05f6502ed980f443,Laptop,True
+DEV_01497,6c0313b0511ab6a2,Router,True
+DEV_01498,1e79d4aa3ce2c0df,Laptop,True
+DEV_01499,6462a77956460bcb,Laptop,True
+DEV_01500,de96d9dafc0837c0,Router,True
+DEV_01501,e768d2b388de9769,Laptop,True
+DEV_01502,d2d21bfe77645068,Tablet,True
+DEV_01503,eb42976723f1594f,Tablet,True
+DEV_01504,01e4e03ad4a7db32,Router,True
+DEV_01505,e9ac7d8128ed6891,Burner Phone,True
+DEV_01506,b3b4a30b243eaba0,Laptop,True
+DEV_01507,47e576eb0ff8c04f,Burner Phone,True
+DEV_01508,857d12963c69aab3,Smartphone,True
+DEV_01509,489130021e89f89f,Router,True
+DEV_01510,bbc0b95e7e37382f,Tablet,True
+DEV_01511,7e2f6a0ae8351daf,Tablet,True
+DEV_01512,ecbf6bb4836620fc,Tablet,True
+DEV_01513,c11f52a0aa21acd1,Laptop,True
+DEV_01514,bb4403e817db1f4c,Smartphone,True
+DEV_01515,fffa0b7d400a1942,Smartphone,True
+DEV_01516,8529b3d0a7bd2c13,Laptop,True
+DEV_01517,b38f24b7a25d319d,Smartphone,True
+DEV_01518,fe1d2985580c5ca7,Laptop,True
+DEV_01519,9cc4ec2925a81f54,Router,True
+DEV_01520,b6a4370410d0e177,Smartphone,True
+DEV_01521,3729f96a85a60fb5,Laptop,True
+DEV_01522,1f55bbac03f274e9,Smartphone,True
+DEV_01523,7e58b51fb7255f78,Burner Phone,True
+DEV_01524,97e6a45e123629b9,Router,True
+DEV_01525,b08a6d53525065f6,Tablet,True
+DEV_01526,bbf9ab46c9c67617,Smartphone,True
+DEV_01527,68e5cdb250b46ef4,Tablet,True
+DEV_01528,a36f49b50c9b0895,Laptop,True
+DEV_01529,5eb69e4dbe5e4156,Tablet,True
+DEV_01530,8ebdf8be06a6a148,Router,True
+DEV_01531,17e6f50c29dee381,Tablet,True
+DEV_01532,b51081cdfa1a067e,Router,True
+DEV_01533,d3f893badeb41b94,Tablet,True
+DEV_01534,1e6905f0079ffd97,Laptop,True
+DEV_01535,09ba4380913e50b2,Smartphone,True
+DEV_01536,2f5416cf4a8614a9,Smartphone,True
+DEV_01537,4b15920e68db320e,Router,True
+DEV_01538,0f5c9c664973dc5d,Burner Phone,True
+DEV_01539,fdaeb70ea0c30a31,Tablet,True
+DEV_01540,40a0a0274dbaf859,Tablet,True
+DEV_01541,1474a3297f526a9d,Burner Phone,True
+DEV_01542,819cbdf82add8b60,Tablet,True
+DEV_01543,415b9c46ef7b6438,Burner Phone,True
+DEV_01544,93cb361062a64148,Smartphone,True
+DEV_01545,df9d422232899216,Burner Phone,True
+DEV_01546,a0ee5c1dbee190f0,Tablet,True
+DEV_01547,76a6adab4b63adf9,Burner Phone,True
+DEV_01548,8b225bf1dfd3fdf5,Router,True
+DEV_01549,e18b707e3c842162,Smartphone,True
+DEV_01550,8bfead1b8bb3f364,Burner Phone,True
+DEV_01551,3bcc7cfe60eb4e56,Router,True
+DEV_01552,ed64704d2ceb68bc,Router,True
+DEV_01553,0546935bbccba47a,Laptop,True
+DEV_01554,b8b16475b37e8c67,Laptop,True
+DEV_01555,0bd77c9d48a30fa3,Tablet,True
+DEV_01556,640f44f82fd4cdb3,Smartphone,True
+DEV_01557,a99d750482ee4a31,Tablet,True
+DEV_01558,68e7bcdadab3fd1e,Laptop,True
+DEV_01559,81538749a839fc2d,Router,True
+DEV_01560,1b5edec47b3a78ca,Smartphone,True
+DEV_01561,d5649fb8e4ef6713,Laptop,True
+DEV_01562,a5795edf451c6ef6,Burner Phone,True
+DEV_01563,4044dd9054d226f6,Router,True
+DEV_01564,f8bf3f1097e200c7,Burner Phone,True
+DEV_01565,5011dd8e226bbfe9,Tablet,True
+DEV_01566,64d151b4f1763cc9,Router,True
+DEV_01567,f17b76e66cc21a12,Smartphone,True
+DEV_01568,2eda97fca9acb9c9,Laptop,True
+DEV_01569,be0a3229ae557e83,Burner Phone,True
+DEV_01570,133a8bb6577c2eec,Smartphone,True
+DEV_01571,87670558eb11cf26,Burner Phone,True
+DEV_01572,84833b609aacaf4c,Tablet,True
+DEV_01573,4828daebb0976f32,Burner Phone,True
+DEV_01574,20c10ea6276cb326,Smartphone,True
+DEV_01575,a99c0688e6f909a0,Laptop,True
+DEV_01576,31da44842d51af53,Laptop,True
+DEV_01577,9dd28bebb38d5bb9,Router,True
+DEV_01578,e84fb5b82310f451,Burner Phone,True
+DEV_01579,39d2cf6406a79028,Burner Phone,True
+DEV_01580,66cfdb4e9424b4ff,Smartphone,True
+DEV_01581,2bfffce05f878e4e,Router,True
+DEV_01582,100744b069543942,Burner Phone,True
+DEV_01583,ca59441acb23cd90,Router,True
+DEV_01584,54679d211077b9dc,Router,True
+DEV_01585,7101a1bab242e460,Router,True
+DEV_01586,6a65c3c7da55f00d,Burner Phone,True
+DEV_01587,61e0488869ec02b0,Burner Phone,True
+DEV_01588,9178664ced438552,Smartphone,True
+DEV_01589,a9ecc7b77f6ea998,Tablet,True
+DEV_01590,3441eecdcfae134d,Tablet,True
+DEV_01591,36cb246c42d7f52c,Burner Phone,True
+DEV_01592,579d51a60819b031,Router,True
+DEV_01593,7985b852a5318659,Router,True
+DEV_01594,64c3562c941c4d04,Laptop,True
+DEV_01595,f4e6cdebfc249a8f,Smartphone,True
+DEV_01596,7dc089a6243f2f9d,Router,True
+DEV_01597,40ed945bc53bc9c8,Tablet,True
+DEV_01598,c3ab5216f6eb2d83,Tablet,True
+DEV_01599,a476bfc6832cdd96,Burner Phone,True
+DEV_01600,b1e2d032673025cf,Router,True
+DEV_01601,2fd5068145bf851c,Tablet,True
+DEV_01602,ac0dcf8382c0ea0e,Smartphone,True
+DEV_01603,211c57231e642787,Laptop,True
+DEV_01604,bf1a475138607180,Burner Phone,True
+DEV_01605,135b8680c5fc9aa4,Tablet,True
+DEV_01606,f484e65b11e6104f,Smartphone,True
+DEV_01607,af18fc54134e8abb,Laptop,True
+DEV_01608,d2e545eaaf414f46,Router,True
+DEV_01609,bd987248fc5973ee,Tablet,True
+DEV_01610,95e0f94bc6a1e636,Router,True
+DEV_01611,4aa964728d0b294f,Router,True
+DEV_01612,43cfd847be739622,Smartphone,True
+DEV_01613,9415866f59508ce3,Tablet,True
+DEV_01614,64d17831dd8b1cab,Burner Phone,True
+DEV_01615,6f45fdbd19700fa6,Router,True
+DEV_01616,db33b949249146b0,Burner Phone,True
+DEV_01617,3356c862958a2c4f,Burner Phone,True
+DEV_01618,0bd3ffaeb9beddcc,Tablet,True
+DEV_01619,2061ef0d5166cae0,Smartphone,True
+DEV_01620,d451533d4cb8b8d7,Laptop,True
+DEV_01621,0cabdb56355078ba,Laptop,True
+DEV_01622,875e34c5175822df,Tablet,True
+DEV_01623,838ae576867a8635,Tablet,True
+DEV_01624,f294f4839e550760,Router,True
+DEV_01625,a46f425e5d21532c,Laptop,True
+DEV_01626,1cad772f057514be,Laptop,True
+DEV_01627,9e558e1b8f5990f5,Smartphone,True
+DEV_01628,d3ec102a140ab17e,Smartphone,True
+DEV_01629,136f7328c9a88760,Burner Phone,True
+DEV_01630,1268f9c59b6fa340,Tablet,True
+DEV_01631,8cea18a4f58ac8c1,Laptop,True
+DEV_01632,1c3335b3b4d616a6,Router,True
+DEV_01633,8c54af43f22e8959,Burner Phone,True
+DEV_01634,c78dfbe753f17e4a,Router,True
+DEV_01635,61f29318c6b78314,Tablet,True
+DEV_01636,545e8e966ff5db46,Smartphone,True
+DEV_01637,288deaf6bda4d298,Router,True
+DEV_01638,4a8ed6c8f9e26d3d,Router,True
+DEV_01639,360607c1883b70cc,Tablet,True
+DEV_01640,acf2110d40339d1b,Tablet,True
+DEV_01641,461952749f246f84,Router,True
+DEV_01642,05589080ba132943,Laptop,True
+DEV_01643,d0e98f846825bc43,Laptop,True
+DEV_01644,6a0d4f42b429202f,Smartphone,True
+DEV_01645,37441ed848ee3fde,Router,True
+DEV_01646,504f7ae26427c6fd,Burner Phone,True
+DEV_01647,f16bdb6bb1f7f9f2,Laptop,True
+DEV_01648,89a15ea3aea27da1,Laptop,True
+DEV_01649,44fa741f5158346d,Laptop,True
+DEV_01650,430cdf01fd5b7e13,Burner Phone,True
+DEV_01651,57d6d76d462c5757,Tablet,True
+DEV_01652,22771724dbb3c19a,Smartphone,True
+DEV_01653,87b0a1d7093f6609,Burner Phone,True
+DEV_01654,8574c7acc507e795,Burner Phone,True
+DEV_01655,e4585046c0f2e572,Laptop,True
+DEV_01656,8e366afc87af0e11,Laptop,True
+DEV_01657,8ba5cd7c2b9859ac,Router,True
+DEV_01658,9e3e85291a7f6a0e,Burner Phone,True
+DEV_01659,447b15219ee4a2c1,Router,True
+DEV_01660,b5f0189d3cc18aa2,Tablet,True
+DEV_01661,3d792f383f5d3d73,Smartphone,True
+DEV_01662,9e3184b34463db8c,Tablet,True
+DEV_01663,f4cec7ae0ba10190,Burner Phone,True
+DEV_01664,6723e48da9e97f16,Burner Phone,True
+DEV_01665,9fe76ae2a7cf2136,Laptop,True
+DEV_01666,6535a81ad65965d8,Laptop,True
+DEV_01667,1fc446318f5b81cf,Laptop,True
+DEV_01668,a82bc715ffd60d88,Tablet,True
+DEV_01669,668ef0dbe611e045,Smartphone,True
+DEV_01670,a44279d2a99f3dec,Router,True
+DEV_01671,d64590e10c93abea,Burner Phone,True
+DEV_01672,243fbbd2caa2a685,Tablet,True
+DEV_01673,38d390cf04081739,Router,True
+DEV_01674,ce882d8fb8cb8b0e,Tablet,True
+DEV_01675,eab2483cb40b1246,Laptop,True
+DEV_01676,e9fc50977de7dfbf,Smartphone,True
+DEV_01677,a43f2269f26d45c2,Laptop,True
+DEV_01678,6dd866bf9795476f,Laptop,True
+DEV_01679,81cc2f2d61b54707,Burner Phone,True
+DEV_01680,bed440a7b04526a8,Burner Phone,True
+DEV_01681,30831176420e0d01,Smartphone,True
+DEV_01682,bb850203c7676402,Router,True
+DEV_01683,2fb7f96890a53583,Tablet,True
+DEV_01684,7c7a10629d45010c,Laptop,True
+DEV_01685,d6873f60b6d7b44e,Laptop,True
+DEV_01686,16cc83275d8e5759,Laptop,True
+DEV_01687,fca9e46d61a2787d,Laptop,True
+DEV_01688,864280df7d3c9f77,Tablet,True
+DEV_01689,b40a4262fa871f74,Router,True
+DEV_01690,a43197140d83def1,Smartphone,True
+DEV_01691,68cfde3faf33d98c,Smartphone,True
+DEV_01692,1e1e96eb9f6df9b7,Burner Phone,True
+DEV_01693,cca8b6f5905c1729,Router,True
+DEV_01694,a17c81c3394de1ef,Tablet,True
+DEV_01695,56ff945fdd7cdce6,Burner Phone,True
+DEV_01696,e7646a0e303d134b,Laptop,True
+DEV_01697,11831700d8653e10,Tablet,True
+DEV_01698,2de9b24185c92550,Tablet,True
+DEV_01699,6fc97cbf711cd822,Burner Phone,True
+DEV_01700,c0c7904b4bbaa927,Burner Phone,True
+DEV_01701,b48d322ba8aaed6f,Tablet,True
+DEV_01702,78ff5578a5e252d4,Laptop,True
+DEV_01703,ae9d7380e755ee03,Router,True
+DEV_01704,ca8a8eaf52a24d93,Tablet,True
+DEV_01705,fad5b027d1431a1e,Tablet,True
+DEV_01706,3945802b0d081cc4,Smartphone,True
+DEV_01707,7a1bae06d542e987,Tablet,True
+DEV_01708,bf287b12d63e1cf2,Smartphone,True
+DEV_01709,d545268c6ed9fdb9,Laptop,True
+DEV_01710,70a22d99589c894d,Router,True
+DEV_01711,454efd7b73970a8c,Laptop,True
+DEV_01712,b88bef683e596e29,Smartphone,True
+DEV_01713,c4d9ccd9e87ca83b,Router,True
+DEV_01714,8e968ab7ec651884,Router,True
+DEV_01715,7ff89a21590522b2,Burner Phone,True
+DEV_01716,68a6377001079589,Smartphone,True
+DEV_01717,92da6581ad8c547c,Router,True
+DEV_01718,3b81c0867d881b18,Laptop,True
+DEV_01719,b1292b0357e5181a,Tablet,True
+DEV_01720,1d7254550a58dcd9,Tablet,True
+DEV_01721,9393c658c9b77e23,Burner Phone,True
+DEV_01722,7d2956a4ada3b603,Smartphone,True
+DEV_01723,7898652012671e46,Laptop,True
+DEV_01724,54f9785a5d792f91,Router,True
+DEV_01725,c65299cbfc2a4be9,Tablet,True
+DEV_01726,5cbf7f3e93d4d616,Tablet,True
+DEV_01727,224e56ca7df4f4d1,Burner Phone,True
+DEV_01728,e561288abe5b35cb,Burner Phone,True
+DEV_01729,d3a7aed93c651c1c,Tablet,True
+DEV_01730,acddc33e3f9590c7,Tablet,True
+DEV_01731,99396993c456d1f3,Tablet,True
+DEV_01732,b474683d81d8ad84,Smartphone,True
+DEV_01733,60d48ff7c4487fd7,Burner Phone,True
+DEV_01734,4eb8a367587887f7,Router,True
+DEV_01735,476a949b4df8b3d0,Router,True
+DEV_01736,cac9ef81f08f99e5,Tablet,True
+DEV_01737,b3df4eb062d2eb39,Router,True
+DEV_01738,079f517acce386bc,Laptop,True
+DEV_01739,5ac75d10f3b5d0cd,Burner Phone,True
+DEV_01740,4f3c5f6ee97c6f3c,Smartphone,True
+DEV_01741,8bf316e2f0ea80a8,Smartphone,True
+DEV_01742,f9b52f1b631adc27,Tablet,True
+DEV_01743,b14a42566ee43458,Burner Phone,True
+DEV_01744,b30a1e4e0120cb45,Burner Phone,True
+DEV_01745,eb19819e64cb73dc,Smartphone,True
+DEV_01746,f3be436efe6e4f8b,Smartphone,True
+DEV_01747,7d28eb168988ac7a,Laptop,True
+DEV_01748,142ab97a6f0e3756,Smartphone,True
+DEV_01749,bb39f6fe2d7e3eb7,Router,True
+DEV_01750,2ec93ea836e7465c,Tablet,True
+DEV_01751,82b5162942055432,Router,True
+DEV_01752,ced04f967e9f7580,Tablet,True
+DEV_01753,2b283250dc3243f1,Router,True
+DEV_01754,827d5ec3ab2659e6,Smartphone,True
+DEV_01755,8088db430b168b9b,Burner Phone,True
+DEV_01756,36408be99064d773,Router,True
+DEV_01757,cb3b6e9df21ee039,Smartphone,True
+DEV_01758,f0bd6076fef8dea6,Smartphone,True
+DEV_01759,f1d9a857ea0d84e9,Laptop,True
+DEV_01760,2a8315b8281355c0,Smartphone,True
+DEV_01761,350c8a08f4bdb85e,Laptop,True
+DEV_01762,c726c8a60cdea5da,Laptop,True
+DEV_01763,b8299876a01a9cae,Smartphone,True
+DEV_01764,ed2d12fcce4398d4,Burner Phone,True
+DEV_01765,41453f15a812f3ab,Tablet,True
+DEV_01766,7c7d3ce241b39713,Burner Phone,True
+DEV_01767,b0cced2c71b1838d,Smartphone,True
+DEV_01768,1ffb0df82afd34d3,Burner Phone,True
+DEV_01769,dc85df5789f4505f,Burner Phone,True
+DEV_01770,3c5dbda5b5296293,Burner Phone,True
+DEV_01771,f2fa1dce92549a41,Burner Phone,True
+DEV_01772,22feb73774945650,Tablet,True
+DEV_01773,7d5d9c0ad81c1fe3,Burner Phone,True
+DEV_01774,ac6fb5c7b433196c,Laptop,True
+DEV_01775,3de5fe301ca0e745,Smartphone,True
+DEV_01776,24759d4fecfd53d7,Burner Phone,True
+DEV_01777,a455fdcc1fe8938e,Smartphone,True
+DEV_01778,8ff4e741fd8acbeb,Router,True
+DEV_01779,e85be953e2a34fdb,Tablet,True
+DEV_01780,f3b9da1c6c10a198,Router,True
+DEV_01781,986d58d525c13a0a,Smartphone,True
+DEV_01782,90827097f4b5c68c,Router,True
+DEV_01783,e56d546fe10d6bd4,Laptop,True
+DEV_01784,106ec52df172a416,Smartphone,True
+DEV_01785,8fe0810a1a5169d3,Router,True
+DEV_01786,2998fb50671e6958,Tablet,True
+DEV_01787,5697865cb252f475,Smartphone,True
+DEV_01788,34984f0c4e1ff86e,Laptop,True
+DEV_01789,48461a7aa32be7ed,Smartphone,True
+DEV_01790,ddbdda23247a279a,Smartphone,True
+DEV_01791,f0438e14535637fe,Smartphone,True
+DEV_01792,7825b84bdf74fb18,Tablet,True
+DEV_01793,be33d76d2394bf54,Smartphone,True
+DEV_01794,bf983ff5f5189d4c,Laptop,True
+DEV_01795,57da0ed2cee34eeb,Burner Phone,True
+DEV_01796,1641dcd305ea81b1,Router,True
+DEV_01797,461e3563cb841a03,Tablet,True
+DEV_01798,8083474712ea5375,Tablet,True
+DEV_01799,86af6a1ba8950a6e,Laptop,True
+DEV_01800,41f9d8223e705bb6,Laptop,True
+DEV_01801,241dd2debde247ac,Burner Phone,True
+DEV_01802,cd29517f5e1c1022,Burner Phone,True
+DEV_01803,a436166b849b2768,Router,True
+DEV_01804,c8c56da0cdc0777e,Tablet,True
+DEV_01805,c9625cfdca025594,Burner Phone,True
+DEV_01806,bac90ce3ac495ddd,Router,True
+DEV_01807,381d6fc9c0e4f482,Burner Phone,True
+DEV_01808,dee7eb3b196de9d1,Router,True
+DEV_01809,7484ca404ba5873d,Laptop,True
+DEV_01810,736f603df00e4f04,Smartphone,True
+DEV_01811,84587c37d7ec95f6,Smartphone,True
+DEV_01812,60bec83ac07b923d,Router,True
+DEV_01813,b1d7fd78be569240,Tablet,True
+DEV_01814,88f62eeaeb58b8c0,Smartphone,True
+DEV_01815,043d99d92358912b,Smartphone,True
+DEV_01816,0f5ffb1721383f08,Tablet,True
+DEV_01817,bd5f5ef4170ee38b,Smartphone,True
+DEV_01818,b4c60d1755e2d780,Burner Phone,True
+DEV_01819,2cb77a7253ba184c,Router,True
+DEV_01820,279cc65ec25ca84b,Laptop,True
+DEV_01821,87bfec1d5d932166,Tablet,True
+DEV_01822,23162d465bb868eb,Laptop,True
+DEV_01823,ffc73de3ec59e097,Tablet,True
+DEV_01824,2376eef5113dbaf8,Smartphone,True
+DEV_01825,d23c4bee202fb2ac,Tablet,True
+DEV_01826,ef158463689240b7,Router,True
+DEV_01827,1d0a76fcdb3a729e,Laptop,True
+DEV_01828,832c0ca733fb9c0a,Burner Phone,True
+DEV_01829,3fbe0c638c913e55,Tablet,True
+DEV_01830,e4e0cba847c0958d,Router,True
+DEV_01831,d45a7cbe08b2b0e5,Router,True
+DEV_01832,db7fbba781c9cae8,Laptop,True
+DEV_01833,93071c75514da53d,Router,True
+DEV_01834,f121cef82b45fd8a,Smartphone,True
+DEV_01835,3feed628b767c301,Smartphone,True
+DEV_01836,f46f7931900435d9,Burner Phone,True
+DEV_01837,589325e8bf9fb3ea,Tablet,True
+DEV_01838,19171850cc6b1b65,Burner Phone,True
+DEV_01839,b8685ef6ad493afe,Smartphone,True
+DEV_01840,d9c99ee450037abb,Laptop,True
+DEV_01841,04ad895bd298dca2,Router,True
+DEV_01842,b1bcf2d1608fb041,Tablet,True
+DEV_01843,fcaa857c581d02da,Router,True
+DEV_01844,133cb0909eadc35c,Smartphone,True
+DEV_01845,7281503a53eca91e,Tablet,True
+DEV_01846,e05cbb0795dc6833,Smartphone,True
+DEV_01847,fe3b43a83907ebc2,Tablet,True
+DEV_01848,7dba5387a7eb47b3,Tablet,True
+DEV_01849,6c9a295bc92c5d2f,Router,True
+DEV_01850,e9a7ebabe758c2a5,Smartphone,True
+DEV_01851,a13f8d76208f5d02,Router,True
+DEV_01852,af598aebdbea9384,Router,True
+DEV_01853,2ec1261ca93a82aa,Router,True
+DEV_01854,e05dd8c8fa57bdf1,Router,True
+DEV_01855,7a45b35ae1520db6,Burner Phone,True
+DEV_01856,1574c288ac6a1940,Burner Phone,True
+DEV_01857,3fe80fc010027bf1,Tablet,True
+DEV_01858,dfa0aec4db4ae1a7,Laptop,True
+DEV_01859,152833450f2b18cb,Tablet,True
+DEV_01860,beb175f094cfd25f,Router,True
+DEV_01861,cf826862a88fc812,Smartphone,True
+DEV_01862,dc11eb8513a81534,Tablet,True
+DEV_01863,f12d97179a4877e7,Smartphone,True
+DEV_01864,a20594c46a7117fb,Router,True
+DEV_01865,2e1e17574efc0ef5,Burner Phone,True
+DEV_01866,0f6aa33a93a7cbc1,Laptop,True
+DEV_01867,58261e2a4daebbf4,Burner Phone,True
+DEV_01868,819e5448f18c88be,Smartphone,True
+DEV_01869,cb8bc9677534793b,Tablet,True
+DEV_01870,e28ba312bed92199,Smartphone,True
+DEV_01871,ecb172c979aa6702,Tablet,True
+DEV_01872,dcf7d19504bd17b3,Tablet,True
+DEV_01873,61e4a0473665dd98,Laptop,True
+DEV_01874,6241d3edf3f7f11f,Smartphone,True
+DEV_01875,b9930bb6902fd8d0,Router,True
+DEV_01876,4554ebe38a13c374,Router,True
+DEV_01877,f1d35df9b87425d1,Laptop,True
+DEV_01878,360e53bee0d24426,Tablet,True
+DEV_01879,4e8b164150cf5448,Laptop,True
+DEV_01880,d7064866908b87c9,Laptop,True
+DEV_01881,fb3b370b108b67b4,Tablet,True
+DEV_01882,8d530b4995837c45,Laptop,True
+DEV_01883,72af5f0074c1236d,Laptop,True
+DEV_01884,1a363c459218c500,Laptop,True
+DEV_01885,7d876da57f7d7e90,Router,True
+DEV_01886,2b2c4ce21d276015,Laptop,True
+DEV_01887,2031de10e3d0fe00,Smartphone,True
+DEV_01888,3e8a68124d38cfd1,Laptop,True
+DEV_01889,d83e52b1ebc4418c,Router,True
+DEV_01890,d78fce75a051e42c,Router,True
+DEV_01891,c109337a13aa43aa,Burner Phone,True
+DEV_01892,9e8852bde5c3da3c,Tablet,True
+DEV_01893,79350c9fdda6e50e,Router,True
+DEV_01894,66dcce616a40a925,Router,True
+DEV_01895,8a62983b947925cc,Smartphone,True
+DEV_01896,bade6144a9f64daa,Burner Phone,True
+DEV_01897,b15c767c3fb312b2,Laptop,True
+DEV_01898,e03c4195563d5862,Laptop,True
+DEV_01899,e7218ae2f03a4539,Burner Phone,True
+DEV_01900,8f6de7e1715e66d5,Laptop,True
+DEV_01901,e83baed78a5496b6,Smartphone,True
+DEV_01902,251c375be705ea17,Router,True
+DEV_01903,0c1b7804d64de239,Laptop,True
+DEV_01904,02bd5f8807d3fadb,Tablet,True
+DEV_01905,0c9e86989b6189b0,Tablet,True
+DEV_01906,8fa06c42b217d65a,Tablet,True
+DEV_01907,eecf86c703ebdabf,Tablet,True
+DEV_01908,2b9e820b59b63796,Router,True
+DEV_01909,facc36f93dd6ce5b,Smartphone,True
+DEV_01910,352b3e683319205f,Tablet,True
+DEV_01911,68aff4290bbe47eb,Laptop,True
+DEV_01912,4e39cfbe9fc46016,Laptop,True
+DEV_01913,e41fe7fff65d9b65,Tablet,True
+DEV_01914,9c958eeab2d5e9b7,Burner Phone,True
+DEV_01915,efa4baa6aacbeb9d,Burner Phone,True
+DEV_01916,cee5315a098438df,Tablet,True
+DEV_01917,948a9bbb40c8b7dc,Laptop,True
+DEV_01918,8eee3a47000ad9a2,Laptop,True
+DEV_01919,a5250acd63952bdf,Smartphone,True
+DEV_01920,8168a835aba723d0,Laptop,True
+DEV_01921,efd3a0884974a63f,Laptop,True
+DEV_01922,f82e6012d6bb30f2,Burner Phone,True
+DEV_01923,4d9958a3133cfc0e,Smartphone,True
+DEV_01924,7ec5b7bda0c2c077,Burner Phone,True
+DEV_01925,4c13d3bbca04431b,Tablet,True
+DEV_01926,21361851895e9836,Laptop,True
+DEV_01927,8458fc26973411c6,Laptop,True
+DEV_01928,f33f2ef383b1a8ea,Laptop,True
+DEV_01929,f25bf16f9da1f571,Laptop,True
+DEV_01930,a11d9e4a1bbce03c,Burner Phone,True
+DEV_01931,dd0d34678f59a4fc,Smartphone,True
+DEV_01932,ee18b8978e39e37f,Burner Phone,True
+DEV_01933,d89e11fdefe5b54f,Tablet,True
+DEV_01934,f4baa079e6295f20,Burner Phone,True
+DEV_01935,58e1dc6762c027cc,Laptop,True
+DEV_01936,c7b4dd18bd2054c5,Router,True
+DEV_01937,bdd2543f28d489bd,Smartphone,True
+DEV_01938,93b58ab2a5bd61f5,Router,True
+DEV_01939,2bf7e2a439b1cc19,Laptop,True
+DEV_01940,2065a0efe88793a5,Burner Phone,True
+DEV_01941,e4c29be6b61b2402,Laptop,True
+DEV_01942,94babe327f8aa1f1,Burner Phone,True
+DEV_01943,77f7a40c1409b80f,Smartphone,True
+DEV_01944,faec6d7450cbf7eb,Laptop,True
+DEV_01945,62f7d651407e535a,Smartphone,True
+DEV_01946,03fc1bee70df43af,Burner Phone,True
+DEV_01947,83200070551423de,Smartphone,True
+DEV_01948,821ae6532295b170,Smartphone,True
+DEV_01949,9b804d41ad1e8136,Router,True
+DEV_01950,86a0eef41ee1f651,Laptop,True
+DEV_01951,caaebea6209b3cdb,Smartphone,True
+DEV_01952,f9dd093b2613d563,Smartphone,True
+DEV_01953,9f366565c1b32ed3,Tablet,True
+DEV_01954,b38c1a6caf620977,Burner Phone,True
+DEV_01955,faf72b541e95d471,Tablet,True
+DEV_01956,021fba445aaa383f,Smartphone,True
+DEV_01957,d312825ccf1502dc,Smartphone,True
+DEV_01958,36e474af617e66e5,Smartphone,True
+DEV_01959,a9e831fc70a2b282,Burner Phone,True
+DEV_01960,33d64435d8b1e924,Router,True
+DEV_01961,621add110bcc658b,Router,True
+DEV_01962,797a6cf385db9def,Smartphone,True
+DEV_01963,6aa6ea054889cd67,Router,True
+DEV_01964,a44612071b2b3d4a,Router,True
+DEV_01965,cfcb1f27e990cd51,Laptop,True
+DEV_01966,ea57f82d6cbe6215,Router,True
+DEV_01967,8344fb4ca3a0c531,Tablet,True
+DEV_01968,8b8be1a14264271f,Smartphone,True
+DEV_01969,1f3e32796da73485,Router,True
+DEV_01970,008c6495e0518341,Laptop,True
+DEV_01971,eef2d694e3514b74,Laptop,True
+DEV_01972,e1a55372f41447ce,Tablet,True
+DEV_01973,af3f9caa98245c95,Tablet,True
+DEV_01974,de167ae9dacc9abd,Tablet,True
+DEV_01975,af0bb06372ee1376,Smartphone,True
+DEV_01976,57a6c8bdee406124,Router,True
+DEV_01977,02a3e094fa26b64e,Laptop,True
+DEV_01978,a1ceb8d13961f323,Router,True
+DEV_01979,1e0ecc895a424e30,Laptop,True
+DEV_01980,4088b52fd456a42a,Laptop,True
+DEV_01981,fc1cd0c48ec227ec,Tablet,True
+DEV_01982,c6a3bdaa01c58798,Router,True
+DEV_01983,6b7dae9e347b8cb5,Laptop,True
+DEV_01984,6e8985dfa5121abb,Burner Phone,True
+DEV_01985,5da00652839ce588,Laptop,True
+DEV_01986,7d034c5b7a7b3c69,Burner Phone,True
+DEV_01987,2e4f8e6fdda571c9,Router,True
+DEV_01988,05db0551bb1d6f8d,Laptop,True
+DEV_01989,9c54e9a6551c9055,Laptop,True
+DEV_01990,2e9694510e608e8b,Smartphone,True
+DEV_01991,a8109aa9c83fedb7,Tablet,True
+DEV_01992,81dc470169229f7b,Laptop,True
+DEV_01993,42f6539661cc6093,Tablet,True
+DEV_01994,34547a0a27f28483,Smartphone,True
+DEV_01995,72b04f464b41e6d6,Tablet,True
+DEV_01996,a4ec781c7270bc4c,Burner Phone,True
+DEV_01997,ef6cb7edd2ccc158,Burner Phone,True
+DEV_01998,a897584a4e1c4fea,Laptop,True
+DEV_01999,5c7835ef77f21b5e,Router,True
+DEV_02000,eabf5d5bbcf0cbd4,Laptop,True
+DEV_02001,f0ec0dcfd070640a,Router,True
+DEV_02002,fb5a3cf2ef1287b3,Burner Phone,True
+DEV_02003,aee2b79b8fec03ec,Laptop,True
+DEV_02004,7aa3f30c0abe3597,Tablet,True
+DEV_02005,9aef18f6ef04077f,Tablet,True
+DEV_02006,3e6307dd5e17b53c,Smartphone,True
+DEV_02007,ff256610b348b972,Laptop,True
+DEV_02008,2d6afb8d4afa277c,Laptop,True
+DEV_02009,9852d00546124167,Router,True
+DEV_02010,994cf44dcb55e85a,Router,True
+DEV_02011,28ee92a689050adb,Laptop,True
+DEV_02012,3be10b435e707f02,Burner Phone,True
+DEV_02013,4f126888336c6086,Tablet,True
+DEV_02014,7e45750e3da56bcf,Smartphone,True
+DEV_02015,44b2767bb7280e3d,Burner Phone,True
+DEV_02016,eb4de580ef15e1fb,Smartphone,True
+DEV_02017,9f78d294c7ba6fe5,Smartphone,True
+DEV_02018,8cbefbdb0abbe6ac,Burner Phone,True
+DEV_02019,5f7098143549d3e8,Burner Phone,True
+DEV_02020,7025970307cbf5d9,Burner Phone,True
+DEV_02021,fcebbce237cfb8c7,Laptop,True
+DEV_02022,dca22e51578255b0,Laptop,True
+DEV_02023,ea540d3a44c187e3,Laptop,True
+DEV_02024,5fd88dca49ae5122,Router,True
+DEV_02025,07f54f05c09bfc14,Router,True
+DEV_02026,6fef0064b4960e92,Burner Phone,True
+DEV_02027,a7b13740994c5e2b,Burner Phone,True
+DEV_02028,7fb53c11b6200c43,Laptop,True
+DEV_02029,ad46172eed3c14a7,Router,True
+DEV_02030,f2725f9e99d6dd85,Burner Phone,True
+DEV_02031,1755e9266e8a1b3c,Router,True
+DEV_02032,141bc6c1e337371d,Smartphone,True
+DEV_02033,9895fa0aa32286e6,Burner Phone,True
+DEV_02034,1eb2791f94468c04,Laptop,True
+DEV_02035,9ffe9e4289399d7b,Router,True
+DEV_02036,8e65a13e3a1d1933,Burner Phone,True
+DEV_02037,ab4b3d8def514d32,Laptop,True
+DEV_02038,6541c16968b86cfc,Laptop,True
+DEV_02039,443e4e2dfbec8613,Router,True
+DEV_02040,6acd5ad4552d9037,Smartphone,True
+DEV_02041,5c938a17dc2c053a,Burner Phone,True
+DEV_02042,a2ab66b49193e4fd,Burner Phone,True
+DEV_02043,d6209f401ef75872,Laptop,True
+DEV_02044,3ef28d25aa907902,Tablet,True
+DEV_02045,f2a3921a5ede9420,Tablet,True
+DEV_02046,22e9ff6163d26451,Tablet,True
+DEV_02047,eaf2da3c1d9c652e,Laptop,True
+DEV_02048,d4aea216a95864cf,Tablet,True
+DEV_02049,23fa0f9484671688,Tablet,True
+DEV_02050,a47df22e01e1a6e2,Router,True
+DEV_02051,5941fdc5a2a687b8,Router,True
+DEV_02052,3e5fa8dee47b4f00,Smartphone,True
+DEV_02053,307ad92fa4dca5fa,Router,True
+DEV_02054,cc08f9830c5d7018,Tablet,True
+DEV_02055,4da8488ffacb8ac1,Smartphone,True
+DEV_02056,0ada291db0b232a8,Router,True
+DEV_02057,9860b74ac198a24a,Laptop,True
+DEV_02058,9beacd0c6682e9ab,Router,True
+DEV_02059,b7f2d47efd2dc547,Laptop,True
+DEV_02060,821026d795039eb8,Smartphone,True
+DEV_02061,fc2faf01651bcdc3,Burner Phone,True
+DEV_02062,b0a80828f6a2d860,Router,True
+DEV_02063,3150d9f115632be4,Router,True
+DEV_02064,10fe331b317b0906,Tablet,True
+DEV_02065,892a01f7c9140aef,Router,True
+DEV_02066,2694a5d27ad9c587,Burner Phone,True
+DEV_02067,3bc8e50849a25096,Tablet,True
+DEV_02068,af42487f5784d981,Router,True
+DEV_02069,96c939eb7b3d0d15,Laptop,True
+DEV_02070,883bab4cb4e5d7a0,Tablet,True
+DEV_02071,2cf3ba559fcc42be,Tablet,True
+DEV_02072,a0151b7bd58ed433,Router,True
+DEV_02073,9c1be7179057a806,Router,True
+DEV_02074,2e121f85c2402de3,Router,True
+DEV_02075,4179e0c0c7910ff7,Tablet,True
+DEV_02076,c76778b124327650,Smartphone,True
+DEV_02077,9c671b0da79f21a4,Router,True
+DEV_02078,e205cc2a326ab97d,Smartphone,True
+DEV_02079,9ee358c1c2b79c3a,Laptop,True
+DEV_02080,1ec8e672f493d39c,Router,True
+DEV_02081,a0ecbfaae942e169,Smartphone,True
+DEV_02082,770043779852848d,Laptop,True
+DEV_02083,10edaf47d6702b30,Smartphone,True
+DEV_02084,cfc9e823f10fdca5,Router,True
+DEV_02085,a0cd6e515731ce30,Tablet,True
+DEV_02086,c3476de2333a4f70,Smartphone,True
+DEV_02087,354794ded8522516,Laptop,True
+DEV_02088,ee4957691b0b77d7,Burner Phone,True
+DEV_02089,22b3ed3079fb3ad4,Laptop,True
+DEV_02090,fd40919e43d5db5d,Burner Phone,True
+DEV_02091,2e8d7a016f24ebf9,Router,True
+DEV_02092,c9cbe7c7416cec54,Tablet,True
+DEV_02093,b70150885d1a8ddb,Tablet,True
+DEV_02094,7d6556de83090ce0,Laptop,True
+DEV_02095,37ba74542f22b00c,Smartphone,True
+DEV_02096,e542e6193801d05a,Burner Phone,True
+DEV_02097,91c82fa2d8657b06,Router,True
+DEV_02098,030878767263b20a,Tablet,True
+DEV_02099,deaba317d85cbf8b,Laptop,True
+DEV_02100,93c7c99c7405986e,Tablet,True
+DEV_02101,30661eb1cbd55760,Smartphone,True
+DEV_02102,d0028921cec565af,Router,True
+DEV_02103,01d05d7cf7169d74,Router,True
+DEV_02104,9d4636d223c994f0,Laptop,True
+DEV_02105,5aa29819964fa6e8,Router,True
+DEV_02106,713d5d78aca4caa8,Burner Phone,True
+DEV_02107,d1832952d2b975ee,Laptop,True
+DEV_02108,14de710d1876e46f,Tablet,True
+DEV_02109,6c9b837d6070dbc1,Smartphone,True
+DEV_02110,8e08b8965a55b368,Burner Phone,True
+DEV_02111,c68ba6d11b09f5d5,Smartphone,True
+DEV_02112,ab5f9c310e024362,Burner Phone,True
+DEV_02113,739d9b7c3114ad9e,Burner Phone,True
+DEV_02114,11d131a9f8ec4124,Laptop,True
+DEV_02115,e750d711a6747163,Router,True
+DEV_02116,6808584db794b9af,Smartphone,True
+DEV_02117,b80d60311cb9b818,Tablet,True
+DEV_02118,8eabf44a353e59a4,Router,True
+DEV_02119,11319e11b9ccf663,Tablet,True
+DEV_02120,a5d7896a5eee85ed,Tablet,True
+DEV_02121,0fe07271ec3afe63,Laptop,True
+DEV_02122,e75a9eb55cc867d6,Burner Phone,True
+DEV_02123,a5ac171942c81494,Router,True
+DEV_02124,5298364f3e2356ae,Burner Phone,True
+DEV_02125,a2cc3af5d14eab14,Router,True
+DEV_02126,281d4fbe629e0be4,Smartphone,True
+DEV_02127,c50bfefb12c548fd,Tablet,True
+DEV_02128,305ca3909027a6b2,Smartphone,True
+DEV_02129,dbf8b904ecab32be,Router,True
+DEV_02130,eb41dd75d2b4ea4a,Tablet,True
+DEV_02131,57e2a352ef86c451,Tablet,True
+DEV_02132,72a06d30e45d5e73,Tablet,True
+DEV_02133,269a7528ddf7b9bb,Burner Phone,True
+DEV_02134,bbe7b06f79781ee4,Tablet,True
+DEV_02135,aa7643b1fab086ae,Router,True
+DEV_02136,7fe70fb4389220c7,Laptop,True
+DEV_02137,6a1ab76898cec2aa,Laptop,True
+DEV_02138,4e09135cfe4d6539,Burner Phone,True
+DEV_02139,04391521e3d2c88f,Router,True
+DEV_02140,f4c0cce965e9d591,Tablet,True
+DEV_02141,0c92f865c23f5423,Burner Phone,True
+DEV_02142,4cc32393c72b6e52,Tablet,True
+DEV_02143,3ae67057057e1466,Burner Phone,True
+DEV_02144,814d254c1046fbc4,Burner Phone,True
+DEV_02145,1002383f86b994d4,Tablet,True
+DEV_02146,8bee2b2a6cf5eadb,Smartphone,True
+DEV_02147,c1527e8254a84bab,Burner Phone,True
+DEV_02148,30096cbc606f28b1,Burner Phone,True
+DEV_02149,7154bc627068fbf0,Router,True
+DEV_02150,0ab7511bfcb47c82,Smartphone,True
+DEV_02151,4619249f3ccb932a,Router,True
+DEV_02152,511a38c505bae433,Tablet,True
+DEV_02153,53fc596d80bc3504,Smartphone,True
+DEV_02154,a57445eef0bac5e9,Smartphone,True
+DEV_02155,973f3930e2d0d5b1,Router,True
+DEV_02156,006056aa35dec3b7,Smartphone,True
+DEV_02157,7710a93c46551fab,Burner Phone,True
+DEV_02158,02968e3bb5a0cacd,Laptop,True
+DEV_02159,2ffe4403108f9b57,Smartphone,True
+DEV_02160,0db534bea2de2b50,Burner Phone,True
+DEV_02161,4620dbbaba1e8e36,Burner Phone,True
+DEV_02162,c5d67e68306ad3c1,Burner Phone,True
+DEV_02163,61d4a84638675027,Burner Phone,True
+DEV_02164,cc766293d3247640,Smartphone,True
+DEV_02165,e0bfde8674345ac3,Tablet,True
+DEV_02166,d1f3920fd316f1e5,Laptop,True
+DEV_02167,b18bdba970907a6b,Burner Phone,True
+DEV_02168,0347261ae7049bfc,Smartphone,True
+DEV_02169,0ca27ba4210b9270,Tablet,True
+DEV_02170,d44b03a24df39be7,Burner Phone,True
+DEV_02171,43556c85af45ff2c,Router,True
+DEV_02172,6039f68a17829f0f,Router,True
+DEV_02173,2a35e3dc7cf20b4d,Smartphone,True
+DEV_02174,127d13930b6991e6,Laptop,True
+DEV_02175,54e397f32ab22d82,Laptop,True
+DEV_02176,dece0929a41c616e,Smartphone,True
+DEV_02177,dfba5737d58156d7,Router,True
+DEV_02178,61e4a851e86ac0f3,Smartphone,True
+DEV_02179,a3e7d19ddfe7c61d,Burner Phone,True
+DEV_02180,16e13a7098f864fa,Laptop,True
+DEV_02181,733b49c7cf7bbe21,Smartphone,True
+DEV_02182,282537357285f680,Router,True
+DEV_02183,89f464d5d11cafd1,Smartphone,True
+DEV_02184,e8d1c1096befbb8d,Smartphone,True
+DEV_02185,4140250099103e01,Tablet,True
+DEV_02186,febd734f968198a2,Smartphone,True
+DEV_02187,22af95ba87ecfb58,Smartphone,True
+DEV_02188,dc8269a433055e72,Smartphone,True
+DEV_02189,ec8744b4b927b824,Laptop,True
+DEV_02190,49be5098234bc278,Router,True
+DEV_02191,c089b6edd36db35d,Burner Phone,True
+DEV_02192,5303125bb8a733e9,Burner Phone,True
+DEV_02193,12ba3f55b53f77c6,Burner Phone,True
+DEV_02194,d6f5668ef800943f,Burner Phone,True
+DEV_02195,60b1279e227f0d30,Smartphone,True
+DEV_02196,e982046a7ca87697,Laptop,True
+DEV_02197,8f411eb33c3c2b19,Smartphone,True
+DEV_02198,710e5c63533902d4,Laptop,True
+DEV_02199,1089ac921c531905,Router,True
+DEV_02200,9c4fd31124ddf941,Laptop,True
+DEV_02201,40652ddb8491c7b6,Burner Phone,True
+DEV_02202,a290568e97c31624,Smartphone,True
+DEV_02203,5a2978b40a8bdd8a,Burner Phone,True
+DEV_02204,53edc6adb49fa22f,Smartphone,True
+DEV_02205,5cc43d05ca9cafe6,Burner Phone,True
+DEV_02206,2620e51b4c6a0640,Router,True
+DEV_02207,ebc2c25453467c27,Burner Phone,True
+DEV_02208,a114f9e770719ddb,Smartphone,True
+DEV_02209,b4cee423cb9d3cb3,Smartphone,True
+DEV_02210,c5d7aa3dc2f509cc,Router,True
+DEV_02211,3e7bd2f0337b3643,Burner Phone,True
+DEV_02212,44c17a956d353b91,Tablet,True
+DEV_02213,3f40a1c2d3162896,Burner Phone,True
+DEV_02214,b71efbffb7143ca2,Burner Phone,True
+DEV_02215,685bf40491802c22,Router,True
+DEV_02216,cb10ae5f3d217917,Tablet,True
+DEV_02217,76b163b8040cddf6,Router,True
+DEV_02218,b78134060b2b2541,Router,True
+DEV_02219,c66328423a285c9a,Router,True
+DEV_02220,32f6045e896524aa,Burner Phone,True
+DEV_02221,e0606a3b40381fd1,Router,True
+DEV_02222,fcd31419f3cf2f80,Burner Phone,True
+DEV_02223,2dc85eb9aeb4fd60,Laptop,True
+DEV_02224,0406d21f8f8cbe43,Smartphone,True
+DEV_02225,e868a42ac57a8d72,Router,True
+DEV_02226,1067f0978c281f82,Tablet,True
+DEV_02227,e659bf0d61460c4e,Tablet,True
+DEV_02228,959c58a5058949e8,Smartphone,True
+DEV_02229,d7e3dd53987cfcac,Tablet,True
+DEV_02230,66852412b473d27f,Burner Phone,True
+DEV_02231,51d5f26555eaf85f,Router,True
+DEV_02232,56f14c2673b07613,Burner Phone,True
+DEV_02233,dfb07ddf61ae2bb5,Smartphone,True
+DEV_02234,0ec7e260e2d7ae5d,Router,True
+DEV_02235,b0780974e1c1482b,Laptop,True
+DEV_02236,6321a7b3f9b3200b,Burner Phone,True
+DEV_02237,6c6e2822b5aed079,Smartphone,True
+DEV_02238,f2742cd8f7ae9c10,Tablet,True
+DEV_02239,9201ffee06bfd2b3,Laptop,True
+DEV_02240,de5b1eb0ecee2102,Burner Phone,True
+DEV_02241,8f8ef66ae882bdc4,Laptop,True
+DEV_02242,52fe82b4d24b54d2,Burner Phone,True
+DEV_02243,88f837138792b316,Laptop,True
+DEV_02244,d9d0a698d9a32848,Tablet,True
+DEV_02245,ae7b98a5b51c915a,Smartphone,True
+DEV_02246,e616b631d237eaec,Router,True
+DEV_02247,0694e4ba203ded30,Burner Phone,True
+DEV_02248,af8d867fbaa05507,Smartphone,True
+DEV_02249,eb21c523ae0d23af,Burner Phone,True
+DEV_02250,7e94007ea9f52fe4,Router,True
+DEV_02251,ae0fc729ed9a0371,Tablet,True
+DEV_02252,aa4cce0194b40209,Router,True
+DEV_02253,5a228693a8bd4a5d,Router,True
+DEV_02254,6f8fa06a780b2a58,Router,True
+DEV_02255,273d2b0e59b4615c,Laptop,True
+DEV_02256,f897ce9caed40a26,Smartphone,True
+DEV_02257,9abd1e840373fbd0,Laptop,True
+DEV_02258,b45a86087b6361d0,Laptop,True
+DEV_02259,b30dddbe1df4e7c8,Burner Phone,True
+DEV_02260,d83a3d0e93f255d7,Laptop,True
+DEV_02261,806a582eb67fa281,Tablet,True
+DEV_02262,aeff07df1105c40f,Smartphone,True
+DEV_02263,fe8c54bfdab6346b,Smartphone,True
+DEV_02264,76a8db22b247f1bd,Tablet,True
+DEV_02265,0fe8e49258047f7d,Router,True
+DEV_02266,342935b2627fc7ee,Smartphone,True
+DEV_02267,1cfe1e336ac9ad54,Router,True
+DEV_02268,3cbe6737118a1a8a,Smartphone,True
+DEV_02269,47ba62bbf09930a9,Burner Phone,True
+DEV_02270,3e516f73134f562e,Smartphone,True
+DEV_02271,cfa250211a02e444,Smartphone,True
+DEV_02272,a2a3282021c7309a,Smartphone,True
+DEV_02273,5bf40733f0066845,Laptop,True
+DEV_02274,d935e1b9edcdfdd7,Laptop,True
+DEV_02275,e0e80bcfef7148a3,Smartphone,True
+DEV_02276,ed45d0309c1fb0b4,Router,True
+DEV_02277,69a50ae1bc1e327a,Burner Phone,True
+DEV_02278,1c35f4dcc0db244c,Tablet,True
+DEV_02279,fbcaee4b9bf868df,Tablet,True
+DEV_02280,aba6025d250c4824,Router,True
+DEV_02281,891ffa337db705ac,Laptop,True
+DEV_02282,fe5844ad9fcfbd6c,Smartphone,True
+DEV_02283,bf420f7bff5eb62a,Smartphone,True
+DEV_02284,aef5fbbd96c0a7c8,Router,True
+DEV_02285,7eda668ea74032ff,Tablet,True
+DEV_02286,f023b6d030e04813,Laptop,True
+DEV_02287,9a988b738227c9ef,Laptop,True
+DEV_02288,be9657af4d199782,Laptop,True
+DEV_02289,1014c1d3f6800ece,Smartphone,True
+DEV_02290,70f3cf93e1148476,Router,True
+DEV_02291,b8edbcda2b4aba08,Smartphone,True
+DEV_02292,28830dd17fff1cac,Laptop,True
+DEV_02293,cd952e5705f40d81,Laptop,True
+DEV_02294,fadd09c98f6155d7,Laptop,True
+DEV_02295,0b8c7605059f4b00,Burner Phone,True
+DEV_02296,962b7e4f589952dc,Smartphone,True
+DEV_02297,d2c58d0b386edf6d,Router,True
+DEV_02298,c42078cb6ebd1ee8,Router,True
+DEV_02299,f1944778ce4a8d90,Burner Phone,True
+DEV_02300,8e0971a98417e0ff,Router,True
+DEV_02301,543bee32c111cc7e,Router,True
+DEV_02302,6a6742b62b5ef8a5,Smartphone,True
+DEV_02303,a73bb2ff1e003633,Burner Phone,True
+DEV_02304,b30c382f65b40946,Router,True
+DEV_02305,6f21a577e5b3e9a0,Laptop,True
+DEV_02306,3e9ebbe353695482,Tablet,True
+DEV_02307,ad5b71c1c5471f72,Burner Phone,True
+DEV_02308,ee7d9ccef723f0ea,Router,True
+DEV_02309,81633536f2600c29,Burner Phone,True
+DEV_02310,82b1b374a520b2d4,Burner Phone,True
+DEV_02311,e78ddc3d37abaa4a,Laptop,True
+DEV_02312,82cdc2d31be3f191,Smartphone,True
+DEV_02313,e9b7974185526f7a,Router,True
+DEV_02314,e44168c9cfd1a150,Burner Phone,True
+DEV_02315,5d99bef027416205,Burner Phone,True
+DEV_02316,1d73fa4d9b5616fb,Smartphone,True
+DEV_02317,6ce26cb5a2735baa,Burner Phone,True
+DEV_02318,47a5900084a566a1,Tablet,True
+DEV_02319,42ba5c90b944e75c,Laptop,True
+DEV_02320,4cc696b6b468dd73,Smartphone,True
+DEV_02321,eb19179de0c0af43,Laptop,True
+DEV_02322,0f9f9181c4162635,Burner Phone,True
+DEV_02323,3012ea40a5fc38d8,Router,True
+DEV_02324,9ec1da6127f41676,Router,True
+DEV_02325,370489b2f8ed5638,Tablet,True
+DEV_02326,48c0c04a624569f4,Router,True
+DEV_02327,7a6aa0b162c00ed3,Smartphone,True
+DEV_02328,5281c5d2d1c1e691,Tablet,True
+DEV_02329,f5616796aed590b9,Smartphone,True
+DEV_02330,ac8666997eddce7f,Smartphone,True
+DEV_02331,c02b85946ba53228,Smartphone,True
+DEV_02332,584d500228cc8891,Router,True
+DEV_02333,f30f2fac7ca600d5,Router,True
+DEV_02334,698e0cf25436b08b,Laptop,True
+DEV_02335,dc397928b45d2c6e,Burner Phone,True
+DEV_02336,11a65c3140fb5f6a,Router,True
+DEV_02337,f6a3f09db8932a72,Router,True
+DEV_02338,e06f2c39934efed7,Router,True
+DEV_02339,c3996c8af0258b97,Tablet,True
+DEV_02340,64e1512bdd7e53c6,Smartphone,True
+DEV_02341,effee4ca930d54b4,Smartphone,True
+DEV_02342,470e298c82f13e7c,Smartphone,True
+DEV_02343,d6a60bf7d10f4a31,Tablet,True
+DEV_02344,fb2d698db58726e7,Smartphone,True
+DEV_02345,bddc23b03e307c70,Tablet,True
+DEV_02346,941d2e8ee7aab630,Smartphone,True
+DEV_02347,5c5ca93903c8844b,Router,True
+DEV_02348,7e8ccc72e1192a19,Tablet,True
+DEV_02349,068b73340c3cd839,Tablet,True
+DEV_02350,90c9c0063fbac5aa,Laptop,True
+DEV_02351,81c94d7043b29d90,Tablet,True
+DEV_02352,ba43d2dffd22367a,Tablet,True
+DEV_02353,34a183bc75cb6b43,Laptop,True
+DEV_02354,91dec2e347191333,Router,True
+DEV_02355,cdfed201cc061c49,Laptop,True
+DEV_02356,0990dd0a4aacd4b4,Tablet,True
+DEV_02357,d32da1dcb1e8d471,Burner Phone,True
+DEV_02358,a6003a5b19476a6d,Smartphone,True
+DEV_02359,700800228e57d6bb,Router,True
+DEV_02360,5d36cc26502e5bcc,Router,True
+DEV_02361,391869f2f8313d8a,Smartphone,True
+DEV_02362,4ad576bdc4fdcc88,Tablet,True
+DEV_02363,6a66b893b74c3964,Smartphone,True
+DEV_02364,2225371443f44c3f,Laptop,True
+DEV_02365,e777996b70155220,Laptop,True
+DEV_02366,494f596d53675be0,Smartphone,True
+DEV_02367,45bb20b14bf29430,Smartphone,True
+DEV_02368,83c681f371a8df98,Smartphone,True
+DEV_02369,0fe079c0674595f3,Laptop,True
+DEV_02370,a78e3a5fd81cb5f5,Router,True
+DEV_02371,43f2b7f8b6e0bd3e,Tablet,True
+DEV_02372,74a438a3165c87ed,Router,True
+DEV_02373,a431f08f6284861c,Laptop,True
+DEV_02374,dc0bfaebf8b4b7e4,Smartphone,True
+DEV_02375,bd1f55ce7562856b,Router,True
+DEV_02376,f7db77280493f2c8,Tablet,True
+DEV_02377,44ad1f1aeca9b4e8,Tablet,True
+DEV_02378,f9f7cb3b559e7d5a,Laptop,True
+DEV_02379,a5ca25ee95707e37,Tablet,True
+DEV_02380,148a52cf6b423bb5,Router,True
+DEV_02381,4fbd5dc79948b8f9,Laptop,True
+DEV_02382,a0e83277797d7e20,Laptop,True
+DEV_02383,ecaf83b2f5dc6c3a,Burner Phone,True
+DEV_02384,b75601fbbcd37613,Router,True
+DEV_02385,231f19bc99acc743,Burner Phone,True
+DEV_02386,ee7727ba7a54616c,Burner Phone,True
+DEV_02387,7899216b9ffc4820,Tablet,True
+DEV_02388,d5af5ab155dda8fa,Router,True
+DEV_02389,281e57bd1779c35c,Laptop,True
+DEV_02390,cf9c9d378cf922c4,Smartphone,True
+DEV_02391,b1df9910fc2fee6f,Router,True
+DEV_02392,8a3836defefb3c1f,Smartphone,True
+DEV_02393,dd4e9f85e5b465f8,Smartphone,True
+DEV_02394,a36aa87a3e6a7c77,Smartphone,True
+DEV_02395,acb2ff27c5916b86,Laptop,True
+DEV_02396,c93535cdbf6b6315,Smartphone,True
+DEV_02397,d0005149b44e1348,Router,True
+DEV_02398,160efe6dbd9bb422,Router,True
+DEV_02399,2f5d0c7b8df307eb,Router,True
+DEV_02400,c8737b6dd6080eba,Smartphone,True
+DEV_02401,d5791ed931f46812,Laptop,True
+DEV_02402,7f579d8d5b4f7a91,Burner Phone,True
+DEV_02403,d1a5b5405948c85e,Router,True
+DEV_02404,f430af90d06915ef,Smartphone,True
+DEV_02405,685e038379283ee0,Router,True
+DEV_02406,ae11d2b89df7ea9a,Laptop,True
+DEV_02407,281d4885d6887106,Smartphone,True
+DEV_02408,b265423600398a4a,Router,True
+DEV_02409,5f30f531d112def9,Burner Phone,True
+DEV_02410,d6484f3c833e077a,Tablet,True
+DEV_02411,db3234004de53185,Router,True
+DEV_02412,061d24cfacc0f87f,Laptop,True
+DEV_02413,89c1c9b7bf47bb6d,Laptop,True
+DEV_02414,319630ae5c1639e4,Tablet,True
+DEV_02415,f52209a24642d94b,Router,True
+DEV_02416,05cbf59627797804,Tablet,True
+DEV_02417,cc7c2af2b525d1f3,Laptop,True
+DEV_02418,cf7c5d644def782c,Laptop,True
+DEV_02419,bf4b281f0850e3b8,Burner Phone,True
+DEV_02420,530eb5b7832dcc30,Router,True
+DEV_02421,5633fdcfc68853a9,Burner Phone,True
+DEV_02422,3cc72a5700bdc22f,Tablet,True
+DEV_02423,b98c601b27502f84,Burner Phone,True
+DEV_02424,1c35b0cd467f49c0,Smartphone,True
+DEV_02425,633b08563d19bb79,Smartphone,True
+DEV_02426,8e29ffee3b8051f9,Laptop,True
+DEV_02427,899845bc7e341e82,Router,True
+DEV_02428,463865408d285270,Smartphone,True
+DEV_02429,f33090398db680b0,Smartphone,True
+DEV_02430,8b8b4a45d6d0276f,Tablet,True
+DEV_02431,104d88d43d0d2ea0,Tablet,True
+DEV_02432,9ab1033a81b193c6,Laptop,True
+DEV_02433,cb32e8f43b5b2648,Smartphone,True
+DEV_02434,704107f60c50966f,Tablet,True
+DEV_02435,92aa9ed8dfec368f,Laptop,True
+DEV_02436,e52c5f902c9adaa6,Smartphone,True
+DEV_02437,24ce0acf7cddc293,Smartphone,True
+DEV_02438,9195a9424d2930a4,Tablet,True
+DEV_02439,02be014938b5765f,Laptop,True
+DEV_02440,a43cff678f3dea25,Laptop,True
+DEV_02441,e50f34cb3b9e4461,Tablet,True
+DEV_02442,241cff02d572183e,Smartphone,True
+DEV_02443,dc0f804c304d1668,Router,True
+DEV_02444,40123b502a5b6eeb,Tablet,True
+DEV_02445,f3b4e4151bffd550,Router,True
+DEV_02446,0b60fbf165d4868c,Laptop,True
+DEV_02447,c608dc619da006d8,Burner Phone,True
+DEV_02448,76584d45b4918735,Smartphone,True
+DEV_02449,b6727d056bebd08c,Burner Phone,True
+DEV_02450,c0dc0980c308f839,Router,True
+DEV_02451,a0c3f5e595381033,Laptop,True
+DEV_02452,7db8ec0f37fa1580,Laptop,True
+DEV_02453,379fb96b8a53ff82,Router,True
+DEV_02454,9988f33897b63d7d,Burner Phone,True
+DEV_02455,eef97254d3a87e5a,Laptop,True
+DEV_02456,584de8466e9c9207,Laptop,True
+DEV_02457,6608dcd5825eada7,Smartphone,True
+DEV_02458,c42cc0c79a97c098,Smartphone,True
+DEV_02459,ea394af65c03c8e4,Tablet,True
+DEV_02460,d03e171225e094b7,Router,True
+DEV_02461,112f434400f776c7,Router,True
+DEV_02462,de4167a4481c59a7,Smartphone,True
+DEV_02463,e06762ae1726eea7,Tablet,True
+DEV_02464,1bb09ff5a21f2afa,Burner Phone,True
+DEV_02465,068efc5e083c94f8,Burner Phone,True
+DEV_02466,e91e4acbfc472ae1,Tablet,True
+DEV_02467,7d33a5862edfb7df,Smartphone,True
+DEV_02468,6f5f314a6fd82c43,Laptop,True
+DEV_02469,b1171e32cda490e4,Tablet,True
+DEV_02470,ad41048b02474a46,Laptop,True
+DEV_02471,5222ef241d04ed3e,Laptop,True
+DEV_02472,c384a5e186011c1d,Burner Phone,True
+DEV_02473,ef3e21eb362a84df,Router,True
+DEV_02474,7dede453d6d31615,Burner Phone,True
+DEV_02475,20f7857b142557f4,Laptop,True
+DEV_02476,c5a47c2a88cb0f88,Tablet,True
+DEV_02477,2cf2917aec3e6a49,Smartphone,True
+DEV_02478,ab3f2cc17e8779dd,Burner Phone,True
+DEV_02479,58160586d091be96,Router,True
+DEV_02480,6bfe2175d8074eba,Router,True
+DEV_02481,64a96fe96eaf6500,Burner Phone,True
+DEV_02482,f3a1ac695f7a913d,Router,True
+DEV_02483,00b266174923d875,Laptop,True
+DEV_02484,7ce1194166524aa8,Tablet,True
+DEV_02485,57411e519a9a2a7a,Laptop,True
+DEV_02486,27dfcafb192bb531,Burner Phone,True
+DEV_02487,5a4d4a849ff3259f,Router,True
+DEV_02488,9ebfea0391f22e3b,Tablet,True
+DEV_02489,08ab9b6601e9803d,Smartphone,True
+DEV_02490,52f006662e4e2db2,Tablet,True
+DEV_02491,f2ebb0b50afb6b26,Smartphone,True
+DEV_02492,5923a6802651ad76,Burner Phone,True
+DEV_02493,c84082cd0b7e7f5a,Smartphone,True
+DEV_02494,e4aeeda0af362bde,Laptop,True
+DEV_02495,d7054b3d93cc22a9,Tablet,True
+DEV_02496,da09de17ef4c7168,Tablet,True
+DEV_02497,e28dfaa15ef902d9,Smartphone,True
+DEV_02498,cea45c9e53ac3dd5,Router,True
+DEV_02499,7ad44f9cf3d524ad,Laptop,True
+DEV_02500,7a8b625a3052bb86,Burner Phone,True
+DEV_02501,07abc8fbc05a8ea3,Tablet,True
+DEV_02502,fe0e2558ef9a4f28,Smartphone,True
+DEV_02503,29375e717d2d0739,Router,True
+DEV_02504,321e85cff58fe64d,Laptop,True
+DEV_02505,d6fd54955fb11fac,Tablet,True
+DEV_02506,6fd382388d38abb1,Burner Phone,True
+DEV_02507,d1e52abb7c25d49f,Router,True
+DEV_02508,23e466a4b84e1af1,Router,True
+DEV_02509,c962209b484d116b,Router,True
+DEV_02510,592d80eccd7ba34c,Burner Phone,True
+DEV_02511,829370e41f6b3a4c,Router,True
+DEV_02512,cc7a251219404044,Laptop,True
+DEV_02513,a060c7d4e8e94570,Burner Phone,True
+DEV_02514,4e986cadd8cbb5ea,Laptop,True
+DEV_02515,1317f331122e3f2b,Tablet,True
+DEV_02516,4de237326d23af27,Laptop,True
+DEV_02517,d2e2df09f0d9e36d,Router,True
+DEV_02518,645528e552a9fcad,Router,True
+DEV_02519,2cd7d7033c0b6903,Laptop,True
+DEV_02520,161e8e66929fdc19,Tablet,True
+DEV_02521,622f2dae35b18b01,Burner Phone,True
+DEV_02522,abfe969b6e0598fd,Tablet,True
+DEV_02523,10d92596d6091a2e,Router,True
+DEV_02524,32cb820278e0e106,Tablet,True
+DEV_02525,08342ecd63703291,Burner Phone,True
+DEV_02526,9f99af15c705b4ed,Laptop,True
+DEV_02527,b85db2314b116a84,Smartphone,True
+DEV_02528,6f573f5822644598,Laptop,True
+DEV_02529,ba1d106f814864bb,Laptop,True
+DEV_02530,98ebb7b2ecec7fe7,Router,True
+DEV_02531,7c5f895ecccc5d8d,Tablet,True
+DEV_02532,fbc167b6b54659fe,Burner Phone,True
+DEV_02533,212930c765662bdc,Smartphone,True
+DEV_02534,aa0a7ec1191806bd,Tablet,True
+DEV_02535,ee5841455973b5a1,Tablet,True
+DEV_02536,2e637a218ec2c5f8,Smartphone,True
+DEV_02537,f1b4f3ccfc0ad71f,Smartphone,True
+DEV_02538,74ae55d78321151c,Smartphone,True
+DEV_02539,b702e70f61599ca4,Router,True
+DEV_02540,6ee0d0f210615728,Burner Phone,True
+DEV_02541,d4c0c9fb3c3564e5,Laptop,True
+DEV_02542,e56ae26dd8789981,Burner Phone,True
+DEV_02543,463b1e970a9c3e88,Router,True
+DEV_02544,9d48c4252f4e7112,Tablet,True
+DEV_02545,4fd207bd80cd8ad6,Laptop,True
+DEV_02546,0ea6e89ce038f00c,Smartphone,True
+DEV_02547,57f662af22c8c278,Laptop,True
+DEV_02548,cbf71c12300cfb66,Smartphone,True
+DEV_02549,cffad23e499a5dce,Router,True
+DEV_02550,73623085ef76c704,Laptop,True
+DEV_02551,b9939069a498affe,Smartphone,True
+DEV_02552,c644a967bdc774b5,Burner Phone,True
+DEV_02553,95507695602e21a9,Burner Phone,True
+DEV_02554,2120be8f4b7732b4,Router,True
+DEV_02555,b303d3c2666a579d,Laptop,True
+DEV_02556,fdd364bed6d15e4b,Burner Phone,True
+DEV_02557,50f3a76313ad7707,Tablet,True
+DEV_02558,4b562790b44b4853,Tablet,True
+DEV_02559,a092c515aabd9d30,Tablet,True
+DEV_02560,870355bace907a9d,Smartphone,True
+DEV_02561,41f4c94d21d2147a,Burner Phone,True
+DEV_02562,d6a0b2c0720b6f30,Smartphone,True
+DEV_02563,b087a4fc3ba9d8b0,Laptop,True
+DEV_02564,f85cbfa6fc29ac36,Smartphone,True
+DEV_02565,285ffa1a6571906e,Tablet,True
+DEV_02566,436a9fd9b428819f,Smartphone,True
+DEV_02567,329514ebba51573b,Smartphone,True
+DEV_02568,0f76694f9868436b,Burner Phone,True
+DEV_02569,07e1a2d1a4c0e3c9,Router,True
+DEV_02570,7aed83c214ef2307,Router,True
+DEV_02571,4f4ba52100d560b6,Smartphone,True
+DEV_02572,c963875922a239dd,Smartphone,True
+DEV_02573,b45fec5629e74b88,Burner Phone,True
+DEV_02574,b652432f7f08c2e0,Laptop,True
+DEV_02575,89db4a5b5d4525fe,Burner Phone,True
+DEV_02576,819ea58572e0d353,Smartphone,True
+DEV_02577,3fa22d1425419659,Laptop,True
+DEV_02578,97411c7128be480c,Burner Phone,True
+DEV_02579,f719144abcff1fb5,Burner Phone,True
+DEV_02580,ff5a9c42446c782c,Laptop,True
+DEV_02581,eff31202640bbe9f,Burner Phone,True
+DEV_02582,c045af5cbf065c5d,Burner Phone,True
+DEV_02583,f35ac56207c0a27a,Laptop,True
+DEV_02584,dcf7abd89ec956fc,Burner Phone,True
+DEV_02585,0528c392ceebf525,Laptop,True
+DEV_02586,60112dd8077f6b3b,Tablet,True
+DEV_02587,979ddb75bbeff78e,Tablet,True
+DEV_02588,67afb62bf835e125,Smartphone,True
+DEV_02589,38dc94258d752510,Burner Phone,True
+DEV_02590,ae3afd4b48806233,Router,True
+DEV_02591,71cd6dfa01cfb981,Tablet,True
+DEV_02592,827eed005ffc75aa,Smartphone,True
+DEV_02593,8d521822ad2ad40d,Router,True
+DEV_02594,78ceb76e22312b7b,Burner Phone,True
+DEV_02595,e4b639102a2dd7ae,Burner Phone,True
+DEV_02596,4d98a2a993dfc1f3,Router,True
+DEV_02597,c2c3db48a594d16e,Smartphone,True
+DEV_02598,e5c41080bb8d319a,Router,True
+DEV_02599,ec88e37becdd60c7,Laptop,True
+DEV_02600,07e29c3be013a627,Tablet,True
+DEV_02601,744ff14a851bd5cc,Router,True
+DEV_02602,58c23c9476741379,Tablet,True
+DEV_02603,3fbbd1690c68d90d,Burner Phone,True
+DEV_02604,8f3682ef7a4d77f4,Burner Phone,True
+DEV_02605,ceb40e8c66c1618f,Laptop,True
+DEV_02606,ff68c298f63d023d,Burner Phone,True
+DEV_02607,963c799712f5bacd,Burner Phone,True
+DEV_02608,e4bf82e458b260b2,Laptop,True
+DEV_02609,533e6862f7a12b85,Tablet,True
+DEV_02610,4a9d7912f99cbecf,Router,True
+DEV_02611,c28075482363bedf,Burner Phone,True
+DEV_02612,dc4116ba2b42ebd6,Smartphone,True
+DEV_02613,dfe675cb14fd5a4d,Tablet,True
+DEV_02614,40815d22095bdfd2,Burner Phone,True
+DEV_02615,4ab803f328d4b000,Tablet,True
+DEV_02616,00e1fd87f2b00ce5,Router,True
+DEV_02617,4016776147a8463c,Tablet,True
+DEV_02618,5d33f705cca5014e,Smartphone,True
+DEV_02619,8faa08782fa3bd06,Smartphone,True
+DEV_02620,cae03e4a6abd042e,Tablet,True
+DEV_02621,a3538a9bf520ae3b,Burner Phone,True
+DEV_02622,01f5f7a95987c449,Tablet,True
+DEV_02623,b00b1f795242c0fc,Tablet,True
+DEV_02624,142bb677ca483e8d,Smartphone,True
+DEV_02625,7ea647f286a34d2c,Router,True
+DEV_02626,58e2218a2458c6df,Smartphone,True
+DEV_02627,0247fdb89ce1520f,Smartphone,True
+DEV_02628,904c96a31e1bbac3,Laptop,True
+DEV_02629,7f0497dc246b1bb5,Smartphone,True
+DEV_02630,dea525f3da49c16c,Smartphone,True
+DEV_02631,48f029bc7ec8c86d,Burner Phone,True
+DEV_02632,8a97095a9986480f,Laptop,True
+DEV_02633,5265cc9418807a8a,Router,True
+DEV_02634,26ca3f3ceae08d63,Laptop,True
+DEV_02635,87ec54db15125d96,Laptop,True
+DEV_02636,5d65f6aeb47e4652,Laptop,True
+DEV_02637,1759d5551cb97c4a,Router,True
+DEV_02638,c97a57b5ef9b91d6,Smartphone,True
+DEV_02639,8657d1acfbd6177c,Router,True
+DEV_02640,ebced85d73302a48,Tablet,True
+DEV_02641,1a27306d148df5a1,Burner Phone,True
+DEV_02642,c2bae4637f6bff5e,Tablet,True
+DEV_02643,8bbdab474d1a03bc,Router,True
+DEV_02644,64c71b4d6c4ee871,Router,True
+DEV_02645,5ac5e8b7aa16dd33,Burner Phone,True
+DEV_02646,3d804c2eae4cb89d,Burner Phone,True
+DEV_02647,25eb23d298017948,Laptop,True
+DEV_02648,47b2405b241ad819,Burner Phone,True
+DEV_02649,545b3a9c552d7774,Burner Phone,True
+DEV_02650,2cb225bc13057483,Router,True
+DEV_02651,6fd50dd084085ce8,Laptop,True
+DEV_02652,8d24cc537561c58a,Smartphone,True
+DEV_02653,578d9906354cb358,Tablet,True
+DEV_02654,83031851d3b3451c,Tablet,True
+DEV_02655,00de2d7b98cb7451,Router,True
+DEV_02656,f0b991c86a1a3090,Router,True
+DEV_02657,59761a6ec5e8863b,Router,True
+DEV_02658,8ee4ad26e7127afa,Tablet,True
+DEV_02659,9f038b62ff34661d,Burner Phone,True
+DEV_02660,0b18ea1892e36a63,Laptop,True
+DEV_02661,c643042ae3235845,Router,True
+DEV_02662,925c5a1e77297783,Burner Phone,True
+DEV_02663,e20455e4f350a4e1,Smartphone,True
+DEV_02664,434eca4c3eac9167,Tablet,True
+DEV_02665,fb7a279845e73c38,Smartphone,True
+DEV_02666,078504bcc2236309,Router,True
+DEV_02667,c682a9bb912c6ca6,Tablet,True
+DEV_02668,9b9f6b5b4abc63a8,Burner Phone,True
+DEV_02669,18e89359228d2a35,Laptop,True
+DEV_02670,0374bd006f53a978,Smartphone,True
+DEV_02671,6b66e03e07deb8cb,Smartphone,True
+DEV_02672,32e8906e086eff47,Router,True
+DEV_02673,3dbca3356a577c8b,Router,True
+DEV_02674,7cde94a4ea927ac9,Burner Phone,True
+DEV_02675,b0d81fcf7a043a83,Smartphone,True
+DEV_02676,d7b03f5dd8fe627e,Smartphone,True
+DEV_02677,37eaf1ca6c06f056,Router,True
+DEV_02678,f2272914f84f0d9e,Burner Phone,True
+DEV_02679,1daa87c3f0f84a63,Router,True
+DEV_02680,66f6558facfe7ff8,Laptop,True
+DEV_02681,5a170496b856dc6a,Smartphone,True
+DEV_02682,1515d3c023243b0a,Tablet,True
+DEV_02683,cbc536712f4d90ee,Router,True
+DEV_02684,ce66dfdcdd260903,Burner Phone,True
+DEV_02685,6d99e20feb1fd238,Laptop,True
+DEV_02686,61684164d5687502,Burner Phone,True
+DEV_02687,9d622a2d95cf0e85,Tablet,True
+DEV_02688,2950159e193a8a1a,Tablet,True
+DEV_02689,805f9e5e923bb05f,Laptop,True
+DEV_02690,8cfa687234d778da,Burner Phone,True
+DEV_02691,6b1577ed7eca6473,Tablet,True
+DEV_02692,1239007a3d6654b3,Tablet,True
+DEV_02693,91300a4fa54e66d1,Router,True
+DEV_02694,8fca21286014a9e1,Laptop,True
+DEV_02695,6951f3b0e88f2874,Router,True
+DEV_02696,373be871f9389c8f,Smartphone,True
+DEV_02697,942fe720fab15bca,Laptop,True
+DEV_02698,6157716c22a06a0f,Smartphone,True
+DEV_02699,044687680bed0df6,Burner Phone,True
+DEV_02700,4772515492ec5369,Burner Phone,True
+DEV_02701,8736af1fdd5ae80a,Laptop,True
+DEV_02702,cab44e2ffb4a23dd,Burner Phone,True
+DEV_02703,30d3c2cc3d57a94b,Laptop,True
+DEV_02704,dc7933b98614465b,Smartphone,True
+DEV_02705,2d3d61ead06a73a9,Router,True
+DEV_02706,f160d64e1d11f735,Smartphone,True
+DEV_02707,69a379cb7c1bbd48,Burner Phone,True
+DEV_02708,1f7e9bdafef43ccf,Tablet,True
+DEV_02709,4e4466887cab45f4,Burner Phone,True
+DEV_02710,e5c673d4a411cff4,Burner Phone,True
+DEV_02711,c29cd2bf22ea4765,Burner Phone,True
+DEV_02712,75a2b5854442228c,Burner Phone,True
+DEV_02713,b2332f596986d99e,Tablet,True
+DEV_02714,cca86fa9a0d89a24,Smartphone,True
+DEV_02715,1a7f69ff6df37334,Burner Phone,True
+DEV_02716,ca44c614a65dd498,Tablet,True
+DEV_02717,9527abaebb881f21,Laptop,True
+DEV_02718,5b03af349946f47c,Smartphone,True
+DEV_02719,d24dc46b2ec25328,Smartphone,True
+DEV_02720,0c9e8c14fac2fbcc,Burner Phone,True
+DEV_02721,1b255da2b5f01558,Smartphone,True
+DEV_02722,d47ea10cb18518ce,Router,True
+DEV_02723,f48b57c6eadb7b23,Smartphone,True
+DEV_02724,2bf0ddb4f50c8dc7,Laptop,True
+DEV_02725,34070bc791ebbb27,Burner Phone,True
+DEV_02726,d9591239734b6508,Tablet,True
+DEV_02727,57d525e1b10ea7d4,Smartphone,True
+DEV_02728,0a9d1b2a5ff62ab4,Laptop,True
+DEV_02729,8d52fca0068f6c52,Tablet,True
+DEV_02730,eba17b0ee063b40f,Router,True
+DEV_02731,9bfbf5b119e54338,Laptop,True
+DEV_02732,c0c099a4d548e2c2,Router,True
+DEV_02733,fcc0137752c52c39,Router,True
+DEV_02734,992e556deecd4434,Laptop,True
+DEV_02735,aa5b502e73f276d2,Router,True
+DEV_02736,5ea6f3da8a04a60d,Tablet,True
+DEV_02737,a9303acb82cab43b,Laptop,True
+DEV_02738,742c0c96089e61ec,Tablet,True
+DEV_02739,f9915b5133afcd3e,Smartphone,True
+DEV_02740,43cfd3419d9110eb,Laptop,True
+DEV_02741,f06bc79a6f0fced5,Router,True
+DEV_02742,94408f6282e3d8e2,Burner Phone,True
+DEV_02743,24fa24caf33fc0ac,Burner Phone,True
+DEV_02744,d13cba80b1d2a263,Tablet,True
+DEV_02745,ec17a27434fd412a,Tablet,True
+DEV_02746,6f372a755c2f3e09,Tablet,True
+DEV_02747,b7a4d95e2394ea96,Laptop,True
+DEV_02748,c5b43052367e4176,Tablet,True
+DEV_02749,80a8b11fc7f9d99d,Burner Phone,True
+DEV_02750,f4bdd527f969709c,Router,True
+DEV_02751,23d56b358812d746,Smartphone,True
+DEV_02752,699e0ecded543a90,Smartphone,True
+DEV_02753,4b9b5fd4c2fecb31,Tablet,True
+DEV_02754,3b944d1d7bc2d04a,Smartphone,True
+DEV_02755,56d9756b37a69463,Router,True
+DEV_02756,f28c78e66d34d565,Smartphone,True
+DEV_02757,315a1936481ebe37,Burner Phone,True
+DEV_02758,6c8453723671e4aa,Tablet,True
+DEV_02759,a192e0f06027abed,Burner Phone,True
+DEV_02760,f6d28216589df578,Router,True
+DEV_02761,f01a1a812e0b845b,Router,True
+DEV_02762,029bb0785b2183b3,Tablet,True
+DEV_02763,cd9b131dc6a521d1,Laptop,True
+DEV_02764,2bf5895ee81c0b30,Laptop,True
+DEV_02765,b9b26b74754f9498,Laptop,True
+DEV_02766,89ecfecdd28ad46d,Router,True
+DEV_02767,9bafee733a4e5d93,Tablet,True
+DEV_02768,2f3125b8dfa8c44c,Laptop,True
+DEV_02769,f31c833bbb0abca6,Laptop,True
+DEV_02770,dbd364f451bfb999,Burner Phone,True
+DEV_02771,b95d84e37802bc4c,Laptop,True
+DEV_02772,53252de549fc61a1,Laptop,True
+DEV_02773,3adf0f2390e6197d,Burner Phone,True
+DEV_02774,45f396736e6a6f5c,Tablet,True
+DEV_02775,859bf59c488408ec,Smartphone,True
+DEV_02776,980807867496df27,Smartphone,True
+DEV_02777,f3896a4e771d25a8,Smartphone,True
+DEV_02778,24457e904c65411c,Burner Phone,True
+DEV_02779,b044b3a7e5fab1be,Laptop,True
+DEV_02780,7f5d614630f402af,Router,True
+DEV_02781,0d5cdd4b7c7e3d6f,Tablet,True
+DEV_02782,ed2c78840dc3d260,Smartphone,True
+DEV_02783,fd64365e207d5b00,Tablet,True
+DEV_02784,f58bbec961fff474,Laptop,True
+DEV_02785,f36a8252646e2fc0,Burner Phone,True
+DEV_02786,24c2a4e3513b6a22,Tablet,True
+DEV_02787,78771ca2845d3c0f,Burner Phone,True
+DEV_02788,77d0066292020088,Laptop,True
+DEV_02789,3445894d7fcf9871,Burner Phone,True
+DEV_02790,cff43b325b933608,Burner Phone,True
+DEV_02791,4be5fca3753ea410,Laptop,True
+DEV_02792,e6998a1472d28d85,Burner Phone,True
+DEV_02793,1505eff3a2ea76d5,Laptop,True
+DEV_02794,0ee2d4c298402ed3,Smartphone,True
+DEV_02795,a3863bd52a4a5ddb,Smartphone,True
+DEV_02796,a4de55751ab4e549,Tablet,True
+DEV_02797,7cc4200d3dac0e14,Laptop,True
+DEV_02798,5cffc08dd1eb061b,Tablet,True
+DEV_02799,90472d177ce6e848,Smartphone,True
+DEV_02800,6fdba52cdd5477ba,Tablet,True
+DEV_02801,1c8a542102156a4f,Smartphone,True
+DEV_02802,e2dbac98d42158d7,Router,True
+DEV_02803,2f8e8e4978929612,Laptop,True
+DEV_02804,4d11eaf758162960,Burner Phone,True
+DEV_02805,54940d443a8f83cf,Tablet,True
+DEV_02806,e8ce907e54f8947d,Laptop,True
+DEV_02807,538f95459c928d5d,Smartphone,True
+DEV_02808,232a5863a1504afe,Router,True
+DEV_02809,04e10e7c9db0ce2c,Laptop,True
+DEV_02810,623a3801c104dc20,Burner Phone,True
+DEV_02811,f1f4b77117f59023,Tablet,True
+DEV_02812,56dd8eb3b2c0070e,Laptop,True
+DEV_02813,cd27168003612aa5,Burner Phone,True
+DEV_02814,b3aae57c09610a2f,Burner Phone,True
+DEV_02815,ef8f7ab06e132ff8,Tablet,True
+DEV_02816,98b6ce879c0c114b,Router,True
+DEV_02817,307e42f6f6fa7956,Burner Phone,True
+DEV_02818,aa02e30219c3b3e2,Laptop,True
+DEV_02819,d65931a02594f726,Tablet,True
+DEV_02820,efa03633bc1fd7d8,Router,True
+DEV_02821,d75ddd0356b3b640,Tablet,True
+DEV_02822,cc567f632d1c3ee2,Smartphone,True
+DEV_02823,0dda87504f0c433c,Burner Phone,True
+DEV_02824,f5ece7731bb942a9,Laptop,True
+DEV_02825,cd5b1d96da46b650,Tablet,True
+DEV_02826,77583550cdda5dbf,Tablet,True
+DEV_02827,c1bd7a9dd1f0cae1,Tablet,True
+DEV_02828,5a93b3cdc9ad82c5,Router,True
+DEV_02829,c7614e2c367ecadf,Smartphone,True
+DEV_02830,9b544c11001ee047,Tablet,True
+DEV_02831,2c61190c6d5f5186,Smartphone,True
+DEV_02832,e42659c231c99056,Burner Phone,True
+DEV_02833,617e11b48b084832,Tablet,True
+DEV_02834,5c70d807f488644e,Laptop,True
+DEV_02835,9cacfe2c471d994a,Router,True
+DEV_02836,abe047fc091f404f,Smartphone,True
+DEV_02837,55e206c9e6a15ca0,Burner Phone,True
+DEV_02838,8e764a9e982b63ac,Router,True
+DEV_02839,394f5c5bc4aa2712,Router,True
+DEV_02840,ff5f94bebb67d11e,Tablet,True
+DEV_02841,d8f1d2697d2babd9,Tablet,True
+DEV_02842,83f54045f791e2c8,Laptop,True
+DEV_02843,39bd885d7236a66b,Smartphone,True
+DEV_02844,08a12e6494958415,Laptop,True
+DEV_02845,03e0a77d5cc4a4f3,Tablet,True
+DEV_02846,185278631b62744d,Smartphone,True
+DEV_02847,35c82cdaca89125e,Laptop,True
+DEV_02848,ca3aa967340cc51b,Router,True
+DEV_02849,023926a2498e521b,Laptop,True
+DEV_02850,21cc200672a36f3d,Tablet,True
+DEV_02851,01a2a57c63c7b0b3,Tablet,True
+DEV_02852,3b4dc5538e4d6d40,Laptop,True
+DEV_02853,99c5789380ec6ec4,Laptop,True
+DEV_02854,fe6b3d28a87c6511,Burner Phone,True
+DEV_02855,f27505eb9a001157,Laptop,True
+DEV_02856,8b641be34665b059,Smartphone,True
+DEV_02857,838f282a54a7ea74,Smartphone,True
+DEV_02858,5d3a1397cf55e904,Router,True
+DEV_02859,547e060ac9e740e9,Router,True
+DEV_02860,7bd2fea1ad50d82b,Tablet,True
+DEV_02861,93a1289d4ac285d6,Laptop,True
+DEV_02862,8c017e13b060474a,Burner Phone,True
+DEV_02863,aa26f6018420f5ba,Router,True
+DEV_02864,f4aa9ebe60544ae2,Smartphone,True
+DEV_02865,70a0a6bf5177b4d4,Router,True
+DEV_02866,5916213b773b6dda,Router,True
+DEV_02867,9827eda439f3140e,Router,True
+DEV_02868,7d680fe222d24897,Burner Phone,True
+DEV_02869,c26afc43c955d0f1,Router,True
+DEV_02870,cf74379eb95177ba,Smartphone,True
+DEV_02871,4e50ac86166f107d,Smartphone,True
+DEV_02872,8b331bd91c1d6d94,Laptop,True
+DEV_02873,483c0961e4b289f2,Tablet,True
+DEV_02874,74029fc946131de4,Burner Phone,True
+DEV_02875,02540406d1f5bb65,Smartphone,True
+DEV_02876,bef910535324954e,Burner Phone,True
+DEV_02877,09ceaceff73bcc4c,Tablet,True
+DEV_02878,df9dd23ec24ce981,Router,True
+DEV_02879,2d6d18dd5c3e2912,Smartphone,True
+DEV_02880,6ff5472f5cbf9475,Router,True
+DEV_02881,b32ca407deb80e24,Router,True
+DEV_02882,519c74238c29f34c,Burner Phone,True
+DEV_02883,609530a8d2a3eeba,Laptop,True
+DEV_02884,94480f65dc3ce292,Tablet,True
+DEV_02885,72d94c2355018a4b,Laptop,True
+DEV_02886,f398d588de917ec9,Burner Phone,True
+DEV_02887,87b23aad71a66423,Smartphone,True
+DEV_02888,690e5025db0d8228,Router,True
+DEV_02889,68c0b9cfb624aec7,Smartphone,True
+DEV_02890,4ef4d53b0ec68d04,Smartphone,True
+DEV_02891,cb95eb2b69030f19,Burner Phone,True
+DEV_02892,fccdc322e5384d65,Smartphone,True
+DEV_02893,353564346aa6573a,Burner Phone,True
+DEV_02894,da0be63682543255,Smartphone,True
+DEV_02895,6d3a405584b53384,Laptop,True
+DEV_02896,1906f5d39231bbcc,Router,True
+DEV_02897,92c40a3043d95f01,Laptop,True
+DEV_02898,76b5db15cb6d3b0e,Smartphone,True
+DEV_02899,970602d349c141c1,Laptop,True
+DEV_02900,0a35563b46951544,Tablet,True
+DEV_02901,877d55a3385fe5e2,Burner Phone,True
+DEV_02902,d8898da7efee2e33,Burner Phone,True
+DEV_02903,f46d112cb08eb614,Smartphone,True
+DEV_02904,8cad1141d880b1bc,Laptop,True
+DEV_02905,22bea31389c7e634,Tablet,True
+DEV_02906,0eb431f0c4144da4,Burner Phone,True
+DEV_02907,35270b774541a8b4,Laptop,True
+DEV_02908,630dc1929301a2c8,Tablet,True
+DEV_02909,a0a51e2dbfcdee14,Smartphone,True
+DEV_02910,1244808284de5ce0,Router,True
+DEV_02911,3a09eb86278251d9,Smartphone,True
+DEV_02912,b3f3ed12a8d76953,Tablet,True
+DEV_02913,b0cb87016b663ea7,Router,True
+DEV_02914,13d8f0e500fdd777,Router,True
+DEV_02915,d72985dd1d953f8f,Laptop,True
+DEV_02916,a9ebd9724a1b6940,Laptop,True
+DEV_02917,9510beb78379310b,Smartphone,True
+DEV_02918,1da1d28bd4e26876,Smartphone,True
+DEV_02919,768cff919683d285,Smartphone,True
+DEV_02920,819ef050cbbc15f0,Router,True
+DEV_02921,ce05ff020d1142cd,Laptop,True
+DEV_02922,960526f9b7166aba,Router,True
+DEV_02923,a94301961b960931,Tablet,True
+DEV_02924,0c671659bde1212a,Laptop,True
+DEV_02925,6a55927df2247a1b,Tablet,True
+DEV_02926,4da6ca23860c0c6c,Laptop,True
+DEV_02927,10e1e2f5bc132e12,Laptop,True
+DEV_02928,3605fd860a8dd643,Router,True
+DEV_02929,fc4b86e7c06e9740,Burner Phone,True
+DEV_02930,0e387991f7515119,Smartphone,True
+DEV_02931,2743c69d04841038,Smartphone,True
+DEV_02932,217261568257728f,Burner Phone,True
+DEV_02933,00b3a79442387c50,Burner Phone,True
+DEV_02934,d97db0def3dc68a1,Smartphone,True
+DEV_02935,c9484b68c5282478,Tablet,True
+DEV_02936,6a748a1460fa0ffc,Laptop,True
+DEV_02937,544d1c6a6f2ebbcc,Router,True
+DEV_02938,a1b17d9d931c6170,Smartphone,True
+DEV_02939,d710ed60d520a9e0,Laptop,True
+DEV_02940,9bc5927ebb62cc09,Router,True
+DEV_02941,8b1f26ee499d8d49,Router,True
+DEV_02942,9578b4fc622fbbf3,Tablet,True
+DEV_02943,bffe6b9f9e1b48f5,Tablet,True
+DEV_02944,9b4e74c847d6245f,Router,True
+DEV_02945,10215f460c4ad392,Router,True
+DEV_02946,7932482c588eb2fc,Burner Phone,True
+DEV_02947,aed6cf36ee9b16ca,Smartphone,True
+DEV_02948,a21c7c85d9e985f5,Laptop,True
+DEV_02949,232ff8b58aea12a9,Burner Phone,True
+DEV_02950,14418c1e5caa31da,Smartphone,True
+DEV_02951,4c44da8821102d69,Tablet,True
+DEV_02952,50e8d1e8bce4757c,Router,True
+DEV_02953,de1f137e18735f9b,Laptop,True
+DEV_02954,9d88c7cab2ac452a,Laptop,True
+DEV_02955,c689913fc46ba054,Tablet,True
+DEV_02956,390917a09df5fae1,Tablet,True
+DEV_02957,a6413df2e1daaf09,Laptop,True
+DEV_02958,ed34cbe72c730563,Smartphone,True
+DEV_02959,f0c93ed4b405c764,Burner Phone,True
+DEV_02960,413f8a0f69e03e56,Laptop,True
+DEV_02961,a02a79f46f73768a,Burner Phone,True
+DEV_02962,d4fba7f307ef6a27,Laptop,True
+DEV_02963,50050cb593c746c9,Tablet,True
+DEV_02964,6f5e657a0fa1ed9a,Burner Phone,True
+DEV_02965,b07f8b8c458b2b58,Tablet,True
+DEV_02966,c38041ab1547ddba,Burner Phone,True
+DEV_02967,4c49d795e4737c6f,Router,True
+DEV_02968,0698e0ede35093cd,Laptop,True
+DEV_02969,dd0d057318403ba6,Smartphone,True
+DEV_02970,9ce5ebe835bf5b93,Laptop,True
+DEV_02971,fe13183a03028478,Router,True
+DEV_02972,f7a834f05d56f793,Laptop,True
+DEV_02973,c217a70746461748,Tablet,True
+DEV_02974,82d172ece05b9d96,Burner Phone,True
+DEV_02975,741f85b574158fe4,Smartphone,True
+DEV_02976,f26b6ca8ca90bec2,Smartphone,True
+DEV_02977,777b1f67c504b3c3,Burner Phone,True
+DEV_02978,e8f2abdb279687f3,Burner Phone,True
+DEV_02979,250bfca54caf62fe,Smartphone,True
+DEV_02980,abbb1853f7d8dcd9,Smartphone,True
+DEV_02981,41378b27acbb60c4,Burner Phone,True
+DEV_02982,2a17b2541dbabbfa,Router,True
+DEV_02983,365eeb48cc7b467b,Tablet,True
+DEV_02984,87faa5b9a5d6811b,Router,True
+DEV_02985,b14d25ad14c00b76,Router,True
+DEV_02986,e256d9ac1fe3c4b3,Smartphone,True
+DEV_02987,51acf387a33c5fc4,Router,True
+DEV_02988,5d7735ca2efd2f08,Burner Phone,True
+DEV_02989,4bbfc0e2062c4d64,Smartphone,True
+DEV_02990,b3a41131143e1fce,Smartphone,True
+DEV_02991,cbabdaeb24b719a7,Laptop,True
+DEV_02992,7c892d1452ddb339,Tablet,True
+DEV_02993,ebce994060d4433b,Router,True
+DEV_02994,0763467a23fd1f92,Laptop,True
+DEV_02995,b60d34b11f9e8f95,Router,True
+DEV_02996,2dd89adf78d31fc6,Tablet,True
+DEV_02997,61cfb6693642746d,Router,True
+DEV_02998,d6e1cadf5d092821,Burner Phone,True
+DEV_02999,56552a1057b60b00,Router,True
+DEV_03000,d7f6c709f711fd74,Router,True
+DEV_03001,8af34c0ffeb571b4,Laptop,True
+DEV_03002,66fc67232d8cdf40,Laptop,True
+DEV_03003,ccaace4c647a012e,Laptop,True
+DEV_03004,657c5fa8de9edaec,Router,True
+DEV_03005,410ce90f6dc6d8ac,Tablet,True
+DEV_03006,db06161eb440bd3b,Laptop,True
+DEV_03007,add5686da66af997,Router,True
+DEV_03008,5bf44b3e903eab40,Smartphone,True
+DEV_03009,93390f2530ec9070,Burner Phone,True
+DEV_03010,378f16eeb26c6c6b,Router,True
+DEV_03011,fe4e6cb0295bf241,Router,True
+DEV_03012,8f3046e0d8e5d676,Tablet,True
+DEV_03013,6d02f86af9103263,Tablet,True
+DEV_03014,269fec83828ed1d0,Burner Phone,True
+DEV_03015,886e72ad8baabd06,Tablet,True
+DEV_03016,98f1ca0f747a2518,Smartphone,True
+DEV_03017,d9c96659835de6af,Router,True
+DEV_03018,9be20778a3894c6c,Burner Phone,True
+DEV_03019,d0bf663bc0b4a868,Router,True
+DEV_03020,041c3ff06f377860,Tablet,True
+DEV_03021,9af2da57419b785b,Smartphone,True
+DEV_03022,7aca95483c2b75ce,Laptop,True
+DEV_03023,1e1f1890bb0ff4fe,Tablet,True
+DEV_03024,15a5583325d088b3,Burner Phone,True
+DEV_03025,dad50a1cd40205ef,Smartphone,True
+DEV_03026,e5acbf539c534c02,Router,True
+DEV_03027,ca5d758f75998972,Laptop,True
+DEV_03028,42e098e2f95abe29,Router,True
+DEV_03029,7f11ab49fca6cf1b,Router,True
+DEV_03030,053100c48ec4bece,Burner Phone,True
+DEV_03031,f0880b57af1f62ac,Smartphone,True
+DEV_03032,3746b6d8aaad4087,Burner Phone,True
+DEV_03033,64089fa946bcbf31,Smartphone,True
+DEV_03034,e0173ea579f3c958,Smartphone,True
+DEV_03035,cc55e6b53709edde,Burner Phone,True
+DEV_03036,8530258cd4256a01,Smartphone,True
+DEV_03037,0ca8252468f1424a,Burner Phone,True
+DEV_03038,69c29a8e0e728f2e,Burner Phone,True
+DEV_03039,204fb7750dbaf758,Burner Phone,True
+DEV_03040,98dbd8821cdf9c9d,Smartphone,True
+DEV_03041,02bce96afc19120f,Smartphone,True
+DEV_03042,7c4a10992cc3abfb,Burner Phone,True
+DEV_03043,1525461dfa4f8b2d,Burner Phone,True
+DEV_03044,096d4df7f0c3b3d8,Laptop,True
+DEV_03045,086bd3984d661cad,Smartphone,True
+DEV_03046,2a7dbd205b6406b6,Router,True
+DEV_03047,178f706963dca770,Burner Phone,True
+DEV_03048,bdd0eb8e038a0391,Laptop,True
+DEV_03049,4eb0764c8bfe6f9b,Laptop,True
+DEV_03050,c6d8fe9cebd1715d,Tablet,True
+DEV_03051,8c9df50e46da1a3d,Smartphone,True
+DEV_03052,fa833d332958b00f,Burner Phone,True
+DEV_03053,23cd9eafcd4538ce,Smartphone,True
+DEV_03054,606fd8651caea5dc,Smartphone,True
+DEV_03055,63253ad8891fa9cc,Smartphone,True
+DEV_03056,5ddea0377bd59e1c,Smartphone,True
+DEV_03057,226a2d8821a6b12d,Smartphone,True
+DEV_03058,504750acc1f3622c,Burner Phone,True
+DEV_03059,68986faa7a92b5b9,Burner Phone,True
+DEV_03060,54882e480cb889e3,Router,True
+DEV_03061,aafed80622dd020f,Router,True
+DEV_03062,2422f2291ec8b2e5,Burner Phone,True
+DEV_03063,5525f63c6d577599,Router,True
+DEV_03064,e316ff13cf6307a4,Tablet,True
+DEV_03065,bf046bb6b52511a4,Tablet,True
+DEV_03066,4bb4f9ef44db1a76,Smartphone,True
+DEV_03067,5be652ed5ea42927,Laptop,True
+DEV_03068,79d5dc27a300282d,Laptop,True
+DEV_03069,88f4d4bb83bc36ba,Smartphone,True
+DEV_03070,713a8a035eb9114b,Tablet,True
+DEV_03071,6a057e2c45a33fc2,Laptop,True
+DEV_03072,16571cb47581cb0a,Tablet,True
+DEV_03073,24d68b82a46f2c18,Laptop,True
+DEV_03074,07fd9cc7952157b1,Tablet,True
+DEV_03075,140f949931a7f2d2,Burner Phone,True
+DEV_03076,0e5e4143247b6ed3,Laptop,True
+DEV_03077,a32b9a4b3c3d9412,Tablet,True
+DEV_03078,177ca8e9a1beb0ad,Tablet,True
+DEV_03079,359765ab90d66afb,Burner Phone,True
+DEV_03080,3fcb1311c76c6e1e,Smartphone,True
+DEV_03081,8b3912b6d06dc3a4,Laptop,True
+DEV_03082,67e16cafaaf3b149,Laptop,True
+DEV_03083,a6329c6818b87b25,Router,True
+DEV_03084,f5363df192bcd16e,Laptop,True
+DEV_03085,479c622fef4319a0,Laptop,True
+DEV_03086,ac81464ff88f0f4a,Burner Phone,True
+DEV_03087,ac00186b25cc825a,Burner Phone,True
+DEV_03088,e0e69158d490ea4c,Tablet,True
+DEV_03089,4f8b85c4832fb11b,Burner Phone,True
+DEV_03090,d4c4679965851b7d,Router,True
+DEV_03091,046f334422449f05,Burner Phone,True
+DEV_03092,7b6ded6a1050dd55,Laptop,True
+DEV_03093,5b877e8931cb858e,Burner Phone,True
+DEV_03094,07daa6ed57890995,Laptop,True
+DEV_03095,3ed3da407078ca26,Router,True
+DEV_03096,1bc12e40d72f4385,Router,True
+DEV_03097,401b958b1d15aef0,Tablet,True
+DEV_03098,30f81c523eb503ab,Smartphone,True
+DEV_03099,22a87a5483003651,Smartphone,True
+DEV_03100,5c8f20a74294bfc5,Laptop,True
+DEV_03101,fe8cf811c8eda278,Router,True
+DEV_03102,63ce4180bfe559da,Smartphone,True
+DEV_03103,478a5c5856d40ccc,Laptop,True
+DEV_03104,66409609ede750e2,Smartphone,True
+DEV_03105,6eb272ca7431e48e,Router,True
+DEV_03106,8ac6adef0808bb62,Router,True
+DEV_03107,1bc3b8057a1dfc5f,Laptop,True
+DEV_03108,861d6ededdf13262,Router,True
+DEV_03109,a1aa5027c9cb6c2f,Laptop,True
+DEV_03110,959e7eff487969ac,Tablet,True
+DEV_03111,c9caa4fcbe2d140a,Tablet,True
+DEV_03112,bd952cf5cd77005f,Burner Phone,True
+DEV_03113,b178463002aa9c43,Smartphone,True
+DEV_03114,96047896c33c22f9,Laptop,True
+DEV_03115,8ede6790505cac3b,Laptop,True
+DEV_03116,f75addd523096937,Tablet,True
+DEV_03117,74d798ed594724a2,Laptop,True
+DEV_03118,2ce602e5fb88169b,Laptop,True
+DEV_03119,00c83f4454be394e,Router,True
+DEV_03120,32ef51fdd43bff55,Burner Phone,True
+DEV_03121,b70f82802fbd33fa,Smartphone,True
+DEV_03122,56eaec212121cfe1,Tablet,True
+DEV_03123,42bdc4a7dae2ccdf,Laptop,True
+DEV_03124,c0330f623063a3aa,Smartphone,True
+DEV_03125,00e99c6df720a200,Router,True
+DEV_03126,b9c83b890b846227,Smartphone,True
+DEV_03127,6b4803f5c8793e2b,Tablet,True
+DEV_03128,cd4d0ec95d36b20c,Tablet,True
+DEV_03129,17d0a85c13dc41b4,Tablet,True
+DEV_03130,98364dabe1aa4083,Burner Phone,True
+DEV_03131,f1e9b078333ac0ca,Smartphone,True
+DEV_03132,f656eae1a5f7aa4a,Router,True
+DEV_03133,f22c68b47cd2f5a3,Burner Phone,True
+DEV_03134,3ca71150df96ce15,Smartphone,True
+DEV_03135,d5f8d6a87c51d29b,Burner Phone,True
+DEV_03136,c42c4c2d11716cb0,Tablet,True
+DEV_03137,fd31d9f27d883637,Smartphone,True
+DEV_03138,4ed6b7bdf8023636,Smartphone,True
+DEV_03139,dd0652b43d2e6460,Burner Phone,True
+DEV_03140,fb0262bc840623a5,Tablet,True
+DEV_03141,e4b346168ccd96d8,Router,True
+DEV_03142,c1ab19d8cccd69c6,Laptop,True
+DEV_03143,b16c3e99cdf5476e,Tablet,True
+DEV_03144,f5c2ada7a1bcf5c3,Laptop,True
+DEV_03145,a8d90a25b29d55c7,Tablet,True
+DEV_03146,a01d1f1bf6aeb8ad,Smartphone,True
+DEV_03147,733391f16a30ef15,Router,True
+DEV_03148,a44cf9111ed0d0ca,Laptop,True
+DEV_03149,9bfbf90d0a66bb61,Tablet,True
+DEV_03150,8447e8bfd098a8a8,Smartphone,True
+DEV_03151,131d0c5d3751c17f,Laptop,True
+DEV_03152,4d58225f61647794,Tablet,True
+DEV_03153,4a06f742e0a1b223,Laptop,True
+DEV_03154,d50c4c8e12743477,Router,True
+DEV_03155,68abef31ca767631,Router,True
+DEV_03156,28cbb834b153b373,Smartphone,True
+DEV_03157,b3a270ce7d4deb93,Router,True
+DEV_03158,5f1a3592f0080dc7,Burner Phone,True
+DEV_03159,8c4c86b172781e04,Tablet,True
+DEV_03160,10390a5122d043c8,Smartphone,True
+DEV_03161,dadfbd0665e4df5e,Laptop,True
+DEV_03162,cf61e181fa68fb9b,Burner Phone,True
+DEV_03163,c8f5ca0f72a88de2,Burner Phone,True
+DEV_03164,702e95d45c3cf7b0,Burner Phone,True
+DEV_03165,b6ed04a2491c7ee1,Tablet,True
+DEV_03166,85bbb3940f935692,Laptop,True
+DEV_03167,7133216021997cc1,Burner Phone,True
+DEV_03168,7f990e8d14492c8d,Router,True
+DEV_03169,8937e200fc03bd7c,Laptop,True
+DEV_03170,ee55b6c5546dea23,Router,True
+DEV_03171,eac2ed8b72b64f44,Tablet,True
+DEV_03172,019b5a77bef589f1,Smartphone,True
+DEV_03173,fd24b4931bd6be00,Burner Phone,True
+DEV_03174,2978bb764c2df8b3,Tablet,True
+DEV_03175,7f42d7788f1c82f7,Laptop,True
+DEV_03176,9c990e864a7651d2,Tablet,True
+DEV_03177,c83094e1b72b3aba,Burner Phone,True
+DEV_03178,3019f012bc0f6027,Tablet,True
+DEV_03179,b3ee9883823ef77e,Tablet,True
+DEV_03180,23ee7744aa772b90,Tablet,True
+DEV_03181,34e6c442f4db1d96,Router,True
+DEV_03182,f29e3b6a1b6d2f1c,Smartphone,True
+DEV_03183,d9530e2fd09d5ab2,Router,True
+DEV_03184,929a6b299efde548,Burner Phone,True
+DEV_03185,1df5545e518ce53a,Tablet,True
+DEV_03186,f76f69e26536123a,Tablet,True
+DEV_03187,92eb3cc2cda0f164,Burner Phone,True
+DEV_03188,0ab4ee800faeed7f,Router,True
+DEV_03189,79ee87343167a469,Burner Phone,True
+DEV_03190,09b8b01068c23a8b,Smartphone,True
+DEV_03191,cde88d93a35431cd,Router,True
+DEV_03192,4dd05e37baf33cde,Burner Phone,True
+DEV_03193,f74da99110343feb,Router,True
+DEV_03194,ecf1a1195cdd3ebd,Router,True
+DEV_03195,306490318147f5c2,Tablet,True
+DEV_03196,464a8fd5e2b4769b,Tablet,True
+DEV_03197,c711d7b61d752421,Laptop,True
+DEV_03198,518e2e19bf706df6,Smartphone,True
+DEV_03199,6f73fae3ae433c83,Burner Phone,True
+DEV_03200,2dddb503ba715649,Burner Phone,True
+DEV_03201,d36b931f3be09067,Router,True
+DEV_03202,75804ae48984d28c,Router,True
+DEV_03203,d68fb79f8dc44a9f,Smartphone,True
+DEV_03204,031db9c17c80420c,Router,True
+DEV_03205,bc0cb165121d77cd,Router,True
+DEV_03206,f400cdfa92b30e58,Laptop,True
+DEV_03207,eedb8e6f30d3620d,Laptop,True
+DEV_03208,f30234b386a7a987,Smartphone,True
+DEV_03209,a504789ec1f0ac84,Burner Phone,True
+DEV_03210,bdc1ae0f0c99dbeb,Router,True
+DEV_03211,215cf79de0b38200,Smartphone,True
+DEV_03212,cd7cc615824d0e69,Smartphone,True
+DEV_03213,3d95503775751cc0,Router,True
+DEV_03214,6b163f408982a477,Smartphone,True
+DEV_03215,a3b5376398596ea5,Laptop,True
+DEV_03216,7c5cd70027f2af32,Smartphone,True
+DEV_03217,6cbbfcbdc27ecafa,Tablet,True
+DEV_03218,244728f5b59567b2,Burner Phone,True
+DEV_03219,03f6deb99c920395,Laptop,True
+DEV_03220,89aeaadfc3b3e455,Tablet,True
+DEV_03221,cd066ae17cdb2a53,Laptop,True
+DEV_03222,8e23ea9937da3b10,Router,True
+DEV_03223,35d0f88c78b09eec,Tablet,True
+DEV_03224,1fafa53190268a3f,Burner Phone,True
+DEV_03225,6d298e14e10866cb,Laptop,True
+DEV_03226,de08b1c236ae67f9,Burner Phone,True
+DEV_03227,7bdd2d43b99d995d,Burner Phone,True
+DEV_03228,5d0734877f588bdb,Burner Phone,True
+DEV_03229,455e913e877d586c,Laptop,True
+DEV_03230,4d9af3d184d661ba,Burner Phone,True
+DEV_03231,d41eaa571ad64a44,Burner Phone,True
+DEV_03232,63f6a44ef0b94d3c,Laptop,True
+DEV_03233,d441d9da1f192483,Laptop,True
+DEV_03234,9f9b242aab766102,Router,True
+DEV_03235,fece93507b8a4e7f,Tablet,True
+DEV_03236,bf3779da93bcceb9,Router,True
+DEV_03237,1838078e3ec6dfb5,Laptop,True
+DEV_03238,989919ab6ecbb422,Router,True
+DEV_03239,e53e2f6e22b029a2,Burner Phone,True
+DEV_03240,a6e99c98c8a6148a,Router,True
+DEV_03241,5bf083cafffb72a0,Smartphone,True
+DEV_03242,e4aabe653b3c1345,Smartphone,True
+DEV_03243,e1156e92b30b2aae,Tablet,True
+DEV_03244,6c944c998668e90d,Laptop,True
+DEV_03245,e55fe81526bd36d3,Burner Phone,True
+DEV_03246,ce46d0d5e3cc11a3,Laptop,True
+DEV_03247,930804cfe9849fe8,Router,True
+DEV_03248,950e952f7941a24d,Router,True
+DEV_03249,4f2bac7bef0a34ee,Burner Phone,True
+DEV_03250,68e66523ea82d886,Tablet,True
+DEV_03251,d9243bc32890d7f0,Smartphone,True
+DEV_03252,b3d125225b47e897,Laptop,True
+DEV_03253,97b3f914af2fa723,Burner Phone,True
+DEV_03254,268e968a0f5030c1,Laptop,True
+DEV_03255,d464a3f911bd4151,Laptop,True
+DEV_03256,0a191c2850fca911,Smartphone,True
+DEV_03257,610b5964465d81f9,Tablet,True
+DEV_03258,0b0bd081f4b21957,Laptop,True
+DEV_03259,710c778b597f1803,Smartphone,True
+DEV_03260,b072675121410fe6,Burner Phone,True
+DEV_03261,d062d89efbf61e4e,Smartphone,True
+DEV_03262,6e5f79340860d84c,Smartphone,True
+DEV_03263,117f15f37445b717,Smartphone,True
+DEV_03264,729e69a38146c297,Burner Phone,True
+DEV_03265,cb8f44e8c9057604,Burner Phone,True
+DEV_03266,9c63951bd4b34268,Burner Phone,True
+DEV_03267,3c74361fc559ecb0,Smartphone,True
+DEV_03268,a691b98909d00e73,Burner Phone,True
+DEV_03269,fd5e5a919ffdc94f,Smartphone,True
+DEV_03270,a83f1d025c4a0cea,Smartphone,True
+DEV_03271,33147b564d214972,Burner Phone,True
+DEV_03272,7e7a6249a5cc83c5,Smartphone,True
+DEV_03273,e77429a6316d215b,Tablet,True
+DEV_03274,ab90e9f30c9768a5,Smartphone,True
+DEV_03275,c8c8e7ab03bf953e,Burner Phone,True
+DEV_03276,8b61b08ee17cd15b,Smartphone,True
+DEV_03277,e6f408ac17cd4506,Laptop,True
+DEV_03278,22b927b4fd842dbc,Smartphone,True
+DEV_03279,15581bd364e5375c,Smartphone,True
+DEV_03280,aec4cf7860f5aa00,Router,True
+DEV_03281,457182752e71c8d1,Router,True
+DEV_03282,07e9e63dc95678e2,Burner Phone,True
+DEV_03283,aeb0305d0b970781,Burner Phone,True
+DEV_03284,c7ebe5617fe77df5,Laptop,True
+DEV_03285,2755ca81bcdfa471,Laptop,True
+DEV_03286,0308dcdf3ce09936,Tablet,True
+DEV_03287,152887efb25c33ff,Laptop,True
+DEV_03288,c53af85bf8e406c0,Router,True
+DEV_03289,1251038f6ba7c6d0,Burner Phone,True
+DEV_03290,09e60a2c279da571,Laptop,True
+DEV_03291,1341997ba1c4ca1e,Tablet,True
+DEV_03292,4eda12606a1259e4,Smartphone,True
+DEV_03293,e201a65af431f8c7,Smartphone,True
+DEV_03294,be7df359400ef4cd,Router,True
+DEV_03295,d53c6d8d496c29fe,Tablet,True
+DEV_03296,ce3b45135b81fe1f,Burner Phone,True
+DEV_03297,6dcfd2469953c007,Tablet,True
+DEV_03298,cba6f917e8e8771c,Smartphone,True
+DEV_03299,7a36352315f23962,Laptop,True
+DEV_03300,ec48077076b5e171,Smartphone,True
+DEV_03301,bb48fdfd0707124f,Laptop,True
+DEV_03302,d4770700c8aeb234,Burner Phone,True
+DEV_03303,40620e116f666b49,Router,True
+DEV_03304,0e2518f2124b77f8,Smartphone,True
+DEV_03305,38dfeef654ebf750,Laptop,True
+DEV_03306,af6de241816d2bf8,Smartphone,True
+DEV_03307,533147ed0dff6120,Tablet,True
+DEV_03308,ce86332dc637ecfc,Router,True
+DEV_03309,ef962c914e820020,Router,True
+DEV_03310,6b7e54af56602500,Burner Phone,True
+DEV_03311,f2f9d61a4a4446c4,Tablet,True
+DEV_03312,08dfee07497f0c59,Router,True
+DEV_03313,f163e38e57ac5d61,Laptop,True
+DEV_03314,02ff03a1ce03eac8,Tablet,True
+DEV_03315,446c823b45a27b5c,Smartphone,True
+DEV_03316,9e1aeeabec77de12,Laptop,True
+DEV_03317,03d94decee398159,Smartphone,True
+DEV_03318,8be5746a3d160443,Smartphone,True
+DEV_03319,b031959914fc7d5b,Smartphone,True
+DEV_03320,75ecb0f747e7e8a2,Tablet,True
+DEV_03321,7735573efc52e6eb,Smartphone,True
+DEV_03322,9167ea914867e12a,Tablet,True
+DEV_03323,007d5c20aec31719,Burner Phone,True
+DEV_03324,103fb7951642a886,Router,True
+DEV_03325,a02e20fa606d2591,Burner Phone,True
+DEV_03326,cd2267547a9dd5c1,Burner Phone,True
+DEV_03327,09fa6ee0103f45d6,Smartphone,True
+DEV_03328,eb78bbeaa7a1df58,Router,True
+DEV_03329,b41de8019f29cd72,Tablet,True
+DEV_03330,d974983709bcef6e,Tablet,True
+DEV_03331,48db628773a8546b,Burner Phone,True
+DEV_03332,aceeb3ef9138324d,Tablet,True
+DEV_03333,b1770acd426fbbc6,Tablet,True
+DEV_03334,caee2d0797b784a8,Burner Phone,True
+DEV_03335,920fc72903691169,Laptop,True
+DEV_03336,a5bae721f37c783f,Tablet,True
+DEV_03337,adef9ac54e007973,Burner Phone,True
+DEV_03338,56f178d02f7d14b0,Smartphone,True
+DEV_03339,b5ee5651bcce4025,Tablet,True
+DEV_03340,dc6321d5951035ab,Laptop,True
+DEV_03341,656882bc906979ee,Tablet,True
+DEV_03342,32bf969eee12ec55,Tablet,True
+DEV_03343,2b4b6b3c7f5bcb52,Tablet,True
+DEV_03344,68927bd832ce35f7,Tablet,True
+DEV_03345,11819916d972a79b,Router,True
+DEV_03346,ba1caa9a9fbfd473,Burner Phone,True
+DEV_03347,03149b0a7f171eea,Laptop,True
+DEV_03348,3118ca88f39fc77b,Tablet,True
+DEV_03349,a23a30d5854b4ab6,Router,True
+DEV_03350,4fe86caa4bfd8e6d,Router,True
+DEV_03351,a1370da273bfba24,Smartphone,True
+DEV_03352,f2f863cc18d9083b,Smartphone,True
+DEV_03353,a0d41f2ad228efff,Burner Phone,True
+DEV_03354,062454531deb87f0,Burner Phone,True
+DEV_03355,aa5184054f502590,Laptop,True
+DEV_03356,08919388ab547a96,Tablet,True
+DEV_03357,67ded3e36486962a,Router,True
+DEV_03358,dae3ba196ea35dc3,Smartphone,True
+DEV_03359,e4fff1e49d713720,Burner Phone,True
+DEV_03360,444c9198b9e4a358,Burner Phone,True
+DEV_03361,db0d5cb65dca1c90,Burner Phone,True
+DEV_03362,9cfe8bcd1603855f,Burner Phone,True
+DEV_03363,1069dfc753a53f11,Smartphone,True
+DEV_03364,f2d4a99080dd3b47,Router,True
+DEV_03365,779104fe981fcf8d,Smartphone,True
+DEV_03366,7bedcb748d4908b5,Tablet,True
+DEV_03367,1e9c816ee8cfd89b,Tablet,True
+DEV_03368,43fa835ae63a1081,Router,True
+DEV_03369,98ba46c7bfe5abb6,Smartphone,True
+DEV_03370,8a6424ca24d61e17,Laptop,True
+DEV_03371,eb10b74dc898452b,Burner Phone,True
+DEV_03372,03da8c6fc588caa5,Laptop,True
+DEV_03373,7db815830a6f5814,Burner Phone,True
+DEV_03374,1e98d96f5a042d7f,Router,True
+DEV_03375,f351c24f659f0f46,Laptop,True
+DEV_03376,3d0217680901cd22,Router,True
+DEV_03377,f029fd8a41289771,Laptop,True
+DEV_03378,be6fa082b0bec393,Router,True
+DEV_03379,3408b35ee7518765,Tablet,True
+DEV_03380,252aaef259d44d7e,Laptop,True
+DEV_03381,e7f9dcd3e0410900,Burner Phone,True
+DEV_03382,1b063b99b8bbdeed,Router,True
+DEV_03383,94c00b1cf6cad617,Burner Phone,True
+DEV_03384,4cc4c69d5a132994,Laptop,True
+DEV_03385,dddc829d342c7dfb,Tablet,True
+DEV_03386,997d14739774a0c2,Burner Phone,True
+DEV_03387,6d7da3625b4180db,Burner Phone,True
+DEV_03388,0bf99cfaf86ef763,Smartphone,True
+DEV_03389,688974dbd2876241,Smartphone,True
+DEV_03390,0cebc0157f505a33,Router,True
+DEV_03391,2168889e7837a46b,Laptop,True
+DEV_03392,4ffc9e53a1340ed5,Burner Phone,True
+DEV_03393,230e379f620a2c2c,Burner Phone,True
+DEV_03394,8ef7b6db0adf519c,Router,True
+DEV_03395,6f78ff2d6696dd76,Smartphone,True
+DEV_03396,16fcc0c68f3d4583,Router,True
+DEV_03397,c54ee4befece940e,Laptop,True
+DEV_03398,5c46705e2646b2bc,Smartphone,True
+DEV_03399,be7cf16f8ba9dbbe,Burner Phone,True
+DEV_03400,76ec6191009dcaef,Laptop,True
+DEV_03401,fe03eefc11c955bf,Laptop,True
+DEV_03402,97e328fc4b2091f9,Burner Phone,True
+DEV_03403,c185cb3fcb9954c5,Burner Phone,True
+DEV_03404,bfe4cbbe5056e054,Laptop,True
+DEV_03405,2f189fcf26715fb2,Router,True
+DEV_03406,0b1e334d9e43cbd2,Burner Phone,True
+DEV_03407,55d959995791dbf2,Smartphone,True
+DEV_03408,4116973c6b8ebbd0,Burner Phone,True
+DEV_03409,6b99fb6824a7c55f,Router,True
+DEV_03410,85dfa55b4f393226,Router,True
+DEV_03411,e9a1545d4f0e7c53,Smartphone,True
+DEV_03412,991a9b7fb0a82f8d,Smartphone,True
+DEV_03413,3fcc10ef19c5ed9d,Laptop,True
+DEV_03414,a63c8bad06c584f3,Tablet,True
+DEV_03415,d83789b73e54ff04,Tablet,True
+DEV_03416,9a25784430d52be9,Tablet,True
+DEV_03417,86d3b5b7bd7b601e,Router,True
+DEV_03418,d85a3c0b79fb4fff,Laptop,True
+DEV_03419,467ea92a9803ae34,Router,True
+DEV_03420,9eacf8a3f3bb2f4a,Router,True
+DEV_03421,49551963438cff65,Burner Phone,True
+DEV_03422,1701bb606fe6bd06,Router,True
+DEV_03423,167b9064f555d00c,Tablet,True
+DEV_03424,15714eea8c0ada87,Tablet,True
+DEV_03425,e61299acb50e69f1,Router,True
+DEV_03426,6e5aa1a71e334d11,Burner Phone,True
+DEV_03427,d8e85e24580c179e,Tablet,True
+DEV_03428,8bdd6543c0a8818c,Smartphone,True
+DEV_03429,7a175ae2c020bb38,Router,True
+DEV_03430,ce3cebaf368bf2af,Burner Phone,True
+DEV_03431,258cc412e33eacff,Burner Phone,True
+DEV_03432,7566d320c4c7c68e,Smartphone,True
+DEV_03433,3f2dd7b844f8e132,Burner Phone,True
+DEV_03434,e77b13b44b557c86,Tablet,True
+DEV_03435,b10234fc67027e12,Smartphone,True
+DEV_03436,b419158e2fd2068c,Tablet,True
+DEV_03437,b34eb5b269ac6be1,Laptop,True
+DEV_03438,4efa0bd9097ef7ca,Burner Phone,True
+DEV_03439,4229d9538f0c1293,Tablet,True
+DEV_03440,b470d1d4e9535c3c,Burner Phone,True
+DEV_03441,36bdfd5677c7e276,Router,True
+DEV_03442,dd96bbd21514d184,Tablet,True
+DEV_03443,d23a1f7df1857ae3,Smartphone,True
+DEV_03444,01d0d491341b98f3,Smartphone,True
+DEV_03445,cfab0bca782028f8,Router,True
+DEV_03446,684eb775c276f3e7,Burner Phone,True
+DEV_03447,d86bda929b37737a,Burner Phone,True
+DEV_03448,3447dbe6f8fd2459,Laptop,True
+DEV_03449,51654e2eb54f457f,Smartphone,True
+DEV_03450,129110ba3e7d6769,Laptop,True
+DEV_03451,82de8fb3c72616fa,Tablet,True
+DEV_03452,3e46992ddd78a52b,Laptop,True
+DEV_03453,2607fac9eef610fe,Burner Phone,True
+DEV_03454,784676cc5f244ed9,Router,True
+DEV_03455,e479306e05bac2c5,Laptop,True
+DEV_03456,1701508af12afdd3,Router,True
+DEV_03457,80b98cadb4f16170,Burner Phone,True
+DEV_03458,f3d0f6a3511837f8,Laptop,True
+DEV_03459,657d27cb65c3e399,Laptop,True
+DEV_03460,a782b9e8c0822796,Router,True
+DEV_03461,8c0038fc03663c19,Smartphone,True
+DEV_03462,ae1031f787a053dc,Burner Phone,True
+DEV_03463,be2e1f96b8f7fd09,Burner Phone,True
+DEV_03464,e7d5e7e6fd80d8b6,Laptop,True
+DEV_03465,8972e53220ea7a0b,Router,True
+DEV_03466,181bb82c5d87236f,Burner Phone,True
+DEV_03467,6c605fd352280f6a,Tablet,True
+DEV_03468,27c160b35602acc9,Smartphone,True
+DEV_03469,1d7cab1be1fcbac8,Router,True
+DEV_03470,e2b948b3582f67fa,Smartphone,True
+DEV_03471,f6fb73b233908f76,Laptop,True
+DEV_03472,814f98814096125c,Tablet,True
+DEV_03473,ebda17028737222b,Smartphone,True
+DEV_03474,df773a33893a74ad,Router,True
+DEV_03475,27093970d49bf955,Smartphone,True
+DEV_03476,10a07227117a395c,Laptop,True
+DEV_03477,e900dd8bcf0f114b,Router,True
+DEV_03478,e845b9297b71ac2c,Burner Phone,True
+DEV_03479,c34a78c53d9ad63a,Smartphone,True
+DEV_03480,7c0ffbfa100bcb91,Laptop,True
+DEV_03481,bcde938b068d2292,Laptop,True
+DEV_03482,d0edad9d5b230f19,Tablet,True
+DEV_03483,bd92f33280a83f33,Laptop,True
+DEV_03484,970bdbfb66cdc638,Tablet,True
+DEV_03485,d364afadcf13b41d,Burner Phone,True
+DEV_03486,a165d4492e3c22ee,Laptop,True
+DEV_03487,4db75a21b5fe8cdc,Burner Phone,True
+DEV_03488,6bae134a1669cdcb,Tablet,True
+DEV_03489,8de902ed6feba361,Smartphone,True
+DEV_03490,498b82ad733d61dd,Tablet,True
+DEV_03491,01193d1a5f0d578e,Burner Phone,True
+DEV_03492,24beb64f024a49cc,Tablet,True
+DEV_03493,18c4458fc15d8f30,Burner Phone,True
+DEV_03494,0627813d1629d01f,Laptop,True
+DEV_03495,ac5085cc06a3aee2,Router,True
+DEV_03496,bc297e3d67bb8f48,Burner Phone,True
+DEV_03497,800afbcbffbd86fe,Burner Phone,True
+DEV_03498,ac7a21f6f51f20d7,Tablet,True
+DEV_03499,a92261d297e6cc04,Tablet,True
+DEV_03500,3a9bd5fada32a87c,Smartphone,True

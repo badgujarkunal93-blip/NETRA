@@ -1,0 +1,251 @@
+location_id,latitude,longitude,normalized_address,locality,police_unit_id,location_type,synthetic_demo_record
+LOC_0001,18.978942,72.946946,Dharavi Commercial Complex Sector-1,Dharavi Commercial Complex,PS_UNIT_04,business,True
+LOC_0002,19.162584,72.944389,Colaba Causeway Sector-2,Colaba Causeway,PS_UNIT_12,warehouse,True
+LOC_0003,19.12444,72.795281,Crawford Market Sector-3,Crawford Market,PS_UNIT_10,hangout,True
+LOC_0004,18.971754,72.781751,Bandra Kurla Complex Sector-4,Bandra Kurla Complex,PS_UNIT_01,crime_scene,True
+LOC_0005,19.27616,72.972984,Andheri East MIDC Sector-5,Andheri East MIDC,PS_UNIT_07,residence,True
+LOC_0006,19.126587,72.771825,Kurla West Terminus Sector-6,Kurla West Terminus,PS_UNIT_01,business,True
+LOC_0007,19.042919,72.823547,Juhu Tara Road Sector-7,Juhu Tara Road,PS_UNIT_11,hangout,True
+LOC_0008,18.96871,72.852258,Dadar TT Circle Sector-8,Dadar TT Circle,PS_UNIT_01,warehouse,True
+LOC_0009,19.050829,72.762397,Worli Sea Face Sector-9,Worli Sea Face,PS_UNIT_02,crime_scene,True
+LOC_0010,19.02543,72.97632,Lower Parel Business Park Sector-10,Lower Parel Business Park,PS_UNIT_12,business,True
+LOC_0011,18.978787,72.964825,Ghatkopar Central Mall Sector-11,Ghatkopar Central Mall,PS_UNIT_03,residence,True
+LOC_0012,18.880214,72.908503,Chembur Colony Sector-12,Chembur Colony,PS_UNIT_06,hangout,True
+LOC_0013,18.994127,72.817238,Malad Link Road Sector-13,Malad Link Road,PS_UNIT_10,residence,True
+LOC_0014,19.052363,72.810543,Borivali West Station Area Sector-14,Borivali West Station Area,PS_UNIT_08,crime_scene,True
+LOC_0015,19.013713,72.776767,Byculla Market Sector-15,Byculla Market,PS_UNIT_11,residence,True
+LOC_0016,19.153185,72.934911,Sewri Timber Market Sector-16,Sewri Timber Market,PS_UNIT_03,crime_scene,True
+LOC_0017,19.024227,72.944408,Thane Station West Sector-17,Thane Station West,PS_UNIT_12,warehouse,True
+LOC_0018,19.091545,72.839182,Navi Mumbai Vashi Sector 17 Sector-18,Navi Mumbai Vashi Sector 17,PS_UNIT_11,crime_scene,True
+LOC_0019,18.964013,72.842172,Sion Circle Sector-19,Sion Circle,PS_UNIT_02,hangout,True
+LOC_0020,19.131823,72.89444,Tardeo Road Sector-20,Tardeo Road,PS_UNIT_01,warehouse,True
+LOC_0021,19.267332,72.96217,Dharavi Commercial Complex Sector-21,Dharavi Commercial Complex,PS_UNIT_04,hangout,True
+LOC_0022,19.161864,72.97212,Colaba Causeway Sector-22,Colaba Causeway,PS_UNIT_02,warehouse,True
+LOC_0023,19.127604,72.822354,Crawford Market Sector-23,Crawford Market,PS_UNIT_08,hangout,True
+LOC_0024,19.093423,72.786881,Bandra Kurla Complex Sector-24,Bandra Kurla Complex,PS_UNIT_03,hangout,True
+LOC_0025,19.047285,72.920785,Andheri East MIDC Sector-25,Andheri East MIDC,PS_UNIT_09,crime_scene,True
+LOC_0026,19.237965,72.857636,Kurla West Terminus Sector-26,Kurla West Terminus,PS_UNIT_12,residence,True
+LOC_0027,19.24434,72.76625,Juhu Tara Road Sector-27,Juhu Tara Road,PS_UNIT_07,warehouse,True
+LOC_0028,19.252533,72.870929,Dadar TT Circle Sector-28,Dadar TT Circle,PS_UNIT_01,hangout,True
+LOC_0029,19.119661,72.917209,Worli Sea Face Sector-29,Worli Sea Face,PS_UNIT_03,crime_scene,True
+LOC_0030,18.898178,72.885882,Lower Parel Business Park Sector-30,Lower Parel Business Park,PS_UNIT_12,hangout,True
+LOC_0031,19.176286,72.845399,Ghatkopar Central Mall Sector-31,Ghatkopar Central Mall,PS_UNIT_11,warehouse,True
+LOC_0032,19.228102,72.983169,Chembur Colony Sector-32,Chembur Colony,PS_UNIT_03,business,True
+LOC_0033,19.180291,72.842196,Malad Link Road Sector-33,Malad Link Road,PS_UNIT_07,business,True
+LOC_0034,19.122887,72.799662,Borivali West Station Area Sector-34,Borivali West Station Area,PS_UNIT_01,hangout,True
+LOC_0035,19.108759,72.892107,Byculla Market Sector-35,Byculla Market,PS_UNIT_01,warehouse,True
+LOC_0036,19.062176,72.919861,Sewri Timber Market Sector-36,Sewri Timber Market,PS_UNIT_09,crime_scene,True
+LOC_0037,19.001364,72.802881,Thane Station West Sector-37,Thane Station West,PS_UNIT_12,crime_scene,True
+LOC_0038,19.10086,72.791066,Navi Mumbai Vashi Sector 17 Sector-38,Navi Mumbai Vashi Sector 17,PS_UNIT_01,warehouse,True
+LOC_0039,18.975287,72.759382,Sion Circle Sector-39,Sion Circle,PS_UNIT_03,crime_scene,True
+LOC_0040,19.250899,72.814904,Tardeo Road Sector-40,Tardeo Road,PS_UNIT_01,hangout,True
+LOC_0041,19.275815,72.800393,Dharavi Commercial Complex Sector-41,Dharavi Commercial Complex,PS_UNIT_02,residence,True
+LOC_0042,19.139458,72.901844,Colaba Causeway Sector-42,Colaba Causeway,PS_UNIT_06,crime_scene,True
+LOC_0043,18.913298,72.919311,Crawford Market Sector-43,Crawford Market,PS_UNIT_09,crime_scene,True
+LOC_0044,19.168832,72.848002,Bandra Kurla Complex Sector-44,Bandra Kurla Complex,PS_UNIT_10,crime_scene,True
+LOC_0045,19.009854,72.763743,Andheri East MIDC Sector-45,Andheri East MIDC,PS_UNIT_01,crime_scene,True
+LOC_0046,18.967712,72.981655,Kurla West Terminus Sector-46,Kurla West Terminus,PS_UNIT_03,crime_scene,True
+LOC_0047,19.268642,72.878973,Juhu Tara Road Sector-47,Juhu Tara Road,PS_UNIT_10,residence,True
+LOC_0048,19.169041,72.915148,Dadar TT Circle Sector-48,Dadar TT Circle,PS_UNIT_11,crime_scene,True
+LOC_0049,19.22801,72.902233,Worli Sea Face Sector-49,Worli Sea Face,PS_UNIT_09,hangout,True
+LOC_0050,19.206739,72.802953,Lower Parel Business Park Sector-50,Lower Parel Business Park,PS_UNIT_05,hangout,True
+LOC_0051,19.112666,72.943856,Ghatkopar Central Mall Sector-51,Ghatkopar Central Mall,PS_UNIT_07,hangout,True
+LOC_0052,19.058422,72.925155,Chembur Colony Sector-52,Chembur Colony,PS_UNIT_07,crime_scene,True
+LOC_0053,18.939334,72.864962,Malad Link Road Sector-53,Malad Link Road,PS_UNIT_08,hangout,True
+LOC_0054,19.063756,72.945744,Borivali West Station Area Sector-54,Borivali West Station Area,PS_UNIT_03,hangout,True
+LOC_0055,19.107863,72.976405,Byculla Market Sector-55,Byculla Market,PS_UNIT_03,crime_scene,True
+LOC_0056,18.888419,72.7891,Sewri Timber Market Sector-56,Sewri Timber Market,PS_UNIT_03,business,True
+LOC_0057,19.154947,72.795084,Thane Station West Sector-57,Thane Station West,PS_UNIT_03,residence,True
+LOC_0058,19.050558,72.859206,Navi Mumbai Vashi Sector 17 Sector-58,Navi Mumbai Vashi Sector 17,PS_UNIT_11,business,True
+LOC_0059,18.920094,72.876427,Sion Circle Sector-59,Sion Circle,PS_UNIT_12,residence,True
+LOC_0060,19.121317,72.84069,Tardeo Road Sector-60,Tardeo Road,PS_UNIT_01,residence,True
+LOC_0061,19.210625,72.933227,Dharavi Commercial Complex Sector-61,Dharavi Commercial Complex,PS_UNIT_11,residence,True
+LOC_0062,18.932872,72.934828,Colaba Causeway Sector-62,Colaba Causeway,PS_UNIT_05,hangout,True
+LOC_0063,19.255439,72.893913,Crawford Market Sector-63,Crawford Market,PS_UNIT_01,residence,True
+LOC_0064,19.096948,72.946381,Bandra Kurla Complex Sector-64,Bandra Kurla Complex,PS_UNIT_12,residence,True
+LOC_0065,18.960929,72.865302,Andheri East MIDC Sector-65,Andheri East MIDC,PS_UNIT_10,business,True
+LOC_0066,19.206186,72.823772,Kurla West Terminus Sector-66,Kurla West Terminus,PS_UNIT_08,hangout,True
+LOC_0067,18.977524,72.880446,Juhu Tara Road Sector-67,Juhu Tara Road,PS_UNIT_05,warehouse,True
+LOC_0068,18.92923,72.947982,Dadar TT Circle Sector-68,Dadar TT Circle,PS_UNIT_02,warehouse,True
+LOC_0069,18.998695,72.87277,Worli Sea Face Sector-69,Worli Sea Face,PS_UNIT_07,hangout,True
+LOC_0070,18.880484,72.803835,Lower Parel Business Park Sector-70,Lower Parel Business Park,PS_UNIT_04,business,True
+LOC_0071,19.034153,72.834794,Ghatkopar Central Mall Sector-71,Ghatkopar Central Mall,PS_UNIT_05,hangout,True
+LOC_0072,19.248676,72.91426,Chembur Colony Sector-72,Chembur Colony,PS_UNIT_11,residence,True
+LOC_0073,19.076728,72.987784,Malad Link Road Sector-73,Malad Link Road,PS_UNIT_04,residence,True
+LOC_0074,19.262587,72.817635,Borivali West Station Area Sector-74,Borivali West Station Area,PS_UNIT_02,warehouse,True
+LOC_0075,19.01349,72.836518,Byculla Market Sector-75,Byculla Market,PS_UNIT_02,residence,True
+LOC_0076,19.121803,72.792736,Sewri Timber Market Sector-76,Sewri Timber Market,PS_UNIT_09,crime_scene,True
+LOC_0077,19.119845,72.913064,Thane Station West Sector-77,Thane Station West,PS_UNIT_03,crime_scene,True
+LOC_0078,19.129903,72.818881,Navi Mumbai Vashi Sector 17 Sector-78,Navi Mumbai Vashi Sector 17,PS_UNIT_02,crime_scene,True
+LOC_0079,19.246494,72.908816,Sion Circle Sector-79,Sion Circle,PS_UNIT_05,residence,True
+LOC_0080,19.195542,72.956811,Tardeo Road Sector-80,Tardeo Road,PS_UNIT_03,hangout,True
+LOC_0081,19.008102,72.843744,Dharavi Commercial Complex Sector-81,Dharavi Commercial Complex,PS_UNIT_12,business,True
+LOC_0082,19.20586,72.777159,Colaba Causeway Sector-82,Colaba Causeway,PS_UNIT_07,crime_scene,True
+LOC_0083,18.937867,72.827533,Crawford Market Sector-83,Crawford Market,PS_UNIT_03,hangout,True
+LOC_0084,19.187014,72.834626,Bandra Kurla Complex Sector-84,Bandra Kurla Complex,PS_UNIT_08,business,True
+LOC_0085,19.072515,72.983484,Andheri East MIDC Sector-85,Andheri East MIDC,PS_UNIT_10,crime_scene,True
+LOC_0086,18.935289,72.976567,Kurla West Terminus Sector-86,Kurla West Terminus,PS_UNIT_04,business,True
+LOC_0087,19.047464,72.869305,Juhu Tara Road Sector-87,Juhu Tara Road,PS_UNIT_09,business,True
+LOC_0088,19.09299,72.947137,Dadar TT Circle Sector-88,Dadar TT Circle,PS_UNIT_07,residence,True
+LOC_0089,19.112386,72.851242,Worli Sea Face Sector-89,Worli Sea Face,PS_UNIT_10,hangout,True
+LOC_0090,19.161237,72.806446,Lower Parel Business Park Sector-90,Lower Parel Business Park,PS_UNIT_01,hangout,True
+LOC_0091,19.277562,72.754117,Ghatkopar Central Mall Sector-91,Ghatkopar Central Mall,PS_UNIT_09,business,True
+LOC_0092,19.263046,72.971017,Chembur Colony Sector-92,Chembur Colony,PS_UNIT_01,crime_scene,True
+LOC_0093,19.024343,72.953839,Malad Link Road Sector-93,Malad Link Road,PS_UNIT_03,crime_scene,True
+LOC_0094,19.064155,72.950461,Borivali West Station Area Sector-94,Borivali West Station Area,PS_UNIT_09,business,True
+LOC_0095,18.976999,72.948677,Byculla Market Sector-95,Byculla Market,PS_UNIT_01,hangout,True
+LOC_0096,18.926894,72.916987,Sewri Timber Market Sector-96,Sewri Timber Market,PS_UNIT_03,business,True
+LOC_0097,19.173233,72.917069,Thane Station West Sector-97,Thane Station West,PS_UNIT_07,crime_scene,True
+LOC_0098,18.901633,72.775442,Navi Mumbai Vashi Sector 17 Sector-98,Navi Mumbai Vashi Sector 17,PS_UNIT_10,residence,True
+LOC_0099,19.070731,72.892542,Sion Circle Sector-99,Sion Circle,PS_UNIT_03,residence,True
+LOC_0100,18.938755,72.783907,Tardeo Road Sector-100,Tardeo Road,PS_UNIT_04,residence,True
+LOC_0101,18.884991,72.949456,Dharavi Commercial Complex Sector-101,Dharavi Commercial Complex,PS_UNIT_07,hangout,True
+LOC_0102,19.186167,72.862744,Colaba Causeway Sector-102,Colaba Causeway,PS_UNIT_03,warehouse,True
+LOC_0103,19.159426,72.821882,Crawford Market Sector-103,Crawford Market,PS_UNIT_07,crime_scene,True
+LOC_0104,19.057589,72.904763,Bandra Kurla Complex Sector-104,Bandra Kurla Complex,PS_UNIT_01,crime_scene,True
+LOC_0105,18.924507,72.7644,Andheri East MIDC Sector-105,Andheri East MIDC,PS_UNIT_11,residence,True
+LOC_0106,19.121669,72.791659,Kurla West Terminus Sector-106,Kurla West Terminus,PS_UNIT_03,residence,True
+LOC_0107,19.038556,72.851669,Juhu Tara Road Sector-107,Juhu Tara Road,PS_UNIT_08,warehouse,True
+LOC_0108,19.164563,72.811933,Dadar TT Circle Sector-108,Dadar TT Circle,PS_UNIT_10,warehouse,True
+LOC_0109,19.002414,72.804556,Worli Sea Face Sector-109,Worli Sea Face,PS_UNIT_03,crime_scene,True
+LOC_0110,19.269249,72.87516,Lower Parel Business Park Sector-110,Lower Parel Business Park,PS_UNIT_03,hangout,True
+LOC_0111,19.040161,72.763439,Ghatkopar Central Mall Sector-111,Ghatkopar Central Mall,PS_UNIT_07,hangout,True
+LOC_0112,19.209002,72.984237,Chembur Colony Sector-112,Chembur Colony,PS_UNIT_10,residence,True
+LOC_0113,19.206624,72.862425,Malad Link Road Sector-113,Malad Link Road,PS_UNIT_06,business,True
+LOC_0114,19.210901,72.789558,Borivali West Station Area Sector-114,Borivali West Station Area,PS_UNIT_06,business,True
+LOC_0115,18.957892,72.776016,Byculla Market Sector-115,Byculla Market,PS_UNIT_02,crime_scene,True
+LOC_0116,19.121276,72.953186,Sewri Timber Market Sector-116,Sewri Timber Market,PS_UNIT_01,hangout,True
+LOC_0117,18.992883,72.879976,Thane Station West Sector-117,Thane Station West,PS_UNIT_02,hangout,True
+LOC_0118,19.118844,72.931565,Navi Mumbai Vashi Sector 17 Sector-118,Navi Mumbai Vashi Sector 17,PS_UNIT_05,hangout,True
+LOC_0119,19.100677,72.903213,Sion Circle Sector-119,Sion Circle,PS_UNIT_01,hangout,True
+LOC_0120,18.987667,72.984399,Tardeo Road Sector-120,Tardeo Road,PS_UNIT_10,residence,True
+LOC_0121,19.105496,72.939654,Dharavi Commercial Complex Sector-121,Dharavi Commercial Complex,PS_UNIT_01,residence,True
+LOC_0122,19.005832,72.976442,Colaba Causeway Sector-122,Colaba Causeway,PS_UNIT_01,crime_scene,True
+LOC_0123,19.180672,72.980097,Crawford Market Sector-123,Crawford Market,PS_UNIT_09,hangout,True
+LOC_0124,19.005789,72.843754,Bandra Kurla Complex Sector-124,Bandra Kurla Complex,PS_UNIT_06,hangout,True
+LOC_0125,19.161063,72.773371,Andheri East MIDC Sector-125,Andheri East MIDC,PS_UNIT_07,warehouse,True
+LOC_0126,18.920401,72.943799,Kurla West Terminus Sector-126,Kurla West Terminus,PS_UNIT_03,residence,True
+LOC_0127,19.11487,72.841707,Juhu Tara Road Sector-127,Juhu Tara Road,PS_UNIT_10,residence,True
+LOC_0128,18.996048,72.786369,Dadar TT Circle Sector-128,Dadar TT Circle,PS_UNIT_08,residence,True
+LOC_0129,19.234082,72.77239,Worli Sea Face Sector-129,Worli Sea Face,PS_UNIT_12,hangout,True
+LOC_0130,19.233761,72.943794,Lower Parel Business Park Sector-130,Lower Parel Business Park,PS_UNIT_11,hangout,True
+LOC_0131,19.18753,72.788651,Ghatkopar Central Mall Sector-131,Ghatkopar Central Mall,PS_UNIT_09,warehouse,True
+LOC_0132,19.276912,72.896097,Chembur Colony Sector-132,Chembur Colony,PS_UNIT_09,crime_scene,True
+LOC_0133,19.058992,72.781487,Malad Link Road Sector-133,Malad Link Road,PS_UNIT_05,crime_scene,True
+LOC_0134,19.129388,72.975634,Borivali West Station Area Sector-134,Borivali West Station Area,PS_UNIT_01,business,True
+LOC_0135,18.975644,72.989282,Byculla Market Sector-135,Byculla Market,PS_UNIT_10,residence,True
+LOC_0136,19.263206,72.886056,Sewri Timber Market Sector-136,Sewri Timber Market,PS_UNIT_08,residence,True
+LOC_0137,19.201891,72.784229,Thane Station West Sector-137,Thane Station West,PS_UNIT_05,warehouse,True
+LOC_0138,19.227013,72.941372,Navi Mumbai Vashi Sector 17 Sector-138,Navi Mumbai Vashi Sector 17,PS_UNIT_02,business,True
+LOC_0139,18.917646,72.825292,Sion Circle Sector-139,Sion Circle,PS_UNIT_05,hangout,True
+LOC_0140,18.907265,72.888363,Tardeo Road Sector-140,Tardeo Road,PS_UNIT_06,residence,True
+LOC_0141,18.908454,72.920557,Dharavi Commercial Complex Sector-141,Dharavi Commercial Complex,PS_UNIT_08,crime_scene,True
+LOC_0142,19.274457,72.984836,Colaba Causeway Sector-142,Colaba Causeway,PS_UNIT_08,hangout,True
+LOC_0143,19.255932,72.983203,Crawford Market Sector-143,Crawford Market,PS_UNIT_08,residence,True
+LOC_0144,19.025389,72.81879,Bandra Kurla Complex Sector-144,Bandra Kurla Complex,PS_UNIT_07,warehouse,True
+LOC_0145,19.246856,72.780956,Andheri East MIDC Sector-145,Andheri East MIDC,PS_UNIT_06,warehouse,True
+LOC_0146,19.217934,72.978491,Kurla West Terminus Sector-146,Kurla West Terminus,PS_UNIT_06,residence,True
+LOC_0147,19.15288,72.871426,Juhu Tara Road Sector-147,Juhu Tara Road,PS_UNIT_05,residence,True
+LOC_0148,19.128245,72.904528,Dadar TT Circle Sector-148,Dadar TT Circle,PS_UNIT_12,hangout,True
+LOC_0149,19.159898,72.884592,Worli Sea Face Sector-149,Worli Sea Face,PS_UNIT_03,residence,True
+LOC_0150,18.996264,72.787969,Lower Parel Business Park Sector-150,Lower Parel Business Park,PS_UNIT_07,residence,True
+LOC_0151,18.969221,72.959798,Ghatkopar Central Mall Sector-151,Ghatkopar Central Mall,PS_UNIT_11,residence,True
+LOC_0152,19.019575,72.862437,Chembur Colony Sector-152,Chembur Colony,PS_UNIT_09,business,True
+LOC_0153,18.923648,72.793266,Malad Link Road Sector-153,Malad Link Road,PS_UNIT_02,business,True
+LOC_0154,19.187287,72.797873,Borivali West Station Area Sector-154,Borivali West Station Area,PS_UNIT_06,residence,True
+LOC_0155,19.006914,72.989145,Byculla Market Sector-155,Byculla Market,PS_UNIT_08,hangout,True
+LOC_0156,19.160916,72.864293,Sewri Timber Market Sector-156,Sewri Timber Market,PS_UNIT_05,business,True
+LOC_0157,18.895313,72.787378,Thane Station West Sector-157,Thane Station West,PS_UNIT_08,hangout,True
+LOC_0158,19.136087,72.826845,Navi Mumbai Vashi Sector 17 Sector-158,Navi Mumbai Vashi Sector 17,PS_UNIT_01,warehouse,True
+LOC_0159,19.189682,72.764976,Sion Circle Sector-159,Sion Circle,PS_UNIT_06,business,True
+LOC_0160,19.271424,72.801221,Tardeo Road Sector-160,Tardeo Road,PS_UNIT_04,residence,True
+LOC_0161,19.261058,72.914081,Dharavi Commercial Complex Sector-161,Dharavi Commercial Complex,PS_UNIT_05,crime_scene,True
+LOC_0162,19.134275,72.770062,Colaba Causeway Sector-162,Colaba Causeway,PS_UNIT_02,crime_scene,True
+LOC_0163,19.042027,72.821601,Crawford Market Sector-163,Crawford Market,PS_UNIT_12,business,True
+LOC_0164,19.228516,72.875947,Bandra Kurla Complex Sector-164,Bandra Kurla Complex,PS_UNIT_11,crime_scene,True
+LOC_0165,18.953631,72.762898,Andheri East MIDC Sector-165,Andheri East MIDC,PS_UNIT_07,crime_scene,True
+LOC_0166,19.265346,72.821257,Kurla West Terminus Sector-166,Kurla West Terminus,PS_UNIT_04,crime_scene,True
+LOC_0167,19.256777,72.86559,Juhu Tara Road Sector-167,Juhu Tara Road,PS_UNIT_09,hangout,True
+LOC_0168,19.266236,72.854828,Dadar TT Circle Sector-168,Dadar TT Circle,PS_UNIT_12,warehouse,True
+LOC_0169,19.035655,72.752384,Worli Sea Face Sector-169,Worli Sea Face,PS_UNIT_10,hangout,True
+LOC_0170,18.911123,72.910311,Lower Parel Business Park Sector-170,Lower Parel Business Park,PS_UNIT_10,hangout,True
+LOC_0171,19.009493,72.986728,Ghatkopar Central Mall Sector-171,Ghatkopar Central Mall,PS_UNIT_12,crime_scene,True
+LOC_0172,18.885675,72.96516,Chembur Colony Sector-172,Chembur Colony,PS_UNIT_03,business,True
+LOC_0173,19.225721,72.777266,Malad Link Road Sector-173,Malad Link Road,PS_UNIT_11,business,True
+LOC_0174,18.985121,72.923349,Borivali West Station Area Sector-174,Borivali West Station Area,PS_UNIT_08,hangout,True
+LOC_0175,19.133717,72.90334,Byculla Market Sector-175,Byculla Market,PS_UNIT_10,residence,True
+LOC_0176,18.894594,72.92897,Sewri Timber Market Sector-176,Sewri Timber Market,PS_UNIT_04,business,True
+LOC_0177,19.158578,72.935852,Thane Station West Sector-177,Thane Station West,PS_UNIT_10,business,True
+LOC_0178,18.966455,72.800343,Navi Mumbai Vashi Sector 17 Sector-178,Navi Mumbai Vashi Sector 17,PS_UNIT_04,warehouse,True
+LOC_0179,19.262042,72.838862,Sion Circle Sector-179,Sion Circle,PS_UNIT_06,residence,True
+LOC_0180,19.000778,72.823672,Tardeo Road Sector-180,Tardeo Road,PS_UNIT_02,business,True
+LOC_0181,19.139565,72.859439,Dharavi Commercial Complex Sector-181,Dharavi Commercial Complex,PS_UNIT_07,crime_scene,True
+LOC_0182,19.020884,72.880192,Colaba Causeway Sector-182,Colaba Causeway,PS_UNIT_09,crime_scene,True
+LOC_0183,18.925352,72.792195,Crawford Market Sector-183,Crawford Market,PS_UNIT_07,crime_scene,True
+LOC_0184,18.950758,72.892774,Bandra Kurla Complex Sector-184,Bandra Kurla Complex,PS_UNIT_09,business,True
+LOC_0185,19.032625,72.952822,Andheri East MIDC Sector-185,Andheri East MIDC,PS_UNIT_12,business,True
+LOC_0186,19.133643,72.918502,Kurla West Terminus Sector-186,Kurla West Terminus,PS_UNIT_02,residence,True
+LOC_0187,19.202376,72.774915,Juhu Tara Road Sector-187,Juhu Tara Road,PS_UNIT_11,residence,True
+LOC_0188,19.126504,72.848707,Dadar TT Circle Sector-188,Dadar TT Circle,PS_UNIT_08,warehouse,True
+LOC_0189,19.250892,72.773928,Worli Sea Face Sector-189,Worli Sea Face,PS_UNIT_08,warehouse,True
+LOC_0190,19.112493,72.757833,Lower Parel Business Park Sector-190,Lower Parel Business Park,PS_UNIT_05,business,True
+LOC_0191,18.964748,72.936451,Ghatkopar Central Mall Sector-191,Ghatkopar Central Mall,PS_UNIT_09,business,True
+LOC_0192,18.9258,72.955522,Chembur Colony Sector-192,Chembur Colony,PS_UNIT_02,crime_scene,True
+LOC_0193,19.267046,72.969367,Malad Link Road Sector-193,Malad Link Road,PS_UNIT_07,business,True
+LOC_0194,18.883042,72.839915,Borivali West Station Area Sector-194,Borivali West Station Area,PS_UNIT_04,warehouse,True
+LOC_0195,18.993442,72.961106,Byculla Market Sector-195,Byculla Market,PS_UNIT_05,crime_scene,True
+LOC_0196,19.215394,72.940833,Sewri Timber Market Sector-196,Sewri Timber Market,PS_UNIT_07,hangout,True
+LOC_0197,18.881663,72.968174,Thane Station West Sector-197,Thane Station West,PS_UNIT_01,residence,True
+LOC_0198,18.890499,72.939722,Navi Mumbai Vashi Sector 17 Sector-198,Navi Mumbai Vashi Sector 17,PS_UNIT_09,warehouse,True
+LOC_0199,19.006988,72.790899,Sion Circle Sector-199,Sion Circle,PS_UNIT_10,business,True
+LOC_0200,18.976732,72.983638,Tardeo Road Sector-200,Tardeo Road,PS_UNIT_04,warehouse,True
+LOC_0201,19.137774,72.948852,Dharavi Commercial Complex Sector-201,Dharavi Commercial Complex,PS_UNIT_10,business,True
+LOC_0202,18.931548,72.902706,Colaba Causeway Sector-202,Colaba Causeway,PS_UNIT_12,hangout,True
+LOC_0203,19.041248,72.82635,Crawford Market Sector-203,Crawford Market,PS_UNIT_03,business,True
+LOC_0204,18.972388,72.920406,Bandra Kurla Complex Sector-204,Bandra Kurla Complex,PS_UNIT_03,warehouse,True
+LOC_0205,18.927349,72.888464,Andheri East MIDC Sector-205,Andheri East MIDC,PS_UNIT_07,crime_scene,True
+LOC_0206,19.214935,72.788173,Kurla West Terminus Sector-206,Kurla West Terminus,PS_UNIT_06,hangout,True
+LOC_0207,18.917302,72.756154,Juhu Tara Road Sector-207,Juhu Tara Road,PS_UNIT_01,warehouse,True
+LOC_0208,18.941219,72.898344,Dadar TT Circle Sector-208,Dadar TT Circle,PS_UNIT_09,residence,True
+LOC_0209,19.108718,72.75607,Worli Sea Face Sector-209,Worli Sea Face,PS_UNIT_12,hangout,True
+LOC_0210,19.273366,72.902271,Lower Parel Business Park Sector-210,Lower Parel Business Park,PS_UNIT_06,hangout,True
+LOC_0211,18.975889,72.965498,Ghatkopar Central Mall Sector-211,Ghatkopar Central Mall,PS_UNIT_05,hangout,True
+LOC_0212,19.094167,72.808861,Chembur Colony Sector-212,Chembur Colony,PS_UNIT_07,crime_scene,True
+LOC_0213,19.143703,72.815992,Malad Link Road Sector-213,Malad Link Road,PS_UNIT_03,residence,True
+LOC_0214,19.135355,72.889045,Borivali West Station Area Sector-214,Borivali West Station Area,PS_UNIT_02,residence,True
+LOC_0215,19.063651,72.893015,Byculla Market Sector-215,Byculla Market,PS_UNIT_02,hangout,True
+LOC_0216,18.992985,72.964705,Sewri Timber Market Sector-216,Sewri Timber Market,PS_UNIT_02,residence,True
+LOC_0217,19.077698,72.836735,Thane Station West Sector-217,Thane Station West,PS_UNIT_04,business,True
+LOC_0218,18.920269,72.940906,Navi Mumbai Vashi Sector 17 Sector-218,Navi Mumbai Vashi Sector 17,PS_UNIT_07,residence,True
+LOC_0219,19.074607,72.900164,Sion Circle Sector-219,Sion Circle,PS_UNIT_04,business,True
+LOC_0220,19.030102,72.82526,Tardeo Road Sector-220,Tardeo Road,PS_UNIT_08,hangout,True
+LOC_0221,18.951923,72.752434,Dharavi Commercial Complex Sector-221,Dharavi Commercial Complex,PS_UNIT_03,warehouse,True
+LOC_0222,19.132485,72.955154,Colaba Causeway Sector-222,Colaba Causeway,PS_UNIT_02,crime_scene,True
+LOC_0223,19.277496,72.866139,Crawford Market Sector-223,Crawford Market,PS_UNIT_10,warehouse,True
+LOC_0224,19.098593,72.788013,Bandra Kurla Complex Sector-224,Bandra Kurla Complex,PS_UNIT_12,crime_scene,True
+LOC_0225,19.250633,72.796283,Andheri East MIDC Sector-225,Andheri East MIDC,PS_UNIT_01,warehouse,True
+LOC_0226,18.889215,72.872819,Kurla West Terminus Sector-226,Kurla West Terminus,PS_UNIT_03,hangout,True
+LOC_0227,19.22675,72.777549,Juhu Tara Road Sector-227,Juhu Tara Road,PS_UNIT_04,residence,True
+LOC_0228,19.011016,72.802743,Dadar TT Circle Sector-228,Dadar TT Circle,PS_UNIT_12,hangout,True
+LOC_0229,18.987036,72.865578,Worli Sea Face Sector-229,Worli Sea Face,PS_UNIT_02,crime_scene,True
+LOC_0230,19.163233,72.906462,Lower Parel Business Park Sector-230,Lower Parel Business Park,PS_UNIT_08,business,True
+LOC_0231,19.054425,72.977123,Ghatkopar Central Mall Sector-231,Ghatkopar Central Mall,PS_UNIT_04,crime_scene,True
+LOC_0232,18.949184,72.914894,Chembur Colony Sector-232,Chembur Colony,PS_UNIT_12,crime_scene,True
+LOC_0233,19.264749,72.774695,Malad Link Road Sector-233,Malad Link Road,PS_UNIT_10,crime_scene,True
+LOC_0234,18.946261,72.7994,Borivali West Station Area Sector-234,Borivali West Station Area,PS_UNIT_12,business,True
+LOC_0235,19.053389,72.857078,Byculla Market Sector-235,Byculla Market,PS_UNIT_10,crime_scene,True
+LOC_0236,19.206357,72.899499,Sewri Timber Market Sector-236,Sewri Timber Market,PS_UNIT_10,business,True
+LOC_0237,19.051725,72.886114,Thane Station West Sector-237,Thane Station West,PS_UNIT_06,residence,True
+LOC_0238,19.059761,72.963468,Navi Mumbai Vashi Sector 17 Sector-238,Navi Mumbai Vashi Sector 17,PS_UNIT_09,crime_scene,True
+LOC_0239,19.114748,72.820434,Sion Circle Sector-239,Sion Circle,PS_UNIT_11,warehouse,True
+LOC_0240,19.020901,72.757186,Tardeo Road Sector-240,Tardeo Road,PS_UNIT_03,crime_scene,True
+LOC_0241,19.051755,72.79462,Dharavi Commercial Complex Sector-241,Dharavi Commercial Complex,PS_UNIT_04,residence,True
+LOC_0242,18.966074,72.839198,Colaba Causeway Sector-242,Colaba Causeway,PS_UNIT_03,crime_scene,True
+LOC_0243,18.928921,72.826461,Crawford Market Sector-243,Crawford Market,PS_UNIT_01,crime_scene,True
+LOC_0244,18.965509,72.886193,Bandra Kurla Complex Sector-244,Bandra Kurla Complex,PS_UNIT_06,hangout,True
+LOC_0245,19.104656,72.842542,Andheri East MIDC Sector-245,Andheri East MIDC,PS_UNIT_10,hangout,True
+LOC_0246,19.090905,72.774701,Kurla West Terminus Sector-246,Kurla West Terminus,PS_UNIT_05,warehouse,True
+LOC_0247,19.258508,72.943782,Juhu Tara Road Sector-247,Juhu Tara Road,PS_UNIT_11,residence,True
+LOC_0248,19.109579,72.905105,Dadar TT Circle Sector-248,Dadar TT Circle,PS_UNIT_11,business,True
+LOC_0249,19.007113,72.826829,Worli Sea Face Sector-249,Worli Sea Face,PS_UNIT_04,residence,True
+LOC_0250,19.20109,72.869676,Lower Parel Business Park Sector-250,Lower Parel Business Park,PS_UNIT_05,business,True

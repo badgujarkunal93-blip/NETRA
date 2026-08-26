@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "extract-firs": "node scripts/run_pipeline.js",
     "generate-firs": "node scripts/generate_sample_pdfs.js",
-    "verify-pipeline": "node scripts/verify_pipeline_data.js"
+    "verify-pipeline": "node scripts/verify_pipeline_data.js",
+    "import-csv": "node scripts/import_csv_to_supabase.js"
   },
   "keywords": [],
   "author": "",

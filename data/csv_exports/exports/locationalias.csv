@@ -1,0 +1,251 @@
+location_alias_id,location_id,source_text,normalized_text,synthetic_demo_record
+LOC_ALIAS_0001,LOC_0001,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-1,True
+LOC_ALIAS_0002,LOC_0002,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-2,True
+LOC_ALIAS_0003,LOC_0003,Colloquial spot near Crawford Market,Crawford Market Sector-3,True
+LOC_ALIAS_0004,LOC_0004,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-4,True
+LOC_ALIAS_0005,LOC_0005,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-5,True
+LOC_ALIAS_0006,LOC_0006,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-6,True
+LOC_ALIAS_0007,LOC_0007,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-7,True
+LOC_ALIAS_0008,LOC_0008,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-8,True
+LOC_ALIAS_0009,LOC_0009,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-9,True
+LOC_ALIAS_0010,LOC_0010,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-10,True
+LOC_ALIAS_0011,LOC_0011,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-11,True
+LOC_ALIAS_0012,LOC_0012,Colloquial spot near Chembur Colony,Chembur Colony Sector-12,True
+LOC_ALIAS_0013,LOC_0013,Colloquial spot near Malad Link Road,Malad Link Road Sector-13,True
+LOC_ALIAS_0014,LOC_0014,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-14,True
+LOC_ALIAS_0015,LOC_0015,Colloquial spot near Byculla Market,Byculla Market Sector-15,True
+LOC_ALIAS_0016,LOC_0016,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-16,True
+LOC_ALIAS_0017,LOC_0017,Colloquial spot near Thane Station West,Thane Station West Sector-17,True
+LOC_ALIAS_0018,LOC_0018,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-18,True
+LOC_ALIAS_0019,LOC_0019,Colloquial spot near Sion Circle,Sion Circle Sector-19,True
+LOC_ALIAS_0020,LOC_0020,Colloquial spot near Tardeo Road,Tardeo Road Sector-20,True
+LOC_ALIAS_0021,LOC_0021,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-21,True
+LOC_ALIAS_0022,LOC_0022,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-22,True
+LOC_ALIAS_0023,LOC_0023,Colloquial spot near Crawford Market,Crawford Market Sector-23,True
+LOC_ALIAS_0024,LOC_0024,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-24,True
+LOC_ALIAS_0025,LOC_0025,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-25,True
+LOC_ALIAS_0026,LOC_0026,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-26,True
+LOC_ALIAS_0027,LOC_0027,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-27,True
+LOC_ALIAS_0028,LOC_0028,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-28,True
+LOC_ALIAS_0029,LOC_0029,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-29,True
+LOC_ALIAS_0030,LOC_0030,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-30,True
+LOC_ALIAS_0031,LOC_0031,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-31,True
+LOC_ALIAS_0032,LOC_0032,Colloquial spot near Chembur Colony,Chembur Colony Sector-32,True
+LOC_ALIAS_0033,LOC_0033,Colloquial spot near Malad Link Road,Malad Link Road Sector-33,True
+LOC_ALIAS_0034,LOC_0034,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-34,True
+LOC_ALIAS_0035,LOC_0035,Colloquial spot near Byculla Market,Byculla Market Sector-35,True
+LOC_ALIAS_0036,LOC_0036,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-36,True
+LOC_ALIAS_0037,LOC_0037,Colloquial spot near Thane Station West,Thane Station West Sector-37,True
+LOC_ALIAS_0038,LOC_0038,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-38,True
+LOC_ALIAS_0039,LOC_0039,Colloquial spot near Sion Circle,Sion Circle Sector-39,True
+LOC_ALIAS_0040,LOC_0040,Colloquial spot near Tardeo Road,Tardeo Road Sector-40,True
+LOC_ALIAS_0041,LOC_0041,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-41,True
+LOC_ALIAS_0042,LOC_0042,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-42,True
+LOC_ALIAS_0043,LOC_0043,Colloquial spot near Crawford Market,Crawford Market Sector-43,True
+LOC_ALIAS_0044,LOC_0044,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-44,True
+LOC_ALIAS_0045,LOC_0045,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-45,True
+LOC_ALIAS_0046,LOC_0046,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-46,True
+LOC_ALIAS_0047,LOC_0047,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-47,True
+LOC_ALIAS_0048,LOC_0048,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-48,True
+LOC_ALIAS_0049,LOC_0049,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-49,True
+LOC_ALIAS_0050,LOC_0050,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-50,True
+LOC_ALIAS_0051,LOC_0051,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-51,True
+LOC_ALIAS_0052,LOC_0052,Colloquial spot near Chembur Colony,Chembur Colony Sector-52,True
+LOC_ALIAS_0053,LOC_0053,Colloquial spot near Malad Link Road,Malad Link Road Sector-53,True
+LOC_ALIAS_0054,LOC_0054,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-54,True
+LOC_ALIAS_0055,LOC_0055,Colloquial spot near Byculla Market,Byculla Market Sector-55,True
+LOC_ALIAS_0056,LOC_0056,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-56,True
+LOC_ALIAS_0057,LOC_0057,Colloquial spot near Thane Station West,Thane Station West Sector-57,True
+LOC_ALIAS_0058,LOC_0058,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-58,True
+LOC_ALIAS_0059,LOC_0059,Colloquial spot near Sion Circle,Sion Circle Sector-59,True
+LOC_ALIAS_0060,LOC_0060,Colloquial spot near Tardeo Road,Tardeo Road Sector-60,True
+LOC_ALIAS_0061,LOC_0061,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-61,True
+LOC_ALIAS_0062,LOC_0062,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-62,True
+LOC_ALIAS_0063,LOC_0063,Colloquial spot near Crawford Market,Crawford Market Sector-63,True
+LOC_ALIAS_0064,LOC_0064,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-64,True
+LOC_ALIAS_0065,LOC_0065,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-65,True
+LOC_ALIAS_0066,LOC_0066,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-66,True
+LOC_ALIAS_0067,LOC_0067,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-67,True
+LOC_ALIAS_0068,LOC_0068,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-68,True
+LOC_ALIAS_0069,LOC_0069,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-69,True
+LOC_ALIAS_0070,LOC_0070,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-70,True
+LOC_ALIAS_0071,LOC_0071,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-71,True
+LOC_ALIAS_0072,LOC_0072,Colloquial spot near Chembur Colony,Chembur Colony Sector-72,True
+LOC_ALIAS_0073,LOC_0073,Colloquial spot near Malad Link Road,Malad Link Road Sector-73,True
+LOC_ALIAS_0074,LOC_0074,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-74,True
+LOC_ALIAS_0075,LOC_0075,Colloquial spot near Byculla Market,Byculla Market Sector-75,True
+LOC_ALIAS_0076,LOC_0076,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-76,True
+LOC_ALIAS_0077,LOC_0077,Colloquial spot near Thane Station West,Thane Station West Sector-77,True
+LOC_ALIAS_0078,LOC_0078,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-78,True
+LOC_ALIAS_0079,LOC_0079,Colloquial spot near Sion Circle,Sion Circle Sector-79,True
+LOC_ALIAS_0080,LOC_0080,Colloquial spot near Tardeo Road,Tardeo Road Sector-80,True
+LOC_ALIAS_0081,LOC_0081,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-81,True
+LOC_ALIAS_0082,LOC_0082,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-82,True
+LOC_ALIAS_0083,LOC_0083,Colloquial spot near Crawford Market,Crawford Market Sector-83,True
+LOC_ALIAS_0084,LOC_0084,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-84,True
+LOC_ALIAS_0085,LOC_0085,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-85,True
+LOC_ALIAS_0086,LOC_0086,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-86,True
+LOC_ALIAS_0087,LOC_0087,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-87,True
+LOC_ALIAS_0088,LOC_0088,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-88,True
+LOC_ALIAS_0089,LOC_0089,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-89,True
+LOC_ALIAS_0090,LOC_0090,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-90,True
+LOC_ALIAS_0091,LOC_0091,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-91,True
+LOC_ALIAS_0092,LOC_0092,Colloquial spot near Chembur Colony,Chembur Colony Sector-92,True
+LOC_ALIAS_0093,LOC_0093,Colloquial spot near Malad Link Road,Malad Link Road Sector-93,True
+LOC_ALIAS_0094,LOC_0094,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-94,True
+LOC_ALIAS_0095,LOC_0095,Colloquial spot near Byculla Market,Byculla Market Sector-95,True
+LOC_ALIAS_0096,LOC_0096,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-96,True
+LOC_ALIAS_0097,LOC_0097,Colloquial spot near Thane Station West,Thane Station West Sector-97,True
+LOC_ALIAS_0098,LOC_0098,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-98,True
+LOC_ALIAS_0099,LOC_0099,Colloquial spot near Sion Circle,Sion Circle Sector-99,True
+LOC_ALIAS_0100,LOC_0100,Colloquial spot near Tardeo Road,Tardeo Road Sector-100,True
+LOC_ALIAS_0101,LOC_0101,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-101,True
+LOC_ALIAS_0102,LOC_0102,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-102,True
+LOC_ALIAS_0103,LOC_0103,Colloquial spot near Crawford Market,Crawford Market Sector-103,True
+LOC_ALIAS_0104,LOC_0104,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-104,True
+LOC_ALIAS_0105,LOC_0105,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-105,True
+LOC_ALIAS_0106,LOC_0106,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-106,True
+LOC_ALIAS_0107,LOC_0107,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-107,True
+LOC_ALIAS_0108,LOC_0108,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-108,True
+LOC_ALIAS_0109,LOC_0109,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-109,True
+LOC_ALIAS_0110,LOC_0110,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-110,True
+LOC_ALIAS_0111,LOC_0111,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-111,True
+LOC_ALIAS_0112,LOC_0112,Colloquial spot near Chembur Colony,Chembur Colony Sector-112,True
+LOC_ALIAS_0113,LOC_0113,Colloquial spot near Malad Link Road,Malad Link Road Sector-113,True
+LOC_ALIAS_0114,LOC_0114,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-114,True
+LOC_ALIAS_0115,LOC_0115,Colloquial spot near Byculla Market,Byculla Market Sector-115,True
+LOC_ALIAS_0116,LOC_0116,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-116,True
+LOC_ALIAS_0117,LOC_0117,Colloquial spot near Thane Station West,Thane Station West Sector-117,True
+LOC_ALIAS_0118,LOC_0118,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-118,True
+LOC_ALIAS_0119,LOC_0119,Colloquial spot near Sion Circle,Sion Circle Sector-119,True
+LOC_ALIAS_0120,LOC_0120,Colloquial spot near Tardeo Road,Tardeo Road Sector-120,True
+LOC_ALIAS_0121,LOC_0121,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-121,True
+LOC_ALIAS_0122,LOC_0122,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-122,True
+LOC_ALIAS_0123,LOC_0123,Colloquial spot near Crawford Market,Crawford Market Sector-123,True
+LOC_ALIAS_0124,LOC_0124,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-124,True
+LOC_ALIAS_0125,LOC_0125,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-125,True
+LOC_ALIAS_0126,LOC_0126,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-126,True
+LOC_ALIAS_0127,LOC_0127,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-127,True
+LOC_ALIAS_0128,LOC_0128,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-128,True
+LOC_ALIAS_0129,LOC_0129,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-129,True
+LOC_ALIAS_0130,LOC_0130,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-130,True
+LOC_ALIAS_0131,LOC_0131,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-131,True
+LOC_ALIAS_0132,LOC_0132,Colloquial spot near Chembur Colony,Chembur Colony Sector-132,True
+LOC_ALIAS_0133,LOC_0133,Colloquial spot near Malad Link Road,Malad Link Road Sector-133,True
+LOC_ALIAS_0134,LOC_0134,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-134,True
+LOC_ALIAS_0135,LOC_0135,Colloquial spot near Byculla Market,Byculla Market Sector-135,True
+LOC_ALIAS_0136,LOC_0136,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-136,True
+LOC_ALIAS_0137,LOC_0137,Colloquial spot near Thane Station West,Thane Station West Sector-137,True
+LOC_ALIAS_0138,LOC_0138,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-138,True
+LOC_ALIAS_0139,LOC_0139,Colloquial spot near Sion Circle,Sion Circle Sector-139,True
+LOC_ALIAS_0140,LOC_0140,Colloquial spot near Tardeo Road,Tardeo Road Sector-140,True
+LOC_ALIAS_0141,LOC_0141,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-141,True
+LOC_ALIAS_0142,LOC_0142,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-142,True
+LOC_ALIAS_0143,LOC_0143,Colloquial spot near Crawford Market,Crawford Market Sector-143,True
+LOC_ALIAS_0144,LOC_0144,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-144,True
+LOC_ALIAS_0145,LOC_0145,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-145,True
+LOC_ALIAS_0146,LOC_0146,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-146,True
+LOC_ALIAS_0147,LOC_0147,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-147,True
+LOC_ALIAS_0148,LOC_0148,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-148,True
+LOC_ALIAS_0149,LOC_0149,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-149,True
+LOC_ALIAS_0150,LOC_0150,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-150,True
+LOC_ALIAS_0151,LOC_0151,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-151,True
+LOC_ALIAS_0152,LOC_0152,Colloquial spot near Chembur Colony,Chembur Colony Sector-152,True
+LOC_ALIAS_0153,LOC_0153,Colloquial spot near Malad Link Road,Malad Link Road Sector-153,True
+LOC_ALIAS_0154,LOC_0154,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-154,True
+LOC_ALIAS_0155,LOC_0155,Colloquial spot near Byculla Market,Byculla Market Sector-155,True
+LOC_ALIAS_0156,LOC_0156,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-156,True
+LOC_ALIAS_0157,LOC_0157,Colloquial spot near Thane Station West,Thane Station West Sector-157,True
+LOC_ALIAS_0158,LOC_0158,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-158,True
+LOC_ALIAS_0159,LOC_0159,Colloquial spot near Sion Circle,Sion Circle Sector-159,True
+LOC_ALIAS_0160,LOC_0160,Colloquial spot near Tardeo Road,Tardeo Road Sector-160,True
+LOC_ALIAS_0161,LOC_0161,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-161,True
+LOC_ALIAS_0162,LOC_0162,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-162,True
+LOC_ALIAS_0163,LOC_0163,Colloquial spot near Crawford Market,Crawford Market Sector-163,True
+LOC_ALIAS_0164,LOC_0164,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-164,True
+LOC_ALIAS_0165,LOC_0165,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-165,True
+LOC_ALIAS_0166,LOC_0166,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-166,True
+LOC_ALIAS_0167,LOC_0167,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-167,True
+LOC_ALIAS_0168,LOC_0168,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-168,True
+LOC_ALIAS_0169,LOC_0169,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-169,True
+LOC_ALIAS_0170,LOC_0170,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-170,True
+LOC_ALIAS_0171,LOC_0171,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-171,True
+LOC_ALIAS_0172,LOC_0172,Colloquial spot near Chembur Colony,Chembur Colony Sector-172,True
+LOC_ALIAS_0173,LOC_0173,Colloquial spot near Malad Link Road,Malad Link Road Sector-173,True
+LOC_ALIAS_0174,LOC_0174,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-174,True
+LOC_ALIAS_0175,LOC_0175,Colloquial spot near Byculla Market,Byculla Market Sector-175,True
+LOC_ALIAS_0176,LOC_0176,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-176,True
+LOC_ALIAS_0177,LOC_0177,Colloquial spot near Thane Station West,Thane Station West Sector-177,True
+LOC_ALIAS_0178,LOC_0178,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-178,True
+LOC_ALIAS_0179,LOC_0179,Colloquial spot near Sion Circle,Sion Circle Sector-179,True
+LOC_ALIAS_0180,LOC_0180,Colloquial spot near Tardeo Road,Tardeo Road Sector-180,True
+LOC_ALIAS_0181,LOC_0181,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-181,True
+LOC_ALIAS_0182,LOC_0182,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-182,True
+LOC_ALIAS_0183,LOC_0183,Colloquial spot near Crawford Market,Crawford Market Sector-183,True
+LOC_ALIAS_0184,LOC_0184,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-184,True
+LOC_ALIAS_0185,LOC_0185,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-185,True
+LOC_ALIAS_0186,LOC_0186,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-186,True
+LOC_ALIAS_0187,LOC_0187,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-187,True
+LOC_ALIAS_0188,LOC_0188,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-188,True
+LOC_ALIAS_0189,LOC_0189,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-189,True
+LOC_ALIAS_0190,LOC_0190,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-190,True
+LOC_ALIAS_0191,LOC_0191,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-191,True
+LOC_ALIAS_0192,LOC_0192,Colloquial spot near Chembur Colony,Chembur Colony Sector-192,True
+LOC_ALIAS_0193,LOC_0193,Colloquial spot near Malad Link Road,Malad Link Road Sector-193,True
+LOC_ALIAS_0194,LOC_0194,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-194,True
+LOC_ALIAS_0195,LOC_0195,Colloquial spot near Byculla Market,Byculla Market Sector-195,True
+LOC_ALIAS_0196,LOC_0196,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-196,True
+LOC_ALIAS_0197,LOC_0197,Colloquial spot near Thane Station West,Thane Station West Sector-197,True
+LOC_ALIAS_0198,LOC_0198,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-198,True
+LOC_ALIAS_0199,LOC_0199,Colloquial spot near Sion Circle,Sion Circle Sector-199,True
+LOC_ALIAS_0200,LOC_0200,Colloquial spot near Tardeo Road,Tardeo Road Sector-200,True
+LOC_ALIAS_0201,LOC_0201,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-201,True
+LOC_ALIAS_0202,LOC_0202,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-202,True
+LOC_ALIAS_0203,LOC_0203,Colloquial spot near Crawford Market,Crawford Market Sector-203,True
+LOC_ALIAS_0204,LOC_0204,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-204,True
+LOC_ALIAS_0205,LOC_0205,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-205,True
+LOC_ALIAS_0206,LOC_0206,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-206,True
+LOC_ALIAS_0207,LOC_0207,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-207,True
+LOC_ALIAS_0208,LOC_0208,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-208,True
+LOC_ALIAS_0209,LOC_0209,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-209,True
+LOC_ALIAS_0210,LOC_0210,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-210,True
+LOC_ALIAS_0211,LOC_0211,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-211,True
+LOC_ALIAS_0212,LOC_0212,Colloquial spot near Chembur Colony,Chembur Colony Sector-212,True
+LOC_ALIAS_0213,LOC_0213,Colloquial spot near Malad Link Road,Malad Link Road Sector-213,True
+LOC_ALIAS_0214,LOC_0214,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-214,True
+LOC_ALIAS_0215,LOC_0215,Colloquial spot near Byculla Market,Byculla Market Sector-215,True
+LOC_ALIAS_0216,LOC_0216,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-216,True
+LOC_ALIAS_0217,LOC_0217,Colloquial spot near Thane Station West,Thane Station West Sector-217,True
+LOC_ALIAS_0218,LOC_0218,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-218,True
+LOC_ALIAS_0219,LOC_0219,Colloquial spot near Sion Circle,Sion Circle Sector-219,True
+LOC_ALIAS_0220,LOC_0220,Colloquial spot near Tardeo Road,Tardeo Road Sector-220,True
+LOC_ALIAS_0221,LOC_0221,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-221,True
+LOC_ALIAS_0222,LOC_0222,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-222,True
+LOC_ALIAS_0223,LOC_0223,Colloquial spot near Crawford Market,Crawford Market Sector-223,True
+LOC_ALIAS_0224,LOC_0224,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-224,True
+LOC_ALIAS_0225,LOC_0225,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-225,True
+LOC_ALIAS_0226,LOC_0226,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-226,True
+LOC_ALIAS_0227,LOC_0227,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-227,True
+LOC_ALIAS_0228,LOC_0228,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-228,True
+LOC_ALIAS_0229,LOC_0229,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-229,True
+LOC_ALIAS_0230,LOC_0230,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-230,True
+LOC_ALIAS_0231,LOC_0231,Colloquial spot near Ghatkopar Central Mall,Ghatkopar Central Mall Sector-231,True
+LOC_ALIAS_0232,LOC_0232,Colloquial spot near Chembur Colony,Chembur Colony Sector-232,True
+LOC_ALIAS_0233,LOC_0233,Colloquial spot near Malad Link Road,Malad Link Road Sector-233,True
+LOC_ALIAS_0234,LOC_0234,Colloquial spot near Borivali West Station Area,Borivali West Station Area Sector-234,True
+LOC_ALIAS_0235,LOC_0235,Colloquial spot near Byculla Market,Byculla Market Sector-235,True
+LOC_ALIAS_0236,LOC_0236,Colloquial spot near Sewri Timber Market,Sewri Timber Market Sector-236,True
+LOC_ALIAS_0237,LOC_0237,Colloquial spot near Thane Station West,Thane Station West Sector-237,True
+LOC_ALIAS_0238,LOC_0238,Colloquial spot near Navi Mumbai Vashi Sector 17,Navi Mumbai Vashi Sector 17 Sector-238,True
+LOC_ALIAS_0239,LOC_0239,Colloquial spot near Sion Circle,Sion Circle Sector-239,True
+LOC_ALIAS_0240,LOC_0240,Colloquial spot near Tardeo Road,Tardeo Road Sector-240,True
+LOC_ALIAS_0241,LOC_0241,Colloquial spot near Dharavi Commercial Complex,Dharavi Commercial Complex Sector-241,True
+LOC_ALIAS_0242,LOC_0242,Colloquial spot near Colaba Causeway,Colaba Causeway Sector-242,True
+LOC_ALIAS_0243,LOC_0243,Colloquial spot near Crawford Market,Crawford Market Sector-243,True
+LOC_ALIAS_0244,LOC_0244,Colloquial spot near Bandra Kurla Complex,Bandra Kurla Complex Sector-244,True
+LOC_ALIAS_0245,LOC_0245,Colloquial spot near Andheri East MIDC,Andheri East MIDC Sector-245,True
+LOC_ALIAS_0246,LOC_0246,Colloquial spot near Kurla West Terminus,Kurla West Terminus Sector-246,True
+LOC_ALIAS_0247,LOC_0247,Colloquial spot near Juhu Tara Road,Juhu Tara Road Sector-247,True
+LOC_ALIAS_0248,LOC_0248,Colloquial spot near Dadar TT Circle,Dadar TT Circle Sector-248,True
+LOC_ALIAS_0249,LOC_0249,Colloquial spot near Worli Sea Face,Worli Sea Face Sector-249,True
+LOC_ALIAS_0250,LOC_0250,Colloquial spot near Lower Parel Business Park,Lower Parel Business Park Sector-250,True
