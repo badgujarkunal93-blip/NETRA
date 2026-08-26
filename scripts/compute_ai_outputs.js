@@ -46,6 +46,27 @@ function getTokenJaccard(a, b) {
   return intersection.size / union.size;
 }
 
+// Haversine distance in kilometers between two GPS coordinates
+function getHaversineDistanceKm(lat1, lon1, lat2, lon2) {
+  if (!lat1 || !lon1 || !lat2 || !lon2) return 20.0;
+  const R = 6371; // Earth radius in km
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}
+
+// Days between two ISO dates
+function getDaysDifference(date1, date2) {
+  if (!date1 || !date2) return 999;
+  const d1 = new Date(date1).getTime();
+  const d2 = new Date(date2).getTime();
+  return Math.abs(Math.round((d2 - d1) / (1000 * 60 * 60 * 24)));
+}
+
 async function computeAIOutputs() {
   console.log('================================================================================');
   console.log('  MUMBAI POLICE CIU — COMPUTATIONAL AI OUTPUT ENGINE (SIH 26189)');
@@ -73,11 +94,19 @@ async function computeAIOutputs() {
   };
 
   // ---------------------------------------------------------------------------
-  // 1. COMPUTING MO SIMILARITY MATRIX (mosimilarityoutput)
+  // 1. COMPUTING MO SIMILARITY MATRIX WITH MULTI-SIGNAL TIE-BREAKING
   // ---------------------------------------------------------------------------
-  console.log('[1/5] Computing Modus Operandi (MO) Similarity Matrix (Weighted Component Jaccard)...');
+  console.log('[1/5] Computing Modus Operandi (MO) Similarity Matrix (Multi-Signal Weighted Scoring)...');
   const moList = baseData.mo_fingerprints;
   const casesMap = new Map(baseData.cases.map(c => [c.id, c]));
+
+  // Build case -> linked persons lookup for shared entity signal
+  const casePersons = new Map();
+  baseData.person_case_roles.forEach(pcr => {
+    if (!casePersons.has(pcr.case_id)) casePersons.set(pcr.case_id, new Set());
+    casePersons.get(pcr.case_id).add(pcr.person_id);
+  });
+
   const moMatches = [];
 
   for (let i = 0; i < Math.min(300, moList.length); i++) {
@@ -87,40 +116,70 @@ async function computeAIOutputs() {
       const caseA = casesMap.get(moA.case_id);
       const caseB = casesMap.get(moB.case_id);
 
-      // 1. Crime Category / Major Head Match (Weight: 30)
-      const isSameMajorHead = caseA && caseB && caseA.crime_major_head === caseB.crime_major_head;
-      const scoreMajorHead = isSameMajorHead ? 30 : getTokenJaccard(caseA?.crime_major_head, caseB?.crime_major_head) * 15;
+      if (!caseA || !caseB) continue;
 
-      // 2. Target Profile Match (Weight: 20)
-      const scoreTarget = getTokenJaccard(moA.target, moB.target) * 20;
+      // 1. Base MO & Categorical Overlap (Weight: 40 pts max)
+      const isSameMajorHead = caseA.crime_major_head === caseB.crime_major_head;
+      const scoreMajorHead = isSameMajorHead ? 20 : getTokenJaccard(caseA.crime_major_head, caseB.crime_major_head) * 10;
+      const scoreTiming = getTokenJaccard(moA.timing, moB.timing) * 10;
+      const scoreTools = getTokenJaccard(moA.tools, moB.tools) * 5;
+      const scoreEntry = getTokenJaccard(moA.entry_method, moB.entry_method) * 5;
+      const baseMOScore = scoreMajorHead + scoreTiming + scoreTools + scoreEntry;
 
-      // 3. Timing / Time Window Match (Weight: 15)
-      const scoreTiming = getTokenJaccard(moA.timing, moB.timing) * 15;
+      // 2. Geospatial Proximity & Operating Corridor (Weight: 25 pts max)
+      const distKm = getHaversineDistanceKm(caseA.latitude, caseA.longitude, caseB.latitude, caseB.longitude);
+      let scoreSpatial = 3;
+      let spatialDesc = 'Distal Precincts (>15km)';
+      if (distKm <= 3.5) {
+        scoreSpatial = 25;
+        spatialDesc = `Co-Located Corridor (${distKm.toFixed(1)} km)`;
+      } else if (distKm <= 7.5) {
+        scoreSpatial = 18;
+        spatialDesc = `Adjacent Precinct Zone (${distKm.toFixed(1)} km)`;
+      } else if (distKm <= 14.0) {
+        scoreSpatial = 10;
+        spatialDesc = `Intra-Urban Sector (${distKm.toFixed(1)} km)`;
+      }
 
-      // 4. Tools & Weapon Signature Match (Weight: 15)
-      const scoreTools = getTokenJaccard(moA.tools, moB.tools) * 15;
+      // 3. Temporal Operating Window & Spree Recency (Weight: 20 pts max)
+      const daysDiff = getDaysDifference(caseA.registered_date, caseB.registered_date);
+      let scoreTemporal = 3;
+      let temporalDesc = 'Standard Operational Separation (>90 Days)';
+      if (daysDiff <= 14) {
+        scoreTemporal = 20;
+        temporalDesc = `Serial Crime Spree Window (${daysDiff} Days)`;
+      } else if (daysDiff <= 45) {
+        scoreTemporal = 14;
+        temporalDesc = `Quarterly Operating Cycle (${daysDiff} Days)`;
+      } else if (daysDiff <= 90) {
+        scoreTemporal = 8;
+        temporalDesc = `Seasonal Interval (${daysDiff} Days)`;
+      }
 
-      // 5. Entry Method & Concealment (Weight: 10 + 10)
-      const scoreEntry = getTokenJaccard(moA.entry_method, moB.entry_method) * 10;
-      const scoreConcealment = getTokenJaccard(moA.concealment, moB.concealment) * 10;
+      // 4. Shared Graph Entities / Co-Accused (Weight: 15 pts max)
+      const personsA = casePersons.get(caseA.id) || new Set();
+      const personsB = casePersons.get(caseB.id) || new Set();
+      const sharedPersons = [...personsA].filter(p => personsB.has(p));
+      const scoreSharedEntity = sharedPersons.length > 0 ? 15 : 0;
 
-      const totalSimilarity = Math.round(scoreMajorHead + scoreTarget + scoreTiming + scoreTools + scoreEntry + scoreConcealment);
+      const totalSimilarity = Math.round(baseMOScore + scoreSpatial + scoreTemporal + scoreSharedEntity);
 
-      // Only retain distinctive pairs with similarity >= 65% (primarily within same crime domain and matching timing)
-      if (totalSimilarity >= 65) {
+      if (totalSimilarity >= 55) {
         const matchingComponents = [];
         if (isSameMajorHead) matchingComponents.push(`Crime Head (${caseA.crime_major_head})`);
-        if (scoreTiming >= 10) matchingComponents.push(`Timing Window (${moA.timing.slice(0, 20)})`);
-        if (scoreTarget >= 15) matchingComponents.push(`Target Class (${moA.target.slice(0, 25)})`);
-        if (scoreTools >= 10) matchingComponents.push(`Tool Signature (${moA.tools.slice(0, 25)})`);
-        if (scoreEntry >= 8) matchingComponents.push(`Entry Technique (${moA.entry_method.slice(0, 20)})`);
+        if (scoreSpatial >= 18) matchingComponents.push(`Spatial Proximity: ${spatialDesc}`);
+        if (scoreTemporal >= 14) matchingComponents.push(`Temporal Spree: ${temporalDesc}`);
+        if (scoreSharedEntity > 0) matchingComponents.push(`Shared Person of Interest (${sharedPersons[0]})`);
+        if (scoreTiming >= 8) matchingComponents.push(`Timing Window (${moA.timing.slice(0, 15)})`);
 
         moMatches.push({
           id: `MOSIM-${moMatches.length + 1}`,
           case_id_a: moA.case_id,
           case_id_b: moB.case_id,
-          similarity_score: totalSimilarity,
+          similarity_score: Math.min(96, totalSimilarity),
           matching_components: matchingComponents.length > 0 ? matchingComponents : ['Crime Classification Overlap'],
+          spatial_distance_km: Number(distKm.toFixed(2)),
+          temporal_delta_days: daysDiff,
           model_name: 'CIU-MO-WeightedJaccard-v1',
           computed_at: new Date().toISOString()
         });
@@ -131,12 +190,12 @@ async function computeAIOutputs() {
   // Sort and keep top 500 pairs
   moMatches.sort((a, b) => b.similarity_score - a.similarity_score);
   aiOutputs.mosimilarityoutput = moMatches.slice(0, 500);
-  console.log(`  -> Generated ${aiOutputs.mosimilarityoutput.length} high-confidence MO similarity correlations (Ranked Distinctive Pairs >= 65%).\n`);
+  console.log(`  -> Generated ${aiOutputs.mosimilarityoutput.length} realistic MO similarity correlations with spatial/temporal tie-breaking.\n`);
 
   // ---------------------------------------------------------------------------
-  // 2. COMPUTING FUZZY ENTITY RESOLUTION CANDIDATES (entityresolutionoutput)
+  // 2. COMPUTING ENTITY RESOLUTION WITH HUMBLE CONFIDENCE SCORING
   // ---------------------------------------------------------------------------
-  console.log('[2/5] Computing Entity Resolution Candidates (Fuzzy String + Cross-Asset Signals)...');
+  console.log('[2/5] Computing Entity Resolution Candidates (Humble Confidence Calibration)...');
   const personSample = baseData.persons;
   let erCount = 0;
 
@@ -146,6 +205,14 @@ async function computeAIOutputs() {
     if (ph.owner_person_id) {
       if (!personPhones.has(ph.owner_person_id)) personPhones.set(ph.owner_person_id, []);
       personPhones.get(ph.owner_person_id).push(ph.normalized_number_hash);
+    }
+  });
+
+  const personVehicles = new Map();
+  baseData.vehicles.forEach(vh => {
+    if (vh.owner_person_id) {
+      if (!personVehicles.has(vh.owner_person_id)) personVehicles.set(vh.owner_person_id, []);
+      personVehicles.get(vh.owner_person_id).push(vh.registration_hash);
     }
   });
 
@@ -164,60 +231,80 @@ async function computeAIOutputs() {
       if (pA.gender !== pB.gender) continue;
 
       const nameSim = getStringSimilarity(pA.canonical_name, pB.canonical_name);
-      
-      // Token analysis
-      const tokensA = pA.canonical_name.toLowerCase().split(/\s+/);
-      const tokensB = pB.canonical_name.toLowerCase().split(/\s+/);
       const isExactDuplicateName = pA.canonical_name.toLowerCase() === pB.canonical_name.toLowerCase();
 
-      // Shared phones
+      // Corroborating signals
       const phonesA = personPhones.get(pA.id) || [];
       const phonesB = personPhones.get(pB.id) || [];
       const sharedPhones = phonesA.filter(p => phonesB.includes(p));
 
-      // Shared cases
+      const vehA = personVehicles.get(pA.id) || [];
+      const vehB = personVehicles.get(pB.id) || [];
+      const sharedVehicles = vehA.filter(v => vehB.includes(v));
+
       const casesA = personCases.get(pA.id) || [];
       const casesB = personCases.get(pB.id) || [];
       const sharedCases = casesA.filter(c => casesB.includes(c));
 
-      const signals = [];
+      // HUMBLE SCORING FORMULA:
+      // Base name match contributes max 35%
       let matchConfidence = 0;
+      const signals = [];
 
       if (isExactDuplicateName) {
-        signals.push('Identical Canonical Name Across Separate Police Precincts');
-        matchConfidence = 94;
+        matchConfidence += 35;
+        signals.push('Exact Canonical Name Match (+35%)');
       } else if (nameSim >= 0.88) {
-        signals.push(`Phonetic Name String Similarity (${Math.round(nameSim * 100)}%)`);
-        matchConfidence = 82;
+        matchConfidence += 25;
+        signals.push(`Phonetic Name Similarity ${Math.round(nameSim * 100)}% (+25%)`);
+      } else {
+        continue;
       }
 
+      // Corroborating multi-hop signals
       if (sharedPhones.length > 0) {
-        signals.push(`Shared Telecom SIM Record (${sharedPhones[0]})`);
-        matchConfidence = Math.min(98, matchConfidence + 20);
+        matchConfidence += 30;
+        signals.push(`Shared Telecom SIM Hash: ${sharedPhones[0]} (+30%)`);
+      }
+      if (sharedVehicles.length > 0) {
+        matchConfidence += 25;
+        signals.push(`Shared Vehicle Registration: ${sharedVehicles[0]} (+25%)`);
       }
       if (sharedCases.length > 0) {
-        signals.push(`Co-Accused in Same Incident Dossier (${sharedCases[0]})`);
-        matchConfidence = Math.min(98, matchConfidence + 10);
+        matchConfidence += 20;
+        signals.push(`Co-Accused in Same FIR Dossier: ${sharedCases[0]} (+20%)`);
       }
 
-      // Keep genuine high-confidence duplicates
-      if (isExactDuplicateName || (nameSim >= 0.88 && (sharedPhones.length > 0 || sharedCases.length > 0))) {
-        aiOutputs.entityresolutionoutput.push({
-          id: `ER-${++erCount}`,
-          candidate_person_id_a: pA.id,
-          candidate_person_id_b: pB.id,
-          person_name_a: pA.canonical_name,
-          person_name_b: pB.canonical_name,
-          match_confidence: matchConfidence,
-          matching_signals: signals,
-          status: 'PENDING_OFFICER_REVIEW',
-          model_name: 'CIU-EntityLinker-v1',
-          created_at: new Date().toISOString()
-        });
+      // Cap confidence at 95%
+      matchConfidence = Math.min(95, matchConfidence);
+
+      let status = 'MANUAL_REVIEW_REQUIRED';
+      let recommendation = 'LOW CONFIDENCE — Name-only similarity across distinct precincts. Zero corroborating telecom, asset, or graph co-occurrence signals. Do NOT merge automatically without biometric or fingerprint verification.';
+
+      if (matchConfidence >= 75) {
+        status = 'PROPOSED_MERGE';
+        recommendation = 'HIGH CONFIDENCE — Cross-corroborated by shared burner SIM or vehicle registration.';
+      } else if (matchConfidence >= 55) {
+        status = 'SUSPECT_CLUSTER_FLAG';
+        recommendation = 'MODERATE CONFIDENCE — Partial corroboration; recommended for officer verification.';
       }
+
+      aiOutputs.entityresolutionoutput.push({
+        id: `ER-${++erCount}`,
+        candidate_person_id_a: pA.id,
+        candidate_person_id_b: pB.id,
+        person_name_a: pA.canonical_name,
+        person_name_b: pB.canonical_name,
+        match_confidence: matchConfidence,
+        matching_signals: signals,
+        status: status,
+        recommendation: recommendation,
+        model_name: 'CIU-EntityLinker-v1',
+        created_at: new Date().toISOString()
+      });
     }
   }
-  console.log(`  -> Identified ${aiOutputs.entityresolutionoutput.length} high-confidence unmerged person identities for review.\n`);
+  console.log(`  -> Identified ${aiOutputs.entityresolutionoutput.length} calibrated entity resolution candidates.\n`);
 
   // ---------------------------------------------------------------------------
   // 3. COMPUTING GRAPH COMMUNITIES & LINK PREDICTIONS
@@ -509,8 +596,8 @@ async function computeAIOutputs() {
   console.log('\n================================================================================');
   console.log('  COMPUTED AI OUTPUT PIPELINE SUMMARY');
   console.log('================================================================================');
-  console.log(`  1. MO Similarities Computed  : ${aiOutputs.mosimilarityoutput.length} pairs (Weighted Jaccard >= 65%)`);
-  console.log(`  2. Entity Resolution Merges  : ${aiOutputs.entityresolutionoutput.length} candidate pairs (Fuzzy + Asset Overlap)`);
+  console.log(`  1. MO Similarities Computed  : ${aiOutputs.mosimilarityoutput.length} pairs (Multi-Signal Scoring 55%–96%)`);
+  console.log(`  2. Entity Resolution Merges  : ${aiOutputs.entityresolutionoutput.length} candidate pairs (Humble Calibration)`);
   console.log(`  3. Graph Communities        : ${aiOutputs.networkcommunity.length} clusters (Louvain / Modularity)`);
   console.log(`  4. Predicted Graph Links     : ${aiOutputs.linkpredictionoutput.length} edges (Adamic-Adar Topology)`);
   console.log(`  5. Statistical Anomalies     : ${aiOutputs.anomalydetectionoutput.length} outlier flags (Z-Score & Velocity)`);
