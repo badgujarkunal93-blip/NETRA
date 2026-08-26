@@ -118,43 +118,21 @@ async function computeAIOutputs() {
 
       if (!caseA || !caseB) continue;
 
-      // 1. Base MO & Categorical Overlap (Weight: 40 pts max)
+      // 1. Base MO & Categorical Overlap (Weight: 50 pts max)
       const isSameMajorHead = caseA.crime_major_head === caseB.crime_major_head;
-      const scoreMajorHead = isSameMajorHead ? 20 : getTokenJaccard(caseA.crime_major_head, caseB.crime_major_head) * 10;
+      const scoreMajorHead = isSameMajorHead ? 25 : getTokenJaccard(caseA.crime_major_head, caseB.crime_major_head) * 12;
       const scoreTiming = getTokenJaccard(moA.timing, moB.timing) * 10;
-      const scoreTools = getTokenJaccard(moA.tools, moB.tools) * 5;
+      const scoreTools = getTokenJaccard(moA.tools, moB.tools) * 10;
       const scoreEntry = getTokenJaccard(moA.entry_method, moB.entry_method) * 5;
       const baseMOScore = scoreMajorHead + scoreTiming + scoreTools + scoreEntry;
 
-      // 2. Geospatial Proximity & Operating Corridor (Weight: 25 pts max)
+      // 2. Geospatial Proximity & Operating Corridor (Continuous Exponential Decay: 25 * exp(-distKm / 4))
       const distKm = getHaversineDistanceKm(caseA.latitude, caseA.longitude, caseB.latitude, caseB.longitude);
-      let scoreSpatial = 3;
-      let spatialDesc = 'Distal Precincts (>15km)';
-      if (distKm <= 3.5) {
-        scoreSpatial = 25;
-        spatialDesc = `Co-Located Corridor (${distKm.toFixed(1)} km)`;
-      } else if (distKm <= 7.5) {
-        scoreSpatial = 18;
-        spatialDesc = `Adjacent Precinct Zone (${distKm.toFixed(1)} km)`;
-      } else if (distKm <= 14.0) {
-        scoreSpatial = 10;
-        spatialDesc = `Intra-Urban Sector (${distKm.toFixed(1)} km)`;
-      }
+      const scoreSpatial = 25 * Math.exp(-distKm / 4.0);
 
-      // 3. Temporal Operating Window & Spree Recency (Weight: 20 pts max)
+      // 3. Temporal Operating Window & Spree Recency (Continuous Exponential Decay: 20 * exp(-daysDiff / 8))
       const daysDiff = getDaysDifference(caseA.registered_date, caseB.registered_date);
-      let scoreTemporal = 3;
-      let temporalDesc = 'Standard Operational Separation (>90 Days)';
-      if (daysDiff <= 14) {
-        scoreTemporal = 20;
-        temporalDesc = `Serial Crime Spree Window (${daysDiff} Days)`;
-      } else if (daysDiff <= 45) {
-        scoreTemporal = 14;
-        temporalDesc = `Quarterly Operating Cycle (${daysDiff} Days)`;
-      } else if (daysDiff <= 90) {
-        scoreTemporal = 8;
-        temporalDesc = `Seasonal Interval (${daysDiff} Days)`;
-      }
+      const scoreTemporal = 20 * Math.exp(-daysDiff / 8.0);
 
       // 4. Shared Graph Entities / Co-Accused (Weight: 15 pts max)
       const personsA = casePersons.get(caseA.id) || new Set();
@@ -162,13 +140,18 @@ async function computeAIOutputs() {
       const sharedPersons = [...personsA].filter(p => personsB.has(p));
       const scoreSharedEntity = sharedPersons.length > 0 ? 15 : 0;
 
-      const totalSimilarity = Math.round(baseMOScore + scoreSpatial + scoreTemporal + scoreSharedEntity);
+      const rawTotal = baseMOScore + scoreSpatial + scoreTemporal + scoreSharedEntity;
+      const totalSimilarity = Math.round(rawTotal);
 
-      if (totalSimilarity >= 55) {
+      if (totalSimilarity >= 45) {
         const matchingComponents = [];
         if (isSameMajorHead) matchingComponents.push(`Crime Head (${caseA.crime_major_head})`);
-        if (scoreSpatial >= 18) matchingComponents.push(`Spatial Proximity: ${spatialDesc}`);
-        if (scoreTemporal >= 14) matchingComponents.push(`Temporal Spree: ${temporalDesc}`);
+        if (distKm <= 5.0) matchingComponents.push(`Spatial Proximity: Corridor Cluster (${distKm.toFixed(1)} km)`);
+        else if (distKm <= 12.0) matchingComponents.push(`Spatial Proximity: Regional Sector (${distKm.toFixed(1)} km)`);
+        
+        if (daysDiff <= 14) matchingComponents.push(`Temporal Spree: Serial Spree (${daysDiff} Days)`);
+        else if (daysDiff <= 45) matchingComponents.push(`Temporal Interval: ${daysDiff} Days`);
+
         if (scoreSharedEntity > 0) matchingComponents.push(`Shared Person of Interest (${sharedPersons[0]})`);
         if (scoreTiming >= 8) matchingComponents.push(`Timing Window (${moA.timing.slice(0, 15)})`);
 
