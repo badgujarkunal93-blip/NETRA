@@ -35,11 +35,13 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-[#0A192F] flex flex-col justify-between text-white select-none">
       {/* Top Government Portal Header */}
-      <header className="px-6 py-4 border-b border-[#132B4C] flex items-center justify-between bg-[#061121]">
+      <header className="px-6 py-3.5 border-b border-[#132B4C] flex items-center justify-between bg-[#061121]">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded bg-[#0E223D] border border-[#B45309]/80 flex items-center justify-center text-[#D4A017]">
-            <Shield className="w-4 h-4 stroke-[2.4]" />
-          </div>
+          <img 
+            src="/app_logo.png" 
+            alt="Mumbai Police CIU Emblem" 
+            className="w-9 h-9 rounded object-contain bg-[#0E223D] p-0.5 border border-[#B45309]/70 shadow-sm"
+          />
           <div>
             <div className="font-semibold text-xs text-white tracking-wider uppercase">
               MUMBAI POLICE — CRIMINAL INTELLIGENCE UNIT
@@ -63,9 +65,11 @@ export default function Login() {
         <div className="w-full max-w-sm bg-white rounded-md shadow-md border border-[#E2E8F0] p-6 text-[#0F172A]">
           {/* Card Header */}
           <div className="text-center mb-5 pb-4 border-b border-slate-100">
-            <div className="inline-flex items-center justify-center w-10 h-10 rounded bg-[#0A192F] text-[#D4A017] mb-2.5 border border-[#132B4C]">
-              <Lock className="w-5 h-5" />
-            </div>
+            <img 
+              src="/app_logo.png" 
+              alt="CIU Crest" 
+              className="w-12 h-12 rounded mx-auto mb-2 object-contain bg-[#0A192F] p-1 border border-[#132B4C] shadow-sm"
+            />
             <h1 className="text-base font-bold text-[#0A192F] uppercase tracking-wide">
               Investigator Login
             </h1>

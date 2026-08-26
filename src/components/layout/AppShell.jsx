@@ -97,10 +97,12 @@ export default function AppShell() {
       <aside className="w-60 bg-[#0A192F] text-slate-300 flex flex-col justify-between border-r border-[#132B4C] z-30 flex-shrink-0">
         <div className="flex flex-col">
           {/* Institution Brand Header */}
-          <div className="px-4 py-3.5 border-b border-[#132B4C] flex items-center gap-3 bg-[#071120]">
-            <div className="w-8 h-8 rounded bg-[#0E223D] border border-[#B45309]/80 flex items-center justify-center text-[#D4A017] shadow-sm">
-              <Shield className="w-4 h-4 stroke-[2.4]" />
-            </div>
+          <div className="px-4 py-3 border-b border-[#132B4C] flex items-center gap-3 bg-[#071120]">
+            <img 
+              src="/app_logo.png" 
+              alt="Mumbai Police CIU Logo" 
+              className="w-8 h-8 rounded object-contain bg-[#0E223D] p-0.5 border border-[#B45309]/60 shadow-sm"
+            />
             <div className="min-w-0">
               <div className="font-semibold text-xs text-white tracking-wider uppercase truncate">
                 MUMBAI POLICE CIU

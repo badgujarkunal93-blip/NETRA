@@ -140,26 +140,36 @@ export default function Dashboard() {
       {/* 1. BESPOKE COMMAND CENTER HERO HEADER WITH CALLSIGN & WATERMARK */}
       <div className="relative bg-[#0A192F] rounded-md p-4 text-white border border-[#132B4C] overflow-hidden shadow-sm">
         {/* Subtle Background Watermark Crest */}
-        <div className="absolute right-4 -bottom-6 select-none pointer-events-none opacity-5 font-serif font-black text-9xl tracking-tighter">
-          CIU
-        </div>
+        <img 
+          src="/app_logo.png" 
+          alt="" 
+          aria-hidden="true"
+          className="absolute -right-4 -bottom-6 w-48 h-48 select-none pointer-events-none opacity-5 object-contain filter grayscale"
+        />
 
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="px-1.5 py-0.5 rounded bg-[#D4A017] text-[#0A192F] text-[9.5px] font-mono font-bold uppercase tracking-wider">
-                UNIT CALLSIGN: CIU-OPS-01
-              </span>
-              <span className="text-[10px] font-mono text-slate-400">
-                HQ-CRIMINAL-INTELLIGENCE // MUMBAI POLICE
-              </span>
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <img 
+              src="/app_logo.png" 
+              alt="CIU Command Crest" 
+              className="w-12 h-12 rounded object-contain bg-[#061121] p-1 border border-[#B45309]/80 shadow-md flex-shrink-0"
+            />
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="px-1.5 py-0.5 rounded bg-[#D4A017] text-[#0A192F] text-[9.5px] font-mono font-bold uppercase tracking-wider">
+                  UNIT CALLSIGN: CIU-OPS-01
+                </span>
+                <span className="text-[10px] font-mono text-slate-400">
+                  HQ-CRIMINAL-INTELLIGENCE // MUMBAI POLICE
+                </span>
+              </div>
+              <h1 className="text-xl md:text-2xl font-bold tracking-tight uppercase text-white mt-1">
+                Investigator Command Center
+              </h1>
+              <p className="text-xs text-slate-300 mt-0.5">
+                Live operational fusion, multi-jurisdiction link prediction, and active threat correlation feed.
+              </p>
             </div>
-            <h1 className="text-xl md:text-2xl font-bold tracking-tight uppercase text-white mt-1">
-              Investigator Command Center
-            </h1>
-            <p className="text-xs text-slate-300 mt-0.5">
-              Live operational fusion, multi-jurisdiction link prediction, and active threat correlation feed.
-            </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
