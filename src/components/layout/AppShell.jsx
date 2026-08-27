@@ -16,12 +16,10 @@ import {
   Lock,
   Radio,
   FileText,
-  FileUp,
   Layers
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { dbService } from '../../services/db';
-import FIRUploadModal from '../ingestion/FIRUploadModal';
 
 export default function AppShell() {
   const { user, logout } = useAuth();
@@ -31,7 +29,6 @@ export default function AppShell() {
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeAlertCount, setActiveAlertCount] = useState(0);
-  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
 
   useEffect(() => {
     async function loadAlertCount() {
@@ -261,21 +258,11 @@ export default function AppShell() {
 
           {/* Right Status & Intelligence Health Indicators */}
           <div className="flex items-center gap-3">
-            {/* Sync Status Badge */}
+            {/* Single App-Wide Sync Status Badge */}
             <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F8FAFC] border border-[#E2E8F0] text-[10.5px] font-mono text-slate-600">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-              <span>SYNCED: NCORD • CCTNS</span>
+              <span>CCTNS Synced</span>
             </div>
-
-            {/* Upload & Ingest FIR Button */}
-            <button
-              onClick={() => setIsUploadModalOpen(true)}
-              className="px-3 py-1.5 bg-[#0A192F] hover:bg-[#132B4C] text-white font-semibold text-xs rounded transition-colors flex items-center gap-1.5 border border-[#132B4C] shadow-sm"
-              title="Upload & Ingest CCTNS FIR Document"
-            >
-              <FileUp className="w-3.5 h-3.5 text-[#D4A017]" />
-              <span className="hidden md:inline">Ingest FIR</span>
-            </button>
 
             {/* Notification Bell */}
             <button
@@ -307,12 +294,6 @@ export default function AppShell() {
           <Outlet />
         </main>
       </div>
-
-      {/* Global In-App FIR Document Extraction Modal */}
-      <FIRUploadModal
-        isOpen={isUploadModalOpen}
-        onClose={() => setIsUploadModalOpen(false)}
-      />
     </div>
   );
 }

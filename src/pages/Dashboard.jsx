@@ -91,7 +91,6 @@ export default function Dashboard() {
     {
       title: 'Active Cases',
       value: metrics.activeCases,
-      unitId: 'REG-FIR',
       trendText: '+2 registered this week',
       trendPositive: true,
       sparklineData: [4, 6, 5, 8, 9, 10, 12],
@@ -101,7 +100,6 @@ export default function Dashboard() {
     {
       title: 'Open Alerts',
       value: metrics.openAlerts,
-      unitId: 'ALRT-CRIT',
       trendText: '3 high-severity unresolved',
       isAlert: true,
       trendPositive: false,
@@ -112,7 +110,6 @@ export default function Dashboard() {
     {
       title: 'Tracked Entities',
       value: metrics.entitiesTracked,
-      unitId: 'ENT-CORR',
       trendText: '+6 newly linked across cells',
       trendPositive: true,
       sparklineData: [18, 21, 24, 26, 29, 31, 34],
@@ -122,7 +119,6 @@ export default function Dashboard() {
     {
       title: 'Graph Link Nodes',
       value: '142',
-      unitId: 'K-HOP-L2',
       trendText: '47 AI-inferred • 95 Observed',
       trendPositive: true,
       sparklineData: [90, 105, 112, 120, 128, 136, 142],
@@ -137,65 +133,36 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-4 max-w-7xl mx-auto">
-      {/* 1. BESPOKE COMMAND CENTER HERO HEADER WITH CALLSIGN & WATERMARK */}
-      <div className="relative bg-[#0A192F] rounded-md p-4 text-white border border-[#132B4C] overflow-hidden shadow-sm">
-        {/* Subtle Background Watermark Crest */}
-        <img 
-          src="/app_logo.png" 
-          alt="" 
-          aria-hidden="true"
-          className="absolute -right-4 -bottom-6 w-48 h-48 select-none pointer-events-none opacity-5 object-contain filter grayscale"
-        />
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3.5">
-            <img 
-              src="/app_logo.png" 
-              alt="CIU Command Crest" 
-              className="w-12 h-12 rounded object-contain bg-[#061121] p-1 border border-[#B45309]/80 shadow-md flex-shrink-0"
-            />
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="px-1.5 py-0.5 rounded bg-[#D4A017] text-[#0A192F] text-[9.5px] font-mono font-bold uppercase tracking-wider">
-                  UNIT CALLSIGN: CIU-OPS-01
-                </span>
-                <span className="text-[10px] font-mono text-slate-400">
-                  HQ-CRIMINAL-INTELLIGENCE // MUMBAI POLICE
-                </span>
-              </div>
-              <h1 className="text-xl md:text-2xl font-bold tracking-tight uppercase text-white mt-1">
-                Investigator Command Center
-              </h1>
-              <p className="text-xs text-slate-300 mt-0.5">
-                Live operational fusion, multi-jurisdiction link prediction, and active threat correlation feed.
-              </p>
-            </div>
+      {/* 1. CLEAN INSTITUTIONAL COMMAND CENTER HERO HEADER */}
+      <div className="bg-[#0A192F] rounded-md p-4 text-white border border-[#132B4C] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="flex items-center gap-3.5">
+          <img 
+            src="/app_logo.png" 
+            alt="CIU Command Crest" 
+            className="w-10 h-10 rounded object-contain bg-[#061121] p-1 border border-[#B45309]/80 shadow-md flex-shrink-0"
+          />
+          <div>
+            <h1 className="text-lg md:text-xl font-bold tracking-tight uppercase text-white">
+              Investigator Command Center
+            </h1>
+            <p className="text-xs text-slate-300 mt-0.5">
+              Live operational fusion, multi-jurisdiction link prediction, and active threat correlation feed.
+            </p>
           </div>
+        </div>
 
-          <div className="flex flex-wrap items-center gap-2.5">
-            {/* Live Telemetry Pill */}
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-[#061121] border border-[#132B4C] rounded text-xs">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="font-mono text-[10.5px] text-slate-300">
-                LIVE TELEMETRY <strong className="text-white font-mono ml-1">24ms</strong>
-              </span>
-            </div>
-
-            <button
-              onClick={() => navigate('/graph')}
-              className="px-3.5 py-1.5 bg-[#D4A017] hover:bg-[#B45309] text-[#0A192F] hover:text-white font-bold text-xs rounded transition-all flex items-center gap-1.5 shadow-sm"
-            >
-              <span>Geospatial Network</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
+        <div className="flex items-center gap-2.5">
+          <button
+            onClick={() => navigate('/graph')}
+            className="px-3.5 py-1.5 bg-[#D4A017] hover:bg-[#B45309] text-[#0A192F] hover:text-white font-bold text-xs rounded transition-all flex items-center gap-1.5 shadow-sm"
+          >
+            <span>Geospatial Network</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </button>
         </div>
       </div>
 
-      {/* 2. STAT ROW WITH MICRO-METRICS & MINI SPARKLINES (High Data Density) */}
+      {/* 2. STAT ROW WITH MICRO-METRICS & MINI SPARKLINES */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
         {statCards.map((card, idx) => (
           <div
@@ -207,9 +174,6 @@ export default function Dashboard() {
               <div className="flex items-center justify-between">
                 <span className="text-[10.5px] font-bold uppercase tracking-wider text-slate-500">
                   {card.title}
-                </span>
-                <span className="text-[9px] font-mono px-1 py-0.2 rounded bg-slate-100 text-slate-600 font-semibold">
-                  {card.unitId}
                 </span>
               </div>
               <div className="flex items-baseline justify-between mt-1">
