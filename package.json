@@ -10,7 +10,8 @@
     "generate-firs": "node scripts/generate_sample_pdfs.js",
     "verify-pipeline": "node scripts/verify_pipeline_data.js",
     "import-csv": "node scripts/import_csv_to_supabase.js",
-    "compute-ai": "node scripts/compute_ai_outputs.js"
+    "compute-ai": "node scripts/compute_ai_outputs.js",
+    "test": "vitest run"
   },
   "keywords": [],
   "author": "",
@@ -42,6 +43,7 @@
     "autoprefixer": "^10.5.4",
     "postcss": "^8.5.26",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.2.2"
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
   }
 }

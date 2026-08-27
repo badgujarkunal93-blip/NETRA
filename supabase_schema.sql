@@ -352,3 +352,36 @@ ALTER TABLE IF EXISTS canvas_snapshots DISABLE ROW LEVEL SECURITY;
 
 
 
+
+-- ============================================================================
+-- 16. NLP INGESTION EVIDENCE SPANS
+-- ============================================================================
+
+CREATE TABLE document_chunks (
+    id TEXT PRIMARY KEY,
+    document_id TEXT NOT NULL REFERENCES fir_documents(id) ON DELETE CASCADE,
+    chunk_index INTEGER NOT NULL,
+    start_offset INTEGER NOT NULL,
+    end_offset INTEGER NOT NULL,
+    chunk_text TEXT NOT NULL
+);
+
+CREATE TABLE extraction_spans (
+    id TEXT PRIMARY KEY,
+    document_id TEXT NOT NULL REFERENCES fir_documents(id) ON DELETE CASCADE,
+    chunk_id TEXT REFERENCES document_chunks(id) ON DELETE CASCADE,
+    start_offset INTEGER NOT NULL,
+    end_offset INTEGER NOT NULL,
+    text_snippet TEXT NOT NULL,
+    entity_type TEXT NOT NULL,
+    entity_value TEXT NOT NULL,
+    extraction_method TEXT NOT NULL,
+    confidence INTEGER NOT NULL CHECK (confidence BETWEEN 0 AND 100),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE IF EXISTS document_chunks DISABLE ROW LEVEL SECURITY;
+ALTER TABLE IF EXISTS extraction_spans DISABLE ROW LEVEL SECURITY;
+
+CREATE INDEX idx_document_chunks_doc ON document_chunks(document_id);
+CREATE INDEX idx_extraction_spans_doc ON extraction_spans(document_id);
