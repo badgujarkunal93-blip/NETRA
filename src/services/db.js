@@ -894,6 +894,44 @@ export const dbService = {
 
   // --- PERSONS / ENTITIES ---
   async getPersons(filters = {}) {
+    if (isSupabaseConfigured) {
+      try {
+        let query = supabase
+          .from('persons')
+          .select('*, person_case_roles(case_id, role_type, cases(crime_no, police_station, status))')
+          .limit(80);
+
+        if (filters.search) {
+          const q = filters.search.trim();
+          query = query.or(`canonical_name.ilike.%${q}%,id.ilike.%${q}%`);
+        } else if (filters.status_tag && filters.status_tag !== 'All') {
+          query = query.eq('status_tag', filters.status_tag);
+        } else {
+          // Default: order by confidence score to prioritize verified/investigated individuals
+          query = query.order('confidence_score', { ascending: false });
+        }
+
+        const { data, error } = await query;
+        if (!error && data && data.length > 0) {
+          return data.map(p => {
+            const roles = p.person_case_roles || [];
+            const primaryRole = roles.length > 0 ? roles[0].role_type : p.status_tag;
+            return {
+              ...p,
+              caseCount: roles.length,
+              primaryRole,
+              linkedCases: roles.map(r => ({
+                ...(r.cases || { crime_no: r.case_id, police_station: 'CIU Jurisdiction' }),
+                role_type: r.role_type
+              }))
+            };
+          });
+        }
+      } catch (err) {
+        console.warn('Supabase getPersons notice:', err.message);
+      }
+    }
+
     let list = [...SEED_DATA.persons];
     if (filters.search) {
       const q = filters.search.toLowerCase();
@@ -910,6 +948,67 @@ export const dbService = {
   },
 
   async getPersonById(personId) {
+    if (isSupabaseConfigured) {
+      try {
+        // 1. Fetch Person Record
+        const { data: person, error: pErr } = await supabase
+          .from('persons')
+          .select('*')
+          .or(`id.eq.${personId},canonical_name.eq.${personId}`)
+          .maybeSingle();
+
+        if (person && !pErr) {
+          const pId = person.id;
+
+          // 2. Fetch Relational Data Concurrently
+          const [
+            rolesRes,
+            phonesRes,
+            vehiclesRes,
+            accountsRes,
+            relsRes,
+            eventsRes
+          ] = await Promise.all([
+            supabase.from('person_case_roles').select('*, cases(*)').eq('person_id', pId),
+            supabase.from('phones').select('*').eq('owner_person_id', pId),
+            supabase.from('vehicles').select('*').eq('owner_person_id', pId),
+            supabase.from('accounts').select('*').eq('owner_person_id', pId),
+            supabase.from('relationships').select('*').or(`source_id.eq.${pId},target_id.eq.${pId}`),
+            supabase.from('events').select('*').eq('person_id', pId).order('event_time', { ascending: false })
+          ]);
+
+          const linkedCases = (rolesRes.data || []).map(r => ({
+            ...(r.cases || { id: r.case_id, crime_no: r.case_id, police_station: 'Jurisdiction Unknown' }),
+            role_type: r.role_type
+          }));
+
+          // Resolve target entities for relationships
+          const relationships = (relsRes.data || []).map(r => {
+            const isSource = r.source_id === pId;
+            const otherId = isSource ? r.target_id : r.source_id;
+            const otherType = isSource ? r.target_type : r.source_type;
+            return {
+              ...r,
+              targetEntity: { id: otherId, canonical_name: otherId, status_tag: otherType },
+              isOutgoing: isSource
+            };
+          });
+
+          return {
+            ...person,
+            linkedCases,
+            linkedPhones: phonesRes.data || [],
+            linkedVehicles: vehiclesRes.data || [],
+            linkedAccounts: accountsRes.data || [],
+            relationships,
+            events: eventsRes.data || []
+          };
+        }
+      } catch (err) {
+        console.warn('Supabase getPersonById notice:', err.message);
+      }
+    }
+
     const person = SEED_DATA.persons.find(p => p.id === personId || p.canonical_name === personId);
     if (!person) return null;
 

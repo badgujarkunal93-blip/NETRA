@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { 
   User, 
@@ -16,7 +16,10 @@ import {
   FolderSearch,
   ChevronRight,
   Search,
-  CheckCircle2
+  CheckCircle2,
+  X,
+  Layers,
+  Loader2
 } from 'lucide-react';
 import { dbService } from '../services/db';
 
@@ -28,66 +31,175 @@ export default function EntityProfile() {
   const [selectedPerson, setSelectedPerson] = useState(null);
   const [activeTab, setActiveTab] = useState('timeline');
   const [loading, setLoading] = useState(true);
+  const [isSearching, setIsSearching] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  const searchContainerRef = useRef(null);
   const urlPersonId = searchParams.get('id');
 
+  // Debounced Search on Supabase
   useEffect(() => {
-    async function loadData() {
-      setLoading(true);
+    let active = true;
+    const timer = setTimeout(async () => {
+      setIsSearching(true);
       const list = await dbService.getPersons({ search: searchTerm });
-      setPersons(list);
+      if (active) {
+        setPersons(list);
+        setIsSearching(false);
+      }
+    }, 200);
 
-      const targetId = urlPersonId || (list.length > 0 ? list[0].id : null);
-      if (targetId) {
-        const fullDetail = await dbService.getPersonById(targetId);
-        setSelectedPerson(fullDetail);
+    return () => {
+      active = false;
+      clearTimeout(timer);
+    };
+  }, [searchTerm]);
+
+  // Initial Load / URL Parameter Sync
+  useEffect(() => {
+    async function loadSelected() {
+      setLoading(true);
+      if (urlPersonId) {
+        const fullDetail = await dbService.getPersonById(urlPersonId);
+        if (fullDetail) {
+          setSelectedPerson(fullDetail);
+        }
+      } else if (!selectedPerson) {
+        const initialList = await dbService.getPersons();
+        if (initialList.length > 0) {
+          const firstDetail = await dbService.getPersonById(initialList[0].id);
+          setSelectedPerson(firstDetail);
+          setPersons(initialList);
+        }
       }
       setLoading(false);
     }
-    loadData();
-  }, [searchTerm, urlPersonId]);
+    loadSelected();
+  }, [urlPersonId]);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleSelectPerson = async (pId) => {
+    setIsDropdownOpen(false);
     setSearchParams({ id: pId });
+    setLoading(true);
     const fullDetail = await dbService.getPersonById(pId);
     setSelectedPerson(fullDetail);
+    setLoading(false);
   };
 
   return (
     <div className="space-y-4 max-w-7xl mx-auto">
-      {/* 1. TOP HEADER & SEARCH BAR */}
-      <div className="bg-white p-3.5 rounded-md border border-[#E2E8F0] shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      {/* 1. TOP HEADER & ASYNCHRONOUS TYPE-AHEAD ENTITY SEARCH */}
+      <div className="bg-white p-3.5 rounded-md border border-[#E2E8F0] shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3 relative z-30">
         <div>
-          <h1 className="text-base font-bold text-[#0A192F] uppercase tracking-wide">
-            Entity Dossier: Person of Interest
+          <h1 className="text-base font-bold text-[#0A192F] uppercase tracking-wide flex items-center gap-2">
+            <span>Entity Dossier: Person of Interest</span>
+            <span className="px-1.5 py-0.2 rounded text-[10px] font-mono bg-slate-100 text-slate-700 border border-slate-300">
+              CCTNS REGISTRY
+            </span>
           </h1>
           <p className="text-xs text-slate-500">
-            Comprehensive profile of tracked individuals, alias network, asset holdings, and chronological event timeline.
+            Searchable registry across 2,014 actionable persons of interest, aliases, and case networks.
           </p>
         </div>
-        <div className="flex items-center gap-2.5">
-          <div className="relative w-60">
+
+        {/* Search & Type-Ahead Combobox */}
+        <div ref={searchContainerRef} className="relative w-full sm:w-80">
+          <div className="relative">
             <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
             <input
               type="text"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search person or alias..."
-              className="w-full pl-8 pr-3 py-1.5 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded focus:outline-none focus:border-[#0A192F] text-[#0F172A]"
+              onFocus={() => setIsDropdownOpen(true)}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setIsDropdownOpen(true);
+              }}
+              placeholder={selectedPerson ? `${selectedPerson.canonical_name} (${selectedPerson.status_tag})` : 'Search 2,014 actionable persons...'}
+              className="w-full pl-8 pr-8 py-1.5 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded focus:outline-none focus:border-[#0A192F] text-[#0F172A] font-medium placeholder-slate-500"
             />
+            {searchTerm ? (
+              <button
+                onClick={() => setSearchTerm('')}
+                className="absolute right-2.5 top-2 text-slate-400 hover:text-slate-600"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            ) : isSearching ? (
+              <Loader2 className="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-2 animate-spin" />
+            ) : null}
           </div>
-          <select
-            value={selectedPerson?.id || ''}
-            onChange={(e) => handleSelectPerson(e.target.value)}
-            className="px-2.5 py-1.5 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded font-semibold text-[#0A192F] focus:outline-none"
-          >
-            {persons.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.canonical_name} ({p.status_tag})
-              </option>
-            ))}
-          </select>
+
+          {/* Autocomplete Dropdown */}
+          {isDropdownOpen && (
+            <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#CBD5E1] rounded-md shadow-2xl max-h-72 overflow-y-auto z-50 divide-y divide-slate-100">
+              <div className="p-2 bg-slate-50 text-[10px] font-mono text-slate-500 font-bold uppercase tracking-wider flex justify-between">
+                <span>Matching Persons ({persons.length})</span>
+                <span className="text-[#0A192F]">Live Supabase Search</span>
+              </div>
+
+              {persons.length === 0 ? (
+                <div className="p-4 text-center text-xs text-slate-500 font-sans">
+                  No registered persons found matching "{searchTerm}".
+                </div>
+              ) : (
+                persons.map((p) => (
+                  <button
+                    key={p.id}
+                    onClick={() => handleSelectPerson(p.id)}
+                    className={`w-full text-left p-2.5 hover:bg-slate-50 transition-colors flex items-center justify-between gap-2 ${
+                      selectedPerson?.id === p.id ? 'bg-amber-50/60 font-semibold' : ''
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="w-7 h-7 rounded bg-[#0A192F] text-[#D4A017] flex items-center justify-center font-mono font-bold text-xs flex-shrink-0">
+                        {p.canonical_name.slice(0, 2).toUpperCase()}
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-xs font-bold text-[#0A192F] truncate">
+                          {p.canonical_name}
+                        </div>
+                        <div className="text-[10px] font-mono text-slate-500 flex items-center gap-1.5 truncate">
+                          <span className="text-[#D4A017] font-semibold">{p.id}</span>
+                          <span>•</span>
+                          <span>{p.primaryRole || p.status_tag}</span>
+                          {p.caseCount > 0 && (
+                            <span className="text-emerald-700 font-bold">({p.caseCount} Cases)</span>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col items-end flex-shrink-0">
+                      <span className={`px-1.5 py-0.2 rounded text-[9.5px] font-mono font-bold border ${
+                        p.status_tag === 'Key Suspect' || p.status_tag === 'Accused'
+                          ? 'bg-rose-50 text-rose-700 border-rose-200'
+                          : p.status_tag === 'Under Surveillance'
+                          ? 'bg-amber-50 text-amber-700 border-amber-200'
+                          : 'bg-slate-100 text-slate-700 border-slate-200'
+                      }`}>
+                        {p.status_tag}
+                      </span>
+                      <span className="text-[9px] font-mono text-slate-400 mt-0.5">
+                        {p.confidence_score}% Conf
+                      </span>
+                    </div>
+                  </button>
+                ))
+              )}
+            </div>
+          )}
         </div>
       </div>
 
