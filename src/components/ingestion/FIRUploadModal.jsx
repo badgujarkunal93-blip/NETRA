@@ -87,84 +87,58 @@ export default function FIRUploadModal({ isOpen, onClose }) {
     setIsProcessing(true);
     setPipelineStep(1);
 
-    // Get input text
-    let rawText = '';
+    let formData = new FormData();
     if (activeTab === 'preset') {
-      rawText = SAMPLE_PRESETS[selectedPresetIndex].text;
+      formData.append('raw_text', SAMPLE_PRESETS[selectedPresetIndex].text);
     } else if (activeTab === 'text') {
-      rawText = pastedText;
+      formData.append('raw_text', pastedText);
     } else {
-      rawText = SAMPLE_PRESETS[0].text; // Fallback mock for browser file drop
+      const fileInput = document.getElementById('fir-file-input');
+      if (fileInput && fileInput.files[0]) {
+        formData.append('file', fileInput.files[0]);
+      } else {
+        formData.append('raw_text', SAMPLE_PRESETS[0].text);
+      }
     }
 
-    // Step 1: Text extraction simulation
-    await new Promise(r => setTimeout(r, 600));
-    setPipelineStep(2);
-
-    // Step 2: LLM Structuring
-    await new Promise(r => setTimeout(r, 800));
-    setPipelineStep(3);
-
-    // Parse data
-    const crimeNoMatch = rawText.match(/(CR\/\d{4}\/\d{3,4}-[A-Z]{2,4})/i) || ['CR/2026/0811-BND'];
-    const psMatch = rawText.match(/Police Station[\s/:]+([A-Za-z\s]+?)(?:Police Station|\n|,|$)/i);
-    const psName = psMatch ? psMatch[1].trim() : 'Bandra';
-
-    const mockExtracted = {
-      case: {
-        id: `CASE-2026-${Math.floor(1000 + Math.random() * 9000)}`,
-        crime_no: crimeNoMatch[0] || 'CR/2026/0811-BND',
-        case_no: `FIR-${Math.floor(100 + Math.random() * 900)}/2026`,
-        crime_category: rawText.includes('NDPS') ? 'Contraband Trafficking' : rawText.includes('Vault') ? 'Property Crime' : 'Organized Financial Crime',
-        crime_major_head: rawText.includes('NDPS') ? 'NDPS Act Sec 8c/21c' : rawText.includes('Vault') ? 'IPC 395/397 Armed Dacoity' : 'IPC 420/468 Cheating & Forgery',
-        crime_minor_head: 'Syndicate Criminal Operation',
-        status: 'Under Investigation',
-        registered_date: new Date().toISOString().split('T')[0],
-        latitude: rawText.includes('Colaba') ? 18.9220 : rawText.includes('Dharavi') ? 19.0434 : 19.0596,
-        longitude: rawText.includes('Colaba') ? 72.8347 : rawText.includes('Dharavi') ? 72.8567 : 72.8295,
-        police_station: psName.includes('Police Station') ? psName : `${psName} Police Station`,
-        brief_facts: rawText.split('Brief Facts & Modus Operandi:')[1] || rawText.slice(0, 300)
-      },
-      persons: [
-        {
-          canonical_name: rawText.includes('Farhan') ? 'Farhan Merchant' : rawText.includes('Rajesh') ? 'Rajesh Sawant' : 'Bilal Khan',
-          aliases: rawText.includes('Farhan') ? ['Babloo', 'FM-Dubai'] : ['Raju Cutter'],
-          role_type: 'accused',
-          isExisting: true // Resolved to existing record!
-        },
-        {
-          canonical_name: rawText.includes('Tariq') ? 'Tariq Al-Mansoor' : rawText.includes('Imtiaz') ? 'Imtiaz Shaikh' : 'Altaf Memon',
-          aliases: [],
-          role_type: 'co-conspirator',
-          isExisting: false // New identity!
-        }
-      ],
-      phones: [
-        { number: '+91-98201-99881', owner_name: 'Farhan Merchant' },
-        { number: '+91-98205-44321', owner_name: 'Tariq Al-Mansoor' }
-      ],
-      vehicles: [
-        { registration: 'MH-02-DN-8819', vehicle_type: 'Skoda Octavia White', owner_name: 'Farhan Merchant' }
-      ],
-      mo_fingerprint: {
-        target: 'Commercial Import-Export Banking Accounts',
-        timing: 'Business Operating Hours (10:00 - 17:00)',
-        entry_method: 'Shell Entity KYC Forgery & Round-Tripping',
-        tools: 'Burner SIMs, Offshore UAE Wire Mandates',
-        transport: 'Skoda Octavia (MH-02-DN-8819)',
-        concealment: '14 Layered Shell LLPs & Proxy Signatories',
-        action_sequence: 'Invoice Generation -> Wire Transfer -> Real Estate Diversion',
-        victim_interaction: 'Remote Corporate Fraud',
-        exit_method: 'Offshore Remittance Conduit',
-        group_behavior: 'Organized Cross-Border Financial Cell'
+    try {
+      setPipelineStep(2);
+      const baseUrl = import.meta.env.VITE_PRIORITY_MODEL_URL || 'http://localhost:8000';
+      const res = await fetch(`${baseUrl}/api/fir/ingest`, {
+        method: 'POST',
+        body: formData
+      });
+      
+      setPipelineStep(3);
+      if (!res.ok) {
+        const errData = await res.json().catch(() => null);
+        throw new Error(errData?.detail || `Server responded with ${res.status}`);
       }
-    };
-
-    // Step 3: Entity Resolution & Ingestion
-    await new Promise(r => setTimeout(r, 700));
-    setPipelineStep(4);
-    setExtractedResult(mockExtracted);
-    setIsProcessing(false);
+      
+      const data = await res.json();
+      setPipelineStep(4);
+      
+      const extracted = data.extracted;
+      
+      setExtractedResult({
+        case: extracted.case,
+        persons: extracted.persons.map(p => ({
+          canonical_name: p.name,
+          aliases: p.aliases || [],
+          role_type: p.role,
+          isExisting: false
+        })),
+        phones: extracted.phones || [],
+        vehicles: extracted.vehicles || [],
+        mo_fingerprint: extracted.mo_fingerprint
+      });
+    } catch (error) {
+      console.error("Ingestion failed:", error);
+      alert("Pipeline Failed: " + error.message);
+      setPipelineStep(0);
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   const handleReset = () => {
