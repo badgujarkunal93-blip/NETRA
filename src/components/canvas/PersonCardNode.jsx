@@ -54,9 +54,33 @@ function PersonCardNode({ id, data, isConnectable }) {
           <div className="w-6 h-6 rounded bg-[#132B4C] border border-[#254F85] flex items-center justify-center text-[#D4A017] flex-shrink-0">
             <User className="w-3.5 h-3.5" />
           </div>
-          <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-slate-300 truncate">
-            PERSON OF INTEREST
-          </span>
+          <div className="flex flex-col min-w-0">
+            <span className="text-[10px] font-mono font-bold tracking-wider uppercase text-slate-300 truncate">
+              PERSON OF INTEREST
+            </span>
+            {data.priority_score != null && (
+              <div className="flex items-center gap-1 mt-0.5">
+                <span
+                  title="Live Suspect Priority Score (XGBoost)"
+                  className={`px-1.5 py-0.2 rounded text-[9px] font-mono font-extrabold flex items-center gap-1 border shadow-xs ${
+                    data.priority_score >= 70
+                      ? 'bg-rose-500/25 text-rose-300 border-rose-500/60 animate-pulse'
+                      : data.priority_score >= 40
+                      ? 'bg-amber-500/25 text-amber-300 border-amber-500/60'
+                      : 'bg-slate-800 text-slate-400 border-slate-700'
+                  }`}
+                >
+                  <Sparkles className="w-2.5 h-2.5" />
+                  <span>PRIORITY: {data.priority_score}</span>
+                </span>
+              </div>
+            )}
+            {data.priorityError && (
+              <span className="text-[8.5px] font-mono text-rose-400" title={data.priorityError}>
+                Analysis Unavailable
+              </span>
+            )}
+          </div>
         </div>
 
         <div className="flex items-center gap-1">

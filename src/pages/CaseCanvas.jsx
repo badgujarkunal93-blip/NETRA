@@ -31,9 +31,16 @@ import {
   Layers, 
   AlertCircle,
   CheckCircle2,
-  BrainCircuit
+  BrainCircuit,
+  TrendingUp,
+  Loader2,
+  AlertTriangle,
+  ExternalLink,
+  ShieldAlert,
+  RefreshCw
 } from 'lucide-react';
 import { dbService } from '../services/db';
+import { analyzeAllCanvasPersons } from '../services/suspectPriorityService';
 import PersonCardNode from '../components/canvas/PersonCardNode';
 import NoteCardNode from '../components/canvas/NoteCardNode';
 import EntityCardNode from '../components/canvas/EntityCardNode';
@@ -69,6 +76,12 @@ export default function CaseCanvas() {
   const [isNotesDrawerOpen, setIsNotesDrawerOpen] = useState(false);
   const [isClearModalOpen, setIsClearModalOpen] = useState(false);
   const [isAnalyzeModalOpen, setIsAnalyzeModalOpen] = useState(false);
+
+  // Live Suspect Priority Analysis State
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [wakingUpNotice, setWakingUpNotice] = useState(false);
+  const [analysisResults, setAnalysisResults] = useState([]);
+  const [analysisError, setAnalysisError] = useState(null);
 
   // Save Status
   const [saveStatus, setSaveStatus] = useState('saved'); // 'saved' | 'saving' | 'dirty'
@@ -375,10 +388,63 @@ export default function CaseCanvas() {
     c.crime_category.toLowerCase().includes(caseSearchQuery.toLowerCase())
   );
 
-  // Hypothesis Metrics Calculation
+  // Hypothesis & Person Metrics Calculation
+  const personNodesCount = useMemo(() => {
+    return nodes.filter(n => 
+      n.type === 'personCard' || 
+      (n.type === 'entityCard' && n.data?.nodeType === 'Person') || 
+      n.data?.isPerson
+    ).length;
+  }, [nodes]);
+
   const confirmedCount = nodes.filter(n => n.data?.status === 'confirmed').length;
   const hypothesisCount = nodes.filter(n => n.data?.status === 'hypothesis').length;
   const justifiedEdgesCount = edges.filter(e => e.data?.justification && e.data.justification.length > 5).length;
+
+  // 13. Live Suspect Priority Scoring Analysis
+  const handleRunPriorityAnalysis = async () => {
+    if (personNodesCount === 0 || isAnalyzing) return;
+    setIsAnalyzing(true);
+    setAnalysisError(null);
+    setWakingUpNotice(false);
+
+    const coldStartTimer = setTimeout(() => {
+      setWakingUpNotice(true);
+    }, 7000);
+
+    try {
+      const results = await analyzeAllCanvasPersons(nodes, edges, selectedCaseId);
+      clearTimeout(coldStartTimer);
+      setWakingUpNotice(false);
+      setAnalysisResults(results);
+
+      // Update nodes in React Flow with returned priority scores and feature payloads
+      setNodes(prev => prev.map(n => {
+        const match = results.find(r => r.nodeId === n.id);
+        if (match) {
+          return {
+            ...n,
+            data: {
+              ...n.data,
+              priority_score: match.priority_score,
+              priorityError: match.success ? null : (match.error || 'Model API Unavailable'),
+              analyzedFeatures: match.features
+            }
+          };
+        }
+        return n;
+      }));
+
+      setIsAnalyzeModalOpen(true);
+    } catch (err) {
+      clearTimeout(coldStartTimer);
+      setWakingUpNotice(false);
+      setAnalysisError(err.message || 'Suspect Priority Model API call failed.');
+      setIsAnalyzeModalOpen(true);
+    } finally {
+      setIsAnalyzing(false);
+    }
+  };
 
   return (
     <div className="flex flex-col h-[calc(100vh-5.5rem)] bg-[#061121] rounded-lg overflow-hidden border border-[#132B4C] shadow-2xl select-none">
@@ -542,15 +608,42 @@ export default function CaseCanvas() {
               <span className="hidden md:inline">Case Notes</span>
             </button>
 
-            {/* AI Hypothesis Analyze */}
-            <button
-              onClick={() => setIsAnalyzeModalOpen(true)}
-              className="px-3 py-1.5 bg-[#132B4C] hover:bg-[#1C3B64] text-[#D4A017] font-bold text-xs rounded border border-[#D4A017] transition-colors flex items-center gap-1.5 shadow-sm"
-              title="Run AI Hypothesis Consistency & Link Verification"
-            >
-              <BrainCircuit className="w-3.5 h-3.5" />
-              <span>AI Analyze</span>
-            </button>
+            {/* AI Suspect Priority Scoring (Live XGBoost Model) */}
+            <div className="relative group">
+              <button
+                onClick={handleRunPriorityAnalysis}
+                disabled={personNodesCount === 0 || isAnalyzing}
+                className={`px-3 py-1.5 font-bold text-xs rounded border transition-all flex items-center gap-1.5 shadow-sm ${
+                  personNodesCount === 0
+                    ? 'bg-[#0E223D] text-slate-500 border-slate-700 cursor-not-allowed opacity-60'
+                    : isAnalyzing
+                    ? 'bg-[#1C3B64] text-amber-300 border-amber-400 animate-pulse'
+                    : 'bg-[#132B4C] hover:bg-[#1C3B64] text-[#D4A017] border-[#D4A017] hover:shadow-[#D4A017]/20'
+                }`}
+                title={
+                  personNodesCount === 0
+                    ? 'Canvas must contain at least 1 Person of Interest card to compute priority scores'
+                    : 'Run Live XGBoost Suspect Priority Scoring'
+                }
+              >
+                {isAnalyzing ? (
+                  <>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin text-amber-400" />
+                    <span>{wakingUpNotice ? 'Waking up engine...' : 'Scoring suspects...'}</span>
+                  </>
+                ) : (
+                  <>
+                    <BrainCircuit className="w-3.5 h-3.5 text-[#D4A017]" />
+                    <span>AI Analyze {personNodesCount > 0 ? `(${personNodesCount})` : ''}</span>
+                  </>
+                )}
+              </button>
+              {personNodesCount === 0 && (
+                <div className="absolute right-0 top-full mt-1.5 w-60 p-2 bg-[#0A192F] border border-[#254F85] rounded text-[10.5px] text-slate-300 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 font-sans">
+                  ⚠️ Add at least one Person card to the canvas to compute AI Suspect Priority scores.
+                </div>
+              )}
+            </div>
 
             {/* Clear Canvas */}
             <button
@@ -683,58 +776,220 @@ export default function CaseCanvas() {
         </div>
       )}
 
-      {/* 7. AI HYPOTHESIS CONSISTENCY & ANALYZE MODAL */}
+      {/* 7. LIVE AI SUSPECT PRIORITY RANKING & FEATURE INSPECTOR MODAL */}
       {isAnalyzeModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in select-none">
-          <div className="bg-[#0A192F] rounded-lg shadow-2xl border border-[#132B4C] p-5 max-w-md w-full space-y-4 text-white">
-            <div className="flex items-center justify-between border-b border-[#132B4C] pb-2.5">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in select-none">
+          <div className="bg-[#0A192F] rounded-lg shadow-2xl border border-[#254F85] max-w-2xl w-full max-h-[90vh] flex flex-col text-white overflow-hidden">
+            {/* Modal Header */}
+            <div className="p-4 bg-[#071120] border-b border-[#1C3B64] flex items-center justify-between flex-shrink-0">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded bg-[#0E223D] border border-[#D4A017] flex items-center justify-center text-[#D4A017]">
+                  <BrainCircuit className="w-4 h-4" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-white flex items-center gap-2">
+                    <span>Suspect Priority Model Ranking</span>
+                    <span className="px-1.5 py-0.2 rounded text-[9px] bg-emerald-950/80 text-emerald-300 border border-emerald-800">
+                      LIVE XGBOOST
+                    </span>
+                  </h3>
+                  <p className="text-[10px] text-slate-400 font-sans">
+                    Dynamic graph topological ranking & behavioral feature evaluation
+                  </p>
+                </div>
+              </div>
+
               <div className="flex items-center gap-2">
-                <BrainCircuit className="w-4 h-4 text-[#D4A017]" />
-                <h3 className="text-xs font-bold uppercase tracking-wider">
-                  AI Hypothesis Consistency Analysis
-                </h3>
+                <button
+                  onClick={handleRunPriorityAnalysis}
+                  disabled={isAnalyzing}
+                  className="px-2.5 py-1 rounded bg-[#132B4C] hover:bg-[#1C3B64] text-[#D4A017] border border-[#D4A017]/50 text-[10.5px] font-mono font-bold transition-colors flex items-center gap-1.5"
+                >
+                  <RefreshCw className={`w-3 h-3 ${isAnalyzing ? 'animate-spin' : ''}`} />
+                  <span>{isAnalyzing ? 'Re-scoring...' : 'Re-Run'}</span>
+                </button>
+                <button
+                  onClick={() => setIsAnalyzeModalOpen(false)}
+                  className="p-1 text-slate-400 hover:text-white rounded hover:bg-[#132B4C] transition-colors"
+                >
+                  ✕
+                </button>
               </div>
-              <span className="text-[10px] font-mono text-emerald-400 font-bold bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">
-                SCORING MODEL READY
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-4 overflow-y-auto space-y-3.5 flex-1 font-sans">
+              {/* Mandatory Non-Dismissible Advisory Disclaimer */}
+              <div className="p-3 bg-amber-950/35 border border-amber-500/50 rounded-md flex items-start gap-2.5 text-amber-200 text-xs">
+                <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                <div>
+                  <div className="font-bold text-[10.5px] uppercase tracking-wider text-amber-300 font-mono">
+                    Advisory Prioritization Only — Not Legal Evidence
+                  </div>
+                  <p className="text-[10.5px] text-amber-100/90 leading-relaxed font-sans mt-0.5">
+                    Suspect scores are machine-generated by the deployed XGBoost inference pipeline based on canvas graph structure, verified status, and registered CCTNS records. Requires independent human investigator review and corroboration.
+                  </p>
+                </div>
+              </div>
+
+              {/* Error Notice if any */}
+              {analysisError && (
+                <div className="p-3 bg-rose-950/50 border border-rose-600 rounded-md text-rose-200 text-xs flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                  <span>{analysisError}</span>
+                </div>
+              )}
+
+              {/* Summary Stats Strip */}
+              <div className="grid grid-cols-3 gap-2 text-xs font-mono">
+                <div className="bg-[#0E223D] p-2 rounded border border-[#1C3B64]">
+                  <div className="text-[10px] text-slate-400">PERSONS SCORED</div>
+                  <div className="text-sm font-bold text-white mt-0.5">{analysisResults.length}</div>
+                </div>
+                <div className="bg-[#0E223D] p-2 rounded border border-[#1C3B64]">
+                  <div className="text-[10px] text-slate-400">HIGH PRIORITY (≥70)</div>
+                  <div className="text-sm font-bold text-rose-400 mt-0.5">
+                    {analysisResults.filter(r => r.priority_score >= 70).length}
+                  </div>
+                </div>
+                <div className="bg-[#0E223D] p-2 rounded border border-[#1C3B64]">
+                  <div className="text-[10px] text-slate-400">MODEL ENDPOINT</div>
+                  <div className="text-[10px] font-bold text-emerald-400 mt-1 truncate">
+                    netra-gd70.onrender.com
+                  </div>
+                </div>
+              </div>
+
+              {/* Ranked Suspect List */}
+              <div className="space-y-2.5">
+                <div className="text-[10.5px] font-mono uppercase font-bold text-slate-400 tracking-wider">
+                  Ranked Suspect Priority Dossier
+                </div>
+
+                {analysisResults.length === 0 ? (
+                  <div className="p-6 text-center text-slate-400 text-xs bg-[#0E223D] rounded border border-[#1C3B64]">
+                    No Person of Interest cards detected on canvas.
+                  </div>
+                ) : (
+                  analysisResults.map((item, idx) => (
+                    <div 
+                      key={item.nodeId} 
+                      className="bg-[#0E223D] p-3.5 rounded-lg border border-[#1C3B64] space-y-2.5 hover:border-[#254F85] transition-all"
+                    >
+                      {/* Top Row: Name, Rank, Status, and Priority Score */}
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <div className={`w-6 h-6 rounded-full font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 border ${
+                            idx === 0
+                              ? 'bg-[#D4A017]/20 border-[#D4A017] text-[#D4A017]'
+                              : 'bg-[#132B4C] border-[#254F85] text-slate-300'
+                          }`}>
+                            #{idx + 1}
+                          </div>
+                          <div className="min-w-0">
+                            <div className="font-bold text-white text-xs truncate flex items-center gap-1.5">
+                              <span>{item.label}</span>
+                              {item.linkedId && (
+                                <span title="Linked to database record" className="text-[#D4A017] text-[9.5px] font-mono px-1 rounded bg-[#071120] border border-[#1C3B64]">
+                                  DB-LINKED
+                                </span>
+                              )}
+                            </div>
+                            <div className="text-[10px] font-mono text-slate-400 flex items-center gap-2 mt-0.5">
+                              <span className="text-[#D4A017] uppercase font-semibold">{item.role}</span>
+                              <span>•</span>
+                              <span className={item.status === 'confirmed' ? 'text-emerald-400 font-semibold' : 'text-amber-400 font-semibold'}>
+                                {item.status === 'confirmed' ? 'CONFIRMED' : 'HYPOTHESIS'}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Priority Score Display */}
+                        <div>
+                          {item.success && item.priority_score != null ? (
+                            <div className="flex flex-col items-end">
+                              <span className={`px-2.5 py-1 rounded text-xs font-mono font-extrabold flex items-center gap-1 border shadow-md ${
+                                item.priority_score >= 70
+                                  ? 'bg-rose-500/25 text-rose-300 border-rose-500/60'
+                                  : item.priority_score >= 40
+                                  ? 'bg-amber-500/25 text-amber-300 border-amber-500/60'
+                                  : 'bg-slate-800 text-slate-300 border-slate-700'
+                              }`}>
+                                <Sparkles className="w-3 h-3 text-[#D4A017]" />
+                                <span>SCORE: {item.priority_score}</span>
+                              </span>
+                              <span className="text-[9px] font-mono text-slate-400 mt-0.5">
+                                {item.priority_score >= 70 ? 'HIGH PRIORITY' : item.priority_score >= 40 ? 'MODERATE PRIORITY' : 'LOW PRIORITY'}
+                              </span>
+                            </div>
+                          ) : (
+                            <span className="px-2 py-1 bg-red-950/60 text-rose-300 border border-red-800 rounded text-[10px] font-mono">
+                              {item.error || 'Failed'}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Reasoning Inputs Grid (Raw feature values used for inference) */}
+                      {item.features && (
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 pt-2 border-t border-[#1C3B64]/60 text-[10px] font-mono">
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
+                            <div className="text-slate-400 text-[8.5px]">CENTRALITY</div>
+                            <div className="text-white font-bold">{item.features.network_centrality}</div>
+                          </div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
+                            <div className="text-slate-400 text-[8.5px]">CANVAS LINKS</div>
+                            <div className="text-white font-bold">{item.features.direct_connection_count} edges</div>
+                          </div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
+                            <div className="text-slate-400 text-[8.5px]">VERIFIED RATIO</div>
+                            <div className="text-emerald-400 font-bold">
+                              {Math.round(item.features.observed_vs_inferred_ratio * 100)}% verified
+                            </div>
+                          </div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
+                            <div className="text-slate-400 text-[8.5px]">ROLE WEIGHT</div>
+                            <div className="text-amber-400 font-bold">{item.features.role_weight}</div>
+                          </div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
+                            <div className="text-slate-400 text-[8.5px]">PRIOR CASES</div>
+                            <div className="text-white font-bold">{item.features.prior_case_count} case(s)</div>
+                          </div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
+                            <div className="text-slate-400 text-[8.5px]">MO SPREE MATCH</div>
+                            <div className={item.features.mo_case_match_flag ? 'text-rose-400 font-bold' : 'text-slate-400'}>
+                              {item.features.mo_case_match_flag ? 'Yes (Active Spree)' : 'No'}
+                            </div>
+                          </div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
+                            <div className="text-slate-400 text-[8.5px]">EVIDENCE LOGS</div>
+                            <div className="text-white font-bold">{item.features.evidence_count} justifications</div>
+                          </div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
+                            <div className="text-slate-400 text-[8.5px]">ALERTS</div>
+                            <div className="text-white font-bold">
+                              {item.features.alert_count} active
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-3 bg-[#071120] border-t border-[#1C3B64] flex items-center justify-between flex-shrink-0">
+              <span className="text-[10px] font-mono text-slate-400">
+                Inference Model: XGBoost Regressor (10 features)
               </span>
-            </div>
-
-            <div className="space-y-2.5 text-xs font-sans">
-              <div className="p-3 bg-[#0E223D] rounded border border-[#1C3B64] space-y-1.5">
-                <div className="flex justify-between font-mono text-[11px]">
-                  <span className="text-slate-400">Total Working Cards:</span>
-                  <span className="text-white font-bold">{nodes.length}</span>
-                </div>
-                <div className="flex justify-between font-mono text-[11px]">
-                  <span className="text-slate-400">Verified Documentary Nodes:</span>
-                  <span className="text-emerald-400 font-bold">{confirmedCount}</span>
-                </div>
-                <div className="flex justify-between font-mono text-[11px]">
-                  <span className="text-slate-400">Investigator Speculative Leads:</span>
-                  <span className="text-amber-400 font-bold">{hypothesisCount}</span>
-                </div>
-                <div className="flex justify-between font-mono text-[11px]">
-                  <span className="text-slate-400">Justified Hypothesis Links:</span>
-                  <span className="text-[#D4A017] font-bold">{justifiedEdgesCount} of {edges.length}</span>
-                </div>
-              </div>
-
-              <div className="p-3 bg-[#071120] rounded border border-[#1C3B64] space-y-1 text-[11px]">
-                <div className="text-[#D4A017] font-bold font-mono">
-                  ✦ Canvas Explicit Hypothesis Weight: +14% Boost
-                </div>
-                <p className="text-slate-300 leading-relaxed">
-                  Officer VK's manual justifications for burner phone hops and safe-cracking tool marks correlate with existing NCORD intelligence clusters.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex justify-end pt-1">
               <button
                 onClick={() => setIsAnalyzeModalOpen(false)}
-                className="px-4 py-1.5 rounded bg-[#D4A017] text-[#0A192F] font-bold text-xs hover:bg-[#F59E0B]"
+                className="px-4 py-1.5 rounded bg-[#D4A017] text-[#0A192F] font-bold text-xs hover:bg-[#F59E0B] transition-colors"
               >
-                Close Analysis
+                Close Dossier
               </button>
             </div>
           </div>
