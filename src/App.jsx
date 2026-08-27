@@ -12,7 +12,10 @@ import MOSimilarity from './pages/MOSimilarity';
 import CaseCanvas from './pages/CaseCanvas';
 
 function ProtectedRoute({ children }) {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
+  if (isLoading) {
+    return <div className="min-h-screen bg-[#0A192F] flex items-center justify-center text-white">Loading secure session...</div>;
+  }
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }

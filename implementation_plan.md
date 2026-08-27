@@ -1,59 +1,38 @@
-# Real FIR Ingestion & NLP Pipeline Implementation Plan
+# Priority Model Hardening & Training Pipeline Plan
 
-This plan outlines the architecture for replacing the mocked FIR ingestion pipeline with a robust, backend-driven NLP pipeline using FastAPI and LLM-based structured extraction.
-
-## User Review Required
-
-> [!IMPORTANT]
-> - **LLM Integration:** I will implement the extraction using standard tools (e.g., `google-genai` or `openai` python package) to generate structured JSON from the FIR text. You will need to provide an API key in your `.env` for this to work end-to-end. If no key is provided, the backend will fail gracefully as per the requirements.
-> - **Schema Updates:** The current `supabase_schema.sql` does not include tables for `document_chunks` or `extraction_spans` as requested in the requirements. I will append these tables to the schema and migration script to satisfy the Evidence Spans requirement.
-
-## Open Questions
-
-> [!WARNING]
-> - Should I use `google-genai` or the `openai` python SDK for the LLM extraction logic in the backend?
-> - For OCR on images, is it acceptable to use `pytesseract`, which requires the Tesseract system binary to be installed on the host?
+This plan addresses the silent fallback issue in the Priority Model service by enforcing strict model loading constraints and introducing a reproducible training pipeline.
 
 ## Proposed Changes
 
-### Backend Architecture (`priority-model-service`)
+### 1. Ground Truth Storage
+Following the established pattern in the project, I will implement a dedicated JSON file for ground truth rather than overloading the database schema.
+- **[NEW] `data/ground_truth/priority_labels.json`**: Will store an array of objects mapping `person_id` to a target `priority_score` (0-100) and the array of features for training.
 
-#### [MODIFY] [main.py](file:///c:/Users/ASUS/Desktop/Netra%20ai/priority-model-service/main.py)
-- Include a new router for `/api/fir/ingest`.
-- Expose WebSocket or Server-Sent Events (SSE) endpoint `/api/fir/ingest/status` to stream real-time pipeline status (UPLOADING, EXTRACTING, ANALYZING, SAVING, COMPLETED, FAILED).
+### 2. Service Hardening (`priority-model-service/main.py`)
+- **Startup Validation**: The application startup hook will validate the presence of `suspect_priority_model.joblib` and `feature_order.json`. If missing or corrupt, it will set an internal `model_status = "UNAVAILABLE"` state.
+- **Strict Default Behavior**: If `model_status == "UNAVAILABLE"`, the `/score` endpoint will return an `HTTP 503` with `{"error": "MODEL_UNAVAILABLE", "message": "Priority model unavailable"}`.
+- **Heuristic Fallback Configuration**: Introduce an environment variable `ALLOW_HEURISTIC_FALLBACK` (defaults to `false`). Only if explicitly set to `"true"`, the `/score` endpoint will use `fallback_priority_calculation()`.
+- **Response Schema Enrichment**: `SuspectScoreResponse` will be expanded to include:
+  - `priority_score`
+  - `model_name` (e.g., "CIU-XGBoost-Priority")
+  - `model_version` (e.g., "1.0")
+  - `feature_version`
+  - `generated_at` (ISO-8601 timestamp)
+  - `model_mode` (will output `"fallback_heuristic"` if the fallback is active)
 
-#### [NEW] [ingestion.py](file:///c:/Users/ASUS/Desktop/Netra%20ai/priority-model-service/ingestion.py)
-- Handle file uploads (PDF, TXT, Image).
-- Implement PDF extraction (via `pdfplumber` or `PyPDF2`).
-- Implement OCR (via `pytesseract`).
-- Define the `Pydantic` schema for the LLM output (matching Person, Phone, Vehicle, MO attributes, etc.).
-- Implement LLM call with structured JSON output enforcement.
-- Validate LLM output rigorously, rejecting malformed structures.
-- Map extracted entities to the Supabase database (Cases, Persons, Roles, Evidence).
-- Generate evidence spans and text snippets to link extracted entities back to the source text.
+### 3. Training Pipeline (`priority-model-service/train_model.py`)
+- **[NEW] `train_model.py`**: A dedicated Python script using `xgboost` and `scikit-learn` to:
+  1. Load data from `data/ground_truth/priority_labels.json`.
+  2. Parse features strictly according to `model/feature_order.json`.
+  3. Perform an 80/20 train/test split.
+  4. Train an `XGBRegressor`.
+  5. Evaluate against a baseline RMSE (e.g., must be `< 15.0`).
+  6. Serialize and save the model to `model/suspect_priority_model.joblib` *only* if the threshold is beaten and `--dry-run` is not active.
 
-### Database Updates
+### 4. Documentation
+- **[MODIFY] `priority-model-service/README.md`**: Add instructions on how to use `train_model.py` (including `--dry-run`), when to retrain (e.g., upon ground truth updates), and how to configure `ALLOW_HEURISTIC_FALLBACK` for local development.
 
-#### [MODIFY] [supabase_schema.sql](file:///c:/Users/ASUS/Desktop/Netra%20ai/supabase_schema.sql)
-- Append `document_chunks` and `extraction_spans` tables to track exact offsets and snippets for every extracted entity, satisfying the "Where did this entity come from?" requirement.
-
-### Frontend Updates
-
-#### [MODIFY] [FIRUploadModal.jsx](file:///c:/Users/ASUS/Desktop/Netra%20ai/src/components/ingestion/FIRUploadModal.jsx)
-- Remove `setTimeout` fake delays.
-- Change `handleProcessExtraction` to `POST` the raw text or uploaded file to the FastAPI backend using `FormData`.
-- Listen to backend SSE/polling for real-time status updates instead of hardcoded state steps.
-- Render the final result directly from the backend response.
-
-## Verification Plan
-
-### Automated Tests
-- Create Python unit tests (`test_ingestion.py`) testing:
-  - `test_fir_text_extraction`
-  - `test_structured_extraction` (using mocked LLM JSON)
-  - `test_invalid_llm_output` (ensuring Pydantic catches bad types)
-  - `test_database_persistence`
-
-### Manual Verification
-- Upload a real test FIR via the UI.
-- Verify the backend extracts the text, analyzes it via the LLM, saves it to Supabase, and the UI displays the structured result with 100% real data.
+## User Review Required
+> [!IMPORTANT]
+> - Ground truth labels will be stored in `data/ground_truth/priority_labels.json`. Does this path and format work for your CI/CD pipeline?
+> - The minimum performance threshold for the model to be saved is proposed as an RMSE `< 15.0`. Is this acceptable, or would you prefer a different metric (like R² or MAE)?

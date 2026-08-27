@@ -3,6 +3,7 @@ import json
 import logging
 from contextlib import asynccontextmanager
 from typing import List, Optional
+from datetime import datetime, timezone
 
 import joblib
 import numpy as np
@@ -26,24 +27,13 @@ FEATURE_ORDER_PATH = os.path.join(MODEL_DIR, "feature_order.json")
 # Global state loaded once at startup
 loaded_model = None
 feature_order: List[str] = []
+model_status = "OK"
 
-DEFAULT_FEATURE_ORDER = [
-    "network_centrality",
-    "direct_connection_count",
-    "observed_vs_inferred_ratio",
-    "avg_relationship_confidence",
-    "role_weight",
-    "prior_case_count",
-    "mo_case_match_flag",
-    "evidence_count",
-    "alert_count",
-    "avg_alert_confidence"
-]
-
+ALLOW_HEURISTIC_FALLBACK = os.getenv("ALLOW_HEURISTIC_FALLBACK", "false").lower() == "true"
 
 def load_model_and_features():
     """Load model artifact and feature sequence once at application startup."""
-    global loaded_model, feature_order
+    global loaded_model, feature_order, model_status
 
     # 1. Load Feature Order
     feature_paths = [
@@ -61,8 +51,9 @@ def load_model_and_features():
                 logger.warning("Could not parse %s (%s)", p, e)
 
     if not feature_order:
-        logger.info("feature_order.json not found, initializing default sequence")
-        feature_order = DEFAULT_FEATURE_ORDER
+        logger.error("CRITICAL: feature_order.json not found or invalid.")
+        model_status = "UNAVAILABLE"
+        return
 
     # 2. Load Model Artifact (joblib)
     model_paths = [
@@ -73,15 +64,21 @@ def load_model_and_features():
         if os.path.exists(p):
             try:
                 loaded_model = joblib.load(p)
+                # Quick shape check if possible
+                if hasattr(loaded_model, "n_features_in_") and loaded_model.n_features_in_ != len(feature_order):
+                    logger.error("CRITICAL: Model expects %d features, but %d are provided in feature_order.json", 
+                                 loaded_model.n_features_in_, len(feature_order))
+                    loaded_model = None
+                    model_status = "UNAVAILABLE"
+                    return
                 logger.info("✓ Successfully loaded Suspect Priority Model artifact from %s", p)
                 break
             except Exception as e:
                 logger.error("Failed to load model file at %s: %s", p, e)
 
     if loaded_model is None:
-        logger.warning(
-            "Model artifact 'suspect_priority_model.joblib' not found in model/ or root. Running in calibrated fallback mode."
-        )
+        logger.error("CRITICAL: Model artifact 'suspect_priority_model.joblib' not found or failed to load.")
+        model_status = "UNAVAILABLE"
 
 
 @asynccontextmanager
@@ -89,6 +86,8 @@ async def lifespan(app: FastAPI):
     """Application Lifespan Event: Pre-load model & features at startup."""
     logger.info("Initializing Suspect Priority Score Microservice...")
     load_model_and_features()
+    if model_status == "UNAVAILABLE" and not ALLOW_HEURISTIC_FALLBACK:
+        logger.warning("Service starting in degraded UNAVAILABLE state with no heuristic fallback.")
     yield
     logger.info("Shutting down Suspect Priority Score Microservice.")
 
@@ -112,7 +111,9 @@ app.add_middleware(
 )
 
 from ingestion import router as ingestion_router
+from embedder import router as embedder_router
 app.include_router(ingestion_router)
+app.include_router(embedder_router)
 
 
 # -----------------------------------------------------------------------------
@@ -202,6 +203,11 @@ class SuspectScoreResponse(BaseModel):
         ...,
         description="Calculated suspect priority score rounded to 1 decimal place (0.0 to 100.0)"
     )
+    model_name: str = Field(..., description="Name of the model used to compute the score")
+    model_version: str = Field(..., description="Version of the model")
+    feature_version: str = Field(..., description="Version/Hash of the feature schema used")
+    generated_at: str = Field(..., description="ISO-8601 timestamp of score generation")
+    model_mode: str = Field(..., description="Either 'production' or 'fallback_heuristic'")
 
 
 # -----------------------------------------------------------------------------
@@ -231,12 +237,16 @@ def fallback_priority_calculation(features_dict: dict) -> float:
 @app.get("/health", status_code=status.HTTP_200_OK)
 def health_check():
     """Health check endpoint for monitoring, deployment, and status checks."""
+    if model_status == "UNAVAILABLE" and not ALLOW_HEURISTIC_FALLBACK:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail="Model unavailable")
+        
     return {
-        "status": "ok",
+        "status": "ok" if model_status == "OK" else "degraded",
         "service": "Suspect Priority Scoring Microservice",
         "model_loaded": bool(loaded_model is not None),
         "model_path": MODEL_PATH,
-        "feature_count": len(feature_order) if feature_order else len(DEFAULT_FEATURE_ORDER)
+        "feature_count": len(feature_order) if feature_order else 0,
+        "fallback_enabled": ALLOW_HEURISTIC_FALLBACK
     }
 
 
@@ -246,33 +256,54 @@ def compute_priority_score(payload: SuspectScoreRequest):
     Compute suspect priority score from 10 feature values.
     Validates input schema and passes aligned feature vector to the loaded model.
     """
-    features_dict = payload.model_dump()
-
-    # Determine ordered feature vector
-    active_order = feature_order if feature_order else DEFAULT_FEATURE_ORDER
-    ordered_values = [features_dict[f] for f in active_order if f in features_dict]
-
-    if len(ordered_values) != len(active_order):
+    if model_status == "UNAVAILABLE" and not ALLOW_HEURISTIC_FALLBACK:
         raise HTTPException(
-            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-            detail=f"Missing feature values. Expected {len(active_order)} features, got {len(ordered_values)}"
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail={"error": "MODEL_UNAVAILABLE", "message": "Priority model unavailable"}
         )
 
+    features_dict = payload.model_dump()
+    active_order = feature_order
+    
+    if not active_order:
+        active_order = list(features_dict.keys()) # Just to not fail if fallback is allowed but order is missing
+
+    ordered_values = [features_dict.get(f, 0.0) for f in active_order]
+
+    model_mode = "production"
+    final_score = 0.0
+
     # Inference using loaded model artifact
-    if loaded_model is not None:
+    if loaded_model is not None and model_status == "OK":
         try:
             X = np.array([ordered_values], dtype=np.float32)
             prediction = loaded_model.predict(X)
-            # If model returns array or scalar
             score_val = float(prediction[0]) if hasattr(prediction, "__getitem__") else float(prediction)
             final_score = float(np.clip(score_val, 0.0, 100.0))
         except Exception as e:
-            logger.error("Error during model inference: %s. Falling back to calibrated computation.", e)
-            final_score = fallback_priority_calculation(features_dict)
+            logger.error("Error during model inference: %s.", e)
+            if ALLOW_HEURISTIC_FALLBACK:
+                logger.warning("Falling back to calibrated computation.")
+                final_score = fallback_priority_calculation(features_dict)
+                model_mode = "fallback_heuristic"
+            else:
+                raise HTTPException(
+                    status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                    detail={"error": "MODEL_INFERENCE_FAILED", "message": "Failed to compute score."}
+                )
     else:
+        # Fallback explicitly allowed
         final_score = fallback_priority_calculation(features_dict)
+        model_mode = "fallback_heuristic"
 
-    return SuspectScoreResponse(priority_score=round(final_score, 1))
+    return SuspectScoreResponse(
+        priority_score=round(final_score, 1),
+        model_name="CIU-XGBoost-Priority",
+        model_version="1.0" if model_mode == "production" else "fallback",
+        feature_version=str(len(active_order)),
+        generated_at=datetime.now(timezone.utc).isoformat(),
+        model_mode=model_mode
+    )
 
 
 if __name__ == "__main__":

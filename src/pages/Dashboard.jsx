@@ -128,8 +128,9 @@ export default function Dashboard() {
   ];
 
   // Separate AI findings into 1 Featured Card and 2 Secondary Cards
-  const featuredFinding = metrics.aiFindings[0];
-  const secondaryFindings = metrics.aiFindings.slice(1);
+  const aiFindingsList = metrics?.aiFindings || [];
+  const featuredFinding = aiFindingsList[0];
+  const secondaryFindings = aiFindingsList.slice(1);
 
   return (
     <div className="space-y-4 max-w-7xl mx-auto">
@@ -374,7 +375,7 @@ export default function Dashboard() {
             </div>
 
             {/* Selected Hotspot Intelligence Brief with Heat-Intensity Meter */}
-            {selectedHotspot && (
+            {selectedHotspot ? (
               <div className="p-3 bg-[#F8FAFC] rounded border border-[#CBD5E1] text-xs">
                 <div className="flex items-center justify-between font-bold text-[#0A192F]">
                   <div className="flex items-center gap-1.5">
@@ -417,6 +418,10 @@ export default function Dashboard() {
                   </button>
                 </div>
               </div>
+            ) : (
+              <div className="p-3 bg-[#F8FAFC] rounded border border-[#CBD5E1] text-xs text-center text-slate-500 font-mono">
+                No active hotspot sectors detected.
+              </div>
             )}
           </div>
         </div>
@@ -436,105 +441,115 @@ export default function Dashboard() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
-          {/* FEATURED PRIMARY FINDING (Large Asymmetric Layout - 7 Cols) */}
-          {featuredFinding && (
-            <div className="lg:col-span-7 bg-white rounded-md border-2 border-[#D4A017]/40 shadow-sm p-4 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-                  <div className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded bg-[#FEF3C7] text-[#92400E] font-mono font-bold text-[10px] border border-[#FCD34D]">
-                      FEATURED CORRELATION
-                    </span>
-                    <span className="text-[10px] font-mono text-slate-500">ID: {featuredFinding.id}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-[11px] font-mono font-bold text-[#92400E]">
-                    <span>{featuredFinding.confidence}% Confidence</span>
-                  </div>
-                </div>
-
-                <h3 className="text-sm font-bold text-[#0A192F] mt-2.5">
-                  {featuredFinding.finding}
-                </h3>
-
-                {/* Multi-Step Correlation Vector Flow Diagram */}
-                <div className="my-3 p-2.5 bg-[#0A192F] rounded border border-[#132B4C] text-white">
-                  <span className="text-[9px] font-mono uppercase text-[#D4A017] font-bold block mb-1.5">
-                    Multi-Hop Vector Correlation
-                  </span>
-                  <div className="flex items-center justify-between text-[10px] font-mono gap-1 text-slate-200">
-                    <span className="px-2 py-1 rounded bg-[#132B4C] border border-[#1C3B64] truncate">
-                      Bandra BKC Cell
-                    </span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#D4A017] flex-shrink-0" />
-                    <span className="px-2 py-1 rounded bg-[#132B4C] border border-[#1C3B64] truncate">
-                      Burner Hop #8801
-                    </span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#D4A017] flex-shrink-0" />
-                    <span className="px-2 py-1 rounded bg-[#132B4C] border border-[#1C3B64] truncate">
-                      Dharavi MD Godown
-                    </span>
-                  </div>
-                </div>
-
-                <div className="text-xs text-slate-700 bg-amber-50/50 p-2.5 rounded border border-amber-200">
-                  <strong className="text-[#92400E]">Forensic Proof:</strong> {featuredFinding.evidence}
-                </div>
-              </div>
-
-              <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs font-mono font-bold text-slate-700">
-                  Linked FIR: {featuredFinding.caseId}
-                </span>
-                <button
-                  onClick={() => navigate(`/graph?case_id=${featuredFinding.caseId}`)}
-                  className="px-3 py-1 bg-[#0A192F] hover:bg-[#132B4C] text-white font-semibold text-xs rounded transition-colors flex items-center gap-1.5"
-                >
-                  <span>Inspect in Geospatial Network</span>
-                  <ChevronRight className="w-3 h-3 text-[#D4A017]" />
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* SECONDARY FINDINGS (Compact List Stack - 5 Cols) */}
-          <div className="lg:col-span-5 flex flex-col gap-3">
-            {secondaryFindings.map((finding) => (
-              <div
-                key={finding.id}
-                className="bg-white rounded-md border border-[#E2E8F0] shadow-sm p-3.5 flex-1 flex flex-col justify-between hover:border-[#CBD5E1] transition-all"
-              >
+        {aiFindingsList.length > 0 ? (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
+            {/* FEATURED PRIMARY FINDING (Large Asymmetric Layout - 7 Cols) */}
+            {featuredFinding && (
+              <div className="lg:col-span-7 bg-white rounded-md border-2 border-[#D4A017]/40 shadow-sm p-4 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[9px] font-mono font-bold px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 uppercase">
-                      HEURISTIC PATTERN
-                    </span>
-                    <span className="text-[10.5px] font-mono font-bold text-[#92400E]">
-                      {finding.confidence}% Conf
-                    </span>
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                    <div className="flex items-center gap-2">
+                      <span className="px-2 py-0.5 rounded bg-[#FEF3C7] text-[#92400E] font-mono font-bold text-[10px] border border-[#FCD34D]">
+                        FEATURED CORRELATION
+                      </span>
+                      <span className="text-[10px] font-mono text-slate-500">ID: {featuredFinding.id || featuredFinding.finding_id}</span>
+                    </div>
+                    <div className="flex items-center gap-1 text-[11px] font-mono font-bold text-[#92400E]">
+                      <span>{featuredFinding.confidence}% Confidence</span>
+                    </div>
                   </div>
-                  <h4 className="text-xs font-bold text-[#0A192F] leading-snug">
-                    {finding.finding}
-                  </h4>
-                  <div className="mt-1.5 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-200">
-                    <strong className="text-slate-800">Evidence:</strong> {finding.evidence}
+
+                  <h3 className="text-sm font-bold text-[#0A192F] mt-2.5">
+                    {featuredFinding.finding || featuredFinding.title}
+                  </h3>
+
+                  {/* Multi-Step Correlation Vector Flow Diagram */}
+                  <div className="my-3 p-2.5 bg-[#0A192F] rounded border border-[#132B4C] text-white">
+                    <span className="text-[9px] font-mono uppercase text-[#D4A017] font-bold block mb-1.5">
+                      Multi-Hop Vector Correlation
+                    </span>
+                    <div className="flex items-center justify-between text-[10px] font-mono gap-1 text-slate-200">
+                      <span className="px-2 py-1 rounded bg-[#132B4C] border border-[#1C3B64] truncate">
+                        {featuredFinding.caseId || featuredFinding.case_id || 'Case Lead'}
+                      </span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#D4A017] flex-shrink-0" />
+                      <span className="px-2 py-1 rounded bg-[#132B4C] border border-[#1C3B64] truncate">
+                        {featuredFinding.finding_type || 'Graph Conduit'}
+                      </span>
+                      <ArrowRight className="w-3.5 h-3.5 text-[#D4A017] flex-shrink-0" />
+                      <span className="px-2 py-1 rounded bg-[#132B4C] border border-[#1C3B64] truncate">
+                        {featuredFinding.confidence}% Verified
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="text-xs text-slate-700 bg-amber-50/50 p-2.5 rounded border border-amber-200">
+                    <strong className="text-[#92400E]">Forensic Proof:</strong> {featuredFinding.evidence || featuredFinding.description}
                   </div>
                 </div>
 
-                <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
-                  <span className="font-mono text-[10px] text-slate-500">{finding.caseId}</span>
+                <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-slate-700">
+                    Linked FIR: {featuredFinding.caseId || featuredFinding.case_id}
+                  </span>
                   <button
-                    onClick={() => navigate(`/cases?id=${finding.caseId}`)}
-                    className="font-bold text-[#B45309] hover:underline flex items-center gap-0.5 text-xs"
+                    onClick={() => navigate(`/graph?case_id=${featuredFinding.caseId || featuredFinding.case_id}`)}
+                    className="px-3 py-1 bg-[#0A192F] hover:bg-[#132B4C] text-white font-semibold text-xs rounded transition-colors flex items-center gap-1.5"
                   >
-                    <span>View Dossier</span>
-                    <ChevronRight className="w-3 h-3" />
+                    <span>Inspect in Geospatial Network</span>
+                    <ChevronRight className="w-3 h-3 text-[#D4A017]" />
                   </button>
                 </div>
               </div>
-            ))}
+            )}
+
+            {/* SECONDARY FINDINGS (Compact List Stack - 5 Cols) */}
+            <div className="lg:col-span-5 flex flex-col gap-3">
+              {secondaryFindings.map((finding) => (
+                <div
+                  key={finding.id || finding.finding_id}
+                  className="bg-white rounded-md border border-[#E2E8F0] shadow-sm p-3.5 flex-1 flex flex-col justify-between hover:border-[#CBD5E1] transition-all"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-[9px] font-mono font-bold px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 uppercase">
+                        {finding.finding_type || 'HEURISTIC PATTERN'}
+                      </span>
+                      <span className="text-[10.5px] font-mono font-bold text-[#92400E]">
+                        {finding.confidence}% Conf
+                      </span>
+                    </div>
+                    <h4 className="text-xs font-bold text-[#0A192F] leading-snug">
+                      {finding.finding || finding.title}
+                    </h4>
+                    <div className="mt-1.5 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-200">
+                      <strong className="text-slate-800">Evidence:</strong> {finding.evidence || finding.description}
+                    </div>
+                  </div>
+
+                  <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                    <span className="font-mono text-[10px] text-slate-500">{finding.caseId || finding.case_id}</span>
+                    <button
+                      onClick={() => navigate(`/cases?id=${finding.caseId || finding.case_id}`)}
+                      className="font-bold text-[#B45309] hover:underline flex items-center gap-0.5 text-xs"
+                    >
+                      <span>View Dossier</span>
+                      <ChevronRight className="w-3 h-3" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="bg-white rounded-md border border-[#E2E8F0] p-6 text-center shadow-sm">
+            <Sparkles className="w-8 h-8 text-slate-300 mx-auto mb-2" />
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700">No AI Inferred Findings Available Yet</h3>
+            <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto">
+              Run the link-prediction, anomaly detection, or MO similarity pipeline to generate live tactical intelligence findings.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

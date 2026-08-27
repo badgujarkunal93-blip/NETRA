@@ -6,30 +6,37 @@ import { useAuth } from '../context/AuthContext';
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
-  const [email, setEmail] = useState('vikram.kadam@mumbaipolice.gov.in');
-  const [password, setPassword] = useState('••••••••••••');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError('');
 
-    setTimeout(() => {
+    try {
       if (email && password) {
-        login(email, password);
+        await login(email, password);
         navigate('/dashboard');
       } else {
-        setError('Please provide authorized investigator credentials');
-        setLoading(false);
+        setError('Please provide email and password');
       }
-    }, 300);
-  };
-
-  const handleDemoFill = () => {
-    setEmail('vikram.kadam@mumbaipolice.gov.in');
-    setPassword('CIU_SECURE_AUTH_2026');
+    } catch (err) {
+      let message = "Sign-in failed — please try again";
+      const errMsg = err.message || '';
+      
+      if (errMsg.includes('Invalid login credentials')) {
+        message = "Invalid email or password";
+      } else if (errMsg.includes('Account not authorized')) {
+        message = "Account not authorized — contact CIU admin.";
+      }
+      
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -47,7 +54,7 @@ export default function Login() {
               MUMBAI POLICE — CRIMINAL INTELLIGENCE UNIT
             </div>
             <div className="text-[10px] text-slate-400 font-mono tracking-tight uppercase">
-              Government of Maharashtra • Law Enforcement Portal
+              Government of Maharashtra — Law Enforcement Portal
             </div>
           </div>
         </div>
@@ -106,7 +113,7 @@ export default function Login() {
 
             <div>
               <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">
-                Security Passkey
+                Password
               </label>
               <div className="relative">
                 <Key className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
@@ -115,7 +122,7 @@ export default function Login() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter security token"
+                  placeholder="Enter password"
                   className="w-full pl-8 pr-3 py-2 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded focus:outline-none focus:border-[#0A192F] focus:ring-1 focus:ring-[#0A192F] text-[#0F172A] font-sans"
                 />
               </div>
@@ -136,20 +143,6 @@ export default function Login() {
               )}
             </button>
           </form>
-
-          {/* Quick Demo Autofill button */}
-          <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
-            <span className="text-slate-500 font-mono text-[10px]">
-              Insp. Vikram Kadam (#4029)
-            </span>
-            <button
-              type="button"
-              onClick={handleDemoFill}
-              className="font-bold text-[#B45309] hover:underline transition-colors"
-            >
-              Demo Auto-Fill
-            </button>
-          </div>
         </div>
       </div>
 
