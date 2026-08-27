@@ -1,23 +1,26 @@
-import { supabase, isSupabaseConfigured } from './supabaseClient.js';
+import { localDB } from './localData.js';
 
 export const entitiesService = {
   async getPersons(filters = {}) {
-    if (!isSupabaseConfigured) throw new Error("Data service unavailable");
-    let query = supabase.from('persons').select('*');
-    
+    let rows = [...localDB.persons];
+
     if (filters.search) {
-      query = query.or(`canonical_name.ilike.%${filters.search}%,id.ilike.%${filters.search}%`);
+      const q = filters.search.toLowerCase();
+      rows = rows.filter(p =>
+        (p.canonical_name || '').toLowerCase().includes(q) ||
+        (p.id || '').toLowerCase().includes(q) ||
+        (p.aliases || []).some(a => a.toLowerCase().includes(q))
+      );
     }
-    
-    const { data, error } = await query;
-    if (error) throw new Error(error.message);
-    return data || [];
+
+    if (filters.status_tag && filters.status_tag !== 'All') {
+      rows = rows.filter(p => p.status_tag === filters.status_tag);
+    }
+
+    return rows;
   },
 
   async getPersonById(id) {
-    if (!isSupabaseConfigured) throw new Error("Data service unavailable");
-    const { data, error } = await supabase.from('persons').select('*').eq('id', id).maybeSingle();
-    if (error) throw new Error(error.message);
-    return data;
+    return localDB.persons.find(p => p.id === id) || null;
   }
 };

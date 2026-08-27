@@ -137,11 +137,6 @@ export default function Dashboard() {
       {/* 1. CLEAN INSTITUTIONAL COMMAND CENTER HERO HEADER */}
       <div className="bg-[#0A192F] rounded-md p-4 text-white border border-[#132B4C] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
-          <img 
-            src="/app_logo.png" 
-            alt="CIU Command Crest" 
-            className="w-10 h-10 rounded object-contain bg-[#061121] p-1 border border-[#B45309]/80 shadow-md flex-shrink-0"
-          />
           <div>
             <h1 className="text-lg md:text-xl font-bold tracking-tight uppercase text-white">
               Investigator Command Center
@@ -151,6 +146,7 @@ export default function Dashboard() {
             </p>
           </div>
         </div>
+
 
         <div className="flex items-center gap-2.5">
           <button
@@ -169,7 +165,7 @@ export default function Dashboard() {
           <div
             key={idx}
             onClick={() => navigate(card.path)}
-            className="bg-white p-3.5 rounded-md border border-[#E2E8F0] shadow-sm hover:border-[#CBD5E1] transition-all cursor-pointer flex flex-col justify-between"
+            className="bg-white/30 backdrop-blur-[2px] p-3.5 rounded-md border border-[#E2E8F0] shadow-sm hover:border-[#CBD5E1] transition-all cursor-pointer flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between">
@@ -201,7 +197,7 @@ export default function Dashboard() {
       {/* 3. ASYMMETRIC MAIN SECTION: DOMINANT ALERTS FEED (7.5 Cols) & TACTICAL GIS MAP (4.5 Cols) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
         {/* LEFT: DOMINANT INTELLIGENCE ALERTS QUEUE (7 Cols) */}
-        <div className="lg:col-span-7 bg-white rounded-md border border-[#E2E8F0] shadow-sm overflow-hidden flex flex-col">
+        <div className="lg:col-span-7 bg-white/30 backdrop-blur-[2px] rounded-md border border-[#E2E8F0] shadow-sm overflow-hidden flex flex-col">
           {/* Header */}
           <div className="bg-[#0A192F] px-4 py-2.5 flex items-center justify-between text-white border-b border-[#132B4C]">
             <div className="flex items-center gap-2">
@@ -308,7 +304,7 @@ export default function Dashboard() {
         </div>
 
         {/* RIGHT: LIVE TACTICAL GIS HOTSPOT MAP (5 Cols) */}
-        <div className="lg:col-span-5 bg-white rounded-md border border-[#E2E8F0] shadow-sm overflow-hidden flex flex-col">
+        <div className="lg:col-span-5 bg-white/30 backdrop-blur-[2px] rounded-md border border-[#E2E8F0] shadow-sm overflow-hidden flex flex-col">
           {/* Header */}
           <div className="px-4 py-2.5 bg-[#0A192F] text-white border-b border-[#132B4C] flex items-center justify-between">
             <div className="flex items-center gap-2">
@@ -445,7 +441,7 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
             {/* FEATURED PRIMARY FINDING (Large Asymmetric Layout - 7 Cols) */}
             {featuredFinding && (
-              <div className="lg:col-span-7 bg-white rounded-md border-2 border-[#D4A017]/40 shadow-sm p-4 flex flex-col justify-between">
+              <div className="lg:col-span-7 bg-white/30 backdrop-blur-[2px] rounded-md border-2 border-[#D4A017]/40 shadow-sm p-4 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between pb-2 border-b border-slate-100">
                     <div className="flex items-center gap-2">
@@ -508,7 +504,7 @@ export default function Dashboard() {
               {secondaryFindings.map((finding) => (
                 <div
                   key={finding.id || finding.finding_id}
-                  className="bg-white rounded-md border border-[#E2E8F0] shadow-sm p-3.5 flex-1 flex flex-col justify-between hover:border-[#CBD5E1] transition-all"
+                  className="bg-white/30 backdrop-blur-[2px] rounded-md border border-[#E2E8F0] shadow-sm p-3.5 flex-1 flex flex-col justify-between hover:border-[#CBD5E1] transition-all"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-1.5">
@@ -542,7 +538,7 @@ export default function Dashboard() {
             </div>
           </div>
         ) : (
-          <div className="bg-white rounded-md border border-[#E2E8F0] p-6 text-center shadow-sm">
+          <div className="bg-white/30 backdrop-blur-[2px] rounded-md border border-[#E2E8F0] p-6 text-center shadow-sm">
             <Sparkles className="w-8 h-8 text-slate-300 mx-auto mb-2" />
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700">No AI Inferred Findings Available Yet</h3>
             <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto">
