@@ -46,6 +46,21 @@ function getTokenJaccard(a, b) {
   return intersection.size / union.size;
 }
 
+// Cosine similarity for semantic embeddings
+function getCosineSimilarity(vecA, vecB) {
+  if (!vecA || !vecB || vecA.length !== vecB.length || vecA.length === 0) return 0;
+  let dotProduct = 0;
+  let normA = 0;
+  let normB = 0;
+  for (let i = 0; i < vecA.length; i++) {
+    dotProduct += vecA[i] * vecB[i];
+    normA += vecA[i] * vecA[i];
+    normB += vecB[i] * vecB[i];
+  }
+  if (normA === 0 || normB === 0) return 0;
+  return Math.max(0, dotProduct / (Math.sqrt(normA) * Math.sqrt(normB))); // Clip to 0-1
+}
+
 // Haversine distance in kilometers between two GPS coordinates
 function getHaversineDistanceKm(lat1, lon1, lat2, lon2) {
   if (!lat1 || !lon1 || !lat2 || !lon2) return 20.0;
@@ -94,9 +109,9 @@ async function computeAIOutputs() {
   };
 
   // ---------------------------------------------------------------------------
-  // 1. COMPUTING MO SIMILARITY MATRIX WITH MULTI-SIGNAL TIE-BREAKING
+  // 1. COMPUTING MO SIMILARITY MATRIX WITH SEMANTIC + LEXICAL SCORING
   // ---------------------------------------------------------------------------
-  console.log('[1/5] Computing Modus Operandi (MO) Similarity Matrix (Multi-Signal Weighted Scoring)...');
+  console.log('[1/5] Computing Modus Operandi (MO) Similarity Matrix (Semantic + Lexical Scoring)...');
   const moList = baseData.mo_fingerprints;
   const casesMap = new Map(baseData.cases.map(c => [c.id, c]));
 
@@ -107,7 +122,43 @@ async function computeAIOutputs() {
     casePersons.get(pcr.case_id).add(pcr.person_id);
   });
 
+  // PRE-FETCH EMBEDDINGS FOR ALL MOs
+  console.log('      Fetching MO semantic embeddings from local Python API...');
+  const moTexts = moList.map(mo => 
+    `Target: ${mo.target}. Timing: ${mo.timing}. Entry: ${mo.entry_method}. Tools: ${mo.tools}. Transport: ${mo.transport}. Concealment: ${mo.concealment}. Action Sequence: ${mo.action_sequence}. Victim Interaction: ${mo.victim_interaction}. Exit: ${mo.exit_method}. Group: ${mo.group_behavior}`
+  );
+
+  let embeddingsUnavailable = false;
+  try {
+    const embedRes = await fetch('http://localhost:8000/api/mo/embed', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ texts: moTexts })
+    });
+    if (embedRes.ok) {
+      const data = await embedRes.json();
+      if (data.embeddings && data.embeddings.length === moList.length) {
+        moList.forEach((mo, idx) => {
+          mo.mo_embedding = data.embeddings[idx];
+        });
+        console.log(`      ✓ Successfully loaded semantic embeddings for ${moList.length} MOs.`);
+      } else {
+        embeddingsUnavailable = true;
+      }
+    } else {
+      console.warn(`      ⚠️ Failed to fetch embeddings: HTTP ${embedRes.status}. Marking embedding_unavailable.`);
+      embeddingsUnavailable = true;
+    }
+  } catch (err) {
+    console.warn(`      ⚠️ Embedder API unreachable: ${err.message}. Marking embedding_unavailable.`);
+    embeddingsUnavailable = true;
+  }
+
   const moMatches = [];
+
+  const WEIGHT_SEMANTIC = 0.50;
+  const WEIGHT_LEXICAL_EXACT = 0.25;
+  const WEIGHT_JACCARD = 0.25;
 
   for (let i = 0; i < Math.min(300, moList.length); i++) {
     for (let j = i + 1; j < Math.min(300, moList.length); j++) {
@@ -118,34 +169,62 @@ async function computeAIOutputs() {
 
       if (!caseA || !caseB) continue;
 
-      // 1. Base MO & Categorical Overlap (Weight: 50 pts max)
-      const isSameMajorHead = caseA.crime_major_head === caseB.crime_major_head;
-      const scoreMajorHead = isSameMajorHead ? 25 : getTokenJaccard(caseA.crime_major_head, caseB.crime_major_head) * 12;
-      const scoreTiming = getTokenJaccard(moA.timing, moB.timing) * 10;
-      const scoreTools = getTokenJaccard(moA.tools, moB.tools) * 10;
-      const scoreEntry = getTokenJaccard(moA.entry_method, moB.entry_method) * 5;
-      const baseMOScore = scoreMajorHead + scoreTiming + scoreTools + scoreEntry;
+      // 1. Semantic Embedding Similarity
+      let semanticSim = 0;
+      if (!embeddingsUnavailable && moA.mo_embedding && moB.mo_embedding) {
+        semanticSim = getCosineSimilarity(moA.mo_embedding, moB.mo_embedding);
+      }
 
-      // 2. Geospatial Proximity & Operating Corridor (Continuous Exponential Decay: 25 * exp(-distKm / 4))
+      // 2. Lexical / Categorical Similarities
+      const isSameMajorHead = caseA.crime_major_head === caseB.crime_major_head;
+      const exactHeadScore = isSameMajorHead ? 1.0 : 0.0;
+
+      const jaccardFields = [
+        getTokenJaccard(moA.target, moB.target),
+        getTokenJaccard(moA.timing, moB.timing),
+        getTokenJaccard(moA.entry_method, moB.entry_method),
+        getTokenJaccard(moA.tools, moB.tools),
+        getTokenJaccard(moA.transport, moB.transport),
+        getTokenJaccard(moA.action_sequence, moB.action_sequence)
+      ];
+      const avgJaccard = jaccardFields.reduce((a, b) => a + b, 0) / jaccardFields.length;
+
+      // Combine Core MO score (0.0 to 1.0)
+      let coreMOScore = 0;
+      if (!embeddingsUnavailable) {
+        coreMOScore = (semanticSim * WEIGHT_SEMANTIC) + 
+                      (exactHeadScore * WEIGHT_LEXICAL_EXACT) + 
+                      (avgJaccard * WEIGHT_JACCARD);
+      } else {
+        // Evaluate without semantic but maintain normalized scale
+        coreMOScore = (exactHeadScore * 0.5) + (avgJaccard * 0.5);
+      }
+      
+      const scoreMOPoints = coreMOScore * 50; // Max 50 points
+
+      // 3. Geospatial Proximity & Operating Corridor (Continuous Exponential Decay: 25 * exp(-distKm / 4))
       const distKm = getHaversineDistanceKm(caseA.latitude, caseA.longitude, caseB.latitude, caseB.longitude);
       const scoreSpatial = 25 * Math.exp(-distKm / 4.0);
 
-      // 3. Temporal Operating Window & Spree Recency (Continuous Exponential Decay: 20 * exp(-daysDiff / 8))
+      // 4. Temporal Operating Window & Spree Recency (Continuous Exponential Decay: 20 * exp(-daysDiff / 8))
       const daysDiff = getDaysDifference(caseA.registered_date, caseB.registered_date);
       const scoreTemporal = 20 * Math.exp(-daysDiff / 8.0);
 
-      // 4. Shared Graph Entities / Co-Accused (Weight: 15 pts max)
+      // 5. Shared Graph Entities / Co-Accused (Weight: 15 pts max)
       const personsA = casePersons.get(caseA.id) || new Set();
       const personsB = casePersons.get(caseB.id) || new Set();
       const sharedPersons = [...personsA].filter(p => personsB.has(p));
       const scoreSharedEntity = sharedPersons.length > 0 ? 15 : 0;
 
-      const rawTotal = baseMOScore + scoreSpatial + scoreTemporal + scoreSharedEntity;
+      const rawTotal = scoreMOPoints + scoreSpatial + scoreTemporal + scoreSharedEntity;
       const totalSimilarity = Math.round(rawTotal);
 
       if (totalSimilarity >= 70) {
         const matchingComponents = [];
-        if (isSameMajorHead) matchingComponents.push(`Crime Head (${caseA.crime_major_head})`);
+        if (isSameMajorHead) matchingComponents.push(`Crime Head: Exact Match (25.0)`);
+        if (!embeddingsUnavailable && semanticSim > 0) matchingComponents.push(`Semantic Match: ${(semanticSim*100).toFixed(1)}%`);
+        if (avgJaccard > 0) matchingComponents.push(`Lexical Jaccard Match: ${(avgJaccard*100).toFixed(1)}%`);
+        
         if (distKm <= 5.0) matchingComponents.push(`Spatial Proximity: Corridor Cluster (${distKm.toFixed(1)} km)`);
         else if (distKm <= 12.0) matchingComponents.push(`Spatial Proximity: Regional Sector (${distKm.toFixed(1)} km)`);
         
@@ -153,7 +232,6 @@ async function computeAIOutputs() {
         else if (daysDiff <= 45) matchingComponents.push(`Temporal Interval: ${daysDiff} Days`);
 
         if (scoreSharedEntity > 0) matchingComponents.push(`Shared Person of Interest (${sharedPersons[0]})`);
-        if (scoreTiming >= 8) matchingComponents.push(`Timing Window (${moA.timing.slice(0, 15)})`);
 
         moMatches.push({
           case_id_a: moA.case_id,
@@ -162,8 +240,9 @@ async function computeAIOutputs() {
           matching_components: matchingComponents.length > 0 ? matchingComponents : ['Crime Classification Overlap'],
           spatial_distance_km: Number(distKm.toFixed(2)),
           temporal_delta_days: daysDiff,
-          model_name: 'CIU-MO-WeightedJaccard-v1',
-          computed_at: new Date().toISOString()
+          model_name: 'CIU-MO-SemanticJaccard-v2',
+          computed_at: new Date().toISOString(),
+          embedding_unavailable: embeddingsUnavailable
         });
       }
     }

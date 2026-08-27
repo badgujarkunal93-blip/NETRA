@@ -5,13 +5,48 @@ export const casesService = {
     if (!isSupabaseConfigured) throw new Error("Data service unavailable");
     let query = supabase.from('cases').select('*');
     
+    // 1. Search filter across crime_no and brief_facts
     if (filters.search) {
       query = query.or(`crime_no.ilike.%${filters.search}%,brief_facts.ilike.%${filters.search}%`);
+    }
+
+    // 2. Category filter (column in cases table is crime_category)
+    const category = filters.crime_category || filters.category;
+    if (category && category !== 'All') {
+      query = query.eq('crime_category', category);
+    }
+
+    // 3. Status filter
+    if (filters.status && filters.status !== 'All') {
+      query = query.eq('status', filters.status);
+    }
+
+    // 4. Police Station filter
+    const station = filters.police_station || filters.station;
+    if (station && station !== 'All') {
+      query = query.eq('police_station', station);
+    }
+
+    // 5. Result limits & pagination
+    if (filters.limit) {
+      const limit = Number(filters.limit);
+      if (filters.offset !== undefined || filters.page !== undefined) {
+        const offset = filters.offset !== undefined 
+          ? Number(filters.offset) 
+          : (Number(filters.page || 1) - 1) * limit;
+        query = query.range(offset, offset + limit - 1);
+      } else {
+        query = query.limit(limit);
+      }
     }
     
     const { data, error } = await query;
     if (error) throw new Error(error.message);
     return data || [];
+  },
+
+  async getCases(filters = {}) {
+    return this.getAllCases(filters);
   },
   
   async getCaseById(id) {

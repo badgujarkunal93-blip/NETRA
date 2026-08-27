@@ -3,7 +3,31 @@
 -- Jurisdiction: Mumbai City Police (Pilot CIU)
 -- ============================================================================
 
+CREATE EXTENSION IF NOT EXISTS vector;
+
+-- ============================================================================
+-- MIGRATION NOTE & TABLE CLASSIFICATION
+-- ============================================================================
+-- This schema assumes `auth.users` entries are created via Supabase Auth.
+-- Every real officer must have a corresponding `officers` row before they can 
+-- read or write anything. RLS is strictly enforced using `auth.uid()`.
+--
+-- TABLE CATEGORIES:
+-- 1. SOURCE_DATA: cases, persons, phones, vehicles, accounts, organizations, locations, events, person_case_roles, fir_documents, case_canvases, canvas_nodes, canvas_edges, canvas_snapshots
+--    (SELECT: active officer, INSERT/UPDATE: investigator+, DELETE: admin)
+-- 2. INTELLIGENCE: relationships, mo_fingerprints, mo_similarities, evidence, evidence_links
+--    (SELECT: active officer, INSERT/UPDATE: analyst+, DELETE: admin)
+-- 3. MODEL_OUTPUT: entityresolutionoutput, networkcommunity, linkpredictionoutput, anomalydetectionoutput, alerts, rolepredictionoutput, document_chunks, extraction_spans
+--    (SELECT: active officer, INSERT/UPDATE: backend service role only (nobody via UI), DELETE: admin)
+-- 4. SECURITY: officers
+--    (SELECT: admin (or self-row), INSERT/UPDATE/DELETE: admin)
+-- 5. AUDIT: audit_logs
+--    (SELECT: supervisor+, INSERT: backend service role only, UPDATE/DELETE: Nobody)
+-- ============================================================================
+
 -- Drop existing tables if re-running
+DROP TABLE IF EXISTS audit_logs CASCADE;
+DROP TABLE IF EXISTS officers CASCADE;
 DROP TABLE IF EXISTS alerts CASCADE;
 DROP TABLE IF EXISTS mo_similarities CASCADE;
 DROP TABLE IF EXISTS mo_fingerprints CASCADE;
@@ -16,6 +40,30 @@ DROP TABLE IF EXISTS vehicles CASCADE;
 DROP TABLE IF EXISTS phones CASCADE;
 DROP TABLE IF EXISTS persons CASCADE;
 DROP TABLE IF EXISTS cases CASCADE;
+
+-- ============================================================================
+-- 0. SECURITY & AUDIT TABLES
+-- ============================================================================
+CREATE TABLE officers (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    auth_user_id UUID UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    badge TEXT NOT NULL,
+    role TEXT NOT NULL CHECK (role IN ('investigator', 'analyst', 'supervisor', 'admin')),
+    unit TEXT,
+    is_active BOOLEAN DEFAULT true
+);
+CREATE INDEX idx_officers_auth ON officers(auth_user_id);
+
+CREATE TABLE audit_logs (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    action_type TEXT NOT NULL,
+    target_table TEXT NOT NULL,
+    target_id TEXT NOT NULL,
+    actor_id UUID REFERENCES officers(id) ON DELETE SET NULL,
+    details JSONB,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
 
 -- 1. Cases
 CREATE TABLE cases (
@@ -136,7 +184,8 @@ CREATE TABLE mo_fingerprints (
     victim_interaction TEXT NOT NULL,
     exit_method TEXT NOT NULL,
     group_behavior TEXT NOT NULL,
-    confidence INTEGER NOT NULL CHECK (confidence BETWEEN 0 AND 100)
+    confidence INTEGER NOT NULL CHECK (confidence BETWEEN 0 AND 100),
+    mo_embedding vector(384)
 );
 
 -- 11. Locations
@@ -188,7 +237,7 @@ CREATE TABLE mo_similarities (
     matching_components TEXT[] NOT NULL
 );
 
--- 12. Alerts
+-- 15. Alerts
 CREATE TABLE alerts (
     id TEXT PRIMARY KEY,
     alert_type TEXT NOT NULL,
@@ -216,9 +265,8 @@ CREATE INDEX idx_alerts_severity ON alerts(severity);
 CREATE INDEX idx_alerts_status ON alerts(status);
 
 -- ============================================================================
--- 13. CASE CANVAS INVESTIGATIVE WHITEBOARD TABLES
+-- 16. CASE CANVAS INVESTIGATIVE WHITEBOARD TABLES
 -- ============================================================================
-
 CREATE TABLE case_canvases (
     id TEXT PRIMARY KEY,
     case_id TEXT NOT NULL REFERENCES cases(id) ON DELETE CASCADE,
@@ -261,9 +309,8 @@ CREATE INDEX idx_canvas_nodes_canvas ON canvas_nodes(canvas_id);
 CREATE INDEX idx_canvas_edges_canvas ON canvas_edges(canvas_id);
 
 -- ============================================================================
--- 14. COMPUTED AI OUTPUT TABLES
+-- 17. COMPUTED AI OUTPUT TABLES
 -- ============================================================================
-
 CREATE TABLE IF NOT EXISTS entityresolutionoutput (
     id TEXT PRIMARY KEY,
     candidate_person_id_a TEXT NOT NULL REFERENCES persons(id) ON DELETE CASCADE,
@@ -321,42 +368,8 @@ CREATE TABLE IF NOT EXISTS rolepredictionoutput (
 );
 
 -- ============================================================================
--- 15. PROTOTYPE ACCESS (DISABLE RLS FOR DEMO / ANON ACCESS)
+-- 18. NLP INGESTION EVIDENCE SPANS
 -- ============================================================================
-
-ALTER TABLE IF EXISTS cases DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS persons DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS phones DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS vehicles DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS accounts DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS organizations DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS locations DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS events DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS person_case_roles DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS relationships DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS mo_fingerprints DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS evidence DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS evidence_links DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS fir_documents DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS mo_similarities DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS alerts DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS entityresolutionoutput DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS networkcommunity DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS linkpredictionoutput DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS anomalydetectionoutput DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS rolepredictionoutput DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS case_canvases DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS canvas_nodes DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS canvas_edges DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS canvas_snapshots DISABLE ROW LEVEL SECURITY;
-
-
-
-
--- ============================================================================
--- 16. NLP INGESTION EVIDENCE SPANS
--- ============================================================================
-
 CREATE TABLE document_chunks (
     id TEXT PRIMARY KEY,
     document_id TEXT NOT NULL REFERENCES fir_documents(id) ON DELETE CASCADE,
@@ -380,8 +393,158 @@ CREATE TABLE extraction_spans (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
-ALTER TABLE IF EXISTS document_chunks DISABLE ROW LEVEL SECURITY;
-ALTER TABLE IF EXISTS extraction_spans DISABLE ROW LEVEL SECURITY;
-
 CREATE INDEX idx_document_chunks_doc ON document_chunks(document_id);
 CREATE INDEX idx_extraction_spans_doc ON extraction_spans(document_id);
+
+-- ============================================================================
+-- ============================================================================
+-- ROW LEVEL SECURITY POLICIES
+-- ============================================================================
+-- ============================================================================
+
+-- ENABLE RLS ON ALL TABLES
+ALTER TABLE officers ENABLE ROW LEVEL SECURITY;
+ALTER TABLE audit_logs ENABLE ROW LEVEL SECURITY;
+ALTER TABLE cases ENABLE ROW LEVEL SECURITY;
+ALTER TABLE persons ENABLE ROW LEVEL SECURITY;
+ALTER TABLE phones ENABLE ROW LEVEL SECURITY;
+ALTER TABLE vehicles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE accounts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE organizations ENABLE ROW LEVEL SECURITY;
+ALTER TABLE person_case_roles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE relationships ENABLE ROW LEVEL SECURITY;
+ALTER TABLE events ENABLE ROW LEVEL SECURITY;
+ALTER TABLE mo_fingerprints ENABLE ROW LEVEL SECURITY;
+ALTER TABLE locations ENABLE ROW LEVEL SECURITY;
+ALTER TABLE fir_documents ENABLE ROW LEVEL SECURITY;
+ALTER TABLE evidence ENABLE ROW LEVEL SECURITY;
+ALTER TABLE evidence_links ENABLE ROW LEVEL SECURITY;
+ALTER TABLE mo_similarities ENABLE ROW LEVEL SECURITY;
+ALTER TABLE alerts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE case_canvases ENABLE ROW LEVEL SECURITY;
+ALTER TABLE canvas_nodes ENABLE ROW LEVEL SECURITY;
+ALTER TABLE canvas_edges ENABLE ROW LEVEL SECURITY;
+ALTER TABLE canvas_snapshots ENABLE ROW LEVEL SECURITY;
+ALTER TABLE entityresolutionoutput ENABLE ROW LEVEL SECURITY;
+ALTER TABLE networkcommunity ENABLE ROW LEVEL SECURITY;
+ALTER TABLE linkpredictionoutput ENABLE ROW LEVEL SECURITY;
+ALTER TABLE anomalydetectionoutput ENABLE ROW LEVEL SECURITY;
+ALTER TABLE rolepredictionoutput ENABLE ROW LEVEL SECURITY;
+ALTER TABLE document_chunks ENABLE ROW LEVEL SECURITY;
+ALTER TABLE extraction_spans ENABLE ROW LEVEL SECURITY;
+
+-- ----------------------------------------------------------------------------
+-- SECURITY (officers)
+-- SELECT: self or admin. INSERT/UPDATE/DELETE: admin.
+-- ----------------------------------------------------------------------------
+CREATE POLICY "officers_select" ON officers FOR SELECT USING (
+    auth_user_id = auth.uid() OR
+    EXISTS (SELECT 1 FROM officers o WHERE o.auth_user_id = auth.uid() AND o.role = 'admin')
+);
+CREATE POLICY "officers_insert" ON officers FOR INSERT WITH CHECK (
+    EXISTS (SELECT 1 FROM officers o WHERE o.auth_user_id = auth.uid() AND o.role = 'admin')
+);
+CREATE POLICY "officers_update" ON officers FOR UPDATE USING (
+    EXISTS (SELECT 1 FROM officers o WHERE o.auth_user_id = auth.uid() AND o.role = 'admin')
+);
+CREATE POLICY "officers_delete" ON officers FOR DELETE USING (
+    EXISTS (SELECT 1 FROM officers o WHERE o.auth_user_id = auth.uid() AND o.role = 'admin')
+);
+
+-- ----------------------------------------------------------------------------
+-- AUDIT (audit_logs)
+-- SELECT: supervisor or admin. INSERT: backend only. UPDATE/DELETE: Nobody.
+-- ----------------------------------------------------------------------------
+CREATE POLICY "audit_logs_select" ON audit_logs FOR SELECT USING (
+    EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND role IN ('supervisor', 'admin') AND is_active = true)
+);
+-- No insert policy for users (UI cannot write to audit log, must be service role)
+-- No update/delete policy for users (immutable)
+
+-- ----------------------------------------------------------------------------
+-- HELPER: Define generic policy statements to avoid massive repetition
+-- We will apply these to each category.
+-- ----------------------------------------------------------------------------
+-- Note: In PostgreSQL, we cannot easily loop policy creation, so we write them explicitly.
+
+-- ============================================================================
+-- SOURCE_DATA POLICIES
+-- SELECT: active officer. INSERT/UPDATE: investigator, analyst, supervisor, admin. DELETE: admin.
+-- Tables: cases, persons, phones, vehicles, accounts, organizations, locations, events, person_case_roles, fir_documents, case_canvases, canvas_nodes, canvas_edges, canvas_snapshots
+-- ============================================================================
+DO $$
+DECLARE
+    t text;
+BEGIN
+    FOR t IN 
+        SELECT unnest(ARRAY['cases', 'persons', 'phones', 'vehicles', 'accounts', 'organizations', 'locations', 'events', 'person_case_roles', 'fir_documents', 'case_canvases', 'canvas_nodes', 'canvas_edges', 'canvas_snapshots'])
+    LOOP
+        EXECUTE format('
+            CREATE POLICY "%I_select" ON %I FOR SELECT USING (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND is_active = true)
+            );
+            CREATE POLICY "%I_insert" ON %I FOR INSERT WITH CHECK (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND role IN (''investigator'', ''analyst'', ''supervisor'', ''admin'') AND is_active = true)
+            );
+            CREATE POLICY "%I_update" ON %I FOR UPDATE USING (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND role IN (''investigator'', ''analyst'', ''supervisor'', ''admin'') AND is_active = true)
+            );
+            CREATE POLICY "%I_delete" ON %I FOR DELETE USING (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND role = ''admin'' AND is_active = true)
+            );
+        ', t, t, t, t, t, t, t, t);
+    END LOOP;
+END $$;
+
+-- ============================================================================
+-- INTELLIGENCE POLICIES
+-- SELECT: active officer. INSERT/UPDATE: analyst, supervisor, admin. DELETE: admin.
+-- Tables: relationships, mo_fingerprints, mo_similarities, evidence, evidence_links
+-- ============================================================================
+DO $$
+DECLARE
+    t text;
+BEGIN
+    FOR t IN 
+        SELECT unnest(ARRAY['relationships', 'mo_fingerprints', 'mo_similarities', 'evidence', 'evidence_links'])
+    LOOP
+        EXECUTE format('
+            CREATE POLICY "%I_select" ON %I FOR SELECT USING (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND is_active = true)
+            );
+            CREATE POLICY "%I_insert" ON %I FOR INSERT WITH CHECK (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND role IN (''analyst'', ''supervisor'', ''admin'') AND is_active = true)
+            );
+            CREATE POLICY "%I_update" ON %I FOR UPDATE USING (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND role IN (''analyst'', ''supervisor'', ''admin'') AND is_active = true)
+            );
+            CREATE POLICY "%I_delete" ON %I FOR DELETE USING (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND role = ''admin'' AND is_active = true)
+            );
+        ', t, t, t, t, t, t, t, t);
+    END LOOP;
+END $$;
+
+-- ============================================================================
+-- MODEL_OUTPUT POLICIES
+-- SELECT: active officer. INSERT/UPDATE: NONE (backend only). DELETE: admin.
+-- Tables: entityresolutionoutput, networkcommunity, linkpredictionoutput, anomalydetectionoutput, alerts, rolepredictionoutput, document_chunks, extraction_spans
+-- ============================================================================
+DO $$
+DECLARE
+    t text;
+BEGIN
+    FOR t IN 
+        SELECT unnest(ARRAY['entityresolutionoutput', 'networkcommunity', 'linkpredictionoutput', 'anomalydetectionoutput', 'alerts', 'rolepredictionoutput', 'document_chunks', 'extraction_spans'])
+    LOOP
+        EXECUTE format('
+            CREATE POLICY "%I_select" ON %I FOR SELECT USING (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND is_active = true)
+            );
+            CREATE POLICY "%I_delete" ON %I FOR DELETE USING (
+                EXISTS (SELECT 1 FROM officers WHERE auth_user_id = auth.uid() AND role = ''admin'' AND is_active = true)
+            );
+        ', t, t, t, t);
+        -- Intentionally omitting INSERT and UPDATE policies, ensuring only the service_role key can write to these.
+    END LOOP;
+END $$;
