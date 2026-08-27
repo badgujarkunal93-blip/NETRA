@@ -6,5 +6,13 @@ export default defineConfig({
   server: {
     port: 5173,
     host: true
+  },
+  // Allow large JSON data files (CCTNS dataset is ~11MB)
+  build: {
+    chunkSizeWarningLimit: 15000,
+  },
+  json: {
+    // Stringify large JSON to avoid memory issues
+    stringify: false
   }
 });

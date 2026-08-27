@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { dbService } from '../../services/db';
+import MumbaiMapBackground from './MumbaiMapBackground';
 
 export default function AppShell() {
   const { user, logout } = useAuth();
@@ -91,7 +92,7 @@ export default function AppShell() {
   return (
     <div className="flex h-screen bg-[#F1F5F9] overflow-hidden select-none">
       {/* 1. DEEP NAVY INSTITUTIONAL SIDEBAR */}
-      <aside className="w-60 bg-[#0A192F] text-slate-300 flex flex-col justify-between border-r border-[#132B4C] z-30 flex-shrink-0">
+      <aside className="w-60 bg-[#0A192F] text-slate-300 flex flex-col justify-between border-r border-[#132B4C] z-30 flex-shrink-0 relative">
         <div className="flex flex-col">
           {/* Institution Brand Header */}
           <div className="px-4 py-3 border-b border-[#132B4C] flex items-center gap-3 bg-[#071120]">
@@ -102,10 +103,10 @@ export default function AppShell() {
             />
             <div className="min-w-0">
               <div className="font-semibold text-xs text-white tracking-wider uppercase truncate">
-                MUMBAI POLICE CIU
+                NETRA
               </div>
               <div className="text-[10px] text-slate-400 font-mono tracking-tight uppercase">
-                Command Console v2.4
+                Eye on every Evidence
               </div>
             </div>
           </div>
@@ -162,10 +163,19 @@ export default function AppShell() {
               </div>
             ))}
           </nav>
+          {/* Gateway of India Decorative Watermark — using uploaded image */}
+          <div className="absolute bottom-16 left-0 w-full pointer-events-none flex justify-center overflow-hidden">
+            <img 
+              src="/gateway_bg.png" 
+              alt="Gateway of India Watermark"
+              className="w-4/5 object-contain opacity-20 mix-blend-plus-lighter"
+            />
+          </div>
+
         </div>
 
         {/* Investigator Officer Status & Logout */}
-        <div className="p-2.5 border-t border-[#132B4C] bg-[#061121]">
+        <div className="p-2.5 border-t border-[#132B4C] bg-[#061121] relative z-10">
           <div className="flex items-center justify-between p-2 rounded bg-[#0A192F] border border-[#132B4C]">
             <div className="flex items-center gap-2 min-w-0">
               <div className="w-7 h-7 rounded bg-[#132B4C] text-[#D4A017] font-mono font-bold text-xs flex items-center justify-center border border-[#1C3B64] flex-shrink-0">
@@ -290,8 +300,11 @@ export default function AppShell() {
         </header>
 
         {/* 3. MAIN WORKSPACE VIEWPORT */}
-        <main className="flex-1 overflow-y-auto bg-[#F1F5F9] p-5">
-          <Outlet />
+        <main className="flex-1 overflow-y-auto bg-[#F1F5F9] p-5 relative">
+          <MumbaiMapBackground />
+          <div className="relative z-10">
+            <Outlet />
+          </div>
         </main>
       </div>
     </div>
