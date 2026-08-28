@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { 
   Shield, 
@@ -12,12 +12,15 @@ import {
   LogOut, 
   Search, 
   ChevronRight,
+  ChevronDown,
   Database,
   CheckCircle2,
   Lock,
   Radio,
   FileText,
-  Layers
+  Layers,
+  Building,
+  Clock
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { dbService } from '../../services/db';
@@ -30,7 +33,19 @@ export default function AppShell() {
   const [globalSearch, setGlobalSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [activeAlertCount, setActiveAlertCount] = useState(0);
+  const profileRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setIsProfileOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     async function loadAlertCount() {
@@ -265,15 +280,148 @@ export default function AppShell() {
               </span>
             </div>
 
-            {/* Quick Officer Identity */}
-            <div className="flex items-center gap-2 pl-2 border-l border-[#132B4C]">
-              <div className="w-6 h-6 rounded-full bg-[#132B4C] border border-[#254F85] flex items-center justify-center font-mono font-bold text-[10px] text-[#D4A017]">
-                VK
-              </div>
-              <div className="hidden md:block text-left">
-                <div className="text-xs font-semibold text-white leading-tight">Insp. Vikram Kadam</div>
-                <div className="text-[9.5px] text-slate-400 font-mono">Senior Intelligence Officer</div>
-              </div>
+            {/* Interactive Officer Profile Dossier Dropdown */}
+            <div className="relative pl-2 border-l border-[#132B4C]" ref={profileRef}>
+              <button
+                onClick={() => setIsProfileOpen(prev => !prev)}
+                className="flex items-center gap-2 px-2 py-1 rounded hover:bg-[#132B4C]/60 transition-colors cursor-pointer group text-left focus:outline-none"
+              >
+                <div className="w-7 h-7 rounded-full bg-[#132B4C] border border-[#254F85] flex items-center justify-center font-mono font-bold text-[10px] text-[#D4A017] shadow-sm group-hover:border-[#D4A017] transition-colors flex-shrink-0">
+                  VK
+                </div>
+                <div className="hidden md:block text-left">
+                  <div className="text-xs font-semibold text-white leading-tight flex items-center gap-1">
+                    <span>Insp. Vikram Kadam</span>
+                    <ChevronDown className={`w-3 h-3 text-slate-400 group-hover:text-[#D4A017] transition-transform duration-200 ${isProfileOpen ? 'rotate-180 text-[#D4A017]' : ''}`} />
+                  </div>
+                  <div className="text-[9.5px] text-slate-400 font-mono">Senior Intelligence Officer</div>
+                </div>
+              </button>
+
+              {/* Comprehensive Officer Dossier Flyout */}
+              {isProfileOpen && (
+                <div className="absolute right-0 top-full mt-2 w-84 bg-[#0A192F]/95 backdrop-blur-md border border-[#254F85] rounded-lg shadow-2xl z-50 overflow-hidden text-slate-200 animate-in fade-in slide-in-from-top-2 duration-150">
+                  {/* Top Credential Header */}
+                  <div className="bg-[#071120] p-4 text-white border-b border-[#132B4C]">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 rounded bg-[#0E223D] text-[#D4A017] flex items-center justify-center font-mono font-bold text-base border-2 border-[#D4A017] shadow-inner flex-shrink-0">
+                          VK
+                        </div>
+                        <div>
+                          <div className="text-sm font-bold text-white leading-tight">
+                            Insp. Vikram Kadam
+                          </div>
+                          <div className="text-[11px] text-[#D4A017] font-medium mt-0.5">
+                            Senior Intelligence Officer
+                          </div>
+                          <div className="text-[10px] text-slate-300 font-mono mt-0.5 flex items-center gap-1.5">
+                            <span>MH-CIU-4029</span>
+                            <span>•</span>
+                            <span className="text-emerald-400 font-semibold">Active On-Duty</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-3 pt-2.5 border-t border-slate-700/60 flex items-center justify-between text-[10px] font-mono">
+                      <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold uppercase">
+                        Level 4 Security Clearance
+                      </span>
+                      <span className="text-slate-300">Unit-I CIU</span>
+                    </div>
+                  </div>
+
+                  {/* Body Details */}
+                  <div className="p-3.5 space-y-3 text-xs bg-[#0A192F]">
+                    {/* Operational Department */}
+                    <div className="space-y-1.5">
+                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono flex items-center gap-1.5">
+                        <Building className="w-3 h-3 text-[#D4A017]" />
+                        <span>Command Assignment</span>
+                      </div>
+                      <div className="p-2 rounded bg-[#0E223D] border border-[#1C3B64] text-slate-300 text-[11px] space-y-0.5">
+                        <div className="font-semibold text-white">Crime Intelligence Unit (CIU)</div>
+                        <div className="text-[10.5px] text-slate-400">Mumbai Police HQ, Crawford Market</div>
+                        <div className="text-[10px] font-mono text-slate-500">Jurisdiction: All Greater Mumbai Zones (I - XII)</div>
+                      </div>
+                    </div>
+
+                    {/* Authentication Telemetry */}
+                    <div className="space-y-1.5">
+                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono flex items-center gap-1.5">
+                        <Clock className="w-3 h-3 text-emerald-400" />
+                        <span>Session Telemetry</span>
+                      </div>
+                      <div className="grid grid-cols-2 gap-1.5 text-[10.5px] font-mono">
+                        <div className="p-1.5 rounded bg-[#0E223D] border border-[#1C3B64]">
+                          <span className="text-slate-400 block text-[9px]">AUTH PIPELINE</span>
+                          <span className="font-bold text-slate-200">CCTNS AES-256</span>
+                        </div>
+                        <div className="p-1.5 rounded bg-[#0E223D] border border-[#1C3B64]">
+                          <span className="text-slate-400 block text-[9px]">SHIFT DURATION</span>
+                          <span className="font-bold text-slate-200">08:00 - 20:00 IST</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Quick Access Actions */}
+                    <div className="pt-2 border-t border-[#132B4C] space-y-1">
+                      <button
+                        onClick={() => {
+                          setIsProfileOpen(false);
+                          navigate('/cases');
+                        }}
+                        className="w-full text-left px-2.5 py-1.5 rounded hover:bg-[#132B4C] flex items-center justify-between text-xs text-slate-200 font-medium transition-colors cursor-pointer"
+                      >
+                        <span className="flex items-center gap-2">
+                          <FolderSearch className="w-3.5 h-3.5 text-[#D4A017]" />
+                          <span>My Assigned Cases</span>
+                        </span>
+                        <span className="font-mono text-[10px] font-bold text-slate-300 bg-[#132B4C] border border-[#1C3B64] px-1.5 py-0.2 rounded">
+                          12 Active
+                        </span>
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          setIsProfileOpen(false);
+                          navigate('/alerts');
+                        }}
+                        className="w-full text-left px-2.5 py-1.5 rounded hover:bg-[#132B4C] flex items-center justify-between text-xs text-slate-200 font-medium transition-colors cursor-pointer"
+                      >
+                        <span className="flex items-center gap-2">
+                          <Bell className="w-3.5 h-3.5 text-[#E4232D]" />
+                          <span>Priority Intelligence Queue</span>
+                        </span>
+                        {activeAlertCount > 0 && (
+                          <span className="font-mono text-[10px] font-bold text-white bg-[#E4232D] px-1.5 py-0.2 rounded">
+                            {activeAlertCount} New
+                          </span>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Sign Out Footer */}
+                  <div className="p-2.5 bg-[#071120] border-t border-[#132B4C] flex items-center justify-between">
+                    <span className="text-[10px] font-mono text-slate-400">
+                      Terminal v2.4 • Secure
+                    </span>
+                    <button
+                      onClick={() => {
+                        setIsProfileOpen(false);
+                        logout();
+                        navigate('/login');
+                      }}
+                      className="px-3 py-1 rounded bg-[#B91C1C] hover:bg-[#991B1B] text-white font-semibold text-xs transition-colors flex items-center gap-1.5 shadow-sm cursor-pointer"
+                    >
+                      <LogOut className="w-3 h-3" />
+                      <span>Log Out Session</span>
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </header>
