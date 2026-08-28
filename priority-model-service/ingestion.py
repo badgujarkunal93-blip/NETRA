@@ -7,10 +7,26 @@ from datetime import datetime
 import logging
 from pydantic import BaseModel, Field
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException, BackgroundTasks
-from supabase import create_client, Client
-import pdfplumber
-import pytesseract
-from PIL import Image
+
+try:
+    from supabase import create_client, Client
+    has_supabase = True
+except ImportError:
+    has_supabase = False
+    Client = None
+
+try:
+    import pdfplumber
+    has_pdfplumber = True
+except ImportError:
+    has_pdfplumber = False
+
+try:
+    import pytesseract
+    from PIL import Image
+    has_ocr = True
+except ImportError:
+    has_ocr = False
 
 try:
     from google import genai
@@ -26,11 +42,13 @@ router = APIRouter()
 # -----------------------------------------------------------------------------
 # SUPABASE CLIENT
 # -----------------------------------------------------------------------------
-def get_supabase() -> Client:
-    supabase_url = os.environ.get("VITE_SUPABASE_URL")
-    supabase_key = os.environ.get("VITE_SUPABASE_ANON_KEY") or os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+def get_supabase():
+    if not has_supabase:
+        raise HTTPException(status_code=503, detail="Supabase library not available on server.")
+    supabase_url = os.environ.get("VITE_SUPABASE_URL") or os.environ.get("SUPABASE_URL")
+    supabase_key = os.environ.get("VITE_SUPABASE_ANON_KEY") or os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or os.environ.get("SUPABASE_ANON_KEY")
     if not supabase_url or not supabase_key:
-        raise ValueError("Missing Supabase credentials in environment")
+        raise HTTPException(status_code=500, detail="Missing Supabase credentials in server environment")
     return create_client(supabase_url, supabase_key)
 
 # -----------------------------------------------------------------------------

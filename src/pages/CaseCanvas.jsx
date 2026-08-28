@@ -48,6 +48,13 @@ import EdgeJustificationModal from '../components/canvas/EdgeJustificationModal'
 import CanvasSnapshotsModal from '../components/canvas/CanvasSnapshotsModal';
 import CaseNotesDrawer from '../components/canvas/CaseNotesDrawer';
 
+// 1. Static custom node types for ReactFlow
+const NODE_TYPES = {
+  personCard: PersonCardNode,
+  noteCard: NoteCardNode,
+  entityCard: EntityCardNode
+};
+
 export default function CaseCanvas() {
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedCaseId = searchParams.get('case_id') || '';
@@ -87,21 +94,17 @@ export default function CaseCanvas() {
   const [saveStatus, setSaveStatus] = useState('saved'); // 'saved' | 'saving' | 'dirty'
   const saveTimeoutRef = useRef(null);
 
-  // 1. Register Custom Node Types
-  const nodeTypes = useMemo(() => ({
-    personCard: PersonCardNode,
-    noteCard: NoteCardNode,
-    entityCard: EntityCardNode
-  }), []);
-
   // 2. Load Cases on Mount
   useEffect(() => {
     async function loadCases() {
       const cases = await dbService.getCases();
       setAllCases(cases);
+      if (!selectedCaseId && cases.length > 0) {
+        setSearchParams({ case_id: cases[0].id });
+      }
     }
     loadCases();
-  }, []);
+  }, [selectedCaseId, setSearchParams]);
 
   // 3. Load Canvas when Case changes
   useEffect(() => {
@@ -694,7 +697,7 @@ export default function CaseCanvas() {
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onConnect={onConnect}
-            nodeTypes={nodeTypes}
+            nodeTypes={NODE_TYPES}
             fitView
             attributionPosition="bottom-left"
             className="bg-[#061121]"

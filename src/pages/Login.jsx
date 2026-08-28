@@ -131,7 +131,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full mt-2 py-2 px-3 bg-[#0A192F] hover:bg-[#132B4C] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors flex items-center justify-center gap-2 border border-[#132B4C]"
+              className="w-full mt-2 py-2 px-3 bg-[#0A192F] hover:bg-[#132B4C] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors flex items-center justify-center gap-2 border border-[#132B4C] cursor-pointer shadow-sm"
             >
               {loading ? (
                 <span>Authenticating...</span>
@@ -143,6 +143,27 @@ export default function Login() {
               )}
             </button>
           </form>
+
+          {/* Demo Credentials Helper Box */}
+          <div className="mt-4 pt-3.5 border-t border-slate-100 bg-[#F8FAFC] -mx-6 -mb-6 p-4 rounded-b-md">
+            <div className="flex items-center justify-between text-[10.5px] font-mono text-slate-500 mb-1.5">
+              <span className="font-bold uppercase text-slate-600">Demo Investigator Credentials:</span>
+              <button
+                type="button"
+                onClick={() => {
+                  setEmail('v.kadam@mumbaipolice.gov.in');
+                  setPassword('ciu@mumbai2026');
+                }}
+                className="text-[#B45309] hover:underline font-bold cursor-pointer"
+              >
+                Auto-Fill
+              </button>
+            </div>
+            <div className="text-[11px] font-mono text-slate-700 bg-white p-2 rounded border border-slate-200 space-y-0.5">
+              <div><span className="text-slate-400">Email:</span> <strong className="text-[#0A192F]">v.kadam@mumbaipolice.gov.in</strong></div>
+              <div><span className="text-slate-400">Pass:</span> <strong className="text-[#0A192F]">ciu@mumbai2026</strong> <span className="text-[9.5px] text-slate-400 font-sans">(or any password)</span></div>
+            </div>
+          </div>
         </div>
       </div>
 

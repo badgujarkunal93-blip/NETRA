@@ -104,16 +104,30 @@ app = FastAPI(
 # -----------------------------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://netra-gilt.vercel.app",
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "*"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-from ingestion import router as ingestion_router
-from embedder import router as embedder_router
-app.include_router(ingestion_router)
-app.include_router(embedder_router)
+try:
+    from ingestion import router as ingestion_router
+    app.include_router(ingestion_router)
+    logger.info("✓ Mounted FIR Ingestion router")
+except Exception as e:
+    logger.warning("Could not mount ingestion router: %s", e)
+
+try:
+    from embedder import router as embedder_router
+    app.include_router(embedder_router)
+    logger.info("✓ Mounted MO Embedder router")
+except Exception as e:
+    logger.warning("Could not mount embedder router: %s", e)
 
 
 # -----------------------------------------------------------------------------

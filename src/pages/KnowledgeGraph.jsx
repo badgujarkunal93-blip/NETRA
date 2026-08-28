@@ -35,10 +35,14 @@ function MapViewportController({ bounds, centerTarget }) {
   const map = useMap();
 
   useEffect(() => {
-    if (centerTarget && centerTarget.lat && centerTarget.lng) {
-      map.flyTo([centerTarget.lat, centerTarget.lng], 15, { duration: 1.2 });
-    } else if (bounds && bounds.length > 0) {
-      map.fitBounds(bounds, { padding: [60, 60], maxZoom: 16 });
+    try {
+      if (centerTarget && typeof centerTarget.lat === 'number' && typeof centerTarget.lng === 'number') {
+        map.flyTo([centerTarget.lat, centerTarget.lng], 15, { duration: 1.2 });
+      } else if (bounds && Array.isArray(bounds) && bounds.length >= 2 && Array.isArray(bounds[0]) && typeof bounds[0][0] === 'number') {
+        map.fitBounds(bounds, { padding: [60, 60], maxZoom: 16 });
+      }
+    } catch (err) {
+      console.warn('MapViewportController notice:', err);
     }
   }, [bounds, centerTarget, map]);
 
@@ -243,6 +247,30 @@ export default function KnowledgeGraph() {
       .filter(c => Boolean(c.targetNode));
   }, [selectedNode, edges, nodes]);
 
+  // Filter edges with strictly valid coordinate pairs for Leaflet Polyline rendering
+  const validMapEdges = useMemo(() => {
+    const map = new Map(nodes.map(n => [n.id, n]));
+    return edges
+      .map(e => {
+        const srcNode = map.get(e.source);
+        const tgtNode = map.get(e.target);
+        const srcCoords = (Array.isArray(e.sourceCoords) && typeof e.sourceCoords[0] === 'number') 
+          ? e.sourceCoords 
+          : (srcNode && typeof srcNode.lat === 'number' && typeof srcNode.lng === 'number' ? [srcNode.lat, srcNode.lng] : null);
+        const tgtCoords = (Array.isArray(e.targetCoords) && typeof e.targetCoords[0] === 'number') 
+          ? e.targetCoords 
+          : (tgtNode && typeof tgtNode.lat === 'number' && typeof tgtNode.lng === 'number' ? [tgtNode.lat, tgtNode.lng] : null);
+
+        if (!srcCoords || !tgtCoords) return null;
+        return {
+          ...e,
+          resolvedSourceCoords: srcCoords,
+          resolvedTargetCoords: tgtCoords
+        };
+      })
+      .filter(Boolean);
+  }, [edges, nodes]);
+
   // Walk to node from side card: pans map & selects node
   const handleWalkToNode = (targetNode) => {
     if (!targetNode) return;
@@ -431,14 +459,14 @@ export default function KnowledgeGraph() {
             <MapViewportController bounds={mapBounds} centerTarget={flyToTarget} />
 
             {/* Relationship Lines (Polylines between pinned nodes) */}
-            {edges.map((edge) => {
+            {validMapEdges.map((edge) => {
               const isInferred = edge.status === 'inferred';
               const isConnectedToSelected = selectedNode && (edge.source === selectedNode.id || edge.target === selectedNode.id);
 
               return (
                 <Polyline
                   key={edge.id}
-                  positions={[edge.sourceCoords, edge.targetCoords]}
+                  positions={[edge.resolvedSourceCoords, edge.resolvedTargetCoords]}
                   pathOptions={{
                     color: isConnectedToSelected ? '#D4A017' : isInferred ? 'rgba(212, 160, 23, 0.45)' : 'rgba(255, 255, 255, 0.25)',
                     weight: isConnectedToSelected ? 3.5 : 1.8,
@@ -448,7 +476,7 @@ export default function KnowledgeGraph() {
                 >
                   <Tooltip sticky direction="top">
                     <div className="bg-[#0A192F] text-white p-1 rounded font-mono text-[9px] border border-[#132B4C]">
-                      <strong>{edge.verb}</strong>: {edge.detailLabel} ({edge.confidence}% Conf)
+                      <strong>{edge.verb}</strong>: {edge.detailLabel || edge.label} ({edge.confidence || 85}% Conf)
                     </div>
                   </Tooltip>
                 </Polyline>
