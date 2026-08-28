@@ -282,3 +282,31 @@
 .dark-scroll::-webkit-scrollbar-thumb:hover {
   background: #B45309;
 }
+
+/* ==========================================================================
+   FULL-PAGE PERSISTENT BACKGROUND LAYER
+   ========================================================================== */
+.dashboard-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.dashboard-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.6;
+}
+
+.dashboard-content {
+  position: relative;
+  z-index: 1;
+}
+

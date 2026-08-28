@@ -281,7 +281,7 @@ export default function AppShell() {
         {/* 3. MAIN WORKSPACE VIEWPORT */}
         <main className="flex-1 overflow-y-auto bg-[#061121] p-5 relative">
           <MumbaiMapBackground />
-          <div className="relative z-10">
+          <div className="relative z-10 dashboard-content">
             <Outlet />
           </div>
         </main>
