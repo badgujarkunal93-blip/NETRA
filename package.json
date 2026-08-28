@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -n \"frontend,backend\" -c \"cyan,magenta\" \"vite\" \"python -m uvicorn main:app --app-dir priority-model-service --port 8000\"",
+    "dev:frontend": "vite",
+    "dev:backend": "python -m uvicorn main:app --app-dir priority-model-service --port 8000",
     "build": "vite build",
     "preview": "vite preview",
     "extract-firs": "node scripts/run_pipeline.js",
@@ -41,6 +43,7 @@
     "@tailwindcss/postcss": "^4.3.3",
     "@vitejs/plugin-react": "^6.1.0",
     "autoprefixer": "^10.5.4",
+    "concurrently": "^10.0.5",
     "postcss": "^8.5.26",
     "tailwindcss": "^4.3.3",
     "vite": "^8.2.2",

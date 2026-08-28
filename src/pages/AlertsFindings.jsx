@@ -34,13 +34,18 @@ export default function AlertsFindings() {
   useEffect(() => {
     async function loadAlerts() {
       setLoading(true);
-      const list = await dbService.getAlerts({
-        severity: severityFilter,
-        status: statusFilter,
-        search: searchQuery
-      });
-      setAlerts(list);
-      setLoading(false);
+      try {
+        const list = await dbService.getAlerts({
+          severity: severityFilter,
+          status: statusFilter,
+          search: searchQuery
+        });
+        setAlerts(list || []);
+      } catch (err) {
+        console.error("Failed to load alerts:", err);
+      } finally {
+        setLoading(false);
+      }
     }
     loadAlerts();
   }, [severityFilter, statusFilter, searchQuery]);
@@ -58,49 +63,52 @@ export default function AlertsFindings() {
   };
 
   const findingsFeed = [
-    { id: 'F1', title: 'Corroborated CDR Intersection', target: 'Farhan Merchant', status: 'confirmed', confidence: 94, time: '12m ago' },
-    { id: 'F2', title: 'Safe Shear Metallurgy Match', target: 'CR/2026/1045', status: 'confirmed', confidence: 89, time: '45m ago' },
-    { id: 'F3', title: 'VoIP IP Gateway Hop Trace', target: 'Apex Zenith LLP', status: 'pending', confidence: 73, time: '2h ago' },
-    { id: 'F4', title: 'Unverified Mule Account Flag', target: 'ACC-404', status: 'rejected', confidence: 42, time: '5h ago' },
+    { id: 'F1', title: 'Phone Call Location Match', target: 'Farhan Merchant', status: 'confirmed', confidence: 94, time: '12m ago', tech: 'CDR Intersection' },
+    { id: 'F2', title: 'Tool Cut Mark Match on Safe', target: 'CR/2026/1045', status: 'confirmed', confidence: 89, time: '45m ago', tech: 'Safe Metallurgy Shear Match' },
+    { id: 'F3', title: 'Internet Call Route Traced', target: 'Apex Zenith LLP', status: 'pending', confidence: 73, time: '2h ago', tech: 'VoIP Gateway Hop' },
+    { id: 'F4', title: 'Suspicious Money Mule Account', target: 'ACC-404', status: 'rejected', confidence: 42, time: '5h ago', tech: 'Mule Account Flag' },
   ];
 
   return (
     <div className="space-y-4 max-w-7xl mx-auto">
       {/* 1. TOP TITLE BANNER */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-[#CBD5E1]">
+      <div className="glass-card p-4 rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-base font-bold text-[#0A192F] uppercase tracking-wide">
-            Automated Intelligence Alerts & Findings Queue
+          <h1 className="text-base font-bold text-white uppercase tracking-wide flex items-center gap-2">
+            <span>Important Alerts & Clues</span>
+            <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-red-950/80 text-rose-300 border border-rose-800">
+              ACTION QUEUE
+            </span>
           </h1>
-          <p className="text-xs text-slate-500">
-            Real-time correlation triggers across modus operandi patterns, co-location traces, and financial anomalies.
+          <p className="text-xs text-slate-300 mt-0.5">
+            Live notifications when AI discovers suspect meeting places, matching crime methods, or suspicious bank activity.
           </p>
         </div>
         {feedbackMessage && (
-          <div className="px-2.5 py-1 bg-emerald-50 border border-emerald-300 text-emerald-800 text-[11px] font-semibold rounded flex items-center gap-1.5">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+          <div className="px-3 py-1.5 bg-emerald-950/90 border border-emerald-700 text-emerald-300 text-xs font-semibold rounded-md flex items-center gap-1.5 shadow-sm">
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
             <span>{feedbackMessage}</span>
           </div>
         )}
       </div>
 
       {/* 2. SEVERITY TABS & MULTI-FILTER BAR */}
-      <div className="bg-white p-3.5 rounded-md border border-[#E2E8F0] shadow-sm space-y-2.5">
-        <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-          <div className="flex items-center gap-1">
+      <div className="glass-card p-4 rounded-lg space-y-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-2.5">
+          <div className="flex items-center gap-1.5 flex-wrap">
             {[
               { id: 'All', label: 'All Severity' },
-              { id: 'High', label: 'High Priority (Red)', color: 'text-[#B91C1C]' },
-              { id: 'Medium', label: 'Medium (Amber)', color: 'text-[#92400E]' },
-              { id: 'Low', label: 'Low (Navy/Slate)', color: 'text-[#0A192F]' },
+              { id: 'High', label: 'High Priority (Red)', color: 'text-rose-400' },
+              { id: 'Medium', label: 'Medium (Amber)', color: 'text-amber-400' },
+              { id: 'Low', label: 'Low (Navy/Slate)', color: 'text-cyan-400' },
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setSeverityFilter(tab.id)}
-                className={`py-1.5 px-2.5 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors ${
+                className={`py-1.5 px-3 text-xs font-bold uppercase tracking-wider border-b-2 transition-colors ${
                   severityFilter === tab.id
-                    ? 'border-[#0A192F] text-[#0A192F]'
-                    : 'border-transparent text-slate-500 hover:text-[#0A192F]'
+                    ? 'border-[#D4A017] text-[#D4A017]'
+                    : 'border-transparent text-slate-400 hover:text-white'
                 } ${tab.color || ''}`}
               >
                 {tab.label}
@@ -109,16 +117,16 @@ export default function AlertsFindings() {
           </div>
 
           <div className="flex items-center gap-1.5 text-xs">
-            <span className="text-[10px] font-bold text-slate-400 uppercase">STATUS:</span>
+            <span className="text-[10px] font-bold text-slate-300 uppercase font-mono">STATUS:</span>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-2 py-1 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded text-[#0A192F] font-semibold focus:outline-none"
+              className="px-2.5 py-1 text-xs bg-white/[0.08] border border-white/15 rounded text-white font-semibold focus:outline-none focus:border-[#D4A017]"
             >
-              <option value="All">All Statuses</option>
-              <option value="New">New / Action Required</option>
-              <option value="Reviewed">Reviewed</option>
-              <option value="Dismissed">Dismissed</option>
+              <option value="All" className="bg-[#0A192F]">All Statuses</option>
+              <option value="New" className="bg-[#0A192F]">New / Action Required</option>
+              <option value="Reviewed" className="bg-[#0A192F]">Reviewed</option>
+              <option value="Dismissed" className="bg-[#0A192F]">Dismissed</option>
             </select>
           </div>
         </div>
@@ -131,7 +139,7 @@ export default function AlertsFindings() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Filter alerts by title, description, or target entity ID..."
-            className="w-full pl-8 pr-3 py-1.5 text-xs bg-[#F8FAFC] border border-[#CBD5E1] rounded focus:outline-none focus:border-[#0A192F] text-[#0F172A]"
+            className="w-full pl-8 pr-3 py-1.5 text-xs bg-white/[0.08] border border-white/15 rounded focus:outline-none focus:border-[#D4A017] text-white placeholder-slate-400"
           />
         </div>
       </div>
@@ -139,13 +147,13 @@ export default function AlertsFindings() {
       {/* 3. MAIN GRID (LEFT ALERTS + RIGHT FINDINGS FEED) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         {/* LEFT COLUMN: Alerts List (8 Cols) */}
-        <div className="lg:col-span-8 space-y-2.5">
+        <div className="lg:col-span-8 space-y-3">
           {loading ? (
-            <div className="p-6 text-center text-xs text-slate-400 bg-white rounded-md border border-[#E2E8F0]">
+            <div className="p-6 text-center text-xs text-slate-400 glass-card rounded-lg">
               Loading intelligence alerts...
             </div>
           ) : alerts.length === 0 ? (
-            <div className="p-6 text-center text-xs text-slate-400 bg-white rounded-md border border-[#E2E8F0]">
+            <div className="p-6 text-center text-xs text-slate-400 glass-card rounded-lg">
               No alerts match the selected filters.
             </div>
           ) : (
@@ -153,48 +161,48 @@ export default function AlertsFindings() {
               const isExpanded = expandedAlertId === alert.id;
               const severityBorder =
                 alert.severity === 'High'
-                  ? 'border-l-3 border-l-[#B91C1C]'
+                  ? 'border-l-4 border-l-[#E4232D]'
                   : alert.severity === 'Medium'
-                  ? 'border-l-3 border-l-[#D4A017]'
-                  : 'border-l-3 border-l-[#0A192F]';
+                  ? 'border-l-4 border-l-[#F59E0B]'
+                  : 'border-l-4 border-l-[#38BDF8]';
 
               const statusPill =
                 alert.status === 'New'
-                  ? 'bg-[#FEE2E2] text-[#B91C1C] border-red-200'
+                  ? 'bg-red-950/80 text-rose-300 border-rose-800'
                   : alert.status === 'Reviewed'
-                  ? 'bg-blue-50 text-blue-800 border-blue-200'
-                  : 'bg-slate-100 text-slate-500 border-slate-200';
+                  ? 'bg-emerald-950/80 text-emerald-300 border-emerald-800'
+                  : 'bg-white/10 text-slate-300 border-white/15';
 
               return (
                 <div
                   key={alert.id}
-                  className={`bg-white rounded-md border border-[#E2E8F0] shadow-sm ${severityBorder} transition-all overflow-hidden`}
+                  className={`glass-card rounded-lg ${severityBorder} transition-all overflow-hidden`}
                 >
-                  <div className="p-3.5 flex flex-col justify-between">
+                  <div className="p-4 flex flex-col justify-between">
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <div className="flex items-center gap-2 mb-1">
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
                           <span className={`text-[9px] font-mono font-bold px-1.5 py-0.2 rounded border uppercase ${statusPill}`}>
                             {alert.status}
                           </span>
-                          <span className="text-[9.5px] font-mono font-bold px-1.5 py-0.2 rounded bg-[#FEF3C7] text-[#92400E] border border-[#FCD34D]">
+                          <span className="text-[9.5px] font-mono font-bold px-1.5 py-0.2 rounded bg-amber-950/80 text-amber-300 border border-amber-800">
                             {alert.confidence}% Conf
                           </span>
                           <span className="text-[10px] text-slate-400 font-mono">
                             {new Date(alert.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} • {new Date(alert.created_at).toLocaleDateString()}
                           </span>
                         </div>
-                        <h3 className="text-xs font-bold text-[#0A192F] mt-0.5">
+                        <h3 className="text-xs font-bold text-white mt-1">
                           {alert.title}
                         </h3>
-                        <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                        <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                           {alert.description}
                         </p>
                       </div>
 
                       <button
                         onClick={() => setExpandedAlertId(isExpanded ? null : alert.id)}
-                        className="p-1 text-slate-400 hover:text-[#0A192F] rounded hover:bg-slate-100 transition-colors"
+                        className="p-1 text-slate-400 hover:text-white rounded hover:bg-white/5 transition-colors"
                         title={isExpanded ? 'Collapse' : 'Expand Details'}
                       >
                         {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -202,13 +210,13 @@ export default function AlertsFindings() {
                     </div>
 
                     {/* Metadata & Actions */}
-                    <div className="mt-2.5 pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                    <div className="mt-3 pt-2.5 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
                       <div className="flex items-center gap-2 flex-wrap text-[10.5px]">
-                        <span className="font-mono bg-slate-100 px-1.5 py-0.2 rounded text-slate-700">
+                        <span className="font-mono bg-white/[0.08] px-2 py-0.5 rounded text-slate-200 border border-white/15">
                           {alert.target_type}: {alert.target_id}
                         </span>
-                        <span className="text-slate-500 flex items-center gap-1">
-                          <FileText className="w-3 h-3 text-slate-400" />
+                        <span className="text-slate-300 flex items-center gap-1">
+                          <FileText className="w-3 h-3 text-[#D4A017]" />
                           {alert.evidence_refs?.length || 0} Evidence Docs
                         </span>
                       </div>
@@ -218,7 +226,7 @@ export default function AlertsFindings() {
                         {alert.status !== 'Reviewed' && (
                           <button
                             onClick={() => handleUpdateStatus(alert.id, 'Reviewed')}
-                            className="px-2 py-1 bg-[#0A192F] hover:bg-[#132B4C] text-white font-medium text-[10.5px] rounded transition-colors flex items-center gap-1"
+                            className="px-2.5 py-1 bg-white/[0.12] hover:bg-white/[0.20] text-white font-medium text-[10.5px] rounded transition-colors flex items-center gap-1 border border-white/20 shadow-xs"
                           >
                             <Check className="w-3 h-3 text-[#D4A017]" />
                             <span>Mark Reviewed</span>
@@ -227,7 +235,7 @@ export default function AlertsFindings() {
                         {alert.status !== 'Dismissed' && (
                           <button
                             onClick={() => handleUpdateStatus(alert.id, 'Dismissed')}
-                            className="px-2 py-1 bg-[#F1F5F9] hover:bg-slate-200 text-slate-700 font-medium text-[10.5px] rounded transition-colors"
+                            className="px-2.5 py-1 bg-white/[0.06] hover:bg-white/[0.12] text-slate-300 hover:text-white font-medium text-[10.5px] rounded border border-white/15 transition-colors"
                           >
                             <span>Dismiss</span>
                           </button>
@@ -235,7 +243,7 @@ export default function AlertsFindings() {
                         {alert.status !== 'New' && (
                           <button
                             onClick={() => handleUpdateStatus(alert.id, 'New')}
-                            className="px-1.5 py-1 text-slate-400 hover:text-[#0A192F] font-bold text-[10px] flex items-center gap-1"
+                            className="px-2 py-1 text-slate-400 hover:text-white font-bold text-[10px] flex items-center gap-1"
                           >
                             <RotateCcw className="w-3 h-3" />
                             <span>Re-open</span>
@@ -247,30 +255,30 @@ export default function AlertsFindings() {
 
                   {/* Expanded Detail Panel */}
                   {isExpanded && (
-                    <div className="bg-[#F8FAFC] px-4 py-3 border-t border-slate-200 text-xs space-y-2.5">
+                    <div className="bg-white/[0.05] px-4 py-3 border-t border-white/10 text-xs space-y-2.5">
                       <div>
-                        <span className="font-bold text-slate-600 uppercase tracking-wider text-[9.5px] block mb-1">
+                        <span className="font-bold text-slate-300 uppercase tracking-wider text-[9.5px] block mb-1">
                           Evidence Artifact Documentation:
                         </span>
                         <div className="flex flex-wrap gap-1.5">
                           {alert.evidence_refs?.map((ref, idx) => (
-                            <span key={idx} className="px-2 py-0.5 bg-white rounded border border-slate-200 text-[10.5px] font-mono text-slate-800 flex items-center gap-1">
-                              <FileText className="w-3 h-3 text-[#0A192F]" />
+                            <span key={idx} className="px-2 py-0.5 bg-white/[0.08] rounded border border-white/15 text-[10.5px] font-mono text-slate-200 flex items-center gap-1">
+                              <FileText className="w-3 h-3 text-[#D4A017]" />
                               {ref}
                             </span>
                           ))}
                         </div>
                       </div>
 
-                      <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[10.5px] text-slate-500">
-                        <span>Model Signature: <strong>CIU-Correlation-v2.4</strong></span>
+                      <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[10.5px] text-slate-400">
+                        <span>Model Signature: <strong className="text-slate-200 font-mono">CIU-Correlation-v2.4</strong></span>
                         <button
                           onClick={() => {
                             if (alert.target_type === 'Case') navigate(`/cases?id=${alert.target_id}`);
                             else if (alert.target_type === 'Person') navigate(`/entities?id=${alert.target_id}`);
                             else navigate('/graph');
                           }}
-                          className="text-[#B45309] hover:underline font-semibold flex items-center gap-1"
+                          className="text-[#D4A017] hover:underline font-semibold flex items-center gap-1"
                         >
                           <span>Go to Target Dossier</span>
                           <ExternalLink className="w-3 h-3" />
@@ -285,39 +293,42 @@ export default function AlertsFindings() {
         </div>
 
         {/* RIGHT COLUMN: Live Findings Feed (4 Cols) */}
-        <div className="lg:col-span-4 bg-white rounded-md border border-[#E2E8F0] shadow-sm overflow-hidden flex flex-col h-fit">
-          <div className="bg-[#0A192F] px-3.5 py-2.5 text-white flex items-center justify-between border-b border-[#132B4C]">
+        <div className="lg:col-span-4 glass-card rounded-lg overflow-hidden flex flex-col h-fit">
+          <div className="bg-white/[0.08] px-4 py-3 text-white flex items-center justify-between border-b border-white/15">
             <div className="flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-[#D4A017]" />
-              <span className="text-xs font-semibold uppercase tracking-wider">
-                Live Findings Feed
+              <Sparkles className="w-4 h-4 text-[#D4A017]" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-white">
+                Latest AI Clues & Activity
               </span>
             </div>
-            <span className="text-[9.5px] font-mono text-slate-400">CHRONOLOGICAL</span>
+            <span className="text-[9.5px] font-mono text-[#D4A017]">REAL-TIME</span>
           </div>
 
           <div className="p-3.5 space-y-2.5">
             {findingsFeed.map((item) => (
-              <div key={item.id} className="p-2.5 bg-[#F8FAFC] rounded border border-slate-200 text-xs">
-                <div className="flex items-center justify-between mb-0.5">
-                  <div className="flex items-center gap-1">
+              <div key={item.id} className="p-3 bg-white/[0.07] backdrop-blur-sm rounded-md border border-white/15 text-xs">
+                <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center gap-1.5">
                     {item.status === 'confirmed' ? (
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
                     ) : item.status === 'pending' ? (
-                      <Clock className="w-3.5 h-3.5 text-amber-600" />
+                      <Clock className="w-3.5 h-3.5 text-amber-400" />
                     ) : (
-                      <XCircle className="w-3.5 h-3.5 text-[#B91C1C]" />
+                      <XCircle className="w-3.5 h-3.5 text-[#E4232D]" />
                     )}
-                    <span className="font-semibold text-[#0A192F]">{item.title}</span>
+                    <span className="font-semibold text-white">{item.title}</span>
                   </div>
                   <span className="text-[9.5px] text-slate-400 font-mono">{item.time}</span>
                 </div>
-                <div className="text-[10.5px] text-slate-600">
-                  Target: <strong className="text-slate-900">{item.target}</strong>
+                <div className="text-[10px] text-slate-400 font-mono">
+                  Analysis: {item.tech}
                 </div>
-                <div className="mt-1.5 flex items-center justify-between pt-1 border-t border-slate-200 text-[9.5px]">
-                  <span className="font-mono font-bold text-[#92400E]">{item.confidence}% Correlation</span>
-                  <span className="text-slate-400 uppercase font-mono">{item.status}</span>
+                <div className="text-[10.5px] text-slate-300 mt-1">
+                  Target: <strong className="text-white">{item.target}</strong>
+                </div>
+                <div className="mt-2 flex items-center justify-between pt-1.5 border-t border-white/10 text-[9.5px]">
+                  <span className="font-mono font-bold text-[#D4A017]">{item.confidence}% Match Certainty</span>
+                  <span className="text-slate-400 uppercase font-mono">{item.status === 'confirmed' ? 'Verified Fact' : item.status === 'pending' ? 'Needs Review' : 'Dismissed'}</span>
                 </div>
               </div>
             ))}

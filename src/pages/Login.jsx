@@ -4,12 +4,17 @@ import { Shield, Lock, User, Key, ArrowRight, AlertCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export default function Login() {
-  const { login } = useAuth();
+  const { login, loginDirectAccess } = useAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const handleDirectAccess = () => {
+    loginDirectAccess();
+    navigate('/dashboard');
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -144,25 +149,36 @@ export default function Login() {
             </button>
           </form>
 
-          {/* Demo Credentials Helper Box */}
-          <div className="mt-4 pt-3.5 border-t border-slate-100 bg-[#F8FAFC] -mx-6 -mb-6 p-4 rounded-b-md">
-            <div className="flex items-center justify-between text-[10.5px] font-mono text-slate-500 mb-1.5">
-              <span className="font-bold uppercase text-slate-600">Demo Investigator Credentials:</span>
-              <button
-                type="button"
-                onClick={() => {
-                  setEmail('v.kadam@mumbaipolice.gov.in');
-                  setPassword('ciu@mumbai2026');
-                }}
-                className="text-[#B45309] hover:underline font-bold cursor-pointer"
-              >
-                Auto-Fill
-              </button>
+          {/* Demo Credentials Helper & Direct Access Box */}
+          <div className="mt-4 pt-3.5 border-t border-slate-100 bg-[#F8FAFC] -mx-6 -mb-6 p-4 rounded-b-md space-y-3">
+            <div>
+              <div className="flex items-center justify-between text-[10.5px] font-mono text-slate-500 mb-1.5">
+                <span className="font-bold uppercase text-slate-600">Investigator Credentials:</span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEmail('v.kadam@mumbaipolice.gov.in');
+                    setPassword('ciu@mumbai2026');
+                  }}
+                  className="text-[#B45309] hover:underline font-bold cursor-pointer"
+                >
+                  Auto-Fill
+                </button>
+              </div>
+              <div className="text-[11px] font-mono text-slate-700 bg-white p-2 rounded border border-slate-200 space-y-0.5">
+                <div><span className="text-slate-400">Email:</span> <strong className="text-[#0A192F]">v.kadam@mumbaipolice.gov.in</strong></div>
+                <div><span className="text-slate-400">Pass:</span> <strong className="text-[#0A192F]">ciu@mumbai2026</strong></div>
+              </div>
             </div>
-            <div className="text-[11px] font-mono text-slate-700 bg-white p-2 rounded border border-slate-200 space-y-0.5">
-              <div><span className="text-slate-400">Email:</span> <strong className="text-[#0A192F]">v.kadam@mumbaipolice.gov.in</strong></div>
-              <div><span className="text-slate-400">Pass:</span> <strong className="text-[#0A192F]">ciu@mumbai2026</strong> <span className="text-[9.5px] text-slate-400 font-sans">(or any password)</span></div>
-            </div>
+
+            <button
+              type="button"
+              onClick={handleDirectAccess}
+              className="w-full py-2 px-3 bg-[#0A192F] hover:bg-[#132B4C] text-white font-bold text-xs uppercase tracking-wider rounded transition-all flex items-center justify-center gap-2 border border-[#254F85] shadow-sm"
+            >
+              <span className="text-[#D4A017]">⚡</span>
+              <span>Direct Access Mode</span>
+            </button>
           </div>
         </div>
       </div>

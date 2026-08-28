@@ -1,7 +1,9 @@
 import { isSupabaseConfigured, supabase } from './supabaseClient.js';
 import { dbService } from './db.js';
 
-const MODEL_SERVICE_URL = import.meta.env.VITE_PRIORITY_MODEL_URL || 'https://netra-gd70.onrender.com';
+const MODEL_SERVICE_URL = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_PRIORITY_MODEL_URL) || 
+                           (typeof process !== 'undefined' && process.env?.VITE_PRIORITY_MODEL_URL) || 
+                           'https://netra-gd70.onrender.com';
 
 /**
  * Role weight heuristic mapping
@@ -76,10 +78,10 @@ export async function computePersonCanvasFeatures(personNode, allNodes, allEdges
       if (isSupabaseConfigured) {
         const { data: rels } = await supabase
           .from('relationships')
-          .select('confidence_score')
-          .or(`person_id_a.eq.${linkedId},person_id_b.eq.${linkedId}`);
+          .select('confidence')
+          .or(`source_id.eq.${linkedId},target_id.eq.${linkedId}`);
         if (rels && rels.length > 0) {
-          const sum = rels.reduce((acc, r) => acc + (r.confidence_score || 75), 0);
+          const sum = rels.reduce((acc, r) => acc + (r.confidence || 75), 0);
           // Scale to decimal 0.0 - 1.0 (e.g. 85 -> 0.85)
           avg_relationship_confidence = Number(((sum / rels.length) / 100).toFixed(3));
         } else {
@@ -156,11 +158,11 @@ export async function computePersonCanvasFeatures(personNode, allNodes, allEdges
       if (isSupabaseConfigured) {
         const { data: alerts } = await supabase
           .from('alerts')
-          .select('confidence_score')
-          .or(`entity_id.eq.${linkedId},details.ilike.%${data.label || linkedId}%`);
+          .select('confidence')
+          .or(`target_id.eq.${linkedId},description.ilike.%${data.label || linkedId}%`);
         if (alerts && alerts.length > 0) {
           alert_count = alerts.length;
-          const sum = alerts.reduce((acc, a) => acc + (a.confidence_score || 70), 0);
+          const sum = alerts.reduce((acc, a) => acc + (a.confidence || 70), 0);
           avg_alert_confidence = Number(((sum / alerts.length) / 100).toFixed(3));
         }
       }
@@ -268,16 +270,25 @@ export async function analyzeAllCanvasPersons(nodes, edges, caseId, onProgress) 
           success: true
         };
       } catch (err) {
+        // Fallback heuristic scoring
+        const heuristicScore = Math.min(99, Math.max(20, Math.round(
+          (features.role_weight || 0.5) * 35 +
+          (features.network_centrality || 0.3) * 20 +
+          (features.observed_vs_inferred_ratio || 0.5) * 15 +
+          (features.avg_relationship_confidence || 0.5) * 15 +
+          Math.min(features.prior_case_count || 1, 5) * 2.5 +
+          (features.mo_case_match_flag || 0) * 10
+        )));
         return {
           nodeId: pNode.id,
           label: pNode.data?.label || 'Unknown Suspect',
           role: pNode.data?.role || 'Accused',
           status: pNode.data?.status || 'hypothesis',
           linkedId: pNode.data?.linkedId || null,
-          priority_score: null,
-          error: err.message || 'Model API Unreachable',
+          priority_score: heuristicScore,
+          isHeuristic: true,
           features,
-          success: false
+          success: true
         };
       }
     })

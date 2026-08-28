@@ -56,7 +56,7 @@ export default function KnowledgeGraph() {
 
   // Case Selection State
   const [casesList, setCasesList] = useState([]);
-  const [selectedCaseId, setSelectedCaseId] = useState(searchParams.get('case_id') || 'CASE-2026-0811');
+  const [selectedCaseId, setSelectedCaseId] = useState(searchParams.get('case_id') || '');
   const [caseSearchQuery, setCaseSearchQuery] = useState('');
   const [isCaseSearchOpen, setIsCaseSearchOpen] = useState(false);
 
@@ -73,7 +73,7 @@ export default function KnowledgeGraph() {
   const [expandedConnectionId, setExpandedConnectionId] = useState(null);
 
   // Analytical Filters
-  const [minConfidence, setMinConfidence] = useState(50);
+  const [minConfidence, setMinConfidence] = useState(0);
   const [provenanceFilter, setProvenanceFilter] = useState('All'); // 'All' | 'Observed Only' | 'AI-Inferred Only'
   const [isFilterPanelOpen, setIsFilterPanelOpen] = useState(false);
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -95,6 +95,16 @@ export default function KnowledgeGraph() {
     async function loadCases() {
       const allCases = await dbService.getCases();
       setCasesList(allCases);
+      if (allCases && allCases.length > 0) {
+        const urlCaseId = searchParams.get('case_id');
+        const match = allCases.find(c => c.id === urlCaseId || c.crime_no === urlCaseId);
+        if (match) {
+          setSelectedCaseId(match.id);
+        } else if (!selectedCaseId || !allCases.find(c => c.id === selectedCaseId)) {
+          setSelectedCaseId(allCases[0].id);
+          setSearchParams({ case_id: allCases[0].id }, { replace: true });
+        }
+      }
     }
     loadCases();
   }, []);
@@ -112,25 +122,31 @@ export default function KnowledgeGraph() {
       }
 
       setLoading(true);
-      const network = await dbService.getCaseIntelligenceNetwork(selectedCaseId, {
-        minConfidence,
-        provenance: provenanceFilter
-      });
+      try {
+        const network = await dbService.getCaseIntelligenceNetwork(selectedCaseId, {
+          minConfidence,
+          provenance: provenanceFilter
+        });
 
-      setCaseData(network.caseData);
-      setNodes(network.nodes);
-      setEdges(network.edges);
-      setUnplacedNodes(network.unplacedNodes || []);
+        if (network) {
+          setCaseData(network.caseData);
+          setNodes(network.nodes || []);
+          setEdges(network.edges || []);
+          setUnplacedNodes(network.unplacedNodes || []);
 
-      // Default select case or primary accused
-      if (network.nodes.length > 0) {
-        const primary = network.nodes.find(n => n.type === 'Person' && (n.subtext === 'Accused' || n.subtext === 'Key Suspect')) || network.nodes[0];
-        setSelectedNode(primary);
-      } else {
-        setSelectedNode(null);
+          // Default select case or primary accused
+          if (network.nodes && network.nodes.length > 0) {
+            const primary = network.nodes.find(n => n.type === 'Person' && (n.subtext === 'Accused' || n.subtext === 'Key Suspect')) || network.nodes[0];
+            setSelectedNode(primary);
+          } else {
+            setSelectedNode(null);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load case network:", err);
+      } finally {
+        setLoading(false);
       }
-
-      setLoading(false);
     }
     loadCaseNetwork();
   }, [selectedCaseId, minConfidence, provenanceFilter]);
@@ -164,49 +180,82 @@ export default function KnowledgeGraph() {
     );
   }, [casesList, caseSearchQuery]);
 
-  // Create Custom Leaflet Marker Icon for Entity Pins
+  // Create Custom Leaflet Marker Icon for Entity Pins - Night-Ops Theme
   const createEntityIcon = (node) => {
     const cfg = ENTITY_CONFIG[node.type] || ENTITY_CONFIG.Person;
     const isSelected = selectedNode?.id === node.id;
     const isCase = node.type === 'Case';
 
-    const size = isCase ? 38 : isSelected ? 34 : 28;
+    // Glowing Dot Color & Profile Determination
+    let glowColor = '#F59E0B'; // default amber/orange glow
+    let ringColor = 'rgba(245, 158, 11, 0.4)';
+    let isHigh = false;
+
+    // Confirmed / High-confidence finding / Focal case / Accused -> Glowing Red (#E4232D)
+    if (isCase || node.subtext === 'Accused' || node.subtext === 'Key Suspect' || (node.confidence && node.confidence >= 80)) {
+      glowColor = '#E4232D';
+      ringColor = 'rgba(228, 35, 45, 0.4)';
+      isHigh = true;
+    }
+    // Resolved / Low-priority / Location / Witness / Peripheral -> Muted Green (#10B981)
+    else if (node.type === 'Location' || node.subtext === 'Witness' || (node.confidence && node.confidence < 50)) {
+      glowColor = '#10B981';
+      ringColor = 'rgba(16, 185, 129, 0.4)';
+    }
+
+    const size = isCase ? 32 : isSelected ? 28 : 22;
     const code = node.typeCode || cfg.code;
 
     const html = `
       <div style="
         position: relative;
-        width: ${size}px;
-        height: ${size}px;
+        width: ${size + 18}px;
+        height: ${size + 18}px;
         display: flex;
         align-items: center;
         justify-content: center;
       ">
-        ${isSelected ? `
-          <div style="
+        ${(isSelected || isCase || isHigh) ? `
+          <div class="radar-ring" style="
             position: absolute;
-            inset: -4px;
+            width: ${size + 18}px;
+            height: ${size + 18}px;
             border-radius: 9999px;
-            border: 2px solid #D4A017;
-            background: rgba(212, 160, 23, 0.25);
+            border: 1.5px solid ${glowColor};
+            background: ${ringColor};
+            pointer-events: none;
           "></div>
         ` : ''}
+        
         <div style="
+          position: relative;
           width: ${size}px;
           height: ${size}px;
           border-radius: 9999px;
-          background: #0A192F;
-          border: ${isCase ? '2.5px solid #F59E0B' : `2px solid ${cfg.color}`};
-          box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+          background: #061121;
+          border: 2px solid ${glowColor};
+          box-shadow: 0 0 10px ${glowColor}, 0 0 20px ${glowColor}80, inset 0 0 6px ${glowColor}99;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: ${isSelected ? '#D4A017' : '#FFFFFF'};
-          font-family: 'Inter', monospace;
-          font-weight: bold;
-          font-size: ${isCase ? '9.5px' : '8.5px'};
-          letter-spacing: -0.02em;
+          color: #FFFFFF;
+          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+          font-weight: 800;
+          font-size: ${isCase ? '9px' : '7.5px'};
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
         ">
+          <!-- Inner High-Contrast Core Dot -->
+          <div style="
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 9999px;
+            background: #FFFFFF;
+            box-shadow: 0 0 5px #FFFFFF;
+            top: 2px;
+            right: 2px;
+          "></div>
           ${code}
         </div>
       </div>
@@ -215,8 +264,8 @@ export default function KnowledgeGraph() {
     return L.divIcon({
       html,
       className: 'custom-map-marker',
-      iconSize: [size, size],
-      iconAnchor: [size / 2, size / 2],
+      iconSize: [size + 18, size + 18],
+      iconAnchor: [(size + 18) / 2, (size + 18) / 2],
     });
   };
 
@@ -302,7 +351,7 @@ export default function KnowledgeGraph() {
       <div className="absolute top-3 left-3 right-3 z-[1000] flex items-center justify-between pointer-events-none gap-2">
         {/* Left Searchable Case Selector */}
         <div className="pointer-events-auto relative">
-          <div className="flex items-center gap-2 bg-[#0A192F]/98 border border-[#132B4C] px-3 py-1.5 rounded shadow-xl text-xs backdrop-blur-md">
+          <div className="flex items-center gap-2 glass-card px-3 py-1.5 rounded-lg text-xs">
             <FolderSearch className="w-4 h-4 text-[#D4A017]" />
             <input
               type="text"
@@ -310,10 +359,10 @@ export default function KnowledgeGraph() {
               onChange={(e) => { setCaseSearchQuery(e.target.value); setIsCaseSearchOpen(true); }}
               onFocus={() => setIsCaseSearchOpen(true)}
               placeholder={caseData ? `${caseData.crime_no} (${caseData.police_station})` : "Select registered FIR case..."}
-              className="w-72 bg-transparent text-white placeholder-slate-300 text-xs focus:outline-none font-sans font-semibold"
+              className="w-72 bg-transparent text-white placeholder-slate-400 text-xs focus:outline-none font-sans font-semibold"
             />
             {caseData && (
-              <span className="text-[9.5px] font-mono px-1.5 py-0.2 rounded bg-[#B45309]/30 text-[#D4A017] border border-[#B45309]/50 uppercase font-bold">
+              <span className="text-[9.5px] font-mono px-1.5 py-0.2 rounded bg-amber-950/80 text-amber-300 border border-amber-800 uppercase font-bold">
                 {caseData.status}
               </span>
             )}
@@ -330,17 +379,17 @@ export default function KnowledgeGraph() {
 
           {/* Searchable Case Dropdown */}
           {isCaseSearchOpen && (
-            <div className="absolute top-full left-0 w-96 mt-1.5 bg-[#0A192F] border border-[#132B4C] rounded shadow-2xl py-1 z-50 max-h-72 overflow-y-auto">
-              <div className="px-3 py-1.5 text-[9.5px] font-mono uppercase text-slate-400 border-b border-[#132B4C] flex items-center justify-between">
+            <div className="absolute top-full left-0 w-96 mt-1.5 bg-[#0A192F] border border-[#254F85] rounded-md shadow-2xl py-1 z-50 max-h-72 overflow-y-auto divide-y divide-white/5">
+              <div className="px-3 py-1.5 text-[9.5px] font-mono uppercase text-slate-400 border-b border-white/10 flex items-center justify-between">
                 <span>Select Active Investigation FIR</span>
-                <span>{filteredCases.length} Registered</span>
+                <span className="text-[#D4A017]">{filteredCases.length} Registered</span>
               </div>
               {filteredCases.map((c) => (
                 <button
                   key={c.id}
                   onClick={() => handleSelectCase(c.id)}
-                  className={`w-full text-left px-3 py-2 hover:bg-[#132B4C] flex items-center justify-between text-xs transition-colors border-b border-[#132B4C]/40 last:border-0 ${
-                    selectedCaseId === c.id ? 'bg-[#132B4C]/80 border-l-2 border-[#D4A017]' : ''
+                  className={`w-full text-left px-3 py-2 hover:bg-[#132B4C] flex items-center justify-between text-xs transition-colors ${
+                    selectedCaseId === c.id ? 'bg-[#132B4C] border-l-2 border-[#D4A017]' : ''
                   }`}
                 >
                   <div className="min-w-0 pr-2">
@@ -360,10 +409,10 @@ export default function KnowledgeGraph() {
         </div>
 
         {/* Right Viewport Controls */}
-        <div className="pointer-events-auto flex items-center gap-1 bg-[#0A192F]/98 border border-[#132B4C] p-1 rounded shadow-xl text-xs backdrop-blur-md">
+        <div className="pointer-events-auto flex items-center gap-1 glass-card p-1 rounded-lg text-xs">
           <button
             onClick={() => setIsFilterPanelOpen(!isFilterPanelOpen)}
-            className={`p-1.5 rounded transition-colors ${isFilterPanelOpen ? 'bg-[#D4A017] text-[#0A192F]' : 'text-slate-300 hover:bg-[#132B4C]'}`}
+            className={`p-1.5 rounded transition-colors ${isFilterPanelOpen ? 'bg-[#D4A017] text-[#0A192F]' : 'text-slate-300 hover:bg-white/10'}`}
             title="Toggle Filter Panel"
           >
             <Filter className="w-3.5 h-3.5" />
@@ -375,11 +424,11 @@ export default function KnowledgeGraph() {
               }
             }}
             title="Center on Crime Scene Anchor"
-            className="p-1.5 text-slate-300 hover:text-white rounded hover:bg-[#132B4C]"
+            className="p-1.5 text-slate-300 hover:text-white rounded hover:bg-white/10"
           >
             <Crosshair className="w-3.5 h-3.5" />
           </button>
-          <button onClick={toggleFullScreen} title="Toggle Fullscreen" className="p-1.5 text-slate-300 hover:text-white rounded hover:bg-[#132B4C]">
+          <button onClick={toggleFullScreen} title="Toggle Fullscreen" className="p-1.5 text-slate-300 hover:text-white rounded hover:bg-white/10">
             {isFullScreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
           </button>
         </div>
@@ -387,8 +436,8 @@ export default function KnowledgeGraph() {
 
       {/* 2. FILTER PANEL SLIDEOUT */}
       {isFilterPanelOpen && (
-        <div className="absolute top-16 left-3 z-[1000] w-64 bg-[#0A192F]/98 border border-[#132B4C] rounded shadow-2xl p-3 text-xs space-y-3 text-slate-200 backdrop-blur-md">
-          <div className="flex items-center justify-between border-b border-[#132B4C] pb-1.5">
+        <div className="absolute top-16 left-3 z-[1000] w-64 glass-card rounded-lg p-3 text-xs space-y-3 text-slate-200 shadow-2xl">
+          <div className="flex items-center justify-between border-b border-white/10 pb-1.5">
             <span className="font-bold uppercase tracking-wider text-[10px] text-white">
               Geospatial Filters
             </span>
@@ -399,30 +448,37 @@ export default function KnowledgeGraph() {
 
           {/* Provenance Filter */}
           <div>
-            <span className="text-[10px] font-mono uppercase text-slate-400 block mb-1.5">
-              Relationship Links
+            <span className="text-[10px] font-mono uppercase text-slate-400 block mb-1.5" title="Filter between confirmed evidence and AI pattern clues">
+              Connection Type (Filter)
             </span>
             <div className="grid grid-cols-3 gap-1 text-[10px]">
-              {['All', 'Observed Only', 'AI-Inferred Only'].map((prov) => (
+              {[
+                { id: 'All', label: 'All Links' },
+                { id: 'Observed Only', label: 'Confirmed' },
+                { id: 'AI-Inferred Only', label: 'AI Clues' }
+              ].map((prov) => (
                 <button
-                  key={prov}
-                  onClick={() => setProvenanceFilter(prov)}
+                  key={prov.id}
+                  onClick={() => setProvenanceFilter(prov.id)}
                   className={`py-1 px-1 rounded text-center font-mono font-medium transition-colors ${
-                    provenanceFilter === prov
+                    provenanceFilter === prov.id
                       ? 'bg-[#D4A017] text-[#0A192F] font-bold'
                       : 'bg-[#0E223D] text-slate-300 hover:bg-[#132B4C]'
                   }`}
+                  title={prov.id === 'Observed Only' ? 'Confirmed physical evidence only' : prov.id === 'AI-Inferred Only' ? 'AI pattern predictions only' : 'All links'}
                 >
-                  {prov.replace(' Only', '')}
+                  {prov.label}
                 </button>
               ))}
             </div>
           </div>
 
           {/* Minimum Confidence Slider */}
-          <div className="pt-2 border-t border-[#132B4C]">
+          <div className="pt-2 border-t border-white/10">
             <div className="flex items-center justify-between mb-1">
-              <span className="text-[10px] font-mono uppercase text-slate-400">Min Confidence</span>
+              <span className="text-[10px] font-mono uppercase text-slate-400" title="Hide connections below this certainty threshold">
+                Min Match Certainty
+              </span>
               <span className="font-mono font-bold text-[#D4A017] text-[11px]">{minConfidence}%</span>
             </div>
             <input
@@ -438,17 +494,17 @@ export default function KnowledgeGraph() {
         </div>
       )}
 
-      {/* 3. MAIN GEOSPATIAL MAP CANVAS (React-Leaflet Dark Map) */}
+      {/* 3. MAIN GEOSPATIAL MAP CANVAS (React-Leaflet Night-Ops Dark Map) */}
       <div className="w-full h-full flex-1 relative">
         {selectedCaseId && caseData ? (
           <MapContainer
             center={[caseData.latitude || 19.0760, caseData.longitude || 72.8777]}
             zoom={14}
             zoomControl={false}
-            className="w-full h-full"
+            className="w-full h-full night-ops-map"
             style={{ background: '#061121' }}
           >
-            {/* Dark Matter Basemap Tiles */}
+            {/* Night-Ops Filtered Basemap Tiles */}
             <TileLayer
               attribution='&copy; <a href="https://carto.com/">CARTO</a>'
               url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
@@ -458,32 +514,41 @@ export default function KnowledgeGraph() {
             {/* Viewport Bounds Controller */}
             <MapViewportController bounds={mapBounds} centerTarget={flyToTarget} />
 
-            {/* Relationship Lines (Polylines between pinned nodes) */}
-            {validMapEdges.map((edge) => {
+            {/* Luminous Relationship Network Lines */}
+            {edges.map((edge) => {
               const isInferred = edge.status === 'inferred';
               const isConnectedToSelected = selectedNode && (edge.source === selectedNode.id || edge.target === selectedNode.id);
+
+              const srcNode = nodes.find(n => n.id === edge.source);
+              const tgtNode = nodes.find(n => n.id === edge.target);
+              const sourceCoords = edge.sourceCoords || edge.resolvedSourceCoords || (srcNode && srcNode.lat && srcNode.lng ? [srcNode.lat, srcNode.lng] : null);
+              const targetCoords = edge.targetCoords || edge.resolvedTargetCoords || (tgtNode && tgtNode.lat && tgtNode.lng ? [tgtNode.lat, tgtNode.lng] : null);
+
+              if (!sourceCoords || !targetCoords || !Array.isArray(sourceCoords) || !Array.isArray(targetCoords)) {
+                return null;
+              }
 
               return (
                 <Polyline
                   key={edge.id}
-                  positions={[edge.resolvedSourceCoords, edge.resolvedTargetCoords]}
+                  positions={[sourceCoords, targetCoords]}
                   pathOptions={{
-                    color: isConnectedToSelected ? '#D4A017' : isInferred ? 'rgba(212, 160, 23, 0.45)' : 'rgba(255, 255, 255, 0.25)',
-                    weight: isConnectedToSelected ? 3.5 : 1.8,
-                    dashArray: isInferred ? '6, 6' : undefined,
-                    opacity: isConnectedToSelected ? 1 : 0.6
+                    color: isConnectedToSelected ? '#E4232D' : isInferred ? '#F59E0B' : '#38BDF8',
+                    weight: isConnectedToSelected ? 2.5 : isInferred ? 1.5 : 1.2,
+                    dashArray: isInferred ? '4, 6' : undefined,
+                    opacity: isConnectedToSelected ? 0.95 : isInferred ? 0.75 : 0.45
                   }}
                 >
-                  <Tooltip sticky direction="top">
-                    <div className="bg-[#0A192F] text-white p-1 rounded font-mono text-[9px] border border-[#132B4C]">
-                      <strong>{edge.verb}</strong>: {edge.detailLabel || edge.label} ({edge.confidence || 85}% Conf)
+                  <Tooltip sticky direction="top" className="night-ops-tooltip">
+                    <div className="font-mono text-[9.5px] uppercase tracking-wider">
+                      <span className="text-[#D4A017] font-bold">{edge.verb || edge.label}</span>: {edge.detailLabel || edge.label} <span className="text-slate-400">({edge.confidence || 85}% Conf)</span>
                     </div>
                   </Tooltip>
                 </Polyline>
               );
             })}
 
-            {/* Pinned Entity Markers */}
+            {/* Pinned Entity High-Contrast Glowing Markers */}
             {nodes.filter(n => n.lat && n.lng).map((node) => {
               return (
                 <Marker
@@ -496,10 +561,13 @@ export default function KnowledgeGraph() {
                     }
                   }}
                 >
-                  <Tooltip direction="bottom" offset={[0, 10]} opacity={0.95}>
-                    <div className="bg-[#0A192F] text-white p-1.5 rounded shadow-lg border border-[#132B4C] text-[10px]">
-                      <div className="font-bold text-[#D4A017]">{node.label}</div>
-                      <div className="text-slate-300 text-[9px]">{node.subtext}</div>
+                  <Tooltip direction="bottom" offset={[0, 12]} opacity={0.98} className="night-ops-tooltip">
+                    <div className="font-mono text-[10px] uppercase tracking-wider">
+                      <div className="font-bold text-[#D4A017] flex items-center gap-1">
+                        <span>{node.label}</span>
+                        {node.confidence && <span className="text-[8.5px] px-1 py-0.2 rounded bg-[#0E223D] text-slate-300">[{node.confidence}%]</span>}
+                      </div>
+                      <div className="text-slate-400 text-[9px] lowercase tracking-normal font-sans">{node.subtext}</div>
                     </div>
                   </Tooltip>
                 </Marker>
@@ -533,17 +601,39 @@ export default function KnowledgeGraph() {
         )}
       </div>
 
-      {/* 4. UNPLACED ENTITIES STRIP (Bottom Tray if any) */}
+      {/* 4. TACTICAL MAP LEGEND (Bottom-Left) */}
+      <div className="absolute bottom-3 left-3 z-[1000] bg-[#0A192F]/95 border border-[#132B4C] p-2.5 rounded shadow-2xl text-[10px] text-slate-300 backdrop-blur-md flex flex-col gap-1.5 pointer-events-auto">
+        <div className="font-mono text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between gap-3 border-b border-[#132B4C] pb-1">
+          <span>Night-Ops Telemetry</span>
+          <span className="text-[#D4A017]">CIU-NET</span>
+        </div>
+        <div className="flex items-center gap-3 text-[9.5px] font-mono">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#E4232D] shadow-[0_0_8px_#E4232D] inline-block"></span>
+            <span>Confirmed / Focal</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#F59E0B] shadow-[0_0_8px_#F59E0B] inline-block"></span>
+            <span>Unverified / Lead</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] shadow-[0_0_8px_#10B981] inline-block"></span>
+            <span>Resolved / Asset</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 5. UNPLACED ENTITIES STRIP (Bottom Tray if any) */}
       {unplacedNodes.length > 0 && (
-        <div className="absolute bottom-12 left-3 z-[1000] bg-[#0A192F]/98 border border-[#132B4C] px-3 py-1.5 rounded shadow-lg text-[10px] text-slate-300 flex items-center gap-2 backdrop-blur-md">
-          <AlertCircle className="w-3.5 h-3.5 text-amber-500" />
-          <span className="font-mono font-bold">Unplaced Entities:</span>
+        <div className="absolute bottom-16 left-3 z-[1000] glass-card px-3 py-1.5 rounded-lg text-[10px] text-slate-300 flex items-center gap-2 shadow-lg">
+          <AlertCircle className="w-3.5 h-3.5 text-amber-400" />
+          <span className="font-mono font-bold text-white">Unplaced Entities:</span>
           <div className="flex items-center gap-1">
             {unplacedNodes.map((u) => (
               <button
                 key={u.id}
                 onClick={() => setSelectedNode(u)}
-                className="px-1.5 py-0.5 bg-[#132B4C] hover:bg-[#1C3B64] text-white rounded font-mono text-[9px]"
+                className="px-2 py-0.5 bg-[#132B4C] hover:bg-[#1C3B64] text-white rounded font-mono text-[9px] border border-[#254F85]"
               >
                 {u.label}
               </button>
@@ -552,11 +642,11 @@ export default function KnowledgeGraph() {
         </div>
       )}
 
-      {/* 5. RIGHT SIDE DETAIL CARD (Populated with selected entity data) */}
+      {/* 6. RIGHT SIDE DETAIL CARD */}
       {selectedNode && (
-        <aside className="absolute top-16 right-3 bottom-3 z-[1000] w-88 bg-white border border-[#CBD5E1] rounded-md shadow-2xl overflow-hidden flex flex-col text-xs text-[#0F172A]">
+        <aside className="absolute top-16 right-3 bottom-3 z-[1000] w-88 glass-card rounded-lg overflow-hidden flex flex-col text-xs text-slate-200 shadow-2xl">
           {/* Header */}
-          <div className="p-3.5 bg-[#0A192F] text-white border-b border-[#132B4C] flex items-start justify-between flex-shrink-0">
+          <div className="p-3.5 bg-[#0A192F]/90 text-white border-b border-white/10 flex items-start justify-between flex-shrink-0">
             <div className="min-w-0 pr-2">
               <div className="flex items-center gap-1.5 mb-1">
                 <span
@@ -568,7 +658,7 @@ export default function KnowledgeGraph() {
                 >
                   {selectedNode.type}
                 </span>
-                <span className="text-[9.5px] font-mono px-1.5 py-0.2 rounded bg-[#FEF3C7] text-[#92400E] font-bold">
+                <span className="text-[9.5px] font-mono px-1.5 py-0.2 rounded bg-amber-950/80 text-amber-300 border border-amber-800 font-bold">
                   {selectedNode.confidence || 90}% Conf
                 </span>
               </div>
@@ -581,19 +671,19 @@ export default function KnowledgeGraph() {
             </div>
             <button
               onClick={() => setSelectedNode(null)}
-              className="p-1 text-slate-400 hover:text-white rounded hover:bg-[#132B4C]"
+              className="p-1 text-slate-400 hover:text-white rounded hover:bg-white/10"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
           {/* Card Body with Scrollable Sections */}
-          <div className="flex-1 overflow-y-auto p-3.5 space-y-3.5 divide-y divide-slate-100">
+          <div className="flex-1 overflow-y-auto p-3.5 space-y-3.5 divide-y divide-white/10">
             {/* SECTION 1: PROMINENT CONNECTIONS LIST */}
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <h3 className="text-[10.5px] font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
-                  <Share2 className="w-3.5 h-3.5 text-[#0A192F]" />
+                <h3 className="text-[10.5px] font-bold uppercase tracking-wider text-slate-200 flex items-center gap-1.5">
+                  <Share2 className="w-3.5 h-3.5 text-[#D4A017]" />
                   Direct Connections ({detailedConnectionsList.length})
                 </h3>
                 <span className="text-[9.5px] text-slate-400 font-mono">Click to fly to pin</span>
@@ -601,7 +691,7 @@ export default function KnowledgeGraph() {
 
               <div className="space-y-1.5 max-h-56 overflow-y-auto pr-1">
                 {detailedConnectionsList.length === 0 ? (
-                  <div className="p-3 text-center text-xs text-slate-400 italic bg-slate-50 rounded">
+                  <div className="p-3 text-center text-xs text-slate-300 italic bg-white/[0.05] rounded border border-white/15">
                     No direct connections recorded for this entity.
                   </div>
                 ) : (
@@ -612,12 +702,12 @@ export default function KnowledgeGraph() {
                     return (
                       <div
                         key={conn.edgeId}
-                        className="rounded border border-[#E2E8F0] hover:border-[#CBD5E1] bg-[#F8FAFC] transition-all overflow-hidden"
+                        className="rounded border border-white/15 hover:border-white/30 bg-white/[0.07] backdrop-blur-sm transition-all overflow-hidden"
                       >
-                        {/* Connection Header Row (Click to fly & walk) */}
+                        {/* Connection Header Row */}
                         <div
                           onClick={() => handleWalkToNode(conn.targetNode)}
-                          className="p-2 flex items-center justify-between gap-2 cursor-pointer hover:bg-[#F1F5F9] transition-colors"
+                          className="p-2 flex items-center justify-between gap-2 cursor-pointer hover:bg-white/[0.12] transition-colors"
                         >
                           <div className="flex items-center gap-2 min-w-0">
                             <span
@@ -627,15 +717,15 @@ export default function KnowledgeGraph() {
                               {conn.targetNode.typeCode || cfg.code}
                             </span>
                             <div className="min-w-0">
-                              <div className="font-semibold text-xs text-[#0A192F] truncate">
+                              <div className="font-semibold text-xs text-white truncate">
                                 {conn.targetNode.label}
                               </div>
                               <div className="flex items-center gap-1.5 mt-0.5">
-                                <span className="px-1 py-0.2 rounded bg-slate-200 font-mono font-bold text-[8.5px] text-slate-700 uppercase">
+                                <span className="px-1 py-0.2 rounded bg-white/10 font-mono font-bold text-[8.5px] text-slate-200 uppercase border border-white/15">
                                   {conn.verb}
                                 </span>
                                 <span className={`text-[8.5px] font-mono font-bold uppercase ${
-                                  conn.status === 'inferred' ? 'text-[#92400E]' : 'text-slate-500'
+                                  conn.status === 'inferred' ? 'text-[#D4A017]' : 'text-slate-300'
                                 }`}>
                                   {conn.status === 'inferred' ? 'AI INFERRED' : 'OBSERVED'}
                                 </span>
@@ -644,7 +734,7 @@ export default function KnowledgeGraph() {
                           </div>
 
                           <div className="flex items-center gap-1 flex-shrink-0">
-                            <span className="font-mono text-[9.5px] font-bold text-[#92400E]">
+                            <span className="font-mono text-[9.5px] font-bold text-[#D4A017]">
                               {conn.confidence}%
                             </span>
                             <button
@@ -652,7 +742,7 @@ export default function KnowledgeGraph() {
                                 e.stopPropagation();
                                 setExpandedConnectionId(isExpanded ? null : conn.edgeId);
                               }}
-                              className="p-1 text-slate-400 hover:text-[#0A192F] rounded"
+                              className="p-1 text-slate-400 hover:text-white rounded"
                               title="Inspect Relationship Evidence"
                             >
                               {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -662,15 +752,15 @@ export default function KnowledgeGraph() {
 
                         {/* Inline Evidence & Model Detail */}
                         {isExpanded && (
-                          <div className="p-2 bg-white border-t border-slate-200 text-[10px] space-y-1 text-slate-600">
+                          <div className="p-2 bg-white/[0.06] border-t border-white/15 text-[10px] space-y-1 text-slate-200">
                             <div>
-                              <strong className="text-slate-800">Description:</strong> {conn.detailLabel}
+                              <strong className="text-white font-mono uppercase text-[9px]">Description:</strong> {conn.detailLabel}
                             </div>
                             <div>
-                              <strong className="text-slate-800">Evidence:</strong> {conn.evidence}
+                              <strong className="text-white font-mono uppercase text-[9px]">Evidence:</strong> {conn.evidence}
                             </div>
                             {conn.model_version && (
-                              <div className="font-mono text-slate-400 text-[9px]">
+                              <div className="font-mono text-slate-300 text-[9px]">
                                 Model: {conn.model_version}
                               </div>
                             )}
@@ -685,34 +775,34 @@ export default function KnowledgeGraph() {
 
             {/* SECTION 2: IDENTITY & KEY ATTRIBUTES */}
             <div className="pt-3 space-y-1.5">
-              <h3 className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+              <h3 className="text-[10px] font-bold uppercase tracking-wider text-slate-300">
                 Identity & Key Attributes
               </h3>
-              <div className="grid grid-cols-2 gap-1.5 text-[11px] bg-[#F8FAFC] p-2 rounded border border-slate-200">
+              <div className="grid grid-cols-2 gap-1.5 text-[11px] bg-white/[0.06] p-2 rounded border border-white/15">
                 <div>
-                  <span className="text-slate-400 text-[9.5px] block">Entity ID:</span>
-                  <span className="font-mono font-semibold text-[#0A192F]">{selectedNode.id}</span>
+                  <span className="text-slate-300 text-[9.5px] block">Entity ID:</span>
+                  <span className="font-mono font-semibold text-white">{selectedNode.id}</span>
                 </div>
                 <div>
-                  <span className="text-slate-400 text-[9.5px] block">Status:</span>
-                  <span className="font-semibold text-[#0A192F]">{selectedNode.subtext || 'Active'}</span>
+                  <span className="text-slate-300 text-[9.5px] block">Status:</span>
+                  <span className="font-semibold text-white">{selectedNode.subtext || 'Active'}</span>
                 </div>
                 {selectedNode.lat && selectedNode.lng && (
                   <div className="col-span-2">
                     <span className="text-slate-400 text-[9.5px] block">Coordinates:</span>
-                    <span className="font-mono text-[10px] text-[#0A192F]">{selectedNode.lat.toFixed(4)}° N, {selectedNode.lng.toFixed(4)}° E</span>
+                    <span className="font-mono text-[10px] text-[#D4A017]">{selectedNode.lat.toFixed(4)}° N, {selectedNode.lng.toFixed(4)}° E</span>
                   </div>
                 )}
                 {selectedNode.dob && (
                   <div>
                     <span className="text-slate-400 text-[9.5px] block">DOB / Age:</span>
-                    <span className="font-semibold text-[#0A192F]">{selectedNode.dob}</span>
+                    <span className="font-semibold text-white">{selectedNode.dob}</span>
                   </div>
                 )}
                 {selectedNode.owner && (
                   <div className="col-span-2">
                     <span className="text-slate-400 text-[9.5px] block">Beneficial Owner:</span>
-                    <span className="font-semibold text-[#0A192F]">{selectedNode.owner}</span>
+                    <span className="font-semibold text-white">{selectedNode.owner}</span>
                   </div>
                 )}
                 {selectedNode.aliases && selectedNode.aliases.length > 0 && (
@@ -720,7 +810,7 @@ export default function KnowledgeGraph() {
                     <span className="text-slate-400 text-[9.5px] block">Known Aliases:</span>
                     <div className="flex flex-wrap gap-1 mt-0.5">
                       {selectedNode.aliases.map((al, idx) => (
-                        <span key={idx} className="px-1 py-0.2 bg-white rounded border border-slate-200 font-mono text-[9.5px]">
+                        <span key={idx} className="px-1 py-0.2 bg-[#0E223D] rounded border border-[#132B4C] font-mono text-[9.5px] text-slate-200">
                           "{al}"
                         </span>
                       ))}
@@ -733,12 +823,12 @@ export default function KnowledgeGraph() {
             {/* SECTION 3: INTELLIGENCE & CORRELATION */}
             <div className="pt-3 space-y-1.5">
               <h3 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
-                <Sparkles className="w-3 h-3 text-[#B45309]" />
+                <Sparkles className="w-3 h-3 text-[#D4A017]" />
                 Case Intelligence
               </h3>
-              <div className="p-2 bg-[#FEF3C7]/40 border border-[#FCD34D] rounded text-[11px] text-slate-800 space-y-1">
+              <div className="p-2 bg-[#0E223D]/70 border border-[#132B4C] rounded text-[11px] text-slate-200 space-y-1">
                 <div>
-                  <span className="font-semibold text-[#92400E]">Case Correlation:</span>
+                  <span className="font-semibold text-[#D4A017]">Case Correlation:</span>
                   <p className="mt-0.5 leading-snug">
                     {selectedNode.type === 'Case'
                       ? selectedNode.brief_facts
@@ -752,15 +842,15 @@ export default function KnowledgeGraph() {
             {selectedNode.events && selectedNode.events.length > 0 && (
               <div className="pt-3 space-y-1.5">
                 <h3 className="text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
-                  <Clock className="w-3 h-3 text-[#0A192F]" />
+                  <Clock className="w-3 h-3 text-[#D4A017]" />
                   Activity Timeline
                 </h3>
-                <div className="space-y-1.5 relative pl-3 border-l border-slate-200 text-[10.5px]">
+                <div className="space-y-1.5 relative pl-3 border-l border-[#132B4C] text-[10.5px]">
                   {selectedNode.events.map((evt, idx) => (
                     <div key={idx} className="relative">
-                      <span className="absolute -left-[16px] top-1 w-1.5 h-1.5 rounded-full bg-[#0A192F]"></span>
-                      <div className="font-semibold text-[#0A192F]">{evt.event_type}</div>
-                      <div className="text-slate-500 text-[9.5px] font-mono">
+                      <span className="absolute -left-[16px] top-1 w-1.5 h-1.5 rounded-full bg-[#D4A017]"></span>
+                      <div className="font-semibold text-white">{evt.event_type}</div>
+                      <div className="text-slate-400 text-[9.5px] font-mono">
                         {new Date(evt.event_time).toLocaleDateString()} • {evt.location_text}
                       </div>
                     </div>
@@ -771,7 +861,7 @@ export default function KnowledgeGraph() {
           </div>
 
           {/* Card Footer Actions */}
-          <div className="p-3 bg-[#F8FAFC] border-t border-slate-200 flex flex-col gap-1.5 flex-shrink-0">
+          <div className="p-3 bg-[#061121] border-t border-[#132B4C] flex flex-col gap-1.5 flex-shrink-0">
             <button
               onClick={() => {
                 if (selectedNode.type === 'Person') navigate(`/entities?id=${selectedNode.id}`);

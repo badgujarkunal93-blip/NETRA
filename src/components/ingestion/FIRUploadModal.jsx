@@ -160,10 +160,10 @@ export default function FIRUploadModal({ isOpen, onClose }) {
             </div>
             <div>
               <h2 className="text-sm font-bold tracking-wider uppercase text-white">
-                FIR & CCTNS Document Ingestion Pipeline
+                Import & Read Police FIR
               </h2>
-              <p className="text-[10.5px] text-slate-300 font-mono">
-                Automated Text Extraction • LLM Schema Structuring • Entity Resolution
+              <p className="text-[11px] text-slate-300 font-sans">
+                Upload an FIR and the system reads it, pulls out names, phones, vehicles, and links them to your existing cases.
               </p>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function FIRUploadModal({ isOpen, onClose }) {
                     activeTab === 'preset' ? 'bg-[#0A192F] text-white shadow-sm' : 'text-slate-600 hover:text-[#0A192F]'
                   }`}
                 >
-                  Select Pilot Sample FIR (1-Click)
+                  Select Sample FIR (1-Click)
                 </button>
                 <button
                   onClick={() => setActiveTab('file')}
@@ -203,7 +203,7 @@ export default function FIRUploadModal({ isOpen, onClose }) {
                     activeTab === 'text' ? 'bg-[#0A192F] text-white shadow-sm' : 'text-slate-600 hover:text-[#0A192F]'
                   }`}
                 >
-                  Paste Raw FIR Text
+                  Paste FIR Text
                 </button>
               </div>
 
@@ -248,22 +248,18 @@ export default function FIRUploadModal({ isOpen, onClose }) {
                   <input
                     type="file"
                     accept=".pdf"
-                    onChange={(e) => {
-                      if (e.target.files?.[0]) {
-                        setFileName(e.target.files[0].name);
-                      }
-                    }}
-                    className="hidden"
                     id="fir-file-input"
+                    onChange={(e) => setFileName(e.target.files[0]?.name || null)}
+                    className="hidden"
                   />
-                  <label htmlFor="fir-file-input" className="cursor-pointer flex flex-col items-center">
-                    <Upload className="w-8 h-8 text-[#0A192F] mb-2" />
-                    <span className="text-xs font-bold text-[#0A192F]">
-                      {fileName ? fileName : 'Click to select FIR PDF or drag & drop'}
-                    </span>
-                    <span className="text-[10.5px] text-slate-500 mt-1">
-                      Supports CCTNS Form II digitally signed PDFs and scanned FIRs (automatic OCR)
-                    </span>
+                  <label htmlFor="fir-file-input" className="cursor-pointer block space-y-2">
+                    <Upload className="w-8 h-8 text-slate-400 mx-auto" />
+                    <div className="text-xs font-bold text-[#0A192F]">
+                      {fileName ? fileName : 'Choose FIR PDF Document or Drag & Drop'}
+                    </div>
+                    <p className="text-[11px] text-slate-500">
+                      Standard CCTNS FIR scans (English & Marathi bilingual supported)
+                    </p>
                   </label>
                 </div>
               )}
@@ -272,13 +268,13 @@ export default function FIRUploadModal({ isOpen, onClose }) {
               {activeTab === 'text' && (
                 <div>
                   <label className="text-[10.5px] font-mono uppercase text-slate-500 font-bold block mb-1">
-                    Paste Raw First Information Report Text:
+                    Paste First Information Report Text:
                   </label>
                   <textarea
                     rows={8}
                     value={pastedText}
                     onChange={(e) => setPastedText(e.target.value)}
-                    placeholder="Paste CCTNS Form II text, acts, sections, complainant and accused details..."
+                    placeholder="Paste complaint text, acts, sections, complainant and accused details..."
                     className="w-full p-3 text-xs font-mono bg-slate-50 border border-slate-300 rounded focus:outline-none focus:border-[#0A192F] focus:ring-1 focus:ring-[#0A192F]"
                   />
                 </div>
@@ -288,24 +284,24 @@ export default function FIRUploadModal({ isOpen, onClose }) {
               {isProcessing && (
                 <div className="p-3.5 bg-[#0A192F] text-white rounded border border-[#132B4C] space-y-2 text-xs font-mono">
                   <div className="flex items-center justify-between text-[#D4A017] font-bold text-[11px] pb-1 border-b border-[#132B4C]">
-                    <span>CIU INGESTION PIPELINE RUNNING</span>
+                    <span>AI PROCESSING IN PROGRESS</span>
                     <Loader2 className="w-3.5 h-3.5 animate-spin" />
                   </div>
                   <div className={`flex items-center gap-2 ${pipelineStep >= 1 ? 'text-emerald-400' : 'text-slate-500'}`}>
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>[1] Text Extraction & OCR Fallback Buffer Check</span>
+                    <span>[1] Reading document text...</span>
                   </div>
                   <div className={`flex items-center gap-2 ${pipelineStep >= 2 ? 'text-emerald-400' : 'text-slate-500'}`}>
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>[2] LLM Extraction & Strict Zod Schema Validation (FIROutputSchema)</span>
+                    <span>[2] Extracting suspect names, roles, and crime details with AI...</span>
                   </div>
                   <div className={`flex items-center gap-2 ${pipelineStep >= 3 ? 'text-emerald-400' : 'text-slate-500'}`}>
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>[3] Entity Resolution: Cross-Case Suspect Linking & Alias Merging</span>
+                    <span>[3] Matching names, phones, and vehicles against police database...</span>
                   </div>
                   <div className={`flex items-center gap-2 ${pipelineStep >= 4 ? 'text-emerald-400' : 'text-slate-500'}`}>
                     <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>[4] Database Ingestion: Cases, Roles, Phones, Vehicles, MO Fingerprint</span>
+                    <span>[4] Saving linked records to case registry...</span>
                   </div>
                 </div>
               )}
@@ -316,7 +312,7 @@ export default function FIRUploadModal({ isOpen, onClose }) {
               <div className="p-3 bg-emerald-50 border border-emerald-200 rounded text-emerald-900 flex items-center justify-between text-xs">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  <span className="font-bold">FIR Ingestion Succeeded — Validated by Zod Schema</span>
+                  <span className="font-bold">FIR Successfully Processed & Linked</span>
                 </div>
                 <span className="font-mono text-[10.5px]">Case ID: {extractedResult.case.id}</span>
               </div>

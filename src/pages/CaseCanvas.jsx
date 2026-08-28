@@ -99,8 +99,16 @@ export default function CaseCanvas() {
     async function loadCases() {
       const cases = await dbService.getCases();
       setAllCases(cases);
-      if (!selectedCaseId && cases.length > 0) {
-        setSearchParams({ case_id: cases[0].id });
+      if (cases && cases.length > 0) {
+        const urlCaseId = searchParams.get('case_id');
+        const match = cases.find(c => c.id === urlCaseId || c.crime_no === urlCaseId);
+        if (match) {
+          if (selectedCaseId !== match.id) {
+            setSearchParams({ case_id: match.id }, { replace: true });
+          }
+        } else if (!selectedCaseId || !cases.find(c => c.id === selectedCaseId)) {
+          setSearchParams({ case_id: cases[0].id }, { replace: true });
+        }
       }
     }
     loadCases();
@@ -565,10 +573,10 @@ export default function CaseCanvas() {
             <button
               onClick={handlePullFromKnowledgeGraph}
               className="px-2.5 py-1.5 bg-[#0E223D] hover:bg-[#132B4C] text-[#D4A017] text-xs font-bold rounded border border-[#D4A017]/60 transition-colors flex items-center gap-1.5 shadow-sm"
-              title="Import known entities and observed links from database into canvas"
+              title="Import known suspects, phones, and evidence from database into whiteboard"
             >
               <GitBranch className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Import KG Seeds</span>
+              <span className="hidden sm:inline">Import Known Clues</span>
             </button>
 
             {/* Undo / Redo */}
@@ -595,23 +603,23 @@ export default function CaseCanvas() {
             <button
               onClick={() => setIsSnapshotsModalOpen(true)}
               className="px-2 py-1.5 text-slate-300 hover:text-white text-xs font-medium rounded hover:bg-[#132B4C] transition-colors flex items-center gap-1 border border-transparent hover:border-[#1C3B64]"
-              title="Version Snapshots & History"
+              title="Saved Whiteboard Versions & History"
             >
               <History className="w-3.5 h-3.5 text-[#D4A017]" />
-              <span className="hidden md:inline">Snapshots ({snapshots.length})</span>
+              <span className="hidden md:inline">Saved Versions ({snapshots.length})</span>
             </button>
 
             {/* Case Narrative Notes */}
             <button
               onClick={() => setIsNotesDrawerOpen(true)}
               className="px-2 py-1.5 text-slate-300 hover:text-white text-xs font-medium rounded hover:bg-[#132B4C] transition-colors flex items-center gap-1 border border-transparent hover:border-[#1C3B64]"
-              title="Case Narrative & Global Notes"
+              title="Investigator Notes & Hypotheses"
             >
               <FileText className="w-3.5 h-3.5 text-emerald-400" />
               <span className="hidden md:inline">Case Notes</span>
             </button>
 
-            {/* AI Suspect Priority Scoring (Live XGBoost Model) */}
+            {/* AI Suspect Priority Scoring */}
             <div className="relative group">
               <button
                 onClick={handleRunPriorityAnalysis}
@@ -625,8 +633,8 @@ export default function CaseCanvas() {
                 }`}
                 title={
                   personNodesCount === 0
-                    ? 'Canvas must contain at least 1 Person of Interest card to compute priority scores'
-                    : 'Run Live XGBoost Suspect Priority Scoring'
+                    ? 'Add at least 1 person card to rank suspects with AI'
+                    : 'Rank suspects by importance with AI'
                 }
               >
                 {isAnalyzing ? (
@@ -637,13 +645,13 @@ export default function CaseCanvas() {
                 ) : (
                   <>
                     <BrainCircuit className="w-3.5 h-3.5 text-[#D4A017]" />
-                    <span>AI Analyze {personNodesCount > 0 ? `(${personNodesCount})` : ''}</span>
+                    <span>Rank Suspects {personNodesCount > 0 ? `(${personNodesCount})` : ''}</span>
                   </>
                 )}
               </button>
               {personNodesCount === 0 && (
                 <div className="absolute right-0 top-full mt-1.5 w-60 p-2 bg-[#0A192F] border border-[#254F85] rounded text-[10.5px] text-slate-300 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50 font-sans">
-                  ⚠️ Add at least one Person card to the canvas to compute AI Suspect Priority scores.
+                  ⚠️ Add at least one Person card to the whiteboard to rank suspects with AI.
                 </div>
               )}
             </div>
@@ -791,13 +799,13 @@ export default function CaseCanvas() {
                 </div>
                 <div>
                   <h3 className="text-xs font-bold font-mono uppercase tracking-wider text-white flex items-center gap-2">
-                    <span>Suspect Priority Model Ranking</span>
-                    <span className="px-1.5 py-0.2 rounded text-[9px] bg-emerald-950/80 text-emerald-300 border border-emerald-800">
-                      LIVE XGBOOST
+                    <span>Who to Investigate First (AI Suspect Ranking)</span>
+                    <span className="px-1.5 py-0.2 rounded text-[9px] bg-emerald-950/80 text-emerald-300 border border-emerald-800" title="Machine learning model: XGBoost">
+                      AI MODEL
                     </span>
                   </h3>
                   <p className="text-[10px] text-slate-400 font-sans">
-                    Dynamic graph topological ranking & behavioral feature evaluation
+                    Ranks suspects by how connected they are to crimes, phone numbers, and other suspects.
                   </p>
                 </div>
               </div>
@@ -827,10 +835,10 @@ export default function CaseCanvas() {
                 <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold text-[10.5px] uppercase tracking-wider text-amber-300 font-mono">
-                    Advisory Prioritization Only — Not Legal Evidence
+                    Advisory Guide for Officers — Not Courtroom Proof
                   </div>
                   <p className="text-[10.5px] text-amber-100/90 leading-relaxed font-sans mt-0.5">
-                    Suspect scores are machine-generated by the deployed XGBoost inference pipeline based on canvas graph structure, verified status, and registered CCTNS records. Requires independent human investigator review and corroboration.
+                    Suspect scores are AI-generated based on whiteboard connections, verified status, and registered police records. Must be independently verified by the investigating officer before making operational decisions.
                   </p>
                 </div>
               </div>
@@ -846,19 +854,19 @@ export default function CaseCanvas() {
               {/* Summary Stats Strip */}
               <div className="grid grid-cols-3 gap-2 text-xs font-mono">
                 <div className="bg-[#0E223D] p-2 rounded border border-[#1C3B64]">
-                  <div className="text-[10px] text-slate-400">PERSONS SCORED</div>
+                  <div className="text-[10px] text-slate-400">PERSONS RANKED</div>
                   <div className="text-sm font-bold text-white mt-0.5">{analysisResults.length}</div>
                 </div>
                 <div className="bg-[#0E223D] p-2 rounded border border-[#1C3B64]">
-                  <div className="text-[10px] text-slate-400">HIGH PRIORITY (≥70)</div>
+                  <div className="text-[10px] text-slate-400">URGENT LEADS (≥70)</div>
                   <div className="text-sm font-bold text-rose-400 mt-0.5">
                     {analysisResults.filter(r => r.priority_score >= 70).length}
                   </div>
                 </div>
                 <div className="bg-[#0E223D] p-2 rounded border border-[#1C3B64]">
-                  <div className="text-[10px] text-slate-400">MODEL ENDPOINT</div>
+                  <div className="text-[10px] text-slate-400">AI ENGINE STATUS</div>
                   <div className="text-[10px] font-bold text-emerald-400 mt-1 truncate">
-                    netra-gd70.onrender.com
+                    Online (XGBoost Live)
                   </div>
                 </div>
               </div>
@@ -866,7 +874,7 @@ export default function CaseCanvas() {
               {/* Ranked Suspect List */}
               <div className="space-y-2.5">
                 <div className="text-[10.5px] font-mono uppercase font-bold text-slate-400 tracking-wider">
-                  Ranked Suspect Priority Dossier
+                  Suspect Priority Order (Highest Attention First)
                 </div>
 
                 {analysisResults.length === 0 ? (
@@ -902,7 +910,7 @@ export default function CaseCanvas() {
                               <span className="text-[#D4A017] uppercase font-semibold">{item.role}</span>
                               <span>•</span>
                               <span className={item.status === 'confirmed' ? 'text-emerald-400 font-semibold' : 'text-amber-400 font-semibold'}>
-                                {item.status === 'confirmed' ? 'CONFIRMED' : 'HYPOTHESIS'}
+                                {item.status === 'confirmed' ? 'CONFIRMED FACT' : 'UNCONFIRMED CLUE'}
                               </span>
                             </div>
                           </div>
@@ -923,7 +931,7 @@ export default function CaseCanvas() {
                                 <span>SCORE: {item.priority_score}</span>
                               </span>
                               <span className="text-[9px] font-mono text-slate-400 mt-0.5">
-                                {item.priority_score >= 70 ? 'HIGH PRIORITY' : item.priority_score >= 40 ? 'MODERATE PRIORITY' : 'LOW PRIORITY'}
+                                {item.priority_score >= 70 ? 'URGENT ATTENTION' : item.priority_score >= 40 ? 'MODERATE PRIORITY' : 'LOW PRIORITY'}
                               </span>
                             </div>
                           ) : (
@@ -937,40 +945,34 @@ export default function CaseCanvas() {
                       {/* Reasoning Inputs Grid (Raw feature values used for inference) */}
                       {item.features && (
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 pt-2 border-t border-[#1C3B64]/60 text-[10px] font-mono">
-                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
-                            <div className="text-slate-400 text-[8.5px]">CENTRALITY</div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]" title="How much of a bridge this person is between different groups">
+                            <div className="text-slate-400 text-[8.5px]">BRIDGE FACTOR</div>
                             <div className="text-white font-bold">{item.features.network_centrality}</div>
                           </div>
-                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
-                            <div className="text-slate-400 text-[8.5px]">CANVAS LINKS</div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]" title="Number of direct links to phones, vehicles, or cases">
+                            <div className="text-slate-400 text-[8.5px]">DIRECT LINKS</div>
                             <div className="text-white font-bold">{item.features.direct_connection_count} edges</div>
                           </div>
-                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
-                            <div className="text-slate-400 text-[8.5px]">VERIFIED RATIO</div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]" title="Percentage of connections confirmed by physical evidence vs AI pattern clues">
+                            <div className="text-slate-400 text-[8.5px]">VERIFIED FACTS</div>
                             <div className="text-emerald-400 font-bold">
                               {Math.round(item.features.observed_vs_inferred_ratio * 100)}% verified
                             </div>
                           </div>
-                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]" title="Importance weight based on role in FIR (accused vs witness)">
                             <div className="text-slate-400 text-[8.5px]">ROLE WEIGHT</div>
                             <div className="text-amber-400 font-bold">{item.features.role_weight}</div>
                           </div>
-                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
-                            <div className="text-slate-400 text-[8.5px]">PRIOR CASES</div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]" title="Number of previous police cases where this person appeared">
+                            <div className="text-slate-400 text-[8.5px]">PAST CASES</div>
                             <div className="text-white font-bold">{item.features.prior_case_count} case(s)</div>
                           </div>
-                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
-                            <div className="text-slate-400 text-[8.5px]">MO SPREE MATCH</div>
-                            <div className={item.features.mo_case_match_flag ? 'text-rose-400 font-bold' : 'text-slate-400'}>
-                              {item.features.mo_case_match_flag ? 'Yes (Active Spree)' : 'No'}
-                            </div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]" title="How similar this crime spree method is to other known cases">
+                            <div className="text-slate-400 text-[8.5px]">METHOD MATCH</div>
+                            <div className="text-cyan-400 font-bold">{item.features.mo_spree_similarity || 0}</div>
                           </div>
-                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
-                            <div className="text-slate-400 text-[8.5px]">EVIDENCE LOGS</div>
-                            <div className="text-white font-bold">{item.features.evidence_count} justifications</div>
-                          </div>
-                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]">
-                            <div className="text-slate-400 text-[8.5px]">ALERTS</div>
+                          <div className="bg-[#071120] p-1.5 rounded border border-[#132B4C]" title="Number of unresolved system warnings for this person">
+                            <div className="text-slate-400 text-[8.5px]">OPEN ALERTS</div>
                             <div className="text-white font-bold">
                               {item.features.alert_count} active
                             </div>
