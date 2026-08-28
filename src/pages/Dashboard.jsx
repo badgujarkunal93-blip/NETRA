@@ -34,12 +34,19 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function loadData() {
-      const data = await dbService.getDashboardMetrics();
-      setMetrics(data);
-      if (data.hotspots && data.hotspots.length > 0) {
-        setSelectedHotspot(data.hotspots[0]);
+      try {
+        const data = await dbService.getDashboardMetrics();
+        if (data) {
+          setMetrics(data);
+          if (data.hotspots && data.hotspots.length > 0) {
+            setSelectedHotspot(data.hotspots[0]);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load dashboard metrics:", err);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     }
     loadData();
   }, []);
@@ -48,9 +55,9 @@ export default function Dashboard() {
     return (
       <div className="flex items-center justify-center h-96">
         <div className="flex flex-col items-center gap-2">
-          <div className="w-6 h-6 border-2 border-[#0A192F] border-t-[#D4A017] rounded-full animate-spin"></div>
-          <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">
-            Synchronizing CIU Telemetry...
+          <div className="w-6 h-6 border-2 border-white/20 border-t-[#D4A017] rounded-full animate-spin"></div>
+          <div className="text-[11px] font-mono text-slate-300 uppercase tracking-wider">
+            Loading live intelligence dashboard...
           </div>
         </div>
       </div>
@@ -90,6 +97,7 @@ export default function Dashboard() {
   const statCards = [
     {
       title: 'Active Cases',
+      subTitle: 'Registered FIRs',
       value: metrics.activeCases,
       trendText: '+2 registered this week',
       trendPositive: true,
@@ -99,8 +107,9 @@ export default function Dashboard() {
     },
     {
       title: 'Open Alerts',
+      subTitle: 'Unresolved Warnings',
       value: metrics.openAlerts,
-      trendText: '3 high-severity unresolved',
+      trendText: '3 high-priority to review',
       isAlert: true,
       trendPositive: false,
       sparklineData: [2, 5, 3, 7, 4, 9, 8],
@@ -108,18 +117,20 @@ export default function Dashboard() {
       path: '/alerts'
     },
     {
-      title: 'Tracked Entities',
+      title: 'Tracked Suspects',
+      subTitle: 'People of Interest',
       value: metrics.entitiesTracked,
-      trendText: '+6 newly linked across cells',
+      trendText: '+6 newly linked in network',
       trendPositive: true,
       sparklineData: [18, 21, 24, 26, 29, 31, 34],
       sparkColor: '#047857',
       path: '/entities'
     },
     {
-      title: 'Graph Link Nodes',
+      title: 'Connected Clues',
+      subTitle: 'Network Links & Evidence',
       value: '142',
-      trendText: '47 AI-inferred • 95 Observed',
+      trendText: '47 AI pattern clues • 95 confirmed facts',
       trendPositive: true,
       sparklineData: [90, 105, 112, 120, 128, 136, 142],
       sparkColor: '#B45309',
@@ -133,27 +144,31 @@ export default function Dashboard() {
   const secondaryFindings = aiFindingsList.slice(1);
 
   return (
-    <div className="space-y-4 max-w-7xl mx-auto">
+    <div className="space-y-5 max-w-7xl mx-auto">
       {/* 1. CLEAN INSTITUTIONAL COMMAND CENTER HERO HEADER */}
-      <div className="bg-[#0A192F] rounded-md p-4 text-white border border-[#132B4C] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="glass-card rounded-lg p-4 text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3.5">
+          <img 
+            src="/app_logo.png" 
+            alt="CIU Command Crest" 
+            className="w-10 h-10 rounded object-contain bg-[#061121] p-1 border border-[#D4A017]/80 shadow-md flex-shrink-0"
+          />
           <div>
             <h1 className="text-lg md:text-xl font-bold tracking-tight uppercase text-white">
               Investigator Command Center
             </h1>
             <p className="text-xs text-slate-300 mt-0.5">
-              Live operational fusion, multi-jurisdiction link prediction, and active threat correlation feed.
+              Real-time police cases, suspect connections, and pattern alerts in one place.
             </p>
           </div>
         </div>
 
-
         <div className="flex items-center gap-2.5">
           <button
             onClick={() => navigate('/graph')}
-            className="px-3.5 py-1.5 bg-[#D4A017] hover:bg-[#B45309] text-[#0A192F] hover:text-white font-bold text-xs rounded transition-all flex items-center gap-1.5 shadow-sm"
+            className="px-3.5 py-1.5 bg-[#D4A017] hover:bg-[#F59E0B] text-[#0A192F] font-bold text-xs rounded transition-all flex items-center gap-1.5 shadow-md"
           >
-            <span>Geospatial Network</span>
+            <span>Open Knowledge Graph</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -165,49 +180,52 @@ export default function Dashboard() {
           <div
             key={idx}
             onClick={() => navigate(card.path)}
-            className="bg-white/30 backdrop-blur-[2px] p-3.5 rounded-md border border-[#E2E8F0] shadow-sm hover:border-[#CBD5E1] transition-all cursor-pointer flex flex-col justify-between"
+            className="glass-card-interactive p-4 rounded-lg cursor-pointer flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-[10.5px] font-bold uppercase tracking-wider text-slate-500">
+                <span className="text-[10.5px] font-bold uppercase tracking-wider text-slate-300">
                   {card.title}
                 </span>
+                <span className="text-[9.5px] font-mono text-slate-400">
+                  {card.subTitle}
+                </span>
               </div>
-              <div className="flex items-baseline justify-between mt-1">
-                <div className={`text-3xl font-bold font-mono tracking-tight ${card.isAlert ? 'text-[#B91C1C]' : 'text-[#0A192F]'}`}>
+              <div className="flex items-baseline justify-between mt-2">
+                <div className={`text-3xl font-extrabold font-mono tracking-tight ${card.isAlert ? 'text-[#E4232D]' : 'text-white'}`}>
                   {card.value}
                 </div>
                 {/* Embedded Mini Trend Sparkline */}
                 <div className="opacity-90 pl-2">
-                  {renderSparkline(card.sparklineData, card.sparkColor)}
+                  {renderSparkline(card.sparklineData, card.isAlert ? '#E4232D' : '#D4A017')}
                 </div>
               </div>
             </div>
 
-            <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[10.5px]">
-              <span className={`truncate font-medium ${card.isAlert ? 'text-[#92400E]' : 'text-slate-600'}`}>
+            <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[11px]">
+              <span className={`truncate font-medium ${card.isAlert ? 'text-rose-300 font-semibold' : 'text-slate-300'}`}>
                 {card.trendText}
               </span>
-              <ChevronRight className="w-3 h-3 text-slate-400 flex-shrink-0 ml-1" />
+              <ChevronRight className="w-3.5 h-3.5 text-slate-400 flex-shrink-0 ml-1" />
             </div>
           </div>
         ))}
       </div>
 
-      {/* 3. ASYMMETRIC MAIN SECTION: DOMINANT ALERTS FEED (7.5 Cols) & TACTICAL GIS MAP (4.5 Cols) */}
+      {/* 3. ASYMMETRIC MAIN SECTION: ALERTS FEED (7 Cols) & TACTICAL GIS MAP (5 Cols) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
         {/* LEFT: DOMINANT INTELLIGENCE ALERTS QUEUE (7 Cols) */}
-        <div className="lg:col-span-7 bg-white/30 backdrop-blur-[2px] rounded-md border border-[#E2E8F0] shadow-sm overflow-hidden flex flex-col">
+        <div className="lg:col-span-7 glass-card rounded-lg overflow-hidden flex flex-col">
           {/* Header */}
-          <div className="bg-[#0A192F] px-4 py-2.5 flex items-center justify-between text-white border-b border-[#132B4C]">
+          <div className="bg-white/[0.08] px-4 py-3 flex items-center justify-between text-white border-b border-white/15">
             <div className="flex items-center gap-2">
               <ShieldAlert className="w-4 h-4 text-[#D4A017]" />
               <div>
-                <span className="font-bold text-xs uppercase tracking-wider">
-                  Priority Intelligence Queue
+                <span className="font-bold text-xs uppercase tracking-wider text-white">
+                  Important Alerts & Clues
                 </span>
-                <span className="text-[10px] text-slate-400 ml-2 font-mono">
-                  {metrics.recentAlerts.length} Active Feeds
+                <span className="text-[10px] text-slate-300 ml-2 font-mono">
+                  {metrics.recentAlerts.length} Active Notifications
                 </span>
               </div>
             </div>
@@ -215,86 +233,52 @@ export default function Dashboard() {
               to="/alerts"
               className="text-[11px] font-semibold text-[#D4A017] hover:underline flex items-center gap-1 font-mono"
             >
-              <span>FULL QUEUE</span>
+              <span>SEE ALL ALERTS</span>
               <ChevronRight className="w-3 h-3" />
             </Link>
           </div>
 
-          {/* Differentiated Alert Rows (High Severity Heavy vs Low Severity Subtle) */}
-          <div className="divide-y divide-slate-100 flex-1">
+          {/* List of High-Value Actionable Alerts */}
+          <div className="divide-y divide-white/10">
             {metrics.recentAlerts.map((alert) => {
               const isHigh = alert.severity === 'High';
-              const isMedium = alert.severity === 'Medium';
-
               return (
                 <div
                   key={alert.id}
                   onClick={() => navigate('/alerts')}
-                  className={`p-3.5 transition-all cursor-pointer flex items-start gap-3 hover:bg-[#F8FAFC] ${
-                    isHigh
-                      ? 'border-l-4 border-[#B91C1C] bg-[#FFFBFB]'
-                      : isMedium
-                      ? 'border-l-4 border-[#D4A017]'
-                      : 'border-l-4 border-slate-300 opacity-80'
-                  }`}
+                  className="p-3.5 hover:bg-white/[0.06] transition-colors cursor-pointer flex items-start gap-3 text-xs"
                 >
-                  {/* Severity Indicator */}
-                  <div className="flex flex-col items-center flex-shrink-0 mt-0.5">
-                    <span
-                      className={`px-1.5 py-0.5 rounded text-[8.5px] font-mono font-bold uppercase border ${
-                        isHigh
-                          ? 'bg-[#FEE2E2] text-[#B91C1C] border-[#FCA5A5]'
-                          : isMedium
-                          ? 'bg-[#FEF3C7] text-[#92400E] border-[#FCD34D]'
-                          : 'bg-slate-100 text-slate-600 border-slate-200'
-                      }`}
-                    >
-                      {alert.severity}
-                    </span>
+                  <div className={`mt-0.5 p-1.5 rounded-full flex-shrink-0 ${
+                    isHigh ? 'bg-red-500/20 text-[#E4232D] border border-red-500/30' : 'bg-amber-500/20 text-[#D4A017] border border-amber-500/30'
+                  }`}>
+                    <AlertTriangle className="w-3.5 h-3.5" />
                   </div>
 
-                  {/* Body */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
-                      <h4 className={`text-xs truncate ${isHigh ? 'font-bold text-[#0A192F]' : 'font-semibold text-slate-800'}`}>
+                    <div className="flex items-center justify-between">
+                      <span className="font-bold text-white text-xs truncate">
                         {alert.title}
-                      </h4>
-                      <span className="text-[10px] text-slate-400 font-mono flex-shrink-0">
-                        {new Date(alert.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </span>
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-[9.5px] font-bold text-[#D4A017]">
+                          {alert.confidence}% Conf
+                        </span>
+                        <span className={`text-[9px] font-mono px-1.5 py-0.2 rounded uppercase font-bold border ${
+                          isHigh ? 'bg-red-950/80 text-rose-300 border-rose-800' : 'bg-amber-950/80 text-amber-300 border-amber-800'
+                        }`}>
+                          {alert.severity}
+                        </span>
+                      </div>
                     </div>
 
-                    <p className={`text-[11px] leading-snug mt-0.5 ${isHigh ? 'text-slate-700' : 'text-slate-500'} line-clamp-2`}>
+                    <p className="text-[11.5px] text-slate-300 line-clamp-2 mt-1 leading-snug">
                       {alert.description}
                     </p>
 
-                    {/* Rich Embedded Telemetry Line */}
-                    <div className="mt-2 flex flex-wrap items-center gap-2 text-[10px]">
-                      {/* Target Callsign */}
-                      <span className="font-mono bg-slate-100 px-1.5 py-0.2 rounded text-slate-800 border border-slate-200 font-semibold">
-                        {alert.target_type}: {alert.target_id}
-                      </span>
-
-                      {/* Embedded Mini Confidence Bar */}
-                      <div className="flex items-center gap-1.5 bg-slate-50 px-1.5 py-0.2 rounded border border-slate-200">
-                        <span className="text-slate-500 font-mono text-[9.5px]">Conf:</span>
-                        <div className="w-12 h-1.5 bg-slate-200 rounded-full overflow-hidden">
-                          <div
-                            className={`h-full ${isHigh ? 'bg-[#B91C1C]' : 'bg-[#D4A017]'}`}
-                            style={{ width: `${alert.confidence}%` }}
-                          ></div>
-                        </div>
-                        <span className="font-mono font-bold text-slate-800 text-[9.5px]">{alert.confidence}%</span>
-                      </div>
-
-                      <span className="text-slate-400">•</span>
-                      <span className="text-slate-500 font-mono">{alert.evidence_refs.length} Evidences</span>
-
-                      {isHigh && (
-                        <span className="ml-auto text-[10px] font-bold text-[#B91C1C] flex items-center gap-0.5 hover:underline">
-                          <span>Inspect →</span>
-                        </span>
-                      )}
+                    <div className="mt-2 flex items-center gap-4 text-[10px] font-mono text-slate-400">
+                      <span className="text-slate-300 font-semibold">Target: {alert.target_id || 'Syndicate Cell'}</span>
+                      <span>Ref: {(alert.evidence_refs || [])[0] || 'CDR Log'}</span>
+                      <span className="ml-auto text-[#D4A017] font-semibold">Open Alert →</span>
                     </div>
                   </div>
                 </div>
@@ -304,13 +288,13 @@ export default function Dashboard() {
         </div>
 
         {/* RIGHT: LIVE TACTICAL GIS HOTSPOT MAP (5 Cols) */}
-        <div className="lg:col-span-5 bg-white/30 backdrop-blur-[2px] rounded-md border border-[#E2E8F0] shadow-sm overflow-hidden flex flex-col">
+        <div className="lg:col-span-5 glass-card rounded-lg overflow-hidden flex flex-col">
           {/* Header */}
-          <div className="px-4 py-2.5 bg-[#0A192F] text-white border-b border-[#132B4C] flex items-center justify-between">
+          <div className="px-4 py-3 bg-white/[0.08] text-white border-b border-white/15 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Compass className="w-4 h-4 text-[#D4A017]" />
-              <span className="font-bold text-xs uppercase tracking-wider">
-                Mumbai GIS Tactical Grid
+              <span className="font-bold text-xs uppercase tracking-wider text-white">
+                High Crime Activity Zones (Map)
               </span>
             </div>
             <span className="text-[10px] font-mono text-slate-300">
@@ -320,7 +304,7 @@ export default function Dashboard() {
 
           <div className="p-3.5 flex-1 flex flex-col justify-between space-y-3">
             {/* Tactical Live Map Surface */}
-            <div className="relative w-full h-64 bg-[#061121] rounded overflow-hidden border border-[#132B4C] flex items-center justify-center">
+            <div className="relative w-full h-64 bg-[#061121] rounded-md overflow-hidden border border-white/15 flex items-center justify-center">
               {/* Tactical Precision Grid */}
               <div className="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
@@ -332,14 +316,14 @@ export default function Dashboard() {
 
               {/* Hotspot Pulse Markers */}
               {metrics.hotspots.map((hs) => {
-                const isSelected = selectedHotspot?.id === hs.id;
-                const isHigh = hs.severity === 'High';
+                const isSelected = selectedHotspot?.name === hs.name;
+                const isHigh = hs.activeAlerts > 2;
 
                 return (
                   <button
-                    key={hs.id}
+                    key={hs.name}
                     onClick={() => setSelectedHotspot(hs)}
-                    style={{ left: `${hs.x}%`, top: `${hs.y}%` }}
+                    style={{ left: `${Math.max(10, Math.min(90, ((hs.lng - 72.80) / 0.15) * 100))}%`, top: `${Math.max(10, Math.min(90, (1 - (hs.lat - 18.90) / 0.30) * 100))}%` }}
                     className="absolute -translate-x-1/2 -translate-y-1/2 group focus:outline-none z-10"
                     title={hs.name}
                   >
@@ -350,64 +334,64 @@ export default function Dashboard() {
                       <span
                         className={`inline-flex rounded-full h-3.5 w-3.5 items-center justify-center text-[8px] font-mono font-bold text-white shadow-md border ${
                           isHigh
-                            ? 'bg-[#B91C1C] border-red-300 ring-2 ring-red-500/30'
+                            ? 'bg-[#E4232D] border-red-300 ring-2 ring-red-500/30'
                             : 'bg-[#D4A017] border-amber-300'
                         } ${isSelected ? 'ring-2 ring-white scale-125' : ''}`}
                       >
-                        {hs.count}
+                        {hs.caseCount}
                       </span>
                     </span>
-                    <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-1.5 py-0.5 rounded bg-[#061121] text-[8.5px] font-mono text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 border border-[#132B4C]">
-                      {hs.name} ({hs.count} FIRs)
+                    <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-0.5 rounded bg-[#061121] text-[8.5px] font-mono text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 border border-white/20 shadow-lg">
+                      {hs.name} ({hs.caseCount} FIRs)
                     </span>
                   </button>
                 );
               })}
 
               {/* Real-looking GIS Telemetry Readout */}
-              <div className="absolute top-2 left-2 px-2 py-1 bg-[#0A192F]/90 rounded border border-[#132B4C] text-[8.5px] font-mono text-cyan-300 backdrop-blur-sm">
+              <div className="absolute top-2 left-2 px-2 py-1 bg-black/60 rounded border border-white/15 text-[8.5px] font-mono text-cyan-300 backdrop-blur-sm">
                 LAT: 19.0760° N | LON: 72.8777° E | GRID: BKC-S4
               </div>
             </div>
 
-            {/* Selected Hotspot Intelligence Brief with Heat-Intensity Meter */}
+            {/* Selected Hotspot Intelligence Brief */}
             {selectedHotspot ? (
-              <div className="p-3 bg-[#F8FAFC] rounded border border-[#CBD5E1] text-xs">
-                <div className="flex items-center justify-between font-bold text-[#0A192F]">
+              <div className="p-3 bg-white/[0.07] backdrop-blur-sm rounded-md border border-white/15 text-xs">
+                <div className="flex items-center justify-between font-bold text-white">
                   <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#B91C1C]" />
+                    <MapPin className="w-3.5 h-3.5 text-[#E4232D]" />
                     <span className="text-xs">{selectedHotspot.name}</span>
                   </div>
                   <span className={`text-[9.5px] font-mono font-bold px-1.5 py-0.2 rounded border ${
-                    selectedHotspot.severity === 'High' ? 'bg-[#FEE2E2] text-[#B91C1C] border-red-200' : 'bg-[#FEF3C7] text-[#92400E] border-amber-200'
+                    selectedHotspot.activeAlerts > 2 ? 'bg-red-950/80 text-rose-300 border-rose-800' : 'bg-amber-950/80 text-amber-300 border-amber-800'
                   }`}>
-                    {selectedHotspot.severity} Threat
+                    {selectedHotspot.topCategory || 'Crime Sector'}
                   </span>
                 </div>
 
-                <div className="text-[11px] text-slate-600 mt-1.5">
-                  Pattern MO: <strong className="text-slate-900">{selectedHotspot.type}</strong>
+                <div className="text-[11px] text-slate-300 mt-1.5">
+                  Station Jurisdiction: <strong className="text-white">{selectedHotspot.station}</strong>
                 </div>
 
                 {/* Heat Intensity Bar */}
-                <div className="mt-2 pt-2 border-t border-slate-200">
-                  <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 mb-1">
-                    <span>SECTOR CLUSTER DENSITY</span>
-                    <span className="font-bold text-slate-800">{selectedHotspot.count} Active Cases</span>
+                <div className="mt-2 pt-2 border-t border-white/10">
+                  <div className="flex items-center justify-between text-[10px] font-mono text-slate-300 mb-1">
+                    <span>AREA ACTIVITY LEVEL</span>
+                    <span className="font-bold text-white">{selectedHotspot.caseCount} Reported Crimes</span>
                   </div>
-                  <div className="w-full h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                  <div className="w-full h-1.5 bg-black/40 rounded-full overflow-hidden border border-white/10">
                     <div
-                      className={`h-full ${selectedHotspot.severity === 'High' ? 'bg-[#B91C1C]' : 'bg-[#D4A017]'}`}
-                      style={{ width: `${Math.min(100, selectedHotspot.count * 25)}%` }}
+                      className="h-full bg-[#D4A017]"
+                      style={{ width: `${Math.min(100, (selectedHotspot.caseCount / 50) * 100)}%` }}
                     ></div>
                   </div>
                 </div>
 
                 <div className="mt-2.5 flex items-center justify-between text-[11px]">
-                  <span className="text-slate-500 font-mono text-[10px]">Zone: Metro South/Central</span>
+                  <span className="text-slate-400 font-mono text-[10px]">Zone: Mumbai Metro Region</span>
                   <button
                     onClick={() => navigate('/cases')}
-                    className="text-[#B45309] font-bold hover:underline flex items-center gap-0.5"
+                    className="text-[#D4A017] font-bold hover:underline flex items-center gap-0.5"
                   >
                     <span>View Cases</span>
                     <ChevronRight className="w-3 h-3" />
@@ -415,7 +399,7 @@ export default function Dashboard() {
                 </div>
               </div>
             ) : (
-              <div className="p-3 bg-[#F8FAFC] rounded border border-[#CBD5E1] text-xs text-center text-slate-500 font-mono">
+              <div className="p-3 bg-white/[0.05] rounded-md border border-white/10 text-xs text-center text-slate-400 font-mono">
                 No active hotspot sectors detected.
               </div>
             )}
@@ -423,126 +407,127 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* 4. ASYMMETRIC AI-INFERRED INTELLIGENCE FINDINGS (Featured Hero Card + 2 Secondary Rows) */}
+      {/* 4. AI-INFERRED INTELLIGENCE FINDINGS (Hero Card + Secondary Cards) */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-[#B45309]" />
-            <h2 className="text-xs font-bold text-[#0A192F] uppercase tracking-wider">
-              Cross-Jurisdiction AI Inferred Findings
+            <Sparkles className="w-4 h-4 text-[#D4A017]" />
+            <h2 className="text-xs font-bold text-white uppercase tracking-wider">
+              Key Patterns & Connections Found by AI
             </h2>
+            <span className="text-[10px] text-slate-300 font-mono">
+              (AI Inferred Findings)
+            </span>
           </div>
-          <span className="text-[10px] text-slate-500 font-mono">
-            Model: CIU-LinkPrediction-v2.4
+          <span className="text-[10px] text-slate-300 font-mono">
+            Engine: CIU-LinkPrediction-v2.4
           </span>
         </div>
 
         {aiFindingsList.length > 0 ? (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretch">
-            {/* FEATURED PRIMARY FINDING (Large Asymmetric Layout - 7 Cols) */}
+            {/* FEATURED PRIMARY FINDING (7 Cols) */}
             {featuredFinding && (
-              <div className="lg:col-span-7 bg-white/30 backdrop-blur-[2px] rounded-md border-2 border-[#D4A017]/40 shadow-sm p-4 flex flex-col justify-between">
+              <div className="lg:col-span-7 glass-card rounded-lg border border-white/25 p-4 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                  <div className="flex items-center justify-between pb-2 border-b border-white/10">
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 rounded bg-[#FEF3C7] text-[#92400E] font-mono font-bold text-[10px] border border-[#FCD34D]">
-                        FEATURED CORRELATION
+                      <span className="px-2 py-0.5 rounded bg-[#D4A017] text-[#0A192F] font-mono font-bold text-[10px]">
+                        KEY PATTERN FOUND
                       </span>
-                      <span className="text-[10px] font-mono text-slate-500">ID: {featuredFinding.id || featuredFinding.finding_id}</span>
+                      <span className="text-[10px] font-mono text-slate-300">ID: {featuredFinding.id || featuredFinding.finding_id}</span>
                     </div>
-                    <div className="flex items-center gap-1 text-[11px] font-mono font-bold text-[#92400E]">
-                      <span>{featuredFinding.confidence}% Confidence</span>
+                    <div className="flex items-center gap-1 text-[11px] font-mono font-bold text-[#D4A017]">
+                      <span>{featuredFinding.confidence}% Match Confidence</span>
                     </div>
                   </div>
 
-                  <h3 className="text-sm font-bold text-[#0A192F] mt-2.5">
+                  <h3 className="text-sm font-bold text-white mt-2.5">
                     {featuredFinding.finding || featuredFinding.title}
                   </h3>
 
                   {/* Multi-Step Correlation Vector Flow Diagram */}
-                  <div className="my-3 p-2.5 bg-[#0A192F] rounded border border-[#132B4C] text-white">
+                  <div className="my-3 p-3 bg-white/[0.06] backdrop-blur-sm rounded-md border border-white/15 text-white">
                     <span className="text-[9px] font-mono uppercase text-[#D4A017] font-bold block mb-1.5">
-                      Multi-Hop Vector Correlation
+                      How AI Connected These Clues
                     </span>
                     <div className="flex items-center justify-between text-[10px] font-mono gap-1 text-slate-200">
-                      <span className="px-2 py-1 rounded bg-[#132B4C] border border-[#1C3B64] truncate">
+                      <span className="px-2 py-1 rounded bg-white/[0.08] border border-white/15 truncate font-semibold">
                         {featuredFinding.caseId || featuredFinding.case_id || 'Case Lead'}
                       </span>
                       <ArrowRight className="w-3.5 h-3.5 text-[#D4A017] flex-shrink-0" />
-                      <span className="px-2 py-1 rounded bg-[#132B4C] border border-[#1C3B64] truncate">
-                        {featuredFinding.finding_type || 'Graph Conduit'}
+                      <span className="px-2 py-1 rounded bg-white/[0.08] border border-white/15 truncate font-semibold">
+                        {featuredFinding.finding_type || 'Common Link'}
                       </span>
                       <ArrowRight className="w-3.5 h-3.5 text-[#D4A017] flex-shrink-0" />
-                      <span className="px-2 py-1 rounded bg-[#132B4C] border border-[#1C3B64] truncate">
-                        {featuredFinding.confidence}% Verified
+                      <span className="px-2 py-1 rounded bg-white/[0.08] border border-white/15 truncate text-emerald-400 font-bold">
+                        {featuredFinding.confidence}% Certainty
                       </span>
                     </div>
                   </div>
 
-                  <div className="text-xs text-slate-700 bg-amber-50/50 p-2.5 rounded border border-amber-200">
-                    <strong className="text-[#92400E]">Forensic Proof:</strong> {featuredFinding.evidence || featuredFinding.description}
+                  <div className="text-xs text-slate-200 bg-white/[0.06] p-3 rounded-md border border-white/15">
+                    <strong className="text-[#D4A017]">Supporting Proof:</strong> {featuredFinding.evidence || featuredFinding.description}
                   </div>
                 </div>
 
-                <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-slate-700">
-                    Linked FIR: {featuredFinding.caseId || featuredFinding.case_id}
+                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-slate-300">
+                    Linked FIR: {featuredFinding.caseId || featuredFinding.case_id || 'Syndicate FIR'}
                   </span>
                   <button
-                    onClick={() => navigate(`/graph?case_id=${featuredFinding.caseId || featuredFinding.case_id}`)}
-                    className="px-3 py-1 bg-[#0A192F] hover:bg-[#132B4C] text-white font-semibold text-xs rounded transition-colors flex items-center gap-1.5"
+                    onClick={() => navigate(`/graph?case_id=${featuredFinding.caseId || featuredFinding.case_id || ''}`)}
+                    className="px-3 py-1.5 bg-white/[0.10] hover:bg-white/[0.18] text-white font-semibold text-xs rounded border border-white/20 transition-colors flex items-center gap-1.5 shadow-sm"
                   >
-                    <span>Inspect in Geospatial Network</span>
+                    <span>View on Knowledge Graph</span>
                     <ChevronRight className="w-3 h-3 text-[#D4A017]" />
                   </button>
                 </div>
               </div>
             )}
 
-            {/* SECONDARY FINDINGS (Compact List Stack - 5 Cols) */}
+            {/* SECONDARY FINDINGS (5 Cols) */}
             <div className="lg:col-span-5 flex flex-col gap-3">
               {secondaryFindings.map((finding) => (
                 <div
                   key={finding.id || finding.finding_id}
-                  className="bg-white/30 backdrop-blur-[2px] rounded-md border border-[#E2E8F0] shadow-sm p-3.5 flex-1 flex flex-col justify-between hover:border-[#CBD5E1] transition-all"
+                  className="glass-card-interactive rounded-lg p-3.5 flex-1 flex flex-col justify-between cursor-pointer"
+                  onClick={() => navigate(`/cases?id=${finding.caseId || finding.case_id || ''}`)}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[9px] font-mono font-bold px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 uppercase">
-                        {finding.finding_type || 'HEURISTIC PATTERN'}
+                      <span className="text-[9px] font-mono font-bold px-1.5 py-0.2 rounded bg-white/[0.08] text-[#D4A017] border border-white/15 uppercase">
+                        {finding.finding_type || 'AI PATTERN CLUE'}
                       </span>
-                      <span className="text-[10.5px] font-mono font-bold text-[#92400E]">
-                        {finding.confidence}% Conf
+                      <span className="text-[10.5px] font-mono font-bold text-[#D4A017]">
+                        {finding.confidence}% Certainty
                       </span>
                     </div>
-                    <h4 className="text-xs font-bold text-[#0A192F] leading-snug">
+                    <h4 className="text-xs font-bold text-white leading-snug">
                       {finding.finding || finding.title}
                     </h4>
-                    <div className="mt-1.5 text-[11px] text-slate-600 bg-slate-50 p-2 rounded border border-slate-200">
-                      <strong className="text-slate-800">Evidence:</strong> {finding.evidence || finding.description}
+                    <div className="mt-2 text-[11px] text-slate-300 bg-white/[0.06] p-2 rounded border border-white/10">
+                      <strong className="text-slate-100">Why Flagged:</strong> {finding.evidence || finding.description}
                     </div>
                   </div>
 
-                  <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
-                    <span className="font-mono text-[10px] text-slate-500">{finding.caseId || finding.case_id}</span>
-                    <button
-                      onClick={() => navigate(`/cases?id=${finding.caseId || finding.case_id}`)}
-                      className="font-bold text-[#B45309] hover:underline flex items-center gap-0.5 text-xs"
-                    >
-                      <span>View Dossier</span>
+                  <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[11px]">
+                    <span className="font-mono text-[10px] text-slate-400">{finding.caseId || finding.case_id}</span>
+                    <span className="font-bold text-[#D4A017] hover:underline flex items-center gap-0.5 text-xs">
+                      <span>View Details</span>
                       <ChevronRight className="w-3 h-3" />
-                    </button>
+                    </span>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         ) : (
-          <div className="bg-white/30 backdrop-blur-[2px] rounded-md border border-[#E2E8F0] p-6 text-center shadow-sm">
-            <Sparkles className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-700">No AI Inferred Findings Available Yet</h3>
-            <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto">
-              Run the link-prediction, anomaly detection, or MO similarity pipeline to generate live tactical intelligence findings.
+          <div className="glass-card rounded-lg p-6 text-center">
+            <Sparkles className="w-8 h-8 text-[#D4A017] mx-auto mb-2" />
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white">No New Clues Detected Yet</h3>
+            <p className="text-xs text-slate-300 mt-1 max-w-md mx-auto">
+              Upload new FIRs or explore the network to generate live pattern matches across cases.
             </p>
           </div>
         )}

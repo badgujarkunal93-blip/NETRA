@@ -1,423 +1,584 @@
-import { localDB } from './localData.js';
-import { isSupabaseConfigured, supabase } from './supabaseClient.js';
+import { supabase, isSupabaseConfigured } from './supabaseClient.js';
+import { casesService } from './casesService.js';
+import { localDataService } from './localDataService.js';
 
 export const graphService = {
   async getGlobalIntelligenceNetwork(filters = {}) {
-    const rels = localDB.relationships.slice(0, 500);
-    const nodes = [];
-    const edges = [];
-    const nodeIds = new Set();
-
-    for (const r of rels) {
-      if (!nodeIds.has(r.source_id)) {
-        nodes.push({ id: r.source_id, label: r.source_id, type: r.source_type });
-        nodeIds.add(r.source_id);
-      }
-      if (!nodeIds.has(r.target_id)) {
-        nodes.push({ id: r.target_id, label: r.target_id, type: r.target_type });
-        nodeIds.add(r.target_id);
-      }
-      edges.push({ id: r.id, source: r.source_id, target: r.target_id, label: r.relationship_type, confidence: r.confidence });
+    if (!isSupabaseConfigured) {
+      return localDataService.getGlobalIntelligenceNetwork(filters);
     }
-    return { nodes, edges };
-  },
 
-  async getCaseIntelligenceNetwork(caseId, filters = { minConfidence: 0, provenance: 'All' }) {
-    const targetCase = localDB.cases.find(c => c.id === caseId || c.crime_no === caseId);
-    if (!targetCase) return { caseData: null, nodes: [], edges: [], unplacedNodes: [] };
+    try {
+      const { data: rels, error } = await supabase.from('relationships').select('*').limit(500);
+      if (error) throw new Error(error.message);
 
-    const caseRoles = localDB.person_case_roles.filter(r => r.case_id === targetCase.id);
-    const events = localDB.events.filter(e => e.case_id === targetCase.id);
+      const nodes = [];
+      const edges = [];
+      const nodeIds = new Set();
 
-    const linkedPersonIds = new Set(caseRoles.map(r => r.person_id));
-    events.forEach(e => { if (e.person_id) linkedPersonIds.add(e.person_id); });
-    const personIdsArr = Array.from(linkedPersonIds);
-
-    const persons = localDB.persons.filter(p => personIdsArr.includes(p.id));
-    const phones = localDB.phones.filter(p => personIdsArr.includes(p.owner_person_id));
-    const vehicles = localDB.vehicles.filter(v => personIdsArr.includes(v.owner_person_id));
-    const accounts = localDB.accounts.filter(a => personIdsArr.includes(a.owner_person_id));
-    const relationships = localDB.relationships.filter(
-      r => personIdsArr.includes(r.source_id) || personIdsArr.includes(r.target_id)
-    );
-
-    const nodes = [];
-    const edges = [];
-    const nodeMap = new Map();
-    const caseLat = targetCase.latitude || 19.0760;
-    const caseLng = targetCase.longitude || 72.8777;
-
-    const caseNode = {
-      id: targetCase.id,
-      label: targetCase.crime_no,
-      shortLabel: (targetCase.crime_no || '').split('/')[2] || targetCase.crime_no,
-      type: 'Case', typeCode: 'FIR',
-      subtext: `${targetCase.police_station} • ${targetCase.crime_major_head}`,
-      lat: caseLat, lng: caseLng, isFocal: true
-    };
-    nodes.push(caseNode);
-    nodeMap.set(caseNode.id, caseNode);
-
-    persons.forEach((p, idx) => {
-      const angle = (idx / Math.max(1, persons.length)) * 2 * Math.PI;
-      const pNode = {
-        id: p.id, label: p.canonical_name,
-        shortLabel: (p.canonical_name || '').split(' ')[0],
-        type: 'Person', typeCode: 'PER',
-        subtext: p.status_tag || 'Person',
-        lat: caseLat + 0.0045 * Math.sin(angle),
-        lng: caseLng + 0.0055 * Math.cos(angle)
-      };
-      nodes.push(pNode);
-      nodeMap.set(pNode.id, pNode);
-    });
-
-    caseRoles.forEach(r => {
-      if (nodeMap.has(r.person_id)) {
-        const src = nodeMap.get(r.person_id);
-        const tgt = caseNode;
-        edges.push({ 
-          id: `ROLE-${r.id}`, 
-          source: r.person_id, 
-          target: caseNode.id, 
-          sourceCoords: [src.lat, src.lng],
-          targetCoords: [tgt.lat, tgt.lng],
-          verb: 'INVOLVED_IN', 
-          label: 'INVOLVED_IN', 
-          detailLabel: r.role_type,
-          confidence: 100,
-          status: 'observed'
-        });
-      }
-    });
-
-    relationships.forEach(r => {
-      if (nodeMap.has(r.source_id) && nodeMap.has(r.target_id)) {
-        const src = nodeMap.get(r.source_id);
-        const tgt = nodeMap.get(r.target_id);
-        edges.push({ 
-          id: r.id, 
-          source: r.source_id, 
-          target: r.target_id, 
-          sourceCoords: [src.lat, src.lng],
-          targetCoords: [tgt.lat, tgt.lng],
-          verb: 'ASSOCIATED_WITH', 
-          label: 'ASSOCIATED_WITH', 
-          detailLabel: r.relationship_type,
-          confidence: r.confidence_score || 85,
+      for (const r of (rels || [])) {
+        if (!nodeIds.has(r.source_id)) {
+          nodes.push({ id: r.source_id, label: r.source_id, type: r.source_type || 'Entity' });
+          nodeIds.add(r.source_id);
+        }
+        if (!nodeIds.has(r.target_id)) {
+          nodes.push({ id: r.target_id, label: r.target_id, type: r.target_type || 'Entity' });
+          nodeIds.add(r.target_id);
+        }
+        edges.push({
+          id: r.id,
+          source: r.source_id,
+          target: r.target_id,
+          label: r.relationship_type,
+          verb: r.relationship_type,
+          detailLabel: r.source_evidence || r.relationship_type,
+          confidence: r.confidence || 85,
           status: r.status || 'observed'
         });
       }
-    });
-
-    return { caseData: targetCase, nodes, edges, unplacedNodes: [] };
+      return { nodes, edges };
+    } catch {
+      return localDataService.getGlobalIntelligenceNetwork(filters);
+    }
   },
 
-  // --- CASE CANVAS INVESTIGATIVE WHITEBOARD ---
+  async getCaseIntelligenceNetwork(caseId, filters = { minConfidence: 0, provenance: 'All' }) {
+    if (!isSupabaseConfigured) {
+      return localDataService.getCaseIntelligenceNetwork(caseId, filters);
+    }
+
+    try {
+      // 1. Fetch target case
+      const { data: targetCase, error: caseErr } = await supabase
+        .from('cases')
+        .select('*')
+        .or(`id.eq.${caseId},crime_no.eq.${caseId}`)
+        .maybeSingle();
+
+      if (caseErr || !targetCase) {
+        return localDataService.getCaseIntelligenceNetwork(caseId, filters);
+      }
+
+      // 2. Fetch direct associations (roles and events)
+      const { data: caseRoles } = await supabase.from('person_case_roles').select('*').eq('case_id', targetCase.id);
+      const { data: events } = await supabase.from('events').select('*').eq('case_id', targetCase.id);
+
+      const linkedPersonIds = new Set((caseRoles || []).map(r => r.person_id).filter(Boolean));
+      (events || []).forEach(e => { if (e.person_id) linkedPersonIds.add(e.person_id); });
+
+      const personIdsArr = Array.from(linkedPersonIds);
+      let persons = [], phones = [], vehicles = [], accounts = [], organizations = [], relationships = [];
+
+      if (personIdsArr.length > 0) {
+        // Direct Person records
+        const pRes = await supabase.from('persons').select('*').in('id', personIdsArr);
+        persons = pRes.data || [];
+
+        // Direct Asset records
+        const phRes = await supabase.from('phones').select('*').in('owner_person_id', personIdsArr);
+        phones = phRes.data || [];
+
+        const vRes = await supabase.from('vehicles').select('*').in('owner_person_id', personIdsArr);
+        vehicles = vRes.data || [];
+
+        const aRes = await supabase.from('accounts').select('*').in('owner_person_id', personIdsArr);
+        accounts = aRes.data || [];
+
+        // 1-Hop Relationships
+        const rRes1 = await supabase.from('relationships').select('*').in('source_id', personIdsArr);
+        const rRes2 = await supabase.from('relationships').select('*').in('target_id', personIdsArr);
+        relationships = [...(rRes1.data || []), ...(rRes2.data || [])];
+
+        // Deduplicate relationships
+        const relMap = new Map();
+        relationships.forEach(r => relMap.set(r.id, r));
+        relationships = Array.from(relMap.values());
+
+        // Gather 2nd-degree entity IDs from relationships
+        const extraPersonIds = [];
+        const extraOrgIds = [];
+        relationships.forEach(r => {
+          if (r.source_type === 'Person' && !linkedPersonIds.has(r.source_id)) extraPersonIds.push(r.source_id);
+          if (r.target_type === 'Person' && !linkedPersonIds.has(r.target_id)) extraPersonIds.push(r.target_id);
+          if (r.source_type === 'Organization') extraOrgIds.push(r.source_id);
+          if (r.target_type === 'Organization') extraOrgIds.push(r.target_id);
+        });
+
+        if (extraPersonIds.length > 0) {
+          const epRes = await supabase.from('persons').select('*').in('id', extraPersonIds.slice(0, 10));
+          if (epRes.data) persons = [...persons, ...epRes.data];
+        }
+
+        if (extraOrgIds.length > 0) {
+          const orgRes = await supabase.from('organizations').select('*').in('id', extraOrgIds.slice(0, 10));
+          organizations = orgRes.data || [];
+        }
+      }
+
+      // Deduplicate persons
+      const pMap = new Map();
+      persons.forEach(p => pMap.set(p.id, p));
+      persons = Array.from(pMap.values());
+
+      const nodes = [];
+      const edges = [];
+      const nodeMap = new Map();
+
+      const caseLat = targetCase.latitude || 19.0760;
+      const caseLng = targetCase.longitude || 72.8777;
+
+      // 1. Focal Case Node
+      const caseNode = {
+        id: targetCase.id,
+        label: targetCase.crime_no,
+        shortLabel: targetCase.crime_no.split('/')[2] || targetCase.crime_no,
+        type: 'Case',
+        typeCode: 'FIR',
+        subtext: `${targetCase.police_station || 'Mumbai Station'} • ${targetCase.crime_major_head || targetCase.crime_category || 'Crime'}`,
+        lat: caseLat,
+        lng: caseLng,
+        confidence: 100,
+        isFocal: true
+      };
+      nodes.push(caseNode);
+      nodeMap.set(caseNode.id, caseNode);
+
+      // 2. Person Nodes
+      persons.forEach((p, idx) => {
+        const role = (caseRoles || []).find(r => r.person_id === p.id);
+        const angle = (idx / Math.max(1, persons.length)) * 2 * Math.PI;
+        const dist = 0.007 + (idx % 3) * 0.003;
+        const pLat = caseLat + dist * Math.sin(angle);
+        const pLng = caseLng + dist * Math.cos(angle);
+
+        const pNode = {
+          id: p.id,
+          label: p.canonical_name || `Suspect ${p.id}`,
+          shortLabel: (p.canonical_name || p.id).split(' ')[0],
+          type: 'Person',
+          typeCode: 'PER',
+          subtext: role?.role_type || p.status_tag || 'Key Suspect',
+          lat: pLat,
+          lng: pLng,
+          confidence: p.confidence_score || 85,
+          dob: p.dob,
+          gender: p.gender,
+          aliases: p.aliases
+        };
+        nodes.push(pNode);
+        nodeMap.set(pNode.id, pNode);
+
+        // Edge between Case and Person
+        const edgeId = `ROLE-${targetCase.id}-${p.id}`;
+        edges.push({
+          id: edgeId,
+          source: p.id,
+          target: caseNode.id,
+          verb: role ? 'INVOLVED_IN' : 'ASSOCIATED_WITH',
+          label: role ? 'INVOLVED_IN' : 'ASSOCIATED_WITH',
+          detailLabel: role?.role_type || 'Associated Entity',
+          confidence: p.confidence_score || 90,
+          status: 'observed',
+          sourceCoords: [pLat, pLng],
+          targetCoords: [caseLat, caseLng]
+        });
+      });
+
+      // 3. Organization Nodes
+      organizations.forEach((org, idx) => {
+        const angle = ((idx + 0.5) / Math.max(1, organizations.length)) * 2 * Math.PI;
+        const orgLat = caseLat + 0.012 * Math.sin(angle);
+        const orgLng = caseLng + 0.012 * Math.cos(angle);
+
+        const orgNode = {
+          id: org.id,
+          label: org.name || org.id,
+          shortLabel: (org.name || org.id).slice(0, 14),
+          type: 'Organization',
+          typeCode: 'ORG',
+          subtext: org.type || 'Enterprise',
+          lat: orgLat,
+          lng: orgLng,
+          confidence: 92
+        };
+        nodes.push(orgNode);
+        nodeMap.set(orgNode.id, orgNode);
+      });
+
+      // 4. Phone Asset Nodes
+      phones.slice(0, 6).forEach((ph, idx) => {
+        const owner = nodeMap.get(ph.owner_person_id) || caseNode;
+        const phLat = owner.lat + 0.003;
+        const phLng = owner.lng + (idx % 2 === 0 ? 0.0035 : -0.0035);
+
+        const phNode = {
+          id: ph.id,
+          label: ph.phone_number || ph.id,
+          shortLabel: (ph.phone_number || ph.id).slice(-6),
+          type: 'Phone',
+          typeCode: 'PH',
+          subtext: ph.carrier ? `${ph.carrier} SIM` : 'Cellular Line',
+          lat: phLat,
+          lng: phLng,
+          confidence: 90
+        };
+        nodes.push(phNode);
+        nodeMap.set(phNode.id, phNode);
+
+        edges.push({
+          id: `EDGE-PH-${ph.id}`,
+          source: owner.id,
+          target: ph.id,
+          verb: 'USED_PHONE',
+          label: 'USED_PHONE',
+          detailLabel: ph.carrier ? `${ph.carrier} CDR Link` : 'Subscriber Match',
+          confidence: 92,
+          status: 'observed',
+          sourceCoords: [owner.lat, owner.lng],
+          targetCoords: [phLat, phLng]
+        });
+      });
+
+      // 5. Vehicle Asset Nodes
+      vehicles.slice(0, 4).forEach((v, idx) => {
+        const owner = nodeMap.get(v.owner_person_id) || caseNode;
+        const vLat = owner.lat - 0.0035;
+        const vLng = owner.lng + (idx % 2 === 0 ? 0.003 : -0.003);
+
+        const vNode = {
+          id: v.id,
+          label: v.registration_no || v.id,
+          shortLabel: v.registration_no || v.id,
+          type: 'Vehicle',
+          typeCode: 'VEH',
+          subtext: `${v.make_model || 'Vehicle'} (${v.color || 'Dark'})`,
+          lat: vLat,
+          lng: vLng,
+          confidence: 94
+        };
+        nodes.push(vNode);
+        nodeMap.set(vNode.id, vNode);
+
+        edges.push({
+          id: `EDGE-VEH-${v.id}`,
+          source: owner.id,
+          target: v.id,
+          verb: 'REGISTERED_VEHICLE',
+          label: 'REGISTERED_VEHICLE',
+          detailLabel: 'RTO Vehicle Registration',
+          confidence: 95,
+          status: 'observed',
+          sourceCoords: [owner.lat, owner.lng],
+          targetCoords: [vLat, vLng]
+        });
+      });
+
+      // 6. Bank Account Asset Nodes
+      accounts.slice(0, 4).forEach((a, idx) => {
+        const owner = nodeMap.get(a.owner_person_id) || caseNode;
+        const aLat = owner.lat + 0.004;
+        const aLng = owner.lng + (idx % 2 === 0 ? -0.0035 : 0.0035);
+
+        const aNode = {
+          id: a.id,
+          label: a.account_number || a.id,
+          shortLabel: (a.account_number || a.id).slice(-6),
+          type: 'Account',
+          typeCode: 'ACC',
+          subtext: `${a.bank_name || 'Bank'} (${a.account_type || 'Savings'})`,
+          lat: aLat,
+          lng: aLng,
+          confidence: 88
+        };
+        nodes.push(aNode);
+        nodeMap.set(aNode.id, aNode);
+
+        edges.push({
+          id: `EDGE-ACC-${a.id}`,
+          source: owner.id,
+          target: a.id,
+          verb: 'OWNS_ACCOUNT',
+          label: 'OWNS_ACCOUNT',
+          detailLabel: `${a.bank_name || 'Bank'} KYC Link`,
+          confidence: 90,
+          status: 'observed',
+          sourceCoords: [owner.lat, owner.lng],
+          targetCoords: [aLat, aLng]
+        });
+      });
+
+      // 7. Event / Forensic Locations
+      (events || []).slice(0, 4).forEach((e, idx) => {
+        const eLat = e.latitude || (caseLat + 0.005 * (idx === 0 ? 1 : -1));
+        const eLng = e.longitude || (caseLng + 0.005 * (idx % 2 === 0 ? 1 : -1));
+
+        const eNode = {
+          id: e.id,
+          label: e.location_name || e.event_type || 'Incident Location',
+          shortLabel: (e.location_name || e.event_type || 'Location').slice(0, 15),
+          type: 'Location',
+          typeCode: 'LOC',
+          subtext: e.description || e.event_type || 'Event',
+          lat: eLat,
+          lng: eLng,
+          confidence: 95
+        };
+        nodes.push(eNode);
+        nodeMap.set(eNode.id, eNode);
+
+        edges.push({
+          id: `EDGE-EVT-${e.id}`,
+          source: caseNode.id,
+          target: e.id,
+          verb: 'OCCURRED_AT',
+          label: 'OCCURRED_AT',
+          detailLabel: e.event_type || 'Forensic Scene',
+          confidence: 96,
+          status: 'observed',
+          sourceCoords: [caseLat, caseLng],
+          targetCoords: [eLat, eLng]
+        });
+      });
+
+      // 8. Inter-entity Relationships
+      relationships.forEach(r => {
+        const srcNode = nodeMap.get(r.source_id);
+        const tgtNode = nodeMap.get(r.target_id);
+        if (srcNode && tgtNode) {
+          edges.push({
+            id: r.id,
+            source: r.source_id,
+            target: r.target_id,
+            verb: r.relationship_type || 'ASSOCIATED_WITH',
+            label: r.relationship_type || 'ASSOCIATED_WITH',
+            detailLabel: r.source_evidence || r.relationship_type || 'Intelligence Link',
+            confidence: r.confidence || 85,
+            status: r.status || 'inferred',
+            first_seen: r.first_seen,
+            last_seen: r.last_seen,
+            sourceCoords: [srcNode.lat, srcNode.lng],
+            targetCoords: [tgtNode.lat, tgtNode.lng]
+          });
+        }
+      });
+
+      // 9. Apply Analytical Filters
+      const minConf = filters.minConfidence || 0;
+      const prov = filters.provenance || 'All';
+
+      const filteredEdges = edges.filter(e => {
+        if (e.confidence && e.confidence < minConf) return false;
+        if (prov === 'Observed Only' && e.status !== 'observed') return false;
+        if (prov === 'AI-Inferred Only' && e.status !== 'inferred') return false;
+        return true;
+      });
+
+      // Deduplicate edges
+      const edgeDedup = new Map();
+      filteredEdges.forEach(e => edgeDedup.set(`${e.source}-${e.target}-${e.verb}`, e));
+      const finalEdges = Array.from(edgeDedup.values());
+
+      return {
+        caseData: targetCase,
+        nodes,
+        edges: finalEdges,
+        unplacedNodes: []
+      };
+    } catch (err) {
+      console.error("graphService.getCaseIntelligenceNetwork failed, falling back to local dataset:", err);
+      return localDataService.getCaseIntelligenceNetwork(caseId, filters);
+    }
+  },
+
   async getCaseCanvas(caseId) {
-    const storageKey = `ciu_canvas_${caseId}`;
+    if (!isSupabaseConfigured) {
+      return localDataService.getCaseCanvas(caseId);
+    }
 
-    // 1. If Supabase is configured, fetch directly from Supabase first
-    if (isSupabaseConfigured) {
-      try {
-        const canvasId = `CANV-${caseId.replace(/[^a-zA-Z0-9_-]/g, '_')}`;
-        const { data: canvas } = await supabase
-          .from('case_canvases')
-          .select('*')
-          .eq('id', canvasId)
-          .single();
+    try {
+      const { data: canvas } = await supabase
+        .from('case_canvases')
+        .select('*')
+        .eq('case_id', caseId)
+        .maybeSingle();
 
-        if (canvas) {
-          const { data: dbNodes } = await supabase
-            .from('canvas_nodes')
-            .select('*')
-            .eq('canvas_id', canvasId);
+      if (canvas && canvas.id) {
+        const { data: dbNodes } = await supabase.from('canvas_nodes').select('*').eq('canvas_id', canvas.id);
+        const { data: dbEdges } = await supabase.from('canvas_edges').select('*').eq('canvas_id', canvas.id);
 
-          const { data: dbEdges } = await supabase
-            .from('canvas_edges')
-            .select('*')
-            .eq('canvas_id', canvasId);
-
-          if (dbNodes && dbNodes.length > 0) {
-            const formattedNodes = dbNodes.map(n => ({
+        if (dbNodes && dbNodes.length > 0) {
+          return {
+            caseId,
+            caseNotes: canvas.case_notes || '',
+            nodes: dbNodes.map(n => ({
               id: n.id,
-              type: n.node_type || 'noteCard',
-              position: { x: Number(n.position_x) || 0, y: Number(n.position_y) || 0 },
+              type: n.node_type || (n.linked_entity_type === 'Person' ? 'personCard' : 'entityCard'),
+              position: { x: n.position_x || 100, y: n.position_y || 100 },
               data: {
                 label: n.label,
-                description: n.description,
-                nodeType: n.linked_entity_type,
-                linkedId: n.linked_entity_id,
-                status: n.status || 'hypothesis'
+                description: n.description || '',
+                status: n.status || 'confirmed',
+                nodeType: n.linked_entity_type || (n.node_type === 'personCard' ? 'Person' : 'Entity'),
+                linkedId: n.linked_entity_id || n.id,
+                role: n.linked_entity_type === 'Person' ? 'Suspect' : (n.description || 'Entity')
               }
-            }));
-
-            const formattedEdges = (dbEdges || []).map(e => ({
+            })),
+            edges: (dbEdges || []).map(e => ({
               id: e.id,
               source: e.source_node_id,
               target: e.target_node_id,
               label: e.relationship_label || 'connected to',
               data: {
-                justification: e.justification || ''
+                justification: e.justification || '',
+                status: 'confirmed'
               }
-            }));
+            }))
+          };
+        }
+      }
 
-            return {
-              caseId,
-              nodes: formattedNodes,
-              edges: formattedEdges,
-              caseNotes: canvas.case_notes || '',
-              updatedAt: canvas.updated_at
-            };
+      // Default Canvas Generation from Intelligence Network
+      const net = await this.getCaseIntelligenceNetwork(caseId);
+      return {
+        caseId,
+        caseNotes: 'Investigative hypothesis and whiteboard link notes for this case.',
+        nodes: (net.nodes || []).slice(0, 10).map((n, idx) => ({
+          id: n.id,
+          type: n.type === 'Person' ? 'personCard' : 'entityCard',
+          position: { x: 80 + (idx % 3) * 340, y: 80 + Math.floor(idx / 3) * 240 },
+          data: {
+            label: n.label,
+            role: n.subtext || n.type,
+            nodeType: n.type,
+            description: n.subtext || '',
+            status: (n.confidence && n.confidence >= 80) ? 'confirmed' : 'hypothesis',
+            priority_score: n.confidence || 75,
+            linkedId: n.id
           }
-        }
-      } catch (err) {
-        console.warn('Supabase getCaseCanvas query notice:', err.message);
-      }
+        })),
+        edges: (net.edges || []).slice(0, 8).map(e => ({
+          id: e.id,
+          source: e.source,
+          target: e.target,
+          label: e.verb || e.label || 'LINKED_TO',
+          data: {
+            justification: e.detailLabel || 'Imported from Intelligence Network',
+            status: e.status || 'confirmed'
+          }
+        }))
+      };
+    } catch {
+      return localDataService.getCaseCanvas(caseId);
     }
-
-    // 2. Fallback to localStorage
-    let stored = null;
-    try {
-      const raw = localStorage.getItem(storageKey);
-      if (raw) stored = JSON.parse(raw);
-    } catch {}
-
-    if (stored && stored.nodes && stored.nodes.length > 0) return stored;
-
-    // If no existing canvas, generate initial default hypothesis cards
-    const initialNetwork = await this.getCaseIntelligenceNetwork(caseId);
-    const nodes = [];
-    const edges = [];
-
-    // Add case focal node
-    nodes.push({
-      id: `node-${caseId}`,
-      type: 'entityCard',
-      position: { x: 380, y: 180 },
-      data: {
-        label: initialNetwork.caseData ? initialNetwork.caseData.crime_no : caseId,
-        subLabel: initialNetwork.caseData ? initialNetwork.caseData.police_station : 'Registered Case',
-        description: initialNetwork.caseData ? initialNetwork.caseData.brief_facts : 'Primary registered FIR under investigation.',
-        nodeType: 'Case',
-        status: 'confirmed',
-        linkedId: caseId
-      }
-    });
-
-    // Add primary accused
-    const persons = (initialNetwork.nodes || []).filter(n => n.type === 'Person').slice(0, 2);
-    persons.forEach((p, idx) => {
-      const pNodeId = `node-${p.id}`;
-      nodes.push({
-        id: pNodeId,
-        type: 'personCard',
-        position: { x: 120 + idx * 520, y: 340 },
-        data: {
-          label: p.label,
-          role: p.subtext || 'Accused',
-          description: `Key operative linked to ${initialNetwork.caseData?.crime_no || 'case'}. Known status: ${p.subtext || 'Active'}.`,
-          status: 'confirmed',
-          linkedId: p.id
-        }
-      });
-
-      edges.push({
-        id: `edge-${p.id}-${caseId}`,
-        source: pNodeId,
-        target: `node-${caseId}`,
-        label: 'named in FIR',
-        data: {
-          justification: 'Formally listed as primary suspect in initial chargesheet.'
-        }
-      });
-    });
-
-    // Add initial working hypothesis sticky note
-    nodes.push({
-      id: `node-note-1`,
-      type: 'noteCard',
-      position: { x: 420, y: 460 },
-      data: {
-        label: 'Investigator Working Lead',
-        description: 'Burner SIM activations in suburban tower coincide with getaway timeline. Check mutual CDR hops with transit node.',
-        status: 'hypothesis'
-      }
-    });
-
-    const defaultCanvas = {
-      caseId,
-      nodes,
-      edges,
-      caseNotes: 'Investigative Hypothesis: Syndicate operated via layered burner SIMs with financial remittances routed through shell logistics entities. Awaiting bank KYC extract.',
-      updatedAt: new Date().toISOString()
-    };
-
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(defaultCanvas));
-    } catch {}
-
-    return defaultCanvas;
   },
 
   async saveCaseCanvas(caseId, { nodes, edges, caseNotes }) {
-    const storageKey = `ciu_canvas_${caseId}`;
-    const canvasData = {
-      caseId,
-      nodes,
-      edges,
-      caseNotes: caseNotes || '',
-      updatedAt: new Date().toISOString()
-    };
-
-    // Save to localStorage as quick local cache
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(canvasData));
-    } catch {}
-
-    // Save directly to Supabase tables
-    if (isSupabaseConfigured) {
-      try {
-        const canvasId = `CANV-${caseId.replace(/[^a-zA-Z0-9_-]/g, '_')}`;
-        await supabase.from('case_canvases').upsert({
-          id: canvasId,
-          case_id: caseId,
-          case_notes: caseNotes || '',
-          updated_at: new Date().toISOString()
-        });
-
-        // Sync nodes
-        if (nodes && nodes.length > 0) {
-          const dbNodes = nodes.map(n => ({
-            id: n.id,
-            canvas_id: canvasId,
-            node_type: n.type || 'noteCard',
-            position_x: n.position?.x || 0,
-            position_y: n.position?.y || 0,
-            label: n.data?.label || 'Card',
-            description: n.data?.description || '',
-            linked_entity_type: n.data?.nodeType || null,
-            linked_entity_id: n.data?.linkedId || null,
-            status: n.data?.status || 'hypothesis'
-          }));
-          await supabase.from('canvas_nodes').delete().eq('canvas_id', canvasId);
-          await supabase.from('canvas_nodes').upsert(dbNodes);
-        }
-
-        // Sync edges
-        if (edges && edges.length > 0) {
-          const dbEdges = edges.map(e => ({
-            id: e.id,
-            canvas_id: canvasId,
-            source_node_id: e.source,
-            target_node_id: e.target,
-            relationship_label: e.label || 'linked to',
-            justification: e.data?.justification || ''
-          }));
-          await supabase.from('canvas_edges').delete().eq('canvas_id', canvasId);
-          await supabase.from('canvas_edges').upsert(dbEdges);
-        }
-      } catch (err) {
-        console.warn('Supabase canvas sync notice:', err.message);
-      }
+    if (!isSupabaseConfigured) {
+      return localDataService.saveCaseCanvas(caseId, { nodes, edges, caseNotes });
     }
 
-    return canvasData;
+    try {
+      const canvasId = `CANV-${caseId.replace(/[^a-zA-Z0-9_-]/g, '_')}`;
+      
+      // 1. Upsert Case Canvas Header
+      await supabase.from('case_canvases').upsert({
+        id: canvasId,
+        case_id: caseId,
+        case_notes: caseNotes || '',
+        updated_at: new Date().toISOString()
+      });
+
+      // 2. Persist Nodes
+      if (nodes && nodes.length > 0) {
+        await supabase.from('canvas_nodes').delete().eq('canvas_id', canvasId);
+
+        const nodeRecords = nodes.map(n => ({
+          id: n.id,
+          canvas_id: canvasId,
+          node_type: n.type,
+          position_x: Math.round(n.position?.x || 100),
+          position_y: Math.round(n.position?.y || 100),
+          label: n.data?.label || 'Unnamed Node',
+          description: n.data?.description || '',
+          linked_entity_type: n.data?.nodeType || (n.type === 'personCard' ? 'Person' : 'Entity'),
+          linked_entity_id: n.data?.linkedId || n.id,
+          status: n.data?.status || 'hypothesis'
+        }));
+
+        await supabase.from('canvas_nodes').insert(nodeRecords);
+      }
+
+      // 3. Persist Edges
+      if (edges && edges.length > 0) {
+        await supabase.from('canvas_edges').delete().eq('canvas_id', canvasId);
+
+        const edgeRecords = edges.map(e => ({
+          id: e.id,
+          canvas_id: canvasId,
+          source_node_id: e.source,
+          target_node_id: e.target,
+          relationship_label: e.label || 'connected to',
+          justification: e.data?.justification || ''
+        }));
+
+        await supabase.from('canvas_edges').insert(edgeRecords);
+      }
+
+      return { caseId, nodes, edges, caseNotes };
+    } catch (err) {
+      console.warn("Failed to persist canvas to Supabase, saving locally:", err);
+      return localDataService.saveCaseCanvas(caseId, { nodes, edges, caseNotes });
+    }
   },
 
-  async saveCanvasSnapshot(caseId, { label, nodes, edges, caseNotes }) {
-    const snapKey = `ciu_canvas_snaps_${caseId}`;
-    let list = [];
+  async saveCanvasSnapshot(caseId, snapshot) {
     try {
-      const raw = localStorage.getItem(snapKey);
-      if (raw) list = JSON.parse(raw);
-    } catch {}
-
-    const snapshot = {
-      id: `snap-${Date.now()}`,
-      label: label || `Snapshot ${list.length + 1}`,
-      createdAt: new Date().toISOString(),
-      nodesCount: nodes.length,
-      edgesCount: edges.length,
-      data: { nodes, edges, caseNotes }
-    };
-
-    list.unshift(snapshot);
-    try {
-      localStorage.setItem(snapKey, JSON.stringify(list.slice(0, 10)));
-    } catch {}
-
-    return snapshot;
+      const storageKey = `netra_canvas_snapshots_${caseId}`;
+      const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      const updated = [snapshot, ...existing].slice(0, 20);
+      localStorage.setItem(storageKey, JSON.stringify(updated));
+      return snapshot;
+    } catch {
+      return snapshot;
+    }
   },
 
   async getCanvasSnapshots(caseId) {
-    const snapKey = `ciu_canvas_snaps_${caseId}`;
     try {
-      const raw = localStorage.getItem(snapKey);
-      if (raw) return JSON.parse(raw);
-    } catch {}
-    return [];
+      const storageKey = `netra_canvas_snapshots_${caseId}`;
+      return JSON.parse(localStorage.getItem(storageKey) || '[]');
+    } catch {
+      return [];
+    }
   },
 
   async pullKnowledgeGraphToCanvas(caseId) {
-    const network = await this.getCaseIntelligenceNetwork(caseId);
-    const nodes = [];
-    const edges = [];
-
-    // Case anchor
-    nodes.push({
-      id: `node-${caseId}`,
-      type: 'entityCard',
-      position: { x: 450, y: 150 },
-      data: {
-        label: network.caseData ? network.caseData.crime_no : caseId,
-        subLabel: network.caseData ? network.caseData.police_station : 'Case FIR',
-        description: network.caseData ? network.caseData.brief_facts : 'Primary Case Anchor',
-        nodeType: 'Case',
-        status: 'confirmed',
-        linkedId: caseId
-      }
-    });
-
-    // Linked entities in concentric/grid layout
-    (network.nodes || []).filter(n => n.type !== 'Case').forEach((n, idx) => {
-      const total = Math.max(1, (network.nodes || []).length - 1);
-      const angle = (idx / total) * 2 * Math.PI;
-      const x = 450 + 380 * Math.cos(angle);
-      const y = 350 + 260 * Math.sin(angle);
-
-      const isPerson = n.type === 'Person';
-      const nodeType = isPerson ? 'personCard' : n.type === 'Location' ? 'noteCard' : 'entityCard';
-
-      nodes.push({
-        id: `node-${n.id}`,
-        type: nodeType,
-        position: { x: Math.max(50, x), y: Math.max(50, y) },
+    const net = await this.getCaseIntelligenceNetwork(caseId);
+    return {
+      nodes: (net.nodes || []).map((n, idx) => ({
+        id: n.id,
+        type: n.type === 'Person' ? 'personCard' : 'entityCard',
+        position: { x: 80 + (idx % 3) * 340, y: 80 + Math.floor(idx / 3) * 240 },
         data: {
           label: n.label,
           role: n.subtext || n.type,
-          subLabel: n.subtext,
-          description: n.description || `${n.type} entity linked to investigation. Status: ${n.subtext || 'Active'}.`,
           nodeType: n.type,
-          status: 'confirmed',
+          description: n.subtext || '',
+          status: (n.confidence && n.confidence >= 80) ? 'confirmed' : 'hypothesis',
+          priority_score: n.confidence || 75,
           linkedId: n.id
         }
-      });
-    });
-
-    // Edges
-    (network.edges || []).forEach(e => {
-      edges.push({
-        id: `edge-${e.id}`,
-        source: `node-${e.source}`,
-        target: `node-${e.target}`,
-        label: e.verb || e.label || 'connected to',
+      })),
+      edges: (net.edges || []).map(e => ({
+        id: e.id,
+        source: e.source,
+        target: e.target,
+        label: e.verb || e.label || 'LINKED_TO',
         data: {
-          justification: e.detailLabel || `Observed relationship in case telemetry records.`
+          justification: e.detailLabel || 'Imported from Intelligence Network',
+          status: e.status || 'confirmed'
         }
-      });
-    });
-
-    return { nodes, edges };
+      }))
+    };
   }
 };

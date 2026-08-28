@@ -60,28 +60,28 @@
     --navy-700: #1C3B64;
     --navy-600: #254F85;
     
-    --surface-bg: #F1F5F9;
-    --surface-card: #FFFFFF;
-    --surface-muted: #F8FAFC;
-    --surface-border: #E2E8F0;
-    --surface-border-strong: #CBD5E1;
+    --surface-bg: #061121;
+    --surface-card: rgba(255, 255, 255, 0.05);
+    --surface-muted: rgba(255, 255, 255, 0.03);
+    --surface-border: rgba(255, 255, 255, 0.08);
+    --surface-border-strong: rgba(255, 255, 255, 0.15);
     
-    --text-main: #0F172A;
-    --text-muted: #475569;
-    --text-subtle: #64748B;
+    --text-main: #F8FAFC;
+    --text-muted: #CBD5E1;
+    --text-subtle: #94A3B8;
     
-    --accent-amber: #B45309;
+    --accent-amber: #F59E0B;
     --accent-amber-light: #FEF3C7;
-    --accent-red: #B91C1C;
+    --accent-red: #E4232D;
     --accent-red-light: #FEE2E2;
-    --accent-emerald: #047857;
+    --accent-emerald: #10B981;
     --accent-emerald-light: #D1FAE5;
   }
 
   body {
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #F1F5F9;
-    color: #0F172A;
+    background-color: #061121;
+    color: #F8FAFC;
     letter-spacing: -0.01em;
     -webkit-font-smoothing: antialiased;
   }
@@ -92,15 +92,152 @@
   }
 }
 
+/* ==========================================================================
+   NETRA SHARED GLASSMORPHYSMS DESIGN SYSTEM
+   White Translucent, frosted-glass treatment layered over deep #0A192F / #061121
+   ========================================================================== */
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.09);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+}
+
+.glass-card-interactive {
+  background-color: rgba(255, 255, 255, 0.09);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-interactive:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.40);
+  transform: translateY(-2px);
+}
+
+/* High-Performance Variant for dense lists (50+ rows / large lists) */
+.glass-card-dense {
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+}
+
+.glass-card-dense:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+/* Modal Surface: Opaque solid dark background to prevent muddy stacking */
+.modal-surface {
+  background-color: #0A192F !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8) !important;
+  color: #F8FAFC !important;
+}
+
+/* Reduced Transparency / Reduced Motion Fallback */
+@media (prefers-reduced-transparency: reduce) {
+  .glass-card,
+  .glass-card-interactive {
+    background-color: #0E223D !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid #1C3B64 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-card-interactive:hover {
+    transform: none !important;
+  }
+}
+
 /* Leaflet Dark Map Customization */
 .leaflet-container {
   background-color: #061121 !important;
   font-family: 'Inter', sans-serif !important;
 }
 
+.night-ops-map .leaflet-tile-pane {
+  filter: brightness(0.60) contrast(1.35) saturate(0.2) hue-rotate(190deg);
+}
+
 .custom-map-marker {
   background: transparent;
   border: none;
+}
+
+/* Night-Ops Pulsing Marker Animations */
+@keyframes pulse-glow-red {
+  0%, 100% {
+    box-shadow: 0 0 8px #E4232D, 0 0 18px rgba(228, 35, 45, 0.65);
+  }
+  50% {
+    box-shadow: 0 0 16px #E4232D, 0 0 30px rgba(228, 35, 45, 0.9);
+  }
+}
+
+@keyframes pulse-glow-amber {
+  0%, 100% {
+    box-shadow: 0 0 6px #F59E0B, 0 0 14px rgba(245, 158, 11, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 14px #F59E0B, 0 0 24px rgba(245, 158, 11, 0.85);
+  }
+}
+
+@keyframes pulse-glow-green {
+  0%, 100% {
+    box-shadow: 0 0 6px #10B981, 0 0 12px rgba(16, 185, 129, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 12px #10B981, 0 0 22px rgba(16, 185, 129, 0.75);
+  }
+}
+
+@keyframes radar-beacon {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.radar-ring {
+  animation: radar-beacon 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+/* Night-Ops Monospace Tooltip */
+.night-ops-tooltip {
+  background-color: rgba(6, 17, 33, 0.95) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 160, 23, 0.4) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 12px rgba(212, 160, 23, 0.2) !important;
+  color: #E2E8F0 !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+}
+
+.night-ops-tooltip::before {
+  display: none !important;
 }
 
 .leaflet-popup-content-wrapper {
