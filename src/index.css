@@ -173,7 +173,7 @@
 }
 
 .night-ops-map .leaflet-tile-pane {
-  filter: brightness(0.60) contrast(1.35) saturate(0.2) hue-rotate(190deg);
+  filter: invert(100%) hue-rotate(185deg) brightness(85%) contrast(120%) saturate(0.4);
 }
 
 .custom-map-marker {
