@@ -24,7 +24,6 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { dbService } from '../../services/db';
-import MumbaiMapBackground from './MumbaiMapBackground';
 
 export default function AppShell() {
   const { user, logout } = useAuth();
@@ -218,12 +217,12 @@ export default function AppShell() {
       </aside>
 
       {/* 2. MAIN APPLICATION CONTENT AREA */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden bg-[#061121]">
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden bg-[#0A1D33]">
         {/* Global Institutional Top Bar */}
-        <header className="h-12 bg-[#0A192F] border-b border-[#132B4C] flex items-center justify-between px-4 z-20 flex-shrink-0">
+        <header className="h-12 bg-[#0E243F] border-b border-[#1C3E6B] flex items-center justify-between px-4 z-20 flex-shrink-0">
           {/* Global Case / Entity Typeahead */}
           <div className="relative w-80">
-            <div className="flex items-center gap-2 bg-[#061121] border border-[#1C3B64] rounded px-2.5 py-1 text-xs text-slate-300 focus-within:border-[#D4A017]">
+            <div className="flex items-center gap-2 bg-[#0A1D33] border border-[#1C3E6B] rounded px-2.5 py-1 text-xs text-slate-300 focus-within:border-[#D4A017]">
               <Search className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
               <input
                 type="text"
@@ -427,11 +426,8 @@ export default function AppShell() {
         </header>
 
         {/* 3. MAIN WORKSPACE VIEWPORT */}
-        <main className="flex-1 overflow-y-auto bg-[#061121] p-5 relative">
-          <MumbaiMapBackground />
-          <div className="relative z-10 dashboard-content">
-            <Outlet />
-          </div>
+        <main className="flex-1 overflow-y-auto bg-[#0A1D33] p-5 relative">
+          <Outlet />
         </main>
       </div>
     </div>
