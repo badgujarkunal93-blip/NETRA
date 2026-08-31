@@ -5,8 +5,11 @@ import uuid
 from typing import List, Optional, Dict
 from datetime import datetime
 import logging
+from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException, BackgroundTasks
+
+load_dotenv()
 
 try:
     from supabase import create_client, Client

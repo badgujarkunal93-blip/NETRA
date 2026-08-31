@@ -4,6 +4,9 @@ import logging
 from contextlib import asynccontextmanager
 from typing import List, Optional, Dict, Any
 from datetime import datetime, timezone
+from dotenv import load_dotenv
+
+load_dotenv()
 
 import joblib
 import numpy as np
