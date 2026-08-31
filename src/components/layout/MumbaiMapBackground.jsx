@@ -1,16 +1,6 @@
 import React from 'react';
+import IndiaMapBackground from './IndiaMapBackground';
 
 export default function MumbaiMapBackground() {
-  return (
-    <div
-      className="dashboard-background"
-      aria-hidden="true"
-    >
-      <img
-        src="/mumbai_map_bg.jpg"
-        alt=""
-        className="w-full h-full object-cover opacity-60"
-      />
-    </div>
-  );
+  return <IndiaMapBackground />;
 }

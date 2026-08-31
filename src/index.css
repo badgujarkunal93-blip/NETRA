@@ -2,7 +2,7 @@
 @import "leaflet/dist/leaflet.css";
 @import "reactflow/dist/style.css";
 
-/* React Flow Dark Canvas Customization */
+/* React Flow Dark Canvas Customization (Preserved for Case Canvas) */
 .react-flow__pane {
   background-color: #061121 !important;
 }
@@ -10,69 +10,69 @@
 .react-flow__handle {
   width: 8px !important;
   height: 8px !important;
-  background: #D4A017 !important;
-  border: 1.5px solid #0A192F !important;
+  background: #F5B800 !important;
+  border: 1.5px solid #071A33 !important;
   border-radius: 9999px !important;
 }
 
 .react-flow__handle:hover {
   transform: scale(1.3);
-  background: #F59E0B !important;
+  background: #FFB000 !important;
 }
 
 .react-flow__edge-path {
-  stroke: #D4A017 !important;
+  stroke: #F5B800 !important;
   stroke-width: 2 !important;
 }
 
 .react-flow__controls {
-  background: #0A192F !important;
-  border: 1px solid #132B4C !important;
+  background: #0B2341 !important;
+  border: 1px solid #133560 !important;
   border-radius: 6px !important;
   overflow: hidden;
 }
 
 .react-flow__controls-button {
-  background: #0A192F !important;
-  border-bottom: 1px solid #132B4C !important;
-  color: #CBD5E1 !important;
-  fill: #CBD5E1 !important;
+  background: #0B2341 !important;
+  border-bottom: 1px solid #133560 !important;
+  color: #E6EEF8 !important;
+  fill: #E6EEF8 !important;
 }
 
 .react-flow__controls-button:hover {
-  background: #132B4C !important;
+  background: #133560 !important;
   color: #FFFFFF !important;
   fill: #FFFFFF !important;
 }
 
 .react-flow__minimap {
-  background: #0A192F !important;
-  border: 1px solid #132B4C !important;
+  background: #0B2341 !important;
+  border: 1px solid #133560 !important;
   border-radius: 6px !important;
 }
 
 @layer base {
   :root {
-    --navy-950: #061121;
-    --navy-900: #0A192F;
-    --navy-850: #0E223D;
-    --navy-800: #132B4C;
-    --navy-700: #1C3B64;
-    --navy-600: #254F85;
+    --navy-950: #071A33;
+    --navy-900: #0B2341;
+    --navy-850: #0E2A4D;
+    --navy-800: #133560;
+    --navy-700: #1C457A;
+    --navy-600: #255899;
     
-    --surface-bg: #061121;
-    --surface-card: rgba(255, 255, 255, 0.05);
-    --surface-muted: rgba(255, 255, 255, 0.03);
-    --surface-border: rgba(255, 255, 255, 0.08);
-    --surface-border-strong: rgba(255, 255, 255, 0.15);
+    --surface-bg: #FFFFFF;
+    --surface-card: #FFFFFF;
+    --surface-muted: #F8FAFC;
+    --surface-border: rgba(11, 35, 65, 0.12);
+    --surface-border-strong: rgba(11, 35, 65, 0.22);
     
-    --text-main: #F8FAFC;
-    --text-muted: #CBD5E1;
-    --text-subtle: #94A3B8;
+    --text-main: #071A33;
+    --text-muted: rgba(7, 26, 51, 0.70);
+    --text-subtle: rgba(7, 26, 51, 0.45);
     
-    --accent-amber: #F59E0B;
-    --accent-amber-light: #FEF3C7;
-    --accent-red: #E4232D;
+    --accent-amber: #F5B800;
+    --accent-amber-light: #FFFBEB;
+    --accent-red: #DC2626;
     --accent-red-light: #FEE2E2;
     --accent-emerald: #10B981;
     --accent-emerald-light: #D1FAE5;
@@ -80,8 +80,8 @@
 
   body {
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #061121;
-    color: #F8FAFC;
+    background-color: #FFFFFF;
+    color: #071A33;
     letter-spacing: -0.01em;
     -webkit-font-smoothing: antialiased;
   }
@@ -93,82 +93,56 @@
 }
 
 /* ==========================================================================
-   NETRA SHARED GLASSMORPHYSMS DESIGN SYSTEM
-   White Translucent, frosted-glass treatment layered over deep #0A192F / #061121
+   NETRA STRICT WHITE / NAVY BLUE / AMBER INTELLIGENCE DESIGN SYSTEM
+   Clean tactical analysis cards on pure white workspace with subtle navy borders
    ========================================================================== */
 
 .glass-card {
-  background-color: rgba(255, 255, 255, 0.09);
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 100%);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.20);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25);
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(11, 35, 65, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(7, 26, 51, 0.05), 0 1px 2px -1px rgba(7, 26, 51, 0.03);
+  color: #071A33;
 }
 
 .glass-card-interactive {
-  background-color: rgba(255, 255, 255, 0.09);
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 100%);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.20);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.25);
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(11, 35, 65, 0.12);
+  box-shadow: 0 1px 3px 0 rgba(7, 26, 51, 0.05), 0 1px 2px -1px rgba(7, 26, 51, 0.03);
+  color: #071A33;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card-interactive:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.08) 100%);
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.40);
-  transform: translateY(-2px);
+  background-color: #FFFFFF;
+  border-color: rgba(11, 35, 65, 0.25);
+  box-shadow: 0 4px 14px 0 rgba(7, 26, 51, 0.08), 0 2px 4px -2px rgba(7, 26, 51, 0.04);
+  transform: translateY(-1px);
 }
 
 /* High-Performance Variant for dense lists (50+ rows / large lists) */
 .glass-card-dense {
-  background-color: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.18);
-  color: #FFFFFF;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(11, 35, 65, 0.10);
+  box-shadow: 0 1px 2px 0 rgba(7, 26, 51, 0.04);
+  color: #071A33;
 }
 
 .glass-card-dense:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.28);
+  background-color: #FAFCFE;
+  border-color: rgba(11, 35, 65, 0.20);
 }
 
-/* Modal Surface: Opaque solid dark background to prevent muddy stacking */
+/* Modal Surface: Crisp White dialog with subtle navy border */
 .modal-surface {
-  background-color: #0A192F !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8) !important;
-  color: #F8FAFC !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(11, 35, 65, 0.18) !important;
+  box-shadow: 0 20px 45px rgba(7, 26, 51, 0.15) !important;
+  color: #071A33 !important;
 }
 
-/* Reduced Transparency / Reduced Motion Fallback */
-@media (prefers-reduced-transparency: reduce) {
-  .glass-card,
-  .glass-card-interactive {
-    background-color: #0E223D !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border: 1px solid #1C3B64 !important;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .glass-card-interactive:hover {
-    transform: none !important;
-  }
-}
-
-/* Leaflet Dark Map Customization */
+/* Leaflet Tactical Map Customization */
 .leaflet-container {
-  background-color: #061121 !important;
+  background-color: #071A33 !important;
   font-family: 'Inter', sans-serif !important;
 }
 
@@ -181,22 +155,22 @@
   border: none;
 }
 
-/* Night-Ops Pulsing Marker Animations */
+/* Pulsing Marker Animations */
 @keyframes pulse-glow-red {
   0%, 100% {
-    box-shadow: 0 0 8px #E4232D, 0 0 18px rgba(228, 35, 45, 0.65);
+    box-shadow: 0 0 8px #DC2626, 0 0 18px rgba(220, 38, 38, 0.65);
   }
   50% {
-    box-shadow: 0 0 16px #E4232D, 0 0 30px rgba(228, 35, 45, 0.9);
+    box-shadow: 0 0 16px #DC2626, 0 0 30px rgba(220, 38, 38, 0.9);
   }
 }
 
 @keyframes pulse-glow-amber {
   0%, 100% {
-    box-shadow: 0 0 6px #F59E0B, 0 0 14px rgba(245, 158, 11, 0.55);
+    box-shadow: 0 0 6px #F5B800, 0 0 14px rgba(245, 184, 0, 0.55);
   }
   50% {
-    box-shadow: 0 0 14px #F59E0B, 0 0 24px rgba(245, 158, 11, 0.85);
+    box-shadow: 0 0 14px #F5B800, 0 0 24px rgba(245, 184, 0, 0.85);
   }
 }
 
@@ -224,13 +198,13 @@
   animation: radar-beacon 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
 
-/* Night-Ops Monospace Tooltip */
+/* Tactical Monospace Tooltip */
 .night-ops-tooltip {
-  background-color: rgba(6, 17, 33, 0.95) !important;
+  background-color: rgba(7, 26, 51, 0.95) !important;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(212, 160, 23, 0.4) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 12px rgba(212, 160, 23, 0.2) !important;
-  color: #E2E8F0 !important;
+  border: 1px solid rgba(245, 184, 0, 0.4) !important;
+  box-shadow: 0 4px 20px rgba(7, 26, 51, 0.4), 0 0 12px rgba(245, 184, 0, 0.2) !important;
+  color: #F8FAFC !important;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
   border-radius: 4px !important;
   padding: 4px 8px !important;
@@ -241,15 +215,16 @@
 }
 
 .leaflet-popup-content-wrapper {
-  background-color: #0A192F !important;
-  color: #FFFFFF !important;
-  border: 1px solid #132B4C !important;
+  background-color: #FFFFFF !important;
+  color: #071A33 !important;
+  border: 1px solid rgba(11, 35, 65, 0.15) !important;
   border-radius: 6px !important;
+  box-shadow: 0 10px 25px rgba(7, 26, 51, 0.12) !important;
 }
 
 .leaflet-popup-tip {
-  background-color: #0A192F !important;
-  border: 1px solid #132B4C !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid rgba(11, 35, 65, 0.15) !important;
 }
 
 /* Institutional custom scrollbars */
@@ -259,32 +234,32 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #E2E8F0;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #94A3B8;
+  background: rgba(11, 35, 65, 0.22);
   border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748B;
+  background: #F5B800;
 }
 
-/* Dark scrollbars for navy surfaces */
+/* Dark scrollbars for navy surfaces (header / modals) */
 .dark-scroll::-webkit-scrollbar-track {
-  background: #0A192F;
+  background: #071A33;
 }
 .dark-scroll::-webkit-scrollbar-thumb {
-  background: #1C3B64;
+  background: #1C457A;
   border-radius: 2px;
 }
 .dark-scroll::-webkit-scrollbar-thumb:hover {
-  background: #B45309;
+  background: #F5B800;
 }
 
 /* ==========================================================================
-   FULL-PAGE PERSISTENT BACKGROUND LAYER
+   GEOSPATIAL WATERMARK PERSISTENT LAYER
    ========================================================================== */
 .dashboard-background {
   position: fixed;
@@ -297,16 +272,7 @@
   overflow: hidden;
 }
 
-.dashboard-background img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.6;
-}
-
 .dashboard-content {
   position: relative;
   z-index: 1;
 }
-
