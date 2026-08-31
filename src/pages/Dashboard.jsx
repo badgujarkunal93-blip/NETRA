@@ -25,12 +25,13 @@ import {
   Target
 } from 'lucide-react';
 import { dbService } from '../services/db';
+import CrimeActivityMap from '../components/dashboard/CrimeActivityMap';
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const [metrics, setMetrics] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [selectedHotspot, setSelectedHotspot] = useState(null);
+
 
   useEffect(() => {
     async function loadData() {
@@ -288,122 +289,11 @@ export default function Dashboard() {
         </div>
 
         {/* RIGHT: LIVE TACTICAL GIS HOTSPOT MAP (5 Cols) */}
-        <div className="lg:col-span-5 glass-card rounded-lg overflow-hidden flex flex-col border border-[#0B2341]/12 bg-white">
-          {/* Header */}
-          <div className="px-4 py-3 bg-[#F4F7FB] border-b border-[#0B2341]/10 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Compass className="w-4 h-4 text-[#F5B800]" />
-              <span className="font-bold text-xs uppercase tracking-wider text-[#071A33]">
-                High Crime Activity Zones (Map)
-              </span>
-            </div>
-            <span className="text-[10px] font-mono text-[#071A33]/60 font-semibold">
-              {metrics.hotspots.length} SECTORS
-            </span>
-          </div>
-
-          <div className="p-3.5 flex-1 flex flex-col justify-between space-y-3">
-            {/* Tactical Live Map Surface */}
-            <div className="relative w-full h-64 bg-[#071A33] rounded-md overflow-hidden border border-[#0B2341] flex items-center justify-center shadow-inner">
-              {/* Tactical Precision Grid */}
-              <div className="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-
-              {/* Coastal Topography Vector */}
-              <svg className="absolute inset-0 w-full h-full stroke-cyan-700/40 stroke-[1.2] fill-none pointer-events-none">
-                <path d="M 80,10 Q 130,60 120,110 T 110,170 Q 90,210 80,240" />
-                <path d="M 120,110 Q 160,120 200,130" />
-              </svg>
-
-              {/* Hotspot Pulse Markers */}
-              {metrics.hotspots.map((hs) => {
-                const isSelected = selectedHotspot?.name === hs.name;
-                const isHigh = hs.activeAlerts > 2;
-
-                return (
-                  <button
-                    key={hs.name}
-                    onClick={() => setSelectedHotspot(hs)}
-                    style={{ left: `${Math.max(10, Math.min(90, ((hs.lng - 72.80) / 0.15) * 100))}%`, top: `${Math.max(10, Math.min(90, (1 - (hs.lat - 18.90) / 0.30) * 100))}%` }}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 group focus:outline-none z-10"
-                    title={hs.name}
-                  >
-                    <span className="relative flex h-5 w-5 items-center justify-center">
-                      {isHigh && (
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-60"></span>
-                      )}
-                      <span
-                        className={`inline-flex rounded-full h-3.5 w-3.5 items-center justify-center text-[8px] font-mono font-bold text-white shadow-md border ${
-                          isHigh
-                            ? 'bg-[#DC2626] border-red-300 ring-2 ring-red-500/30'
-                            : 'bg-[#F5B800] border-amber-300 text-[#071A33]'
-                        } ${isSelected ? 'ring-2 ring-white scale-125' : ''}`}
-                      >
-                        {hs.caseCount}
-                      </span>
-                    </span>
-                    <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-0.5 rounded bg-[#071A33] text-[8.5px] font-mono text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 border border-[#0B2341] shadow-lg">
-                      {hs.name} ({hs.caseCount} FIRs)
-                    </span>
-                  </button>
-                );
-              })}
-
-              {/* Real-looking GIS Telemetry Readout */}
-              <div className="absolute top-2 left-2 px-2 py-1 bg-black/60 rounded border border-white/15 text-[8.5px] font-mono text-cyan-300 backdrop-blur-sm">
-                LAT: 19.0760° N | LON: 72.8777° E | GRID: BKC-S4
-              </div>
-            </div>
-
-            {/* Selected Hotspot Intelligence Brief */}
-            {selectedHotspot ? (
-              <div className="p-3 bg-[#F4F7FB] rounded-md border border-[#0B2341]/10 text-xs">
-                <div className="flex items-center justify-between font-bold text-[#071A33]">
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-[#DC2626]" />
-                    <span className="text-xs">{selectedHotspot.name}</span>
-                  </div>
-                  <span className={`text-[9.5px] font-mono font-bold px-1.5 py-0.5 rounded border ${
-                    selectedHotspot.activeAlerts > 2 ? 'bg-red-50 text-[#DC2626] border-red-200' : 'bg-amber-50 text-[#D97706] border-amber-200'
-                  }`}>
-                    {selectedHotspot.topCategory || 'Crime Sector'}
-                  </span>
-                </div>
-
-                <div className="text-[11px] text-[#071A33]/80 mt-1.5">
-                  Station Jurisdiction: <strong className="text-[#071A33]">{selectedHotspot.station}</strong>
-                </div>
-
-                {/* Heat Intensity Bar */}
-                <div className="mt-2 pt-2 border-t border-[#0B2341]/10">
-                  <div className="flex items-center justify-between text-[10px] font-mono text-[#071A33]/70 mb-1">
-                    <span>AREA ACTIVITY LEVEL</span>
-                    <span className="font-bold text-[#071A33]">{selectedHotspot.caseCount} Reported Crimes</span>
-                  </div>
-                  <div className="w-full h-1.5 bg-[#0B2341]/10 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-[#F5B800]"
-                      style={{ width: `${Math.min(100, (selectedHotspot.caseCount / 50) * 100)}%` }}
-                    ></div>
-                  </div>
-                </div>
-
-                <div className="mt-2.5 flex items-center justify-between text-[11px]">
-                  <span className="text-[#071A33]/60 font-mono text-[10px]">Zone: Mumbai Metro Region</span>
-                  <button
-                    onClick={() => navigate('/cases')}
-                    className="text-[#071A33] font-bold hover:text-[#D97706] flex items-center gap-0.5"
-                  >
-                    <span>View Cases</span>
-                    <ChevronRight className="w-3 h-3 text-[#F5B800]" />
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <div className="p-3 bg-[#F4F7FB] rounded-md border border-[#0B2341]/10 text-xs text-center text-[#071A33]/60 font-mono">
-                No active hotspot sectors detected.
-              </div>
-            )}
-          </div>
+        <div className="lg:col-span-5 flex flex-col">
+          <CrimeActivityMap
+            hotspots={metrics?.hotspots || []}
+            loading={loading}
+          />
         </div>
       </div>
 

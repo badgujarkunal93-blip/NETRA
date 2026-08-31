@@ -559,22 +559,40 @@ export const localDataService = {
       stationGroups[st].categories[c.crime_category || 'Other'] = (stationGroups[st].categories[c.crime_category || 'Other'] || 0) + 1;
     });
 
+    const maxCases = Math.max(...Object.values(stationGroups).map(g => g.caseCount), 1);
+
     const hotspots = Object.values(stationGroups)
       .sort((a, b) => b.caseCount - a.caseCount)
-      .slice(0, 6)
+      .slice(0, 8)
       .map(h => {
         const topCat = Object.entries(h.categories).sort((x, y) => y[1] - x[1])[0]?.[0] || 'Organized Theft';
+        const cleanName = h.name.replace(/ Police Station$/i, '').trim();
+        const level = h.caseCount >= 80 ? 'VERY HIGH' : h.caseCount >= 50 ? 'HIGH' : h.caseCount >= 25 ? 'MEDIUM' : 'LOW';
+        const severity = level === 'VERY HIGH' ? 'Very High' : level === 'HIGH' ? 'High' : level === 'MEDIUM' ? 'Medium' : 'Low';
+        const stationFullName = h.name.toLowerCase().includes('police station') ? h.name : `${h.name} Police Station`;
+
         return {
-          name: h.name,
-          station: h.station,
+          id: `zone-${cleanName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+          name: cleanName,
+          stationJurisdiction: stationFullName,
+          station: stationFullName,
+          region: 'Mumbai Metro Region',
+          reportedCrimes: h.caseCount,
           caseCount: h.caseCount,
+          count: h.caseCount,
           activeAlerts: Math.max(1, Math.round(h.caseCount / 30)),
           topCategory: topCat,
+          type: topCat,
           trend: '+12% from last week',
-          lat: h.lat,
-          lng: h.lng
+          lat: Number(h.lat.toFixed(4)),
+          lng: Number(h.lng.toFixed(4)),
+          latitude: Number(h.lat.toFixed(4)),
+          longitude: Number(h.lng.toFixed(4)),
+          activityLevel: level,
+          severity: severity
         };
       });
+
 
     return {
       activeCases,

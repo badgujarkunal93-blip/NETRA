@@ -36,13 +36,16 @@ export default function CaseSearch() {
   const [loading, setLoading] = useState(true);
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   
-  // Filters
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedStatus, setSelectedStatus] = useState('All');
-  const [selectedStation, setSelectedStation] = useState('All');
+  // Filters initialized from URL search params if present
+  const [searchTerm, setSearchTerm] = useState(searchParams.get('q') || searchParams.get('search') || '');
+  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'All');
+  const [selectedStatus, setSelectedStatus] = useState(searchParams.get('status') || 'All');
+  const [selectedStation, setSelectedStation] = useState(
+    searchParams.get('station') || searchParams.get('police_station') || searchParams.get('location') || 'All'
+  );
 
   const urlCaseId = searchParams.get('id');
+
 
   useEffect(() => {
     async function loadCases() {
