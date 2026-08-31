@@ -313,24 +313,37 @@ async def ingest_fir(
     except ValueError as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-    # 3. SAVE TO DATABASE
+    # 3. SAVE TO DATABASE (Graceful / Idempotent)
     case_id = f"CASE-{uuid.uuid4().hex[:8].upper()}"
     doc_id = f"DOC-{uuid.uuid4().hex[:8].upper()}"
 
     # Upsert Case Record
     try:
-        supabase.table("cases").upsert({
-
-            "id": case_id,
-            "crime_no": structured_data.case.crime_no,
-            "crime_category": structured_data.case.crime_category,
-            "crime_major_head": structured_data.case.crime_major_head,
-            "incident_from": datetime.utcnow().isoformat(),
-            "latitude": structured_data.case.latitude or 19.0760,
-            "longitude": structured_data.case.longitude or 72.8777,
-            "police_station": structured_data.case.police_station,
-            "brief_facts": structured_data.case.brief_facts
-        }).execute()
+        existing_case = supabase.table("cases").select("id").eq("crime_no", structured_data.case.crime_no).execute()
+        if existing_case.data and len(existing_case.data) > 0:
+            case_id = existing_case.data[0]["id"]
+            supabase.table("cases").update({
+                "crime_category": structured_data.case.crime_category,
+                "crime_major_head": structured_data.case.crime_major_head,
+                "police_station": structured_data.case.police_station,
+                "brief_facts": structured_data.case.brief_facts
+            }).eq("id", case_id).execute()
+        else:
+            supabase.table("cases").insert({
+                "id": case_id,
+                "crime_no": structured_data.case.crime_no,
+                "case_no": f"FIR-{uuid.uuid4().hex[:4].upper()}",
+                "crime_category": structured_data.case.crime_category,
+                "crime_major_head": structured_data.case.crime_major_head,
+                "crime_minor_head": "Ingested",
+                "status": "Under Investigation",
+                "registered_date": datetime.utcnow().date().isoformat(),
+                "incident_from": datetime.utcnow().isoformat(),
+                "latitude": structured_data.case.latitude or 19.0760,
+                "longitude": structured_data.case.longitude or 72.8777,
+                "police_station": structured_data.case.police_station,
+                "brief_facts": structured_data.case.brief_facts
+            }).execute()
     except Exception as e:
         logger.warning("Could not persist to cases table: %s", e)
 
@@ -363,20 +376,25 @@ async def ingest_fir(
     # Save Persons and generate Evidence Spans
     for p in structured_data.persons:
         pid = f"PER-{uuid.uuid4().hex[:8].upper()}"
-        person_map[p.name] = pid
         try:
-            supabase.table("persons").upsert({
-                "id": pid,
-                "canonical_name": p.name,
-                "aliases": p.aliases,
-                "status_tag": "Person of Interest",
-                "confidence_score": p.confidence
-            }).execute()
+            existing_person = supabase.table("persons").select("id").eq("canonical_name", p.name).execute()
+            if existing_person.data and len(existing_person.data) > 0:
+                pid = existing_person.data[0]["id"]
+            else:
+                supabase.table("persons").insert({
+                    "id": pid,
+                    "canonical_name": p.name,
+                    "aliases": p.aliases,
+                    "status_tag": "Person of Interest",
+                    "confidence_score": p.confidence
+                }).execute()
         except Exception as e:
             logger.warning("Could not persist to persons table: %s", e)
 
+        person_map[p.name] = pid
+
         try:
-            supabase.table("person_case_roles").upsert({
+            supabase.table("person_case_roles").insert({
                 "id": f"ROLE-{uuid.uuid4().hex[:8].upper()}",
                 "person_id": pid,
                 "case_id": case_id,
@@ -387,7 +405,7 @@ async def ingest_fir(
         
         # Evidence Span (optional)
         try:
-            supabase.table("extraction_spans").upsert({
+            supabase.table("extraction_spans").insert({
                 "id": f"SPAN-{uuid.uuid4().hex[:8].upper()}",
                 "document_id": doc_id,
                 "chunk_id": chunk_id,
@@ -406,7 +424,7 @@ async def ingest_fir(
     for ph in structured_data.phones:
         ph_id = f"PH-{uuid.uuid4().hex[:8].upper()}"
         try:
-            supabase.table("phones").upsert({
+            supabase.table("phones").insert({
                 "id": ph_id,
                 "normalized_number_hash": ph.number,
                 "owner_person_id": person_map.get(ph.owner_name) if ph.owner_name else None,
@@ -420,7 +438,7 @@ async def ingest_fir(
     for v in structured_data.vehicles:
         v_id = f"VEH-{uuid.uuid4().hex[:8].upper()}"
         try:
-            supabase.table("vehicles").upsert({
+            supabase.table("vehicles").insert({
                 "id": v_id,
                 "registration_hash": v.registration,
                 "vehicle_type": v.make_model or "Unknown",
@@ -433,7 +451,7 @@ async def ingest_fir(
         
     # MO Fingerprint
     try:
-        supabase.table("mo_fingerprints").upsert({
+        supabase.table("mo_fingerprints").insert({
             "id": f"MO-{uuid.uuid4().hex[:8].upper()}",
             "case_id": case_id,
             "target": structured_data.mo_fingerprint.target,
@@ -456,4 +474,5 @@ async def ingest_fir(
         "case_id": case_id,
         "extracted": structured_data.model_dump()
     }
+
 
