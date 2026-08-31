@@ -327,30 +327,45 @@ async def ingest_fir(
         "crime_minor_head": "Ingested",
         "status": "Under Investigation",
         "registered_date": datetime.utcnow().date().isoformat(),
-        "incident_from": datetime.utcnow().isoformat(),
-        "latitude": structured_data.case.latitude or 19.0760,
-        "longitude": structured_data.case.longitude or 72.8777,
-        "police_station": structured_data.case.police_station,
-        "brief_facts": structured_data.case.brief_facts
-    }).execute()
+    # Upsert Case Record
+    try:
+        supabase.table("cases").upsert({
+            "id": case_id,
+            "crime_no": structured_data.case.crime_no,
+            "crime_category": structured_data.case.crime_category,
+            "crime_major_head": structured_data.case.crime_major_head,
+            "incident_from": datetime.utcnow().isoformat(),
+            "latitude": structured_data.case.latitude or 19.0760,
+            "longitude": structured_data.case.longitude or 72.8777,
+            "police_station": structured_data.case.police_station,
+            "brief_facts": structured_data.case.brief_facts
+        }).execute()
+    except Exception as e:
+        logger.warning("Could not persist to cases table: %s", e)
 
-    supabase.table("fir_documents").upsert({
-        "id": doc_id,
-        "case_id": case_id,
-        "document_type": "FIR",
-        "raw_text": text_content
-    }).execute()
+    try:
+        supabase.table("fir_documents").upsert({
+            "id": doc_id,
+            "case_id": case_id,
+            "document_type": "FIR",
+            "raw_text": text_content
+        }).execute()
+    except Exception as e:
+        logger.warning("Could not persist to fir_documents table: %s", e)
 
-    # Document Chunk
+    # Document Chunk (optional)
     chunk_id = f"CHK-{uuid.uuid4().hex[:8].upper()}"
-    supabase.table("document_chunks").upsert({
-        "id": chunk_id,
-        "document_id": doc_id,
-        "chunk_index": 0,
-        "start_offset": 0,
-        "end_offset": len(text_content),
-        "chunk_text": text_content[:1000] # truncate for safety in demo
-    }).execute()
+    try:
+        supabase.table("document_chunks").upsert({
+            "id": chunk_id,
+            "document_id": doc_id,
+            "chunk_index": 0,
+            "start_offset": 0,
+            "end_offset": len(text_content),
+            "chunk_text": text_content[:1000]
+        }).execute()
+    except Exception as e:
+        logger.warning("Could not persist to document_chunks table: %s", e)
 
     person_map = {}
     
@@ -358,77 +373,96 @@ async def ingest_fir(
     for p in structured_data.persons:
         pid = f"PER-{uuid.uuid4().hex[:8].upper()}"
         person_map[p.name] = pid
-        supabase.table("persons").upsert({
-            "id": pid,
-            "canonical_name": p.name,
-            "aliases": p.aliases,
-            "status_tag": "Person of Interest",
-            "confidence_score": p.confidence
-        }).execute()
+        try:
+            supabase.table("persons").upsert({
+                "id": pid,
+                "canonical_name": p.name,
+                "aliases": p.aliases,
+                "status_tag": "Person of Interest",
+                "confidence_score": p.confidence
+            }).execute()
+        except Exception as e:
+            logger.warning("Could not persist to persons table: %s", e)
 
-        supabase.table("person_case_roles").upsert({
-            "id": f"ROLE-{uuid.uuid4().hex[:8].upper()}",
-            "person_id": pid,
-            "case_id": case_id,
-            "role_type": p.role if p.role in ['Accused', 'Key Suspect', 'Victim', 'Complainant', 'Witness', 'Co-conspirator'] else 'Witness'
-        }).execute()
+        try:
+            supabase.table("person_case_roles").upsert({
+                "id": f"ROLE-{uuid.uuid4().hex[:8].upper()}",
+                "person_id": pid,
+                "case_id": case_id,
+                "role_type": p.role if p.role in ['Accused', 'Key Suspect', 'Victim', 'Complainant', 'Witness', 'Co-conspirator'] else 'Witness'
+            }).execute()
+        except Exception as e:
+            logger.warning("Could not persist to person_case_roles table: %s", e)
         
-        # Evidence Span
-        supabase.table("extraction_spans").upsert({
-            "id": f"SPAN-{uuid.uuid4().hex[:8].upper()}",
-            "document_id": doc_id,
-            "chunk_id": chunk_id,
-            "start_offset": max(0, text_content.find(p.name)),
-            "end_offset": max(0, text_content.find(p.name)) + len(p.name),
-            "text_snippet": p.name,
-            "entity_type": "Person",
-            "entity_value": pid,
-            "extraction_method": "google-genai-gemini-2.5-flash",
-            "confidence": p.confidence
-        }).execute()
+        # Evidence Span (optional)
+        try:
+            supabase.table("extraction_spans").upsert({
+                "id": f"SPAN-{uuid.uuid4().hex[:8].upper()}",
+                "document_id": doc_id,
+                "chunk_id": chunk_id,
+                "start_offset": max(0, text_content.find(p.name)),
+                "end_offset": max(0, text_content.find(p.name)) + len(p.name),
+                "text_snippet": p.name,
+                "entity_type": "Person",
+                "entity_value": pid,
+                "extraction_method": "groq-llm",
+                "confidence": p.confidence
+            }).execute()
+        except Exception as e:
+            logger.warning("Could not persist to extraction_spans table: %s", e)
 
     # Save Phones
     for ph in structured_data.phones:
         ph_id = f"PH-{uuid.uuid4().hex[:8].upper()}"
-        supabase.table("phones").upsert({
-            "id": ph_id,
-            "normalized_number_hash": ph.number,
-            "owner_person_id": person_map.get(ph.owner_name) if ph.owner_name else None,
-            "first_seen": datetime.utcnow().date().isoformat(),
-            "last_seen": datetime.utcnow().date().isoformat()
-        }).execute()
+        try:
+            supabase.table("phones").upsert({
+                "id": ph_id,
+                "normalized_number_hash": ph.number,
+                "owner_person_id": person_map.get(ph.owner_name) if ph.owner_name else None,
+                "first_seen": datetime.utcnow().date().isoformat(),
+                "last_seen": datetime.utcnow().date().isoformat()
+            }).execute()
+        except Exception as e:
+            logger.warning("Could not persist to phones table: %s", e)
 
     # Save Vehicles
     for v in structured_data.vehicles:
         v_id = f"VEH-{uuid.uuid4().hex[:8].upper()}"
-        supabase.table("vehicles").upsert({
-            "id": v_id,
-            "registration_hash": v.registration,
-            "vehicle_type": v.make_model or "Unknown",
-            "owner_person_id": person_map.get(v.owner_name) if v.owner_name else None,
-            "make_model": v.make_model,
-            "color": v.color
-        }).execute()
+        try:
+            supabase.table("vehicles").upsert({
+                "id": v_id,
+                "registration_hash": v.registration,
+                "vehicle_type": v.make_model or "Unknown",
+                "owner_person_id": person_map.get(v.owner_name) if v.owner_name else None,
+                "make_model": v.make_model,
+                "color": v.color
+            }).execute()
+        except Exception as e:
+            logger.warning("Could not persist to vehicles table: %s", e)
         
     # MO Fingerprint
-    supabase.table("mo_fingerprints").upsert({
-        "id": f"MO-{uuid.uuid4().hex[:8].upper()}",
-        "case_id": case_id,
-        "target": structured_data.mo_fingerprint.target,
-        "timing": structured_data.mo_fingerprint.timing,
-        "entry_method": structured_data.mo_fingerprint.entry_method,
-        "tools": structured_data.mo_fingerprint.tools,
-        "transport": structured_data.mo_fingerprint.transport,
-        "concealment": structured_data.mo_fingerprint.concealment,
-        "action_sequence": structured_data.mo_fingerprint.action_sequence,
-        "victim_interaction": structured_data.mo_fingerprint.victim_interaction,
-        "exit_method": structured_data.mo_fingerprint.exit_method,
-        "group_behavior": structured_data.mo_fingerprint.group_behavior,
-        "confidence": 90
-    }).execute()
+    try:
+        supabase.table("mo_fingerprints").upsert({
+            "id": f"MO-{uuid.uuid4().hex[:8].upper()}",
+            "case_id": case_id,
+            "target": structured_data.mo_fingerprint.target,
+            "timing": structured_data.mo_fingerprint.timing,
+            "entry_method": structured_data.mo_fingerprint.entry_method,
+            "tools": structured_data.mo_fingerprint.tools,
+            "transport": structured_data.mo_fingerprint.transport,
+            "concealment": structured_data.mo_fingerprint.concealment,
+            "action_sequence": structured_data.mo_fingerprint.action_sequence,
+            "victim_interaction": structured_data.mo_fingerprint.victim_interaction,
+            "exit_method": structured_data.mo_fingerprint.exit_method,
+            "group_behavior": structured_data.mo_fingerprint.group_behavior,
+            "confidence": 90
+        }).execute()
+    except Exception as e:
+        logger.warning("Could not persist to mo_fingerprints table: %s", e)
 
     return {
         "status": "COMPLETED",
         "case_id": case_id,
         "extracted": structured_data.model_dump()
     }
+
