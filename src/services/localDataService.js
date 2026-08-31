@@ -1,9 +1,11 @@
 // Local Dataset Service & Fallback Provider for NETRA
 import { localDB } from './localData.js';
+import { resolveStationCoordinates } from '../utils/activityLevels.js';
 
 export async function getLocalDataset() {
   return localDB;
 }
+
 
 export const localDataService = {
   async getAllCases(filters = {}) {
@@ -541,23 +543,26 @@ export const localDataService = {
       }
     ];
 
-    // Compute Hotspots from real cases
+    // Compute Hotspots from real cases with authentic Mumbai locality coordinates
     const stationGroups = {};
     cases.forEach(c => {
       const st = c.police_station || 'Mumbai Metro';
       if (!stationGroups[st]) {
+        const resolved = resolveStationCoordinates(st, c.latitude || 19.0760, c.longitude || 72.8777);
         stationGroups[st] = {
           name: st,
           station: st,
           caseCount: 0,
-          lat: c.latitude || 19.0760,
-          lng: c.longitude || 72.8777,
+          lat: resolved.lat,
+          lng: resolved.lng,
+          region: resolved.region || 'Mumbai Metro Region',
           categories: {}
         };
       }
       stationGroups[st].caseCount++;
       stationGroups[st].categories[c.crime_category || 'Other'] = (stationGroups[st].categories[c.crime_category || 'Other'] || 0) + 1;
     });
+
 
     const maxCases = Math.max(...Object.values(stationGroups).map(g => g.caseCount), 1);
 

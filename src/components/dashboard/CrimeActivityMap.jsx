@@ -260,6 +260,56 @@ export default function CrimeActivityMap({ hotspots = [], loading = false, error
     ? (ACTIVITY_CONFIG[selectedZone.activityLevel] || ACTIVITY_CONFIG['MEDIUM'])
     : ACTIVITY_CONFIG['MEDIUM'];
 
+  // Map Basemap & Provider API Key Configuration (Identical to Knowledge Graph Night-Ops)
+  const tileLayerConfig = useMemo(() => {
+    const mapboxToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN || import.meta.env.VITE_MAPBOX_API_KEY;
+    const maptilerKey = import.meta.env.VITE_MAPTILER_API_KEY;
+    const stadiaKey = import.meta.env.VITE_STADIA_API_KEY;
+    const customTileUrl = import.meta.env.VITE_MAP_TILE_URL;
+    const genericKey = import.meta.env.VITE_MAP_API_KEY;
+
+    if (customTileUrl) {
+      const url = genericKey ? customTileUrl.replace(/\{key\}|\{apiKey\}/g, genericKey) : customTileUrl;
+      return {
+        url,
+        attribution: '&copy; Map Provider &copy; OpenStreetMap contributors',
+        maxZoom: 19
+      };
+    }
+
+    if (mapboxToken) {
+      return {
+        url: `https://api.mapbox.com/styles/v1/mapbox/dark-v11/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`,
+        attribution: '&copy; <a href="https://www.mapbox.com/">Mapbox</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19
+      };
+    }
+
+    if (maptilerKey || (genericKey && genericKey.length >= 16)) {
+      const key = maptilerKey || genericKey;
+      return {
+        url: `https://api.maptiler.com/maps/streets-v2-dark/{z}/{x}/{y}.png?key=${key}`,
+        attribution: '&copy; <a href="https://www.maptiler.com/">MapTiler</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19
+      };
+    }
+
+    if (stadiaKey) {
+      return {
+        url: `https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${stadiaKey}`,
+        attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a>',
+        maxZoom: 20
+      };
+    }
+
+    // Default 100% Free Night-Ops Basemap (OpenStreetMap with Tactical Dark Shader - Zero API Key / Zero Watermark)
+    return {
+      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    };
+  }, []);
+
   return (
     <div 
       ref={containerRef}
@@ -318,16 +368,17 @@ export default function CrimeActivityMap({ hotspots = [], loading = false, error
               zoomControl={false}
               maxBounds={MUMBAI_BOUNDS}
               minZoom={10}
-              maxZoom={16}
-              className="w-full h-full"
+              maxZoom={18}
+              className="w-full h-full night-ops-map"
               style={{ background: '#061121' }}
             >
-              {/* Real OpenStreetMap Basemap Tiles with Tactical Dark styling */}
+              {/* Night-Ops Filtered Basemap Tiles (Zero Watermark) */}
               <TileLayer
-                url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
-                maxZoom={19}
+                attribution={tileLayerConfig.attribution}
+                url={tileLayerConfig.url}
+                maxZoom={tileLayerConfig.maxZoom}
               />
+
 
               {/* Viewport Smooth Controller */}
               <MapViewController targetCenter={flyTarget} targetZoom={13} />
