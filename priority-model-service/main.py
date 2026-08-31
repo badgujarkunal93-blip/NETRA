@@ -2,14 +2,21 @@ import os
 import json
 import logging
 from contextlib import asynccontextmanager
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 from datetime import datetime, timezone
 
 import joblib
 import numpy as np
+import xgboost as xgb
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, field_validator
+
+try:
+    from groq import Groq
+    has_groq = True
+except ImportError:
+    has_groq = False
 
 # Configure institutional logging
 logging.basicConfig(
@@ -30,6 +37,20 @@ feature_order: List[str] = []
 model_status = "OK"
 
 ALLOW_HEURISTIC_FALLBACK = os.getenv("ALLOW_HEURISTIC_FALLBACK", "false").lower() == "true"
+GROQ_REASONING_MODEL = os.getenv("GROQ_REASONING_MODEL", "llama-3.1-8b-instant")
+
+FEATURE_HUMAN_LABELS = {
+    "network_centrality": "network bridge centrality",
+    "direct_connection_count": "direct graph connections",
+    "observed_vs_inferred_ratio": "verified evidence ratio",
+    "avg_relationship_confidence": "relationship confidence",
+    "role_weight": "investigative role severity",
+    "prior_case_count": "prior case involvements",
+    "mo_case_match_flag": "modus operandi serial match",
+    "evidence_count": "linked evidence logs",
+    "alert_count": "active intelligence alerts",
+    "avg_alert_confidence": "alert confidence score"
+}
 
 def load_model_and_features():
     """Load model artifact and feature sequence once at application startup."""
@@ -131,7 +152,7 @@ except Exception as e:
 
 
 # -----------------------------------------------------------------------------
-# REQUEST PYDANTIC SCHEMA
+# REQUEST / RESPONSE PYDANTIC SCHEMAS
 # -----------------------------------------------------------------------------
 class SuspectScoreRequest(BaseModel):
     network_centrality: float = Field(
@@ -224,6 +245,160 @@ class SuspectScoreResponse(BaseModel):
     model_mode: str = Field(..., description="Either 'production' or 'fallback_heuristic'")
 
 
+class SuspectExplainRequest(BaseModel):
+    person_name: Optional[str] = Field("Suspect", description="Name or label of the person")
+    role: Optional[str] = Field("Accused", description="Investigative role classification")
+    priority_score: Optional[float] = Field(None, description="Score calculated by /score")
+    network_centrality: float = Field(..., description="Graph centrality index")
+    direct_connection_count: int = Field(..., ge=0, description="Direct 1-hop connections")
+    observed_vs_inferred_ratio: float = Field(..., ge=0.0, description="Verified edges ratio")
+    avg_relationship_confidence: float = Field(..., ge=0.0, le=100.0, description="Relationship confidence")
+    role_weight: float = Field(..., ge=0.0, description="Role severity weight")
+    prior_case_count: int = Field(..., ge=0, description="Historical FIR involvements")
+    mo_case_match_flag: int = Field(..., ge=0, le=1, description="Modus operandi match flag")
+    evidence_count: float = Field(..., ge=0.0, description="Linked physical/digital evidence")
+    alert_count: int = Field(..., ge=0, description="Active anomaly alerts")
+    avg_alert_confidence: float = Field(..., ge=0.0, le=100.0, description="Average alert confidence")
+    shap_values: Optional[Dict[str, float]] = Field(None, description="Optional pre-computed SHAP values")
+
+    @field_validator("mo_case_match_flag")
+    @classmethod
+    def validate_binary_flag(cls, v: int) -> int:
+        if v not in (0, 1):
+            raise ValueError("mo_case_match_flag must be strictly 0 or 1")
+        return v
+
+
+class FeatureContribution(BaseModel):
+    feature: str
+    label: str
+    shap_value: float
+    impact: str  # "positive" | "negative"
+
+
+class SuspectExplainResponse(BaseModel):
+    priority_score: float = Field(..., description="Target priority score (0.0 to 100.0)")
+    reasoning: str = Field(..., description="1-2 sentence plain English explanation")
+    reasoning_source: str = Field(..., description="'llm' for AI-generated reasoning, 'feature_summary' for template fallback")
+    top_contributions: List[FeatureContribution] = Field(default_factory=list, description="Top SHAP feature drivers")
+    generated_at: str = Field(..., description="ISO-8601 timestamp")
+
+
+# -----------------------------------------------------------------------------
+# SHAP FEATURE IMPORTANCE COMPUTATION
+# -----------------------------------------------------------------------------
+def compute_shap_contributions(features_dict: dict, active_order: List[str]) -> Dict[str, float]:
+    """
+    Computes exact TreeSHAP feature contributions using XGBoost's native booster predict.
+    Falls back to calibrated heuristic attribution if model is not loaded.
+    """
+    ordered_values = [features_dict.get(f, 0.0) for f in active_order]
+
+    if loaded_model is not None and model_status == "OK":
+        try:
+            X = np.array([ordered_values], dtype=np.float32)
+            booster = loaded_model.get_booster()
+            dmatrix = xgb.DMatrix(X)
+            # pred_contribs=True returns SHAP values for all features + bias term as the last element
+            contribs = booster.predict(dmatrix, pred_contribs=True)[0]
+            shap_dict = {}
+            for i, feat in enumerate(active_order):
+                shap_dict[feat] = round(float(contribs[i]), 2)
+            return shap_dict
+        except Exception as e:
+            logger.warning("Error computing TreeSHAP contributions from XGBoost: %s", e)
+
+    # Heuristic attribution fallback
+    return {
+        "network_centrality": round(float(features_dict.get("network_centrality", 0.0)) * 25.0, 2),
+        "role_weight": round(float(features_dict.get("role_weight", 0.5)) * 20.0, 2),
+        "prior_case_count": round(min(15.0, float(features_dict.get("prior_case_count", 0)) * 3.0), 2),
+        "mo_case_match_flag": round(float(features_dict.get("mo_case_match_flag", 0)) * 10.0, 2),
+        "direct_connection_count": round(min(15.0, float(features_dict.get("direct_connection_count", 0)) * 1.5), 2),
+        "evidence_count": round(min(10.0, float(features_dict.get("evidence_count", 0.0)) * 1.2), 2),
+        "alert_count": round(min(10.0, float(features_dict.get("alert_count", 0)) * 2.0), 2),
+        "observed_vs_inferred_ratio": round(float(features_dict.get("observed_vs_inferred_ratio", 0.0)) * 5.0, 2),
+        "avg_relationship_confidence": round((float(features_dict.get("avg_relationship_confidence", 50.0)) / 100.0) * 5.0, 2),
+        "avg_alert_confidence": round((float(features_dict.get("avg_alert_confidence", 0.0)) / 100.0) * 5.0, 2)
+    }
+
+
+def generate_feature_summary(top_contributions: List[FeatureContribution], priority_score: float, person_name: str, role: str) -> str:
+    """
+    Deterministic fallback explanation built directly from the top SHAP features as a formatted sentence.
+    """
+    if not top_contributions:
+        return f"{person_name} assigned a priority score of {priority_score} based on overall graph and case indicators."
+
+    positive_drivers = [c.label for c in top_contributions if c.shap_value > 0]
+    if positive_drivers:
+        driver_str = ", ".join(positive_drivers[:3])
+        return f"Top contributing factors: {driver_str}. Presents elevated investigative relevance based on graph patterns."
+    else:
+        driver_str = ", ".join([c.label for c in top_contributions[:3]])
+        return f"Top contributing factors: {driver_str}."
+
+
+def generate_llm_reasoning(
+    person_name: str,
+    role: str,
+    priority_score: float,
+    top_contributions: List[FeatureContribution]
+) -> tuple[str, str]:
+    """
+    Calls Groq LLM to convert numeric SHAP contributions into 1-2 plain English sentences.
+    Returns (reasoning_text, reasoning_source) where reasoning_source is 'llm' or 'feature_summary'.
+    """
+    api_key = os.environ.get("GROQ_API_KEY")
+    if not api_key:
+        raise ValueError("GROQ_API_KEY is not set.")
+
+    if not has_groq:
+        raise ValueError("groq library is not installed.")
+
+    # Format top contributions concisely for LLM prompt
+    contrib_lines = []
+    for c in top_contributions:
+        sign = "+" if c.shap_value >= 0 else ""
+        contrib_lines.append(f"- {c.feature} ({c.label}): {sign}{c.shap_value} pts")
+    contrib_text = "\n".join(contrib_lines) if contrib_lines else "No dominant SHAP features"
+
+    prompt = (
+        "You are an objective criminal intelligence assistant analyzing investigative priority factors for a suspect node.\n\n"
+        f"Subject: {person_name} ({role})\n"
+        f"Assigned Priority Score: {priority_score}/100\n"
+        f"Top Feature Contributions (SHAP importance):\n{contrib_text}\n\n"
+        "TASK:\n"
+        "Write exactly ONE or TWO plain English sentences explaining why this subject received their priority score based strictly on the contribution values provided above.\n\n"
+        "CRITICAL RULES:\n"
+        "1. Base your explanation ONLY on the provided numeric contributions and role. Do NOT hallucinate or invent outside facts, locations, or incidents.\n"
+        "2. NEVER assign guilt, accuse of crimes, or make legal characterizations (do NOT say 'is guilty of', 'is a criminal', 'committed the crime').\n"
+        "3. Use objective investigative language (e.g., 'warrants prioritized review due to...', 'shows a pattern consistent with...', 'reflects elevated network bridge centrality').\n"
+        "4. Return plain text only. Do not use bullet points or markdown formatting."
+    )
+
+    try:
+        client = Groq(api_key=api_key)
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            model=GROQ_REASONING_MODEL,
+            temperature=0.1,
+            max_tokens=150
+        )
+        raw_text = chat_completion.choices[0].message.content if chat_completion.choices else ""
+        if raw_text and raw_text.strip():
+            reasoning_text = raw_text.strip()
+            return reasoning_text, "llm"
+        else:
+            logger.warning("Groq returned empty response text, using fallback feature summary.")
+            return generate_feature_summary(top_contributions, priority_score, person_name, role), "feature_summary"
+    except Exception as e:
+        logger.error("Groq LLM reasoning generation failed: %s", e)
+        return generate_feature_summary(top_contributions, priority_score, person_name, role), "feature_summary"
+
+
 # -----------------------------------------------------------------------------
 # FALLBACK HEURISTIC PREDICTOR
 # -----------------------------------------------------------------------------
@@ -260,7 +435,8 @@ def health_check():
         "model_loaded": bool(loaded_model is not None),
         "model_path": MODEL_PATH,
         "feature_count": len(feature_order) if feature_order else 0,
-        "fallback_enabled": ALLOW_HEURISTIC_FALLBACK
+        "fallback_enabled": ALLOW_HEURISTIC_FALLBACK,
+        "groq_configured": bool(os.environ.get("GROQ_API_KEY"))
     }
 
 
@@ -280,7 +456,7 @@ def compute_priority_score(payload: SuspectScoreRequest):
     active_order = feature_order
     
     if not active_order:
-        active_order = list(features_dict.keys()) # Just to not fail if fallback is allowed but order is missing
+        active_order = list(features_dict.keys())
 
     ordered_values = [features_dict.get(f, 0.0) for f in active_order]
 
@@ -317,6 +493,72 @@ def compute_priority_score(payload: SuspectScoreRequest):
         feature_version=str(len(active_order)),
         generated_at=datetime.now(timezone.utc).isoformat(),
         model_mode=model_mode
+    )
+
+
+@app.post("/explain", response_model=SuspectExplainResponse, status_code=status.HTTP_200_OK)
+def explain_priority_score(payload: SuspectExplainRequest):
+    """
+    Generate natural language reasoning for a suspect priority score using SHAP feature importances and Groq LLM.
+    Returns plain English sentences grounded strictly in the top SHAP contributions.
+    """
+    api_key = os.environ.get("GROQ_API_KEY")
+    if not api_key:
+        raise HTTPException(
+            status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+            detail={"error": "GROQ_API_KEY_MISSING", "message": "GROQ_API_KEY is not configured for reasoning generation"}
+        )
+
+    features_dict = payload.model_dump()
+    active_order = feature_order if feature_order else [
+        "network_centrality", "direct_connection_count", "observed_vs_inferred_ratio",
+        "avg_relationship_confidence", "role_weight", "prior_case_count",
+        "mo_case_match_flag", "evidence_count", "alert_count", "avg_alert_confidence"
+    ]
+
+    # Calculate score if not provided
+    score = payload.priority_score
+    if score is None:
+        if loaded_model is not None and model_status == "OK":
+            ordered_values = [features_dict.get(f, 0.0) for f in active_order]
+            X = np.array([ordered_values], dtype=np.float32)
+            prediction = loaded_model.predict(X)
+            score = round(float(np.clip(prediction[0], 0.0, 100.0)), 1)
+        else:
+            score = round(fallback_priority_calculation(features_dict), 1)
+
+    # Compute or use SHAP contributions
+    if payload.shap_values:
+        shap_dict = payload.shap_values
+    else:
+        shap_dict = compute_shap_contributions(features_dict, active_order)
+
+    # Extract top 3-4 contributors by magnitude
+    sorted_features = sorted(shap_dict.items(), key=lambda x: abs(x[1]), reverse=True)
+    top_contributions: List[FeatureContribution] = []
+    for feat_name, shap_val in sorted_features[:4]:
+        human_label = FEATURE_HUMAN_LABELS.get(feat_name, feat_name.replace("_", " "))
+        top_contributions.append(FeatureContribution(
+            feature=feat_name,
+            label=human_label,
+            shap_value=shap_val,
+            impact="positive" if shap_val >= 0 else "negative"
+        ))
+
+    # Generate reasoning using Groq LLM (with fallback to feature summary on LLM error)
+    reasoning_text, reasoning_source = generate_llm_reasoning(
+        person_name=payload.person_name or "Suspect",
+        role=payload.role or "Accused",
+        priority_score=score,
+        top_contributions=top_contributions
+    )
+
+    return SuspectExplainResponse(
+        priority_score=score,
+        reasoning=reasoning_text,
+        reasoning_source=reasoning_source,
+        top_contributions=top_contributions,
+        generated_at=datetime.now(timezone.utc).isoformat()
     )
 
 

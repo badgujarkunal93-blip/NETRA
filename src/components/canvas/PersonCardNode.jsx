@@ -61,7 +61,7 @@ function PersonCardNode({ id, data, isConnectable }) {
             {data.priority_score != null && (
               <div className="flex items-center gap-1 mt-0.5">
                 <span
-                  title="Live Suspect Priority Score (XGBoost)"
+                  title={data.priorityReasoning ? `Score: ${data.priority_score} — ${data.priorityReasoning}` : 'Live Suspect Priority Score (XGBoost)'}
                   className={`px-1.5 py-0.2 rounded text-[9px] font-mono font-extrabold flex items-center gap-1 border shadow-xs ${
                     data.priority_score >= 70
                       ? 'bg-rose-500/25 text-rose-300 border-rose-500/60 animate-pulse'

@@ -439,6 +439,8 @@ export default function CaseCanvas() {
               ...n.data,
               priority_score: match.priority_score,
               priorityError: match.success ? null : (match.error || 'Model API Unavailable'),
+              priorityReasoning: match.reasoning,
+              priorityReasoningSource: match.reasoning_source,
               analyzedFeatures: match.features
             }
           };
@@ -941,6 +943,76 @@ export default function CaseCanvas() {
                           )}
                         </div>
                       </div>
+
+                      {/* AI / Feature-Summary Reasoning Block */}
+                      {item.reasoning && (
+                        <div className="bg-[#071120] p-2.5 rounded border border-[#1C3B64] space-y-1.5 font-sans">
+                          <div className="flex items-center justify-between gap-2 flex-wrap">
+                            <span className="text-[10px] font-mono font-bold uppercase text-slate-400">
+                              Investigative Rationale
+                            </span>
+                            {/* Distinct Source Badges */}
+                            {item.reasoning_source === 'llm' && (
+                              <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold flex items-center gap-1 bg-purple-950/80 text-purple-300 border border-purple-600/70 shadow-xs">
+                                <Sparkles className="w-2.5 h-2.5 text-purple-400" />
+                                <span>AI-generated reasoning</span>
+                              </span>
+                            )}
+                            {item.reasoning_source === 'feature_summary' && (
+                              <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold flex items-center gap-1 bg-sky-950/80 text-sky-300 border border-sky-600/70 shadow-xs">
+                                <Layers className="w-2.5 h-2.5 text-sky-400" />
+                                <span>feature summary</span>
+                              </span>
+                            )}
+                            {(item.isHeuristic || item.reasoning_source === 'heuristic_fallback') && (
+                              <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold flex items-center gap-1 bg-amber-950/80 text-amber-300 border border-amber-500/70 shadow-xs">
+                                <AlertTriangle className="w-2.5 h-2.5 text-amber-400" />
+                                <span>heuristic estimate (model unavailable)</span>
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-[11px] text-slate-200 leading-relaxed font-sans italic">
+                            "{item.reasoning}"
+                          </p>
+
+                          {/* Top Contributing Feature Factors */}
+                          {item.top_contributions && item.top_contributions.length > 0 && (
+                            <div className="flex flex-wrap gap-1 pt-0.5">
+                              {item.top_contributions.slice(0, 3).map((contrib, cIdx) => (
+                                <span 
+                                  key={cIdx} 
+                                  className={`px-1.5 py-0.5 rounded text-[9px] font-mono ${
+                                    contrib.shap_value >= 0
+                                      ? 'bg-emerald-950/60 text-emerald-300 border border-emerald-800/60'
+                                      : 'bg-slate-800 text-slate-400 border border-slate-700'
+                                  }`}
+                                  title={`SHAP Contribution: ${contrib.shap_value > 0 ? '+' : ''}${contrib.shap_value} pts`}
+                                >
+                                  {contrib.label}: {contrib.shap_value > 0 ? `+${contrib.shap_value}` : contrib.shap_value}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Error Banner if Inference Failed */}
+                      {!item.success && (
+                        <div className="bg-rose-950/30 p-2.5 rounded border border-rose-800/60 space-y-1">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] font-mono font-bold uppercase text-rose-400">
+                              Analysis Status
+                            </span>
+                            <span className="px-2 py-0.5 rounded text-[9px] font-mono font-bold flex items-center gap-1 bg-rose-950/80 text-rose-300 border border-rose-700/70">
+                              <AlertCircle className="w-2.5 h-2.5 text-rose-400" />
+                              <span>Model unavailable</span>
+                            </span>
+                          </div>
+                          <p className="text-[11px] text-rose-200/90 font-sans">
+                            {item.error || 'Priority model unavailable. Backend scoring service could not be reached.'}
+                          </p>
+                        </div>
+                      )}
 
                       {/* Reasoning Inputs Grid (Raw feature values used for inference) */}
                       {item.features && (

@@ -8,3 +8,12 @@ services:
     plan: free
     healthCheckPath: /health
     autoDeploy: true
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_REASONING_MODEL
+        value: "llama-3.1-8b-instant"
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ALLOW_HEURISTIC_FALLBACK
+        value: "false"

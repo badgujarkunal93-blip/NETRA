@@ -226,6 +226,75 @@ export async function fetchSuspectPriorityScore(features) {
 }
 
 /**
+ * Call the backend /explain endpoint to get AI-generated or feature-summary reasoning.
+ * 
+ * @param {Object} params
+ * @param {Object} params.features - 10 feature values
+ * @param {number} params.priority_score - Numeric score
+ * @param {string} [params.person_name] - Name/label of the person
+ * @param {string} [params.role] - Role classification
+ * @returns {Promise<{ reasoning: string, reasoning_source: string, top_contributions: Array }>}
+ */
+export async function fetchSuspectExplanation({ features, priority_score, person_name, role }) {
+  const url = `${MODEL_SERVICE_URL.replace(/\/+$/, '')}/explain`;
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 25000);
+
+  try {
+    const payload = {
+      ...features,
+      priority_score,
+      person_name: person_name || 'Suspect',
+      role: role || 'Accused'
+    };
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload),
+      signal: controller.signal
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Explain API error (${response.status}): ${errorText}`);
+    }
+
+    const json = await response.json();
+    return {
+      reasoning: json.reasoning || 'Priority evaluated from graph centrality and evidence metrics.',
+      reasoning_source: json.reasoning_source || 'feature_summary',
+      top_contributions: json.top_contributions || []
+    };
+  } catch (err) {
+    clearTimeout(timeoutId);
+    console.warn('Suspect Priority Explain API call failed or degraded:', err.message);
+    // Return client-side feature summary fallback if explain endpoint is unavailable
+    const topFactors = [];
+    if (features.network_centrality > 0.6) topFactors.push('high graph centrality');
+    if (features.mo_case_match_flag === 1) topFactors.push('matching MO crime pattern');
+    if (features.prior_case_count > 1) topFactors.push('prior case involvements');
+    if (features.role_weight >= 0.8) topFactors.push('high role severity');
+
+    const summaryText = topFactors.length > 0 
+      ? `Top contributing factors: ${topFactors.join(', ')}.` 
+      : 'Presents moderate graph and case connectivity metrics.';
+
+    return {
+      reasoning: summaryText,
+      reasoning_source: 'feature_summary',
+      top_contributions: []
+    };
+  }
+}
+
+/**
  * Batch analyze all Person nodes on the canvas in parallel.
  * 
  * @param {Array} nodes - React Flow nodes
@@ -259,36 +328,47 @@ export async function analyzeAllCanvasPersons(nodes, edges, caseId, onProgress) 
     featureList.map(async ({ pNode, features }) => {
       try {
         const score = await fetchSuspectPriorityScore(features);
+        
+        // Fetch reasoning and explainability
+        const personName = pNode.data?.label || 'Unknown Suspect';
+        const personRole = pNode.data?.role || 'Accused';
+        const explanation = await fetchSuspectExplanation({
+          features,
+          priority_score: score,
+          person_name: personName,
+          role: personRole
+        });
+
         return {
           nodeId: pNode.id,
-          label: pNode.data?.label || 'Unknown Suspect',
-          role: pNode.data?.role || 'Accused',
+          label: personName,
+          role: personRole,
           status: pNode.data?.status || 'hypothesis',
           linkedId: pNode.data?.linkedId || null,
           priority_score: score,
+          reasoning: explanation.reasoning,
+          reasoning_source: explanation.reasoning_source,
+          top_contributions: explanation.top_contributions,
           features,
-          success: true
+          success: true,
+          isHeuristic: false
         };
       } catch (err) {
-        // Fallback heuristic scoring
-        const heuristicScore = Math.min(99, Math.max(20, Math.round(
-          (features.role_weight || 0.5) * 35 +
-          (features.network_centrality || 0.3) * 20 +
-          (features.observed_vs_inferred_ratio || 0.5) * 15 +
-          (features.avg_relationship_confidence || 0.5) * 15 +
-          Math.min(features.prior_case_count || 1, 5) * 2.5 +
-          (features.mo_case_match_flag || 0) * 10
-        )));
+        // Explicit failure reporting - no silent fake scores
+        console.error(`Priority scoring failed for node ${pNode.id}:`, err);
         return {
           nodeId: pNode.id,
           label: pNode.data?.label || 'Unknown Suspect',
           role: pNode.data?.role || 'Accused',
           status: pNode.data?.status || 'hypothesis',
           linkedId: pNode.data?.linkedId || null,
-          priority_score: heuristicScore,
-          isHeuristic: true,
+          priority_score: null,
+          reasoning: null,
+          reasoning_source: 'unavailable',
           features,
-          success: true
+          success: false,
+          isHeuristic: false,
+          error: 'Priority model unavailable'
         };
       }
     })
@@ -296,8 +376,10 @@ export async function analyzeAllCanvasPersons(nodes, edges, caseId, onProgress) 
 
   const formattedResults = results.map(r => r.status === 'fulfilled' ? r.value : {
     success: false,
-    error: r.reason?.message || 'Inference Failed',
-    priority_score: null
+    error: r.reason?.message || 'Priority model unavailable',
+    priority_score: null,
+    reasoning: null,
+    reasoning_source: 'unavailable'
   });
 
   // Sort ranked by priority_score descending (nulls at bottom)

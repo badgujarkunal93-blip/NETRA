@@ -59,7 +59,9 @@ Evaluates the current dataset and reports metrics without saving changes to disk
 | :--- | :--- | :--- |
 | `ALLOW_HEURISTIC_FALLBACK` | `false` | When set to `true`, the `/score` and `/health` endpoints fall back to domain heuristic scoring if the model artifact is missing or corrupted. When `false`, returns strict `503 Service Unavailable`. |
 | `PORT` | `8000` | Port for the FastAPI server. |
-| `GEMINI_API_KEY` | `""` | Optional API key for FIR LLM extraction pipeline. |
+| `GROQ_API_KEY` | `""` | Groq API key required for suspect priority LLM reasoning (`/explain`). |
+| `GROQ_REASONING_MODEL` | `"llama-3.1-8b-instant"` | Groq LLM model name for suspect priority explainability. Can be changed to `llama-3.3-70b-versatile`. |
+| `GEMINI_API_KEY` | `""` | Google Gemini API key used for FIR LLM extraction pipeline. |
 
 ---
 
@@ -75,7 +77,8 @@ Evaluates the current dataset and reports metrics without saving changes to disk
   "model_loaded": true,
   "model_path": ".../model/suspect_priority_model.joblib",
   "feature_count": 10,
-  "fallback_enabled": false
+  "fallback_enabled": false,
+  "groq_configured": true
 }
 ```
 
@@ -108,6 +111,50 @@ Evaluates the current dataset and reports metrics without saving changes to disk
 }
 ```
 
+### Suspect Priority Explanation (SHAP + LLM Reasoning)
+- **Endpoint**: `POST /explain`
+- **Request Body**:
+```json
+{
+  "person_name": "Vikram Sethi",
+  "role": "Accused",
+  "priority_score": 82.5,
+  "network_centrality": 0.85,
+  "direct_connection_count": 12,
+  "observed_vs_inferred_ratio": 0.90,
+  "avg_relationship_confidence": 95.0,
+  "role_weight": 1.0,
+  "prior_case_count": 5,
+  "mo_case_match_flag": 1,
+  "evidence_count": 8.0,
+  "alert_count": 4,
+  "avg_alert_confidence": 90.0
+}
+```
+- **Response Body**:
+```json
+{
+  "priority_score": 82.5,
+  "reasoning": "Ranked as elevated priority primarily due to central graph connectivity and a matching prior MO pattern.",
+  "reasoning_source": "llm",
+  "top_contributions": [
+    {
+      "feature": "observed_vs_inferred_ratio",
+      "label": "verified evidence ratio",
+      "shap_value": 23.59,
+      "impact": "positive"
+    },
+    {
+      "feature": "role_weight",
+      "label": "investigative role severity",
+      "shap_value": 4.08,
+      "impact": "positive"
+    }
+  ],
+  "generated_at": "2026-08-31T13:27:00.000000+00:00"
+}
+```
+
 ---
 
 ## 5. Running Tests
@@ -119,6 +166,9 @@ python -m unittest test_scoring.py
 This tests:
 - Startup artifact loading and feature alignment.
 - Accurate prediction scores for high-risk and low-risk profiles.
-- Strict `503 Service Unavailable` handling on model degradation.
+- SHAP feature importance extraction and top contribution ranking.
+- LLM-generated reasoning and fallback to deterministic feature summary.
+- Strict `503 Service Unavailable` handling on model or key degradation.
 - Safe heuristic fallback behavior when `ALLOW_HEURISTIC_FALLBACK=true`.
 - Pydantic payload validation and error handling.
+
