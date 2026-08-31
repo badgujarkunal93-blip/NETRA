@@ -317,19 +317,10 @@ async def ingest_fir(
     case_id = f"CASE-{uuid.uuid4().hex[:8].upper()}"
     doc_id = f"DOC-{uuid.uuid4().hex[:8].upper()}"
 
-    # Document
-    supabase.table("cases").upsert({
-        "id": case_id,
-        "crime_no": structured_data.case.crime_no,
-        "case_no": f"FIR-{uuid.uuid4().hex[:4].upper()}",
-        "crime_category": structured_data.case.crime_category,
-        "crime_major_head": structured_data.case.crime_major_head,
-        "crime_minor_head": "Ingested",
-        "status": "Under Investigation",
-        "registered_date": datetime.utcnow().date().isoformat(),
     # Upsert Case Record
     try:
         supabase.table("cases").upsert({
+
             "id": case_id,
             "crime_no": structured_data.case.crime_no,
             "crime_category": structured_data.case.crime_category,
