@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { 
   Shield, 
@@ -12,18 +12,15 @@ import {
   LogOut, 
   Search, 
   ChevronRight,
-  ChevronDown,
   Database,
-  CheckCircle2,
-  Lock,
-  Radio,
-  FileText,
   Layers,
-  Building,
-  Clock
+  PanelLeftClose,
+  PanelLeftOpen,
+  X
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { dbService } from '../../services/db';
+import IndiaMapBackground from './IndiaMapBackground';
 
 export default function AppShell() {
   const { user, logout } = useAuth();
@@ -32,19 +29,63 @@ export default function AppShell() {
   const [globalSearch, setGlobalSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [activeAlertCount, setActiveAlertCount] = useState(0);
-  const profileRef = useRef(null);
+
+  // Sidebar Open/Collapsed State with Session/Local Persistence
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
+    try {
+      const saved = localStorage.getItem('netra_sidebar_open');
+      if (saved !== null) {
+        return saved === 'true';
+      }
+      // On mobile / small screens, default to closed
+      return typeof window !== 'undefined' ? window.innerWidth >= 1024 : true;
+    } catch {
+      return true;
+    }
+  });
+
+  // Mobile viewport detection
+  const [isMobile, setIsMobile] = useState(() => 
+    typeof window !== 'undefined' ? window.innerWidth < 1024 : false
+  );
 
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (profileRef.current && !profileRef.current.contains(event.target)) {
-        setIsProfileOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    const handleResize = () => {
+      const mobile = window.innerWidth < 1024;
+      setIsMobile(mobile);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Sync sidebar state to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('netra_sidebar_open', String(isSidebarOpen));
+    } catch {
+      // Ignore storage errors
+    }
+  }, [isSidebarOpen]);
+
+  // Handle ESC key to close sidebar on mobile
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isMobile && isSidebarOpen) {
+        setIsSidebarOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMobile, isSidebarOpen]);
+
+  // Auto-close mobile drawer on route change
+  useEffect(() => {
+    if (isMobile) {
+      setIsSidebarOpen(false);
+    }
+  }, [location.pathname, isMobile]);
 
   useEffect(() => {
     async function loadAlertCount() {
@@ -108,326 +149,267 @@ export default function AppShell() {
   ];
 
   return (
-    <div className="flex h-screen bg-[#061121] text-slate-100 overflow-hidden select-none">
-      {/* 1. DEEP NAVY INSTITUTIONAL SIDEBAR */}
-      <aside className="w-60 bg-[#0A192F] text-slate-300 flex flex-col justify-between border-r border-[#132B4C] z-30 flex-shrink-0 relative">
-        <div className="flex flex-col">
-          {/* Institution Brand Header */}
-          <div className="px-4 py-3 border-b border-[#132B4C] flex items-center gap-3 bg-[#071120]">
-            <img 
-              src="/app_logo.png" 
-              alt="Mumbai Police CIU Logo" 
-              className="w-7 h-7 object-contain flex-shrink-0"
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
-            />
-            <div className="min-w-0">
+    <div className="flex h-screen bg-[#FFFFFF] text-[#071A33] overflow-hidden select-none relative">
+      {/* Mobile Backdrop Overlay */}
+      {isMobile && isSidebarOpen && (
+        <div 
+          onClick={() => setIsSidebarOpen(false)}
+          className="fixed inset-0 bg-black/60 z-40 backdrop-blur-xs transition-opacity duration-200 motion-reduce:transition-none"
+          aria-hidden="true"
+        />
+      )}
+
+      {/* 1. COLLAPSIBLE STRICT WHITE INSTITUTIONAL SIDEBAR */}
+      <aside 
+        className={`
+          bg-[#FFFFFF] text-[#071A33] flex flex-col justify-between border-r border-[#0B2341]/15 z-50 flex-shrink-0 relative
+          transition-[width,transform,opacity] duration-250 ease-in-out motion-reduce:transition-none overflow-hidden
+          ${isMobile 
+            ? `fixed inset-y-0 left-0 w-64 shadow-2xl ${isSidebarOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 pointer-events-none'}`
+            : isSidebarOpen 
+              ? 'w-60 opacity-100' 
+              : 'w-0 border-r-0 opacity-0 pointer-events-none'
+          }
+        `}
+        aria-hidden={!isSidebarOpen && !isMobile}
+      >
+        {/* Inner Fixed-Width Wrapper to prevent text wrapping during animation */}
+        <div className="w-60 flex flex-col h-full justify-between flex-shrink-0">
+          <div className="flex flex-col">
+            {/* Institution Brand Header */}
+            <div className="px-4 py-3.5 border-b border-[#0B2341] flex items-center justify-between bg-[#071A33] text-white">
+              <div className="flex items-center gap-3 min-w-0">
+                <img 
+                  src="/app_logo.png" 
+                  alt="Mumbai Police CIU Logo" 
+                  className="w-7 h-7 object-contain flex-shrink-0"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-mono font-bold tracking-wider text-sm text-white">NETRA</span>
+                    <span className="text-[9px] font-mono px-1.5 py-0.5 bg-[#F5B800] text-[#071A33] font-bold rounded">
+                      CIU
+                    </span>
+                  </div>
+                  <span className="text-[9.5px] tracking-tight text-slate-300 font-medium block">
+                    Criminal Intelligence Unit
+                  </span>
+                </div>
+              </div>
+              {/* Close Button on Mobile */}
+              {isMobile && (
+                <button
+                  type="button"
+                  onClick={() => setIsSidebarOpen(false)}
+                  className="p-1 rounded text-slate-300 hover:text-white hover:bg-[#0E2A4D] transition-colors"
+                  aria-label="Close sidebar"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+
+            {/* Institutional Jurisdiction Sub-banner */}
+            <div className="px-4 py-1.5 bg-[#0B2341] border-b border-[#0E2A4D] flex items-center justify-between text-[10px] font-mono text-slate-200 font-semibold">
               <div className="flex items-center gap-1.5">
-                <span className="font-mono font-bold tracking-wider text-sm text-white">NETRA</span>
-                <span className="text-[9px] font-mono px-1 py-0.2 bg-[#D4A017] text-[#0A192F] font-bold rounded">
-                  CIU
-                </span>
+                <ShieldAlert className="w-3 h-3 text-[#F5B800]" />
+                <span>ZONE 1 • CRIME BRANCH</span>
               </div>
-              <span className="text-[9.5px] tracking-tight text-slate-400 font-medium">
-                Criminal Intelligence Unit
-              </span>
+              <span className="text-emerald-400 font-bold">SECURE</span>
+            </div>
+
+            {/* Navigation Groups */}
+            <nav className="p-3 space-y-4 overflow-y-auto">
+              {navGroups.map((grp) => (
+                <div key={grp.group} className="space-y-1">
+                  <div className="text-[9.5px] font-mono uppercase tracking-wider text-[#071A33]/50 px-2 font-bold mb-1">
+                    {grp.group}
+                  </div>
+                  {grp.items.map((item) => {
+                    const Icon = item.icon;
+                    const active = isActive(item.path);
+                    return (
+                      <NavLink
+                        key={item.path}
+                        to={item.path}
+                        className={`flex items-center justify-between px-2.5 py-2 rounded text-xs font-medium transition-colors ${
+                          active
+                            ? 'bg-[#FFFBEB] text-[#071A33] border-l-4 border-[#F5B800] font-bold shadow-xs'
+                            : 'text-[#071A33]/85 hover:bg-[#F4F7FB] hover:text-[#071A33]'
+                        }`}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <Icon className={`w-3.5 h-3.5 ${active ? 'text-[#F5B800]' : 'text-[#071A33]'}`} />
+                          <span>{item.label}</span>
+                        </div>
+                        {item.badge && (
+                          <span className="text-[9.5px] font-mono font-bold px-1.5 py-0.5 rounded-full bg-[#DC2626] text-white">
+                            {item.badge}
+                          </span>
+                        )}
+                      </NavLink>
+                    );
+                  })}
+                </div>
+              ))}
+            </nav>
+
+            {/* Gateway of India Decorative Monochrome Navy Watermark */}
+            <div className="absolute bottom-16 left-0 w-60 pointer-events-none flex justify-center overflow-hidden">
+              <img 
+                src="/gateway_bg.png" 
+                alt="Gateway of India Watermark"
+                className="w-[85%] object-contain opacity-35 filter contrast-150 brightness-75 mix-blend-multiply transition-opacity duration-300"
+              />
             </div>
           </div>
 
-          {/* Institutional Jurisdiction Sub-banner */}
-          <div className="px-4 py-1.5 bg-[#061121] border-b border-[#132B4C] flex items-center justify-between text-[10px] font-mono text-slate-400">
-            <div className="flex items-center gap-1">
-              <ShieldAlert className="w-3 h-3 text-[#D4A017]" />
-              <span>ZONE 1 • CRIME BRANCH</span>
+          {/* User Session Footer */}
+          <div className="p-2.5 border-t border-[#0B2341]/10 bg-[#FFFFFF] relative z-10">
+            <div className="flex items-center justify-between p-2 rounded bg-[#F4F7FB] border border-[#0B2341]/10">
+              <div className="flex items-center gap-2 min-w-0">
+                <div className="w-7 h-7 rounded bg-[#071A33] text-[#F5B800] font-mono font-bold text-xs flex items-center justify-center border border-[#0B2341] flex-shrink-0">
+                  VK
+                </div>
+                <div className="min-w-0 text-left">
+                  <div className="font-bold text-xs text-[#071A33] truncate">
+                    {user?.badge_number || 'Insp. Kadam'}
+                  </div>
+                  <div className="text-[10px] text-[#071A33]/65 font-mono truncate">
+                    {user?.role || 'Lead Analyst'}
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={handleLogout}
+                className="text-[#071A33]/60 hover:text-[#DC2626] p-1 rounded hover:bg-[#071A33]/5 transition-colors cursor-pointer"
+                title="End Secure Session"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+              </button>
             </div>
-            <span className="text-emerald-400 font-bold">SECURE</span>
-          </div>
-
-          {/* Navigation Groups */}
-          <nav className="p-3 space-y-4 overflow-y-auto">
-            {navGroups.map((grp) => (
-              <div key={grp.group} className="space-y-1">
-                <div className="text-[9.5px] font-mono uppercase tracking-wider text-slate-400 px-2 font-bold mb-1">
-                  {grp.group}
-                </div>
-                {grp.items.map((item) => {
-                  const Icon = item.icon;
-                  const active = isActive(item.path);
-                  return (
-                    <NavLink
-                      key={item.path}
-                      to={item.path}
-                      className={`flex items-center justify-between px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
-                        active
-                          ? 'bg-[#132B4C] text-[#D4A017] border-l-2 border-[#D4A017] font-semibold'
-                          : 'text-slate-300 hover:bg-[#0E223D] hover:text-white'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2.5">
-                        <Icon className={`w-3.5 h-3.5 ${active ? 'text-[#D4A017]' : 'text-slate-400'}`} />
-                        <span>{item.label}</span>
-                      </div>
-                      {item.badge && (
-                        <span className="text-[9.5px] font-mono font-bold px-1.5 py-0.2 rounded-full bg-[#E4232D] text-white">
-                          {item.badge}
-                        </span>
-                      )}
-                    </NavLink>
-                  );
-                })}
-              </div>
-            ))}
-          </nav>
-          {/* Gateway of India Decorative Watermark */}
-          <div className="absolute bottom-16 left-0 w-full pointer-events-none flex justify-center overflow-hidden">
-            <img 
-              src="/gateway_bg.png" 
-              alt="Gateway of India Watermark"
-              className="w-4/5 object-contain opacity-20 mix-blend-plus-lighter"
-            />
-          </div>
-        </div>
-
-        {/* User Session Footer */}
-        <div className="p-2.5 border-t border-[#132B4C] bg-[#061121] relative z-10">
-          <div className="flex items-center justify-between p-2 rounded bg-[#0A192F] border border-[#132B4C]">
-            <div className="flex items-center gap-2 min-w-0">
-              <div className="w-7 h-7 rounded bg-[#132B4C] text-[#D4A017] font-mono font-bold text-xs flex items-center justify-center border border-[#1C3B64] flex-shrink-0">
-                VK
-              </div>
-              <div className="min-w-0 text-left">
-                <div className="font-semibold text-xs text-white truncate">
-                  {user?.badge_number || 'Insp. Kadam'}
-                </div>
-                <div className="text-[10px] text-slate-400 font-mono truncate">
-                  {user?.role || 'Lead Analyst'}
-                </div>
-              </div>
-            </div>
-            <button
-              onClick={handleLogout}
-              className="text-slate-400 hover:text-[#E4232D] p-1 rounded hover:bg-white/5 transition-colors"
-              title="End Secure Session"
-            >
-              <LogOut className="w-3.5 h-3.5" />
-            </button>
           </div>
         </div>
       </aside>
 
-      {/* 2. MAIN APPLICATION CONTENT AREA */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden bg-[#0A1D33]">
-        {/* Global Institutional Top Bar */}
-        <header className="h-12 bg-[#0E243F] border-b border-[#1C3E6B] flex items-center justify-between px-4 z-20 flex-shrink-0">
-          {/* Global Case / Entity Typeahead */}
-          <div className="relative w-80">
-            <div className="flex items-center gap-2 bg-[#0A1D33] border border-[#1C3E6B] rounded px-2.5 py-1 text-xs text-slate-300 focus-within:border-[#D4A017]">
-              <Search className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
-              <input
-                type="text"
-                value={globalSearch}
-                onChange={handleSearchChange}
-                placeholder="Global search FIR, Accused, Phone, IMEI..."
-                className="bg-transparent text-white placeholder-slate-400 w-full focus:outline-none text-xs font-mono"
-              />
-            </div>
+      {/* 2. MAIN APPLICATION CONTENT AREA (Dynamically Fills 100% Available Space) */}
+      <div className="flex-1 flex flex-col min-w-0 w-full overflow-hidden bg-[#FFFFFF] transition-all duration-250 ease-in-out">
+        {/* Global Dark Navy Institutional Top Bar */}
+        <header className="h-12 bg-[#071A33] border-b border-[#0B2341] flex items-center justify-between px-4 z-20 flex-shrink-0 shadow-sm">
+          {/* Left Side: Sidebar Toggle Button + Global Search */}
+          <div className="flex items-center gap-2.5 min-w-0">
+            {/* Sidebar Collapse / Expand Toggle Button */}
+            <button
+              type="button"
+              onClick={() => setIsSidebarOpen(prev => !prev)}
+              aria-label={isSidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
+              aria-expanded={isSidebarOpen}
+              title={isSidebarOpen ? "Collapse Sidebar" : "Expand Sidebar"}
+              className="p-1.5 rounded text-slate-300 hover:text-white hover:bg-[#0E2A4D] transition-colors focus:outline-none focus:ring-2 focus:ring-[#F5B800] flex-shrink-0 cursor-pointer"
+            >
+              {isSidebarOpen ? (
+                <PanelLeftClose className="w-5 h-5" />
+              ) : (
+                <PanelLeftOpen className="w-5 h-5 text-[#F5B800]" />
+              )}
+            </button>
 
-            {/* Typeahead Dropdown */}
-            {isSearchOpen && searchResults.length > 0 && (
-              <div className="absolute top-full left-0 w-96 mt-1 bg-[#0A192F] border border-[#254F85] rounded-md shadow-2xl py-1 z-50 divide-y divide-white/5">
-                {searchResults.map((res) => (
-                  <button
-                    key={`${res.type}-${res.id}`}
-                    onClick={() => {
-                      setIsSearchOpen(false);
-                      setGlobalSearch('');
-                      navigate(res.path);
-                    }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-[#132B4C] flex items-center justify-between text-xs transition-colors"
-                  >
-                    <div>
-                      <div className="font-semibold text-white flex items-center gap-1.5">
-                        <span className="font-mono text-[10px] px-1 py-0.2 bg-[#0E223D] border border-white/10 rounded text-[#D4A017]">
-                          {res.type}
-                        </span>
-                        <span>{res.title}</span>
-                      </div>
-                      <div className="text-[10px] text-slate-400 truncate">{res.subtitle}</div>
-                    </div>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
-                  </button>
-                ))}
+            {/* When collapsed, show small branding anchor for quick visual context */}
+            {!isSidebarOpen && !isMobile && (
+              <div className="hidden sm:flex items-center gap-2 pr-2 border-r border-[#133560] flex-shrink-0">
+                <img 
+                  src="/app_logo.png" 
+                  alt="NETRA Emblem" 
+                  className="w-5 h-5 object-contain"
+                  onError={(e) => { e.target.style.display = 'none'; }}
+                />
+                <span className="font-mono font-bold text-xs text-white tracking-wider">NETRA</span>
+                <span className="text-[8px] font-mono px-1 py-0.2 bg-[#F5B800] text-[#071A33] font-bold rounded">CIU</span>
               </div>
             )}
+
+            {/* Global Case / Entity Typeahead */}
+            <div className="relative w-64 sm:w-80">
+              <div className="flex items-center gap-2 bg-[#0E2A4D] border border-[#1C457A] rounded px-2.5 py-1 text-xs text-white focus-within:border-[#F5B800]">
+                <Search className="w-3.5 h-3.5 text-slate-300 flex-shrink-0" />
+                <input
+                  type="text"
+                  value={globalSearch}
+                  onChange={handleSearchChange}
+                  placeholder="Global search FIR, Accused, Phone, IMEI..."
+                  className="bg-transparent text-white placeholder-slate-400 w-full focus:outline-none text-xs font-mono"
+                />
+              </div>
+
+              {/* Typeahead Dropdown */}
+              {isSearchOpen && searchResults.length > 0 && (
+                <div className="absolute top-full left-0 w-96 mt-1 bg-[#FFFFFF] border border-[#0B2341]/20 rounded-md shadow-2xl py-1 z-50 divide-y divide-[#0B2341]/10">
+                  {searchResults.map((res) => (
+                    <button
+                      key={`${res.type}-${res.id}`}
+                      onClick={() => {
+                        setIsSearchOpen(false);
+                        setGlobalSearch('');
+                        navigate(res.path);
+                      }}
+                      className="w-full text-left px-3 py-2 hover:bg-[#F4F7FB] flex items-center justify-between text-xs transition-colors cursor-pointer"
+                    >
+                      <div>
+                        <div className="font-bold text-[#071A33] flex items-center gap-1.5">
+                          <span className="font-mono text-[10px] px-1.5 py-0.5 bg-[#FFFBEB] border border-[#F5B800]/50 rounded text-[#071A33] font-bold">
+                            {res.type}
+                          </span>
+                          <span>{res.title}</span>
+                        </div>
+                        <div className="text-[10px] text-[#071A33]/70 truncate mt-0.5">{res.subtitle}</div>
+                      </div>
+                      <ChevronRight className="w-3.5 h-3.5 text-[#071A33]/50" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Right Operational Status Indicators */}
           <div className="flex items-center gap-3">
             {/* Live Database Sync Indicator */}
-            <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#061121] border border-[#1C3B64] text-[10px] font-mono text-slate-300">
+            <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#0E2A4D] border border-[#1C457A] text-[10px] font-mono text-slate-200">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <Database className="w-3 h-3 text-[#D4A017]" />
+              <Database className="w-3 h-3 text-[#F5B800]" />
               <span className="hidden sm:inline">CCTNS LIVE CLOUD SYNC</span>
             </div>
 
             {/* Secure Clearance Badge */}
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0E223D] border border-[#254F85] text-slate-200 text-xs">
-              <Shield className="w-3.5 h-3.5 text-[#D4A017]" />
-              <span className="text-[10px] font-mono font-bold tracking-wider text-[#D4A017]">
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0E2A4D] border border-[#1C457A] text-slate-200 text-xs">
+              <Shield className="w-3.5 h-3.5 text-[#F5B800]" />
+              <span className="text-[10px] font-mono font-bold tracking-wider text-[#F5B800]">
                 CLEARANCE LEVEL 4
               </span>
             </div>
 
-            {/* Interactive Officer Profile Dossier Dropdown */}
-            <div className="relative pl-2 border-l border-[#132B4C]" ref={profileRef}>
-              <button
-                onClick={() => setIsProfileOpen(prev => !prev)}
-                className="flex items-center gap-2 px-2 py-1 rounded hover:bg-[#132B4C]/60 transition-colors cursor-pointer group text-left focus:outline-none"
-              >
-                <div className="w-7 h-7 rounded-full bg-[#132B4C] border border-[#254F85] flex items-center justify-center font-mono font-bold text-[10px] text-[#D4A017] shadow-sm group-hover:border-[#D4A017] transition-colors flex-shrink-0">
-                  VK
-                </div>
-                <div className="hidden md:block text-left">
-                  <div className="text-xs font-semibold text-white leading-tight flex items-center gap-1">
-                    <span>Insp. Vikram Kadam</span>
-                    <ChevronDown className={`w-3 h-3 text-slate-400 group-hover:text-[#D4A017] transition-transform duration-200 ${isProfileOpen ? 'rotate-180 text-[#D4A017]' : ''}`} />
-                  </div>
-                  <div className="text-[9.5px] text-slate-400 font-mono">Senior Intelligence Officer</div>
-                </div>
-              </button>
-
-              {/* Comprehensive Officer Dossier Flyout */}
-              {isProfileOpen && (
-                <div className="absolute right-0 top-full mt-2 w-84 bg-[#0A192F]/95 backdrop-blur-md border border-[#254F85] rounded-lg shadow-2xl z-50 overflow-hidden text-slate-200 animate-in fade-in slide-in-from-top-2 duration-150">
-                  {/* Top Credential Header */}
-                  <div className="bg-[#071120] p-4 text-white border-b border-[#132B4C]">
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded bg-[#0E223D] text-[#D4A017] flex items-center justify-center font-mono font-bold text-base border-2 border-[#D4A017] shadow-inner flex-shrink-0">
-                          VK
-                        </div>
-                        <div>
-                          <div className="text-sm font-bold text-white leading-tight">
-                            Insp. Vikram Kadam
-                          </div>
-                          <div className="text-[11px] text-[#D4A017] font-medium mt-0.5">
-                            Senior Intelligence Officer
-                          </div>
-                          <div className="text-[10px] text-slate-300 font-mono mt-0.5 flex items-center gap-1.5">
-                            <span>MH-CIU-4029</span>
-                            <span>•</span>
-                            <span className="text-emerald-400 font-semibold">Active On-Duty</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-3 pt-2.5 border-t border-slate-700/60 flex items-center justify-between text-[10px] font-mono">
-                      <span className="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold uppercase">
-                        Level 4 Security Clearance
-                      </span>
-                      <span className="text-slate-300">Unit-I CIU</span>
-                    </div>
-                  </div>
-
-                  {/* Body Details */}
-                  <div className="p-3.5 space-y-3 text-xs bg-[#0A192F]">
-                    {/* Operational Department */}
-                    <div className="space-y-1.5">
-                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono flex items-center gap-1.5">
-                        <Building className="w-3 h-3 text-[#D4A017]" />
-                        <span>Command Assignment</span>
-                      </div>
-                      <div className="p-2 rounded bg-[#0E223D] border border-[#1C3B64] text-slate-300 text-[11px] space-y-0.5">
-                        <div className="font-semibold text-white">Crime Intelligence Unit (CIU)</div>
-                        <div className="text-[10.5px] text-slate-400">Mumbai Police HQ, Crawford Market</div>
-                        <div className="text-[10px] font-mono text-slate-500">Jurisdiction: All Greater Mumbai Zones (I - XII)</div>
-                      </div>
-                    </div>
-
-                    {/* Authentication Telemetry */}
-                    <div className="space-y-1.5">
-                      <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono flex items-center gap-1.5">
-                        <Clock className="w-3 h-3 text-emerald-400" />
-                        <span>Session Telemetry</span>
-                      </div>
-                      <div className="grid grid-cols-2 gap-1.5 text-[10.5px] font-mono">
-                        <div className="p-1.5 rounded bg-[#0E223D] border border-[#1C3B64]">
-                          <span className="text-slate-400 block text-[9px]">AUTH PIPELINE</span>
-                          <span className="font-bold text-slate-200">CCTNS AES-256</span>
-                        </div>
-                        <div className="p-1.5 rounded bg-[#0E223D] border border-[#1C3B64]">
-                          <span className="text-slate-400 block text-[9px]">SHIFT DURATION</span>
-                          <span className="font-bold text-slate-200">08:00 - 20:00 IST</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Quick Access Actions */}
-                    <div className="pt-2 border-t border-[#132B4C] space-y-1">
-                      <button
-                        onClick={() => {
-                          setIsProfileOpen(false);
-                          navigate('/cases');
-                        }}
-                        className="w-full text-left px-2.5 py-1.5 rounded hover:bg-[#132B4C] flex items-center justify-between text-xs text-slate-200 font-medium transition-colors cursor-pointer"
-                      >
-                        <span className="flex items-center gap-2">
-                          <FolderSearch className="w-3.5 h-3.5 text-[#D4A017]" />
-                          <span>My Assigned Cases</span>
-                        </span>
-                        <span className="font-mono text-[10px] font-bold text-slate-300 bg-[#132B4C] border border-[#1C3B64] px-1.5 py-0.2 rounded">
-                          12 Active
-                        </span>
-                      </button>
-
-                      <button
-                        onClick={() => {
-                          setIsProfileOpen(false);
-                          navigate('/alerts');
-                        }}
-                        className="w-full text-left px-2.5 py-1.5 rounded hover:bg-[#132B4C] flex items-center justify-between text-xs text-slate-200 font-medium transition-colors cursor-pointer"
-                      >
-                        <span className="flex items-center gap-2">
-                          <Bell className="w-3.5 h-3.5 text-[#E4232D]" />
-                          <span>Priority Intelligence Queue</span>
-                        </span>
-                        {activeAlertCount > 0 && (
-                          <span className="font-mono text-[10px] font-bold text-white bg-[#E4232D] px-1.5 py-0.2 rounded">
-                            {activeAlertCount} New
-                          </span>
-                        )}
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Sign Out Footer */}
-                  <div className="p-2.5 bg-[#071120] border-t border-[#132B4C] flex items-center justify-between">
-                    <span className="text-[10px] font-mono text-slate-400">
-                      Terminal v2.4 • Secure
-                    </span>
-                    <button
-                      onClick={() => {
-                        setIsProfileOpen(false);
-                        logout();
-                        navigate('/login');
-                      }}
-                      className="px-3 py-1 rounded bg-[#B91C1C] hover:bg-[#991B1B] text-white font-semibold text-xs transition-colors flex items-center gap-1.5 shadow-sm cursor-pointer"
-                    >
-                      <LogOut className="w-3 h-3" />
-                      <span>Log Out Session</span>
-                    </button>
-                  </div>
-                </div>
-              )}
+            {/* Quick Officer Identity */}
+            <div className="flex items-center gap-2 pl-2 border-l border-[#133560]">
+              <div className="w-6 h-6 rounded-full bg-[#0E2A4D] border border-[#F5B800]/60 flex items-center justify-center font-mono font-bold text-[10px] text-[#F5B800]">
+                VK
+              </div>
+              <div className="hidden md:block text-left">
+                <div className="text-xs font-bold text-white leading-tight">Insp. Vikram Kadam</div>
+                <div className="text-[9.5px] text-slate-300 font-mono">Senior Intelligence Officer</div>
+              </div>
             </div>
           </div>
         </header>
 
         {/* 3. MAIN WORKSPACE VIEWPORT */}
-        <main className="flex-1 overflow-y-auto bg-[#0A1D33] p-5 relative">
-          <Outlet />
+        <main className="flex-1 overflow-y-auto bg-[#FFFFFF] p-5 relative w-full">
+          <IndiaMapBackground />
+          <div className="relative z-10 dashboard-content w-full h-full">
+            <Outlet />
+          </div>
         </main>
       </div>
     </div>

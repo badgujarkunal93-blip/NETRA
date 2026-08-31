@@ -8,35 +8,44 @@ export default {
     extend: {
       colors: {
         navy: {
-          950: '#050D1A',
-          900: '#0B1E3D', // Core Deep Navy
-          850: '#0F2547',
-          800: '#132B52',
-          700: '#1A3A6D',
-          600: '#234C8D',
-          100: '#E4ECF7',
-          50: '#F0F5FC',
+          950: '#071A33', // Deepest Navy
+          900: '#0B2341', // Core Navy Blue (Structure, Authority)
+          850: '#0E2A4D',
+          800: '#133560',
+          700: '#1C457A',
+          600: '#255899',
+          200: '#CBDDF2',
+          100: '#E6EEF8',
+          50: '#F4F7FB',
+        },
+        amber: {
+          600: '#D97706',
+          500: '#F5B800', // Core Amber / CTI Accent
+          400: '#FFB000',
+          300: '#FCD34D',
+          100: '#FEF3C7',
+          50: '#FFFBEB',
         },
         gold: {
-          600: '#99730E',
-          500: '#D4A017', // Core Accent Gold/Amber
-          400: '#E5AC1E',
-          300: '#F3C556',
-          100: '#FBF3D5',
-          50: '#FEFDF8',
+          600: '#D97706',
+          500: '#F5B800',
+          400: '#FFB000',
+          300: '#FCD34D',
+          100: '#FEF3C7',
+          50: '#FFFBEB',
         },
         alert: {
-          700: '#9E281C',
-          600: '#C0392B', // Core Muted Red
-          500: '#D64541',
-          100: '#FCEBEB',
-          50: '#FEF6F6',
+          700: '#991B1B',
+          600: '#DC2626', // Critical / High Alert Red Only
+          500: '#EF4444',
+          100: '#FEE2E2',
+          50: '#FEF2F2',
         },
         surface: {
-          DEFAULT: '#F5F6F8', // Core Section Light Grey
+          DEFAULT: '#FFFFFF', // Pure White
           card: '#FFFFFF',
-          muted: '#EAEFF5',
-          border: '#DCE3EC',
+          muted: '#F8FAFC',
+          border: 'rgba(11, 35, 65, 0.12)',
         }
       },
       fontFamily: {
@@ -44,9 +53,9 @@ export default {
         mono: ['JetBrains Mono', 'monospace'],
       },
       boxShadow: {
-        'card': '0 1px 3px 0 rgba(11, 30, 61, 0.06), 0 1px 2px -1px rgba(11, 30, 61, 0.04)',
-        'card-hover': '0 4px 12px 0 rgba(11, 30, 61, 0.1), 0 2px 4px -2px rgba(11, 30, 61, 0.06)',
-        'modal': '0 20px 25px -5px rgba(11, 30, 61, 0.2), 0 8px 10px -6px rgba(11, 30, 61, 0.1)',
+        'card': '0 1px 3px 0 rgba(7, 26, 51, 0.06), 0 1px 2px -1px rgba(7, 26, 51, 0.04)',
+        'card-hover': '0 4px 12px 0 rgba(7, 26, 51, 0.09), 0 2px 4px -2px rgba(7, 26, 51, 0.05)',
+        'modal': '0 20px 25px -5px rgba(7, 26, 51, 0.18), 0 8px 10px -6px rgba(7, 26, 51, 0.1)',
       }
     },
   },
