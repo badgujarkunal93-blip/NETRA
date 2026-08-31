@@ -20,7 +20,7 @@ services:
       - key: GROQ_API_KEY
         sync: false
       - key: GROQ_REASONING_MODEL
-        value: "llama-3.1-8b-instant"
+        value: "openai/gpt-oss-120b"
       - key: GEMINI_API_KEY
         sync: false
       - key: ALLOW_HEURISTIC_FALLBACK

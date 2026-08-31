@@ -380,26 +380,41 @@ def generate_llm_reasoning(
         "4. Return plain text only. Do not use bullet points or markdown formatting."
     )
 
+    candidate_models = [
+        os.getenv("GROQ_REASONING_MODEL"),
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b",
+        "qwen/qwen3.8-27b",
+        "llama-3.1-8b-instant"
+    ]
+    candidate_models = [m for m in candidate_models if m]
+
     try:
         client = Groq(api_key=api_key)
-        chat_completion = client.chat.completions.create(
-            messages=[
-                {"role": "user", "content": prompt}
-            ],
-            model=GROQ_REASONING_MODEL,
-            temperature=0.1,
-            max_tokens=150
-        )
-        raw_text = chat_completion.choices[0].message.content if chat_completion.choices else ""
-        if raw_text and raw_text.strip():
-            reasoning_text = raw_text.strip()
-            return reasoning_text, "llm"
-        else:
-            logger.warning("Groq returned empty response text, using fallback feature summary.")
-            return generate_feature_summary(top_contributions, priority_score, person_name, role), "feature_summary"
+        for model_name in candidate_models:
+            try:
+                chat_completion = client.chat.completions.create(
+                    messages=[
+                        {"role": "user", "content": prompt}
+                    ],
+                    model=model_name,
+                    temperature=0.1,
+                    max_tokens=150
+                )
+                raw_text = chat_completion.choices[0].message.content if chat_completion.choices else ""
+                if raw_text and raw_text.strip():
+                    reasoning_text = raw_text.strip()
+                    return reasoning_text, "llm"
+            except Exception as model_err:
+                logger.warning("Groq model %s failed: %s, attempting next candidate", model_name, model_err)
+                continue
+
+        logger.warning("All Groq reasoning models failed or returned empty text, using fallback feature summary.")
+        return generate_feature_summary(top_contributions, priority_score, person_name, role), "feature_summary"
     except Exception as e:
         logger.error("Groq LLM reasoning generation failed: %s", e)
         return generate_feature_summary(top_contributions, priority_score, person_name, role), "feature_summary"
+
 
 
 # -----------------------------------------------------------------------------

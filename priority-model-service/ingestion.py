@@ -146,37 +146,135 @@ def extract_text_from_file(filename: str, file_bytes: bytes) -> str:
     else:
         raise HTTPException(status_code=400, detail="Unsupported file format")
 
-def call_llm_for_extraction(text: str) -> FIROutputSchema:
-    api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        raise ValueError("GEMINI_API_KEY is not set.")
-    
-    if not has_genai:
-        raise ValueError("google-genai package is not installed.")
+try:
+    from groq import Groq
+    has_groq = True
+except ImportError:
+    has_groq = False
 
-    client = genai.Client(api_key=api_key)
-    
+def call_llm_for_extraction(text: str) -> FIROutputSchema:
+    groq_key = os.environ.get("GROQ_API_KEY")
+    gemini_key = os.environ.get("GEMINI_API_KEY")
+
+    if not groq_key and not gemini_key:
+        raise ValueError("GROQ_API_KEY is not set.")
+
+    schema_example = json.dumps({
+        "case": {
+            "crime_no": "CR/2026/0811-BND",
+            "police_station": "Bandra Police Station",
+            "crime_category": "Organized Financial Crime",
+            "crime_major_head": "IPC 420/468 Cheating & Forgery",
+            "brief_facts": "Summary of incident facts",
+            "latitude": 19.0760,
+            "longitude": 72.8777
+        },
+        "persons": [
+            {
+                "name": "Farhan Merchant",
+                "aliases": ["Babloo"],
+                "role": "Accused",
+                "confidence": 95
+            }
+        ],
+        "phones": [
+            {
+                "number": "+91-98201-99881",
+                "owner_name": "Farhan Merchant",
+                "confidence": 90
+            }
+        ],
+        "vehicles": [
+            {
+                "registration": "MH-02-DN-8819",
+                "make_model": "Skoda Octavia White",
+                "color": "White",
+                "owner_name": "Farhan Merchant",
+                "confidence": 85
+            }
+        ],
+        "accounts": [],
+        "organizations": [],
+        "mo_fingerprint": {
+            "target": "Target asset",
+            "timing": "Late night",
+            "entry_method": "Social engineering",
+            "tools": "Burner SIMs",
+            "transport": "Motor vehicle",
+            "concealment": "Shell companies",
+            "action_sequence": "Multi-step coordination",
+            "victim_interaction": "Subdued / Remote",
+            "exit_method": "Highway escape",
+            "group_behavior": "Organized syndicate"
+        }
+    }, indent=2)
+
     prompt = (
-        "Extract structured intelligence from the following First Information Report (FIR) text. "
-        "Strictly adhere to the provided JSON schema. Ensure all confidences are integers between 0 and 100. "
-        "If a specific field is not found in the text, use a reasonable default or empty string/list, but do not omit required fields. "
+        "You are the Mumbai Police Criminal Intelligence Unit (CIU) Document Extraction Engine.\n"
+        "Extract structured operational intelligence from the following FIR text into a valid JSON object.\n"
+        f"You MUST strictly follow this JSON schema structure:\n{schema_example}\n\n"
+        "Ensure all confidence fields are integers between 0 and 100.\n"
+        "Ensure role is one of: Accused, Key Suspect, Victim, Complainant, Witness, Co-conspirator, Person of Interest.\n"
+        "Return ONLY a pure valid JSON object.\n\n"
         f"FIR TEXT:\n\n{text}"
     )
 
-    try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                response_schema=FIROutputSchema,
-            ),
-        )
-        data = json.loads(response.text)
-        return FIROutputSchema(**data)
-    except Exception as e:
-        logger.error(f"LLM Extraction failed: {e}")
-        raise ValueError(f"LLM Extraction failed: {e}")
+    if groq_key and has_groq:
+        candidate_models = [
+            os.environ.get("GROQ_INGESTION_MODEL"),
+            os.environ.get("GROQ_REASONING_MODEL"),
+            "openai/gpt-oss-120b",
+            "openai/gpt-oss-20b",
+            "qwen/qwen3.8-27b",
+            "llama-3.1-8b-instant"
+        ]
+        candidate_models = [m for m in candidate_models if m]
+        client = Groq(api_key=groq_key)
+        last_error = None
+        for model_name in candidate_models:
+            try:
+                chat_completion = client.chat.completions.create(
+                    messages=[
+                        {"role": "system", "content": "You are a professional law enforcement document parser that extracts structured intelligence into pure JSON."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    model=model_name,
+                    temperature=0.1,
+                    response_format={"type": "json_object"}
+                )
+                raw_json = chat_completion.choices[0].message.content
+                data = json.loads(raw_json)
+                return FIROutputSchema(**data)
+            except Exception as e:
+                logger.warning("Groq model %s extraction failed: %s", model_name, e)
+                last_error = e
+                continue
+        
+        if last_error:
+            logger.error(f"All Groq models failed for FIR extraction: {last_error}")
+            raise ValueError(f"Groq FIR Extraction failed: {last_error}")
+
+
+    # Fallback to Gemini if GEMINI_API_KEY is provided
+    if gemini_key and has_genai:
+        client = genai.Client(api_key=gemini_key)
+        try:
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    response_schema=FIROutputSchema,
+                ),
+            )
+            data = json.loads(response.text)
+            return FIROutputSchema(**data)
+        except Exception as e:
+            logger.error(f"Gemini FIR Extraction failed: {e}")
+            raise ValueError(f"Gemini FIR Extraction failed: {e}")
+
+    raise ValueError("No supported LLM client (Groq or Gemini) is configured.")
+
 
 # -----------------------------------------------------------------------------
 # ENDPOINT
