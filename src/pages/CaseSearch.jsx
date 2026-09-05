@@ -276,27 +276,27 @@ export default function CaseSearch() {
               {/* STEP 9: CASE RESOLUTION STORYLINE SUMMARY BANNER */}
               {isDemoActive && currentStep === 9 && (
                 <div className="p-4 rounded-xl bg-gradient-to-r from-[#071A33] to-[#0E2A4D] border-2 border-[#F5B800] text-white shadow-xl space-y-3 animate-in fade-in slide-in-from-top-4 duration-300">
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-start justify-between gap-2 flex-wrap">
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 rounded-full bg-[#F5B800] text-[#071A33] flex items-center justify-center font-bold">
-                        <CheckCircle2 className="w-5 h-5 text-[#071A33]" />
+                        <FileText className="w-5 h-5 text-[#071A33]" />
                       </div>
                       <div>
                         <span className="font-mono text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#F5B800] text-[#071A33]">
-                          STORYLINE RESOLUTION • CASE SOLVED
+                          INVESTIGATIVE LEAD • UNVERIFIED
                         </span>
                         <h2 className="text-sm font-extrabold text-white mt-1">
-                          Case X Solved via Cross-Case Relational Intelligence
+                          Cross-Case Intelligence Package Compiled — Investigator Review Required
                         </h2>
                       </div>
                     </div>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">
-                      SYNDICATE DISMANTLED
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold uppercase">
+                      AWAITING SUPERVISOR REVIEW
                     </span>
                   </div>
 
                   <p className="text-xs text-slate-200 leading-relaxed">
-                    Critical intelligence came from linking bridging suspect <strong className="text-[#F5B800]">Vikram &quot;Vicky&quot; Malhotra</strong> across <strong className="text-white">Case X (Colaba Vault Heist)</strong>, <strong className="text-white">Case Y (Bandra Showroom)</strong>, and <strong className="text-white">Case Z (Zaveri Smelter)</strong> via burner phone <code className="font-mono text-[#F5B800] bg-black/30 px-1 py-0.5 rounded">+91 98201 99887</code>, getaway motorcycle <code className="font-mono text-[#F5B800] bg-black/30 px-1 py-0.5 rounded">MH-01-EA-9912</code>, and 94.2% oxy-acetylene MO signature match.
+                    NETRA has surfaced a potential link between <strong className="text-[#F5B800]">Vikram &quot;Vicky&quot; Malhotra</strong> and <strong className="text-white">Cases X, Y, and Z</strong> via a shared phone number (<code className="font-mono text-[#F5B800] bg-black/30 px-1 py-0.5 rounded">+91 98201 99887</code>), shared vehicle (<code className="font-mono text-[#F5B800] bg-black/30 px-1 py-0.5 rounded">MH-01-EA-9912</code>), and a 94.2% MO similarity score. This is an investigative lead requiring verification — not a confirmed connection.
                   </p>
 
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
@@ -305,7 +305,7 @@ export default function CaseSearch() {
                       <span className="text-xs font-bold text-red-300">4 Isolated Nodes</span>
                     </div>
                     <div className="p-2 rounded bg-white/5 border border-white/10 text-center">
-                      <span className="text-[9px] font-mono uppercase text-slate-300 block">Merged Syndicate</span>
+                      <span className="text-[9px] font-mono uppercase text-slate-300 block">Correlated Network</span>
                       <span className="text-xs font-bold text-emerald-300">18 Connected Nodes</span>
                     </div>
                     <div className="p-2 rounded bg-white/5 border border-white/10 text-center">
@@ -313,8 +313,44 @@ export default function CaseSearch() {
                       <span className="text-xs font-bold text-[#F5B800]">3 Multi-District FIRs</span>
                     </div>
                     <div className="p-2 rounded bg-white/5 border border-white/10 text-center">
-                      <span className="text-[9px] font-mono uppercase text-slate-300 block">Mastermind Priority</span>
+                      <span className="text-[9px] font-mono uppercase text-slate-300 block">Priority Score</span>
                       <span className="text-xs font-bold text-[#F5B800]">96.8 / 100</span>
+                      <span className="text-[8px] font-mono text-slate-300 block mt-0.5 leading-tight">
+                        Elevated investigative relevance — not a finding of guilt.
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Human-in-the-Loop Next Actions */}
+                  <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-2 flex-wrap">
+                    <span className="text-[10.5px] font-mono text-slate-300">
+                      Investigator Next Actions:
+                    </span>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <button
+                        type="button"
+                        onClick={() => alert('Investigative Lead Package compiled for Case Officer review.')}
+                        className="px-2.5 py-1 rounded bg-[#F5B800] text-[#071A33] text-[10.5px] font-bold hover:bg-[#E5AC00] transition-colors flex items-center gap-1 shadow-xs cursor-pointer"
+                      >
+                        <FileText className="w-3 h-3" />
+                        <span>Generate Investigative Lead Report</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => alert('Flagged for Supervisor Review in CIU Case Workflow Queue.')}
+                        className="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white text-[10.5px] font-semibold border border-white/20 transition-colors flex items-center gap-1 cursor-pointer"
+                      >
+                        <Shield className="w-3 h-3 text-[#F5B800]" />
+                        <span>Flag for Supervisor Review</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => alert('Corroboration request submitted for Telecom CDR & RTO Registry records.')}
+                        className="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white text-[10.5px] font-semibold border border-white/20 transition-colors flex items-center gap-1 cursor-pointer"
+                      >
+                        <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                        <span>Request Further Corroboration</span>
+                      </button>
                     </div>
                   </div>
                 </div>

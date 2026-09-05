@@ -208,7 +208,7 @@ export default function EntityProfile() {
     if (!selectedPerson) return 'Tracked Subject';
     if (selectedPerson.id === 'DEMO-PERSON-3') {
       return currentStep >= 4 
-        ? 'Syndicate Mastermind & Cross-Case Bridge'
+        ? 'High-Centrality Cross-Case Bridge (Key POI)'
         : 'Contractor (Peripheral Node)';
     }
     if (selectedPerson.id === 'DEMO-PERSON-1') {

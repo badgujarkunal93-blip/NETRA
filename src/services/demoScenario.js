@@ -387,8 +387,8 @@ export const DEMO_PERSONS = [
         id: 'EVT-P3-04',
         date: '2026-08-29T11:00:00Z',
         event_time: '2026-08-29T11:00:00Z',
-        event_type: 'Cross-Case Syndicate Mastermind Alert',
-        description: 'AI Priority Model computes 96.8 / 100 risk score and 0.94 graph centrality, identifying Vikram as the syndicate coordinator.',
+        event_type: 'Cross-Case Link Prediction Flag',
+        description: 'AI Priority Model computes 96.8 / 100 priority score and 0.94 graph centrality, flagging Vikram as a key bridging entity requiring verification.',
         location_text: 'CIU Strategic Command Center',
         revealAtStep: 7
       },
@@ -489,8 +489,8 @@ export const DEMO_PERSONS = [
         crime_major_head: 'Organized Vault Heist',
         police_station: 'Colaba Police Station',
         registered_date: '2026-08-14',
-        role_type: 'Primary Accused / Mastermind',
-        role_in_case: 'Primary Accused / Mastermind',
+        role_type: 'Key Person of Interest / Bridging Node',
+        role_in_case: 'Key Person of Interest / Bridging Node',
         revealAtStep: 1
       },
       {
@@ -1094,10 +1094,10 @@ export const DEMO_ALERTS = [
   },
   {
     id: 'DEMO-ALERT-CROSS-CASE',
-    title: '🚨 Cross-Case Syndicate Network Identified',
+    title: '🚨 Potential Cross-Case Pattern Flagged for Review',
     severity: 'High',
     status: 'New',
-    description: 'AI Multi-Case Linker detected that Case X (Colaba Diamond Vault Heist) shares identical burner SIM (+91 98201 99887), getaway motorcycle (MH-01-EA-9912), and safe-cutting MO with Case Y (Bandra Showroom) and Case Z (Zaveri Smelter). Suspect Vikram Malhotra identified as the central coordinator across all 3 FIRs.',
+    description: 'AI Multi-Case Linker detected that Case X (Colaba Diamond Vault Heist) shares identical burner SIM (+91 98201 99887), getaway motorcycle (MH-01-EA-9912), and safe-cutting MO pattern with Case Y (Bandra Showroom) and Case Z (Zaveri Smelter). Person of interest Vikram Malhotra flagged as high-centrality bridging entity across all 3 FIRs — unverified investigative lead.',
     target_id: 'DEMO-PERSON-3',
     confidence: 96,
     created_at: '2026-08-15T09:30:00Z',
@@ -1177,32 +1177,32 @@ export const DEMO_STEPS = [
   },
   {
     step: 7,
-    title: 'Cross-Case Syndicate Alert',
+    title: 'Cross-Case Link Alert',
     route: '/alerts',
     pageName: 'Alerts & Findings',
-    headline: '🚨 AI Intelligence Alert: Cross-Case Syndicate Identified',
-    instructions: 'An actionable high-priority alert is generated with a complete evidence chain connecting the burner phone, getaway motorcycle, and shared MO signature across all 3 FIRs.',
-    hint: 'Click "Next Step" to inspect the bridging mastermind on the Entity Profile dossier.',
-    actionLabel: 'Analyze Bridging Suspect'
+    headline: '🚨 AI Intelligence Alert: Potential Cross-Case Pattern Flagged for Review',
+    instructions: 'An actionable high-priority alert flags a potential correlation across the burner phone, getaway motorcycle, and shared MO signature across all 3 FIRs for supervisory review.',
+    hint: 'Click "Next Step" to inspect the bridging entity on the Entity Profile dossier.',
+    actionLabel: 'Analyze Bridging Person'
   },
   {
     step: 8,
-    title: 'Bridging Mastermind Identification',
+    title: 'High-Centrality Link Analysis',
     route: '/entities?id=DEMO-PERSON-3',
     pageName: 'Entity Profile',
-    headline: 'Vikram "Vicky" Malhotra Emerges as Syndicate Coordinator',
-    instructions: 'Vikram Malhotra, who seemed like a minor parts supplier in Case X alone, now has a Priority Score of 96.8 / 100 with massive Network Centrality (0.94) bridging all 3 cases!',
-    hint: 'Click "Next Step" to view the final Case Resolution summary.',
-    actionLabel: 'View Case Resolution Summary'
+    headline: 'Vikram "Vicky" Malhotra Flagged with High Network Centrality',
+    instructions: 'Vikram Malhotra, who appeared as a minor parts contractor in Case X alone, surfaces with elevated priority score (96.8 / 100) and graph centrality (0.94) bridging all 3 cases — flagged as a key bridging lead.',
+    hint: 'Click "Next Step" to view the compiled Cross-Case Intelligence Package.',
+    actionLabel: 'View Intelligence Package'
   },
   {
     step: 9,
-    title: 'Case X Solved — Final Resolution',
+    title: 'Cross-Case Intelligence Package Compiled',
     route: '/cases?id=DEMO-CASE-X',
     pageName: 'Case Resolution Summary',
-    headline: 'Case X Solved: Multi-Jurisdiction Syndicate Dismantled',
-    instructions: 'Summary of Breakthrough: Linking Vikram Malhotra across Cases X, Y, and Z cracked the Colaba Diamond Vault Heist. Network grew from 5 isolated nodes to an 18-node cross-case syndicate.',
-    hint: 'Storyline complete! You can restart the storyline or exit Demo Mode.',
+    headline: 'Cross-Case Intelligence Package Compiled — Investigator Review Required',
+    instructions: 'NETRA has surfaced a potential link between Vikram "Vicky" Malhotra and Cases X, Y, and Z via a shared phone number, shared vehicle, and a 94.2% MO similarity score. This is an investigative lead requiring verification — not a confirmed connection.',
+    hint: 'Storyline complete! You can restart the storyline or review field corroboration workflows.',
     actionLabel: 'Restart Storyline'
   }
 ];
@@ -1273,8 +1273,8 @@ export function getDemoPersonById(id, step = 1) {
 
   return {
     ...target,
-    role: isBridging ? 'Syndicate Mastermind' : target.role,
-    status_tag: isBridging ? 'Accused Mastermind' : target.status_tag,
+    role: isBridging ? 'Key Bridging Suspect' : target.role,
+    status_tag: isBridging ? 'High-Priority POI' : target.status_tag,
     priority_score: score,
     events: visibleEvents,
     timeline: visibleEvents,
@@ -1377,8 +1377,8 @@ export function getDemoCaseIntelligenceNetwork(caseId, step = 1, filters = {}) {
         type: 'Person',
         nodeType: 'Person',
         typeCode: 'PER',
-        role: isBridging ? 'Syndicate Mastermind' : p.role,
-        subtext: isBridging ? 'Syndicate Mastermind' : (p.role || p.status_tag),
+        role: isBridging ? 'Key Bridging Suspect' : p.role,
+        subtext: isBridging ? 'Key Bridging Suspect' : (p.role || p.status_tag),
         status: p.status_tag,
         confidence: p.confidence_score,
         priority_score: score,
