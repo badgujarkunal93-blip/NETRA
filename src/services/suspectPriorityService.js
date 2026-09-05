@@ -1,5 +1,6 @@
 import { isSupabaseConfigured, supabase } from './supabaseClient.js';
 import { dbService } from './db.js';
+import { isDemoModeActive, getDemoCurrentStep } from './demoScenario.js';
 
 const MODEL_SERVICE_URL = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_PRIORITY_MODEL_URL) || 
                            (typeof process !== 'undefined' && process.env?.VITE_PRIORITY_MODEL_URL) || 
@@ -313,6 +314,75 @@ export async function analyzeAllCanvasPersons(nodes, edges, caseId, onProgress) 
 
   if (personNodes.length === 0) {
     return [];
+  }
+
+  // Self-contained demo mode handler
+  if (isDemoModeActive()) {
+    const step = getDemoCurrentStep();
+    return personNodes.map(pNode => {
+      const name = pNode.data?.label || pNode.data?.canonical_name || 'Suspect';
+      const role = pNode.data?.role || 'Person of Interest';
+      const isVikram = name.toLowerCase().includes('vikram') || name.toLowerCase().includes('malhotra') || pNode.id === 'DEMO-PERSON-3';
+      const isFarhan = name.toLowerCase().includes('farhan') || pNode.id === 'DEMO-PERSON-1';
+      const isDinesh = name.toLowerCase().includes('dinesh') || pNode.id === 'DEMO-PERSON-2';
+
+      let score = 45.0;
+      let reasoning = "Local case inquiry subject.";
+      let topContribs = [];
+
+      if (isVikram) {
+        if (step >= 8) {
+          score = 96.8;
+          reasoning = "Critical multi-case syndicate hub (+28.4 pts) linking Colaba Vault, Bandra Showroom, and Zaveri Smelter via registered burner SIM +91 98201 99887. Modus operandi serial match across all 3 FIRs.";
+          topContribs = [
+            { feature: "network_centrality", label: "network bridge centrality", shap_value: 28.4, impact: "positive" },
+            { feature: "mo_case_match_flag", label: "modus operandi serial match", shap_value: 18.2, impact: "positive" },
+            { feature: "prior_case_count", label: "prior case involvements", shap_value: 14.5, impact: "positive" }
+          ];
+        } else if (step >= 4) {
+          score = 88.5;
+          reasoning = "Cross-case bridge suspect identified through shared vehicle MH-01-EA-9912 and burner SIM +91 98201 99887 active at Colaba & Bandra.";
+          topContribs = [
+            { feature: "network_centrality", label: "network bridge centrality", shap_value: 22.1, impact: "positive" },
+            { feature: "mo_case_match_flag", label: "modus operandi serial match", shap_value: 12.0, impact: "positive" }
+          ];
+        } else {
+          score = 35.0;
+          reasoning = "External lock parts contractor; minor supplier in Case X records with limited local connectivity.";
+          topContribs = [
+            { feature: "role_weight", label: "investigative role severity", shap_value: 8.5, impact: "positive" }
+          ];
+        }
+      } else if (isFarhan) {
+        score = 62.4;
+        reasoning = "Assigned priority score based on on-duty security guard shift during vault breach and physical access to alarm panel.";
+        topContribs = [
+          { feature: "role_weight", label: "investigative role severity", shap_value: 18.2, impact: "positive" },
+          { feature: "direct_connection_count", label: "direct graph connections", shap_value: 10.4, impact: "positive" }
+        ];
+      } else if (isDinesh) {
+        score = 48.1;
+        reasoning = "Locksmith assistant who serviced vault biometric door 10 days prior; circumstantial involvement without verified communication logs.";
+        topContribs = [
+          { feature: "role_weight", label: "investigative role severity", shap_value: 12.0, impact: "positive" }
+        ];
+      }
+
+      return {
+        nodeId: pNode.id,
+        label: name,
+        role: role,
+        status: pNode.data?.status || 'hypothesis',
+        linkedId: pNode.data?.linkedId || null,
+        priority_score: score,
+        reasoning,
+        reasoning_source: 'llm',
+        top_contributions: topContribs,
+        features: {},
+        success: true,
+        isHeuristic: false
+      };
+    }).sort((a, b) => b.priority_score - a.priority_score);
   }
 
   // Compute features for all person nodes concurrently

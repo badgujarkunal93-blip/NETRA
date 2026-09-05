@@ -39,9 +39,6 @@ export default function Dashboard() {
         const data = await dbService.getDashboardMetrics();
         if (data) {
           setMetrics(data);
-          if (data.hotspots && data.hotspots.length > 0) {
-            setSelectedHotspot(data.hotspots[0]);
-          }
         }
       } catch (err) {
         console.error("Failed to load dashboard metrics:", err);

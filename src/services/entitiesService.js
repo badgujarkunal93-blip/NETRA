@@ -1,7 +1,18 @@
 import { localDB } from './localData.js';
+import { 
+  isDemoModeActive, 
+  getDemoCurrentStep, 
+  getDemoPersons, 
+  getDemoPersonById 
+} from './demoScenario.js';
 
 export const entitiesService = {
   async getPersons(filters = {}) {
+    if (isDemoModeActive()) {
+      const step = getDemoCurrentStep();
+      return getDemoPersons(step, filters);
+    }
+
     let rows = [...localDB.persons];
 
     if (filters.search) {
@@ -21,6 +32,11 @@ export const entitiesService = {
   },
 
   async getPersonById(id) {
+    if (isDemoModeActive()) {
+      const step = getDemoCurrentStep();
+      return getDemoPersonById(id, step);
+    }
+
     return localDB.persons.find(p => p.id === id) || null;
   }
 };

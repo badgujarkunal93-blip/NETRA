@@ -16,20 +16,29 @@ import {
   Layers,
   PanelLeftClose,
   PanelLeftOpen,
-  X
+  X,
+  Sparkles,
+  Settings,
+  Play
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { useDemoMode } from '../../context/DemoModeContext';
 import { dbService } from '../../services/db';
 import IndiaMapBackground from './IndiaMapBackground';
+import DemoModeBanner from './DemoModeBanner';
+import SettingsModal from './SettingsModal';
 
 export default function AppShell() {
   const { user, logout } = useAuth();
+  const { isDemoActive, currentStep, totalSteps, startDemo } = useDemoMode();
   const navigate = useNavigate();
   const location = useLocation();
+  
   const [globalSearch, setGlobalSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [activeAlertCount, setActiveAlertCount] = useState(0);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   // Sidebar Open/Collapsed State with Session/Local Persistence
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
@@ -38,7 +47,6 @@ export default function AppShell() {
       if (saved !== null) {
         return saved === 'true';
       }
-      // On mobile / small screens, default to closed
       return typeof window !== 'undefined' ? window.innerWidth >= 1024 : true;
     } catch {
       return true;
@@ -64,9 +72,7 @@ export default function AppShell() {
   useEffect(() => {
     try {
       localStorage.setItem('netra_sidebar_open', String(isSidebarOpen));
-    } catch {
-      // Ignore storage errors
-    }
+    } catch {}
   }, [isSidebarOpen]);
 
   // Handle ESC key to close sidebar on mobile
@@ -93,7 +99,7 @@ export default function AppShell() {
       setActiveAlertCount(alerts.length);
     }
     loadAlertCount();
-  }, [location.pathname]);
+  }, [location.pathname, isDemoActive, currentStep]);
 
   const handleSearchChange = async (e) => {
     const val = e.target.value;
@@ -173,7 +179,7 @@ export default function AppShell() {
         `}
         aria-hidden={!isSidebarOpen && !isMobile}
       >
-        {/* Inner Fixed-Width Wrapper to prevent text wrapping during animation */}
+        {/* Inner Fixed-Width Wrapper */}
         <div className="w-60 flex flex-col h-full justify-between flex-shrink-0">
           <div className="flex flex-col">
             {/* Institution Brand Header */}
@@ -183,9 +189,7 @@ export default function AppShell() {
                   src="/app_logo.png" 
                   alt="Mumbai Police CIU Logo" 
                   className="w-7 h-7 object-contain flex-shrink-0"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                  }}
+                  onError={(e) => { e.target.style.display = 'none'; }}
                 />
                 <div className="min-w-0">
                   <div className="flex items-center gap-1.5">
@@ -218,7 +222,11 @@ export default function AppShell() {
                 <ShieldAlert className="w-3 h-3 text-[#F5B800]" />
                 <span>ZONE 1 • CRIME BRANCH</span>
               </div>
-              <span className="text-emerald-400 font-bold">SECURE</span>
+              {isDemoActive ? (
+                <span className="text-[#F5B800] font-bold animate-pulse">DEMO MODE</span>
+              ) : (
+                <span className="text-emerald-400 font-bold">SECURE</span>
+              )}
             </div>
 
             {/* Navigation Groups */}
@@ -257,18 +265,41 @@ export default function AppShell() {
               ))}
             </nav>
 
-            {/* Gateway of India Decorative Monochrome Navy Watermark */}
-            <div className="absolute bottom-16 left-0 w-60 pointer-events-none flex justify-center overflow-hidden">
-              <img 
-                src="/gateway_bg.png" 
-                alt="Gateway of India Watermark"
-                className="w-[85%] object-contain opacity-35 filter contrast-150 brightness-75 mix-blend-multiply transition-opacity duration-300"
-              />
+            {/* Hackathon Demo Launcher Card in Sidebar */}
+            <div className="px-3 pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  if (!isDemoActive) {
+                    startDemo();
+                  } else {
+                    setIsSettingsOpen(true);
+                  }
+                }}
+                className={`w-full p-2.5 rounded-lg border text-left transition-all cursor-pointer flex items-center justify-between gap-2 shadow-xs ${
+                  isDemoActive
+                    ? 'bg-[#FFFBEB] border-[#F5B800] text-[#071A33] ring-1 ring-[#F5B800]'
+                    : 'bg-[#071A33] hover:bg-[#0B2341] border-[#1C457A] text-white'
+                }`}
+              >
+                <div className="min-w-0">
+                  <div className="flex items-center gap-1.5">
+                    <Sparkles className={`w-3.5 h-3.5 ${isDemoActive ? 'text-[#D97706]' : 'text-[#F5B800]'}`} />
+                    <span className="text-xs font-bold truncate">
+                      {isDemoActive ? `Storyline: Step ${currentStep}/${totalSteps}` : 'Launch Demo Mode'}
+                    </span>
+                  </div>
+                  <div className={`text-[9.5px] font-mono truncate mt-0.5 ${isDemoActive ? 'text-[#D97706]' : 'text-slate-300'}`}>
+                    {isDemoActive ? 'Synthetic Isolated Story' : '9-Step Case X Investigation'}
+                  </div>
+                </div>
+                <Play className={`w-3.5 h-3.5 flex-shrink-0 ${isDemoActive ? 'text-[#D97706]' : 'text-[#F5B800]'}`} />
+              </button>
             </div>
           </div>
 
-          {/* User Session Footer */}
-          <div className="p-2.5 border-t border-[#0B2341]/10 bg-[#FFFFFF] relative z-10">
+          {/* User Session Footer & Settings Button */}
+          <div className="p-2.5 border-t border-[#0B2341]/10 bg-[#FFFFFF] relative z-10 space-y-1.5">
             <div className="flex items-center justify-between p-2 rounded bg-[#F4F7FB] border border-[#0B2341]/10">
               <div className="flex items-center gap-2 min-w-0">
                 <div className="w-7 h-7 rounded bg-[#071A33] text-[#F5B800] font-mono font-bold text-xs flex items-center justify-center border border-[#0B2341] flex-shrink-0">
@@ -283,25 +314,34 @@ export default function AppShell() {
                   </div>
                 </div>
               </div>
-              <button
-                onClick={handleLogout}
-                className="text-[#071A33]/60 hover:text-[#DC2626] p-1 rounded hover:bg-[#071A33]/5 transition-colors cursor-pointer"
-                title="End Secure Session"
-              >
-                <LogOut className="w-3.5 h-3.5" />
-              </button>
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => setIsSettingsOpen(true)}
+                  className="text-[#071A33]/60 hover:text-[#071A33] p-1 rounded hover:bg-[#071A33]/5 transition-colors cursor-pointer"
+                  title="System Settings & Demo Mode"
+                >
+                  <Settings className="w-3.5 h-3.5" />
+                </button>
+                <button
+                  onClick={handleLogout}
+                  className="text-[#071A33]/60 hover:text-[#DC2626] p-1 rounded hover:bg-[#071A33]/5 transition-colors cursor-pointer"
+                  title="End Secure Session"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </aside>
 
-      {/* 2. MAIN APPLICATION CONTENT AREA (Dynamically Fills 100% Available Space) */}
+      {/* 2. MAIN APPLICATION CONTENT AREA */}
       <div className="flex-1 flex flex-col min-w-0 w-full overflow-hidden bg-[#FFFFFF] transition-all duration-250 ease-in-out">
         {/* Global Dark Navy Institutional Top Bar */}
         <header className="h-12 bg-[#071A33] border-b border-[#0B2341] flex items-center justify-between px-4 z-20 flex-shrink-0 shadow-sm">
           {/* Left Side: Sidebar Toggle Button + Global Search */}
           <div className="flex items-center gap-2.5 min-w-0">
-            {/* Sidebar Collapse / Expand Toggle Button */}
             <button
               type="button"
               onClick={() => setIsSidebarOpen(prev => !prev)}
@@ -317,7 +357,6 @@ export default function AppShell() {
               )}
             </button>
 
-            {/* When collapsed, show small branding anchor for quick visual context */}
             {!isSidebarOpen && !isMobile && (
               <div className="hidden sm:flex items-center gap-2 pr-2 border-r border-[#133560] flex-shrink-0">
                 <img 
@@ -344,7 +383,6 @@ export default function AppShell() {
                 />
               </div>
 
-              {/* Typeahead Dropdown */}
               {isSearchOpen && searchResults.length > 0 && (
                 <div className="absolute top-full left-0 w-96 mt-1 bg-[#FFFFFF] border border-[#0B2341]/20 rounded-md shadow-2xl py-1 z-50 divide-y divide-[#0B2341]/10">
                   {searchResults.map((res) => (
@@ -374,44 +412,75 @@ export default function AppShell() {
             </div>
           </div>
 
-          {/* Right Operational Status Indicators */}
-          <div className="flex items-center gap-3">
+          {/* Right Operational Status Indicators & Demo Controls */}
+          <div className="flex items-center gap-2.5">
+            {/* Demo Mode Action Pill / Button in Top Bar */}
+            {isDemoActive ? (
+              <button
+                type="button"
+                onClick={() => setIsSettingsOpen(true)}
+                className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#F5B800] text-[#071A33] text-xs font-mono font-bold hover:bg-[#FBBF24] transition-colors cursor-pointer shadow-xs"
+                title="Click to manage Demo Mode settings and steps"
+              >
+                <span className="w-2 h-2 rounded-full bg-red-600 animate-ping"></span>
+                <span>DEMO: STEP {currentStep}/{totalSteps}</span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setIsSettingsOpen(true)}
+                className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#0E2A4D] hover:bg-[#133560] border border-[#1C457A] text-[11px] font-mono text-[#F5B800] transition-colors cursor-pointer"
+                title="Open Settings and Demo Controller"
+              >
+                <Sparkles className="w-3 h-3" />
+                <span className="hidden md:inline font-bold">DEMO MODE</span>
+              </button>
+            )}
+
             {/* Live Database Sync Indicator */}
-            <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#0E2A4D] border border-[#1C457A] text-[10px] font-mono text-slate-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <div className="hidden lg:flex items-center gap-1.5 px-2 py-1 rounded bg-[#0E2A4D] border border-[#1C457A] text-[10px] font-mono text-slate-200">
+              <span className={`w-1.5 h-1.5 rounded-full ${isDemoActive ? 'bg-[#F5B800]' : 'bg-emerald-400 animate-pulse'}`}></span>
               <Database className="w-3 h-3 text-[#F5B800]" />
-              <span className="hidden sm:inline">CCTNS LIVE CLOUD SYNC</span>
+              <span>{isDemoActive ? 'DEMO ISOLATED' : 'CCTNS SYNC'}</span>
             </div>
 
             {/* Secure Clearance Badge */}
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#0E2A4D] border border-[#1C457A] text-slate-200 text-xs">
+            <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#0E2A4D] border border-[#1C457A] text-slate-200 text-xs">
               <Shield className="w-3.5 h-3.5 text-[#F5B800]" />
               <span className="text-[10px] font-mono font-bold tracking-wider text-[#F5B800]">
-                CLEARANCE LEVEL 4
+                LEVEL 4
               </span>
             </div>
 
-            {/* Quick Officer Identity */}
-            <div className="flex items-center gap-2 pl-2 border-l border-[#133560]">
-              <div className="w-6 h-6 rounded-full bg-[#0E2A4D] border border-[#F5B800]/60 flex items-center justify-center font-mono font-bold text-[10px] text-[#F5B800]">
-                VK
-              </div>
-              <div className="hidden md:block text-left">
-                <div className="text-xs font-bold text-white leading-tight">Insp. Vikram Kadam</div>
-                <div className="text-[9.5px] text-slate-300 font-mono">Senior Intelligence Officer</div>
-              </div>
-            </div>
+            {/* Settings Cog */}
+            <button
+              type="button"
+              onClick={() => setIsSettingsOpen(true)}
+              className="p-1.5 rounded bg-[#0E2A4D] hover:bg-[#133560] text-slate-200 hover:text-white border border-[#1C457A] transition-colors cursor-pointer"
+              title="System Settings"
+            >
+              <Settings className="w-3.5 h-3.5" />
+            </button>
           </div>
         </header>
 
         {/* 3. MAIN WORKSPACE VIEWPORT */}
-        <main className="flex-1 overflow-y-auto bg-[#FFFFFF] p-5 relative w-full">
+        <main className="flex-1 overflow-y-auto bg-[#FFFFFF] p-5 pb-24 relative w-full">
           <IndiaMapBackground />
           <div className="relative z-10 dashboard-content w-full h-full">
             <Outlet />
           </div>
         </main>
       </div>
+
+      {/* Persistent Storyline Demo Banner */}
+      <DemoModeBanner />
+
+      {/* System Settings & Demo Controller Modal */}
+      <SettingsModal 
+        isOpen={isSettingsOpen} 
+        onClose={() => setIsSettingsOpen(false)} 
+      />
     </div>
   );
 }

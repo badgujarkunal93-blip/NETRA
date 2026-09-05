@@ -252,6 +252,22 @@ CREATE TABLE alerts (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
+-- 15b. AI Investigation Findings
+CREATE TABLE findings (
+    id TEXT PRIMARY KEY,
+    case_id TEXT REFERENCES cases(id) ON DELETE CASCADE,
+    title TEXT NOT NULL,
+    finding_type TEXT NOT NULL,
+    severity TEXT DEFAULT 'Medium' CHECK (severity IN ('High', 'Medium', 'Low')),
+    confidence NUMERIC(5, 2) DEFAULT 80.0,
+    evidence_refs TEXT[] DEFAULT '{}',
+    description TEXT,
+    model_name TEXT,
+    status TEXT NOT NULL DEFAULT 'New' CHECK (status IN ('New', 'Reviewed', 'Dismissed')),
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
 -- Indexing for high-performance investigator queries
 CREATE INDEX idx_cases_crime_no ON cases(crime_no);
 CREATE INDEX idx_cases_status ON cases(status);
@@ -263,6 +279,7 @@ CREATE INDEX idx_relationships_source ON relationships(source_id);
 CREATE INDEX idx_relationships_target ON relationships(target_id);
 CREATE INDEX idx_alerts_severity ON alerts(severity);
 CREATE INDEX idx_alerts_status ON alerts(status);
+CREATE INDEX idx_findings_case ON findings(case_id);
 
 -- ============================================================================
 -- 16. CASE CANVAS INVESTIGATIVE WHITEBOARD TABLES
@@ -421,6 +438,7 @@ ALTER TABLE evidence ENABLE ROW LEVEL SECURITY;
 ALTER TABLE evidence_links ENABLE ROW LEVEL SECURITY;
 ALTER TABLE mo_similarities ENABLE ROW LEVEL SECURITY;
 ALTER TABLE alerts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE findings ENABLE ROW LEVEL SECURITY;
 ALTER TABLE case_canvases ENABLE ROW LEVEL SECURITY;
 ALTER TABLE canvas_nodes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE canvas_edges ENABLE ROW LEVEL SECURITY;
@@ -528,14 +546,14 @@ END $$;
 -- ============================================================================
 -- MODEL_OUTPUT POLICIES
 -- SELECT: active officer. INSERT/UPDATE: NONE (backend only). DELETE: admin.
--- Tables: entityresolutionoutput, networkcommunity, linkpredictionoutput, anomalydetectionoutput, alerts, rolepredictionoutput, document_chunks, extraction_spans
+-- Tables: entityresolutionoutput, networkcommunity, linkpredictionoutput, anomalydetectionoutput, alerts, findings, rolepredictionoutput, document_chunks, extraction_spans
 -- ============================================================================
 DO $$
 DECLARE
     t text;
 BEGIN
     FOR t IN 
-        SELECT unnest(ARRAY['entityresolutionoutput', 'networkcommunity', 'linkpredictionoutput', 'anomalydetectionoutput', 'alerts', 'rolepredictionoutput', 'document_chunks', 'extraction_spans'])
+        SELECT unnest(ARRAY['entityresolutionoutput', 'networkcommunity', 'linkpredictionoutput', 'anomalydetectionoutput', 'alerts', 'findings', 'rolepredictionoutput', 'document_chunks', 'extraction_spans'])
     LOOP
         EXECUTE format('
             CREATE POLICY "%I_select" ON %I FOR SELECT USING (
@@ -548,3 +566,13 @@ BEGIN
         -- Intentionally omitting INSERT and UPDATE policies, ensuring only the service_role key can write to these.
     END LOOP;
 END $$;
+
+-- ============================================================================
+-- ROLE GRANTS (Required for PostgREST & Supabase Client Querying under RLS)
+-- ============================================================================
+GRANT USAGE ON SCHEMA public TO anon, authenticated, service_role;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO anon, authenticated;
+GRANT ALL ON ALL TABLES IN SCHEMA public TO service_role;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO anon, authenticated, service_role;
+GRANT SELECT ON findings TO anon, authenticated;
+

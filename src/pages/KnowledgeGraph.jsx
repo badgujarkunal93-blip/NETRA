@@ -29,6 +29,7 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { dbService } from '../services/db';
+import { useDemoMode } from '../context/DemoModeContext';
 
 // Helper component to control map viewport (bounds & flyTo)
 function MapViewportController({ bounds, centerTarget }) {
@@ -53,10 +54,14 @@ export default function KnowledgeGraph() {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const containerRef = useRef(null);
+  const { isDemoActive, currentStep, triggerHiddenLinkDiscovery, advanceStep } = useDemoMode();
 
   // Case Selection State
   const [casesList, setCasesList] = useState([]);
-  const [selectedCaseId, setSelectedCaseId] = useState(searchParams.get('case_id') || '');
+  const [selectedCaseId, setSelectedCaseId] = useState(() => {
+    if (isDemoActive) return 'DEMO-CASE-X';
+    return searchParams.get('case_id') || '';
+  });
   const [caseSearchQuery, setCaseSearchQuery] = useState('');
   const [isCaseSearchOpen, setIsCaseSearchOpen] = useState(false);
 
@@ -100,6 +105,8 @@ export default function KnowledgeGraph() {
         const match = allCases.find(c => c.id === urlCaseId || c.crime_no === urlCaseId);
         if (match) {
           setSelectedCaseId(match.id);
+        } else if (isDemoActive) {
+          setSelectedCaseId('DEMO-CASE-X');
         } else if (!selectedCaseId || !allCases.find(c => c.id === selectedCaseId)) {
           setSelectedCaseId(allCases[0].id);
           setSearchParams({ case_id: allCases[0].id }, { replace: true });
@@ -107,12 +114,13 @@ export default function KnowledgeGraph() {
       }
     }
     loadCases();
-  }, []);
+  }, [isDemoActive, currentStep]);
 
   // Load Scoped Case Intelligence Network
   useEffect(() => {
     async function loadCaseNetwork() {
-      if (!selectedCaseId) {
+      const targetCaseId = isDemoActive ? (selectedCaseId || 'DEMO-CASE-X') : selectedCaseId;
+      if (!targetCaseId) {
         setCaseData(null);
         setNodes([]);
         setEdges([]);
@@ -123,7 +131,7 @@ export default function KnowledgeGraph() {
 
       setLoading(true);
       try {
-        const network = await dbService.getCaseIntelligenceNetwork(selectedCaseId, {
+        const network = await dbService.getCaseIntelligenceNetwork(targetCaseId, {
           minConfidence,
           provenance: provenanceFilter
         });
@@ -149,7 +157,7 @@ export default function KnowledgeGraph() {
       }
     }
     loadCaseNetwork();
-  }, [selectedCaseId, minConfidence, provenanceFilter]);
+  }, [selectedCaseId, minConfidence, provenanceFilter, isDemoActive, currentStep]);
 
   // Compute Map Bounding Box
   const mapBounds = useMemo(() => {
@@ -459,28 +467,50 @@ export default function KnowledgeGraph() {
         </div>
 
         {/* Right Viewport Controls */}
-        <div className="pointer-events-auto flex items-center gap-1 bg-white border border-[#0B2341]/20 shadow-md p-1 rounded-lg text-xs">
-          <button
-            onClick={() => setIsFilterPanelOpen(!isFilterPanelOpen)}
-            className={`p-1.5 rounded transition-colors ${isFilterPanelOpen ? 'bg-[#071A33] text-white' : 'text-[#071A33] hover:bg-[#F4F7FB]'}`}
-            title="Toggle Filter Panel"
-          >
-            <Filter className="w-3.5 h-3.5" />
-          </button>
-          <button
-            onClick={() => {
-              if (caseData) {
-                setFlyToTarget({ lat: caseData.latitude, lng: caseData.longitude, t: Date.now() });
-              }
-            }}
-            title="Center on Crime Scene Anchor"
-            className="p-1.5 text-[#071A33] hover:text-black rounded hover:bg-[#F4F7FB]"
-          >
-            <Crosshair className="w-3.5 h-3.5" />
-          </button>
-          <button onClick={toggleFullScreen} title="Toggle Fullscreen" className="p-1.5 text-[#071A33] hover:text-black rounded hover:bg-[#F4F7FB]">
-            {isFullScreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
-          </button>
+        <div className="pointer-events-auto flex items-center gap-1.5">
+          {/* Dedicated Hackathon Storyline Trigger Button */}
+          {isDemoActive && currentStep === 3 && (
+            <button
+              type="button"
+              onClick={() => triggerHiddenLinkDiscovery()}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gradient-to-r from-[#F5B800] to-[#D97706] hover:from-[#FBBF24] hover:to-[#B45309] text-[#071A33] font-bold text-xs shadow-lg animate-bounce ring-2 ring-white cursor-pointer"
+              title="Reveal hidden cross-case links with Cases Y and Z"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-[#071A33]" />
+              <span>⚡ Find Cross-Case Connections</span>
+            </button>
+          )}
+
+          {isDemoActive && currentStep >= 4 && (
+            <div className="hidden sm:flex items-center gap-1 px-2.5 py-1 bg-emerald-50 border border-emerald-300 text-emerald-800 rounded-lg text-xs font-bold shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Cross-Case Network Active (Cases X, Y, Z)</span>
+            </div>
+          )}
+
+          <div className="flex items-center gap-1 bg-white border border-[#0B2341]/20 shadow-md p-1 rounded-lg text-xs">
+            <button
+              onClick={() => setIsFilterPanelOpen(!isFilterPanelOpen)}
+              className={`p-1.5 rounded transition-colors ${isFilterPanelOpen ? 'bg-[#071A33] text-white' : 'text-[#071A33] hover:bg-[#F4F7FB]'}`}
+              title="Toggle Filter Panel"
+            >
+              <Filter className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={() => {
+                if (caseData) {
+                  setFlyToTarget({ lat: caseData.latitude, lng: caseData.longitude, t: Date.now() });
+                }
+              }}
+              title="Center on Crime Scene Anchor"
+              className="p-1.5 text-[#071A33] hover:text-black rounded hover:bg-[#F4F7FB]"
+            >
+              <Crosshair className="w-3.5 h-3.5" />
+            </button>
+            <button onClick={toggleFullScreen} title="Toggle Fullscreen" className="p-1.5 text-[#071A33] hover:text-black rounded hover:bg-[#F4F7FB]">
+              {isFullScreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
+            </button>
+          </div>
         </div>
       </div>
 

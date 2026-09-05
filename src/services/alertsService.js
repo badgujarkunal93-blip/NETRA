@@ -1,8 +1,19 @@
 import { supabase, isSupabaseConfigured } from './supabaseClient.js';
 import { localDB } from './localData.js';
+import { 
+  isDemoModeActive, 
+  getDemoCurrentStep, 
+  getDemoAlerts, 
+  getDemoDashboardMetrics 
+} from './demoScenario.js';
 
 export const alertsService = {
   async getAlerts(filters = {}) {
+    if (isDemoModeActive()) {
+      const step = getDemoCurrentStep();
+      return getDemoAlerts(step, filters);
+    }
+
     if (isSupabaseConfigured && supabase) {
       try {
         let query = supabase.from('alerts').select('*');
@@ -51,6 +62,11 @@ export const alertsService = {
   },
 
   async getDashboardMetrics() {
+    if (isDemoModeActive()) {
+      const step = getDemoCurrentStep();
+      return getDemoDashboardMetrics(step);
+    }
+
     let cases = localDB.cases;
     let persons = localDB.persons;
     let alerts = [...localDB.alerts].sort((a, b) =>

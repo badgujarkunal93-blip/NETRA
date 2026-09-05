@@ -1,8 +1,20 @@
 import { supabase, isSupabaseConfigured } from './supabaseClient.js';
 import { localDB, filterRows } from './localData.js';
+import { 
+  isDemoModeActive, 
+  getDemoCurrentStep, 
+  getDemoCases, 
+  getDemoCaseById, 
+  getDemoMOSimilarities 
+} from './demoScenario.js';
 
 export const casesService = {
   async getAllCases(filters = {}) {
+    if (isDemoModeActive()) {
+      const step = getDemoCurrentStep();
+      return getDemoCases(step, filters);
+    }
+
     if (isSupabaseConfigured && supabase) {
       try {
         let query = supabase.from('cases').select('*');
@@ -82,6 +94,11 @@ export const casesService = {
   },
 
   async getCaseById(id) {
+    if (isDemoModeActive()) {
+      const step = getDemoCurrentStep();
+      return getDemoCaseById(id, step);
+    }
+
     if (isSupabaseConfigured && supabase) {
       try {
         const { data, error } = await supabase.from('cases').select('*').eq('id', id).single();
@@ -91,8 +108,12 @@ export const casesService = {
     return localDB.cases.find(c => c.id === id || c.crime_no === id) || null;
   },
 
-
   async getMOSimilarities(caseId = null) {
+    if (isDemoModeActive()) {
+      const step = getDemoCurrentStep();
+      return getDemoMOSimilarities(caseId || 'DEMO-CASE-X', step);
+    }
+
     const cases = localDB.cases;
     const fps = localDB.mo_fingerprints;
     const sims = localDB.mo_similarities;

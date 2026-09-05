@@ -1,9 +1,21 @@
 import { supabase, isSupabaseConfigured } from './supabaseClient.js';
 import { casesService } from './casesService.js';
 import { localDataService } from './localDataService.js';
+import { 
+  isDemoModeActive, 
+  getDemoCurrentStep, 
+  getDemoCaseIntelligenceNetwork, 
+  getDemoGlobalIntelligenceNetwork,
+  getDemoCaseCanvas
+} from './demoScenario.js';
 
 export const graphService = {
   async getGlobalIntelligenceNetwork(filters = {}) {
+    if (isDemoModeActive()) {
+      const step = getDemoCurrentStep();
+      return getDemoGlobalIntelligenceNetwork(step, filters);
+    }
+
     if (!isSupabaseConfigured) {
       return localDataService.getGlobalIntelligenceNetwork(filters);
     }
@@ -43,6 +55,11 @@ export const graphService = {
   },
 
   async getCaseIntelligenceNetwork(caseId, filters = { minConfidence: 0, provenance: 'All' }) {
+    if (isDemoModeActive() || (caseId && String(caseId).startsWith('DEMO-'))) {
+      const step = getDemoCurrentStep();
+      return getDemoCaseIntelligenceNetwork(caseId, step, filters);
+    }
+
     if (!isSupabaseConfigured) {
       return localDataService.getCaseIntelligenceNetwork(caseId, filters);
     }
@@ -391,6 +408,11 @@ export const graphService = {
   },
 
   async getCaseCanvas(caseId) {
+    if (isDemoModeActive() || (caseId && String(caseId).startsWith('DEMO-'))) {
+      const step = getDemoCurrentStep();
+      return getDemoCaseCanvas(caseId, step);
+    }
+
     if (!isSupabaseConfigured) {
       return localDataService.getCaseCanvas(caseId);
     }
@@ -473,6 +495,11 @@ export const graphService = {
   },
 
   async saveCaseCanvas(caseId, { nodes, edges, caseNotes }) {
+    if (isDemoModeActive() || (caseId && String(caseId).startsWith('DEMO-'))) {
+      console.log('Demo Mode: canvas save skipped');
+      return { caseId, nodes, edges, caseNotes };
+    }
+
     if (!isSupabaseConfigured) {
       return localDataService.saveCaseCanvas(caseId, { nodes, edges, caseNotes });
     }
@@ -553,6 +580,11 @@ export const graphService = {
   },
 
   async pullKnowledgeGraphToCanvas(caseId) {
+    if (isDemoModeActive() || (caseId && String(caseId).startsWith('DEMO-'))) {
+      const step = getDemoCurrentStep();
+      return getDemoCaseCanvas(caseId, step);
+    }
+
     const net = await this.getCaseIntelligenceNetwork(caseId);
     return {
       nodes: (net.nodes || []).map((n, idx) => ({

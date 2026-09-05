@@ -25,11 +25,13 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { dbService } from '../services/db';
+import { useDemoMode } from '../context/DemoModeContext';
 import FIRUploadModal from '../components/ingestion/FIRUploadModal';
 
 export default function CaseSearch() {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
+  const { isDemoActive, currentStep, resetDemo, exitDemo } = useDemoMode();
   
   const [cases, setCases] = useState([]);
   const [selectedCase, setSelectedCase] = useState(null);
@@ -46,7 +48,6 @@ export default function CaseSearch() {
 
   const urlCaseId = searchParams.get('id');
 
-
   useEffect(() => {
     async function loadCases() {
       setLoading(true);
@@ -59,7 +60,7 @@ export default function CaseSearch() {
         });
         setCases(data || []);
 
-        const targetId = urlCaseId || (data && data.length > 0 ? data[0].id : null);
+        const targetId = urlCaseId || (isDemoActive ? 'DEMO-CASE-X' : (data && data.length > 0 ? data[0].id : null));
         if (targetId) {
           const fullDetail = await dbService.getCaseById(targetId);
           setSelectedCase(fullDetail);
@@ -73,7 +74,7 @@ export default function CaseSearch() {
       }
     }
     loadCases();
-  }, [searchTerm, selectedCategory, selectedStatus, selectedStation, urlCaseId]);
+  }, [searchTerm, selectedCategory, selectedStatus, selectedStation, urlCaseId, isDemoActive, currentStep]);
 
   const handleSelectCase = async (caseId) => {
     setSearchParams({ id: caseId });
@@ -272,6 +273,52 @@ export default function CaseSearch() {
         <div className="lg:col-span-7 glass-card rounded-lg flex flex-col min-h-0 overflow-hidden border border-[#0B2341]/12 bg-white">
           {selectedCase ? (
             <div className="overflow-y-auto p-4 space-y-4 flex-1">
+              {/* STEP 9: CASE RESOLUTION STORYLINE SUMMARY BANNER */}
+              {isDemoActive && currentStep === 9 && (
+                <div className="p-4 rounded-xl bg-gradient-to-r from-[#071A33] to-[#0E2A4D] border-2 border-[#F5B800] text-white shadow-xl space-y-3 animate-in fade-in slide-in-from-top-4 duration-300">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-[#F5B800] text-[#071A33] flex items-center justify-center font-bold">
+                        <CheckCircle2 className="w-5 h-5 text-[#071A33]" />
+                      </div>
+                      <div>
+                        <span className="font-mono text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#F5B800] text-[#071A33]">
+                          STORYLINE RESOLUTION • CASE SOLVED
+                        </span>
+                        <h2 className="text-sm font-extrabold text-white mt-1">
+                          Case X Solved via Cross-Case Relational Intelligence
+                        </h2>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">
+                      SYNDICATE DISMANTLED
+                    </span>
+                  </div>
+
+                  <p className="text-xs text-slate-200 leading-relaxed">
+                    Critical intelligence came from linking bridging suspect <strong className="text-[#F5B800]">Vikram &quot;Vicky&quot; Malhotra</strong> across <strong className="text-white">Case X (Colaba Vault Heist)</strong>, <strong className="text-white">Case Y (Bandra Showroom)</strong>, and <strong className="text-white">Case Z (Zaveri Smelter)</strong> via burner phone <code className="font-mono text-[#F5B800] bg-black/30 px-1 py-0.5 rounded">+91 98201 99887</code>, getaway motorcycle <code className="font-mono text-[#F5B800] bg-black/30 px-1 py-0.5 rounded">MH-01-EA-9912</code>, and 94.2% oxy-acetylene MO signature match.
+                  </p>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+                    <div className="p-2 rounded bg-white/5 border border-white/10 text-center">
+                      <span className="text-[9px] font-mono uppercase text-slate-300 block">Initial State</span>
+                      <span className="text-xs font-bold text-red-300">4 Isolated Nodes</span>
+                    </div>
+                    <div className="p-2 rounded bg-white/5 border border-white/10 text-center">
+                      <span className="text-[9px] font-mono uppercase text-slate-300 block">Merged Syndicate</span>
+                      <span className="text-xs font-bold text-emerald-300">18 Connected Nodes</span>
+                    </div>
+                    <div className="p-2 rounded bg-white/5 border border-white/10 text-center">
+                      <span className="text-[9px] font-mono uppercase text-slate-300 block">Linked FIRs</span>
+                      <span className="text-xs font-bold text-[#F5B800]">3 Multi-District FIRs</span>
+                    </div>
+                    <div className="p-2 rounded bg-white/5 border border-white/10 text-center">
+                      <span className="text-[9px] font-mono uppercase text-slate-300 block">Mastermind Priority</span>
+                      <span className="text-xs font-bold text-[#F5B800]">96.8 / 100</span>
+                    </div>
+                  </div>
+                </div>
+              )}
               
               {/* DOSSIER SECTION 1: HEADER & PRIMARY IDENTIFIERS */}
               <div className="pb-3 border-b border-[#0B2341]/10">

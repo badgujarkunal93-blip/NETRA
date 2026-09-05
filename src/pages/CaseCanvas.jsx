@@ -57,7 +57,7 @@ const NODE_TYPES = {
 
 export default function CaseCanvas() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const selectedCaseId = searchParams.get('case_id') || '';
+  const selectedCaseId = searchParams.get('case_id') || searchParams.get('id') || '';
 
   // Case Selection & Search State
   const [allCases, setAllCases] = useState([]);
@@ -100,7 +100,7 @@ export default function CaseCanvas() {
       const cases = await dbService.getCases();
       setAllCases(cases);
       if (cases && cases.length > 0) {
-        const urlCaseId = searchParams.get('case_id');
+        const urlCaseId = searchParams.get('case_id') || searchParams.get('id');
         const match = cases.find(c => c.id === urlCaseId || c.crime_no === urlCaseId);
         if (match) {
           if (selectedCaseId !== match.id) {
